@@ -16,7 +16,12 @@ function opinionstage_initialize_data() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);	
 	$os_options['version'] = OPINIONSTAGE_WIDGET_VERSION;	
 	
-	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+	// For backward compatibility
+	if (!isset($os_options['sidebar_placement_active'])) {
+		$os_options['sidebar_placement_active'] = 'false';		
+	}
+	
+	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);	
 }
 
 /**
@@ -107,6 +112,10 @@ function opinionstage_add_poll_page() {
 			$('#article-placement-switch').change(function(){
 				toggleSettingsAjax($(this), "opinionstage_ajax_toggle_article_placement");
 			});				
+			
+			$('#sidebar-placement-switch').change(function(){
+				toggleSettingsAjax($(this), "opinionstage_ajax_toggle_sidebar_placement");
+			});							
 		});
 		
 	</script>  
@@ -144,7 +153,7 @@ function opinionstage_add_poll_page() {
 					</div>
 					<a href="http://blog.opinionstage.com/fly-out-placements-in-wordpress/" class="question-link" target="_blank">(?)</a>
 				</div>
-				<div class="onoffswitch left <?php echo($first_time ? "disabled" : "")?>">
+				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
 					<input type="checkbox" name="fly-out-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo($os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
 					  <label class="onoffswitch-label" for="fly-out-switch">
 						<div class="onoffswitch-inner"></div>
@@ -162,7 +171,7 @@ function opinionstage_add_poll_page() {
 					</div>					
 					<a href="http://blog.opinionstage.com/article-placements/" class="question-link" target="_blank">(?)</a>
 				</div>	
-				<div class="onoffswitch left <?php echo($first_time ? "disabled" : "")?>">
+				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
 					<input type="checkbox" name="article-placement-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo($os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
 					  <label class="onoffswitch-label" for="article-placement-switch">
 						<div class="onoffswitch-inner"></div>
@@ -180,17 +189,16 @@ function opinionstage_add_poll_page() {
 					</div>					
 					<a href="http://blog.opinionstage.com/poll-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
 				</div>	
-				<?php if($first_time) {?>	    					
-					<div class="onoffswitch left disabled">
-						<input type="checkbox" name="sidebar-placement-switch" class="onoffswitch-checkbox" disabled id="sidebar-placement-switch">
-						  <label class="onoffswitch-label" for="sidebar-placement-switch">
-							<div class="onoffswitch-inner"></div>
-							<div class="onoffswitch-switch"></div>
-						</label>
-					</div>							
-				<?php } else { ?>
-					<div class="left long-text">
-						 Add sidebar using the <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Widgets Menu</a>
+				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
+					<input type="checkbox" name="sidebar-placement-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="sidebar-placement-switch" <?php echo($os_options['sidebar_placement_active'] == 'true' ? "checked" : "") ?>>
+					  <label class="onoffswitch-label" for="sidebar-placement-switch">
+						<div class="onoffswitch-inner"></div>
+						<div class="onoffswitch-switch"></div>
+					</label>
+				</div>											
+				<?php if(!$first_time) {?>	    					
+					<div class="os-long-text">
+						 <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Conifugre</a> (using the Widgets Menu)
 					</div>
 				<?php } ?>
 			</div>						

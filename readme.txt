@@ -123,6 +123,8 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 12.4.0 =
+  * Added a control switch for the Sidebar placement
   = Version 12.3.0 =
   * Added Sidebar placement as a widget
   = Version 12.2.0 =

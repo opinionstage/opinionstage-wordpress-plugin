@@ -229,6 +229,7 @@ function opinionstage_parse_client_data($raw_data) {
 						   'version' => OPINIONSTAGE_WIDGET_VERSION,
 						   'fly_out_active' => 'false',
 						   'article_placement_active' => 'false',
+						   'sidebar_placement_active' => 'false',
 						   'token' => $raw_data['token']);
 							   
 	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);

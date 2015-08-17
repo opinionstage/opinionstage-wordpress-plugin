@@ -11,9 +11,9 @@
 			$title = @$instance['title'];
 			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);	
 
-			if (!empty($title)) echo $before_title . apply_filters('widget_title', $title) . $after_title;
+			if (!empty($title) && $os_options['sidebar_placement_active'] == 'true') echo $before_title . apply_filters('widget_title', $title) . $after_title;
 
-			if (!empty($os_options["sidebar_placement_id"])) {
+			if (!empty($os_options["sidebar_placement_id"]) && $os_options['sidebar_placement_active'] == 'true') {
 				echo opinionstage_create_placement_embed_code($os_options["sidebar_placement_id"]);
 			}	
 			
