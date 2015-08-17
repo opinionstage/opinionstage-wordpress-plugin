@@ -155,7 +155,7 @@ function opinionstage_add_poll_page() {
 				</div>
 				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
 					<input type="checkbox" name="fly-out-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo($os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
-					  <label class="onoffswitch-label" for="fly-out-switch">
+					<label class="onoffswitch-label" for="fly-out-switch">
 						<div class="onoffswitch-inner"></div>
 						<div class="onoffswitch-switch"></div>
 					</label>
@@ -185,7 +185,7 @@ function opinionstage_add_poll_page() {
 			<div class="placement_wrapper">
 				<div class='description'>
 					<div class="text">
-						Sidebar Section
+						Sidebar Widget
 					</div>					
 					<a href="http://blog.opinionstage.com/poll-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
 				</div>	
@@ -198,7 +198,7 @@ function opinionstage_add_poll_page() {
 				</div>											
 				<?php if(!$first_time) {?>	    					
 					<div class="os-long-text">
-						 <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Conifugre</a> (using the Widgets Menu)
+						 <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Configure</a> (using the Widgets Menu)
 					</div>
 				<?php } ?>
 			</div>						

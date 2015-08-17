@@ -23,12 +23,17 @@
 		function update($new_instance, $old_instance) {
 			$instance = $old_instance;
 			$instance['title'] = strip_tags($new_instance['title']);
+			$instance['enabled'] = strip_tags($new_instance['enabled']);
+			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);	
+			$os_options['sidebar_placement_active'] = ('1' == $instance['enabled']);
+			update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);	
 			return $instance;
 		}
 
 		function form($instance) {
-			$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
 			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);	
+			$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+			$enabled = $os_options['sidebar_placement_active'] == 'true' ? '1' : '';			
 			if (empty($os_options["uid"])) {
 				$first_time = true;	
 			} else {
@@ -76,9 +81,12 @@
 						<a href="javascript:void(0)" class="os-button switch-email" id="os-switch-email" >Switch Account</a>
 						<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
 						<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" class="watermark" data-watermark="Enter the title here" value="<?php echo $title; ?>" /></p>						
+						<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
+						<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
 						<div class="left text">				 
 							<a href="<?php echo opinionstage_sidebar_placement_edit_url(); ?>" target="_blank">Configure content</a> 
-						</div>						
+						</div>	
+
 					<?php } ?>
 				</div>																		
 			<?php

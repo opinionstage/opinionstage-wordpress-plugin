@@ -123,6 +123,9 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 12.5.0 =
+  * Modified css strucutre
+  * Added an option to enable/disable sidebar widget directly via the widget box 
   = Version 12.4.0 =
   * Added a control switch for the Sidebar placement
   = Version 12.3.0 =
