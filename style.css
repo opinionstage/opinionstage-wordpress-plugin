@@ -188,3 +188,17 @@ input.onoffswitch-checkbox {
     -moz-box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.75), 0px -1px 0px rgba(74, 121, 221, 0.2), inset 2px -1px 4px -1px rgba(74, 121, 221, 0.9);
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.75), 0px -1px 0px rgba(74, 121, 221, 0.2), inset 2px -1px 4px -1px rgba(74, 121, 221, 0.9);
 }
+.os-sidebar-widget {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.os-sidebar-widget .text {
+	margin-top: 10px;
+}
+.os-sidebar-widget #os-email {
+	margin-left: 8px;
+}
+.os-notice {
+	color: red;
+	font-weight: bold;
+}

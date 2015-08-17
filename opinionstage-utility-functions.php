@@ -101,12 +101,10 @@ function opinionstage_create_placement_embed_code($id) {
 /**
  * Utility function to create a link with the correct host and all the required information.
  */
-function opinionstage_create_link($caption, $page, $params = "", $options = array()) {
-	$style = empty($options['style']) ? '' : $options['style'];
-	$new_page = empty($options['new_page']) ? true : $options['new_page'];
+function opinionstage_create_link($caption, $page, $params = "", $new_page = true) {
 	$params_prefix = empty($params) ? "" : "&";	
 	$link = "http://".OPINIONSTAGE_SERVER_BASE."/".$page."?" . "o=".OPINIONSTAGE_WIDGET_API_KEY.$params_prefix.$params;
-	return "<a href=\"".$link."\"".($new_page ? " target='_blank'" : "")." style=".$style.">".$caption."</a>";
+	return "<a href=\"".$link."\"".($new_page ? " target='_blank'" : "").">".$caption."</a>";
 }
 
 /**
@@ -147,13 +145,20 @@ function opinionstage_article_placement_edit_url() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['article_placement_id'].'/edit?token='.$os_options['token'];
 }
+function opinionstage_sidebar_placement_edit_url() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?token='.$os_options['token'];
+}
 function opinionstage_create_poll_link() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {
+	if (empty($os_options["uid"])) {	
 		return opinionstage_create_link('Create a Poll', 'new_poll', '');
 	} else {
 		return opinionstage_create_link('Create a Poll', 'new_poll', 'token='.$os_options['token']);
 	}	
+}
+function opinionstage_callback_url() {
+	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php';
 }
 function opinionstage_create_set_link() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);

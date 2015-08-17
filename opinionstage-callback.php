@@ -15,9 +15,9 @@
 		'fly_id',
 		'article_placement_id',
 		'sidebar_placement_id'));	
-	
-	$redirectURL = get_admin_url('', '', 'admin').'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-polls.php';
+		
+	$redirect_url = get_admin_url('', '', 'admin').'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-polls.php';	
 ?>
 <script type="text/javascript">
-	window.location = "<?php echo($redirectURL) ?>";
+	window.location = "<?php echo($redirect_url) ?>";	
 </script>

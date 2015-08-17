@@ -64,88 +64,66 @@ function opinionstage_poll_menu() {
  * Instructions page for adding a poll 
  */
 function opinionstage_add_poll_page() {
-  opinionstage_add_stylesheet();
-  $os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-  if (empty($os_options["uid"])) {
-	$first_time = true;	
-  } else {
-	$first_time = false;
-  }
-  ?>
-    	<script type='text/javascript'>
-			jQuery(function ($) {
-                var callbackURL = function() {
-					return "<?php echo $url = get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php' ?>";
-				};
-				var handleWatermark = function(input){
-					if(input.val().trim() != "") {
-						input.removeClass('os-watermark');						
-					} else {
-						input.val(input.data('watermark'));
-						input.addClass('os-watermark');
-					}
-				};	
-				var toggleSettingsAjax = function(currObject, action) {	
-					$.post(ajaxurl, {action: action, activate: currObject.is(':checked')}, function(response) { });
-				};
+	opinionstage_add_stylesheet();
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	if (empty($os_options["uid"])) {
+		$first_time = true;	
+	} else {
+		$first_time = false;
+	}
+	?>
+	<script type='text/javascript'>
+		jQuery(document).ready(function($) {
+		    var callbackURL = "<?php echo opinionstage_callback_url()?>";
+			var toggleSettingsAjax = function(currObject, action) {	
+				$.post(ajaxurl, {action: action, activate: currObject.is(':checked')}, function(response) { });
+			};
 
-		        $('#start-login').click(function(){
-					var emailInput = $('#os-email');
-					var email = $(emailInput).val();
-					if (email == emailInput.data('watermark')) {
-						email = "";
-					}
-					var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()) + "&email=" + email; 
-					window.location = new_location;
-				});
-				
-				$('#switch-email').click(function(){
-					var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()); 
-					window.location = new_location;
-				});
-				
-				$('#os-email').keypress(function(e){
-					if (e.keyCode == 13) {
-						$('#start-login').click();
-					}
-				});
-									     				    				 
-				$('input.watermark').focus(function(){
-					var input = $(this);
-					if (input.data('watermark') == input.val()) {
-						input.val("");
-						input.removeClass('os-watermark');
-					}
-				}).each(function(){
-					handleWatermark($(this));
-				}).blur(function(){
-					handleWatermark($(this));
-				});	
-
-				$('#fly-out-switch').change(function(){
-					toggleSettingsAjax($(this), "opinionstage_ajax_toggle_flyout");
-				});
-
-				$('#article-placement-switch').change(function(){
-					toggleSettingsAjax($(this), "opinionstage_ajax_toggle_article_placement");
-				});				
+			$('#os-start-login').click(function(){
+				var emailInput = $('#os-email');
+				var email = $(emailInput).val();
+				if (email == emailInput.data('watermark')) {
+					email = "";
+				}
+				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email; 
+				window.location = new_location;
 			});
 			
-		</script>  
-  <div class="opinionstage-wrap">
+			$('#os-switch-email').click(function(){
+				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL); 
+				window.location = new_location;
+			});
+			
+			$('#os-email').keypress(function(e){
+				if (e.keyCode == 13) {
+					$('#os-start-login').click();
+				}
+			});
+																		 
+			$('#fly-out-switch').change(function(){
+				toggleSettingsAjax($(this), "opinionstage_ajax_toggle_flyout");
+			});
+
+			$('#article-placement-switch').change(function(){
+				toggleSettingsAjax($(this), "opinionstage_ajax_toggle_article_placement");
+			});				
+		});
+		
+	</script>  
+	<div class="opinionstage-wrap">
 	  <div id="opinionstage-head"></div>
 	  <div class="section">	    
-	    <?php if($first_time) {?>	    	
+		<?php if($first_time) {?>	    	
 			<h2>Connect to Opinion Stage</h3>
-			<p>Connect WordPress with Opinion Stage to enable all features</p>
-	    	<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
-	    	<a href="javascript:void(0)" class="os-button" id="start-login">Connect</a>	    	    			
-	    <?php } else { ?>
+			<p class='os-notice'>Connect WordPress with Opinion Stage to enable all features</p>
+			<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
+			<a href="javascript:void(0)" class="os-button" id="os-start-login">Connect</a>	    	    			
+		<?php } else { ?>
 			<p>You are connected to Opinion Stage with the following email</p>
-	    	<label class="checked" for="user-email"></label>
-	    	<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
-	    	<a href="javascript:void(0)" class="os-button" id="switch-email" >Switch Account</a>
-	    <?php } ?>
+			<label class="checked" for="user-email"></label>
+			<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+			<a href="javascript:void(0)" class="os-button" id="os-switch-email" >Switch Account</a>
+		<?php } ?>
 	  </div>
 
 	  <div class="section">
@@ -154,7 +132,7 @@ function opinionstage_add_poll_page() {
 			<li><?php echo opinionstage_create_poll_link(); ?></li>
 			<li><?php echo opinionstage_dashboard_link('Manage Polls', 'polls'); ?></li>
 			<li><?php echo opinionstage_create_set_link(); ?></li>
-			<li><?php echo opinionstage_dashboard_link('Manage Sets', 'sets'); ?></li>						
+			<li><?php echo opinionstage_dashboard_link('Manage Sets', 'sets'); ?></li>									
 		  </ul>
 	  </div>
 	  <div class="section">
@@ -164,7 +142,7 @@ function opinionstage_add_poll_page() {
 					<div class="text">
 						Fly-out
 					</div>
-					<a href="http://blog.opinionstage.com/fly-out-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
+					<a href="http://blog.opinionstage.com/fly-out-placements-in-wordpress/" class="question-link" target="_blank">(?)</a>
 				</div>
 				<div class="onoffswitch left <?php echo($first_time ? "disabled" : "")?>">
 					<input type="checkbox" name="fly-out-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo($os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
@@ -175,14 +153,14 @@ function opinionstage_add_poll_page() {
 				</div>							
 				<?php if(!$first_time) {?>	    					
 					<a href="<?php echo opinionstage_flyout_edit_url(); ?>" target="_blank">Configure</a>
-			    <?php } ?>
+				<?php } ?>
 			</div>
 			<div class="placement_wrapper">
 				<div class='description'>
 					<div class="text">
 						Article Section
 					</div>					
-					<a href="http://blog.opinionstage.com/poll-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
+					<a href="http://blog.opinionstage.com/article-placements/" class="question-link" target="_blank">(?)</a>
 				</div>	
 				<div class="onoffswitch left <?php echo($first_time ? "disabled" : "")?>">
 					<input type="checkbox" name="article-placement-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo($os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
@@ -193,8 +171,29 @@ function opinionstage_add_poll_page() {
 				</div>							
 				<?php if(!$first_time) {?>	    					
 					<a href="<?php echo opinionstage_article_placement_edit_url(); ?>" target="_blank">Configure</a>
-			    <?php } ?>
+				<?php } ?>
 			</div>			
+			<div class="placement_wrapper">
+				<div class='description'>
+					<div class="text">
+						Sidebar Section
+					</div>					
+					<a href="http://blog.opinionstage.com/poll-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
+				</div>	
+				<?php if($first_time) {?>	    					
+					<div class="onoffswitch left disabled">
+						<input type="checkbox" name="sidebar-placement-switch" class="onoffswitch-checkbox" disabled id="sidebar-placement-switch">
+						  <label class="onoffswitch-label" for="sidebar-placement-switch">
+							<div class="onoffswitch-inner"></div>
+							<div class="onoffswitch-switch"></div>
+						</label>
+					</div>							
+				<?php } else { ?>
+					<div class="left long-text">
+						 Add sidebar using the <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Widgets Menu</a>
+					</div>
+				<?php } ?>
+			</div>						
 	  </div>
 	  <div class="section">			
 		  <h2>Monetization</h2>
@@ -210,8 +209,8 @@ function opinionstage_add_poll_page() {
 			<li><a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a></li>					  
 		  </ul>	  
 	  </div>  
-  </div>
-  <?php
+	</div>
+	<?php
 }
 
 /**
