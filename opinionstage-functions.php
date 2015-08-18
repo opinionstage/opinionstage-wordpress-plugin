@@ -139,9 +139,8 @@ function opinionstage_add_poll_page() {
 		  <h2>Content</h2>
 		  <ul class="os_links_list">
 			<li><?php echo opinionstage_create_poll_link(); ?></li>
-			<li><?php echo opinionstage_dashboard_link('Manage Polls', 'polls'); ?></li>
 			<li><?php echo opinionstage_create_set_link(); ?></li>
-			<li><?php echo opinionstage_dashboard_link('Manage Sets', 'sets'); ?></li>									
+			<li><?php echo opinionstage_dashboard_link('Manage Content'); ?></li>									
 		  </ul>
 	  </div>
 	  <div class="section">
@@ -281,7 +280,7 @@ function opinionstage_add_poll_popup() {
 				<?php echo opinionstage_create_poll_link(); ?>
 			</p>
 			<p><strong>Don't know the poll ID?</strong></br></br>
-				<?php echo opinionstage_dashboard_link('Locate ID of an existing poll', 'polls'); ?>				
+				<?php echo opinionstage_dashboard_link('Locate ID of an existing poll'); ?>				
 			</p>
 		</div>
 		<div class="setWrp" style="display: none;">
@@ -294,7 +293,7 @@ function opinionstage_add_poll_popup() {
 				<?php echo opinionstage_create_set_link(); ?>
 			</p>
 			<p><strong>Don't know the set ID?</strong></br></br>
-				<?php echo opinionstage_dashboard_link('Locate ID of an existing set', 'sets'); ?>				
+				<?php echo opinionstage_dashboard_link('Locate ID of an existing set'); ?>				
 			</p>
 		</div>
 	  </div>

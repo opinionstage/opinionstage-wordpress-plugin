@@ -112,7 +112,7 @@ function opinionstage_create_link($caption, $page, $params = "", $new_page = tru
  */
 function opinionstage_add_stylesheet() {
 	// Respects SSL, Style.css is relative to the current file
-	wp_register_style( 'opinionstage-style', plugins_url('style.css', __FILE__) );
+	wp_register_style( 'opinionstage-style', plugins_url('os-style.css', __FILE__) );
 	wp_enqueue_style( 'opinionstage-style' );
 }
 
@@ -168,12 +168,12 @@ function opinionstage_create_set_link() {
 		return opinionstage_create_link('Create a Set', 'sets/new', 'token='.$os_options['token']);
 	}	
 }
-function opinionstage_dashboard_link($text, $tab) {
+function opinionstage_dashboard_link($text) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {
-		return opinionstage_create_link($text, 'dashboard', 'tab='.$tab);
+		return opinionstage_create_link($text, 'dashboard');
 	} else {
-		return opinionstage_create_link($text, 'dashboard', 'tab='.$tab.'&token='.$os_options['token']);
+		return opinionstage_create_link($text, 'dashboard', 'token='.$os_options['token']);
 	}	
 }
 function opinionstage_logged_in_link($text, $link) {

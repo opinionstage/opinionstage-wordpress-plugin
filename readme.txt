@@ -123,6 +123,9 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 12.6.0 =
+  * Fixed broken links to dashboard
+  * Renamed css file
   = Version 12.5.0 =
   * Modified css strucutre
   * Added an option to enable/disable sidebar widget directly via the widget box 
