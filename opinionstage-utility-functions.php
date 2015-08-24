@@ -76,7 +76,9 @@ function opinionstage_create_embed_code($id, $type) {
     }
 	return $code;
 }
-
+/**
+ * Returns the embed code of a placement by fetching it from Opinion Stage api
+ */
 function opinionstage_create_placement_embed_code($id) {
     
     // Only present if id is available 
@@ -112,7 +114,7 @@ function opinionstage_create_link($caption, $page, $params = "", $new_page = tru
  */
 function opinionstage_add_stylesheet() {
 	// Respects SSL, Style.css is relative to the current file
-	wp_register_style( 'opinionstage-style', plugins_url('os-style.css', __FILE__) );
+	wp_register_style( 'opinionstage-style', plugins_url('style.css', __FILE__) );
 	wp_enqueue_style( 'opinionstage-style' );
 }
 
@@ -132,23 +134,37 @@ function opinionstage_poll_tinymce_registerbutton($buttons) {
 	array_push($buttons, 'separator', 'ospolls');
 	return $buttons;
 }
-
+/**
+ * Adds the tinymce plugin that includes the 'add poll' link
+ */
 function opinionstage_poll_tinymce_addplugin($plugin_array) {
 	$plugin_array['ospolls'] = plugins_url(OPINIONSTAGE_WIDGET_UNIQUE_ID.'/tinymce/plugins/polls/editor_plugin.js');
 	return $plugin_array;
 }
+/**
+ * Generates a link for editing the flyout placement on Opinion Stage site
+ */
 function opinionstage_flyout_edit_url() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['fly_id'].'/edit?token='.$os_options['token'];
 }
+/**
+ * Generates a link for editing the article placement on Opinion Stage site
+ */
 function opinionstage_article_placement_edit_url() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['article_placement_id'].'/edit?token='.$os_options['token'];
 }
+/**
+ * Generates a link for editing the sidebar placement on Opinion Stage site
+ */
 function opinionstage_sidebar_placement_edit_url() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?token='.$os_options['token'];
 }
+/**
+ * Generates a link for creating a poll
+ */
 function opinionstage_create_poll_link() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {	
@@ -157,9 +173,15 @@ function opinionstage_create_poll_link() {
 		return opinionstage_create_link('Create a Poll', 'new_poll', 'token='.$os_options['token']);
 	}	
 }
+/**
+ * Generates a to the callback page used to connect the plugin to the Opinion Stage account
+ */
 function opinionstage_callback_url() {
 	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php';
 }
+/**
+ * Generates a link for creating a set
+ */
 function opinionstage_create_set_link() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {
@@ -168,6 +190,9 @@ function opinionstage_create_set_link() {
 		return opinionstage_create_link('Create a Set', 'sets/new', 'token='.$os_options['token']);
 	}	
 }
+/**
+ * Generates a link to the dashboard in Opinion Stage site
+ */
 function opinionstage_dashboard_link($text) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {
@@ -176,6 +201,9 @@ function opinionstage_dashboard_link($text) {
 		return opinionstage_create_link($text, 'dashboard', 'token='.$os_options['token']);
 	}	
 }
+/**
+ * Generates a link to Opinion Stage that requires registration
+ */
 function opinionstage_logged_in_link($text, $link) {
 	return opinionstage_create_link($text, 'registrations/new', 'return_to='.$link);
 }

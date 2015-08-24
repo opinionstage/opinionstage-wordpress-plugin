@@ -2,13 +2,12 @@
 	jQuery(document).ready(function($) {
 		var handleWatermark = function(input){
 			if(input.val().trim() != "") {
-				input.removeClass('os-watermark');						
+				input.removeClass('os-watermark');
 			} else {
 				input.val(input.data('watermark'));
 				input.addClass('os-watermark');
 			}
 		};	
-
 		$("#content_ospolls").click(function() {
 			$("os_insert_poll").click();
 			return false;
@@ -33,7 +32,7 @@
 			tb_remove();
 			$("#opinionstage-type").trigger("change");
 		});	
-		$('input.watermark').focus(function(){
+		$('.opinionstage-wrap input.watermark').focus(function(){
 			var input = $(this);
 			if (input.data('watermark') == input.val()) {
 				input.val("");

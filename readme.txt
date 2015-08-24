@@ -4,14 +4,14 @@ Donate link:
 Tags: poll, polls, polling, vote, voting, debate, survey, social, opinionstage, opinion stage 
 
 Requires at least: 2.8
-Tested up to: 4.2.2
+Tested up to: 4.3.0
 Stable tag: trunk
  
 Add a powerful & easy-to-use polling solution to your site. Create beautiful polls that boost time on site and drive traffic to your site.
 
 == Description ==
 
-The Opinion Stage poll plug-in allows you to easily add standard or social polls to your website or Facebook page.
+The Opinion Stage polls plug-in allows you to easily add standard or social polls to your website or Facebook page.
 
 = Poll Examples: =
 
@@ -123,6 +123,10 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 12.7.0 =
+  * CSS modifications to better align with desired coding standards. Reverted css file name change.
+  * Minor text changes
+  * Not using PHP 4 Style Constructors any more
   = Version 12.6.0 =
   * Fixed broken links to dashboard
   * Renamed css file

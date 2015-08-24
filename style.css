@@ -46,7 +46,7 @@
 .opinionstage-wrap input[type="text"][disabled="disabled"] {
 	background-color: #DFDFDF;
 }
-.opinionstage-wrap .os-button, .os-sidebar-widget .os-button {
+.opinionstage-wrap .os-button, .opinionstage-sidebar-widget .os-button {
     text-decoration: none !important;
     border-top: 1px solid #E7E5E3;
     border-bottom: 1px solid #CFCCC8;
@@ -67,7 +67,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#289ec4, endColorstr=#278fb5);
 	padding: 5px 10px;
 }
-.opinionstage-wrap .os-button:hover, .os-sidebar-widget .os-button:hover {
+.opinionstage-wrap .os-button:hover, .opinionstage-sidebar-widget .os-button:hover {
     background-color: #40aacd;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #40aacd), color-stop(100%, #40aacd));
     background-image: -webkit-linear-gradient(top, #40aacd, #40aacd);
@@ -195,13 +195,13 @@
 	color: red;
 	font-weight: bold;
 }
-.os-sidebar-widget {
+.opinionstage-sidebar-widget {
 	overflow: hidden;
 	margin-bottom: 15px;
 }
-.os-sidebar-widget .text {
+.opinionstage-sidebar-widget .text {
 	margin-top: 10px;
 }
-.os-sidebar-widget #os-email {
+.opinionstage-sidebar-widget #os-email {
 	margin-left: 8px;
 }

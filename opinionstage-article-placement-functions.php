@@ -3,7 +3,7 @@
 		static function initialize() {
 			add_filter($hook = 'the_content', array(__CLASS__, $hook));
 		}
-								
+		// Adds the article placement shortcode to each post
 		static function the_content($content) {
 			global $post;
 			$type = $post->post_type;
