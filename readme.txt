@@ -1,7 +1,7 @@
 ﻿=== Polls by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll, polls, polling, vote, voting, debate, survey, social, opinionstage, opinion stage 
+Tags: poll, polls, polling, create poll, create polls, custom poll, flash poll, free user polls, html poll, online poll, online polls, page poll, poll builder, poll directory, poll plugin, poll widget, polldaddy, yop poll, wppolls, wp polls, polling system, post poll, premade polls, user polls, WordPress polls, WordPress poll, wordpress poll widget, voting polls, vote, votes, voting, feedback, questionnaire, quiz, quizzes, debate, opinion, survey, surveys, post survey, sidebar survey, survey form, survey form builder, survey plugin, survey tool, survey widget, user survey, wordpress survey, wp survey, wpsurvey 
 
 Requires at least: 2.8
 Tested up to: 4.3.1
@@ -123,6 +123,9 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 12.9.0 =
+  * Poll discovery mechanim improvements
+  * Additional tracking capabilities
   = Version 12.8.0 =
   * Various bug fixes
   = Version 12.7.0 =
