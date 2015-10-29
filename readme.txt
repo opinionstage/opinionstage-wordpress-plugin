@@ -123,6 +123,9 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 13.2.0 =
+  * Suport for Basque & Vienamese languages
+  * Trivia Quiz beta 
   = Version 13.1.0 =
   * Added support for quick addition of any language
   = Version 13.0.0 =
