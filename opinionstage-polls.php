@@ -3,7 +3,7 @@
 Plugin Name: Polls by OpinionStage
 Plugin URI: http://www.opinionstage.com
 Description: Adds a highly engaging social polling system to your site. Easily add polls to any post/page or to your sites sidebar.
-Version: 13.2.0
+Version: 13.3.0
 Author: OpinionStage.com
 Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
@@ -12,7 +12,7 @@ Text Domain: social-polls-by-opinionstage
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
-define('OPINIONSTAGE_WIDGET_VERSION', '13.2.0');
+define('OPINIONSTAGE_WIDGET_VERSION', '13.3.0');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Polls by OpinionStage');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
