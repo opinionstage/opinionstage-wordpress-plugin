@@ -123,8 +123,10 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 13.4.0 =
+  * Added shortcodes for trivia and peronsality quizzes 
   = Version 13.3.0 =
-  * Verious Trivia Quiz enhancements & fixes
+  * Various Trivia Quiz enhancements & fixes
   * Support for iframe embeds
   = Version 13.2.0 =
   * Suport for Basque & Vienamese languages

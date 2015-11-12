@@ -1,5 +1,26 @@
 <?php
 /**
+ * Main function for creating the poll html representation.
+ * Transforms the shortcode parameters to the desired iframe call.
+ *
+ * Syntax as follows:
+ * shortcode name - OPINIONSTAGE_POLL_SHORTCODE
+ *
+ * Arguments:
+ * @param  id - Id of the poll
+ *
+ */
+function opinionstage_add_poll_or_set($atts) {
+	extract(shortcode_atts(array('id' => 0, 'type' => 'poll'), $atts));
+	if(!is_feed()) {
+		$id = intval($id);
+		return opinionstage_create_legacy_embed_code($id, $type);
+	} else {
+		return __('Note: There is a poll embedded within this post, please visit the site to participate in this post\'s poll.', OPINIONSTAGE_WIDGET_UNIQUE_ID);
+	}
+}
+
+/**
  * Main function for creating the widget html representation.
  * Transforms the shortcode parameters to the desired iframe call.
  *
@@ -7,16 +28,15 @@
  * shortcode name - OPINIONSTAGE_WIDGET_SHORTCODE
  *
  * Arguments:
- * @param  id - Id of the poll
+ * @param  path - Path of the widget
  *
  */
-function opinionstage_add_poll($atts) {
-	extract(shortcode_atts(array('id' => 0, 'type' => 'poll'), $atts));
+function opinionstage_add_widget($atts) {
+	extract(shortcode_atts(array('path' => 0), $atts));
 	if(!is_feed()) {
-		$id = intval($id);
-		return opinionstage_create_embed_code($id, $type);
+		return opinionstage_create_widget_embed_code($path);
 	} else {
-		return __('Note: There is a poll embedded within this post, please visit the site to participate in this post\'s poll.', OPINIONSTAGE_WIDGET_UNIQUE_ID);
+		return __('Note: There is a widget embedded within this post, please visit the site to participate in this post\'s widget.', OPINIONSTAGE_WIDGET_UNIQUE_ID);
 	}
 }
 
@@ -38,7 +58,6 @@ function opinionstage_add_placement($atts) {
 		return opinionstage_create_placement_embed_code($id);
 	} 
 }
-
 /**
  * Create the The iframe HTML Tag according to the given parameters.
  * Either get the embed code or embeds it directly in case 
@@ -46,7 +65,7 @@ function opinionstage_add_placement($atts) {
  * Arguments:
  * @param  id - Id of the poll
  */
-function opinionstage_create_embed_code($id, $type) {
+function opinionstage_create_legacy_embed_code($id, $type) {
     
     // Only present if id is available 
     if (isset($id) && !empty($id)) {        		
@@ -60,6 +79,39 @@ function opinionstage_create_embed_code($id, $type) {
 			} else {
 				$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/debates/" . $id . "/embed_code.json";
 			}
+			
+			if ($is_homepage) {
+				$embed_code_url .= "?h=1";
+			}
+		
+			extract(opinionstage_get_contents($embed_code_url));
+			$data = json_decode($raw_data);
+			if ($success) {
+				$code = $data->{'code'};			
+				// Set the embed code to be cached for an hour
+				set_transient($transient_name, $code, 3600);
+			}
+		}
+    }
+	return $code;
+}
+/**
+ * Create the The iframe HTML Tag according to the given parameters.
+ * Either get the embed code or embeds it directly in case 
+ *
+ * Arguments:
+ * @param  path - Path of the widget
+ */
+function opinionstage_create_widget_embed_code($path) {
+    
+    // Only present if path is available 
+    if (isset($path) && !empty($path)) {        		
+		// Load embed code from the cache if possible
+		$is_homepage = is_home();
+		$transient_name = 'embed_code' . $path . '_' . ($is_homepage ? "1" : "0");
+		$code = get_transient($transient_name);
+		if ( false === $code || '' === $code ) {
+			$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/widgets" . $path . "/embed_code.json";			
 			
 			if ($is_homepage) {
 				$embed_code_url .= "?h=1";
