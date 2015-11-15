@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Polls by OpinionStage
+Plugin Name: Polls & Quizzes by OpinionStage
 Plugin URI: http://www.opinionstage.com
-Description: Adds a highly engaging social polling system to your site. Easily add polls to any post/page or to your sites sidebar.
-Version: 13.4.0
+Description: Adds highly engaging polls & quizzes to your site. Easily add polls & quizzes to any post/page or to your site sidebar.
+Version: 13.5.0
 Author: OpinionStage.com
 Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
@@ -12,8 +12,8 @@ Text Domain: social-polls-by-opinionstage
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
-define('OPINIONSTAGE_WIDGET_VERSION', '13.4.0');
-define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Polls by OpinionStage');
+define('OPINIONSTAGE_WIDGET_VERSION', '13.5.0');
+define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Polls & Quizzes by OpinionStage');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
 define('OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll');
@@ -21,7 +21,7 @@ define('OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget');
 define('OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement');
 define('OPINIONSTAGE_WIDGET_UNIQUE_ID', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_WIDGET_UNIQUE_LOCATION', __FILE__);
-define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Polls by Opinion Stage');
+define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Polls & Quizzes by Opinion Stage');
 define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE."/integrations/wordpress/new");
 
 require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-utility-functions.php");

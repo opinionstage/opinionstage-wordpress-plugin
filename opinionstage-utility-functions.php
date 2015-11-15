@@ -226,6 +226,17 @@ function opinionstage_create_poll_link() {
 	}	
 }
 /**
+ * Generates a link for creating a trivia quiz
+ */
+function opinionstage_create_trivia_link() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	if (empty($os_options["uid"])) {	
+		return opinionstage_create_link('Create a Trivia Quiz', 'widgets/new', 'w_type=quiz');
+	} else {
+		return opinionstage_create_link('Create a Trivia Quiz', 'widgets/new', 'w_type=quiz&token='.$os_options['token']);
+	}	
+}
+/**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
  */
 function opinionstage_callback_url() {

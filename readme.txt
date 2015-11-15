@@ -1,7 +1,7 @@
-﻿=== Polls by OpinionStage ===
+﻿=== Polls & Quizzes by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll, polls, polling, create poll, create polls, custom poll, flash poll, free user polls, html poll, online poll, online polls, page poll, poll builder, poll directory, poll plugin, poll widget, polldaddy, yop poll, wppolls, wp polls, polling system, post poll, premade polls, user polls, WordPress polls, WordPress poll, wordpress poll widget, voting polls, vote, votes, voting, feedback, questionnaire, quiz, quizzes, debate, opinion, survey, surveys, post survey, sidebar survey, survey form, survey form builder, survey plugin, survey tool, survey widget, user survey, wordpress survey, wp survey, wpsurvey 
+Tags: poll, polls, polling, create poll, create polls, custom poll, flash poll, free user polls, html poll, online poll, online polls, page poll, poll builder, poll directory, poll plugin, poll widget, polldaddy, yop poll, wppolls, wp polls, polling system, post poll, premade polls, user polls, WordPress polls, WordPress poll, wordpress poll widget, voting polls, vote, votes, voting, feedback, questionnaire, debate, opinion, survey, surveys, post survey, sidebar survey, survey form, survey form builder, survey plugin, survey tool, survey widget, user survey, wordpress survey, wp survey, wpsurvey, quiz, quizzes, create quiz, create quizzes
 
 Requires at least: 2.8
 Tested up to: 4.3.1
@@ -11,7 +11,7 @@ Add a powerful & easy-to-use polling solution to your site. Create beautiful pol
 
 == Description ==
 
-The Opinion Stage polls plug-in allows you to easily add standard or social polls to your website or Facebook page.
+The Opinion Stage polls plug-in allows you to easily add polls & quizzes to your website or Facebook page.
 
 = Poll Examples: =
 
@@ -123,6 +123,8 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 13.5.0 =
+  * Renamed plugin to better reflect the platform
   = Version 13.4.0 =
   * Added shortcodes for trivia and peronsality quizzes 
   = Version 13.3.0 =

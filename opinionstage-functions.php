@@ -137,8 +137,9 @@ function opinionstage_add_poll_page() {
 
 	  <div class="section">
 		  <h2>Content</h2>
-		  <ul class="os_links_list">
+		  <ul class="os_links_list">		  
 			<li><?php echo opinionstage_create_poll_link(); ?></li>
+			<li><?php echo opinionstage_create_trivia_link(); ?></li>
 			<li><?php echo opinionstage_create_set_link(); ?></li>
 			<li><?php echo opinionstage_dashboard_link('Manage Content'); ?></li>
 		  </ul>
