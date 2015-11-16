@@ -1,13 +1,13 @@
 ﻿=== Polls & Quizzes by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll, polls, polling, create poll, create polls, custom poll, flash poll, free user polls, html poll, online poll, online polls, page poll, poll builder, poll directory, poll plugin, poll widget, polldaddy, yop poll, wppolls, wp polls, polling system, post poll, premade polls, user polls, WordPress polls, WordPress poll, wordpress poll widget, voting polls, vote, votes, voting, feedback, questionnaire, debate, opinion, survey, surveys, post survey, sidebar survey, survey form, survey form builder, survey plugin, survey tool, survey widget, user survey, wordpress survey, wp survey, wpsurvey, quiz, quizzes, create quiz, create quizzes
+Tags: create poll, create polls, create quiz, create quizzes, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback
 
 Requires at least: 2.8
 Tested up to: 4.3.1
 Stable tag: trunk
  
-Add a powerful & easy-to-use polling solution to your site. Create beautiful polls that boost time on site and drive traffic to your site.
+Add a powerful & easy-to-use poll & quiz service to your site. Create beautiful polls & quizzes that boost time on site and drive traffic to your site.
 
 == Description ==
 
@@ -23,7 +23,7 @@ For examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e
  * Boost engagement - increase time-on-site, page views & shares
  * Drive traffic from social networks
  * Run contests and sweepstakes
- * Generate revenue by integrating ads in the polls
+ * Generate revenue by integrating ads in the polls & quizzes
  * Gather contact info such as emails & social profiles
  * Get up and going in minutes
 <br>
@@ -53,18 +53,35 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
  * Design polls that fit to your site - opinion Stage includes an online poll design studio that lets you design polls that perfectly fit into your site. You can set the poll size, font, colors, logo and more
  * Polls works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices. Reach your target audience wherever they are
  * Easy content creation - creating polls is an easy way to produce engaging and relevant content. Deploy your first polls in minutes and easily manage all your polls from a simple and intuitive dashboard
- 
+
+ = Main Quiz Features: =
+
+ * Manage all your WordPress quizzes from one dashboard
+ * Get the quiz shared in social networks, driving social traffic to your quiz and site
+ * Customize the quiz features to match your needs
+ * Customize the quiz size, font, colors
+
+ = Main Quiz Benefits: =
+
+ * Discover opinions & people - discover opinions & the people behind them. You can view the social profiles of the public voters and learn about the opinions of your audience using aggregated poll reports
+ * Engage your audience - quizzes are one of the most engaging types of content
+ * Drive traffic from social networks to your quiz and site - after completing the quiz, participants are prompted to share their results in the various social networks, driving new traffic from social networks to your site
+ * Research the quiz results and gain insights
+ * Design quizzes that fit to your site
+ * The Quiz works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices. Reach your target audience wherever they are
+ * Easy content creation - creating a quiz is an easy way to produce engaging and relevant content. Deploy your first quizzes in minutes and easily manage all your quizzes from a simple and intuitive dashboard
+
  = Language support = 
 
 Opinion Stage supports over 30 languages, missing a language? Let us know!
 
  = About Opinion Stage: =
 
-Opinion Stage offers web sites a highly engaging opinion polling solution. For more details on Opinion Stage's polling solutions, visit <a href="http://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
+Opinion Stage offers web sites a highly engaging poll & quiz solution. For more details on Opinion Stage's poll & quiz solutions, visit <a href="http://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
 
 == Installation ==
 
-1. Upload the social polls plug-in to your blog (or search for it) and install it on your plug-ins page
+1. Upload the "polls & quizzes by Opinion Stage" plug-in to your blog (or search for it) and install it on your plug-ins page
 2. Activate it
 
 == Frequently Asked Questions ==
@@ -123,6 +140,8 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 13.6.0 =
+  * Added Presonality quizzes
   = Version 13.5.0 =
   * Renamed plugin to better reflect the platform
   = Version 13.4.0 =
