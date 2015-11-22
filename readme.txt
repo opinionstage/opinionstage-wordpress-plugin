@@ -1,4 +1,4 @@
-﻿=== Polls & Quizzes by OpinionStage ===
+﻿=== Poll & Quiz Tools by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
 Tags: create poll, create polls, create quiz, create quizzes, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback
@@ -140,6 +140,8 @@ We support both regular multiple-sided polls and a special head-to-head poll fla
 N/A
 
 == Changelog ==
+  = Version 13.7.0 =
+  * Better name for widget following feedback
   = Version 13.6.0 =
   * Added Presonality quizzes
   = Version 13.5.0 =
