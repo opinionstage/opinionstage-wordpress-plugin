@@ -7,15 +7,19 @@ Requires at least: 2.8
 Tested up to: 4.3.1
 Stable tag: trunk
  
-Add a powerful & easy-to-use poll & quiz service to your site. Create beautiful polls & quizzes that boost time on site and drive traffic to your site.
+Add a powerful & easy-to-use poll and quiz service. Create beautiful polls & quizzes that boost time on site and drive traffic to your site.
 
 == Description ==
 
-The Opinion Stage polls plug-in allows you to easily add polls & quizzes to your website or Facebook page.
+The Opinion Stage poll and quiz plug-in allows you to easily add polls & quizzes to your website or Facebook page.
 
 = Poll Examples: =
 
-For examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
+For poll examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
+
+= Quiz Examples: =
+
+For quiz examples, checkout the <a href="http://www.opinionstage.com/discovery?o=wp35e8" target="_blank">Quiz Showcase.</a>
 
 = Why Opinion Stage? =
 
@@ -60,16 +64,17 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
  * Get the quiz shared in social networks, driving social traffic to your quiz and site
  * Customize the quiz features to match your needs
  * Customize the quiz size, font, colors
+ * Create different quiz types, such as personality quiz and trivia quiz
+ * Quiz repository that demonstrates quiz best practices, including quiz examples, such as trivia quiz examples and personality quiz examples
 
  = Main Quiz Benefits: =
 
- * Discover opinions & people - discover opinions & the people behind them. You can view the social profiles of the public voters and learn about the opinions of your audience using aggregated poll reports
- * Engage your audience - quizzes are one of the most engaging types of content
- * Drive traffic from social networks to your quiz and site - after completing the quiz, participants are prompted to share their results in the various social networks, driving new traffic from social networks to your site
+ * Engage your audience - quiz tools are one of the most engaging types of content
+ * Drive traffic from social networks to your quiz and site - after completing the quiz, participants are prompted to share the quiz results in the various social networks, driving new traffic from social networks to the quiz on your site
  * Research the quiz results and gain insights
- * Design quizzes that fit to your site
- * The Quiz works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices. Reach your target audience wherever they are
- * Easy content creation - creating a quiz is an easy way to produce engaging and relevant content. Deploy your first quizzes in minutes and easily manage all your quizzes from a simple and intuitive dashboard
+ * Design the quiz so that it fits to your site
+ * The Quiz works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices
+ * Easy quiz creation - creating a quiz is an easy way to produce engaging and relevant content. Deploy your first quiz in minutes and easily manage all your quizzes from a simple and intuitive quiz dashboard
 
  = Language support = 
 
@@ -81,7 +86,7 @@ Opinion Stage offers web sites a highly engaging poll & quiz solution. For more 
 
 == Installation ==
 
-1. Upload the "polls & quizzes by Opinion Stage" plug-in to your blog (or search for it) and install it on your plug-ins page
+1. Upload the "poll & quiz tools by Opinion Stage" plug-in to your blog (or search for it) and install it on your plug-ins page
 2. Activate it
 
 == Frequently Asked Questions ==
@@ -101,27 +106,31 @@ While Opinion Stage offers all the standard features expected from an advanced a
 10) Placements let you easily add polls to your sidebar, to an article section or as an auto-engage popup displayed on your site
 And many more...
 
-= How do I add a poll to my post/page? =
+= How do I add a poll or quiz to my post/page? =
 
-1.	Create a new poll from the poll creation form
-2.	After the poll was created, click "Add to Your Site" link and then click the "WordPress" tab 
-3.	Copy the WordPress poll code ( e.g. [socialpoll id="119543"] ) and paste it into the blog post/page
+1.	Create a new poll or quiz from the poll or quiz creation form
+2.	After the poll or quiz was created, click "Embed" link and then click the "WordPress" tab 
+3.	Copy the WordPress poll code ( e.g. [socialpoll id="119543"] ) or the quiz embed code and paste it into the blog post/page
 
 = What is the embed ID and where can I find it? =
 
-Each poll has a unique ID which identifies it. The poll ID can be found in the WordPress code (e.g. if [socialpoll id="119543"] is the WordPress code, 119543 is the poll ID)
+Each poll or quiz has a unique ID which identifies it. The poll or quiz ID can be found in the WordPress code (e.g. if [socialpoll id="119543"] is the WordPress code, 119543 is the poll ID)
  
-= Can I embed a poll manually? =
+= Can I embed a poll or quiz manually? =
 
 Yes, just post the following syntax into any post/page: [socialpoll ID="xyz"], where the xyz represents the poll ID.
 
-= How do users share the poll & their vote in social networks? = 
+= How do users share the poll or quiz in social networks? = 
 
-Users can either share the poll question from the social (e.g.Users can either share the poll by clicking on the social (e.g. Facebook, Twitter & Google+) sharing or by sharing their poll/vote directly in the social sharing dialog that is displayed automatically after they vote in the poll. Opinion Stage never shares anything on the users' behalf without getting explicit permission for it.
+Users can either share the poll or quiz question from the social (e.g.Users can either share the poll or quiz by clicking on the social (e.g. Facebook, Twitter & Google+) sharing or by sharing their poll/vote directly in the social sharing dialog that is displayed automatically after they vote in the poll or participate in the quiz. Opinion Stage never shares anything on the users' behalf without getting explicit permission for it.
 
 = What types of online polls do you support? =
 
 We support both regular multiple-sided polls and a special head-to-head poll flavor (for the 2-sided polls)
+
+= What types of quizzes do you support? =
+
+You can select between a trivia quiz and a personality quiz, we plan to offer a few more quiz types in the future. If there is a quiz type you are missing, please notify us!
 
 
 == Screenshots ==
