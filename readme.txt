@@ -1,7 +1,7 @@
 ﻿=== Poll & Quiz Tools by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: create poll, create polls, create quiz, create quizzes, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback
+Tags: create poll, create polls, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback
 
 Requires at least: 2.8
 Tested up to: 4.3.1
@@ -11,7 +11,7 @@ Add a powerful & easy-to-use poll and quiz service. Create beautiful polls & qui
 
 == Description ==
 
-The Opinion Stage poll and quiz plug-in allows you to easily add polls & quizzes to your website or Facebook page.
+The Opinion Stage poll and quiz plug-in allows you to easily add a poll or a quiz to your website or Facebook page.
 
 = Poll Examples: =
 
@@ -24,12 +24,12 @@ For quiz examples, checkout the <a href="http://www.opinionstage.com/discovery?o
 = Why Opinion Stage? =
 
  * Discover opinions
- * Boost engagement - increase time-on-site, page views & shares
- * Drive traffic from social networks
+ * Boost enagement - quiz & poll participation increases time-on-site, page views & shares
+ * Drive traffic from quiz & poll shares in social networks
  * Run contests and sweepstakes
  * Generate revenue by integrating ads in the polls & quizzes
  * Gather contact info such as emails & social profiles
- * Get up and going in minutes
+ * Get up and going with your first poll or quiz in minutes
 <br>
  
 http://www.youtube.com/watch?v=P7xKNlWbk0s
@@ -75,6 +75,8 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
  * Design the quiz so that it fits to your site
  * The Quiz works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices
  * Easy quiz creation - creating a quiz is an easy way to produce engaging and relevant content. Deploy your first quiz in minutes and easily manage all your quizzes from a simple and intuitive quiz dashboard
+ * Add intro media such as image or video to the quiz
+ * Embed your quiz on your site or use the Opinion Stage quiz landing page
 
  = Language support = 
 
@@ -86,7 +88,7 @@ Opinion Stage offers web sites a highly engaging poll & quiz solution. For more 
 
 == Installation ==
 
-1. Upload the "poll & quiz tools by Opinion Stage" plug-in to your blog (or search for it) and install it on your plug-ins page
+1. Upload the "poll & quiz tools by Opinion Stage" plug-in to your blog (or search for it) and install the "poll & quiz tools by Opinion Stage" plugin on your plug-ins page
 2. Activate it
 
 == Frequently Asked Questions ==
@@ -143,12 +145,17 @@ You can select between a trivia quiz and a personality quiz, we plan to offer a 
 6. **Poll in sidebar** - you can add polls to your sidebar using the Opinion Stage widget (find it in the Appearance->Widgets screen)
 7. **Poll section in all articles** - you can configure that a poll or a set of polls is displayed at the end of all or specific sections of posts/pages
 8. **Poll results** - From the Opinion Stage dashboard view the poll results and poll performance metrics
+9. **Personality quiz** - example of a personality quiz result. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results
+10. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers
 
 == Upgrade Notice == 
 
 N/A
 
 == Changelog ==
+  = Version 13.8.0 =
+  * Support creating a quiz draft
+  * Added quiz tips and quiz best practicies
   = Version 13.7.0 =
   * Better name for widget following feedback
   = Version 13.6.0 =
