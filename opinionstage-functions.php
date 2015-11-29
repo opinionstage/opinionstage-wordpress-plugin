@@ -139,9 +139,11 @@ function opinionstage_add_poll_page() {
 		  <h2>Content</h2>
 		  <ul class="os_links_list">		  
 			<li><?php echo opinionstage_create_poll_link(); ?></li>
-			<li><?php echo opinionstage_create_trivia_link(); ?></li>
 			<li><?php echo opinionstage_create_set_link(); ?></li>
-			<li><?php echo opinionstage_dashboard_link('Manage Content'); ?></li>
+			<li><?php echo opinionstage_create_widget_link('Trivia Quiz', 'quiz'); ?></li>
+			<li><?php echo opinionstage_create_widget_link('Personality Quiz', 'personality'); ?></li>
+			<li><?php echo opinionstage_create_widget_link('List', 'list'); ?></li>			
+			<li><?php echo opinionstage_dashboard_link('My Content Dashboard'); ?></li>
 		  </ul>
 	  </div>
 	  <div class="section">
@@ -213,7 +215,8 @@ function opinionstage_add_poll_page() {
 		  <h2>Help</h2>
 		  <ul class="os_links_list">
 			<li><a href="http://blog.opinionstage.com/wordpress-poll-how-to-add-polls-to-wordpress-sites/?o=wp35e8" target="_blank">How to use this plugin</a></li>
-			<li><?php echo opinionstage_create_link('View Examples', 'showcase', ''); ?></li>
+			<li><?php echo opinionstage_create_link('Poll Examples', 'showcase', ''); ?></li>
+			<li><?php echo opinionstage_create_link('Discover Content', 'discover', ''); ?></li>			
 			<li><a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a></li>
 		  </ul>
 	  </div>

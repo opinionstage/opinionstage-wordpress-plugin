@@ -96,16 +96,17 @@ Opinion Stage offers web sites a highly engaging poll & quiz solution. For more 
 = What sets Opinion Stage online polls apart from other online polling solutions? =
 
 While Opinion Stage offers all the standard features expected from an advanced and professional polling solutions, Opinion Stage also offers some unique functionality which you won't find in most other solutions. This includes:
-1) Generate revenue from your polling service (mostly relevant for high volume sites) by integrating different types of advertisements
-2) Get your polls shared in the popular social networks driving traffic back to your site
-3) An advanced reporting dashboard that let's you discover the engagement level of your polls, how many people shared them in social networks and the traffic that generated for your site
-4) A lead generation component, that lets you gather emails and social network profiles 
-5) A social voting module that lets you require or make it optional to vote with a social profile. Using the module, you can filter the poll results by social, demographic and behavioral filters including geo location, time, gender, social network and more
-6)  A special module for using the online polls for running elections, contests and sweepstakes
-7) Advanced customizations of the polls including setting the size, color, font, and more attributes so that the poll fits perfectly into your site
-8) Advanced integrations with images & videos to make your polls appealing, beautiful and more informative
-9) Poll sets that let you group many polls together, letting your 
-10) Placements let you easily add polls to your sidebar, to an article section or as an auto-engage popup displayed on your site
+
+1.  Generate revenue from your polling service (mostly relevant for high volume sites) by integrating different types of advertisements
+2.  Get your polls shared in the popular social networks driving traffic back to your site
+3.  An advanced reporting dashboard that let's you discover the engagement level of your polls, how many people shared them in social networks and the traffic that generated for your site
+4.  A lead generation component, that lets you gather emails and social network profiles 
+5.  A social voting module that lets you require or make it optional to vote with a social profile. Using the module, you can filter the poll results by social, demographic and behavioral filters including geo location, time, gender, social network and more
+6.  A special module for using the online polls for running elections, contests and sweepstakes
+7.  Advanced customizations of the polls including setting the size, color, font, and more attributes so that the poll fits perfectly into your site
+8.  Advanced integrations with images & videos to make your polls appealing, beautiful and more informative
+9.  Poll sets that let you group many polls together, letting your 
+10.  Placements let you easily add polls to your sidebar, to an article section or as an auto-engage popup displayed on your site
 And many more...
 
 = How do I add a poll or quiz to my post/page? =
@@ -117,7 +118,7 @@ And many more...
 = What is the embed ID and where can I find it? =
 
 Each poll or quiz has a unique ID which identifies it. The poll or quiz ID can be found in the WordPress code (e.g. if [socialpoll id="119543"] is the WordPress code, 119543 is the poll ID)
- 
+
 = Can I embed a poll or quiz manually? =
 
 Yes, just post the following syntax into any post/page: [socialpoll ID="xyz"], where the xyz represents the poll ID.
@@ -153,6 +154,9 @@ You can select between a trivia quiz and a personality quiz, we plan to offer a 
 N/A
 
 == Changelog ==
+  = Version 13.9.0 =
+  * Added creation links for trivia quiz, peronsality quiz and lists
+  * Added a link for content discovery
   = Version 13.8.0 =
   * Support creating a quiz draft
   * Added quiz tips and quiz best practicies

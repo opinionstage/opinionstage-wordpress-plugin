@@ -228,12 +228,12 @@ function opinionstage_create_poll_link() {
 /**
  * Generates a link for creating a trivia quiz
  */
-function opinionstage_create_trivia_link() {
+function opinionstage_create_widget_link($type_name, $w_type) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {	
-		return opinionstage_create_link('Create a Trivia Quiz', 'widgets/new', 'w_type=quiz');
+		return opinionstage_create_link('Create a '.$type_name, 'widgets/new', 'w_type='.$w_type);
 	} else {
-		return opinionstage_create_link('Create a Trivia Quiz', 'widgets/new', 'w_type=quiz&token='.$os_options['token']);
+		return opinionstage_create_link('Create a '.$type_name, 'widgets/new', 'w_type='.$w_type.'&token='.$os_options['token']);
 	}	
 }
 /**
