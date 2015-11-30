@@ -28,8 +28,9 @@ For quiz examples, checkout the <a href="http://www.opinionstage.com/discovery?o
  * Drive traffic from quiz & poll shares in social networks
  * Run contests and sweepstakes
  * Generate revenue by integrating ads in the polls & quizzes
- * Gather contact info such as emails & social profiles
- * Get up and going with your first poll or quiz in minutes
+ * Gather contact info such as emails & social profiles, while your audience participates in the polls & quizzes
+ * Get up and going with your first poll or quiz in minutes" -> "Get up and going with your first poll or quiz in minutes, creating polls & quizzes with the service is highly intuitive and help is avialable when needed
+
 <br>
  
 http://www.youtube.com/watch?v=P7xKNlWbk0s
@@ -66,6 +67,8 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
  * Customize the quiz size, font, colors
  * Create different quiz types, such as personality quiz and trivia quiz
  * Quiz repository that demonstrates quiz best practices, including quiz examples, such as trivia quiz examples and personality quiz examples
+ * Discover top quizzes, from a list of quizzes hand-picked by the Opinion Stage editors
+ * Various customizations that will make your quizzes stand out and make the quizzes perfectly fit to your site
 
  = Main Quiz Benefits: =
 
@@ -89,7 +92,7 @@ Opinion Stage offers web sites a highly engaging poll & quiz solution. For more 
 == Installation ==
 
 1. Upload the "poll & quiz tools by Opinion Stage" plug-in to your blog (or search for it) and install the "poll & quiz tools by Opinion Stage" plugin on your plug-ins page
-2. Activate it
+2. Active it to start creation polls & quizzes from the polls & quizzes creation dashboard
 
 == Frequently Asked Questions ==
 
@@ -131,9 +134,21 @@ Users can either share the poll or quiz question from the social (e.g.Users can 
 
 We support both regular multiple-sided polls and a special head-to-head poll flavor (for the 2-sided polls)
 
+ = What is a social poll? =
+
+Opinion Stage supports both standard annoymous polls and social polls which are polls in which you need to use your social profile for voting. You can configure the polls, so that the polls voting is anonymous, the polls voting requires a social profile for voting or the polls voting can either be done using a social profile or anonymously. 
+
+ = What polls settings do you support - 
+
+Opinion Stagte supports many poll settings. You can configure look & feel polls settings, setting the polls font, the polls width, the polls colors and more. You can configure the polls general settings, such as when the poll results are displayed, if the poll result is displayed in number or % or both, in what order the poll answers are displayed, and more. You can configure the poll social settings, such as whether to add to the poll facebook comments, attach social sharing buttons to the polls, and other poll social settings.You can also configure the poll language. Finally, you can configure advanced poll setings, such as poll election settings, collecting leads from the poll respondants, redircting after the poll vote and more
+
 = What types of quizzes do you support? =
 
 You can select between a trivia quiz and a personality quiz, we plan to offer a few more quiz types in the future. If there is a quiz type you are missing, please notify us!
+
+= Do you offer read-made polls & quizzes? =
+
+Yes - our editors hand-pick the top polls & quizzes. You can browse the Opinion discover site and discover these polls and quizzes. 
 
 
 == Screenshots ==
@@ -146,14 +161,17 @@ You can select between a trivia quiz and a personality quiz, we plan to offer a 
 6. **Poll in sidebar** - you can add polls to your sidebar using the Opinion Stage widget (find it in the Appearance->Widgets screen)
 7. **Poll section in all articles** - you can configure that a poll or a set of polls is displayed at the end of all or specific sections of posts/pages
 8. **Poll results** - From the Opinion Stage dashboard view the poll results and poll performance metrics
-9. **Personality quiz** - example of a personality quiz result. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results
-10. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers
+9. **Personality quiz** - example of a personality quiz result. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually also produce a lot of social shares.
+10. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are usually one of the most engaging type of content.
 
 == Upgrade Notice == 
 
 N/A
 
 == Changelog ==
+  = Version 14.0.0 =
+  * Improved polls & quizzes creation help file
+  * Various small issues
   = Version 13.9.0 =
   * Added creation links for trivia quiz, peronsality quiz and lists
   * Added a link for content discovery
