@@ -169,6 +169,8 @@ Yes - our editors hand-pick the top polls & quizzes. You can browse the Opinion 
 N/A
 
 == Changelog ==
+  = Version 14.1.0 =
+  * Added support for disabling FB comments, sharing buttons and recommendations for Trivia quiz and Personality quiz via the widget shortcode
   = Version 14.0.0 =
   * Improved polls & quizzes creation help file
   * Various small issues

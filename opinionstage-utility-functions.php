@@ -32,9 +32,10 @@ function opinionstage_add_poll_or_set($atts) {
  *
  */
 function opinionstage_add_widget($atts) {
-	extract(shortcode_atts(array('path' => 0), $atts));
-	if(!is_feed()) {
-		return opinionstage_create_widget_embed_code($path);
+	extract(shortcode_atts(array('path' => 0, 'comments' => 'true', 'sharing' => 'true', 'recommendations' => 'true'), $atts));
+
+	if(!is_feed()) {		
+		return opinionstage_create_widget_embed_code($path, $comments, $sharing, $recommendations);
 	} else {
 		return __('Note: There is a widget embedded within this post, please visit the site to participate in this post\'s widget.', OPINIONSTAGE_WIDGET_UNIQUE_ID);
 	}
@@ -102,21 +103,16 @@ function opinionstage_create_legacy_embed_code($id, $type) {
  * Arguments:
  * @param  path - Path of the widget
  */
-function opinionstage_create_widget_embed_code($path) {
+function opinionstage_create_widget_embed_code($path, $comments, $sharing, $recommendations) {
     
     // Only present if path is available 
     if (isset($path) && !empty($path)) {        		
 		// Load embed code from the cache if possible
-		$is_homepage = is_home();
-		$transient_name = 'embed_code' . $path . '_' . ($is_homepage ? "1" : "0");
+		$transient_name = 'embed_code' . $path . '.' . $comments . '.' . $sharing . $recommendations;
 		$code = get_transient($transient_name);
 		if ( false === $code || '' === $code ) {
-			$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/widgets" . $path . "/embed_code.json";			
+			$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/widgets" . $path . "/embed_code.json?comments=".$comments."&sharing=".$sharing."&recommendations=".$recommendations;			
 			
-			if ($is_homepage) {
-				$embed_code_url .= "?h=1";
-			}
-		
 			extract(opinionstage_get_contents($embed_code_url));
 			$data = json_decode($raw_data);
 			if ($success) {
