@@ -32,7 +32,7 @@ function opinionstage_add_poll_or_set($atts) {
  *
  */
 function opinionstage_add_widget($atts) {
-	extract(shortcode_atts(array('path' => 0, 'comments' => 'true', 'sharing' => 'true', 'recommendations' => 'true'), $atts));
+	extract(shortcode_atts(array('path' => 0, 'comments' => 'true', 'sharing' => 'true', 'recommendations' => 'false'), $atts));
 
 	if(!is_feed()) {		
 		return opinionstage_create_widget_embed_code($path, $comments, $sharing, $recommendations);
