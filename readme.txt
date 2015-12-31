@@ -1,13 +1,13 @@
 ﻿=== Poll & Quiz Tools by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: create poll, create polls, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback
+Tags: create poll, create polls, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
 
 Requires at least: 2.8
 Tested up to: 4.3.1
 Stable tag: trunk
  
-Add a powerful & easy-to-use poll and quiz service. Create beautiful polls & quizzes that boost time on site and drive traffic to your site.
+Add a powerful & easy-to-use poll, quiz & list service. Create beautiful polls, quizzes & lists that boost time on site and drive traffic to your site.
 
 == Description ==
 
@@ -81,13 +81,22 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
  * Add intro media such as image or video to the quiz
  * Embed your quiz on your site or use the Opinion Stage quiz landing page
 
+ = Main List Features: =
+
+ * List as many items as you like in one page/post
+ * List includes title, text, image & social network integrations
+ * Number the list entries
+ * Add images to the list
+ * Embed the list anywhere
+ * Share lists in Facebook, Twitter & Google+
+
  = Language support = 
 
 Opinion Stage supports over 30 languages, missing a language? Let us know!
 
  = About Opinion Stage: =
 
-Opinion Stage offers web sites a highly engaging poll & quiz solution. For more details on Opinion Stage's poll & quiz solutions, visit <a href="http://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
+Opinion Stage offers web sites a highly engaging poll, quiz & list solution. For more details on Opinion Stage's poll, quiz & list solutions, visit <a href="http://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
 
 == Installation ==
 
@@ -164,11 +173,77 @@ Yes - our editors hand-pick the top polls & quizzes. You can browse the Opinion 
 9. **Personality quiz** - example of a personality quiz result. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually also produce a lot of social shares.
 10. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are usually one of the most engaging type of content.
 
+== Other Notes ==
+
+The Opinion Stage poll & quiz plugin lets you display poll, quizzes & list on your WordPress.org site 
+
+Running polls, quizzes & lists on your site let's you increase engagement, drive more traffic to your blog, and learn more about what your readers think and their opinions
+
+To access the Opinion Stage Poll & Quiz WordPress dashboard:
+
+Click on Poll & Quiz tools by Opinion Stage on the left-hand sidebar of your WordPress admin panel
+
+To connect the poll & quiz plugin with your Opinion Stage account:
+
+1. In the poll & quiz screen, enter your Opinion Stage account’s email address and click “Connect” at the top of the widget page. (After connecting the poll & quiz plugin to an account once, you can click “Switch” in the same place to associate the poll & quiz plugin with a different Opinion Stage account.)
+
+2. You will be redirected to a log-in screen on the Opinion Stage. Enter your credentials to connect your account. You will be redirected back to the widget page afterwards.
+
+If you haven’t yet created an account on Opinion Stage, click the Signup at the bottom right corner to create one. After completing signup, you will be directed to the poll, quiz and list creation dashboard, where you can start creating your polls, quizzes and lists.
+
+To add a poll, quiz, or list to any post/page:
+
+1. Create your content (poll, quiz or list) on your content dashboard
+2. After the poll is created, click the Embed link in the poll creation form (you can also find this link in the content Dashboard)
+3. From the poll “Embed” dialog, click the “WordPress” tab and copy your poll’s shortcode
+4. Paste the poll shortcode in any post/page
+
+To add a poll, quiz, or list to a fly-out placement:
+
+In your Opinion Stage dashboard on WordPress, under placements, switch “Fly-out” on and click configure.
+
+Under “fill your placement,” select the poll, quiz or list you would like presented in your fly-out.
+
+To add a poll, quiz, or list to an article section placement:
+
+In your Opinion Stage dashboard on WordPress, under placements, switch on “Article Section” and click configure
+
+Under fill placement, select the poll, quiz or list you would like presented in your article section.
+
+To add a poll, quiz, or list to a sidebar placement:
+
+1. In your Opinion Stage dashboard on WordPress, under placements, switch on “Sidebar Widget”
+
+2. Select “Configure” next to Sidebar Widgets to be redirected to the Widgets menu
+
+3. Under “Available Widgets” look for “Opinion Stage Sidebar Widget“
+
+4. Click and drag that widget on to one of the options on the right-hand side to determine where your to place your interactive content
+
+5. Open the “Opinion Stage Sidebar Widget” for configuration
+
+a. “Title” adds a title to your sidebar poll. You can check or un-check the “Enabled” box to toggle this feature.
+b. Clicking “Configure content” will redirect you to your Opinion Stage sidebar placement page. Here you can select which poll, quiz, or list to display in the sidebar.
+
+Type of polls you can create
+
+You can create many different types of polls: image poll, video poll,  head-to-head poll, multiple-sided poll, thumbnail poll, fly-out poll, popup poll, feedback poll, gallery poll, opinion poll, survey poll, poll set, and more
+Poll features
+
+The poll supports the following features: setting the poll language, poll look & feel, poll title alignment, poll fixed width, poll auto-set width, poll theme color, poll font, poll voting type, poll voting restrictions (block poll vote by cookie, block vote poll by IP, block poll vote by social profile login, allow repeat voting), poll share in facebook, poll share in twitter, poll share in google+, poll redirect after vote, gathering emails after voting in the poll, display poll results only after voting in poll, display poll results at all times, don't display poll results, poll result format in % only, poll result format in both number & percent, allow users to change vote after voting in poll, display order of poll results in different methods, closing the poll at a specified time, add facebook comments to the poll, add a branded logo to the poll, set poll defaults, poll engagement stats, poll sharing stats, poll traffic growth stats, poll gender stats, poll geo location stats, poll time-span stats, poll public/private stats, poll social network stats, poll stats in pie display, poll stats in bar display
+
+Type of quizzes you can create
+
+You can create many different types of quizzes: Trivia quiz, personality quiz, image quiz, video quiz, fly-out quiz, popup quiz and more
+
+
 == Upgrade Notice == 
 
 N/A
 
 == Changelog ==
+  = Version 14.3.0 =
+  * Various poll, quiz & list improvements
   = Version 14.2.0 =
   * Not showing recommendations by default when embedding Trivia quiz and Personality quiz via the widget shortcode
   = Version 14.1.0 =
