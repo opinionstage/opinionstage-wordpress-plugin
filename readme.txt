@@ -242,6 +242,10 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Version 14.4.0 =
+  * Complete ui revamp
+  * Removed obsolete polls insertion popup and tinymce integration
+  * Handling compatibility issues with other plugin
   = Version 14.3.0 =
   * Various poll, quiz & list improvements
   = Version 14.2.0 =

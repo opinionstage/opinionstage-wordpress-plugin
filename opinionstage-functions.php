@@ -32,29 +32,6 @@ function opinionstage_uninstall() {
 }
 
 /**
- * Adds the poll button to the html edit bar for new/edited post/page
- */
-function opinionstage_poll_footer_admin() {
-	echo '<script type="text/javascript">'."\n";
-	echo '/* <![CDATA[ */'."\n";
-	echo "\t".'var opsPollBtn = {'."\n";
-	echo "\t\t".'poll: "'.esc_js(__('poll', OPINIONSTAGE_WIDGET_UNIQUE_ID)).'",'."\n";
-	echo "\t\t".'insert_poll: "'.esc_js(__('Insert poll', OPINIONSTAGE_WIDGET_UNIQUE_ID)).'"'."\n";
-	echo "\t".'};'."\n";
-	echo "\t".'if(document.getElementById("ed_toolbar")){'."\n";
-	echo "\t\t".'edButtons[edButtons.length] = new edButton("ed_o_poll",opsPollBtn.poll, "", "","");'."\n";
-	echo "\t\t".'jQuery(document).ready(function($){'."\n";
-	echo "\t\t\t".'var popup_width = jQuery(window).width();'."\n";
-	echo "\t\t\t".'var popup_height = jQuery(window).height();'."\n";
-	echo "\t\t\t".'popup_width = ( 720 < popup_width ) ? 640 : popup_width - 80;'."\n";
-	echo "\t\t\t".'$(\'#qt_content_ed_o_poll\').replaceWith(\'<input type="button" id="qt_content_ed_o_poll" accesskey="" class="ed_button" onclick="tb_show( \\\'Insert Poll\\\', \\\'#TB_inline?=&height=popup_height&width=popup_width&inlineId=opinionstage-insert-poll-form\\\' );" value="\' + opsPollBtn.poll + \'" title="\' + opsPollBtn.insert_poll + \'" />\');'."\n";
-	echo "\t\t".'});'."\n";
-	echo "\t".'}'."\n";
-	echo '/* ]]> */'."\n";
-	echo '</script>'."\n";
-}
-
-/**
  * Sidebar menu
  */
 function opinionstage_poll_menu() {
@@ -63,6 +40,23 @@ function opinionstage_poll_menu() {
 			plugins_url(OPINIONSTAGE_WIDGET_UNIQUE_ID.'/images/os.png'), '25.234323221');
 		add_submenu_page(null, __('', OPINIONSTAGE_WIDGET_MENU_NAME), __('', OPINIONSTAGE_WIDGET_MENU_NAME), 'edit_posts', OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php');
 	}
+}
+
+/**
+ * Check if the requested plugin is already available
+ */
+function opinionstage_check_plugin_available($plugin_key) {
+	$other_widget = (array) get_option($plugin_key); // Check the key of the other plugin
+
+	// Check if OpinionStage plugin already installed.
+	return (isset($other_widget['uid']) || 
+		    isset($other_widget['email']));
+}
+/** 
+ * Notify about other OpinionStage plugin already available
+ */ 
+function opinionstage_other_plugin_installed_warning() {
+	echo "<div id='opinionstage-warning' class='error'><p><B>".__("Opinion Stage Plugin is already installed")."</B>".__(', please remove "<B>Popup for Interactive Content by Opinion Stage</B>" and use the available "<B>Poll & Quiz tools by Opinion Stage</B>" plugin')."</p></div>";
 }
 
 /**
@@ -119,107 +113,199 @@ function opinionstage_add_poll_page() {
 		});
 		
 	</script>  
-	<div class="opinionstage-wrap">
-	  <div id="opinionstage-head"></div>
-	  <div class="section">	    
-		<?php if($first_time) {?>
-			<h2>Connect to Opinion Stage</h3>
-			<p class='os-notice'>Connect WordPress with Opinion Stage to enable all features</p>
-			<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
-			<a href="javascript:void(0)" class="os-button" id="os-start-login">Connect</a>
-		<?php } else { ?>
-			<p>You are connected to Opinion Stage with the following email</p>
-			<label class="checked" for="user-email"></label>
-			<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
-			<a href="javascript:void(0)" class="os-button" id="os-switch-email" >Switch Account</a>
-		<?php } ?>
-	  </div>
-
-	  <div class="section">
-		  <h2>Content</h2>
-		  <ul class="os_links_list">		  
-			<li><?php echo opinionstage_create_poll_link(); ?></li>
-			<li><?php echo opinionstage_create_set_link(); ?></li>
-			<li><?php echo opinionstage_create_widget_link('Trivia Quiz', 'quiz'); ?></li>
-			<li><?php echo opinionstage_create_widget_link('Personality Quiz', 'personality'); ?></li>
-			<li><?php echo opinionstage_create_widget_link('List', 'list'); ?></li>			
-			<li><?php echo opinionstage_dashboard_link('My Content Dashboard'); ?></li>
-		  </ul>
-	  </div>
-	  <div class="section">
-		  <h2>Placements</h2>
-			<div class="placement_wrapper">
-				<div class='description'>
-					<div class="text">
-						Fly-out
+	<div id="opinionstage-content">
+		<div id="opinionstage-frame">
+			<div class="opinionstage-header-wrapper">
+				<div class="opinionstage-logo-wrapper">
+					<div class="opinionstage-logo"></div>
+				</div>				
+				<div class="opinionstage-status-wrapper">
+					<div class="opinionstage-status-content">
+						<?php if($first_time) {?>
+							<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
+							<div class="os-icon icon-os-poll-client"></div>
+							<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
+							<a href="javascript:void(0)" class="opinionstage-blue-btn" id="os-start-login">CONNECT</a>
+						<?php } else { ?>
+							<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
+							<div class="os-icon icon-os-form-success"></div>
+							<label class="checked" for="user-email"></label>
+							<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+							<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
+						<?php } ?>		
 					</div>
-					<a href="http://blog.opinionstage.com/fly-out-placements-in-wordpress/" class="question-link" target="_blank">(?)</a>
 				</div>
-				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-					<input type="checkbox" name="fly-out-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo($os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
-					<label class="onoffswitch-label" for="fly-out-switch">
-						<div class="onoffswitch-inner"></div>
-						<div class="onoffswitch-switch"></div>
-					</label>
-				</div>
-				<?php if(!$first_time) {?>
-					<a href="<?php echo opinionstage_flyout_edit_url(); ?>" target="_blank">Configure</a>
-				<?php } ?>
 			</div>
-			<div class="placement_wrapper">
-				<div class='description'>
-					<div class="text">
-						Article Section
+			<div class="opinionstage-dashboard">
+				<div class="opinionstage-dashboard-left">
+					<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
+						<div class="opinionstage-section-header">Content</div>
+						<div class="opinionstage-section-content">
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-polls"></div>													
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">Poll</div>
+									<div class="example">e.g. What's your favorite color?</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_poll_link('opinionstage-blue-btn'); ?>
+								</div>																				
+							</div>						
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-trivia"></div>													
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">Trivia Quiz</div>
+									<div class="example">e.g. How well do you know dogs?</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn'); ?>
+								</div>																										
+							</div>
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-personality"></div>													
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">Personality Quiz</div>
+									<div class="example">e.g. What's your most dominant trait?</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_widget_link('personality', 'opinionstage-blue-btn'); ?>
+								</div>																										
+							</div>
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-list"></div>
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">List</div>
+									<div class="example">e.g. Top 10 movies of all times</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn'); ?>
+								</div>																										
+							</div>						
+						</div>						
+					</div>				
+					<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
+						<div class="opinionstage-section-header">Help</div>					
+						<div class="opinionstage-section-content-wrapper">
+							<div class="opinionstage-section-content">
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" target="_blank">How to use this plugin</a>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_create_link('Poll examples', 'showcase'); ?>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_create_link('Discover content', 'discover'); ?>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_logged_in_link('Monetize your traffic', "http://".OPINIONSTAGE_SERVER_BASE."/advanced-solutions"); ?>
+									</div>
+								</div>						
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a>
+									</div>
+								</div>																				
+							</div>
+						</div>
 					</div>
-					<a href="http://blog.opinionstage.com/article-placements/" class="question-link" target="_blank">(?)</a>
-				</div>	
-				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-					<input type="checkbox" name="article-placement-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo($os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
-					  <label class="onoffswitch-label" for="article-placement-switch">
-						<div class="onoffswitch-inner"></div>
-						<div class="onoffswitch-switch"></div>
-					</label>
-				</div>
-				<?php if(!$first_time) {?>
-					<a href="<?php echo opinionstage_article_placement_edit_url(); ?>" target="_blank">Configure</a>
-				<?php } ?>
-			</div>			
-			<div class="placement_wrapper">
-				<div class='description'>
-					<div class="text">
-						Sidebar Widget
-					</div>					
-					<a href="http://blog.opinionstage.com/poll-placements/?o=wp35e8" class="question-link" target="_blank">(?)</a>
-				</div>	
-				<div class="onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-					<input type="checkbox" name="sidebar-placement-switch" class="onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="sidebar-placement-switch" <?php echo($os_options['sidebar_placement_active'] == 'true' ? "checked" : "") ?>>
-					  <label class="onoffswitch-label" for="sidebar-placement-switch">
-						<div class="onoffswitch-inner"></div>
-						<div class="onoffswitch-switch"></div>
-					</label>
-				</div>
-				<?php if(!$first_time) {?>
-					<div class="os-long-text">
-						 <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Configure</a> (using the Widgets Menu)
+				</div>			
+				<div class="opinionstage-dashboard-right">
+					<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo($first_time ? "opinionstage-disabled-section" : "")?>">
+						<div class="opinionstage-section-header">Placements</div>					
+						<div class="opinionstage-section-content-wrapper">
+							<div class="opinionstage-section-content">
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell opinionstage-toggle-cell">
+										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
+											<input type="checkbox" name="article-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo(!$first_time && $os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
+											  <label class="opinionstage-onoffswitch-label" for="article-placement-switch">
+												<div class="opinionstage-onoffswitch-inner"></div>
+												<div class="opinionstage-onoffswitch-switch"></div>
+											</label>
+										</div>								
+									</div>						
+									<div class="opinionstage-section-cell opinionstage-description-cell">
+										<div class="title">Article</div>
+										<div class="example">Add a content section to all posts</div>
+									</div>													
+									<div class="opinionstage-section-cell opinionstage-btns-cell">
+										<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
+										<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+											<div class="os-icon icon-os-common-settings"></div>													
+										</a>										
+									</div>																				
+								</div>																	
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell opinionstage-toggle-cell">
+										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
+											<input type="checkbox" name="fly-out-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo(!$first_time && $os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
+											<label class="opinionstage-onoffswitch-label" for="fly-out-switch">
+												<div class="opinionstage-onoffswitch-inner"></div>
+												<div class="opinionstage-onoffswitch-switch"></div>
+											</label>
+										</div>
+									</div>						
+									<div class="opinionstage-section-cell opinionstage-description-cell">
+										<div class="title">Popup</div>
+										<div class="example">Add a content popup to your site</div>
+									</div>													
+									<div class="opinionstage-section-cell opinionstage-btns-cell">
+										<a href="<?php echo opinionstage_flyout_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
+										<a href="<?php echo opinionstage_flyout_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+											<div class="os-icon icon-os-common-settings"></div>													
+										</a>
+									</div>																				
+								</div>							
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell opinionstage-toggle-cell">
+										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
+											<input type="checkbox" name="sidebar-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="sidebar-placement-switch" <?php echo(!$first_time && $os_options['sidebar_placement_active'] == 'true' ? "checked" : "") ?>>
+											  <label class="opinionstage-onoffswitch-label" for="sidebar-placement-switch">
+												<div class="opinionstage-onoffswitch-inner"></div>
+												<div class="opinionstage-onoffswitch-switch"></div>
+											</label>
+										</div>
+									</div>						
+									<div class="opinionstage-section-cell opinionstage-description-cell">
+										<div class="title">Sidebar Widget</div>
+										<div class="example">
+											<?php if($first_time) {?>
+												Add content to your sidebar
+											<?php } else { ?>
+												<div class="os-long-text">
+													 <a href="<?php echo $url = get_admin_url('', '', 'admin') . 'widgets.php' ?>">Add widget to your sidebar</a>
+												</div>											
+											<?php } ?>										
+										</div>
+									</div>													
+									<div class="opinionstage-section-cell opinionstage-btns-cell">
+										<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>								
+										<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+											<div class="os-icon icon-os-common-settings"></div>													
+										</a>										
+									</div>																				
+								</div>
+							</div>
+						</div>
 					</div>
-				<?php } ?>
+				</div>			
 			</div>
-	  </div>
-	  <div class="section">
-		  <h2>Monetization</h2>
-		  <ul class="os_links_list">
-			<li><?php echo opinionstage_logged_in_link('Contact us to monetize your traffic', "http://".OPINIONSTAGE_SERVER_BASE."/advanced-solutions"); ?></li>
-		  </ul>
-	  </div>
-	  <div class="section">
-		  <h2>Help</h2>
-		  <ul class="os_links_list">
-			<li><a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" target="_blank">How to use this plugin</a></li>
-			<li><?php echo opinionstage_create_link('Poll Examples', 'showcase', ''); ?></li>
-			<li><?php echo opinionstage_create_link('Discover Content', 'discover', ''); ?></li>			
-			<li><a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a></li>
-		  </ul>
-	  </div>
+		</div>
 	</div>
 	<?php
 }
@@ -229,80 +315,6 @@ function opinionstage_add_poll_page() {
  */
 function opinionstage_load_scripts() {
 	wp_enqueue_script( 'ospolls', plugins_url(OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage_plugin.js'), array( 'jquery', 'thickbox' ), '3' );
-}
-
-/**
- * The popup window in the post/page edit/new page
- */
-function opinionstage_add_poll_popup() {
-	?>
-	<div id="opinionstage-insert-poll-form" style="display:none;">
-      <div id="content">
-		<h3><strong>Type:</strong></h3>
-		<p>
-			<select style="width: 100%; max-width: 300px; font-size: 20px; height: 40px; line-height: 40px;" id="opinionstage-type">
-				<option value="poll">Insert a Poll</option>
-				<option value="set">Insert a Set</option>
-			</select>
-		</p>
-		<style type="text/css">
-			.pollWrp p, .setWrp p { padding: 1px 0 !important; }
-		</style>
-		<script type="text/javascript">
-			jQuery(function ($)
-			{
-				var $pollWrp = $(".pollWrp");
-				var $setWrp = $(".setWrp");
-				$("#opinionstage-type").change(function ()
-				{
-					var $this = $(this);
-					var val = $this.val();
-					if (val == "poll")
-					{
-						$setWrp.fadeOut(0, function ()
-						{
-							$pollWrp.fadeIn("fast");
-						});
-					}
-					else if (val == "set")
-					{
-						$pollWrp.fadeOut(0, function ()
-						{
-							$setWrp.fadeIn("fast");
-						});
-					}
-				}).trigger("change");
-			});
-		</script>
-		<div class="pollWrp" style="display: none;">
-			<h3><strong>Enter Poll ID (e.g. 2195036):</strong></h3>
-			<p><input type="text" name="poll-id" id="opinionstage-poll-id" value="" /></p>
-			<p class="submit">
-			  <input type="button" class="opinionstage-submit button-primary" value="Insert Poll" name="submit" />
-			</p>
-			<p><strong>Haven't created a poll yet?</strong></br></br>
-				<?php echo opinionstage_create_poll_link(); ?>
-			</p>
-			<p><strong>Don't know the poll ID?</strong></br></br>
-				<?php echo opinionstage_dashboard_link('Locate ID of an existing poll'); ?>
-			</p>
-		</div>
-		<div class="setWrp" style="display: none;">
-			<h3><strong>Enter Set ID (e.g. 2152089):</strong></h3>
-			<p><input type="text" name="set-id" id="opinionstage-set-id" value="" /></p>
-			<p class="submit">
-			  <input type="button" class="opinionstage-submit button-primary" value="Insert Set" name="submit" />
-			</p>
-			<p><strong>Haven't created a set yet?</strong></br></br>
-				<?php echo opinionstage_create_set_link(); ?>
-			</p>
-			<p><strong>Don't know the set ID?</strong></br></br>
-				<?php echo opinionstage_dashboard_link('Locate ID of an existing set'); ?>
-			</p>
-		</div>
-	  </div>
-	</div>  
-	<?php
 }
 
 /**

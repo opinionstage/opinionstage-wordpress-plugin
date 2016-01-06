@@ -92,19 +92,24 @@
 				<div class="opinionstage-sidebar-widget">	
 					<?php if($first_time) {?>	    	
 						<p>Connect WordPress with Opinion Stage to enable the widget</p>
+						<div class="os-icon icon-os-poll-client"></div>
 						<input id="os-email" type="text" value="" class="watermark os-email" data-watermark="Enter Your Email"/>
 						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>	    	    			
 					<?php } else { ?>					
 						<p>You are connected to Opinion Stage with the following email</p>
-						<label class="checked" for="user-email"></label>
-						<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
-						<a href="javascript:void(0)" class="os-button switch-email" id="os-switch-email" >Switch Account</a>
-						<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
-						<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" class="watermark" data-watermark="Enter the title here" value="<?php echo $title; ?>" /></p>						
+						<div class="os-icon icon-os-form-success"></div>
+						<p>
+							<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+							<a href="javascript:void(0)" class="os-button switch-email" id="os-switch-email" >Switch Account</a>
+						</p>
+						<p>
+							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
+							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" class="watermark" data-watermark="Enter the title here" value="<?php echo $title; ?>" />
+						</p>
 						<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
 						<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
-						<div class="left text">				 
-							<a href="<?php echo opinionstage_sidebar_placement_edit_url(); ?>" target="_blank">Configure content</a> 
+						<div class="left">				 
+							<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='os-configure-content'>Configure content</a> 
 						</div>	
 
 					<?php } ?>
