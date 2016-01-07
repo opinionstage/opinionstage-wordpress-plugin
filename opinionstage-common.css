@@ -14,9 +14,11 @@
     left: 0;
     right: 0;
 	background: #232121;
+	overflow: hidden;
 }
 #opinionstage-content .opinionstage-logo-wrapper {
-	padding: 5px 35px;
+	padding: 5px 30px;
+	float: left;
 }
 #opinionstage-content .opinionstage-logo-wrapper  .opinionstage-logo {
     background: url("images/purple-logo.png") no-repeat 0px 0px;
@@ -24,12 +26,59 @@
     height: 30px;
     background-size: contain;
 }
+#opinionstage-content .opinionstage-menu-wrapper {
+    height: 42px;
+}
+#opinionstage-content .opinionstage-menu-wrapper ul.opinionstage-menu {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    display: table;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item:hover {
+    background-color: #29324e;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item:hover .opinionstage-hover-indicator {
+	    background-color: #3499c2;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: normal;
+    overflow: hidden;
+    display: block;
+    margin-right: 20px;	
+	padding: 12px 0;	
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item a .os-icon {
+	padding: 3px 6px 0 14px;
+    min-width: 14px;
+	float: left;
+	opacity: 0.8;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item .opinionstage-label {
+    float: left;
+    opacity: 0.8;
+}
+#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item .opinionstage-hover-indicator {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+}
 #opinionstage-content .opinionstage-status-wrapper {
 	background: url("images/top-bg.png") no-repeat 0px 0px;
 	height: 146px;
 }
 #opinionstage-content .opinionstage-status-wrapper .opinionstage-status-content {
-	padding: 35px;
+	padding: 30px;
 	color: white;
 }
 #opinionstage-content .opinionstage-status-wrapper #os-start-login{
@@ -39,7 +88,8 @@
 #opinionstage-content .opinionstage-status-wrapper .opinionstage-status-title {
     font-size: 23px;
 	margin-bottom: 20px;
-	font-weight: light;
+	font-weight: lighter;
+	line-height: 25px;
 }
 #opinionstage-content  .opinionstage-status-wrapper .opinionstage-status-content .os-icon, .opinionstage-sidebar-widget .os-icon {
     float: left;
@@ -58,7 +108,6 @@
     float: left;
     font-size: 14px;	
 }
-
 #opinionstage-content a.opinionstage-blue-btn {
     text-align: center;
     color: #ffffff;
@@ -70,7 +119,7 @@
 	-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;	
-	width: 100px;
+	width: 95px;
 }
 #opinionstage-content a.opinionstage-blue-btn:hover {
 	opacity: 0.9;
@@ -125,18 +174,17 @@
     font-size: 22px;
 }
 #opinionstage-content .opinionstage-dashboard {
-    padding: 35px;
+    padding: 30px;
     overflow: hidden;
-    width: 1150px;
+    max-width: 1060px;
+}
+
+#opinionstage-content .opinionstage-dashboard-left , #opinionstage-content .opinionstage-dashboard-right {
+    float: left;
+    width: 510px;
 }
 #opinionstage-content .opinionstage-dashboard-left {
-    float: left;
-    width: 550px;
-	margin-right: 50px;
-}
-#opinionstage-content .opinionstage-dashboard-right {
-    float: right;
-    width: 550px;
+	margin-right: 40px;
 }
 #opinionstage-content .opinionstage-dashboard-section {
 	margin-bottom: 30px;
@@ -181,16 +229,16 @@
 	height: 435px;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-icon-cell {
-	width: 15%;
+	width: 17%;
 	text-align: center;
 	color: #3499c2;
 	font-size: 35px;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-description-cell {
-	width: 57%;
+	width: 52%;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-btn-cell {
-	width: 28%;
+	width: 31%;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-description-cell .title, #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-description-cell .title {
     font-size: 21px;
@@ -211,13 +259,13 @@
 	width: 15%;
 }
 #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-description-cell {
-	width: 45%;
+	width: 46%;
 }
 #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-btns-cell {
-	width: 40%;
+	width: 39%;
 }
 #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-btns-cell .opinionstage-edit-content {
-	width: 125px;
+	width: 105px;
 }
 #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-btns-cell .opinionstage-edit-settings {
     width: 29px;
@@ -313,6 +361,12 @@
 .opinionstage-sidebar-widget {
 	overflow: hidden;
 	margin-bottom: 15px;
+}
+.opinionstage-sidebar-widget p {
+	overflow: hidden;
+}
+.wp-admin .opinionstage-sidebar-widget p input[type=checkbox] {
+	margin: 0;
 }
 .opinionstage-sidebar-widget .os-button {
 	float: left; 

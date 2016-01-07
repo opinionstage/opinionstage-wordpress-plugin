@@ -84,12 +84,12 @@ function opinionstage_add_poll_page() {
 				if (email == emailInput.data('watermark')) {
 					email = "";
 				}
-				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
+				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
 				window.location = new_location;
 			});
 			
 			$('#os-switch-email').click(function(){
-				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL);
+				var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL);
 				window.location = new_location;
 			});
 			
@@ -115,9 +115,29 @@ function opinionstage_add_poll_page() {
 	</script>  
 	<div id="opinionstage-content">
 		<div id="opinionstage-frame">
-			<div class="opinionstage-header-wrapper">
-				<div class="opinionstage-logo-wrapper">
-					<div class="opinionstage-logo"></div>
+			<div class="opinionstage-header-wrapper">				
+				<div class="opinionstage-menu-wrapper">
+					<div class="opinionstage-logo-wrapper">
+						<div class="opinionstage-logo"></div>
+					</div>				
+					<?php if(!$first_time) {?>
+						<ul class="opinionstage-menu">
+							<li class="opinionstage-nav-item">
+								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'); ?>" target="_blank">
+									<div class="os-icon icon-os-menu-content"></div>
+									<div class="opinionstage-label">CONTENT</div>
+									<div class="opinionstage-hover-indicator"></div>
+								</a>
+							</li>
+							<li class="opinionstage-nav-item">
+								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/reports'); ?>" target="_blank">
+									<div class="os-icon icon-os-menu-reports"></div>
+									<div class="opinionstage-label">REPORTS</div>
+									<div class="opinionstage-hover-indicator"></div>
+								</a>
+							</li>
+						</ul>
+					<?php } ?>
 				</div>				
 				<div class="opinionstage-status-wrapper">
 					<div class="opinionstage-status-content">
@@ -132,7 +152,7 @@ function opinionstage_add_poll_page() {
 							<label class="checked" for="user-email"></label>
 							<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
 							<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
-						<?php } ?>		
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -143,7 +163,7 @@ function opinionstage_add_poll_page() {
 						<div class="opinionstage-section-content">
 							<div class="opinionstage-section-raw">
 								<div class="opinionstage-section-cell opinionstage-icon-cell">
-									<div class="os-icon icon-os-reports-polls"></div>													
+									<div class="os-icon icon-os-reports-polls"></div>
 								</div>						
 								<div class="opinionstage-section-cell opinionstage-description-cell">
 									<div class="title">Poll</div>
@@ -191,38 +211,6 @@ function opinionstage_add_poll_page() {
 							</div>						
 						</div>						
 					</div>				
-					<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
-						<div class="opinionstage-section-header">Help</div>					
-						<div class="opinionstage-section-content-wrapper">
-							<div class="opinionstage-section-content">
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell">	
-										<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" target="_blank">How to use this plugin</a>
-									</div>
-								</div>
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_create_link('Poll examples', 'showcase'); ?>
-									</div>
-								</div>
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_create_link('Discover content', 'discover'); ?>
-									</div>
-								</div>
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_logged_in_link('Monetize your traffic', "http://".OPINIONSTAGE_SERVER_BASE."/advanced-solutions"); ?>
-									</div>
-								</div>						
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell">	
-										<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a>
-									</div>
-								</div>																				
-							</div>
-						</div>
-					</div>
 				</div>			
 				<div class="opinionstage-dashboard-right">
 					<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo($first_time ? "opinionstage-disabled-section" : "")?>">
@@ -303,7 +291,41 @@ function opinionstage_add_poll_page() {
 							</div>
 						</div>
 					</div>
-				</div>			
+				</div>	
+				<div class="opinionstage-dashboard-left">
+					<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
+						<div class="opinionstage-section-header">Help</div>					
+						<div class="opinionstage-section-content-wrapper">
+							<div class="opinionstage-section-content">
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" target="_blank">How to use this plugin</a>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_create_link('Poll examples', 'showcase'); ?>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_create_link('Discover content', 'discover'); ?>
+									</div>
+								</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<?php echo opinionstage_logged_in_link('Monetize your traffic', "http://".OPINIONSTAGE_SERVER_BASE."/advanced-solutions"); ?>
+									</div>
+								</div>						
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a>
+									</div>
+								</div>																				
+							</div>
+						</div>
+					</div>				
+				</div>				
 			</div>
 		</div>
 	</div>

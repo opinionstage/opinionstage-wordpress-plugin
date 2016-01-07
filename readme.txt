@@ -242,6 +242,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Version 14.6.0 =
+  * Various UI modifications - added top navigation links, dashboard UI is now more responsive. 
   = Version 14.5.0 =
   * Renamed style to avoid css caching issues
   = Version 14.4.0 =

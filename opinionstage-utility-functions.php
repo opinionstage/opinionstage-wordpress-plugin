@@ -162,7 +162,7 @@ function opinionstage_create_link($caption, $page, $params = "", $css_class = ''
  */
 function opinionstage_add_stylesheet() {
 	// Respects SSL, Style.css is relative to the current file
-	wp_register_style( 'opinionstage-style', plugins_url('opinionstage-style.css', __FILE__) );
+	wp_register_style( 'opinionstage-style', plugins_url('opinionstage-common.css', __FILE__) );
 	wp_register_style( 'opinionstage-font-style', plugins_url('opinionstage-font.css', __FILE__) );
 	wp_enqueue_style( 'opinionstage-style' );
 	wp_enqueue_style( 'opinionstage-font-style' );
@@ -176,6 +176,22 @@ function opinionstage_flyout_edit_url($tab) {
 		return 'http://'.OPINIONSTAGE_SERVER_BASE.'/registrations/new';
 	}	
 	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['fly_id'].'/edit?selected_tab='.$tab.'&token='.$os_options['token'];
+}
+
+/**
+ * Generates a link with a token if available
+ */
+function opinionstage_url_with_token($url) {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$token_suffix = '';
+	if (!empty($os_options["uid"])) {	
+		if (strpos($url,'?') !== FALSE) {
+			$token_suffix = '&token='.$os_options['token'];
+		} else {
+			$token_suffix = '?token='.$os_options['token'];
+		}
+	}
+	return $url.$token_suffix;
 }
 /**
  * Generates a link for editing the article placement on Opinion Stage site
@@ -233,36 +249,13 @@ function opinionstage_create_widget_link($w_type, $css_class) {
 function opinionstage_callback_url() {
 	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php';
 }
-/**
- * Generates a link for creating a set
- */
-function opinionstage_create_set_link() {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {
-		return opinionstage_create_link('Create a Set', 'sets/new');
-	} else {
-		return opinionstage_create_link('Create a Set', 'sets/new', 'token='.$os_options['token']);
-	}	
-}
-/**
- * Generates a link to the dashboard in Opinion Stage site
- */
-function opinionstage_dashboard_link($text) {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {
-		return opinionstage_create_link($text, 'dashboard');
-	} else {
-		return opinionstage_create_link($text, 'dashboard', 'token='.$os_options['token']);
-	}	
-}
+
 /**
  * Generates a link to Opinion Stage that requires registration
  */
 function opinionstage_logged_in_link($text, $link) {
 	return opinionstage_create_link($text, 'registrations/new', 'return_to='.$link);
 }
-
-
 /**
  * Perform an HTTP GET Call to retrieve the data for the required content.
  * 
