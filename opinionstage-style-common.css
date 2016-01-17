@@ -1,11 +1,10 @@
 #opinionstage-content {
-    background: #f9f9f9;
     margin: 0;
     height: auto;
     min-height: 100%;
     width: 100%;
     -webkit-font-smoothing: antialiased;	
-	border: 1px solid #f9f9f9;
+	padding-top: 20px;
 }
 #opinionstage-content a {
 	color: #3499c2;
@@ -17,7 +16,7 @@
 	overflow: hidden;
 }
 #opinionstage-content .opinionstage-logo-wrapper {
-	padding: 5px 30px;
+	padding: 10px 30px;
 	float: left;
 }
 #opinionstage-content .opinionstage-logo-wrapper  .opinionstage-logo {
@@ -27,51 +26,7 @@
     background-size: contain;
 }
 #opinionstage-content .opinionstage-menu-wrapper {
-    height: 42px;
-}
-#opinionstage-content .opinionstage-menu-wrapper ul.opinionstage-menu {
-    list-style: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    display: table;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item {
-    display: table-cell;
-    vertical-align: middle;
-    position: relative;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item:hover {
-    background-color: #29324e;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item:hover .opinionstage-hover-indicator {
-	    background-color: #3499c2;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item a {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: normal;
-    overflow: hidden;
-    display: block;
-    margin-right: 20px;	
-	padding: 12px 0;	
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item a .os-icon {
-	padding: 3px 6px 0 14px;
-    min-width: 14px;
-	float: left;
-	opacity: 0.8;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item .opinionstage-label {
-    float: left;
-    opacity: 0.8;
-}
-#opinionstage-content .opinionstage-menu-wrapper  li.opinionstage-nav-item .opinionstage-hover-indicator {
-	position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
+    height: 50px;
 }
 #opinionstage-content .opinionstage-status-wrapper {
 	background: url("images/top-bg.png") no-repeat 0px 0px;
@@ -91,7 +46,7 @@
 	font-weight: lighter;
 	line-height: 25px;
 }
-#opinionstage-content  .opinionstage-status-wrapper .opinionstage-status-content .os-icon, .opinionstage-sidebar-widget .os-icon {
+#opinionstage-content  .opinionstage-status-wrapper .opinionstage-status-content .os-icon {
     float: left;
     font-size: 19px;
 	margin: 0;
@@ -99,9 +54,6 @@
 }
 #opinionstage-content  .opinionstage-status-wrapper .opinionstage-status-content .os-icon {
     margin-top: 9px;
-}
-.opinionstage-sidebar-widget .os-icon {
-    margin-top: 5px;
 }
 #opinionstage-content .opinionstage-status-wrapper #os-switch-email {
     padding: 11px 0;
@@ -124,7 +76,7 @@
 #opinionstage-content a.opinionstage-blue-btn:hover {
 	opacity: 0.9;
 }
-#opinionstage-content a.opinionstage-blue-bordered-btn {
+#opinionstage-content a.opinionstage-blue-bordered-btn, .opinionstage-sidebar-widget a.opinionstage-blue-bordered-btn{
     text-align: center;
     text-decoration: none;
     -webkit-border-radius: 3px;
@@ -137,7 +89,7 @@
     float: left;
     margin-right: 5px;	
 }
-#opinionstage-content a.opinionstage-blue-bordered-btn:hover {
+#opinionstage-content a.opinionstage-blue-bordered-btn:hover, .opinionstage-sidebar-widget a.opinionstage-blue-bordered-btn:hover {
     color: white;
     background-color: #3499c2;
     cursor: pointer;
@@ -155,7 +107,7 @@
 	font-style: italic;
 	color: #b1b1b1 !important;
 }
-#opinionstage-content input#os-email, .opinionstage-sidebar-widget input#os-email {
+#opinionstage-content input#os-email {
 	margin: 0 15px 0 0;
 	border: none;
     font-size: 20px;
@@ -163,15 +115,11 @@
     padding: 3px 10px;
 	float: left;	
 }
-
-#opinionstage-content input#os-email:disabled, .opinionstage-sidebar-widget input#os-email:disabled {    
+#opinionstage-content input#os-email:disabled {    
     color: white;
     background-color: black;
     padding: 3px 10px;
     opacity: 0.7;	
-}
-#opinionstage-content .opinionstage-status-wrapper input#os-email:disabled {    
-    font-size: 22px;
 }
 #opinionstage-content .opinionstage-dashboard {
     padding: 30px;
@@ -190,8 +138,18 @@
 	margin-bottom: 30px;
 }
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-header {
+    overflow: hidden;
+    height: 58px;
+}
+#opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-header .opinionstage-section-title {
     font-size: 25px;
-    margin-bottom: 25px;
+    float: left;
+    padding: 10px 0;
+}
+#opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-header a {
+    float: right;
+    margin-right: 0;
+    padding: 10px 25px;	
 }
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-content {
     display: table;
@@ -359,14 +317,59 @@
     right: 3px;     
 }
 .opinionstage-sidebar-widget {
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-connected {
+    background-color: #eaf5f9;
+    padding: 10px 0 10px 5px;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-connected .opinionstage-connected-info {
 	overflow: hidden;
-	margin-bottom: 15px;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-connected .opinionstage-connected-info a {
+	float: left;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-connected  .opinionstage-connected-title {
+    margin-bottom: 5px;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-enabled {
+    float: left;
+}
+.opinionstage-sidebar-widget .opinionstage-sidebar-config {
+    float: right;
+}
+.opinionstage-sidebar-widget input[type="text"] {
+    width: 100%;
+}
+.opinionstage-sidebar-widget input#os-email {
+	margin: 0 7px 0 0;
+    color: #444;
+    padding-left: 5px;
+    float: left;
+    width: auto;
+    line-height: 27px;
+    height: 27px;
+    font-size: 13px;
+}
+.opinionstage-sidebar-widget input#os-email:disabled {    
+    background-color: rgba(10,10,10,0.1);
 }
 .opinionstage-sidebar-widget p {
 	overflow: hidden;
 }
-.wp-admin .opinionstage-sidebar-widget p input[type=checkbox] {
-	margin: 0;
+.wp-admin .opinionstage-sidebar-widget input[type=checkbox] {
+	margin: 10px 5px 10px 0;
+}
+.opinionstage-sidebar-widget .os-icon {
+    float: left;
+    font-size: 16px;
+    margin-right: 7px;
+    margin-left: 5px;
+}
+.opinionstage-sidebar-widget .os-icon.icon-os-poll-client {
+    margin-top: 4px;
 }
 .opinionstage-sidebar-widget .os-button {
 	float: left; 
@@ -400,7 +403,4 @@
     background-image: linear-gradient(top, #40aacd, #40aacd);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#40aacd, endColorstr=#40aacd);
 	color: #ffffff !important;
-}
-.opinionstage-sidebar-widget .os-configure-content {
-	margin-right: 7px;
 }

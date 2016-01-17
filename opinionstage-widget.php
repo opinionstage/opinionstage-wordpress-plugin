@@ -96,24 +96,30 @@
 						<input id="os-email" type="text" value="" class="watermark os-email" data-watermark="Enter Your Email"/>
 						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>	    	    			
 					<?php } else { ?>					
-						<p>You are connected to Opinion Stage with the following email</p>
-						<div class="os-icon icon-os-form-success"></div>
-						<p>
-							<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
-							<a href="javascript:void(0)" class="switch-email" id="os-switch-email" >Switch Account</a>
-						</p>
+						<div class="opinionstage-sidebar-connected">	
+							<div class="os-icon icon-os-form-success"></div>
+							<div class="opinionstage-connected-info">
+								<div class="opinionstage-connected-title"><b>You are connected</b> to Opinion Stage with:</div>
+								<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+								<a href="javascript:void(0)" class="switch-email" id="os-switch-email" >Switch Account</a>
+							</div>
+						</div>
 						<p>
 							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
 							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" class="watermark" data-watermark="Enter the title here" value="<?php echo $title; ?>" />
 						</p>
-						<p>
-							<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
-							<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
-						</p>
-						<div class="left">				 
-							<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='os-configure-content'>Configure content</a> 
-						</div>	
-
+						<div class="opinionstage-sidebar-actions">
+							<div class="opinionstage-sidebar-enabled">
+								<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
+								<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
+							</div>							
+							<div class="opinionstage-sidebar-config">
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn'>EDIT CONTENT</a> 
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+									<div class="os-icon icon-os-common-settings"></div>													
+								</a>																		
+							</div>
+						</div>
 					<?php } ?>
 				</div>																		
 			<?php

@@ -120,24 +120,6 @@ function opinionstage_add_poll_page() {
 					<div class="opinionstage-logo-wrapper">
 						<div class="opinionstage-logo"></div>
 					</div>				
-					<?php if(!$first_time) {?>
-						<ul class="opinionstage-menu">
-							<li class="opinionstage-nav-item">
-								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'); ?>" target="_blank">
-									<div class="os-icon icon-os-menu-content"></div>
-									<div class="opinionstage-label">CONTENT</div>
-									<div class="opinionstage-hover-indicator"></div>
-								</a>
-							</li>
-							<li class="opinionstage-nav-item">
-								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/reports'); ?>" target="_blank">
-									<div class="os-icon icon-os-menu-reports"></div>
-									<div class="opinionstage-label">REPORTS</div>
-									<div class="opinionstage-hover-indicator"></div>
-								</a>
-							</li>
-						</ul>
-					<?php } ?>
 				</div>				
 				<div class="opinionstage-status-wrapper">
 					<div class="opinionstage-status-content">
@@ -159,7 +141,12 @@ function opinionstage_add_poll_page() {
 			<div class="opinionstage-dashboard">
 				<div class="opinionstage-dashboard-left">
 					<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
-						<div class="opinionstage-section-header">Content</div>
+						<div class="opinionstage-section-header">
+							<div class="opinionstage-section-title">Content</div>
+							<?php if(!$first_time) {?>
+								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'); ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
+							<?php } ?>
+						</div>
 						<div class="opinionstage-section-content">
 							<div class="opinionstage-section-raw">
 								<div class="opinionstage-section-cell opinionstage-icon-cell">
@@ -214,7 +201,9 @@ function opinionstage_add_poll_page() {
 				</div>			
 				<div class="opinionstage-dashboard-right">
 					<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo($first_time ? "opinionstage-disabled-section" : "")?>">
-						<div class="opinionstage-section-header">Placements</div>					
+						<div class="opinionstage-section-header">						
+							<div class="opinionstage-section-title">Placements</div>
+						</div>					
 						<div class="opinionstage-section-content-wrapper">
 							<div class="opinionstage-section-content">
 								<div class="opinionstage-section-raw">
@@ -294,7 +283,9 @@ function opinionstage_add_poll_page() {
 				</div>	
 				<div class="opinionstage-dashboard-left">
 					<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
-						<div class="opinionstage-section-header">Help</div>					
+						<div class="opinionstage-section-header">						
+							<div class="opinionstage-section-title">Help</div>
+						</div>					
 						<div class="opinionstage-section-content-wrapper">
 							<div class="opinionstage-section-content">
 								<div class="opinionstage-section-raw">
@@ -309,7 +300,7 @@ function opinionstage_add_poll_page() {
 								</div>
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_create_link('Discover content', 'discover'); ?>
+										<?php echo opinionstage_create_link('Quiz & List examples', 'discover'); ?>
 									</div>
 								</div>
 								<div class="opinionstage-section-raw">

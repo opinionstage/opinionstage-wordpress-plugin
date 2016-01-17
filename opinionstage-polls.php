@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Poll & Quiz Tools by OpinionStage
+Plugin Name: Poll, Quiz & List Tools by OpinionStage
 Plugin URI: http://www.opinionstage.com
 Description: Adds highly engaging polls & quizzes to your site. Easily add polls & quizzes to any post/page or to your site sidebar.
-Version: 14.7.0
+Version: 14.8.0
 Author: OpinionStage.com
 Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
@@ -12,8 +12,8 @@ Text Domain: social-polls-by-opinionstage
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
-define('OPINIONSTAGE_WIDGET_VERSION', '14.7.0');
-define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll & Quiz Tools by OpinionStage');
+define('OPINIONSTAGE_WIDGET_VERSION', '14.8.0');
+define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Quiz & List Tools by OpinionStage');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
 define('OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll');

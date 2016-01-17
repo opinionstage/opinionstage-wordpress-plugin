@@ -1,4 +1,4 @@
-﻿=== Poll & Quiz Tools by OpinionStage ===
+﻿=== Poll, Quiz & List Tools by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
 Tags: interactive content, create poll, create polls, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
@@ -242,6 +242,10 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 14.8.0 =
+  * Modified sidebar widget management UI
+  * Replaced dashboard top navigation links with more prominent 'my content' link
+  * Added 'list' to the plugin name
   = Poll, Quiz & List Version 14.7.0 =
   * Various small optimizations
   = Poll, Quiz & List Version 14.6.0 =
