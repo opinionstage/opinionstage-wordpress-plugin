@@ -242,6 +242,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 14.9.0 =
+  * Added the option to embed using a fixed width
   = Poll, Quiz & List Version 14.8.0 =
   * Modified sidebar widget management UI
   * Replaced dashboard top navigation links with more prominent 'my content' link
