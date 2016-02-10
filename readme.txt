@@ -1,7 +1,7 @@
 ﻿=== Poll, Quiz & List by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: interactive content, create poll, create polls, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
+Tags: interactive content, poll plugin, create poll, create polls, quiz plugin, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
 
 Requires at least: 2.8
 Tested up to: 4.4.1
@@ -11,15 +11,19 @@ Add a powerful & easy-to-use poll, quiz & list service. Create beautiful polls, 
 
 == Description ==
 
-The Opinion Stage poll and quiz plug-in allows you to easily add a poll or a quiz to your website or Facebook page.
+The Opinion Stage poll, quiz & list plug-in allows you to easily add a poll, quiz or list to your website or Facebook page.
 
 = Poll Examples: =
 
 For poll examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
 
-= Quiz Examples: =
+= Quiz Example: =
 
-For quiz examples, checkout the <a href="http://www.opinionstage.com/discovery?o=wp35e8" target="_blank">Quiz Showcase.</a>
+For a quiz example, checkout this <a href="http://www.opinionstage.com/polldiscovery/can-we-guess-how-educated-you-are?o=wp35e8" target="_blank">Quiz.</a>
+
+= List Example: =
+
+For a List example, checkout this <a href="http://www.opinionstage.com/polldiscovery/the-5-best-sources-for-great-free-images?o=wp35e8" target="_blank">List.</a>
 
 = Why Opinion Stage? =
 
@@ -30,10 +34,6 @@ For quiz examples, checkout the <a href="http://www.opinionstage.com/discovery?o
  * Generate revenue by integrating ads in the polls & quizzes
  * Gather contact info such as emails & social profiles, while your audience participates in the polls & quizzes
  * Get up and going with your first poll or quiz in minutes" -> "Get up and going with your first poll or quiz in minutes, creating polls & quizzes with the service is highly intuitive and help is avialable when needed
-
-<br>
- 
-http://www.youtube.com/watch?v=P7xKNlWbk0s
 
 = Main Poll Features: =
 
@@ -92,7 +92,7 @@ http://www.youtube.com/watch?v=P7xKNlWbk0s
 
  = Language support = 
 
-Opinion Stage supports over 30 languages, missing a language? Let us know!
+Opinion Stage supports over 42 languages, missing a language? Let us know!
 
  = About Opinion Stage: =
 
@@ -100,8 +100,8 @@ Opinion Stage offers web sites a highly engaging poll, quiz & list solution. For
 
 == Installation ==
 
-1. Upload the "poll & quiz tools by Opinion Stage" plug-in to your blog (or search for it) and install the "poll & quiz tools by Opinion Stage" plugin on your plug-ins page
-2. Active it to start creation polls & quizzes from the polls & quizzes creation dashboard
+1. Upload the "poll, quiz & list by Opinion Stage" plug-in to your blog (or search for it) and then install the "poll, quiz & list by Opinion Stage" plugin on your plug-ins page
+2. Active it to start creation polls, quizzes and lists from the polls, quiz & list creation dashboard
 
 == Frequently Asked Questions ==
 
@@ -127,13 +127,9 @@ And many more...
 2.	After the poll or quiz was created, click "Embed" link and then click the "WordPress" tab 
 3.	Copy the WordPress poll code ( e.g. [socialpoll id="119543"] ) or the quiz embed code and paste it into the blog post/page
 
-= What is the embed ID and where can I find it? =
+= Can I embed a poll, quiz or list manually? =
 
-Each poll or quiz has a unique ID which identifies it. The poll or quiz ID can be found in the WordPress code (e.g. if [socialpoll id="119543"] is the WordPress code, 119543 is the poll ID)
-
-= Can I embed a poll or quiz manually? =
-
-Yes, just post the following syntax into any post/page: [socialpoll ID="xyz"], where the xyz represents the poll ID.
+Yes, just post the wordpress shortcode into any post/page
 
 = How do users share the poll or quiz in social networks? = 
 
@@ -155,23 +151,18 @@ Opinion Stagte supports many poll settings. You can configure look & feel polls 
 
 You can select between a trivia quiz and a personality quiz, we plan to offer a few more quiz types in the future. If there is a quiz type you are missing, please notify us!
 
-= Do you offer read-made polls & quizzes? =
+= Do you offer read-made polls, quizzes and lists? =
 
-Yes - our editors hand-pick the top polls & quizzes. You can browse the Opinion discover site and discover these polls and quizzes. 
+Yes - our editors hand-pick the top polls, quizzes and list. You can browse the Opinion discover site and discover these polls, quizzes and lists. 
 
 
 == Screenshots ==
 
-1. **Multiple-choice poll** - example of a multiple-choice social poll, note that you can view who voted what and view the poll voters social profile. You can also filter the poll results by the people you follow, by gender of the poll participants and more
-2. **Head-to-head poll** - example of a head-to-head poll, use this poll layout for highly engaging interactions
-3. **Social sharing** -  after voting, users are offered to share their votes in social networks (Facebook, Twitter, Google+), driving traffic back to your site
-4. **Poll set** - example of polls grouped into a poll set, users can navigate between the different polls based on a pre-defined logic
-5. **Poll in post** - you can add polls inside any post/page by adding the Opinion Stage short-code directly or by clicking on the Insert poll icon and inserting the ID
-6. **Poll in sidebar** - you can add polls to your sidebar using the Opinion Stage widget (find it in the Appearance->Widgets screen)
-7. **Poll section in all articles** - you can configure that a poll or a set of polls is displayed at the end of all or specific sections of posts/pages
-8. **Poll results** - From the Opinion Stage dashboard view the poll results and poll performance metrics
-9. **Personality quiz** - example of a personality quiz result. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually also produce a lot of social shares.
-10. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are usually one of the most engaging type of content.
+1. **Multiple-choice poll** - example of a multiple-choice layout poll
+2. **Head-to-head poll** - example of a head-to-head layout poll
+3. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
+4. **Personality quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
+5. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, list) creation dashboard
 
 == Other Notes ==
 
@@ -242,6 +233,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 15.0.0 =
+  * Various optimizations
   = Poll, Quiz & List Version 14.9.0 =
   * Added the option to embed using a fixed width
   = Poll, Quiz & List Version 14.8.0 =
