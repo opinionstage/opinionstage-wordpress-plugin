@@ -233,6 +233,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 15.1.0 =
+  * Security fix to limit accses to dashboard
   = Poll, Quiz & List Version 15.0.0 =
   * Various optimizations
   = Poll, Quiz & List Version 14.9.0 =

@@ -144,7 +144,7 @@ function opinionstage_add_poll_page() {
 						<div class="opinionstage-section-header">
 							<div class="opinionstage-section-title">Content</div>
 							<?php if(!$first_time) {?>
-								<a href="<?php echo opinionstage_url_with_token('http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'); ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
+								<a href="<?php echo 'http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'; ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
 							<?php } ?>
 						</div>
 						<div class="opinionstage-section-content">

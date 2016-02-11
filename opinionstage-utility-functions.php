@@ -175,24 +175,10 @@ function opinionstage_flyout_edit_url($tab) {
 	if (empty($os_options["uid"])) {	
 		return 'http://'.OPINIONSTAGE_SERVER_BASE.'/registrations/new';
 	}	
-	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['fly_id'].'/edit?selected_tab='.$tab.'&token='.$os_options['token'];
+	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['fly_id'].'/edit?selected_tab='.$tab;
 }
 
-/**
- * Generates a link with a token if available
- */
-function opinionstage_url_with_token($url) {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$token_suffix = '';
-	if (!empty($os_options["uid"])) {	
-		if (strpos($url,'?') !== FALSE) {
-			$token_suffix = '&token='.$os_options['token'];
-		} else {
-			$token_suffix = '?token='.$os_options['token'];
-		}
-	}
-	return $url.$token_suffix;
-}
+
 /**
  * Generates a link for editing the article placement on Opinion Stage site
  */
@@ -201,7 +187,7 @@ function opinionstage_article_placement_edit_url($tab) {
 	if (empty($os_options["uid"])) {	
 		return 'http://'.OPINIONSTAGE_SERVER_BASE.'/registrations/new';
 	}	
-	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['article_placement_id'].'/edit?selected_tab='.$tab.'&token='.$os_options['token'];
+	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['article_placement_id'].'/edit?selected_tab='.$tab;
 }
 /**
  * Generates a link for editing the sidebar placement on Opinion Stage site
@@ -211,7 +197,7 @@ function opinionstage_sidebar_placement_edit_url($tab) {
 	if (empty($os_options["uid"])) {	
 		return 'http://'.OPINIONSTAGE_SERVER_BASE.'/registrations/new';
 	}
-	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?selected_tab='.$tab.'&token='.$os_options['token'];
+	return 'http://'.OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?selected_tab='.$tab;
 }
 /**
  * Generates a link for creating a poll
@@ -225,7 +211,7 @@ function opinionstage_create_poll_link($css_class) {
 			'',         // Args
 			$css_class);
 	} else {
-		return opinionstage_create_link('CREATE', 'new_poll', 'token='.$os_options['token'], $css_class);
+		return opinionstage_create_link('CREATE', 'new_poll', '', $css_class);
 	}	
 }
 /**
@@ -240,7 +226,7 @@ function opinionstage_create_widget_link($w_type, $css_class) {
 			'w_type='.$w_type, // Args
 			$css_class);
 	} else {
-		return opinionstage_create_link('CREATE', 'widgets/new', 'w_type='.$w_type.'&token='.$os_options['token'], $css_class);
+		return opinionstage_create_link('CREATE', 'widgets/new', 'w_type='.$w_type, $css_class);
 	}	
 }
 /**
