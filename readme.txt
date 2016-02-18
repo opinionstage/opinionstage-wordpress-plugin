@@ -18,10 +18,7 @@ The Opinion Stage poll, quiz & list plug-in allows you to easily add a poll, qui
 
 For poll examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
 
-<br>
- 
 http://www.youtube.com/watch?v=P7xKNlWbk0s
-
 
 = Quiz Example: =
 
