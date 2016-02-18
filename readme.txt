@@ -1,7 +1,8 @@
 ﻿=== Poll, Quiz & List by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: interactive content, poll plugin, create poll, create polls, quiz plugin, create quiz, create quizzes, trivia quiz, personality quiz, custom poll,  premade polls, flash poll, free user polls, html poll, online poll, online polls, opinion, page poll, poll, poll builder, poll directory, poll plugin, poll widget, premade user polls, polling, Polling System, polls, post poll, premade polls, user polls, voting polls, easy polls, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video polls, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
+Tags: interactive content, poll plugin, create poll, create polls, quiz plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
+
 
 Requires at least: 2.8
 Tested up to: 4.4.1
@@ -16,6 +17,11 @@ The Opinion Stage poll, quiz & list plug-in allows you to easily add a poll, qui
 = Poll Examples: =
 
 For poll examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
+
+<br>
+ 
+http://www.youtube.com/watch?v=P7xKNlWbk0s
+
 
 = Quiz Example: =
 
@@ -40,12 +46,20 @@ For a List example, checkout this <a href="http://www.opinionstage.com/polldisco
  * Manage all your WordPress polls from one dashboard	
  * Poll your site visitors using their social network identities or anonymously
  * View the full poll participant list social profiles
- * Filter the poll participant list according to side votes
- * Filter the poll results using social & demographic filters such as social network belonging, gender, location, time-frame and more
+ * Filter the poll participant list according to poll side votes
+ * Filter the poll results using social & demographic filters. You can filter the poll results by social network belonging, gender, location, time-frame and more
  * Get the poll question & poll votes shared in social networks, driving social traffic to your poll and site
- * Set the details of the social sharing (e.g. text, image & link displayed in the Facebook share) to optimize the share for improved visibility and click rates
- * Customize the poll feature to match your needs (e.g. show/don't show number of votes, show results before / after voting, order sides by most votes or as configured, etc) 
- * Customize the poll's size, font, colour yourself or select from pre-defined poll styles and poll sizes.
+ * Set the details of the poll social shares (e.g. poll title text, poll main image image & poll share displayed in the social share) to optimize the poll share for improved visibility and click rates
+ * Customize the poll feature to match your needs (e.g. show/don't show number of poll votes, show poll results before / after voting, order poll sides by most poll votes or as configured, etc) 
+ * Customize the poll size, poll font, poll colour theme yourself or select from pre-defined poll styles and poll sizes.
+ * Embed the polls in different locations. You can add a sidebar poll, an article poll, or polls in a poll section on your site
+ * Prevent repeat voting in the poll. Use cookie based, IP based and social profile based methods to block repeat voting in your poll
+ * Redirect voters after they vote in the poll. You can configure to redirect the voters, based on their vote in the poll
+ * Set an expiry date for the poll, you can configure the time in which the poll will be automatically closed. You can also always manually open or close the poll
+ * Set a correct answer in the poll, to create a trivia poll
+ * Add a branded logo to your poll
+ * Add an email collection form to the poll, so that users are requested to leave their email before viewing the poll results
+ * View detailed statistics of the poll, including the users that voted on the poll, the time stamp of the poll votes, graphs that display the poll results and more
  * ... much more!
 
  = Main Poll Benefits: =
@@ -101,7 +115,7 @@ Opinion Stage offers web sites a highly engaging poll, quiz & list solution. For
 == Installation ==
 
 1. Upload the "poll, quiz & list by Opinion Stage" plug-in to your blog (or search for it) and then install the "poll, quiz & list by Opinion Stage" plugin on your plug-ins page
-2. Active it to start creation polls, quizzes and lists from the polls, quiz & list creation dashboard
+2. Active it to start creating polls, quizzes and lists from the polls, quiz & list creation dashboard
 
 == Frequently Asked Questions ==
 
@@ -139,11 +153,15 @@ Users can either share the poll or quiz question from the social (e.g.Users can 
 
 We support both regular multiple-sided polls and a special head-to-head poll flavor (for the 2-sided polls)
 
- = What is a social poll? =
+= What is a social poll? =
 
 Opinion Stage supports both standard annoymous polls and social polls which are polls in which you need to use your social profile for voting. You can configure the polls, so that the polls voting is anonymous, the polls voting requires a social profile for voting or the polls voting can either be done using a social profile or anonymously. 
 
- = What polls settings do you support - 
+= How can I block cheat voting in the polls? =
+
+The polls include 3 mechanisms to prevent from cheat voting in the polls. You can block multiple votes in the poll by Cookies, you can blick multiple votes in the poll by IP and you can block multiple voting in the polls by requiring a social profile to vote
+
+= What polls settings do you support = 
 
 Opinion Stagte supports many poll settings. You can configure look & feel polls settings, setting the polls font, the polls width, the polls colors and more. You can configure the polls general settings, such as when the poll results are displayed, if the poll result is displayed in number or % or both, in what order the poll answers are displayed, and more. You can configure the poll social settings, such as whether to add to the poll facebook comments, attach social sharing buttons to the polls, and other poll social settings.You can also configure the poll language. Finally, you can configure advanced poll setings, such as poll election settings, collecting leads from the poll respondants, redircting after the poll vote and more
 
@@ -158,7 +176,7 @@ Yes - our editors hand-pick the top polls, quizzes and list. You can browse the 
 
 == Screenshots ==
 
-1. **Multiple-choice poll** - example of a multiple-choice layout poll
+1. **Multiple-choice poll** - example of a multiple-choice layout poll, the poll include a lot of features including, selecting if users can select one side or more in the poll, allowing users to add their own answer to the poll, different methods of organizing the poll side order, setting the poll color, setting the poll font, preventing repeat voting in the poll, voting with a social profile in the poll, setting the poll result display, setting an expiry date for the poll, alignment of the poll title, setting the poll width, setting poll sharing bar, and much more
 2. **Head-to-head poll** - example of a head-to-head layout poll
 3. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
 4. **Personality quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
@@ -233,6 +251,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 15.2.0 =
+  * Various optimizations
   = Poll, Quiz & List Version 15.1.0 =
   * Security fix to limit accses to dashboard
   = Poll, Quiz & List Version 15.0.0 =
