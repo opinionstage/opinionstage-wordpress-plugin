@@ -248,6 +248,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 15.3.0 =
+  * Modified API path
   = Poll, Quiz & List Version 15.2.0 =
   * Various optimizations
   = Poll, Quiz & List Version 15.1.0 =

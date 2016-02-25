@@ -76,9 +76,9 @@ function opinionstage_create_poll_embed_code($id, $type, $width) {
 		$code = get_transient($transient_name);
 		if ( false === $code || '' === $code ) {
 			if ($type == 'set') {
-				$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/sets/" . $id . "/embed_code.json";			
+				$embed_code_url = "http://".OPINIONSTAGE_API_PATH."/sets/" . $id . "/code.json";			
 			} else {
-				$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/debates/" . $id . "/embed_code.json?width=".$width;
+				$embed_code_url = "http://".OPINIONSTAGE_API_PATH."/polls/" . $id . "/code.json?width=".$width;
 			}
 			
 			if ($is_homepage) {
@@ -111,7 +111,7 @@ function opinionstage_create_widget_embed_code($path, $comments, $sharing, $reco
 		$transient_name = 'embed_code' . $path . '.' . $comments . '.' . $sharing . $recommendations . $width;
 		$code = get_transient($transient_name);
 		if ( false === $code || '' === $code ) {
-			$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/widgets" . $path . "/embed_code.json?comments=".$comments."&sharing=".$sharing."&recommendations=".$recommendations."&width=".$width;
+			$embed_code_url = "http://".OPINIONSTAGE_API_PATH."/widgets" . $path . "/code.json?comments=".$comments."&sharing=".$sharing."&recommendations=".$recommendations."&width=".$width;
 			
 			extract(opinionstage_get_contents($embed_code_url));
 			$data = json_decode($raw_data);
@@ -136,7 +136,7 @@ function opinionstage_create_placement_embed_code($id) {
 		$transient_name = 'embed_code' . $id . '_' . 'placement';
 		$code = get_transient($transient_name);
 		if ( false === $code || '' === $code ) {
-			$embed_code_url = "http://".OPINIONSTAGE_SERVER_BASE."/api/containers/" . $id . "/embed_code.json";					
+			$embed_code_url = "http://".OPINIONSTAGE_API_PATH."/placements/" . $id . "/code.json";
 			extract(opinionstage_get_contents($embed_code_url));
 			$data = json_decode($raw_data);
 			if ($success) {
