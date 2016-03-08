@@ -41,6 +41,27 @@ function opinionstage_add_widget($atts) {
 	}
 }
 
+
+/**
+ * Main function for creating the feed html representation.
+ * Transforms the shortcode parameters to the desired embed code.
+ *
+ * Syntax as follows:
+ * shortcode name - OPINIONSTAGE_FEED_SHORTCODE
+ *
+ * Arguments:
+ * @param kind - Feed kind - top / mine
+ *
+ */
+function opinionstage_add_feed($atts) {
+	extract(shortcode_atts(array('kind' => 'top'), $atts));
+
+	if(!is_feed()) {		
+		return opinionstage_create_feed_embed_code($kind);
+	} else {
+		return __('Note: There is a quiz section embedded within this post, please visit the site to view this post\'s quiz section.', OPINIONSTAGE_WIDGET_UNIQUE_ID);
+	}
+}
 /**
  * Main function for creating the placement html representation.
  * Transforms the shortcode parameters to the desired code.
@@ -122,6 +143,40 @@ function opinionstage_create_widget_embed_code($path, $comments, $sharing, $reco
 			}
 		}
     }
+	return $code;
+}
+
+/**
+ * Create the The HTML code Tag according to the given parameters.
+ *
+ * Arguments:
+ * @param  kind - Kind of feed to embed (top content / my content)
+ */
+function opinionstage_create_feed_embed_code($kind) {
+    
+	// Load embed code from the cache if possible
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$email = '';
+	if ($kind == 'my' && !empty($os_options["email"])) {	
+		$email = $os_options["email"];
+		$transient_name = 'embed_code_feed_my';
+	} else {
+		$transient_name = 'embed_code_feed_top';
+	}
+	
+	$code = get_transient($transient_name);
+
+	if ( false === $code || '' === $code ) {
+		$embed_code_url = "http://".OPINIONSTAGE_API_PATH."/feed/code.json?email=".$email;
+		
+		extract(opinionstage_get_contents($embed_code_url));
+		$data = json_decode($raw_data);
+		if ($success) {
+			$code = $data->{'code'};			
+			// Set the embed code to be cached for an hour
+			set_transient($transient_name, $code, 3600);
+		}
+	}
 	return $code;
 }
 /**
