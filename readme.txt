@@ -5,7 +5,7 @@ Tags: interactive content, poll plugin, create poll, create polls, quiz plugin, 
 
 
 Requires at least: 2.8
-Tested up to: 4.4.1
+Tested up to: 4.5
 Stable tag: trunk
  
 Add a powerful & easy-to-use poll, quiz & list service. Create beautiful polls, quizzes & lists that boost time on site and drive traffic to your site.
@@ -248,6 +248,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Quiz & List Version 15.5.0 =
+  * Support WP 4.5
   = Poll, Quiz & List Version 15.4.0 =
   * Added the option to add a content section
   = Poll, Quiz & List Version 15.3.0 =
