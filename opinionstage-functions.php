@@ -182,6 +182,18 @@ function opinionstage_add_poll_page() {
 							</div>						
 							<div class="opinionstage-section-raw">
 								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-set"></div>
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">Survey</div>
+									<div class="example">e.g. Help us improve our site</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn'); ?>
+								</div>																				
+							</div>																			
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
 									<div class="os-icon icon-os-reports-trivia"></div>													
 								</div>						
 								<div class="opinionstage-section-cell opinionstage-description-cell">
@@ -304,7 +316,7 @@ function opinionstage_add_poll_page() {
 				<div class="opinionstage-dashboard-left">
 					<div id="opinionstage-section-quiz" class="opinionstage-dashboard-section">
 						<div class="opinionstage-section-header">
-							<div class="opinionstage-section-title">Interactive Content Section</div>
+							<div class="opinionstage-section-title">Section</div>
 						</div>
 						<div class="opinionstage-section-content-wrapper">
 							<div class="opinionstage-section-content">
