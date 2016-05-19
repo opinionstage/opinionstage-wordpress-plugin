@@ -228,6 +228,18 @@ function opinionstage_add_poll_page() {
 									<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn'); ?>
 								</div>																										
 							</div>						
+							<div class="opinionstage-section-raw">
+								<div class="opinionstage-section-cell opinionstage-icon-cell">
+									<div class="os-icon icon-os-reports-list"></div>
+								</div>						
+								<div class="opinionstage-section-cell opinionstage-description-cell">
+									<div class="title">List</div>
+									<div class="example">e.g. Top 10 movies of all times</div>
+								</div>													
+								<div class="opinionstage-section-cell opinionstage-btn-cell">
+									<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn'); ?>
+								</div>																										
+							</div>																				
 						</div>						
 					</div>				
 				</div>			

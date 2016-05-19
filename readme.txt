@@ -248,6 +248,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 15.8.0 =
+  * Resolved an issue with the font
   = Poll, Survey, Quiz & Form Version 15.7.0 =
   * Added support for creating forms, added to plugin name
   = Poll, Survey, Quiz & Form Version 15.6.0 =
