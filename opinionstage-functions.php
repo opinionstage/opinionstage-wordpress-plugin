@@ -221,11 +221,11 @@ function opinionstage_add_poll_page() {
 									<div class="os-icon icon-os-reports-list"></div>
 								</div>						
 								<div class="opinionstage-section-cell opinionstage-description-cell">
-									<div class="title">List</div>
-									<div class="example">e.g. Top 10 movies of all times</div>
+									<div class="title">Contact Form</div>
+									<div class="example">e.g. Collect email addresses</div>
 								</div>													
 								<div class="opinionstage-section-cell opinionstage-btn-cell">
-									<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn'); ?>
+									<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn'); ?>
 								</div>																										
 							</div>						
 						</div>						
@@ -238,27 +238,6 @@ function opinionstage_add_poll_page() {
 						</div>					
 						<div class="opinionstage-section-content-wrapper">
 							<div class="opinionstage-section-content">
-								<div class="opinionstage-section-raw">
-									<div class="opinionstage-section-cell opinionstage-toggle-cell">
-										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-											<input type="checkbox" name="article-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo(!$first_time && $os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
-											  <label class="opinionstage-onoffswitch-label" for="article-placement-switch">
-												<div class="opinionstage-onoffswitch-inner"></div>
-												<div class="opinionstage-onoffswitch-switch"></div>
-											</label>
-										</div>								
-									</div>						
-									<div class="opinionstage-section-cell opinionstage-description-cell">
-										<div class="title">Article</div>
-										<div class="example">Add a content section to all posts</div>
-									</div>													
-									<div class="opinionstage-section-cell opinionstage-btns-cell">
-										<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
-										<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
-											<div class="os-icon icon-os-common-settings"></div>													
-										</a>										
-									</div>																				
-								</div>																	
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell opinionstage-toggle-cell">
 										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
@@ -280,6 +259,27 @@ function opinionstage_add_poll_page() {
 										</a>
 									</div>																				
 								</div>							
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell opinionstage-toggle-cell">
+										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
+											<input type="checkbox" name="article-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo(!$first_time && $os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
+											  <label class="opinionstage-onoffswitch-label" for="article-placement-switch">
+												<div class="opinionstage-onoffswitch-inner"></div>
+												<div class="opinionstage-onoffswitch-switch"></div>
+											</label>
+										</div>								
+									</div>						
+									<div class="opinionstage-section-cell opinionstage-description-cell">
+										<div class="title">Article</div>
+										<div class="example">Add a content section to all posts</div>
+									</div>													
+									<div class="opinionstage-section-cell opinionstage-btns-cell">
+										<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
+										<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+											<div class="os-icon icon-os-common-settings"></div>													
+										</a>										
+									</div>																				
+								</div>																	
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell opinionstage-toggle-cell">
 										<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
@@ -377,7 +377,7 @@ function opinionstage_add_poll_page() {
 								</div>
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_create_link('Quiz & List examples', 'discover'); ?>
+										<?php echo opinionstage_create_link('Quiz examples', 'discover'); ?>
 									</div>
 								</div>
 								<div class="opinionstage-section-raw">
