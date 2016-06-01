@@ -30,7 +30,7 @@ For a Survey example, checkout this <a href="http://www.opinionstage.com/rsacks/
 
 = Form Example: =
 
-For a Form example, checkout this <a href=http://www.opinionstage.com/assafparag/submit-email?o=wp35e8" target="_blank">Form.</a>
+For a Form example, checkout this <a href="http://www.opinionstage.com/assafparag/submit-email?o=wp35e8" target="_blank">Form.</a>
 
 = Why Opinion Stage? =
 
