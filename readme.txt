@@ -265,6 +265,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 16.1.0 =
+  * Added chatbot tool integration
   = Poll, Survey, Quiz & Form Version 16.0.0 =
   * Updated help for new features
   = Poll, Survey, Quiz & Form Version 15.9.0 =
