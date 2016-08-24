@@ -1,7 +1,7 @@
 ﻿=== Poll, Survey, Quiz & Form by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll plugin, create poll, create polls, quiz plugin, survey, form, survey plugin, form plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
+Tags: poll plugin, create poll, create polls, quiz plugin, survey plugin, form, survey plugin, form plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, list, lists, top 10 list, top 5 list, top 50 list, top 100 list, ranking list rating list, rate list, product list, social list, listicles, content marketing list, opinion, opinion stage, opinionstage, responsive list, resource list, resource list, listing, listing search, listings, product listings
 
 
 Requires at least: 2.8
@@ -265,6 +265,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 16.2.0 =
+  * Various minor improvements & bug fixes
   = Poll, Survey, Quiz & Form Version 16.1.0 =
   * Added chatbot tool integration
   = Poll, Survey, Quiz & Form Version 16.0.0 =
