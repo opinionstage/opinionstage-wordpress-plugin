@@ -347,8 +347,10 @@ function opinionstage_parse_client_data($raw_data) {
 						   'article_placement_active' => 'false',
 						   'sidebar_placement_active' => 'false',
 						   'token' => $raw_data['token']);
-							   
-	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+	$valid_ids = preg_match("/^[0-9]+$/", $raw_data['fly_id']) && preg_match("/^[0-9]+$/", $raw_data['article_placement_id']) &&  preg_match("/^[0-9]+$/", $raw_data['sidebar_placement_id']);
+	if ($valid_ids) {
+		update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+	} 
 }
 
 ?>

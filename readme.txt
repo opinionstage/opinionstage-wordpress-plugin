@@ -265,6 +265,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 16.3.0 =
+  * Added verification for the placements ids in the connection callback function
   = Poll, Survey, Quiz & Form Version 16.2.0 =
   * Various minor improvements & bug fixes
   = Poll, Survey, Quiz & Form Version 16.1.0 =
