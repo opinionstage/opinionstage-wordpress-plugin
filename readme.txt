@@ -5,7 +5,7 @@ Tags: poll plugin, create poll, create polls, quiz plugin, form, survey plugin, 
 
 
 Requires at least: 2.8
-Tested up to: 4.5
+Tested up to: 4.7
 Stable tag: trunk
  
 Add a powerful poll, survey, quiz & form service to your site. Create a beatiful poll, survey, quiz or form.
@@ -265,6 +265,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 16.8.0 =
+  * Support for WordPress 4.7
   = Poll, Survey, Quiz & Form Version 16.7.0 =
   * Improve support for high volume lead configurations
   = Poll, Survey, Quiz & Form Version 16.6.0 =
