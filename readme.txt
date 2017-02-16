@@ -42,7 +42,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * Gather contact info such as emails & social profiles, while your audience participates in the poll, survey, quiz and form
  * Get up and going with your first poll, survey, quiz and form in minutes" -> "Get up and going with your first poll, survey, quiz and form in minutes, creating polls, surveys, quizzes and forms with the service is highly intuitive and help is avialable when needed
 
-= Main Poll Features: =
+= Main Poll plugin Features: =
 
  * Manage all your WordPress polls from one dashboard	
  * Poll your site visitors using their social network identities or anonymously
@@ -63,7 +63,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * View detailed statistics of the poll, including the users that voted on the poll, the time stamp of the poll votes, graphs that display the poll results and more
  * ... much more!
 
- = Main Poll Benefits: =
+ = Main Poll plugin Benefits: =
 
  * Discover opinions & people - discover opinions & the people behind them. You can view the social profiles of the public voters and learn about the opinions of your audience using aggregated poll reports
  * Engage your audience - opinion polls are one of the most engaging types of content. Opinion Stage’s social layer further increases the poll engagement by allowing voters to discover who the participants are, view the poll results by various filters and more
@@ -74,7 +74,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * Polls works seamlessly on all platforms - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices. Reach your target audience wherever they are
  * Easy content creation - creating polls is an easy way to produce engaging and relevant content. Deploy your first polls in minutes and easily manage all your polls from a simple and intuitive dashboard
 
- = Main Quiz Features: =
+ = Main Quiz plugin Features: =
 
  * Manage all your WordPress quizzes from one dashboard
  * Get the quiz shared in social networks, driving social traffic to your quiz and site
@@ -85,7 +85,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * Discover top quizzes, from a list of quizzes hand-picked by the Opinion Stage editors
  * Various customizations that will make your quizzes stand out and make the quizzes perfectly fit to your site
 
- = Main Quiz Benefits: =
+ = Main Quiz plugin Benefits: =
 
  * Engage your audience - quiz tools are one of the most engaging types of content
  * Drive traffic from social networks to your quiz and site - after completing the quiz, participants are prompted to share the quiz results in the various social networks, driving new traffic from social networks to the quiz on your site
@@ -96,7 +96,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * Add intro media such as image or video to the quiz
  * Embed your quiz on your site or use the Opinion Stage quiz landing page
 
- = Main Survey Features: =
+ = Main Survey plugin Features: =
 
  * Survey as many users as you like
  * Survey users with various survey question types
@@ -107,7 +107,7 @@ For a Form example, checkout this <a href="http://www.opinionstage.com/assafpara
  * Embed the Survey anywhere
  * Share Surveys in Facebook, Twitter & Google+
 
- = Main Form Features: =
+ = Main Form plugin Features: =
 
  * Add as many fields to the form as you like
  * Forms includes title, text, image & social network integrations
@@ -193,8 +193,10 @@ Yes - our editors hand-pick polls, quizzes, form and surveys to showcase as exam
 1. **Multiple-choice poll** - example of a multiple-choice layout poll, the poll include a lot of features including, selecting if users can select one side or more in the poll, allowing users to add their own answer to the poll, different methods of organizing the poll side order, setting the poll color, setting the poll font, preventing repeat voting in the poll, voting with a social profile in the poll, setting the poll result display, setting an expiry date for the poll, alignment of the poll title, setting the poll width, setting poll sharing bar, and much more
 2. **Head-to-head poll** - example of a head-to-head layout poll
 3. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
-4. **Personality quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
+4. **Outcome quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
 5. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, list) creation dashboard
+6. **Images/Videos inside" - example of integrating images in a question to make it more appealing, which results with improved engagement rates
+7. **Lead form" - example of gathering quality leads while users participate in the polls, quizzes & surveys
 
 == Other Notes ==
 
@@ -265,6 +267,9 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.1.0 =
+  * Add CSS override to all content types
+  * Support GTM integrations
   = Poll, Survey, Quiz & Form Version 17.0.0 =
   * Improved quiz/survey reporting capabilities
   = Poll, Survey, Quiz & Form Version 16.9.0 =
