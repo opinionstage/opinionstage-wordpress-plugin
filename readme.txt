@@ -267,6 +267,9 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.2.0 =
+  * New drop-off report
+  * Async sending of leads
   = Poll, Survey, Quiz & Form Version 17.1.0 =
   * Add CSS override to all content types
   * Support GTM integrations
