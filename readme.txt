@@ -14,23 +14,27 @@ Add a powerful poll, survey, quiz & form service to your site. Create a beatiful
 
 The Opinion Stage poll, survey, quiz & form plug-in allows you to easily add a poll, quiz, survey or form to your website.
 
+http://youtu.be/Ut6ibSvGI4A
+
 = Poll Examples: =
 
-For poll examples, checkout the <a href="http://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
+For poll examples, checkout the <a href="https://www.opinionstage.com/showcase?o=wp35e8" target="_blank">Poll Showcase.</a>
 
-http://www.youtube.com/watch?v=P7xKNlWbk0s
+= Trivia Quiz Example: =
 
-= Quiz Example: =
+For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/test-your-olympic-knowledge?o=wp35e8" target="_blank">Quiz.</a>
 
-For a quiz example, checkout this <a href="http://www.opinionstage.com/polldiscovery/can-we-guess-how-educated-you-are?o=wp35e8" target="_blank">Quiz.</a>
+= Outcome Quiz Example: =
+
+For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Quiz.</a>
 
 = Survey Example: =
 
-For a Survey example, checkout this <a href="http://www.opinionstage.com/rsacks/help-us-improve-opinion-stage?o=wp35e8" target="_blank">Survey.</a>
+For a Survey example, checkout this <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey.</a>
 
 = Form Example: =
 
-For a Form example, checkout this <a href="http://www.opinionstage.com/assafparag/submit-email?o=wp35e8" target="_blank">Form.</a>
+For a Form example, checkout this <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form.</a>
 
 = Why Opinion Stage? =
 
@@ -267,6 +271,9 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.3.0 =
+  * Display an explanation after voting in polls
+  * Fixed bug with IP blocking
   = Poll, Survey, Quiz & Form Version 17.2.0 =
   * New drop-off report
   * Async sending of leads
