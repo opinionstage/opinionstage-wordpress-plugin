@@ -1,7 +1,7 @@
 ﻿=== Poll, Survey, Quiz & Form by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll plugin, create poll, create polls, quiz plugin, form, survey plugin, form plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, wppolls, yop poll, polldaddy, polldaddy polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
+Tags: poll plugin, create poll, create polls, quiz plugin, form, survey plugin, form plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
 
 
 Requires at least: 2.8
@@ -14,7 +14,7 @@ Add a powerful poll, survey, quiz & form service to your site. Create a beatiful
 
 The Opinion Stage poll, survey, quiz & form plug-in allows you to easily add a poll, quiz, survey or form to your website.
 
-http://youtu.be/Ut6ibSvGI4A
+http://www.youtube.com/watch?v=Ut6ibSvGI4A
 
 = Poll Examples: =
 
@@ -35,6 +35,11 @@ For a Survey example, checkout this <a href="https://www.opinionstage.com/opinio
 = Form Example: =
 
 For a Form example, checkout this <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form.</a>
+
+= List Example: =
+
+For a List example, checkout this <a href="https://www.opinionstage.com/polldiscovery/the-5-best-sources-for-great-free-images?o=wp35e8" target="_blank">List.</a>
+
 
 = Why Opinion Stage? =
 
@@ -271,6 +276,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.4.0 =
+  * Add new charts to the poll, quiz & survey reports
   = Poll, Survey, Quiz & Form Version 17.3.0 =
   * Display an explanation after voting in polls
   * Fixed bug with IP blocking
