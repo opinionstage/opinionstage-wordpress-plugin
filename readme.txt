@@ -22,11 +22,11 @@ For poll examples, checkout the <a href="https://www.opinionstage.com/showcase?o
 
 = Trivia Quiz Example: =
 
-For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/test-your-olympic-knowledge?o=wp35e8" target="_blank">Quiz.</a>
+For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/test-your-olympic-knowledge?o=wp35e8" target="_blank">Trivia Quiz.</a>
 
 = Outcome Quiz Example: =
 
-For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Quiz.</a>
+For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Outcome Quiz.</a>
 
 = Survey Example: =
 
@@ -276,6 +276,9 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.5.0 =
+  * Display comment after user votes
+  * Additional advanced reports
   = Poll, Survey, Quiz & Form Version 17.4.0 =
   * Add new charts to the poll, quiz & survey reports
   = Poll, Survey, Quiz & Form Version 17.3.0 =
