@@ -204,8 +204,11 @@ Yes - our editors hand-pick polls, quizzes, form and surveys to showcase as exam
 3. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
 4. **Outcome quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
 5. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, list) creation dashboard
-6. **Images/Videos inside" - example of integrating images in a question to make it more appealing, which results with improved engagement rates
-7. **Lead form" - example of gathering quality leads while users participate in the polls, quizzes & surveys
+6. **Images/Videos** inside" - example of integrating images in a question to make it more appealing, which results with improved engagement rates
+7. **Lead form** - example of gathering quality leads while users participate in the polls, quizzes & surveys
+8. **Report** - example of a poll report screen allowing advanced analysis of results
+9. **Content examples** - dashboard that includes highly effective examples that can be duplicated to your account
+10. **Popup placement** - display your content in an exit/enter, center/side screen popup
 
 == Other Notes ==
 
@@ -276,6 +279,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.6.0 =
+  * Various fixes & optimizations
   = Poll, Survey, Quiz & Form Version 17.5.0 =
   * Display comment after user votes
   * Additional advanced reports
