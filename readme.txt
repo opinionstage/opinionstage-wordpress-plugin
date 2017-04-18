@@ -1,7 +1,7 @@
 ﻿=== Poll, Survey, Quiz & Form by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll plugin, create poll, create polls, quiz plugin, form, survey plugin, form plugin, create quiz, create quizzes, trivia quiz, personality quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
+Tags: poll plugin, quiz plugin, survey plugin, form plugin, list plugin, create poll, create quizs, trivia quiz, personality quiz, outcome quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
 
 
 Requires at least: 2.8
@@ -199,12 +199,12 @@ Yes - our editors hand-pick polls, quizzes, form and surveys to showcase as exam
 
 == Screenshots ==
 
-1. **Multiple-choice poll** - example of a multiple-choice layout poll, the poll include a lot of features including, selecting if users can select one side or more in the poll, allowing users to add their own answer to the poll, different methods of organizing the poll side order, setting the poll color, setting the poll font, preventing repeat voting in the poll, voting with a social profile in the poll, setting the poll result display, setting an expiry date for the poll, alignment of the poll title, setting the poll width, setting poll sharing bar, and much more
-2. **Head-to-head poll** - example of a head-to-head layout poll
-3. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
-4. **Outcome quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes usually produce a lot of social shares.
-5. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, list) creation dashboard
-6. **Images/Videos** inside" - example of integrating images in a question to make it more appealing, which results with improved engagement rates
+1. **Poll image layout** - example of integrating images in the poll answers to make it more appealing, which results with improved engagement rates.
+2. **Poll standard layout** - the poll include a lot of features including, selecting if users can select one side or more in the poll, allowing users to add their own answer to the poll, different methods of organizing the poll side order, setting the poll color, setting the poll font, preventing repeat voting in the poll, voting with a social profile in the poll, setting the poll result display, setting an expiry date for the poll, alignment of the poll title, setting the poll width, setting poll sharing bar, and much more
+3. **poll head to head layout** - example of a head-to-head layout poll
+4. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
+5. **Outcome quiz** - example of an outcome quiz. Using an outcome quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Outcome quizzes usually produce a lot of social shares.
+6. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, list) creation dashboard
 7. **Lead form** - example of gathering quality leads while users participate in the polls, quizzes & surveys
 8. **Report** - example of a poll report screen allowing advanced analysis of results
 9. **Content examples** - dashboard that includes highly effective examples that can be duplicated to your account
@@ -279,6 +279,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.7.0 =
+  * Responses table improvements, language fixes, advanced editing in after vote notifications
   = Poll, Survey, Quiz & Form Version 17.6.0 =
   * Various fixes & optimizations
   = Poll, Survey, Quiz & Form Version 17.5.0 =
