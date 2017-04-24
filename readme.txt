@@ -1,7 +1,7 @@
 ﻿=== Poll, Survey, Quiz & Form by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll plugin, quiz plugin, survey plugin, form plugin, list plugin, create poll, create quizs, trivia quiz, personality quiz, outcome quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
+Tags: poll plugin, quiz plugin, survey plugin, contact form plugin, list plugin, create poll, create quizs, trivia quiz, personality quiz, outcome quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
 
 
 Requires at least: 2.8
@@ -279,6 +279,9 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz & Form Version 17.8.0 =
+  * Improvements of quiz/survey reporting 
+  * Various minor bug fixes 
   = Poll, Survey, Quiz & Form Version 17.7.0 =
   * Responses table improvements, language fixes, advanced editing in after vote notifications
   = Poll, Survey, Quiz & Form Version 17.6.0 =
