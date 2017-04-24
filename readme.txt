@@ -1,4 +1,4 @@
-﻿=== Poll, Survey, Quiz & Form by OpinionStage ===
+﻿=== Poll, Survey, Quiz & Contact Form by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: 
 Tags: poll plugin, quiz plugin, survey plugin, contact form plugin, list plugin, create poll, create quizs, trivia quiz, personality quiz, outcome quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quiz, quizzes, quizes, post survey, sidebar survey, survey, survey form, survey form builder, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
