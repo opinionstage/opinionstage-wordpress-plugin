@@ -30,9 +30,9 @@ For a quiz example, checkout this <a href="https://www.opinionstage.com/rsacks/h
 
 = Survey Example: =
 
-For a Survey example, checkout this <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey.</a>
+For a survey example, checkout this <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey.</a>
 
-= contact form Example: =
+= Contact Form Example: =
 
 For a contact form example, checkout this <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">contact form.</a>
 
@@ -279,413 +279,415 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
-  = Poll, Survey, Quiz & contact form builder Version 17.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 18.0.0 =
+  * Add a slider content format
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.9.0 =
   * Additional survey features based on client requests
-  = Poll, Survey, Quiz & contact form builder Version 17.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.8.0 =
   * Improvements of quiz/survey reporting 
   * Various minor bug fixes 
-  = Poll, Survey, Quiz & contact form builder Version 17.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.7.0 =
   * Responses table improvements, language fixes, advanced editing in after vote notifications
-  = Poll, Survey, Quiz & contact form builder Version 17.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.6.0 =
   * Various fixes & optimizations
-  = Poll, Survey, Quiz & contact form builder Version 17.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.5.0 =
   * Display comment after user votes
   * Additional advanced reports
-  = Poll, Survey, Quiz & contact form builder Version 17.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.4.0 =
   * Add new charts to the poll, quiz & survey reports
-  = Poll, Survey, Quiz & contact form builder Version 17.3.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.3.0 =
   * Display an explanation after voting in polls
   * Fixed bug with IP blocking
-  = Poll, Survey, Quiz & contact form builder Version 17.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.2.0 =
   * New drop-off report
   * Async sending of leads
-  = Poll, Survey, Quiz & contact form builder Version 17.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.1.0 =
   * Add CSS override to all content types
   * Support GTM integrations
-  = Poll, Survey, Quiz & contact form builder Version 17.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 17.0.0 =
   * Improved quiz/survey reporting capabilities
-  = Poll, Survey, Quiz & contact form builder Version 16.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.9.0 =
   * Added support for pixel tracking
-  = Poll, Survey, Quiz & contact form builder Version 16.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.8.0 =
   * Support for WordPress 4.7
-  = Poll, Survey, Quiz & contact form builder Version 16.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.7.0 =
   * Improve support for high volume lead configurations
-  = Poll, Survey, Quiz & contact form builder Version 16.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.6.0 =
   * Text changes and bug fixes
-  = Poll, Survey, Quiz & contact form builder Version 16.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.5.0 =
   * Various minor fixes & optimizations
-  = Poll, Survey, Quiz & contact form builder Version 16.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.4.0 =
   * Added ad refresh mechanism
-  = Poll, Survey, Quiz & contact form builder Version 16.3.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.3.0 =
   * Added verification for the placements ids in the connection callback function
-  = Poll, Survey, Quiz & contact form builder Version 16.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.2.0 =
   * Various minor improvements & bug fixes
-  = Poll, Survey, Quiz & contact form builder Version 16.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.1.0 =
   * Added chatbot tool integration
-  = Poll, Survey, Quiz & contact form builder Version 16.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 16.0.0 =
   * Updated help for new features
-  = Poll, Survey, Quiz & contact form builder Version 15.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.9.0 =
   * Rebranded Quiz name to Outcome, removed the section entry
-  = Poll, Survey, Quiz & contact form builder Version 15.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.8.0 =
   * Resolved an issue with the font
-  = Poll, Survey, Quiz & contact form builder Version 15.7.0 =
-  * Added support for creating contact form builders, added to plugin name
-  = Poll, Survey, Quiz & contact form builder Version 15.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.7.0 =
+  * Added support for creating Contact Form Builders, added to plugin name
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.6.0 =
   * Added support for creating surveys, renamed plugin
-  = Poll, Survey, Quiz & contact form builder Version 15.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.5.0 =
   * Support WP 4.5
-  = Poll, Survey, Quiz & contact form builder Version 15.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.4.0 =
   * Added the option to add a content section
-  = Poll, Survey, Quiz & contact form builder Version 15.3.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.3.0 =
   * Modified API path
-  = Poll, Survey, Quiz & contact form builder Version 15.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.2.0 =
   * Various optimizations
-  = Poll, Survey, Quiz & contact form builder Version 15.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.1.0 =
   * Security fix to limit accses to dashboard
-  = Poll, Survey, Quiz & contact form builder Version 15.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 15.0.0 =
   * Various optimizations
-  = Poll, Survey, Quiz & contact form builder Version 14.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.9.0 =
   * Added the option to embed using a fixed width
-  = Poll, Survey, Quiz & contact form builder Version 14.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.8.0 =
   * Modified sidebar widget management UI
   * Replaced dashboard top navigation links with more prominent 'my content' link
   * Added 'list' to the plugin name
-  = Poll, Survey, Quiz & contact form builder Version 14.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.7.0 =
   * Various small optimizations
-  = Poll, Survey, Quiz & contact form builder Version 14.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.6.0 =
   * Various UI modifications - added top navigation links, dashboard UI is now more responsive. 
-  = Poll, Survey, Quiz & contact form builder Version 14.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.5.0 =
   * Renamed style to avoid css caching issues
-  = Poll, Survey, Quiz & contact form builder Version 14.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.4.0 =
   * Complete ui revamp
   * Removed obsolete polls insertion popup and tinymce integration
   * Handling compatibility issues with other plugin
-  = Poll, Survey, Quiz & contact form builder Version 14.3.0 =
-  * Various Poll, Survey, Quiz & contact form builder improvements
-  = Poll, Survey, Quiz & contact form builder Version 14.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.3.0 =
+  * Various Poll, Survey, Quiz & Contact Form Builder improvements
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.2.0 =
   * Not showing recommendations by default when embedding Trivia quiz and Personality quiz via the widget shortcode
-  = Poll, Survey, Quiz & contact form builder Version 14.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.1.0 =
   * Added support for disabling FB comments, sharing buttons and recommendations for Trivia quiz and Personality quiz via the widget shortcode
-  = Poll, Survey, Quiz & contact form builder Version 14.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 14.0.0 =
   * Improved polls & quizzes creation help file
   * Various small issues
-  = Poll, Survey, Quiz & contact form builder Version 13.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.9.0 =
   * Added creation links for trivia quiz, peronsality quiz and lists
   * Added a link for content discovery
-  = Poll, Survey, Quiz & contact form builder Version 13.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.8.0 =
   * Support creating a quiz draft
   * Added quiz tips and quiz best practicies
-  = Poll, Survey, Quiz & contact form builder Version 13.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.7.0 =
   * Better name for widget following feedback
-  = Poll, Survey, Quiz & contact form builder Version 13.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.6.0 =
   * Added Presonality quizzes
-  = Poll, Survey, Quiz & contact form builder Version 13.5.0 =
-  * Renamed plugin to better reflect the platcontact form builder
-  = Poll, Survey, Quiz & contact form builder Version 13.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.5.0 =
+  * Renamed plugin to better reflect the platContact Form Builder
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.4.0 =
   * Added shortcodes for trivia and peronsality quizzes 
-  = Poll, Survey, Quiz & contact form builder Version 13.3.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.3.0 =
   * Various Trivia Quiz enhancements & fixes
   * Support for iframe embeds
-  = Poll, Survey, Quiz & contact form builder Version 13.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.2.0 =
   * Suport for Basque & Vienamese languages
   * Trivia Quiz beta 
-  = Poll, Survey, Quiz & contact form builder Version 13.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.1.0 =
   * Added support for quick addition of any language
-  = Poll, Survey, Quiz & contact form builder Version 13.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 13.0.0 =
   * Added text domain
-  = Poll, Survey, Quiz & contact form builder Version 12.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.9.0 =
   * Poll discovery mechanim improvements
   * Additional tracking capabilities
-  = Poll, Survey, Quiz & contact form builder Version 12.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.8.0 =
   * Various bug fixes
-  = Poll, Survey, Quiz & contact form builder Version 12.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.7.0 =
   * CSS modifications to better align with desired coding standards. Reverted css file name change.
   * Minor text changes
   * Not using PHP 4 Style Constructors any more
-  = Poll, Survey, Quiz & contact form builder Version 12.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.6.0 =
   * Fixed broken links to dashboard
   * Renamed css file
-  = Poll, Survey, Quiz & contact form builder Version 12.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.5.0 =
   * Modified css strucutre
   * Added an option to enable/disable sidebar widget directly via the widget box 
-  = Poll, Survey, Quiz & contact form builder Version 12.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.4.0 =
   * Added a control switch for the Sidebar placement
-  = Poll, Survey, Quiz & contact form builder Version 12.3.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.3.0 =
   * Added Sidebar placement as a widget
-  = Poll, Survey, Quiz & contact form builder Version 12.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.2.0 =
   * Added the option to connect the plugin to Opinion Stage account
   * Added plug & play integration for fly-out placement  
   * Replaced the option of adding polls to all posts with plug & play article section placement
-  = Poll, Survey, Quiz & contact form builder Version 12.1.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.1.0 =
   * Additional fix for supporting SSL
-  = Poll, Survey, Quiz & contact form builder Version 12.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 12.0.0 =
   * Support for SSL when voting with social profiles
   * revamp of content recommendation mechanism
-  = Poll, Survey, Quiz & contact form builder Version 11.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.9.0 =
   * Poll Placement improvements
-  = Poll, Survey, Quiz & contact form builder Version 11.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.8.0 =
   * Plugin minor changes
-  = Poll, Survey, Quiz & contact form builder Version 11.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.7.0 =
   * Image cropping
-  = Poll, Survey, Quiz & contact form builder Version 11.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.6.0 =
   * New poll recommendation design
-  = Poll, Survey, Quiz & contact form builder Version 11.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.5.0 =
   * resolve conflicts
-  = Poll, Survey, Quiz & contact form builder Version 11.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.4.0 =
   * Fixed compatibility issues
-  = Poll, Survey, Quiz & contact form builder Version 11.3.0 =
-  * First Trivia poll Poll, Survey, Quiz & contact form builder Version
-  = Poll, Survey, Quiz & contact form builder Version 11.2.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.3.0 =
+  * First Trivia poll Poll, Survey, Quiz & Contact Form Builder Version
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.2.0 =
   * Various functionality & usability improvements
-  = Poll, Survey, Quiz & contact form builder Version 11.1.0 =
-  * Head-to-Head Poll - new revamped UI (first Poll, Survey, Quiz & contact form builder Version)
-  = Poll, Survey, Quiz & contact form builder Version 11.0.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.1.0 =
+  * Head-to-Head Poll - new revamped UI (first Poll, Survey, Quiz & Contact Form Builder Version)
+  = Poll, Survey, Quiz & Contact Form Builder Version 11.0.0 =
   * New look & feel settings
-  = Poll, Survey, Quiz & contact form builder Version 10.9.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.9.0 =
   * Allow disabling global poll section for specific posts
-  = Poll, Survey, Quiz & contact form builder Version 10.8.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.8.0 =
   * Texts changes
-  = Poll, Survey, Quiz & contact form builder Version 10.7.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.7.0 =
   * New options for adding polls or sets to all posts 
-  = Poll, Survey, Quiz & contact form builder Version 10.6.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.6.0 =
   * Poll sets and poll placements - improved interface
-  = Poll, Survey, Quiz & contact form builder Version 10.5.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.5.0 =
   * Ad integrations (optional) - revamped interface
-  = Poll, Survey, Quiz & contact form builder Version 10.4.0 =
+  = Poll, Survey, Quiz & Contact Form Builder Version 10.4.0 =
   * Added UI support for social logins
- = Poll, Survey, Quiz & contact form builder Version 10.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 10.3.0 =
   * New UI for Multiple Choice Polls
- = Poll, Survey, Quiz & contact form builder Version 10.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 10.2.0 =
   * Various stability fixes 
- = Poll, Survey, Quiz & contact form builder Version 10.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 10.1.0 =
   * Post vote actions
- = Poll, Survey, Quiz & contact form builder Version 10.0.0 =
-  * Percontact form builderance improvements
- = Poll, Survey, Quiz & contact form builder Version 9.9.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 10.0.0 =
+  * PerContact Form Builderance improvements
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.9.0 =
   * Various fixes
- = Poll, Survey, Quiz & contact form builder Version 9.8.0 =
-  * Poll discovery first Poll, Survey, Quiz & contact form builder Version
- = Poll, Survey, Quiz & contact form builder Version 9.7.0 =
-  * Placements first Poll, Survey, Quiz & contact form builder Version
- = Poll, Survey, Quiz & contact form builder Version 9.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.8.0 =
+  * Poll discovery first Poll, Survey, Quiz & Contact Form Builder Version
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.7.0 =
+  * Placements first Poll, Survey, Quiz & Contact Form Builder Version
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.6.0 =
   * Various fixes
- = Poll, Survey, Quiz & contact form builder Version 9.5.0 =
-  * Smart containers first Poll, Survey, Quiz & contact form builder Version
- = Poll, Survey, Quiz & contact form builder Version 9.4.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.5.0 =
+  * Smart containers first Poll, Survey, Quiz & Contact Form Builder Version
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.4.0 =
   * Allow users to add their own answers
   * Head2Head polls - mobile optimizations
- = Poll, Survey, Quiz & contact form builder Version 9.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.3.0 =
   * Support adding custom texts to the interface
   * Solve minor UI issues
- = Poll, Survey, Quiz & contact form builder Version 9.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.2.0 =
   * Support displaying ads before showing the results
   * Support reordering the sides of the poll
- = Poll, Survey, Quiz & contact form builder Version 9.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.1.0 =
   * Added the option to add Facebook comments to the polls
   * Improvements to poll creation flow
- = Poll, Survey, Quiz & contact form builder Version 9.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 9.0.0 =
   * New poll head-to-head themes
   * Poll UI optimizations
- = Poll, Survey, Quiz & contact form builder Version 8.9.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.9.0 =
   * Various additions and improvements to the poll style studio
   * Support for wide pages
- = Poll, Survey, Quiz & contact form builder Version 8.8.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.8.0 =
   * Improved poll built-in UI styles
   * New capabilities to poll style studio
- = Poll, Survey, Quiz & contact form builder Version 8.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.7.0 =
   * Improved poll reports
   * Various minor improvements
- = Poll, Survey, Quiz & contact form builder Version 8.6.0 =
-  * Poll percontact form builderance improvements for peek scenarios
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.6.0 =
+  * Poll perContact Form Builderance improvements for peek scenarios
   * New banner type ad unit
- = Poll, Survey, Quiz & contact form builder Version 8.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.5.0 =
   * Improve process of adding polls to site
   * Improve returning traffic tracking mechanism
- = Poll, Survey, Quiz & contact form builder Version 8.4.0 =
-  * Add first Poll, Survey, Quiz & contact form builder Version of poll discovery feature
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.4.0 =
+  * Add first Poll, Survey, Quiz & Contact Form Builder Version of poll discovery feature
   * Resolve issue with image addition
- = Poll, Survey, Quiz & contact form builder Version 8.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.3.0 =
   * Add the option to integrate advertisement into the polls for generating revenue
   * Optimizations for poll display in mobile environments
- = Poll, Survey, Quiz & contact form builder Version 8.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.2.0 =
   * Enhancements on contact generation feature
   * Mobile polls improvements
   * Additions to default poll settings
- = Poll, Survey, Quiz & contact form builder Version 8.1.0 =
-  * Poll discovery - first Poll, Survey, Quiz & contact form builder Version
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.1.0 =
+  * Poll discovery - first Poll, Survey, Quiz & Contact Form Builder Version
   * Poll sets improvements
-  * Poll percontact form builderance improvements
- = Poll, Survey, Quiz & contact form builder Version 8.0.0 =
+  * Poll perContact Form Builderance improvements
+ = Poll, Survey, Quiz & Contact Form Builder Version 8.0.0 =
   * Added an account report dashboard
- = Poll, Survey, Quiz & contact form builder Version 7.9.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.9.0 =
   * Resolved paypal integration issues
   * Resolved facebook page integration issues
- = Poll, Survey, Quiz & contact form builder Version 7.8.0 =
-  * Renamed plugin to better reflect the platcontact form builder
- = Poll, Survey, Quiz & contact form builder Version 7.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.8.0 =
+  * Renamed plugin to better reflect the platContact Form Builder
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.7.0 =
   * Fixed 2 poll display issues
- = Poll, Survey, Quiz & contact form builder Version 7.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.6.0 =
   * Added the ability to insert a shortcode of a set of polls
   * Added a widget for a container and for a set of polls
- = Poll, Survey, Quiz & contact form builder Version 7.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.5.0 =
   * Created a widget for easily adding polls to site
- = Poll, Survey, Quiz & contact form builder Version 7.4.0 =
-  * Poll percontact form builderance optimizations
- = Poll, Survey, Quiz & contact form builder Version 7.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.4.0 =
+  * Poll perContact Form Builderance optimizations
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.3.0 =
   * Resolved 2 issues with polls on mobile
- = Poll, Survey, Quiz & contact form builder Version 7.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.2.0 =
   * Add external integration with 3rd parties via API/XML mechanism
- = Poll, Survey, Quiz & contact form builder Version 7.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.1.0 =
   * Support collecting emails from poll voters
- = Poll, Survey, Quiz & contact form builder Version 7.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 7.0.0 =
   * Fixed potential collisions with other plugins
- = Poll, Survey, Quiz & contact form builder Version 6.9.0 =
-  * First Poll, Survey, Quiz & contact form builder Version of Poll Sets
-  * First Poll, Survey, Quiz & contact form builder Version of redirect after poll vote
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.9.0 =
+  * First Poll, Survey, Quiz & Contact Form Builder Version of Poll Sets
+  * First Poll, Survey, Quiz & Contact Form Builder Version of redirect after poll vote
   * Fix related to languages in poll display
- = Poll, Survey, Quiz & contact form builder Version 6.8.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.8.0 =
   * Fix issue with Mobile voting
   * Fix for iframe embed of poll
   * Fix for uploading images from computer 
- = Poll, Survey, Quiz & contact form builder Version 6.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.7.0 =
   * Added Czech language & fix for Polish
   * Add poll images via URL 
- = Poll, Survey, Quiz & contact form builder Version 6.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.6.0 =
   * Improve poll login screen in mobile
   * Fixes for poll container 
- = Poll, Survey, Quiz & contact form builder Version 6.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.5.0 =
   * Fix issues with voting on iphone/ipad (iOS7)
- = Poll, Survey, Quiz & contact form builder Version 6.4.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.4.0 =
   * New poll container
   * Improvements to the poll optimization dashboard
- = Poll, Survey, Quiz & contact form builder Version 6.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.3.0 =
   * New graphs for the new reports page
   * New languages - Romanian, Polish, Indonesian, Danish
- = Poll, Survey, Quiz & contact form builder Version 6.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.2.0 =
   * New Poll navigation bar
   * New languages - Dutch, Albanian, Lithuanian
- = Poll, Survey, Quiz & contact form builder Version 6.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.1.0 =
   * New dashboard and site header
   * Poll was translated to the following languages - Swedish, Turkish, Chinese, Japanese, Korean
- = Poll, Survey, Quiz & contact form builder Version 6.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 6.0.0 =
   * Added the option to login to Opinion Stage with a email/user-name and password combination
- = Poll, Survey, Quiz & contact form builder Version 5.9.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.9.0 =
   * Added geographic location filter to poll results dashboard
- = Poll, Survey, Quiz & contact form builder Version 5.8.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.8.0 =
   * Added time filter to poll results dashboard
   * New design for on site poll page
   * Various improvements & fixes on poll results dashboard
- = Poll, Survey, Quiz & contact form builder Version 5.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.7.0 =
   * Added the option to block repeat voting in polls by IP
- = Poll, Survey, Quiz & contact form builder Version 5.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.6.0 =
   * Improvements & fixes on poll studio
- = Poll, Survey, Quiz & contact form builder Version 5.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.5.0 =
   * Improvements & fixes on poll reporting statistics
   * Improvements & fixes on poll core flows
- = Poll, Survey, Quiz & contact form builder Version 5.4.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.4.0 =
   * Added to the poll results screen the following poll stats: poll engagement stats, poll social stats & poll traffic stats
- = Poll, Survey, Quiz & contact form builder Version 5.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.3.0 =
   * Add a clone function that allows to easily create multiple polls from the same template
   * Add the option to schedule when the poll will be closed
- = Poll, Survey, Quiz & contact form builder Version 5.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.2.0 =
   * Revamp of the poll social sharing settings
   * revamp of add poll to website screen
- = Poll, Survey, Quiz & contact form builder Version 5.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.1.0 =
   * Add Facebook comments to polls added to Facebook pages
   * Add the option to preview the poll in different widths
- = Poll, Survey, Quiz & contact form builder Version 5.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 5.0.0 =
   * Improvements to poll style studio
   * Added option to configure head to head polls not to show results before voting
   * Added the option to configure all types of polls not to show results to voters
   * Extended width support of head to head polls to 250-740 pxls 
- = Poll, Survey, Quiz & contact form builder Version 4.7.1 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.7.1 =
   * Additional social filters added to the poll interface & poll report
   * Optimize poll sharing scenarios
- = Poll, Survey, Quiz & contact form builder Version 4.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.7.0 =
   * Improvements on poll sharing scenarios
- = Poll, Survey, Quiz & contact form builder Version 4.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.6.0 =
   * Add polls to Facebook pages in 2-clicks feature added
   * Enhanced poll reporting that includes poll result filters
-  * Brightcove video contact form builderat now supported in the polls
- = Poll, Survey, Quiz & contact form builder Version 4.5.5 =
+  * Brightcove video Contact Form Builderat now supported in the polls
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.5.5 =
   * Added support for Google+ poll login
   * Fixed a presentation issue with polls and https sites
   * Fixed issue with poll display on Facebook pages
- = Poll, Survey, Quiz & contact form builder Version 4.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.5.0 =
   * Localize polls for Russian and French
   * New design for poll social login dialogue
   * Polls now auto-detect https environments
   * Various minor fixes and improvements to poll functionality
- = Poll, Survey, Quiz & contact form builder Version 4.4.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.4.0 =
   * Polls are now localized for Portuguese
   * Various minor bug fixes
- = Poll, Survey, Quiz & contact form builder Version 4.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.3.0 =
   * Multiple sided polls are supported for 150 widths and above
   * Head-to-head polls are supported for 300 widths and above
   * Poll style studio was improved to included many more poll style options
   * New improved poll dashboard 
   * Poll showcase was improved to include more poll examples and detailed explanations
- = Poll, Survey, Quiz & contact form builder Version 4.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.2.0 =
   * Multi-sided polls support addition of multimedia (video and image)
   * Both head-to-head and multi-sided polls - Multimedia support auto-fit for different width (e.g mobile environment) 
- = Poll, Survey, Quiz & contact form builder Version 4.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.1.0 =
   * Multi-sided polls support addition of multimedia (video and image)
   * Both head-to-head and multi-sided polls - Multimedia support auto-fit for different width (e.g mobile environment) 
- = Poll, Survey, Quiz & contact form builder Version 4.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 4.0.0 =
   * UI improvements for the polls (filters, border etc)
- = Poll, Survey, Quiz & contact form builder Version 3.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 3.1.0 =
   * Poll creator can select number of allowed poll answers
   * FB poll sharing flow optimizations
   * Poll results can be shown from the Opinion-Stage poll dashboard
- = Poll, Survey, Quiz & contact form builder Version 3.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 3.0.0 =
   * New hybrid voting method added to the polls, allowing users to vote either via a social profile or completely  anonymously 
- = Poll, Survey, Quiz & contact form builder Version 2.9.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.9.0 =
   * Added support for anonymous poll voting
- = Poll, Survey, Quiz & contact form builder Version 2.8.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.8.0 =
   * Improved editing process of polls by adding a preview to the poll editing screen
   * Additional layout customizations for polls - hide top bars, add bottom padding
   * Polls can now be reset
- = Poll, Survey, Quiz & contact form builder Version 2.7.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.7.0 =
   * Additional poll languages support (German, Italian, Serbian)
   * Additional poll customizations for the vote sharing process
- = Poll, Survey, Quiz & contact form builder Version 2.6.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.6.0 =
   * Additional customizations options to the poll: Define which poll filters to show, poll social sharing bar removal
   * Hiding vote option can be enabled / disabled by poll creator
- = Poll, Survey, Quiz & contact form builder Version 2.5.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.5.0 =
   * Added support for multiple selection polls
- = Poll, Survey, Quiz & contact form builder Version 2.4.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.4.0 =
   * Better support for hiding user votes in the poll
   * Improved embed options to support both dynamic and constant width for the polls
   * Polls can now be closed from the Opinion-Stage dashboard 
- = Poll, Survey, Quiz & contact form builder Version 2.3.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.3.0 =
   * Improved creation flow of polls
   * Added basic report per poll in the Opinion Stage polls dashboard 
   * Added account report in Opinion-Stage poll dashboard 
- = Poll, Survey, Quiz & contact form builder Version 2.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.2.0 =
   * Polls are now localized for Arabic
   * Better support for sidebar polls (300px)
   * Supporting longer side texts in polls
- = Poll, Survey, Quiz & contact form builder Version 2.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.1.0 =
   * Polls are now displayed properly in mobile environments
   * Additional built-in poll themes 
   * When clicking on poll participants, the user is now redirected to their social network profile
   * Polls are now localized for Spanish
   * You can now set whether you would like to display the number of votes in the poll
   * Support for election polls (e.g. poll results displayed in points, add a minimum cliff, etc)  
- = Poll, Survey, Quiz & contact form builder Version 2.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 2.0.0 =
   * Support for multiple sided polls
   * Added the option to configure the URL in which the poll will be hosted. This will allow to direct additional traffic from social network shares and emails back to the location where the poll is hosted
   * Added the option to set the order in which the poll results are displayed. You can either set it so that the poll sides are located in the order they were configured or set them so that the side with the most votes is displayed on top
- = Poll, Survey, Quiz & contact form builder Version 1.2.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 1.2.0 =
   * Poll width can now be set, supported poll widths are 400-620 pxl
-  * Poll widget percontact form builderance optimizations for high traffic polling deployments
+  * Poll widget perContact Form Builderance optimizations for high traffic polling deployments
   * Support customized color themes for the polls
- = Poll, Survey, Quiz & contact form builder Version 1.1.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 1.1.0 =
   * Added an optional gender filter to the poll, so that poll results can be viewed by gender
   * Added a central dashboard for managing all polls
   * Added the option to display a detailed text description of the poll question to the poll widget
   * Added the ability to configure which image is shared when sharing the poll or the poll vote on Facebook
- = Poll, Survey, Quiz & contact form builder Version 1.0.1 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 1.0.1 =
   * Improvements in the poll embed flow to ease insertion of polls
- = Poll, Survey, Quiz & contact form builder Version 1.0.0 =
+ = Poll, Survey, Quiz & Contact Form Builder Version 1.0.0 =
   * First social poll version  

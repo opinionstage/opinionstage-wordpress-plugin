@@ -344,12 +344,16 @@ function opinionstage_add_poll_page() {
 								</div>
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell">	
-										<?php echo opinionstage_create_link('Quiz/Survey examples', 'discover'); ?>
+										<?php echo opinionstage_create_link('Quiz, Survey, Form & List examples', 'discover'); ?>
 									</div>
 								</div>				
 								<div class="opinionstage-section-raw">
 									<div class="opinionstage-section-cell">	
-										<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact Us</a>
+										<a href="https://blog.opinionstage.com/video-tutorials" target="_blank">View video tutorials</a>
+									</div>
+								<div class="opinionstage-section-raw">
+									<div class="opinionstage-section-cell">	
+										<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact us</a>
 									</div>
 								</div>																				
 							</div>
