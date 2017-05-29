@@ -280,7 +280,7 @@ defined( 'ABSPATH' ) or die();
 						<?php echo opinionstage_create_link('Quiz, Survey, Form & List examples', 'discover', '', 'opinionstage-help-link'); ?>
 					</div>
 					<div class="opinionstage-help-row">
-						<a href="https://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View video tutorials</a>
+						<a href="http://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View video tutorials</a>
 					</div>
 					<div class="opinionstage-help-row">
 						<a href="https://opinionstage.zendesk.com/anonymous_requests/new" class="opinionstage-help-link" target="_blank">Contact us</a>
