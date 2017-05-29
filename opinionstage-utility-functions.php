@@ -277,9 +277,7 @@ function opinionstage_create_poll_link($css_class) {
 		return opinionstage_create_link('CREATE', 'new_poll', '', $css_class);
 	}	
 }
-/**
- * Generates a link for creating a trivia quiz
- */
+
 function opinionstage_create_widget_link($w_type, $css_class) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 	if (empty($os_options["uid"])) {	
@@ -291,6 +289,15 @@ function opinionstage_create_widget_link($w_type, $css_class) {
 	} else {
 		return opinionstage_create_link('CREATE', 'widgets/new', 'w_type='.$w_type, $css_class);
 	}	
+}
+
+function opinionstage_create_slideshow_link( $css_class ) {
+	return opinionstage_create_link(
+		'CREATE',
+		'dashboard/slideshows/new',
+		null,
+		$css_class
+	);
 }
 /**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account

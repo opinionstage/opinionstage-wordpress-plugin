@@ -145,6 +145,18 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
+							<div class="os-icon icon-os-reports-personality"></div>
+						</div>
+						<div class="opinionstage-section-cell opinionstage-description-cell">
+							<div class="title">Slideshow</div>
+							<div class="example">e.g. Browse the most watched TV series</div>
+						</div>
+						<div class="opinionstage-section-cell opinionstage-btn-cell">
+							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn' ); ?>
+						</div>
+					</div>
+					<div class="opinionstage-section-raw">
+						<div class="opinionstage-section-cell opinionstage-icon-cell">
 							<div class="os-icon icon-os-reports-list"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
