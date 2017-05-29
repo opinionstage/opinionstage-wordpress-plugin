@@ -3,7 +3,7 @@
 Plugin Name: Poll, Survey, Quiz & Contact Form Builder
 Plugin URI: http://www.opinionstage.com
 Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
-Version: 18.0.0
+Version: 18.0.1
 Author: OpinionStage.com
 Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
@@ -12,7 +12,7 @@ Text Domain: social-polls-by-opinionstage
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
-define('OPINIONSTAGE_WIDGET_VERSION', '18.0.0');
+define('OPINIONSTAGE_WIDGET_VERSION', '18.0.1');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz & Contact Form Builder');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');

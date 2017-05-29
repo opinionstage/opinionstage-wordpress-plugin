@@ -6,7 +6,7 @@ Tags: poll plugin, quiz plugin, survey plugin, contact form plugin, contact form
 
 Requires at least: 2.8
 Tested up to: 4.7
-Stable tag: trunk
+Stable tag: 18.0.1
  
 Add a powerful poll, survey, quiz & contact form builder plugin to your site. Easily embed a beautiful poll, survey, quiz or contact form.
 
@@ -279,6 +279,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = 18.0.1 =
+  * Fix menu page styling
   = Poll, Survey, Quiz & Contact Form Builder Version 18.0.0 =
   * Add a slider content format
   = Poll, Survey, Quiz & Contact Form Builder Version 17.9.0 =
@@ -690,4 +692,4 @@ N/A
  = Poll, Survey, Quiz & Contact Form Builder Version 1.0.1 =
   * Improvements in the poll embed flow to ease insertion of polls
  = Poll, Survey, Quiz & Contact Form Builder Version 1.0.0 =
-  * First social poll version  
+  * First social poll version
