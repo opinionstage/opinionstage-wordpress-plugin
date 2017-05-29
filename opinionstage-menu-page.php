@@ -145,7 +145,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-personality"></div>
+							<div class="os-icon icon-os-widget-slideshow"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Slideshow</div>
@@ -157,7 +157,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-list"></div>
+							<div class="os-icon icon-os-widget-form"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Contact Form</div>

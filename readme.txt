@@ -282,6 +282,7 @@ N/A
   = 18.0.2 =
   * Fix sidebar widget settings style
   * Add SlideShow
+  * Fix ContactForm icon
   = 18.0.1 =
   * Fix menu page styling
   = Poll, Survey, Quiz & Contact Form Builder Version 18.0.0 =
