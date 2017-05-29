@@ -34,7 +34,7 @@ require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-widg
 
 /* --- Static initializer for Wordpress hooks --- */
 
-// Check if OpinionStage plugin already installed.
+// Check if another OpinionStage plugin already installed and display warning message.
 if (opinionstage_check_plugin_available('opinionstage_popup')) {
 	add_action('admin_notices', 'opinionstage_other_plugin_installed_warning');
 } else {
