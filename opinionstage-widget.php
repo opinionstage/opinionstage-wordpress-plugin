@@ -135,7 +135,12 @@ defined( 'ABSPATH' ) or die();
 	 */
 	function opinionstage_init_widget() {
 		register_widget('OpinionStageWidget');
-		opinionstage_add_stylesheet();
+
+		opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
+		opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
+
+		opinionstage_enqueue_css_asset('icon-font');
+		opinionstage_enqueue_css_asset('sidebar-widget');
 	}
 
 	add_action('widgets_init', 'opinionstage_init_widget');

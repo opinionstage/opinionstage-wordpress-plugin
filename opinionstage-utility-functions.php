@@ -217,16 +217,19 @@ function opinionstage_create_link($caption, $page, $params = "", $css_class = ''
 	return "<a href=\"".$link."\" target='_blank' class=\"".$css_class."\">".$caption."</a>";
 }
 
-/**
- * CSS file loading
- */
-function opinionstage_add_stylesheet() {
-	// Respects SSL, Style.css is relative to the current file
-	wp_register_style( 'opinionstage-style', plugins_url('opinionstage-style-common.css', __FILE__) );
-	wp_register_style( 'opinionstage-font-style', plugins_url('opinionstage-font.css', __FILE__) );
-	wp_enqueue_style( 'opinionstage-style' );
-	wp_enqueue_style( 'opinionstage-font-style' );
+function opinionstage_register_css_asset($name, $relative_path) {
+	wp_register_style(
+		'opinionstage-'.$name,
+		plugins_url('css/'.$relative_path, OPINIONSTAGE_WIDGET_UNIQUE_LOCATION),
+		null,
+		OPINIONSTAGE_WIDGET_VERSION
+	);
 }
+
+function opinionstage_enqueue_css_asset($name) {
+	wp_enqueue_style( 'opinionstage-'.$name );
+}
+
 /**
  * Generates a link for editing the flyout placement on Opinion Stage site
  */

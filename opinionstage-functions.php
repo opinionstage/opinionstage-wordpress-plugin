@@ -89,7 +89,11 @@ function opinionstage_add_poll_page() {
 		$first_time = false;
 	}
 
-	opinionstage_add_stylesheet();
+	opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
+	opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
+
+	opinionstage_enqueue_css_asset('menu-page');
+	opinionstage_enqueue_css_asset('icon-font');
 
 	require dirname(OPINIONSTAGE_WIDGET_UNIQUE_LOCATION).'/opinionstage-menu-page.php';
 }

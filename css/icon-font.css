@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'osiconfont_v20';
   src: local('osiconfont_v20'),
-	url('fonts/osiconfont_v20.eot?jcd4t4#iefix') format('embedded-opentype'),
-	url('fonts/osiconfont_v20.ttf?jcd4t4') format('truetype'),
-	url('fonts/osiconfont_v20.woff?jcd4t4') format('woff'),
-	url('fonts/osiconfont_v20.svg?jcd4t4#osiconfont_v20') format('svg');
+	url('../fonts/osiconfont_v20.eot?jcd4t4#iefix') format('embedded-opentype'),
+	url('../fonts/osiconfont_v20.ttf?jcd4t4') format('truetype'),
+	url('../fonts/osiconfont_v20.woff?jcd4t4') format('woff'),
+	url('../fonts/osiconfont_v20.svg?jcd4t4#osiconfont_v20') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -279,6 +279,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = 18.0.2 =
+  * Fix sidebar widget settings style
   = 18.0.1 =
   * Fix menu page styling
   = Poll, Survey, Quiz & Contact Form Builder Version 18.0.0 =

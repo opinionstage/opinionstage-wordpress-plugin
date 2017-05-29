@@ -17,13 +17,13 @@
   padding: 10px 30px;
 }
 #opinionstage-content .opinionstage-logo {
-  background: url("images/purple-logo.png") no-repeat 0px 0px;
+  background: url("../images/purple-logo.png") no-repeat 0px 0px;
   width: 150px;
   height: 30px;
   background-size: contain;
 }
 #opinionstage-content .opinionstage-status-content {
-  background: url("images/top-bg.png") no-repeat 0px 0px;
+  background: url("../images/top-bg.png") no-repeat 0px 0px;
   height: 116px;
   padding-left: 30px;
   padding-top: 30px;
@@ -276,7 +276,7 @@
   padding-top: 15px;
 }
 #opinionstage-section-quiz .opinionstage-section-content .opinionstage-section-raw .opinionstage-section-cell.os-step-cell .os-step {
-  background: url("images/lb-bg.png") no-repeat 0px 0px;
+  background: url("../images/lb-bg.png") no-repeat 0px 0px;
   width: 35px;
   height: 30px;
   padding: 5px 10px;
