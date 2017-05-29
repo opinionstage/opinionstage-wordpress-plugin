@@ -1,4 +1,8 @@
 <?php
+
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 	$success = $_GET['success'];
 	$uid = $_GET['uid'];
 	$token = $_GET['token'];

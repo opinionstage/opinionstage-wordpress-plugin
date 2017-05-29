@@ -1,4 +1,8 @@
 <?php
+
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 	class OpinionStageArticlePlacement {
 		static function initialize() {
 			add_filter($hook = 'the_content', array(__CLASS__, $hook));

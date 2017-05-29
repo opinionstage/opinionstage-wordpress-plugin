@@ -1,5 +1,8 @@
 <?php
 
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 add_action( 'wp_ajax_opinionstage_ajax_toggle_flyout', 'opinionstage_ajax_toggle_flyout');
 add_action( 'wp_ajax_opinionstage_ajax_toggle_article_placement', 'opinionstage_ajax_toggle_article_placement');
 add_action( 'wp_ajax_opinionstage_ajax_toggle_sidebar_placement', 'opinionstage_ajax_toggle_sidebar_placement');

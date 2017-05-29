@@ -9,6 +9,9 @@ Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
 */
 
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */

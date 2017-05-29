@@ -1,4 +1,8 @@
 <?php
+
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 /* --- Wordpress Hooks Implementations --- */
 
 /**

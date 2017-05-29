@@ -1,3 +1,8 @@
+<?php
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+?>
+
 <script type='text/javascript'>
 	jQuery(document).ready(function($) {
 		var callbackURL = "<?php echo opinionstage_callback_url()?>";

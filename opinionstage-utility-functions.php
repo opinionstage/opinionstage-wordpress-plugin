@@ -1,4 +1,8 @@
 <?php
+
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 /**
  * Main function for creating the poll html representation.
  * Transforms the shortcode parameters to the desired iframe call.
@@ -10,6 +14,7 @@
  * @param  id - Id of the poll
  *
  */
+
 function opinionstage_add_poll_or_set($atts) {
 	extract(shortcode_atts(array('id' => 0, 'type' => 'poll', 'width' => ''), $atts));
 	if(!is_feed()) {

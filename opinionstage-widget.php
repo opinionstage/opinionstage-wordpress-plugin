@@ -1,4 +1,8 @@
 <?php
+
+// block direct access to plugin PHP files:
+defined( 'ABSPATH' ) or die();
+
 	// Sidebar widget class for embeding the Opinion Stage sidebar placement
 	class OpinionStageWidget extends WP_Widget {
 		function __construct() {		
