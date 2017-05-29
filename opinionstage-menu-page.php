@@ -62,26 +62,22 @@
 </script>
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
-		<div class="opinionstage-menu-wrapper">
-			<div class="opinionstage-logo-wrapper">
-				<div class="opinionstage-logo"></div>
-			</div>
+		<div class="opinionstage-logo-wrapper">
+			<div class="opinionstage-logo"></div>
 		</div>
-		<div class="opinionstage-status-wrapper">
-			<div class="opinionstage-status-content">
-				<?php if($first_time) {?>
-				<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
-				<div class="os-icon icon-os-poll-client"></div>
-				<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
-				<a href="javascript:void(0)" class="opinionstage-blue-btn" id="os-start-login">CONNECT</a>
-				<?php } else { ?>
-				<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
-				<div class="os-icon icon-os-form-success"></div>
-				<label class="checked" for="user-email"></label>
-				<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
-				<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
-				<?php } ?>
-			</div>
+		<div class="opinionstage-status-content">
+			<?php if($first_time) {?>
+			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
+			<i class="os-icon icon-os-poll-client"></i>
+			<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
+			<a href="javascript:void(0)" class="opinionstage-blue-btn" id="os-start-login">CONNECT</a>
+			<?php } else { ?>
+			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
+			<i class="os-icon icon-os-form-success"></i>
+			<label class="checked" for="user-email"></label>
+			<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+			<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
+			<?php } ?>
 		</div>
 	</div>
 	<div class="opinionstage-dashboard">
@@ -256,33 +252,21 @@
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Help</div>
 				</div>
-				<div class="opinionstage-section-content-wrapper">
-					<div class="opinionstage-section-content">
-						<div class="opinionstage-section-raw">
-							<div class="opinionstage-section-cell">
-								<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" target="_blank">How to use this plugin</a>
-							</div>
-						</div>
-						<div class="opinionstage-section-raw">
-							<div class="opinionstage-section-cell">
-								<?php echo opinionstage_create_link('Poll examples', 'showcase'); ?>
-							</div>
-						</div>
-						<div class="opinionstage-section-raw">
-							<div class="opinionstage-section-cell">
-								<?php echo opinionstage_create_link('Quiz, Survey, Form & List examples', 'discover'); ?>
-							</div>
-						</div>
-						<div class="opinionstage-section-raw">
-							<div class="opinionstage-section-cell">
-								<a href="https://blog.opinionstage.com/video-tutorials" target="_blank">View video tutorials</a>
-							</div>
-							<div class="opinionstage-section-raw">
-								<div class="opinionstage-section-cell">
-									<a href="https://opinionstage.zendesk.com/anonymous_requests/new" target="_blank">Contact us</a>
-								</div>
-							</div>
-						</div>
+				<div class="opinionstage-section-content">
+					<div class="opinionstage-help-row">
+						<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" class="opinionstage-help-link" target="_blank">How to use this plugin</a>
+					</div>
+					<div class="opinionstage-help-row">
+						<?php echo opinionstage_create_link('Poll examples', 'showcase', '', 'opinionstage-help-link'); ?>
+					</div>
+					<div class="opinionstage-help-row">
+						<?php echo opinionstage_create_link('Quiz, Survey, Form & List examples', 'discover', '', 'opinionstage-help-link'); ?>
+					</div>
+					<div class="opinionstage-help-row">
+						<a href="https://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View video tutorials</a>
+					</div>
+					<div class="opinionstage-help-row">
+						<a href="https://opinionstage.zendesk.com/anonymous_requests/new" class="opinionstage-help-link" target="_blank">Contact us</a>
 					</div>
 				</div>
 			</div>
