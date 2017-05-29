@@ -6,7 +6,7 @@ Tags: poll plugin, quiz plugin, survey plugin, contact form plugin, contact form
 
 Requires at least: 2.8
 Tested up to: 4.7
-Stable tag: 18.0.1
+Stable tag: 18.0.2
  
 Add a powerful poll, survey, quiz & contact form builder plugin to your site. Easily embed a beautiful poll, survey, quiz or contact form.
 
