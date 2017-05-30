@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Poll, Survey, Quiz & Contact Form Builder
+Plugin Name: Poll, Survey, Quiz, Slideshow & Form Builder
 Plugin URI: http://www.opinionstage.com
 Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
-Version: 18.0.2
+Version: 18.0.3
 Author: OpinionStage.com
 Author URI: http://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
@@ -15,8 +15,8 @@ defined( 'ABSPATH' ) or die();
 /* --- Static initializer for Wordpress hooks --- */
 
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
-define('OPINIONSTAGE_WIDGET_VERSION', '18.0.2');
-define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz & Contact Form Builder');
+define('OPINIONSTAGE_WIDGET_VERSION', '18.0.3');
+define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz, Slideshow & Form Builder');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
 define('OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll');
@@ -25,7 +25,7 @@ define('OPINIONSTAGE_FEED_SHORTCODE', 'os-section');
 define('OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement');
 define('OPINIONSTAGE_WIDGET_UNIQUE_ID', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_WIDGET_UNIQUE_LOCATION', __FILE__);
-define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Form');
+define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Slideshow & Form');
 define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE."/integrations/wordpress/new");
 define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE."/api/v1"); 
 
