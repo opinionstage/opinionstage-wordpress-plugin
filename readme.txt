@@ -6,7 +6,7 @@ Tags: poll plugin, quiz plugin, survey plugin, form builder, slideshow, slider, 
 
 Requires at least: 2.8
 Tested up to: 4.7
-Stable tag: 18.0.2
+Stable tag: 18.0.3
  
 Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautiful poll, survey, quiz, slideshow or form to your site.
 
