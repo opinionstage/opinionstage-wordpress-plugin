@@ -25,7 +25,7 @@ define('OPINIONSTAGE_FEED_SHORTCODE', 'os-section');
 define('OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement');
 define('OPINIONSTAGE_WIDGET_UNIQUE_ID', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_WIDGET_UNIQUE_LOCATION', __FILE__);
-define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Slideshow & Form');
+define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Slider & Form');
 define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE."/integrations/wordpress/new");
 define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE."/api/v1"); 
 
