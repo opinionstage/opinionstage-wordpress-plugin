@@ -12,8 +12,6 @@ Text Domain: social-polls-by-opinionstage
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
-/* --- Static initializer for Wordpress hooks --- */
-
 define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
 define('OPINIONSTAGE_WIDGET_VERSION', '18.0.3');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz, Slideshow & Form Builder');
@@ -27,32 +25,24 @@ define('OPINIONSTAGE_WIDGET_UNIQUE_ID', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_WIDGET_UNIQUE_LOCATION', __FILE__);
 define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Slider & Form');
 define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE."/integrations/wordpress/new");
-define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE."/api/v1"); 
+define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE."/api/v1");
 
-require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-utility-functions.php");
-require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-functions.php");
-require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-ajax-functions.php");
-require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-article-placement-functions.php");
-require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-widget.php");
-
-/* --- Static initializer for Wordpress hooks --- */
+require_once( plugin_dir_path( __FILE__ ).'/opinionstage-functions.php' );
 
 // Check if another OpinionStage plugin already installed and display warning message.
 if (opinionstage_check_plugin_available('opinionstage_popup')) {
 	add_action('admin_notices', 'opinionstage_other_plugin_installed_warning');
 } else {
-	add_shortcode(OPINIONSTAGE_POLL_SHORTCODE, 'opinionstage_add_poll_or_set');
-	add_shortcode(OPINIONSTAGE_WIDGET_SHORTCODE, 'opinionstage_add_widget');
-	add_shortcode(OPINIONSTAGE_FEED_SHORTCODE, 'opinionstage_add_feed');
-	add_shortcode(OPINIONSTAGE_PLACEMENT_SHORTCODE, 'opinionstage_add_placement');
+	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-utility-functions.php");
+	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-ajax-functions.php");
+	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-article-placement-functions.php");
+
+	if ( is_admin() ) {
+		require( plugin_dir_path( __FILE__ ).'admin/init.php' );
+	} else {
+		require( plugin_dir_path( __FILE__ ).'site/init.php' );
+	}
 
 	add_action('plugins_loaded', 'opinionstage_init');
-
-	// Side menu
-	add_action('admin_menu', 'opinionstage_poll_menu');
-	add_action('admin_enqueue_scripts', 'opinionstage_load_scripts');
-
-	// Add fly-out to header
-	add_action('wp_head', 'opinionstage_add_flyout');
 }
 ?>
