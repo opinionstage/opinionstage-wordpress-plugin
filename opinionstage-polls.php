@@ -36,6 +36,7 @@ if (opinionstage_check_plugin_available('opinionstage_popup')) {
 	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-utility-functions.php");
 	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-ajax-functions.php");
 	require_once(WP_PLUGIN_DIR."/".OPINIONSTAGE_WIDGET_UNIQUE_ID."/opinionstage-article-placement-functions.php");
+	require_once( plugin_dir_path( __FILE__ ).'opinionstage-sidebar-widget.php' );
 
 	if ( is_admin() ) {
 		require( plugin_dir_path( __FILE__ ).'admin/init.php' );
@@ -43,6 +44,7 @@ if (opinionstage_check_plugin_available('opinionstage_popup')) {
 		require( plugin_dir_path( __FILE__ ).'site/init.php' );
 	}
 
+	add_action('widgets_init', 'opinionstage_init_widget');
 	add_action('plugins_loaded', 'opinionstage_init');
 }
 ?>

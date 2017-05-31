@@ -55,6 +55,12 @@ defined( 'ABSPATH' ) or die();
 		 * Generates the admin form for the widget.
 		 */
 		function form($instance) {
+			opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
+			opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
+
+			opinionstage_enqueue_css_asset('icon-font');
+			opinionstage_enqueue_css_asset('sidebar-widget');
+
 			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 			$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
 			$enabled = $os_options['sidebar_placement_active'] == 'true' ? '1' : '';
@@ -135,11 +141,5 @@ defined( 'ABSPATH' ) or die();
 	 */
 	function opinionstage_init_widget() {
 		register_widget('OpinionStageWidget');
-
-		opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
-		opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
-
-		opinionstage_enqueue_css_asset('icon-font');
-		opinionstage_enqueue_css_asset('sidebar-widget');
 	}
 ?>
