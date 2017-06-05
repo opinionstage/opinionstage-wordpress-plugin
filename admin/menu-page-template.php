@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) or die();
 			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
 			<i class="os-icon icon-os-poll-client"></i>
 			<input id="os-email" type="email" placeholder="Enter Your Email">
-			<a href="javascript:void(0)" class="opinionstage-blue-btn" id="os-start-login">CONNECT</a>
+			<button class="opinionstage-blue-btn" id="os-start-login">CONNECT</button>
 			<?php } else { ?>
 			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
 			<i class="os-icon icon-os-form-success"></i>

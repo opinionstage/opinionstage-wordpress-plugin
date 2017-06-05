@@ -25,12 +25,13 @@
 #opinionstage-content .opinionstage-status-content {
   background: url("../images/top-bg.png") no-repeat 0px 0px;
   height: 116px;
-  padding-left: 30px;
-  padding-top: 30px;
+  padding: 30px 30px 0;
   color: white;
 }
 #opinionstage-content #os-start-login{
-  padding: 8px 20px;
+  padding: 6.5px 18px;
+  position: relative;
+  top: -3px;
 }
 #opinionstage-content .opinionstage-status-title {
   font-size: 23px;
@@ -40,15 +41,13 @@
 }
 #opinionstage-content .opinionstage-status-content .os-icon {
   font-size: 19px;
-  margin: 0;
   margin-right: 7px;
-  margin-top: 9px;
 }
 #opinionstage-content #os-switch-email {
   padding: 11px 0;
   font-size: 14px;
 }
-#opinionstage-content a.opinionstage-blue-btn {
+#opinionstage-content .opinionstage-blue-btn {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
@@ -59,9 +58,10 @@
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  border-style: hidden;
   width: 95px;
 }
-#opinionstage-content a.opinionstage-blue-btn:hover {
+#opinionstage-content .opinionstage-blue-btn:hover {
   opacity: 0.9;
 }
 #opinionstage-content a.opinionstage-blue-bordered-btn {
