@@ -16,10 +16,6 @@
   background-color: #3499c2;
   cursor: pointer;
 }
-.opinionstage-sidebar-widget .os-watermark {
-  font-style: italic;
-  color: #b1b1b1 !important;
-}
 
 .opinionstage-sidebar-widget {
   overflow: hidden;

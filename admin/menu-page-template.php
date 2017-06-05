@@ -17,9 +17,6 @@ defined( 'ABSPATH' ) or die();
 		$('#os-start-login').click(function(){
 			var emailInput = $('#os-email');
 			var email = $(emailInput).val();
-			if (email == emailInput.data('watermark')) {
-				email = "";
-			}
 			var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
 			window.location = new_location;
 		});
@@ -74,13 +71,13 @@ defined( 'ABSPATH' ) or die();
 			<?php if($first_time) {?>
 			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
 			<i class="os-icon icon-os-poll-client"></i>
-			<input id="os-email" type="text" value="" class="watermark" data-watermark="Enter Your Email"/>
+			<input id="os-email" type="email" placeholder="Enter Your Email">
 			<a href="javascript:void(0)" class="opinionstage-blue-btn" id="os-start-login">CONNECT</a>
 			<?php } else { ?>
 			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
 			<i class="os-icon icon-os-form-success"></i>
 			<label class="checked" for="user-email"></label>
-			<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+			<input id="os-email" type="email" disabled="disabled" value="<?php echo($os_options["email"]) ?>">
 			<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
 			<?php } ?>
 		</div>

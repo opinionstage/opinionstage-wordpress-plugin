@@ -53,13 +53,6 @@ function opinionstage_other_plugin_installed_warning() {
 }
 
 /**
- * Load the js script
- */
-function opinionstage_load_scripts() {
-	wp_enqueue_script( 'ospolls', plugins_url(OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage_plugin.js'), array( 'jquery', 'thickbox' ), '3' );
-}
-
-/**
  * Add the flyout embed code to the page header
  */
 function opinionstage_add_flyout() {

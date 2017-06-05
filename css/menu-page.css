@@ -94,10 +94,6 @@
     background-color: #f9f9f9;
     cursor: default;
 }
-#opinionstage-content .os-watermark, .opinionstage-sidebar-widget .os-watermark {
-	font-style: italic;
-	color: #b1b1b1 !important;
-}
 #opinionstage-content input#os-email {
   margin: 0 15px 0 0;
   border: none;

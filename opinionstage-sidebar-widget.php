@@ -79,9 +79,6 @@ defined( 'ABSPATH' ) or die();
 						$('.opinionstage-sidebar-widget').on('click', '.start-login', function(){
 							var emailInput = $('#os-email');
 							var email = $(emailInput).val();
-							if (email == emailInput.data('watermark')) {
-								email = "";
-							}
 							var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()) + "&email=" + email;
 							window.location = new_location;
 						});
@@ -103,20 +100,20 @@ defined( 'ABSPATH' ) or die();
 					<?php if($first_time) {?>
 						<p>Connect WordPress with Opinion Stage to enable the widget</p>
 						<div class="os-icon icon-os-poll-client"></div>
-						<input id="os-email" type="text" value="" class="watermark os-email" data-watermark="Enter Your Email"/>
+						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email">
 						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>
 					<?php } else { ?>
 						<div class="opinionstage-sidebar-connected">
 							<div class="os-icon icon-os-form-success"></div>
 							<div class="opinionstage-connected-info">
 								<div class="opinionstage-connected-title"><b>You are connected</b> to Opinion Stage with:</div>
-								<input id="os-email" type="text" disabled="disabled" value="<?php echo($os_options["email"]) ?>"/>
+								<input id="os-email" type="email" disabled="disabled" value="<?php echo($os_options["email"]) ?>">
 								<a href="javascript:void(0)" class="switch-email" id="os-switch-email" >Switch Account</a>
 							</div>
 						</div>
 						<p>
 							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
-							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" class="watermark" data-watermark="Enter the title here" value="<?php echo $title; ?>" />
+							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" placeholder="Enter the title here" value="<?php echo $title; ?>" >
 						</p>
 						<div class="opinionstage-sidebar-actions">
 							<div class="opinionstage-sidebar-enabled">
