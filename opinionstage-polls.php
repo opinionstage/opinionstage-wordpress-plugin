@@ -12,7 +12,19 @@ Text Domain: social-polls-by-opinionstage
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
-define('OPINIONSTAGE_SERVER_BASE', "www.opinionstage.com"); /* Don't include the protocol, added dynamically */
+$opinionstage_settings = array();
+
+// don't even try to load any configuration settings,
+// if wordpress is not in debug mode,
+// as configuration settings are only for plugin development.
+if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
+	if ( file_exists( $opinionstage_dev_cfg_path = plugin_dir_path( __FILE__ ).'dev.ini' ) ) {
+		error_log( "[opinionstage plugin] loading configuration from file $opinionstage_dev_cfg_path" );
+		$opinionstage_settings = parse_ini_file( $opinionstage_dev_cfg_path );
+	}
+}
+
+define('OPINIONSTAGE_SERVER_BASE', isset($opinionstage_settings['server_base']) ? $opinionstage_settings['server_base'] : 'www.opinionstage.com'); /* Don't include the protocol, added dynamically */
 define('OPINIONSTAGE_WIDGET_VERSION', '18.0.5');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz, Slideshow & Form Builder');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
