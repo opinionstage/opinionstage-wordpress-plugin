@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) or die();
 
 			// Add the placement shortcode once widget is enabled
 			if (!empty($os_options["sidebar_placement_id"]) && $os_options['sidebar_placement_active'] == 'true') {
-				echo opinionstage_create_placement_embed_code($os_options["sidebar_placement_id"]);
+				echo opinionstage_widget_placement( opinionstage_placement_embed_code_url($os_options["sidebar_placement_id"]) );
 			}
 
 			echo $after_widget;
@@ -79,12 +79,12 @@ defined( 'ABSPATH' ) or die();
 						$('.opinionstage-sidebar-widget').on('click', '.start-login', function(){
 							var emailInput = $('#os-email');
 							var email = $(emailInput).val();
-							var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()) + "&email=" + email;
+							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()) + "&email=" + email;
 							window.location = new_location;
 						});
 
 						$('.opinionstage-sidebar-widget').on('click', '.switch-email', function(){
-							var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL());
+							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL());
 							window.location = new_location;
 						});
 

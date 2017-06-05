@@ -24,20 +24,19 @@ if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
 	}
 }
 
-define('OPINIONSTAGE_SERVER_BASE', isset($opinionstage_settings['server_base']) ? $opinionstage_settings['server_base'] : 'www.opinionstage.com'); /* Don't include the protocol, added dynamically */
+define('OPINIONSTAGE_SERVER_BASE', isset($opinionstage_settings['server_base']) ? $opinionstage_settings['server_base'] : 'https://www.opinionstage.com');
 define('OPINIONSTAGE_WIDGET_VERSION', '18.0.5');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz, Slideshow & Form Builder');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
 define('OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll');
 define('OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget');
-define('OPINIONSTAGE_FEED_SHORTCODE', 'os-section');
 define('OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement');
 define('OPINIONSTAGE_WIDGET_UNIQUE_ID', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_WIDGET_UNIQUE_LOCATION', __FILE__);
 define('OPINIONSTAGE_WIDGET_MENU_NAME', 'Poll, Survey, Quiz, Slider & Form');
-define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE."/integrations/wordpress/new");
-define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE."/api/v1");
+define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE.'/integrations/wordpress/new');
+define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE.'/api/v1');
 
 require_once( plugin_dir_path( __FILE__ ).'/opinionstage-functions.php' );
 

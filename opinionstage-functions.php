@@ -68,11 +68,10 @@ function opinionstage_add_flyout() {
 			(function(d, s, id){
 			var js,
 				fjs = d.getElementsByTagName(s)[0],
-				p = (('https:' == d.location.protocol) ? 'https://' : 'http://'),
 				r = Math.floor(new Date().getTime() / 1000000);
 			if (d.getElementById(id)) {return;}
 			js = d.createElement(s); js.id = id; js.async=1;
-			js.src = p + '<?php echo OPINIONSTAGE_SERVER_BASE; ?>' + '/assets/autoengage.js?' + r;
+			js.src = '<?php echo OPINIONSTAGE_SERVER_BASE; ?>' + '/assets/autoengage.js?' + r;
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'os-jssdk'));
 			

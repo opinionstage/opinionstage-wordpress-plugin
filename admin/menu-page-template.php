@@ -17,12 +17,12 @@ defined( 'ABSPATH' ) or die();
 		$('#os-start-login').click(function(){
 			var emailInput = $('#os-email');
 			var email = $(emailInput).val();
-			var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
+			var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
 			window.location = new_location;
 		});
 
 		$('#os-switch-email').click(function(){
-			var new_location = "http://" + "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL);
+			var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL);
 			window.location = new_location;
 		});
 
@@ -87,8 +87,8 @@ defined( 'ABSPATH' ) or die();
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Content</div>
-					<?php if(!$first_time) {?>
-					<a href="<?php echo 'http://'.OPINIONSTAGE_SERVER_BASE.'/dashboard/content'; ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
+					<?php if ( !$first_time ) {?>
+					<a href="<?php echo OPINIONSTAGE_SERVER_BASE.'/dashboard/content'; ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
 					<?php } ?>
 				</div>
 				<div class="opinionstage-section-content">
