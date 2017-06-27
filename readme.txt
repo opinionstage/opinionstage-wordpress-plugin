@@ -1,15 +1,16 @@
 ﻿=== Poll, Survey, Quiz, Slideshow & Form Builder ===
 Contributors: OpinionStage.com
-Donate link: 
+Donate link: http://www.opinionstage.com
 Tags: poll, quiz, survey, form builder, slideshow
 Requires at least: 2.8
 Tested up to: 4.8
 Stable tag: 18.2.1
+
 Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautiful poll, survey, quiz, slideshow or form to your site.
 
 == Description ==
 
-The Opinion Stage poll, survey, quiz, slideshow & form builder plug-in allows you to easily add a poll, quiz, survey, slideshow or form builder to your website.
+Easily add a highly engaging & visually appealing poll, quiz, survey, slideshow or form to your website.
 
 http://www.youtube.com/watch?v=Ut6ibSvGI4A
 
@@ -40,7 +41,6 @@ For a slideshow example, checkout this <a href="http://www.opinionstage.com/mary
 = List Example: =
 
 For a List example, checkout this <a href="https://www.opinionstage.com/polldiscovery/the-5-best-sources-for-great-free-images?o=wp35e8" target="_blank">List.</a>
-
 
 = Why Opinion Stage? =
 
