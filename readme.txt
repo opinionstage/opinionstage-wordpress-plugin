@@ -1,12 +1,11 @@
 ﻿=== Poll, Survey, Quiz, Slideshow & Form Builder ===
 Contributors: OpinionStage.com
 Donate link: 
-Tags: poll, quiz, survey, form builder, slideshow, poll plugin, quiz plugin, survey plugin, slider, list plugin, create poll, create quizs, trivia quiz, personality quiz, outcome quiz, social poll, standard poll, responsive poll, multiple poll, head-to-head poll, popup poll, sidebar poll, article poll, poll section, do a poll, it poll, shared poll, custom poll, custom polls, premade polls, flash poll, html poll, online poll, online polls, page poll, pol, poll builder, poll directory, poll widget, premade user polls, polling, Polling System, polls, post poll, user polls, voting polls, easy polls, gallery poll, gallery polls, wordpress poll, wordpress poll widget, WordPress polls, video poll, video polls, image poll, image polls, wp polls, questionnaire, quizzes, quizes, post survey, sidebar survey, survey form, survey plugin, survey tool, survey widget, surveys,  user survey, wordpress survey, wp survey, wpsurvey, vote, votes, voting, debate, feedback, opinion, opinion stage, opinionstage
-
+Tags: poll, quiz, survey, form builder, slideshow
 
 Requires at least: 2.8
 Tested up to: 4.8
-Stable tag: 18.2.0
+Stable tag: 18.2.1
  
 Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautiful poll, survey, quiz, slideshow or form to your site.
 
@@ -130,6 +129,18 @@ For a List example, checkout this <a href="https://www.opinionstage.com/polldisc
  * Embed the form builder
  * Share forms in Facebook, Twitter & Google+
 
+ = Main Slideshow Features: =
+
+ * Create up to 50 slideshow slides
+ * Select a slideshow theme from pre-built slideshow themes or create your own slideshow theme 
+ * Add images & videos to your Slideshows
+ * Configure your own color theme for the slideshow
+ * Configure your own font for the slideshow
+ * Use CSS override to customize all slideshow parts
+ * Share slideshow in social networks
+ * Display or hide slideshow card numbers
+ * Configure a lead generation form inside the slideshow
+ * View detaile stats of the slideshow, including number of views/start/complete numbers of the slideshow, slideshow drop-off report and more
 
  = Language support = 
 
@@ -283,6 +294,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz, Slideshow & Form Builder Version 18.2.1 =
+  * Minor changes
   = Poll, Survey, Quiz, Slideshow & Form Builder Version 18.2.0 =
   * Support for 4.8 WP version
   = Poll, Survey, Quiz, Slideshow & Form Builder Version 18.1.0 =
