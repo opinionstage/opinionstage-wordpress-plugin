@@ -25,7 +25,7 @@ if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
 }
 
 define('OPINIONSTAGE_SERVER_BASE', isset($opinionstage_settings['server_base']) ? $opinionstage_settings['server_base'] : 'https://www.opinionstage.com');
-define('OPINIONSTAGE_WIDGET_VERSION', '18.2.0');
+define('OPINIONSTAGE_WIDGET_VERSION', '18.2.1');
 define('OPINIONSTAGE_WIDGET_PLUGIN_NAME', 'Poll, Survey, Quiz, Slideshow & Form Builder');
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
