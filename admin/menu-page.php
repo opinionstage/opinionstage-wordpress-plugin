@@ -2,24 +2,22 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+add_action( 'admin_menu', 'opinionstage_register_menu_page' );
+add_action( 'wp_ajax_opinionstage_ajax_toggle_flyout', 'opinionstage_ajax_toggle_flyout' );
+add_action( 'wp_ajax_opinionstage_ajax_toggle_article_placement', 'opinionstage_ajax_toggle_article_placement' );
+add_action( 'wp_ajax_opinionstage_ajax_toggle_sidebar_placement', 'opinionstage_ajax_toggle_sidebar_placement' );
+
 function opinionstage_register_menu_page() {
 	if (function_exists('add_menu_page')) {
-		add_menu_page(
-			__(OPINIONSTAGE_WIDGET_MENU_NAME, OPINIONSTAGE_WIDGET_UNIQUE_ID),
-			__(OPINIONSTAGE_WIDGET_MENU_NAME, OPINIONSTAGE_WIDGET_MENU_NAME),
-			'edit_posts',
-			OPINIONSTAGE_WIDGET_UNIQUE_LOCATION,
-			'opinionstage_menu_page',
-			plugins_url(OPINIONSTAGE_WIDGET_UNIQUE_ID.'/images/os.png'),
-			'25.234323221'
-		);
 
-		add_submenu_page(
-			null,
-			__('', OPINIONSTAGE_WIDGET_MENU_NAME),
-			__('', OPINIONSTAGE_WIDGET_MENU_NAME),
+		add_menu_page(
+			__('Poll, Survey, Quiz, Slider & Form', OPINIONSTAGE_TEXT_DOMAIN),
+			__('Poll, Survey, Quiz, Slider & Form', OPINIONSTAGE_TEXT_DOMAIN),
 			'edit_posts',
-			OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php'
+			OPINIONSTAGE_MENU_SLUG,
+			'opinionstage_menu_page',
+			plugins_url('admin/images/os.png', plugin_dir_path( __FILE__ )),
+			'25.234323221'
 		);
 	}
 }
@@ -40,5 +38,27 @@ function opinionstage_menu_page() {
 	opinionstage_enqueue_css_asset('icon-font');
 
 	require( plugin_dir_path( __FILE__ ).'menu-page-template.php' );
+}
+
+// Toggle the flyout placement activation flag
+function opinionstage_ajax_toggle_flyout() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$os_options['fly_out_active'] = $_POST['activate'];
+
+	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+}
+// Toggle the article placement activation flag
+function opinionstage_ajax_toggle_article_placement() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$os_options['article_placement_active'] = $_POST['activate'];
+
+	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+}
+// Toggle the sidebar placement activation flag
+function opinionstage_ajax_toggle_sidebar_placement() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$os_options['sidebar_placement_active'] = $_POST['activate'];
+
+	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 }
 ?>

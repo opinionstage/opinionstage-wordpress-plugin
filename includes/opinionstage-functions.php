@@ -10,7 +10,6 @@ defined( 'ABSPATH' ) or die();
  */
 function opinionstage_init() {
 	opinionstage_initialize_data();
-	register_uninstall_hook(OPINIONSTAGE_WIDGET_UNIQUE_LOCATION, 'opinionstage_uninstall');
 }
 
 /**

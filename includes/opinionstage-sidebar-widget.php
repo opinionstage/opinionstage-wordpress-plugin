@@ -9,11 +9,11 @@ defined( 'ABSPATH' ) or die();
 			// register new widget
 			$widget_ops = array(
 				'classname' => 'opinionstage_widget',
-				'description' => __('Adds a highly engaging polls to your widget section.', OPINIONSTAGE_WIDGET_UNIQUE_ID)
+				'description' => __('Adds a highly engaging polls to your widget section.', OPINIONSTAGE_TEXT_DOMAIN)
 			);
 			parent::__construct(
 				'opinionstage_widget',
-				__( 'Opinion Stage Sidebar Widget', OPINIONSTAGE_WIDGET_UNIQUE_ID ),
+				__( 'Opinion Stage Sidebar Widget', OPINIONSTAGE_TEXT_DOMAIN ),
 				$widget_ops
 			);
 		}
@@ -73,18 +73,17 @@ defined( 'ABSPATH' ) or die();
 			?>
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
-						var callbackURL = function() {
-							return "<?php echo $url = get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php' ?>";
-						};
+						var callbackURL = '<?php echo opinionstage_callback_url() ?>';
+
 						$('.opinionstage-sidebar-widget').on('click', '.start-login', function(){
 							var emailInput = $('#os-email');
 							var email = $(emailInput).val();
-							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL()) + "&email=" + email;
+							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
 							window.location = new_location;
 						});
 
 						$('.opinionstage-sidebar-widget').on('click', '.switch-email', function(){
-							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL());
+							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL);
 							window.location = new_location;
 						});
 
@@ -112,7 +111,7 @@ defined( 'ABSPATH' ) or die();
 							</div>
 						</div>
 						<p>
-							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_WIDGET_UNIQUE_ID); ?></label>
+							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_TEXT_DOMAIN); ?></label>
 							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" placeholder="Enter the title here" value="<?php echo $title; ?>" >
 						</p>
 						<div class="opinionstage-sidebar-actions">

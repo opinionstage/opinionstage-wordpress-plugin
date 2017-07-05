@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'os-icon-font';
-  src:  url('../fonts/os-icon-font.eot?frvqyp');
-  src:  url('../fonts/os-icon-font.eot?frvqyp#iefix') format('embedded-opentype'),
-    url('../fonts/os-icon-font.ttf?frvqyp') format('truetype'),
-    url('../fonts/os-icon-font.woff?frvqyp') format('woff'),
-    url('../fonts/os-icon-font.svg?frvqyp#os-icon-font') format('svg');
+  src:  url('fonts/os-icon-font.eot?frvqyp');
+  src:  url('fonts/os-icon-font.eot?frvqyp#iefix') format('embedded-opentype'),
+    url('fonts/os-icon-font.ttf?frvqyp') format('truetype'),
+    url('fonts/os-icon-font.woff?frvqyp') format('woff'),
+    url('fonts/os-icon-font.svg?frvqyp#os-icon-font') format('svg');
   font-weight: normal;
   font-style: normal;
 }

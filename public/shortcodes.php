@@ -10,7 +10,7 @@ function opinionstage_enqueue_shortcodes_assets() {
 
 function opinionstage_poll_or_set_shortcode($atts) {
 	if ( is_feed() ) {
-		return __("Note: There is a poll embedded within this post, please visit the site to participate in this post's poll.", OPINIONSTAGE_WIDGET_UNIQUE_ID);
+		return __("Note: There is a poll embedded within this post, please visit the site to participate in this post's poll.", OPINIONSTAGE_TEXT_DOMAIN);
 	} else {
 		$shortcode_params = shortcode_atts(
 			array('id' => 0, 'type' => 'poll', 'width' => ''),
@@ -28,7 +28,7 @@ function opinionstage_poll_or_set_shortcode($atts) {
 
 function opinionstage_widget_shortcode($atts) {
 	if ( is_feed() ) {
-		return __("Note: There is a widget embedded within this post, please visit the site to participate in this post's widget.", OPINIONSTAGE_WIDGET_UNIQUE_ID);
+		return __("Note: There is a widget embedded within this post, please visit the site to participate in this post's widget.", OPINIONSTAGE_TEXT_DOMAIN);
 	} else {
 		$shortcode_params = shortcode_atts(
 			array('path' => 0, 'comments' => 'true', 'sharing' => 'true', 'recommendations' => 'false', 'width' => ''),

@@ -13,30 +13,44 @@ function opinionstage_create_link($caption, $page, $params = "", $css_class = ''
 }
 
 function opinionstage_register_javascript_asset( $name, $relative_path, $deps=array(), $in_footer=true ) {
-	wp_register_script(
-		'opinionstage-'.$name,
-		plugins_url('js/'.$relative_path, OPINIONSTAGE_WIDGET_UNIQUE_LOCATION),
+	$registered = wp_register_script(
+		opinionstage_asset_name($name),
+		plugins_url( opinionstage_asset_path().'/js/'.$relative_path, plugin_dir_path(__FILE__) ),
 		$deps,
 		OPINIONSTAGE_WIDGET_VERSION,
 		$in_footer
 	);
+
+	if ( $registered ) {
+		error_log( "[opinionstage plugin] successfully registered javascript asset '$name'" );
+	} else {
+		error_log( "[opinionstage plugin] ERROR registering javascript asset '$name'" );
+	}
 }
 
 function opinionstage_register_css_asset($name, $relative_path) {
 	wp_register_style(
-		'opinionstage-'.$name,
-		plugins_url('css/'.$relative_path, OPINIONSTAGE_WIDGET_UNIQUE_LOCATION),
+		opinionstage_asset_name($name),
+		plugins_url( opinionstage_asset_path().'/css/'.$relative_path, plugin_dir_path(__FILE__) ),
 		null,
 		OPINIONSTAGE_WIDGET_VERSION
 	);
 }
 
 function opinionstage_enqueue_js_asset($name) {
-	wp_enqueue_script( 'opinionstage-'.$name );
+	wp_enqueue_script( opinionstage_asset_name($name) );
 }
 
 function opinionstage_enqueue_css_asset($name) {
-	wp_enqueue_style( 'opinionstage-'.$name );
+	wp_enqueue_style( opinionstage_asset_name($name) );
+}
+
+function opinionstage_asset_name($name) {
+	return 'opinionstage-'.$name;
+}
+
+function opinionstage_asset_path() {
+	return is_admin() ? 'admin' : 'public';
 }
 
 /**
@@ -112,7 +126,7 @@ function opinionstage_create_slideshow_link( $css_class ) {
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
  */
 function opinionstage_callback_url() {
-	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_WIDGET_UNIQUE_ID.'/opinionstage-callback.php';
+	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_LOGIN_CALLBACK_SLUG;
 }
 
 /**
