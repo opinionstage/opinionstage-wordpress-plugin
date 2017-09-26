@@ -2,6 +2,8 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+require_once( plugin_dir_path( __FILE__ ).'../includes/opinionstage-client-session.php' );
+
 add_action( 'admin_menu', 'opinionstage_register_menu_page' );
 add_action( 'wp_ajax_opinionstage_ajax_toggle_flyout', 'opinionstage_ajax_toggle_flyout' );
 add_action( 'wp_ajax_opinionstage_ajax_toggle_article_placement', 'opinionstage_ajax_toggle_article_placement' );
@@ -25,17 +27,11 @@ function opinionstage_register_menu_page() {
 function opinionstage_menu_page() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 
-	if (empty($os_options["uid"])) {
-		$first_time = true;
-	} else {
-		$first_time = false;
-	}
+	$os_client_logged_in = opinionstage_user_logged_in();
 
 	opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
 	opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
-
-	opinionstage_enqueue_css_asset('menu-page');
-	opinionstage_enqueue_css_asset('icon-font');
+	opinionstage_register_javascript_asset( 'menu-page', 'menu-page.js', array('jquery') );
 
 	require( plugin_dir_path( __FILE__ ).'menu-page-template.php' );
 }

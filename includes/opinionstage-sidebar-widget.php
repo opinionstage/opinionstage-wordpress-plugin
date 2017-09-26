@@ -3,6 +3,8 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+require_once( plugin_dir_path( __FILE__ ).'opinionstage-client-session.php' );
+
 	// Sidebar widget class for embeding the Opinion Stage sidebar placement
 	class OpinionStageWidget extends WP_Widget {
 		function __construct() {
@@ -64,11 +66,7 @@ defined( 'ABSPATH' ) or die();
 			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 			$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
 			$enabled = $os_options['sidebar_placement_active'] == 'true' ? '1' : '';
-			if (empty($os_options["uid"])) {
-				$first_time = true;
-			} else {
-				$first_time = false;
-			}
+			$os_client_logged_in = opinionstage_user_logged_in();
 
 			?>
 				<script type="text/javascript">
@@ -96,12 +94,7 @@ defined( 'ABSPATH' ) or die();
 				</script>
 
 				<div class="opinionstage-sidebar-widget">
-					<?php if($first_time) {?>
-						<p>Connect WordPress with Opinion Stage to enable the widget</p>
-						<div class="os-icon icon-os-poll-client"></div>
-						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email">
-						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>
-					<?php } else { ?>
+					<?php if ( $os_client_logged_in ) {?>
 						<div class="opinionstage-sidebar-connected">
 							<div class="os-icon icon-os-form-success"></div>
 							<div class="opinionstage-connected-info">
@@ -121,11 +114,16 @@ defined( 'ABSPATH' ) or die();
 							</div>
 							<div class="opinionstage-sidebar-config">
 								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn'>EDIT CONTENT</a>
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
 							</div>
 						</div>
+					<?php } else { ?>
+						<p>Connect WordPress with Opinion Stage to enable the widget</p>
+						<div class="os-icon icon-os-poll-client"></div>
+						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email">
+						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>
 					<?php } ?>
 				</div>
 			<?php

@@ -1,84 +1,34 @@
 <?php
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
+
+opinionstage_enqueue_css_asset('menu-page');
+opinionstage_enqueue_css_asset('icon-font');
+opinionstage_enqueue_js_asset('menu-page');
+
 ?>
 
-<script type='text/javascript'>
-	jQuery(document).ready(function($) {
-		var callbackURL = "<?php echo opinionstage_callback_url()?>";
-		var toggleSettingsAjax = function(currObject, action) {
-			$.post(ajaxurl, {action: action, activate: currObject.is(':checked')}, function(response) { });
-		};
-		var updatePageLink = function() {
-			var page_id = $('select.os-page-select').val();
-			var edit_url = "<?php echo admin_url()?>" + 'post.php?post=' + page_id +'&action=edit';
-			$("a.os-edit-page").attr("href", edit_url);
-		}
-		$('#os-start-login').click(function(){
-			var emailInput = $('#os-email');
-			var email = $(emailInput).val();
-			var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
-			window.location = new_location;
-		});
-
-		$('#os-switch-email').click(function(){
-			var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback=' ?>" + encodeURIComponent(callbackURL);
-			window.location = new_location;
-		});
-
-		$('#os-email').keypress(function(e){
-			if (e.keyCode == 13) {
-				$('#os-start-login').click();
-			}
-		});
-
-		$('#fly-out-switch').change(function(){
-			toggleSettingsAjax($(this), "opinionstage_ajax_toggle_flyout");
-		});
-
-		$('#article-placement-switch').change(function(){
-			toggleSettingsAjax($(this), "opinionstage_ajax_toggle_article_placement");
-		});
-
-		$('#sidebar-placement-switch').change(function(){
-			toggleSettingsAjax($(this), "opinionstage_ajax_toggle_sidebar_placement");
-		});
-		$("input[name='os-section']").change(function(e){
-			if ($('#feed_top_content').is(':checked')) {
-				$('#os-section-shortcode').val('[os-section]');
-			} else {
-				$('#os-section-shortcode').val('[os-section kind="my"]');
-			}
-		});
-		$('select.os-page-select').change(function() {
-			updatePageLink();
-		});
-		$('#opinionstage-content').on('click', '#os-section-shortcode', function(e) {
-			$(this).focus();
-			$(this).select();
-		});
-
-		updatePageLink();
-	});
-
-</script>
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
 		<div class="opinionstage-logo-wrapper">
 			<div class="opinionstage-logo"></div>
 		</div>
 		<div class="opinionstage-status-content">
-			<?php if($first_time) {?>
+			<?php if ( !$os_client_logged_in ) {?>
 			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
-			<i class="os-icon icon-os-poll-client"></i>
-			<input id="os-email" type="email" placeholder="Enter Your Email">
-			<button class="opinionstage-blue-btn" id="os-start-login">CONNECT</button>
+			<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get">
+				<i class="os-icon icon-os-poll-client"></i>
+				<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
+				<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
+				<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
+				<button class="opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
+			</form>
 			<?php } else { ?>
 			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
 			<i class="os-icon icon-os-form-success"></i>
 			<label class="checked" for="user-email"></label>
-			<input id="os-email" type="email" disabled="disabled" value="<?php echo($os_options["email"]) ?>">
-			<a href="javascript:void(0)" id="os-switch-email" >Switch account</a>
+			<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
+			<a href="<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback='.opinionstage_callback_url() ?>" >Switch account</a>
 			<?php } ?>
 		</div>
 	</div>
@@ -87,7 +37,7 @@ defined( 'ABSPATH' ) or die();
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Content</div>
-					<?php if ( !$first_time ) {?>
+					<?php if ( $os_client_logged_in ) {?>
 					<a href="<?php echo OPINIONSTAGE_SERVER_BASE.'/dashboard/content'; ?>" target="_blank" class="opinionstage-section-action opinionstage-blue-bordered-btn">VIEW MY CONTENT</a>
 					<?php } ?>
 				</div>
@@ -180,7 +130,7 @@ defined( 'ABSPATH' ) or die();
 			</div>
 		</div>
 		<div class="opinionstage-dashboard-right">
-			<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo($first_time ? "opinionstage-disabled-section" : "")?>">
+			<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo( $os_client_logged_in ? '' : 'opinionstage-disabled-section' ) ?>">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Placements</div>
 				</div>
@@ -188,8 +138,12 @@ defined( 'ABSPATH' ) or die();
 					<div class="opinionstage-section-content">
 						<div class="opinionstage-section-raw">
 							<div class="opinionstage-section-cell opinionstage-toggle-cell">
-								<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-									<input type="checkbox" name="fly-out-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="fly-out-switch" <?php echo(!$first_time && $os_options['fly_out_active'] == 'true' ? "checked" : "") ?>>
+								<div class="opinionstage-onoffswitch <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>">
+									<input type="checkbox" name="fly-out-switch" class="opinionstage-onoffswitch-checkbox"
+												<?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>
+												id="fly-out-switch"
+												<?php echo($os_client_logged_in && $os_options['fly_out_active'] == 'true' ? 'checked' : '') ?>
+									>
 									<label class="opinionstage-onoffswitch-label" for="fly-out-switch">
 										<div class="opinionstage-onoffswitch-inner"></div>
 										<div class="opinionstage-onoffswitch-switch"></div>
@@ -201,16 +155,20 @@ defined( 'ABSPATH' ) or die();
 								<div class="example">Add a content popup to your site</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_flyout_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
-								<a href="<?php echo opinionstage_flyout_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+								<a href="<?php echo opinionstage_flyout_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_flyout_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
 							</div>
 						</div>
 						<div class="opinionstage-section-raw">
 							<div class="opinionstage-section-cell opinionstage-toggle-cell">
-								<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-									<input type="checkbox" name="article-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="article-placement-switch" <?php echo(!$first_time && $os_options['article_placement_active'] == 'true' ? "checked" : "") ?>>
+								<div class="opinionstage-onoffswitch <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>">
+									<input type="checkbox" name="article-placement-switch" class="opinionstage-onoffswitch-checkbox"
+												<?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>
+												id="article-placement-switch"
+												<?php echo( $os_client_logged_in && $os_options['article_placement_active'] == 'true' ? 'checked' : '') ?>
+									>
 									<label class="opinionstage-onoffswitch-label" for="article-placement-switch">
 										<div class="opinionstage-onoffswitch-inner"></div>
 										<div class="opinionstage-onoffswitch-switch"></div>
@@ -222,16 +180,20 @@ defined( 'ABSPATH' ) or die();
 								<div class="example">Add a content section to all posts</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
-								<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+								<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
 							</div>
 						</div>
 						<div class="opinionstage-section-raw">
 							<div class="opinionstage-section-cell opinionstage-toggle-cell">
-								<div class="opinionstage-onoffswitch <?php echo($first_time ? "disabled" : "")?>">
-									<input type="checkbox" name="sidebar-placement-switch" class="opinionstage-onoffswitch-checkbox" <?php echo($first_time ? "disabled" : "")?> id="sidebar-placement-switch" <?php echo(!$first_time && $os_options['sidebar_placement_active'] == 'true' ? "checked" : "") ?>>
+								<div class="opinionstage-onoffswitch <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>">
+									<input type="checkbox" name="sidebar-placement-switch" class="opinionstage-onoffswitch-checkbox"
+												<?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>
+												id="sidebar-placement-switch"
+												<?php echo($os_client_logged_in && $os_options['sidebar_placement_active'] == 'true' ? 'checked' : '') ?>
+									>
 									<label class="opinionstage-onoffswitch-label" for="sidebar-placement-switch">
 										<div class="opinionstage-onoffswitch-inner"></div>
 										<div class="opinionstage-onoffswitch-switch"></div>
@@ -241,7 +203,7 @@ defined( 'ABSPATH' ) or die();
 							<div class="opinionstage-section-cell opinionstage-description-cell">
 								<div class="title">Sidebar Widget</div>
 								<div class="example">
-									<?php if($first_time) {?>
+									<?php if ( !$os_client_logged_in ) {?>
 									Add content to your sidebar
 									<?php } else { ?>
 									<div class="os-long-text">
@@ -251,8 +213,8 @@ defined( 'ABSPATH' ) or die();
 								</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo($first_time ? "disabled" : "")?>' target="_blank">EDIT CONTENT</a>
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo($first_time ? "disabled" : "")?>' target="_blank">
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
 							</div>
