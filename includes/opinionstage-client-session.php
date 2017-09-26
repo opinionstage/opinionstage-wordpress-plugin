@@ -11,6 +11,10 @@ function opinionstage_user_logged_in() {
 function opinionstage_user_access_token() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 
-	return $os_options['token'];
+	if ( isset($os_options['token']) ) {
+		return $os_options['token'];
+	} else {
+		return null;
+	}
 }
 ?>

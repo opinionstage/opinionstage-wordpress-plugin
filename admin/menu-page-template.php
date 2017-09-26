@@ -15,7 +15,7 @@ opinionstage_enqueue_js_asset('menu-page');
 		</div>
 		<div class="opinionstage-status-content">
 			<?php if ( !$os_client_logged_in ) {?>
-			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to enable all features</div>
+			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to get started</div>
 			<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get">
 				<i class="os-icon icon-os-poll-client"></i>
 				<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">

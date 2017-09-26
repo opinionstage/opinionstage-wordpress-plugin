@@ -31,6 +31,8 @@ define('OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage');
 define('OPINIONSTAGE_SERVER_BASE', isset($opinionstage_settings['server_base']) ? $opinionstage_settings['server_base'] : 'https://www.opinionstage.com');
 define('OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE.'/integrations/wordpress/new');
 define('OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE.'/api/v1');
+define('OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API', OPINIONSTAGE_SERVER_BASE.'/api/wp/v1/my/widgets');
+define('OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API', OPINIONSTAGE_SERVER_BASE.'/api/wp/v1/shared_widgets');
 
 define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
