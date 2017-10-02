@@ -21,9 +21,7 @@ function opinionstage_register_javascript_asset( $name, $relative_path, $deps=ar
 		$in_footer
 	);
 
-	if ( $registered ) {
-		error_log( "[opinionstage plugin] successfully registered javascript asset '$name'" );
-	} else {
+	if ( !$registered ) {
 		error_log( "[opinionstage plugin] ERROR registering javascript asset '$name'" );
 	}
 }
