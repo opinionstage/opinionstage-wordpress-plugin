@@ -4,7 +4,7 @@ Donate link: http://www.opinionstage.com
 Tags: poll, quiz, survey, form builder, slideshow
 Requires at least: 2.8
 Tested up to: 4.8
-Stable tag: 19.0.0
+Stable tag: 19.0.1
 
 Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautiful poll, survey, quiz, slideshow or form to your site.
 
@@ -292,6 +292,8 @@ You can create many different types of quizzes: Trivia quiz, personality quiz, i
 N/A
 
 == Changelog ==
+  = Poll, Survey, Quiz, Slideshow & Form Builder Version 19.0.1 =
+  * Minor logging changes
   = Poll, Survey, Quiz, Slideshow & Form Builder Version 19.0.0 =
   * New feature: post editor integration
   = Poll, Survey, Quiz, Slideshow & Form Builder Version 18.2.1 =
