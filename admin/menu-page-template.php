@@ -236,13 +236,13 @@ opinionstage_enqueue_js_asset('menu-page');
 						<?php echo opinionstage_create_link('Poll examples', 'showcase', '', 'opinionstage-help-link'); ?>
 					</div>
 					<div class="opinionstage-help-row">
-						<?php echo opinionstage_create_link('Quiz, Survey, Form & List examples', 'discover', '', 'opinionstage-help-link'); ?>
+						<?php echo opinionstage_create_link('Quiz, Survey, Form, Slideshow & List examples', 'discover', '', 'opinionstage-help-link'); ?>
 					</div>
 					<div class="opinionstage-help-row">
 						<a href="http://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View video tutorials</a>
 					</div>
 					<div class="opinionstage-help-row">
-						<a href="https://opinionstage.zendesk.com/anonymous_requests/new" class="opinionstage-help-link" target="_blank">Contact us</a>
+						<a href="https://www.opinionstage.com/dashboard/content?o=wp35e8" class="opinionstage-help-link" target="_blank">For help, click here and then on the chat window located on bottom/right of screen</a>
 					</div>
 				</div>
 			</div>
