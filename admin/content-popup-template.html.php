@@ -135,9 +135,6 @@ function opinionstage_create_new_href() {
 					v-if='!noMoreData'
 					@click='showMore'
 				>Click for more</button>
-			  <div v-else>
-					no more widgets
-			  </div>
 			</div>
 		</div>
 		<div v-else>
@@ -153,15 +150,20 @@ function opinionstage_create_new_href() {
 <template id="opinionstage-popup-content">
 	<div v-if="showClientContent">
 		<div v-if="clientIsLoggedIn">
-			<widget-list
-				:widgets='widgets'
-				:data-loading='dataLoading'
-				:show-search='true'
-				:no-more-data='noMoreData'
-				@insert-shortcode="insertShortcode"
-				@widgets-search-update='reloadData'
-				@load-more-widgets='appendData'
-			>
+			<div v-if="noAnyWidgets">
+				<new-widget>
+			</div>
+			<div v-else>
+				<widget-list
+					:widgets='widgets'
+					:data-loading='dataLoading'
+					:show-search='true'
+					:no-more-data='noMoreData'
+					@insert-shortcode="insertShortcode"
+					@widgets-search-update='reloadData'
+					@load-more-widgets='appendData'
+				>
+			</div>
 		</div>
 		<div class='page-content' v-else>
 			<h1 class='main-title'>
@@ -186,4 +188,93 @@ function opinionstage_create_new_href() {
 			@load-more-widgets='appendData'
 		>
 	</div>
+</template>
+
+<template id="opinionstage-new-widget">
+	<div class="opinionstage-section-content">
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-reports-polls"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Poll</div>
+			<div class="example">e.g. What's your favorite color?</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_poll_link('opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-reports-set"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Survey</div>
+			<div class="example">e.g. Help us improve our site</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-reports-trivia"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Trivia Quiz</div>
+			<div class="example">e.g. How well do you know dogs?</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-reports-personality"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Outcome Quiz</div>
+			<div class="example">e.g. What's your most dominant trait?</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-widget-slideshow"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Slideshow</div>
+			<div class="example">e.g. Browse the most watched TV series</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn' ); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-widget-form"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">Contact Form</div>
+			<div class="example">e.g. Collect email addresses</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+	<div class="opinionstage-section-raw">
+		<div class="opinionstage-section-cell opinionstage-icon-cell">
+			<div class="os-icon icon-os-reports-list"></div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-description-cell">
+			<div class="title">List</div>
+			<div class="example">e.g. Top 10 movies of all times</div>
+		</div>
+		<div class="opinionstage-section-cell opinionstage-btn-cell">
+			<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn'); ?>
+		</div>
+	</div>
+</div>
 </template>
