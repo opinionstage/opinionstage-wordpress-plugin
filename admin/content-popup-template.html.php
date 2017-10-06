@@ -34,7 +34,19 @@ function opinionstage_create_new_href() {
 				</div>
 				<div class='header__action'>
 					<?php if ( $opinionstage_user_logged_in ) { ?>
-					<a href="<?php echo opinionstage_create_new_href() ?>" target="_blank" class='btn-create' @click="closePopup">CREATE NEW</a>
+					<div class="create-new-menu-box">
+						<a href="javascript:void(0)" class="btn-create">CREATE NEW</a>
+						<div class="create-new-menu">
+							<?php echo opinionstage_create_poll_link('create-menu__itm', __('poll')) ?>
+							<?php echo opinionstage_create_poll_set_link('create-menu__itm', __('multi poll set')) ?>
+							<?php echo opinionstage_create_widget_link('survey', 'create-menu__itm', __('survey')) ?>
+							<?php echo opinionstage_create_slideshow_link('create-menu__itm', __('slideshow')) ?>
+							<?php echo opinionstage_create_widget_link('quiz', 'create-menu__itm', __('trivia quiz')) ?>
+							<?php echo opinionstage_create_widget_link('outcome', 'create-menu__itm', __('outcome quiz')) ?>
+							<?php echo opinionstage_create_widget_link('contact_form', 'create-menu__itm', __('contact form')) ?>
+							<?php echo opinionstage_create_widget_link('list', 'create-menu__itm', __('list')) ?>
+						</div>
+					</div>
 					<?php } ?>
 					<div class='btn-close' @click="closePopup">X</div>
 				</div>
