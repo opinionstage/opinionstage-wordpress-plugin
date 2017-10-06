@@ -1,5 +1,5 @@
 @use autoprefixer;
-
+@import 'icon-font';
 .opinionstage-content-popup-contents {
   * {
     margin: 0;
@@ -297,7 +297,7 @@
   .opinionstage-section-content {
     display: table;
     border-collapse: collapse;
-    width: 100%;
+    width: 500px;
     height: 435px;
   }
   .opinionstage-section-raw {
@@ -315,6 +315,15 @@
   }
   .opinionstage-description-cell .example {
     color: #b1b1b1;
+  }
+  .opinionstage-icon-cell {
+    width: 17%;
+    text-align: center;
+    color: #3499c2;
+    font-size: 35px;
+    .os-icon {
+      color: #3499c2;
+    }
   }
   .opinionstage-section-cell {
     display: table-cell;

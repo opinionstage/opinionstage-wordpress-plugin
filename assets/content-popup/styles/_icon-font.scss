@@ -1,14 +1,9 @@
 @font-face {
-  font-family: 'os-icon-font';
-  src:  url('fonts/os-icon-font.eot?frvqyp');
-  src:  url('fonts/os-icon-font.eot?frvqyp#iefix') format('embedded-opentype'),
-    url('fonts/os-icon-font.ttf?frvqyp') format('truetype'),
-    url('fonts/os-icon-font.woff?frvqyp') format('woff'),
-    url('fonts/os-icon-font.svg?frvqyp#os-icon-font') format('svg');
-  font-weight: normal;
+  font-family: "os-icon-font";
   font-style: normal;
+  font-weight: normal;
+  src: url("https://d15r06k2ko210l.cloudfront.net/assets/os-icon-font-b58717e087b84424bcc8498e9e3b3531.eot#iefix") format("embedded-opentype"), url("https://d15r06k2ko210l.cloudfront.net/assets/os-icon-font-f18723bde0f7eb116a0dea63a6513dc7.ttf") format("truetype"), url("https://d15r06k2ko210l.cloudfront.net/assets/os-icon-font-67532aac9fd505f5230b4d11dbb76e4f.woff") format("woff"), url("https://d15r06k2ko210l.cloudfront.net/assets/os-icon-font-58751347f34d3cfa8f7ace12e74b200e.svg#os-icon-font") format("svg");
 }
-
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'os-icon-font' !important;
