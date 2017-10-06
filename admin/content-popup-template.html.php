@@ -135,9 +135,6 @@ function opinionstage_create_new_href() {
 					v-if='!noMoreData'
 					@click='showMore'
 				>Click for more</button>
-			  <div v-else>
-					no more widgets
-			  </div>
 			</div>
 		</div>
 		<div v-else>
