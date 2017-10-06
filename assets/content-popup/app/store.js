@@ -21,6 +21,10 @@ function dispatchWidgetData (apiJsonData) {
   })
 }
 
+function dispatchNextPage (apiJsonData) {
+  return apiJsonData.meta.nextPage
+}
+
 function withFiltering(url, filteringParams) {
   const urlParams = []
   if ( !_.isEmpty(filteringParams) ) {
@@ -50,11 +54,13 @@ function withFiltering(url, filteringParams) {
 export default new Vuex.Store({
   state: {
     widgets: [],
+    nextPageNumber: null,
   },
 
   mutations: {
     loadWidgets (state, {widgetsData}) {
       state.widgets.push( dispatchWidgetData(widgetsData) )
+      state.nextPageNumber = dispatchNextPage(widgetsData)
     },
 
     loadTemplateWidgets (state, {widgetsData}) {
@@ -62,10 +68,12 @@ export default new Vuex.Store({
         widget.template = true
         return widget
       }) )
+      state.nextPageNumber = dispatchNextPage(widgetsData)
     },
 
     clearWidgets (state) {
       state.widgets = []
+      state.nextPageNumber = null
     },
   },
 

@@ -29,11 +29,11 @@ export default Vue.component('popup-content', {
     reloadData ({ widgetType, widgetTitle }) {
       this.searchCriteria = { page: 1, type: widgetType, title: widgetTitle }
       this.widgets = []
-      this.noMoreData = false
       this.$store.commit('clearWidgets')
 
       loadData.call(this, this.searchCriteria).then( () => {
         this.widgets = this.$store.state.widgets[0]
+        this.noMoreData = nextPageUnavailablity(this.$store.state.nextPageNumber)
       })
     },
 
@@ -42,12 +42,8 @@ export default Vue.component('popup-content', {
 
       loadData.call(this, this.searchCriteria).then( () => {
         const newWidgets = this.$store.state.widgets[this.searchCriteria.page-1]
-
-        if ( _.isEmpty(newWidgets) ) {
-          this.noMoreData = true
-        } else {
-          this.widgets = this.widgets.concat( newWidgets )
-        }
+        this.noMoreData = nextPageUnavailablity(this.$store.state.nextPageNumber)
+        this.widgets = this.widgets.concat( newWidgets )
       })
     },
 
@@ -88,4 +84,8 @@ function loadTemplateWidgets (filtering) {
     pluginVersion: this.pluginVersion,
     filtering,
   })
+}
+
+function nextPageUnavailablity(nextPageNumber) {
+  return nextPageNumber < 1
 }

@@ -1,5 +1,5 @@
 @use autoprefixer;
-
+@import 'icon-font';
 .opinionstage-content-popup-contents {
   * {
     margin: 0;
@@ -292,5 +292,55 @@
 
   .hidden {
     visibility: hidden;
+  }
+
+  .opinionstage-section-content {
+    display: table;
+    border-collapse: collapse;
+    width: 500px;
+    height: 435px;
+  }
+  .opinionstage-section-raw {
+    display: table-row;
+    border: 1px solid #c8c8c9;
+  }
+  .opinionstage-section-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .opinionstage-description-cell .title {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .opinionstage-description-cell .example {
+    color: #b1b1b1;
+  }
+  .opinionstage-icon-cell {
+    width: 17%;
+    text-align: center;
+    color: #3499c2;
+    font-size: 35px;
+    .os-icon {
+      color: #3499c2;
+    }
+  }
+  .opinionstage-section-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .opinionstage-blue-btn {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 11px 10px;
+    font-weight: normal;
+    background-color: #3499c2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-style: hidden;
+    width: 95px;
   }
 }
