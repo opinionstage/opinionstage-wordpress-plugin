@@ -44,8 +44,10 @@ function opinionstage_create_new_href() {
 			<popup-content
 				:show-client-content="showClientContent"
 				:client-is-logged-in="isClientLoggedIn"
+				:modal-is-opened="isModalOpened"
 				@insert-shortcode="insertShortcode"
 				client-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ?>"
+				client-widgets-has-new-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_HAS_NEW ?>"
 				shared-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API ?>"
 				access-key="<?php echo opinionstage_user_access_token() ?>"
 				plugin-version="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>"
@@ -160,6 +162,7 @@ function opinionstage_create_new_href() {
 				:no-more-data='noMoreData'
 				@insert-shortcode="insertShortcode"
 				@widgets-search-update='reloadData'
+				@live-reload='CheckReload'
 				@load-more-widgets='appendData'
 			>
 		</div>
@@ -181,6 +184,7 @@ function opinionstage_create_new_href() {
 			:data-loading='dataLoading'
 			:show-search='false'
 			:no-more-data='noMoreData'
+			@live-reload='CheckReload'
 			@insert-shortcode='insertShortcode'
 			@widgets-search-update='reloadData'
 			@load-more-widgets='appendData'

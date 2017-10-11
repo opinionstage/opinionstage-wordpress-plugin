@@ -12,7 +12,7 @@ function dispatchWidgetData (apiJsonData) {
       type: rawWidget.attributes['type'],
       title: rawWidget.attributes['title'],
       imageUrl: rawWidget.attributes['image-url'],
-      updatedAt: new Date(rawWidget.attributes['updated-at']),
+      updatedAt: rawWidget.attributes['updated-at'],
       landingPageUrl: rawWidget.attributes['landing-page-url'],
       editUrl: rawWidget.attributes['edit-url'],
       statsUrl: rawWidget.attributes['stats-url'],
