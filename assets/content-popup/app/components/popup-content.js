@@ -157,13 +157,8 @@ function pullWidgetsNeedLiveReload(type, updatedAt){
   const url = withParams(this.clientWidgetsHasNewUrl, type, updatedAt)
 
   return JsonApi.get(url, this.pluginVersion, this.accessKey)
-        .then( (needReloadResponse) => {
-          if (needReloadResponse) {
-            this.needReload = true
-          } else {
-            this.needReload = false
-          }
-
+        .then( (payload) => {
+          this.needReload = payload.data['has-new-widgets']
         })
         .catch( (error) => {
           console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
