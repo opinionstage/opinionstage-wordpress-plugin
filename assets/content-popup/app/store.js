@@ -42,6 +42,10 @@ function withFiltering(url, filteringParams) {
     if ( filteringParams.page ) {
       urlParams.push( `page=${filteringParams.page}` )
     }
+
+    if ( filteringParams.perPage ) {
+      urlParams.push( `per_page=${filteringParams.perPage}` )
+    }
   }
 
   if ( _.isEmpty(urlParams) ) {

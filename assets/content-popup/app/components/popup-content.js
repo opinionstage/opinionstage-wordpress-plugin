@@ -27,7 +27,7 @@ export default Vue.component('popup-content', {
 
   methods: {
     reloadData ({ widgetType, widgetTitle }) {
-      this.searchCriteria = { page: 1, type: widgetType, title: widgetTitle }
+      this.searchCriteria = { page: 1, perPage: 6, type: widgetType, title: widgetTitle }
       this.widgets = []
       this.$store.commit('clearWidgets')
 
