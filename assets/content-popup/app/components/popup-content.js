@@ -27,13 +27,13 @@ export default Vue.component('popup-content', {
 
   methods: {
     reloadData ({ widgetType, widgetTitle }) {
-      this.searchCriteria = { page: 1, type: widgetType, title: widgetTitle }
+      this.searchCriteria = { page: 1, perPage: 6, type: widgetType, title: widgetTitle }
       this.widgets = []
-      this.noMoreData = false
       this.$store.commit('clearWidgets')
 
       loadData.call(this, this.searchCriteria).then( () => {
         this.widgets = this.$store.state.widgets[0]
+        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
       })
     },
 
@@ -42,12 +42,8 @@ export default Vue.component('popup-content', {
 
       loadData.call(this, this.searchCriteria).then( () => {
         const newWidgets = this.$store.state.widgets[this.searchCriteria.page-1]
-
-        if ( _.isEmpty(newWidgets) ) {
-          this.noMoreData = true
-        } else {
-          this.widgets = this.widgets.concat( newWidgets )
-        }
+        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
+        this.widgets = this.widgets.concat( newWidgets )
       })
     },
 
@@ -55,6 +51,12 @@ export default Vue.component('popup-content', {
       this.$emit('insert-shortcode', shortcode)
     },
   },
+
+  computed: {
+    noAnyWidgets () {
+      return !this.dataLoading && this.searchCriteria.type === 'all' && this.widgets.length == 0
+    }
+  }
 })
 
 function loadData (searchCriteria) {
@@ -88,4 +90,8 @@ function loadTemplateWidgets (filtering) {
     pluginVersion: this.pluginVersion,
     filtering,
   })
+}
+
+function hasNextPage(nextPageNumber) {
+  return nextPageNumber > 1
 }
