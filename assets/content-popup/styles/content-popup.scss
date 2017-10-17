@@ -406,4 +406,30 @@
     border-style: hidden;
     width: 95px;
   }
+  .opinionstage-section-notification {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 20px 25px;
+    z-index: 3;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.6)
+  }
+  .opinionstage-section-notification__title {
+    color: white;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .opinionstage-section-notification__controls {
+    position: relative;
+    font-size: 0;
+  }
+  .notification-container {
+    ~ div {
+      > .page-content {
+        .content__list {
+          max-height: calc(92vh - 270px);
+        }
+      }
+    }
+  }
 }

@@ -7,6 +7,7 @@ export default class Modal {
       closeMethods: ['overlay', 'escape'],
       cssClass: ['opinionstage-content-popup'],
       onClose: settings.onClose,
+      onOpen: settings.onOpen,
     })
 
     this.modal.setContent(settings.content)
