@@ -175,7 +175,7 @@ function opinionstage_create_new_href() {
 					:no-more-data='noMoreData'
 					@insert-shortcode="insertShortcode"
 					@widgets-search-update='reloadData'
-					@live-reload='CheckReload'
+					@live-reload='checkReload'
 					@load-more-widgets='appendData'
 				>
 			</div>

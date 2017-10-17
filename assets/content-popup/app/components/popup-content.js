@@ -64,7 +64,7 @@ export default Vue.component('popup-content', {
     liveReload () {
       if (this.liveReloadActivated) {
         setTimeout(() => {
-          this.CheckReload({
+          this.checkReload({
             widgetType: this.searchCriteria.type,
           })
           this.liveReload(this)
@@ -72,7 +72,7 @@ export default Vue.component('popup-content', {
       }
     },
 
-    CheckReload ({ widgetType }) {
+    checkReload ({ widgetType }) {
       let updatedTime = null
       if (typeof this.widgets[0] !== 'undefined') {
         updatedTime = this.widgets[0].updatedAt
