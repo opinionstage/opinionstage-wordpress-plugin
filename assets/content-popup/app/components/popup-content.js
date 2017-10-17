@@ -26,12 +26,13 @@ export default Vue.component('popup-content', {
       searchCriteria: {},
       noMoreData: false,
       needReload: false,
-      liveReloadActivated: true,
+      liveReloadActivated: false,
+      liveReloading: null,
     }
   },
 
   mounted () { 
-    this.liveReload.call(this)
+    initializeLiveReload.call(this)
   },
 
   store,
@@ -61,17 +62,6 @@ export default Vue.component('popup-content', {
       this.$emit('insert-shortcode', shortcode)
     },
 
-    liveReload () {
-      if (this.liveReloadActivated) {
-        setTimeout(() => {
-          this.checkReload({
-            widgetType: this.searchCriteria.type,
-          })
-          this.liveReload(this)
-        }, 3000)
-      }
-    },
-
     checkReload ({ widgetType }) {
       let updatedTime = null
       if (typeof this.widgets[0] !== 'undefined') {
@@ -90,13 +80,19 @@ export default Vue.component('popup-content', {
 
   watch: {
     modalIsOpened: function(newState){
-      this.liveReloadActivated = newState && this.showClientContent
-      this.liveReload()
+      if ( newState && this.showClientContent ) {
+        initializeLiveReload.call(this)
+      } else {
+        stopLiveReload.call(this)
+      }
     },
 
     showClientContent: function(newState){
-      this.liveReloadActivated = newState && this.modalIsOpened
-      this.liveReload()
+      if ( newState && this.modalIsOpened ) {
+        initializeLiveReload.call(this)
+      } else {
+        stopLiveReload.call(this)
+      }
     },
   },
 
@@ -171,4 +167,18 @@ function pullWidgetsNeedLiveReload(type, updatedAt){
 
 function hasNextPage(nextPageNumber) {
   return nextPageNumber > 1
+}
+
+function initializeLiveReload() {
+  this.liveReloadActivated = true
+  this.liveReloading = setInterval(() => {
+                         this.checkReload({
+                           widgetType: this.searchCriteria.type,
+                         })
+                       }, 3000)
+}
+
+function stopLiveReload() {
+  this.liveReloadActivated = false
+  clearInterval(this.liveReloading)
 }
