@@ -11,6 +11,7 @@ export default function (modal) {
     data: {
       showClientContent: true,
       isClientLoggedIn: null,
+      isModalOpened: true,
     },
 
     beforeMount () {
@@ -20,11 +21,13 @@ export default function (modal) {
     methods: {
       closePopup (/*event*/) {
         modal.close()
+        this.isModalOpened = false
       },
 
       insertShortcode (shortcode) {
         wp.media.editor.insert(shortcode)
         this.closePopup()
+        this.isModalOpened = false
       },
 
       showClientWidgets () {
