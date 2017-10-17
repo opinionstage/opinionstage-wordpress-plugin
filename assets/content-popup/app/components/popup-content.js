@@ -75,16 +75,19 @@ export default Vue.component('popup-content', {
     },
 
     CheckReload ({ widgetType, page }) {
+      let updatedTime = null
       if (typeof this.widgets[0] !== 'undefined') {
-        pullWidgetsNeedLiveReload.call(this, widgetType, this.widgets[0].updatedAt).then( () => {
-          if ( this.needReload ) {
-            this.$store.commit('clearWidgets')
-            this.reloadData({
-              widgetType: widgetType
-            })
-          }
-        })
+        updatedTime = this.widgets[0].updatedAt
       }
+
+      pullWidgetsNeedLiveReload.call(this, widgetType, updatedTime).then( () => {
+        if ( this.needReload ) {
+          this.$store.commit('clearWidgets')
+          this.reloadData({
+            widgetType: widgetType
+          })
+        }
+      })
     },
   },
 
