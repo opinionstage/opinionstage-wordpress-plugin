@@ -26,21 +26,24 @@ export default Vue.component('popup-content', {
       searchCriteria: {},
       noMoreData: false,
       needReload: false,
-      liveReloadActivated: false,
+      liveReloadActivated: true,
     }
+  },
+
+  mounted () { 
+    this.liveReload.call(this)
   },
 
   store,
 
   methods: {
     reloadData ({ widgetType, widgetTitle }) {
-      this.searchCriteria = { page: 1, type: widgetType, title: widgetTitle }
-      this.widgets = []
-      this.noMoreData = false
+      this.searchCriteria = { page: 1, perPage: 6, type: widgetType, title: widgetTitle }
       this.$store.commit('clearWidgets')
 
       loadData.call(this, this.searchCriteria).then( () => {
         this.widgets = this.$store.state.widgets[0]
+        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
       })
     },
 
@@ -49,12 +52,8 @@ export default Vue.component('popup-content', {
 
       loadData.call(this, this.searchCriteria).then( () => {
         const newWidgets = this.$store.state.widgets[this.searchCriteria.page-1]
-
-        if ( _.isEmpty(newWidgets) ) {
-          this.noMoreData = true
-        } else {
-          this.widgets = this.widgets.concat( newWidgets )
-        }
+        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
+        this.widgets = this.widgets.concat( newWidgets )
       })
     },
 
@@ -67,14 +66,13 @@ export default Vue.component('popup-content', {
         setTimeout(() => {
           this.CheckReload({
             widgetType: this.searchCriteria.type,
-            page: this.searchCriteria.page
           })
           this.liveReload(this)
         }, 3000)
       }
     },
 
-    CheckReload ({ widgetType, page }) {
+    CheckReload ({ widgetType }) {
       let updatedTime = null
       if (typeof this.widgets[0] !== 'undefined') {
         updatedTime = this.widgets[0].updatedAt
@@ -82,7 +80,6 @@ export default Vue.component('popup-content', {
 
       pullWidgetsNeedLiveReload.call(this, widgetType, updatedTime).then( () => {
         if ( this.needReload ) {
-          this.$store.commit('clearWidgets')
           this.reloadData({
             widgetType: widgetType
           })
@@ -96,7 +93,18 @@ export default Vue.component('popup-content', {
       this.liveReloadActivated = newState && this.showClientContent
       this.liveReload()
     },
+
+    showClientContent: function(newState){
+      this.liveReloadActivated = newState && this.modalIsOpened
+      this.liveReload()
+    },
   },
+
+  computed: {
+    noAnyWidgets () {
+      return !this.dataLoading && this.searchCriteria.type === 'all' && this.widgets.length == 0
+    }
+  }
 })
 
 function loadData (searchCriteria) {
@@ -110,11 +118,6 @@ function loadData (searchCriteria) {
 }
 
 function loadClientWidgets (filtering) {
-  if ( !this.liveReloadActivated ) {
-    this.liveReloadActivated = true
-    this.liveReload()
-  }
-
   if ( this.clientIsLoggedIn ) {
     return this.$store.dispatch({
       type: 'loadClientWidgets',
@@ -129,8 +132,6 @@ function loadClientWidgets (filtering) {
 }
 
 function loadTemplateWidgets (filtering) {
-  this.liveReloadActivated = false
-
   return this.$store.dispatch({
     type: 'loadTemplateWidgets',
     widgetsUrl:    this.sharedWidgetsUrl,
@@ -166,4 +167,8 @@ function pullWidgetsNeedLiveReload(type, updatedAt){
         .catch( (error) => {
           console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
         })
+}
+
+function hasNextPage(nextPageNumber) {
+  return nextPageNumber > 1
 }

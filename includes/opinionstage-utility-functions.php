@@ -6,10 +6,11 @@ defined( 'ABSPATH' ) or die();
 /**
  * Utility function to create a link with the correct host and all the required information.
  */
-function opinionstage_create_link($caption, $page, $params = "", $css_class = '') {
-	$params_prefix = empty($params) ? "" : "&";	
-	$link = OPINIONSTAGE_SERVER_BASE."/".$page."?" . "o=".OPINIONSTAGE_WIDGET_API_KEY.$params_prefix.$params;
-	return "<a href=\"".$link."\" target='_blank' class=\"".$css_class."\">".$caption."</a>";
+function opinionstage_create_link($caption, $page, $params = '', $css_class = '') {
+	$params_prefix = empty($params) ? '' : '&';
+	$link = OPINIONSTAGE_SERVER_BASE.'/'.$page.'?'.'o='.OPINIONSTAGE_WIDGET_API_KEY.$params_prefix.$params;
+
+	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
 
 function opinionstage_register_javascript_asset( $name, $relative_path, $deps=array(), $in_footer=true ) {
@@ -83,38 +84,22 @@ function opinionstage_sidebar_placement_edit_url($tab) {
 	}
 	return OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?selected_tab='.$tab;
 }
-/**
- * Generates a link for creating a poll
- */
-function opinionstage_create_poll_link($css_class) {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {	
-		return opinionstage_create_link(
-			'CREATE',   // Text
-			'new_poll', // path
-			'',         // Args
-			$css_class);
-	} else {
-		return opinionstage_create_link('CREATE', 'new_poll', '', $css_class);
-	}	
+
+function opinionstage_create_poll_link($css_class, $title='CREATE') {
+	return opinionstage_create_link($title, 'new_poll', '', $css_class);
 }
 
-function opinionstage_create_widget_link($w_type, $css_class) {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {	
-		return opinionstage_create_link(
-			'CREATE',          // Text 
-			'widgets/new',     // Path
-			'w_type='.$w_type, // Args
-			$css_class);
-	} else {
-		return opinionstage_create_link('CREATE', 'widgets/new', 'w_type='.$w_type, $css_class);
-	}	
+function opinionstage_create_poll_set_link($css_class, $title='CREATE') {
+	return opinionstage_create_link($title, 'sets/new', '', $css_class);
 }
 
-function opinionstage_create_slideshow_link( $css_class ) {
+function opinionstage_create_widget_link($w_type, $css_class, $title='CREATE') {
+	return opinionstage_create_link($title, 'widgets/new', 'w_type='.$w_type, $css_class);
+}
+
+function opinionstage_create_slideshow_link( $css_class, $title='CREATE' ) {
 	return opinionstage_create_link(
-		'CREATE',
+		$title,
 		'dashboard/slideshows/new',
 		null,
 		$css_class

@@ -1,5 +1,7 @@
 @use autoprefixer;
 
+@import 'icon-font';
+
 .opinionstage-content-popup-contents {
   * {
     margin: 0;
@@ -131,8 +133,9 @@
   }
 
   .content__image {
-    height: 195px;
+    height: 190px;
     position: relative;
+    width: 292px;
     img {
       display: block;
       height: 100%;
@@ -214,19 +217,80 @@
 
   .btn-create {
     background-color: #3499c2;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     color: white;
     cursor: pointer;
     display: inline-block;
     font: 16px/42px "Open Sans",Helvetica,sans-serif;
     text-align: center;
     text-decoration: none;
-    width: 180px;
+    width: 140px;
+    margin-right: 42px;
+    position: relative;
+    outline: none !important;
+    box-shadow: none;
+    &:before {
+      content: "\E921";
+      display: block;
+      position: absolute;
+      top: 0;
+      font-size: 7px;
+      font-family: 'os-icon-font' !important;
+      right: -25px;
+      z-index: 3;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 40px;
+      right: -42px;
+      height: 100%;
+      background-color: #3499c2;
+      border-radius: 0 5px 5px 0;
+    }
     &:hover {
       background-color: #55A6CC;
+      &:after {
+        background-color: #55A6CC;
+      }
     }
   }
-
+  .create-new-menu-box {
+    display: inline-block;
+    position: relative;
+    &:hover {
+      .create-new-menu {
+        display: block;
+      }
+    }
+  }
+  .create-new-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    width: 100%;
+    top: 39px;
+    left: 0;
+    border: 1px solid #3aaebd;
+    background-color: white;
+    z-index: 3;
+  }
+  .create-menu__itm {
+    display: block;
+    color: #3aaebd;
+    border-bottom: 1px solid #3aaebd;
+    padding: 8px 12px;
+    background-color: white;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+      color: white;
+      background-color: #44a9d2;
+    }
+  }
 
   .btn-close {
     border: 1px solid #ffffff;
@@ -292,5 +356,54 @@
 
   .hidden {
     visibility: hidden;
+  }
+
+  .opinionstage-section-content {
+    display: table;
+    border-collapse: collapse;
+    width: 500px;
+    height: 435px;
+    margin: 50px auto;
+  }
+  .opinionstage-section-raw {
+    display: table-row;
+    border: 1px solid #c8c8c9;
+  }
+  .opinionstage-section-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .opinionstage-description-cell .title {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .opinionstage-description-cell .example {
+    color: #b1b1b1;
+  }
+  .opinionstage-icon-cell {
+    width: 17%;
+    text-align: center;
+    color: #3499c2;
+    font-size: 35px;
+    .os-icon {
+      color: #3499c2;
+    }
+  }
+  .opinionstage-section-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .opinionstage-blue-btn {
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 11px 10px;
+    font-weight: normal;
+    background-color: #3499c2;
+    border-radius: 3px;
+    border-style: hidden;
+    width: 95px;
   }
 }
