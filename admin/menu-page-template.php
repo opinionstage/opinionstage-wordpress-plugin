@@ -16,19 +16,21 @@ opinionstage_enqueue_js_asset('menu-page');
 		<div class="opinionstage-status-content">
 			<?php if ( !$os_client_logged_in ) {?>
 			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to get started</div>
-			<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get">
+			<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
 				<i class="os-icon icon-os-poll-client"></i>
 				<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
 				<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
 				<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
-				<button class="opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
+				<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 			</form>
 			<?php } else { ?>
 			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
 			<i class="os-icon icon-os-form-success"></i>
 			<label class="checked" for="user-email"></label>
 			<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
-			<a href="<?php echo OPINIONSTAGE_LOGIN_PATH.'?o='.OPINIONSTAGE_WIDGET_API_KEY.'&callback='.opinionstage_callback_url() ?>" >Switch account</a>
+			<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
+				<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
+			</form>
 			<?php } ?>
 		</div>
 	</div>
@@ -51,7 +53,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. What's your favorite color?</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_poll_link('opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_poll_link('opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -63,7 +65,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. Help us improve our site</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -75,7 +77,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. How well do you know dogs?</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -87,7 +89,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. What's your most dominant trait?</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -99,7 +101,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. Browse the most watched TV series</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn' ); ?>
+							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn opinionstage-create-btn' ); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -111,7 +113,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. Collect email addresses</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -123,7 +125,7 @@ opinionstage_enqueue_js_asset('menu-page');
 							<div class="example">e.g. Top 10 movies of all times</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn'); ?>
+							<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
 						</div>
 					</div>
 				</div>
