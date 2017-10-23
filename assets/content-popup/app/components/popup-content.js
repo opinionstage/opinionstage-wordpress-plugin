@@ -83,7 +83,7 @@ export default Vue.component('popup-content', {
 
   watch: {
     modalIsOpened: function(newState){
-      if ( newState && this.showClientContent ) {
+      if ( newState && this.showClientContent && this.clientIsLoggedIn ) {
         refreshContent.call(this)
         startWidgetUpdatesChecking.call(this)
       } else {
@@ -93,7 +93,7 @@ export default Vue.component('popup-content', {
     },
 
     showClientContent: function(newState){
-      if ( newState && this.modalIsOpened ) {
+      if ( newState && this.modalIsOpened && this.clientIsLoggedIn ) {
         startWidgetUpdatesChecking.call(this)
       } else {
         stopWidgetUpdatesChecking.call(this)
@@ -177,12 +177,14 @@ function hasNextPage(nextPageNumber) {
 }
 
 function startWidgetUpdatesChecking() {
-  this.isCheckingWidgetUpdates = true
-  this.widgetUpdatesChecker = setInterval(() => {
-                         this.checkWidgetUpdates({
-                           widgetType: this.searchCriteria.type,
-                         })
-                       }, 3000)
+  if ( this.clientIsLoggedIn ) {
+    this.isCheckingWidgetUpdates = true
+    this.widgetUpdatesChecker = setInterval(() => {
+                           this.checkWidgetUpdates({
+                             widgetType: this.searchCriteria.type,
+                           })
+                         }, 3000)
+  }
 }
 
 function stopWidgetUpdatesChecking() {
