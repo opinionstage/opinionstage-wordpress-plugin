@@ -150,10 +150,7 @@ function opinionstage_create_new_href() {
 			</div>
 		</div>
 		<div v-else>
-			There is no widgets of this type
-			<span v-if='widgetTitleSearch'>
-			and title like: "{{widgetTitleSearch}}"
-			</span>
+			No content found
 		</div>
 	</div>
 </div>
