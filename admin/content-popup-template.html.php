@@ -56,9 +56,11 @@ function opinionstage_create_new_href() {
 			<popup-content
 				:show-client-content="showClientContent"
 				:client-is-logged-in="isClientLoggedIn"
+				:modal-is-opened="isModalOpened"
 				@insert-shortcode="insertShortcode"
 				client-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ?>"
 				shared-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API ?>"
+				client-widgets-has-new-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE ?>"
 				access-key="<?php echo opinionstage_user_access_token() ?>"
 				plugin-version="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>"
 			>
@@ -159,6 +161,13 @@ function opinionstage_create_new_href() {
 <template id="opinionstage-popup-content">
 	<div v-if="showClientContent">
 		<div v-if="clientIsLoggedIn">
+			<div v-if="newWidgetsAvailable" class="notification-container">
+				<notification
+					:widget-type='searchCriteria.type'
+					@reload='reloadData'
+					@hide='startWidgetUpdatesChecker'
+				>
+			</div>
 			<div v-if="noAnyWidgets">
 				<new-widget>
 			</div>
@@ -286,4 +295,16 @@ function opinionstage_create_new_href() {
 		</div>
 	</div>
 </div>
+</template>
+
+<template id="opinionstage-notification">
+
+	<div class="opinionstage-section-notification">
+		<p class="opinionstage-section-notification__title">
+			Your content has been updated, please click the button to update your view
+		</p>
+		<div class="opinionstage-section-notification__controls">
+			<button class='btn-blue' @click="reload">Update view</button>
+		</div>
+	</div>
 </template>

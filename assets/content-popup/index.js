@@ -14,6 +14,12 @@ jQuery(function($) {
         onCreate (modal) {
           app = new ContentPopup(modal)
         },
+        onClose (modal) {
+          app.isModalOpened = false
+        },
+        onOpen (modal) {
+          app.isModalOpened = true
+        }
       })
     }
 
