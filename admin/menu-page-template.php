@@ -244,7 +244,7 @@ opinionstage_enqueue_js_asset('menu-page');
 						<a href="http://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View video tutorials</a>
 					</div>
 					<div class="opinionstage-help-row">
-						<a href="https://www.opinionstage.com/dashboard/content?o=wp35e8" class="opinionstage-help-link" target="_blank">For help, click here and then on the chat window located on bottom/right of screen</a>
+						<a href="https://www.opinionstage.com/dashboard/content?o=wp35e8" class="opinionstage-help-link" target="_blank">To contact us, click here and then on the chat window located on bottom/right of screen</a>
 					</div>
 				</div>
 			</div>
