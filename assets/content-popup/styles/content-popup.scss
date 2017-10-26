@@ -68,6 +68,12 @@
   .content-actions {
     font-size: 0;
     margin-bottom: 20px;
+    float: none;
+    &:after {
+      content: '';
+      clear: both;
+      display: block;
+    }
   }
 
   .filter__itm {
