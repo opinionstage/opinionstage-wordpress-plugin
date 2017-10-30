@@ -226,6 +226,18 @@ opinionstage_enqueue_js_asset('menu-page');
 			</div>
 		</div>
 		<div class="opinionstage-dashboard-left">
+		<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
+				<div class="opinionstage-section-header">
+						<div class="opinionstage-section-title">Getting Started Video</div>
+				</div>
+				<div class="opinionstage-section-content">
+					<div class="opinionstage-video-container">
+						<iframe width="560" height="315" class="opinionstage-video-itm" src="https://www.youtube.com/embed/Ut6ibSvGI4A" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="opinionstage-dashboard-right">
 			<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Help</div>
@@ -233,9 +245,6 @@ opinionstage_enqueue_js_asset('menu-page');
 				<div class="opinionstage-section-content">
 					<div class="opinionstage-help-row">
 						<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" class="opinionstage-help-link" target="_blank">How to use this plugin</a>
-					</div>
-					<div class="opinionstage-help-row">
-						<?php echo opinionstage_create_link('Poll examples', 'showcase', '', 'opinionstage-help-link'); ?>
 					</div>
 					<div class="opinionstage-help-row">
 						<?php echo opinionstage_create_link('Quiz, Survey, Form, Slideshow & List examples', 'discover', '', 'opinionstage-help-link'); ?>
