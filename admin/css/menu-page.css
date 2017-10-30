@@ -146,7 +146,20 @@
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-content {
     display: table;
     border-collapse: collapse;
-	width: 100%;
+    width: 100%;
+}
+#opinionstage-content .opinionstage-dashboard-section .opinionstage-video-container {
+  margin: 10px;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+#opinionstage-content .opinionstage-dashboard-section .opinionstage-video-itm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-content .opinionstage-section-sub-title {
     display: table-caption;
