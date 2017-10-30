@@ -111,7 +111,23 @@ function opinionstage_create_slideshow_link( $css_class, $title='CREATE' ) {
 function opinionstage_callback_url() {
 	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_LOGIN_CALLBACK_SLUG;
 }
-
+/**
+ * Generates a to the callback page used to connect the plugin to the Opinion Stage account on content page
+ */
+function opinionstage_content_login_callback_url() {
+	$current_url = '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	return get_admin_url(null, 'admin.php?page=opinionstage-content-login-callback-page'). '&return_path=' . urlencode(opinionstage_add_modal_opening_to_url_params($current_url));
+}
+/**
+ * Adds special param for modal opening on page load
+ */
+function opinionstage_add_modal_opening_to_url_params($url) {
+	if (strpos($url, '?') !== false) {
+		return '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&modal_is_open=true';
+	} else {
+		return '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?modal_is_open=true';
+	}
+}
 /**
  * Generates a link to Opinion Stage that requires registration
  */

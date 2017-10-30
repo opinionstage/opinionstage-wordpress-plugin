@@ -184,15 +184,20 @@ function opinionstage_create_new_href() {
 			</div>
 		</div>
 		<div class='page-content' v-else>
-			<h1 class='main-title'>
-				<b>Connect WordPress</b>
-				<span>with</span>
-				<b>Opinion Stage</b>
-				<span>to get started</span>
-			</h1>
-			<form class='conect-form'>
-				<a href="<?php echo get_admin_url(null, '', 'admin').'admin.php?page='.OPINIONSTAGE_MENU_SLUG ?>" class='btn-blue'>Connect</a>
-			</form>
+			<div class="bordered-container">
+				<h1 class='main-title'>
+					<b>Connect WordPress</b>
+					<span>with</span>
+					<b>Opinion Stage</b>
+					<span>to get started</span>
+				</h1>
+				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
+					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
+					<input type="hidden" name="callback" value="<?php echo opinionstage_content_login_callback_url() ?>">
+					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input class="opinionstage-conect-input">
+					<button class="opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
+				</form>
+			</div>
 		</div>
 	</div>
 	<div v-else>
