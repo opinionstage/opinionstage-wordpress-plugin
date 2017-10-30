@@ -30,7 +30,7 @@ function opinionstage_create_new_href() {
 					<div class='std-btn'
 							@click="showTemplatesWidgets"
 							:class="{ active: !showClientContent }"
-					>Content Examples</div>
+					>Examples</div>
 				</div>
 				<div class='header__action'>
 					<?php if ( $opinionstage_user_logged_in ) { ?>
@@ -188,7 +188,7 @@ function opinionstage_create_new_href() {
 				<b>Connect WordPress</b>
 				<span>with</span>
 				<b>Opinion Stage</b>
-				<span>to display your content</span>
+				<span>to get started</span>
 			</h1>
 			<form class='conect-form'>
 				<a href="<?php echo get_admin_url(null, '', 'admin').'admin.php?page='.OPINIONSTAGE_MENU_SLUG ?>" class='btn-blue'>Connect</a>
