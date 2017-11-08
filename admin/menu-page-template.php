@@ -232,7 +232,7 @@ opinionstage_enqueue_js_asset('menu-page');
 				</div>
 				<div class="opinionstage-section-content">
 					<div class="opinionstage-video-container">
-						<iframe width="560" height="315" class="opinionstage-video-itm" src="https://www.youtube.com/embed/Ut6ibSvGI4A" frameborder="0" allowfullscreen></iframe>
+						<iframe width="560" height="315" class="opinionstage-video-itm" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
