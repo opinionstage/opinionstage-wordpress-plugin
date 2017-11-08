@@ -12,7 +12,7 @@ Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautif
 
 Easily add a highly engaging & visually appealing poll, quiz, survey, slideshow or form to your website.
 
-http://www.youtube.com/watch?v=Ut6ibSvGI4A
+http://www.youtube.com/watch?v=zwcRWGsOxxQ?rel=0&showinfo=0
 
 = Poll Examples: =
 
