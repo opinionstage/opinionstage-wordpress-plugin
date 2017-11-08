@@ -198,6 +198,9 @@ function opinionstage_create_new_href() {
 					<button class="opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 				</form>
 			</div>
+			<div class="opinionstage-introduction-video">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
 	</div>
 	<div v-else>
