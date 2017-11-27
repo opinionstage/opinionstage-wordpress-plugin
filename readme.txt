@@ -3,7 +3,7 @@ Contributors: OpinionStage.com
 Donate link: http://www.opinionstage.com
 Tags: poll, quiz, survey, form builder, slideshow
 Requires at least: 2.8
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: 19.2.3
 
 Add a poll, survey, quiz, slideshow & form builder plugin. Easily add a beautiful poll, survey, quiz, slideshow or form to your site.
