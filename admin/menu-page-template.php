@@ -86,7 +86,7 @@ opinionstage_enqueue_js_asset('menu-page');
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Outcome Quiz</div>
-							<div class="example">e.g. What's your most dominant trait?</div>
+							<div class="example">e.g. Where should you travel next?</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
