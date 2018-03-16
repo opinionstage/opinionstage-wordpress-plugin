@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) or die();
 /**
  * Utility function to create a link with the correct host and all the required information.
  */
-function opinionstage_link($caption, $path, $css_class = '', $query_data = []) {
+function opinionstage_link($caption, $path, $css_class = '', $query_data = array()) {
 	$query_data['o'] = OPINIONSTAGE_WIDGET_API_KEY;
 
 	$link = OPINIONSTAGE_SERVER_BASE.'/'.$path.'?'.http_build_query($query_data);
@@ -87,7 +87,7 @@ function opinionstage_sidebar_placement_edit_url($tab) {
 }
 
 function opinionstage_create_poll_link($css_class, $title='CREATE') {
-	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, ['w_type' => 'poll']);
+	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => 'poll'));
 
 }
 
@@ -96,11 +96,11 @@ function opinionstage_create_poll_set_link($css_class, $title='CREATE') {
 }
 
 function opinionstage_create_widget_link($w_type, $css_class, $title='CREATE') {
-	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, ['w_type' => $w_type]);
+	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => $w_type));
 }
 
 function opinionstage_create_slideshow_link( $css_class, $title='CREATE' ) {
-	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, ['w_type' => 'slideshow']);
+	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => 'slideshow'));
 }
 /**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
@@ -129,7 +129,7 @@ function opinionstage_add_modal_opening_to_url_params($url) {
  * Generates a link to Opinion Stage that requires registration
  */
 function opinionstage_logged_in_link($text, $link) {
-	return opinionstage_link($text, 'registrations/new', '', ['return_to' => $link]);
+	return opinionstage_link($text, 'registrations/new', '', array('return_to' => $link));
 }
 /**
  * Take the received data and parse it
