@@ -1,4 +1,4 @@
-﻿=== Poll, Survey, Quiz, Slideshow & Form Builder ===
+﻿=== Poll, Survey, Quiz, Slideshow, Form, Story & Landing Page ===
 Contributors: OpinionStage.com
 Donate link: http://www.opinionstage.com
 Tags: poll, quiz, survey, form builder, slideshow
