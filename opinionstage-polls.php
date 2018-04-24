@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Poll, Survey, Quiz, Slideshow & Form Builder
+Plugin Name: Poll, Survey, Quiz, Slideshow, Form, Story & Landing Page
 Plugin URI: http://www.opinionstage.com
 Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
 Version: 19.2.7
