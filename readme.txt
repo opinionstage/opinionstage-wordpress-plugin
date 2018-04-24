@@ -10,7 +10,7 @@ Add a poll, survey, quiz, slideshow, form, story & landing page plugin. 
 
 == Description ==
 
-Easily add a highly engaging & visually appealing poll, quiz, survey, slideshow, form to your website. Optionally add interactive eleents to an appealing interactive landing page that results with more traffic, engagement and leads.
+Easily add a highly engaging & visually appealing poll, quiz, survey, slideshow, form or story to your website. Optionally add interactive elements to an appealing interactive landing page that results with more traffic, engagement and leads.
 
 http://www.youtube.com/watch?v=zwcRWGsOxxQ?rel=0&showinfo=0
 
@@ -44,7 +44,7 @@ For a List example, checkout this <a href="https://www.opinionstage.com/polldisc
 
 = Story Example: =
 
-For a Story example, checkout this <a href="https://www.opinionstage.com/quiz/buzzfeed-quiz-create-a-buzzfeed-style-quiz?o=wp35e8" target="_blank">List.</a>
+For a Story example, checkout this <a href="https://www.opinionstage.com/quiz/buzzfeed-quiz-create-a-buzzfeed-style-quiz?o=wp35e8" target="_blank">Story.</a>
 
 = Why Opinion Stage? =
 
