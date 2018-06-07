@@ -133,7 +133,7 @@ opinionstage_enqueue_js_asset('menu-page');
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-set"></div>
+							<div class="os-icon icon-os-icon-story"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Story</div>
