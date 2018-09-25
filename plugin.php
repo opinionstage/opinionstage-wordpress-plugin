@@ -55,17 +55,22 @@ require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-functions.php' 
 if (opinionstage_check_plugin_available('opinionstage_popup')) {
 	add_action('admin_notices', 'opinionstage_other_plugin_installed_warning');
 } else {
-	require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-utility-functions.php' );
-	require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-article-placement-functions.php' );
-	require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-sidebar-widget.php' );
 
-	if ( is_admin() ) {
-		require( plugin_dir_path( __FILE__ ).'admin/init.php' );
-	} else {
-		require( plugin_dir_path( __FILE__ ).'public/init.php' );
+	if(  (function_exists('wp_doing_ajax') && wp_doing_ajax()) || (defined('DOING_AJAX')) ){
+		// AJAX running, don't include anything.
+	}else{
+		require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-utility-functions.php' );
+		require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-article-placement-functions.php' );
+		require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-sidebar-widget.php' );
+
+		if ( is_admin() ) {
+			require( plugin_dir_path( __FILE__ ).'admin/init.php' );
+		} else {
+			require( plugin_dir_path( __FILE__ ).'public/init.php' );
+		}
+
+		add_action('widgets_init', 'opinionstage_init_widget');
+		add_action('plugins_loaded', 'opinionstage_init');
 	}
-
-	add_action('widgets_init', 'opinionstage_init_widget');
-	add_action('plugins_loaded', 'opinionstage_init');
 }
 ?>
