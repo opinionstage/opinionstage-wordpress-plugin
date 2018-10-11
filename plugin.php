@@ -61,7 +61,7 @@ if (opinionstage_check_plugin_available('opinionstage_popup')) {
 	require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-sidebar-widget.php' );
 
 	if ( (function_exists('wp_doing_ajax') && wp_doing_ajax()) || (defined('DOING_AJAX')) ) {
-		// AJAX running, include public for widgets rendering via ajax.
+		require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-ajax-functions.php' );
 		require( plugin_dir_path( __FILE__ ).'public/init.php' );
 	} else {
 		if ( is_admin() ) {

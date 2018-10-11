@@ -5,9 +5,6 @@ defined( 'ABSPATH' ) or die();
 require_once( plugin_dir_path( __FILE__ ).'../includes/opinionstage-client-session.php' );
 
 add_action( 'admin_menu', 'opinionstage_register_menu_page' );
-add_action( 'wp_ajax_opinionstage_ajax_toggle_flyout', 'opinionstage_ajax_toggle_flyout' );
-add_action( 'wp_ajax_opinionstage_ajax_toggle_article_placement', 'opinionstage_ajax_toggle_article_placement' );
-add_action( 'wp_ajax_opinionstage_ajax_toggle_sidebar_placement', 'opinionstage_ajax_toggle_sidebar_placement' );
 
 function opinionstage_register_menu_page() {
 	if (function_exists('add_menu_page')) {
@@ -36,25 +33,4 @@ function opinionstage_menu_page() {
 	require( plugin_dir_path( __FILE__ ).'menu-page-template.php' );
 }
 
-// Toggle the flyout placement activation flag
-function opinionstage_ajax_toggle_flyout() {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['fly_out_active'] = $_POST['activate'];
-
-	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
-}
-// Toggle the article placement activation flag
-function opinionstage_ajax_toggle_article_placement() {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['article_placement_active'] = $_POST['activate'];
-
-	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
-}
-// Toggle the sidebar placement activation flag
-function opinionstage_ajax_toggle_sidebar_placement() {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['sidebar_placement_active'] = $_POST['activate'];
-
-	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
-}
 ?>
