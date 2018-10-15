@@ -7,7 +7,6 @@ opinionstage_enqueue_css_asset('icon-font');
 opinionstage_enqueue_js_asset('menu-page');
 
 ?>
-
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
 		<div class="opinionstage-logo-wrapper">
@@ -38,114 +37,6 @@ opinionstage_enqueue_js_asset('menu-page');
 		</div>
 	</div>
 	<div class="opinionstage-dashboard">
-		<div class="opinionstage-dashboard-left">
-			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
-				<div class="opinionstage-section-header">
-					<div class="opinionstage-section-title">Content</div>
-					<?php if ( $os_client_logged_in ) {?>
-						<?php echo opinionstage_link('VIEW MY CONTENT', 'dashboard/content', 'opinionstage-section-action opinionstage-blue-bordered-btn'); ?>
-					<?php } ?>
-				</div>
-				<div class="opinionstage-section-content">
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-polls"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Poll</div>
-							<div class="example">Get opinions, run contests & competitions</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_poll_link('opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-set"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Survey</div>
-							<div class="example">Gather feedback from your users</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-trivia"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Trivia Quiz</div>
-							<div class="example">Create a knowledge test or assessment</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-personality"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Personality Quiz</div>
-							<div class="example">Create a personality or service selector</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-widget-slideshow"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Slideshow</div>
-							<div class="example">Group items in an interactive display</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn opinionstage-create-btn' ); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-widget-form"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Form</div>
-							<div class="example">Gather information from your users</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-list"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">List</div>
-							<div class="example">Create a listacle of anything</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-icon-story"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Story Article</div>
-							<div class="example">Create an article using interactive elements</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('story', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="opinionstage-dashboard-right">
 			<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo( $os_client_logged_in ? '' : 'opinionstage-disabled-section' ) ?>">
 				<div class="opinionstage-section-header">
@@ -236,39 +127,6 @@ opinionstage_enqueue_js_asset('menu-page');
 								</a>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="opinionstage-dashboard-left">
-		<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
-				<div class="opinionstage-section-header">
-						<div class="opinionstage-section-title">Getting Started Video</div>
-				</div>
-				<div class="opinionstage-section-content">
-					<div class="opinionstage-video-container">
-						<iframe width="560" height="315" class="opinionstage-video-itm" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="opinionstage-dashboard-right">
-			<div id="opinionstage-section-help" class="opinionstage-dashboard-section">
-				<div class="opinionstage-section-header">
-					<div class="opinionstage-section-title">Need Help?</div>
-				</div>
-				<div class="opinionstage-section-content">
-					<div class="opinionstage-help-row">
-						<a href="http://blog.opinionstage.com/how-to-add-interactive-content-on-wordpress/?o=wp35e8" class="opinionstage-help-link" target="_blank">How to use this plugin</a>
-					</div>
-					<div class="opinionstage-help-row">
-						<?php echo opinionstage_link('Live content examples', 'discover', 'opinionstage-help-link'); ?>
-					</div>
-					<div class="opinionstage-help-row">
-						<a href="http://blog.opinionstage.com/video-tutorials" class="opinionstage-help-link" target="_blank">View all video tutorials</a>
-					</div>
-					<div class="opinionstage-help-row">
-						<?php echo opinionstage_link('To contact us, click here and then on the chat window located on bottom/right of screen', 'dashboard/content', 'opinionstage-help-link'); ?>
 					</div>
 				</div>
 			</div>
