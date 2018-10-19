@@ -24,7 +24,7 @@ if ( defined('WP_DEBUG') && true === WP_DEBUG ) {
 	}
 }
 
-define('OPINIONSTAGE_WIDGET_VERSION', '19.6.0');
+define('OPINIONSTAGE_WIDGET_VERSION', '19.6.1');
 
 define('OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage');
 
