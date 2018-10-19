@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, slideshow, story, article
 Requires at least: 2.8
 Tested up to: 4.9
-Stable tag: 19.6.0
+Stable tag: 19.6.1
 
 Easily add polls, surveys, quizzes, slideshows, forms & story article to your website. 
 
