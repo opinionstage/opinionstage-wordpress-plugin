@@ -1,11 +1,6 @@
 <?php
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
-
-opinionstage_enqueue_css_asset('menu-page');
-opinionstage_enqueue_css_asset('icon-font');
-opinionstage_enqueue_js_asset('menu-page');
-
 ?>
 
 <div id="opinionstage-content">
