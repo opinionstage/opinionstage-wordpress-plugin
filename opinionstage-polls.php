@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Poll, Survey, Quiz, Slideshow, Form & Story Article (Deprecated)
+Plugin Name: Poll, Survey, Quiz & Form Maker by Opinion Stage (Deprecated)
 Plugin URI: https://www.opinionstage.com
 Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
-Version: 19.6.1
+Version: 19.6.2
 Author: OpinionStage.com
 Author URI: https://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage

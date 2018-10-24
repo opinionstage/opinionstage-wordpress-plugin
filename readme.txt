@@ -1,10 +1,10 @@
-﻿=== Poll, Survey, Quiz, Slideshow, Form & Story Article ===
+﻿=== Poll, Survey, Quiz & Form Maker by Opinion Stage ===
 Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, slideshow, story, article
 Requires at least: 2.8
 Tested up to: 4.9
-Stable tag: 19.6.1
+Stable tag: 19.6.2
 
 Easily add polls, surveys, quizzes, slideshows, forms & story article to your website. 
 
@@ -178,8 +178,11 @@ Polls include one question for getting a quick answer on a question. Polls are o
 N/A
 
 == Changelog ==
+  = 19.6.2 = 
+  * Double page bug fix
+  * Plugin renamed
   = 19.6.1 =
-  * plugin rename: improved fix
+  * Plugin rename: improved fix
   = 19.6.0 =
   * Plugin filename fix
   * Backward Compatibility added
