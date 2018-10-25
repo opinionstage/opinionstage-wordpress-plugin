@@ -1,4 +1,4 @@
-﻿=== Poll, Survey, Quiz & Form Maker by Opinion Stage ===
+﻿=== Poll, Survey, Form & Quiz Maker by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, slideshow, story, article
