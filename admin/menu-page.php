@@ -18,11 +18,11 @@ function opinionstage_register_menu_page() {
 			plugins_url('admin/images/os.png', plugin_dir_path( __FILE__ )),
 			'25.234323221'
 		);
-		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Create...', 'Create...', 'manage_options', OPINIONSTAGE_MENU_SLUG);
-		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Placements', 'Placements', 'manage_options', OPINIONSTAGE_PLACEMENT_SLUG , 'opinionstage_my_placements' );
-		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Getting Started', 'Getting Started', 'manage_options', OPINIONSTAGE_GETTING_STARTED_SLUG,'opinionstage_getting_started' );
-		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Help Center', 'Help Center', 'manage_options', 'https://help.opinionstage.com/?utm_campaign=WPMainPI&utm_medium=linkhelpcenter&utm_source=wordpress&o=wp35e8' );
-		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Live Examples', 'Live Examples', 'manage_options', 'https://www.opinionstage.com/discover?utm_campaign=WPMainPI&utm_medium=linkexamples&utm_source=wordpress&o=wp35e8' );
+		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Create...', 'Create...', 'edit_posts', OPINIONSTAGE_MENU_SLUG);
+		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Placements', 'Placements', 'edit_posts', OPINIONSTAGE_PLACEMENT_SLUG , 'opinionstage_my_placements' );
+		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Getting Started', 'Getting Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG,'opinionstage_getting_started' );
+		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Help Center', 'Help Center', 'edit_posts', 'https://help.opinionstage.com/?utm_campaign=WPMainPI&utm_medium=linkhelpcenter&utm_source=wordpress&o=wp35e8' );
+		add_submenu_page(OPINIONSTAGE_MENU_SLUG, 'Live Examples', 'Live Examples', 'edit_posts', 'https://www.opinionstage.com/discover?utm_campaign=WPMainPI&utm_medium=linkexamples&utm_source=wordpress&o=wp35e8' );
 	}
 }
 
