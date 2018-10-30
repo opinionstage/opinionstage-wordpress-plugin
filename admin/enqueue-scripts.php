@@ -3,7 +3,8 @@
 defined( 'ABSPATH' ) or die();
 
 function opinionstage_admin_page_assets() {
-	if ($_REQUEST['page'] == OPINIONSTAGE_MENU_SLUG ||  $_REQUEST['page'] == OPINIONSTAGE_PLACEMENT_SLUG || $_REQUEST['page'] == OPINIONSTAGE_GETTING_STARTED_SLUG) {
+
+	if ( isset($_REQUEST['page']) && ($_REQUEST['page'] == OPINIONSTAGE_MENU_SLUG ||  $_REQUEST['page'] == OPINIONSTAGE_PLACEMENT_SLUG || $_REQUEST['page'] == OPINIONSTAGE_GETTING_STARTED_SLUG)) {
 
 		opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
 		opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
