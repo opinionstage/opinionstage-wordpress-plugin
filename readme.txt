@@ -3,25 +3,23 @@ Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: 19.6.5
 
-Easily add a Poll, Survey, Quiz and Form Plugin to your WordPress Site. Create Beautiful and Top Performing Polls, Quizzes, Surveys & Forms in Minutes.
+Add a Poll, Quiz, Survey & Form Plugin to your WordPress Site. Easily create a beautiful & top performing Poll, Quiz, Survey or Form in Minutes.
 
 == Description ==
 
-Looking for a Top-Notch WordPress Poll Maker, Quiz Maker, Survey Maker or Form Maker solution?
-
+Looking for a Top-Notch WordPress Poll, Survey,Form and Quiz Maker Plugin?
 
 Check out:
 
+<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/pollstage/why-do-you-use-opinion-stage2?o=wp35e8" target="_blank">Poll Example</a>
+<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Quiz Example</a>
+<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey Example</a>
+<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form Example</a>
 
-<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker Product Page</a>  | <a href="https://www.opinionstage.com/pollstage/why-do-you-use-opinion-stage2" target="_blank">Poll Live Example</a>
-<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker Product Page</a>  | <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Quiz Live Example</a>
-<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker Product Page</a> | <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey Live Example</a>
-<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker Product Page</a>  | <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form Live Example</a>
-
-=  Why use Opinion Stage Poll, Survey, Form & Quiz Maker? =
+=  Why use Opinion Stage Poll, Survey, Form & Quiz Maker WordPress Plugin? =
 
  * Manage all your interactive content (polls, surveys, quizzes, forms, slideshow & article stories) from one dashboard
  * Opinion Stage makes it easy and fast to create content. It literally takes minutes to get up & going with a poll, quiz, survey or form
@@ -35,7 +33,7 @@ Check out:
  * Supports setting the color theme, fonts & sizes & title ortientation of the different content formats
  * White label your poll, survey, quiz or form and add your own logo to make it seem as if it was built by your brand/site
 
-= Main Poll Features: =
+= Main Poll WordPress Plugin Features: =
 
  * Create polls with 4 different graphic layouts - standard poll layout, image poll layout, thumbnails poll layout & head-to-head poll layout
  * Easily add images & videos into the polls either from your computer or by using an integrated search poll image function
@@ -59,7 +57,7 @@ Check out:
  * View a detailed result table of all poll votes (e.g. vote side, vote timestamp, etc)
  * Export the poll results to an xls or csv file
 
- = Main Quiz Features: =
+ = Main Quiz WordPress Plugin Features: =
 
  * Create a personality quiz, trivia quiz, score quiz, true/false quiz, assessment quiz, multiple-choice quiz or outcome quiz
  * Integrate images & videos in the quiz from your computer, from a link or using online search capabilities
@@ -80,7 +78,7 @@ Check out:
  * Support for call-to-action buttons at the end of the quiz
  * Support sending to different landing pages based on the quiz outcome
 
- = Main Survey Features: =
+ = Main Survey WordPress Plugin Features: =
 
  * Integrate images & videos to make the survey appealing & engaging. You can either upload images from your computer or use online search to locate free-to-use images
  * Support both single selection and multiple selection questions and supports allowing users to add their own answer
@@ -99,7 +97,7 @@ Check out:
  * Graphic display (pie chart & bar chart) of answers to each one of the questions
  * Drop off report to help optimize the survey for maximum completion rates
 
- = Main Form Features: =
+ = Main Form WordPress Plugin Features: =
 
  * Supports Short & long text fields
  * Supports Email fields including 2 approval checkboxes
