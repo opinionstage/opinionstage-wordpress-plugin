@@ -54,6 +54,11 @@ define('OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started');
 define('OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback');
 
 // Check if active plugin file is plugin.php on plugin activate hook
+function opinionstage_plugin_activated($plugin) {
+	if( $plugin == plugin_basename( __FILE__ ) ) {
+        exit( wp_redirect("admin.php?page=".OPINIONSTAGE_GETTING_STARTED_SLUG) );
+    }
+}
 function opinionstage_plugin_activate() {
 	// all good. delete old file
 	if( file_exists(__DIR__ . '/opinionstage-polls.php') ){
@@ -62,6 +67,7 @@ function opinionstage_plugin_activate() {
 }
 register_activation_hook( __FILE__, 'opinionstage_plugin_activate' );
 add_action( 'init', 'opinionstage_plugin_activate' );
+add_action( 'activated_plugin', 'opinionstage_plugin_activated' );
 
 require_once( plugin_dir_path( __FILE__ ).'includes/opinionstage-functions.php' );
 
