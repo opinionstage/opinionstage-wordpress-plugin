@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
 Tested up to: 5.0
-Stable tag: 19.6.6
+Stable tag: 19.6.7
 
 Add a Poll, Quiz, Survey & Form Plugin to your WordPress Site. Easily create a beautiful & top performing Poll, Quiz, Survey or Form in Minutes.
 
@@ -162,6 +162,8 @@ Polls include one question and are used for getting a quick answer on a question
 N/A
 
 == Changelog ==
+  = 19.6.7 =
+  * new getting started experience
   = 19.6.6 =
   * WordPress 5.0 compatibility
   * Readme update
