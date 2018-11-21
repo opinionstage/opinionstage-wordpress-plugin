@@ -6,30 +6,32 @@ defined( 'ABSPATH' ) or die();
 	<div class="opinionstage-header-wrapper">
 		<div class="opinionstage-logo-wrapper">
 			<div class="opinionstage-logo"></div>
-		</div>
-		<div class="opinionstage-status-content">
+		</div>		
 			<?php if ( !$os_client_logged_in ) {?>
-			<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to get started</div>
-			<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-				<i class="os-icon icon-os-poll-client"></i>
-				<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
-				<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
-				<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
-				<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
-				<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
-				<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
-				<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
-			</form>
+			<div class="opinionstage-status-content">	
+				<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to get started</div>
+				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
+					<i class="os-icon icon-os-poll-client"></i>
+					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
+					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
+					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
+					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
+					<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
+					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
+					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
+				</form>
+			</div>
 			<?php } else { ?>
-			<div class='opinionstage-status-title'><b>You are connected</b> to Opinion Stage with the following email</div>
-			<i class="os-icon icon-os-form-success"></i>
-			<label class="checked" for="user-email"></label>
-			<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
-			<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
-				<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
-			</form>
-			<?php } ?>
-		</div>
+			<div class="opinionstage-status-content-connected">	
+				<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
+				<i class="os-icon icon-os-form-success"></i>
+				<label class="checked" for="user-email"></label>
+				<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
+				<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
+					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
+				</form>
+			</div>
+			<?php } ?>		
 	</div>
 	<div class="opinionstage-dashboard">
 		<div class="opinionstage-dashboard-right">
