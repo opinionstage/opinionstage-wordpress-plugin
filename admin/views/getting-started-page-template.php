@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) or die();
 		</div>
 		<?php if ( !$os_client_logged_in ) {?>
 			<div class="opinionstage-status-content">
-				<div class='opinionstage-status-title'>Connect WordPress with Opinion Stage to Get Started</div>
+				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
 				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
 					<i class="os-icon icon-os-poll-client"></i>
 					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
@@ -37,19 +37,23 @@ defined( 'ABSPATH' ) or die();
 		<div class="gettingStartedSection">
 			<div class="Video-Section">
 				<p><b>We recommend that you start by viewing this short introduction video</b></p>
-				<iframe class="iframe-new" width="900" height="400px" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+				<iframe class="iframe-new" width="600" height="338" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
 				<a href="<?php echo admin_url( 'admin.php?page='.OPINIONSTAGE_MENU_SLUG); ?>" class="gettingStartedCreate button">Start Creating Interactive Content</a>
 			</div>
 		</div>
 	<?php }else{ ?>
 		<div class="gettingStartedSection">
-			<p><b>Need more information?</b></p>
-			<ul>
-				<li><a href="https://www.youtube.com/watch?v=zwcRWGsOxxQ" target="_blank">Getting started video tutorial</a></li>
-				<li><a href="https://www.opinionstage.com/blog/how-to-add-interactive-content-on-wordpress/?utm_campaign=WPMainPI&amp;utm_medium=linkgettingstarted&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">Getting started article tutorial</a></li>
-				<li><a href="https://www.opinionstage.com/discover?utm_campaign=WPMainPI&amp;utm_medium=linkexamples&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">View examples</a></li>
-				<li><a href="https://help.opinionstage.com/?utm_campaign=WPMainPI&amp;utm_medium=linkhelpcenter&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">Opinion Stage help center</a></li>
-			</ul>
+			<div class="Video-Section">
+				<iframe class="iframe-new" width="600" height="338" src="https://www.youtube.com/embed/zwcRWGsOxxQ?rel=0&showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+			</div>
+			<div class="text-section-getting-stared-os">
+				<p><b>Need more information?</b></p>
+				<ul>
+					<li><a href="https://www.opinionstage.com/blog/how-to-add-interactive-content-on-wordpress/?utm_campaign=WPMainPI&amp;utm_medium=linkgettingstarted&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">Getting started tutorial</a></li>
+					<li><a href="https://www.opinionstage.com/discover?utm_campaign=WPMainPI&amp;utm_medium=linkexamples&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">View examples</a></li>
+					<li><a href="https://help.opinionstage.com/?utm_campaign=WPMainPI&amp;utm_medium=linkhelpcenter&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">Opinion Stage help center</a></li>
+				</ul>
+			</div>
 		</div>
 	<?php } ?>
 </div>
