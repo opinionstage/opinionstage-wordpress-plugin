@@ -5,6 +5,7 @@
   width: 100%;
   -webkit-font-smoothing: antialiased;
   padding-top: 20px;
+  overflow: hidden;
 }
 #opinionstage-content a {
   color: #3499c2;
@@ -345,6 +346,7 @@
     width: 100%;
     max-width: 100%;
     padding: 30px;
+    overflow: hidden;
 }
 .gettingStartedSection p {
     font-size: 20px;
@@ -354,15 +356,13 @@
 .gettingStartedSection .Video-Section {
     display: block;
     width: 100%;
-    max-width: 700px;
-    /*margin: 0px auto;*/
+    max-width: 650px;
+    float: left;
 }
 .Video-Section .iframe-new {
     display: block;
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    max-width: 600px;
 }
 h1.gettingStartedHeading {
     letter-spacing: 1px;
@@ -389,7 +389,6 @@ h1.gettingStartedHeading_logo {
     max-width: fit-content;
     font-size: 20px;
     margin-top: 20px;
-    margin-bottom: 20px;
     letter-spacing: 1px;
 }
 /* Getting Started Not Connected */
@@ -401,4 +400,41 @@ h1.gettingStartedHeading_logo {
 }
 .gettingStartedSectionNotConnect p {
     font-size: 20px;
+}
+.text-section-getting-stared-os {
+    width: 100%;
+    max-width: 400px;
+    float: left;
+}
+@media only screen and (max-width: 1230px) {
+  .text-section-getting-stared-os {
+      margin-top: 39px;
+      padding-left: 25px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .gettingStartedSection {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 20px !important;
+}
+#opinionstage-content .opinionstage-status-content {
+    height: 160px !important;
+}
+#opinionstage-content .opinionstage-status-content-connected {
+    height: 162px !important;
+}
+.gettingStartedSection p {
+    text-align: center;
+}
+#opinionstage-content .opinionstage-blue-btn {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+#opinionstage-content a.gettingStartedCreate.button {
+    margin: 20px auto 0px !important;
+}
+.text-section-getting-stared-os p{
+  text-align: left;
+}
 }
