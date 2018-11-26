@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) or die();
 		</div>		
 			<?php if ( !$os_client_logged_in ) {?>
 			<div class="opinionstage-status-content">	
-				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to get started</b></div>
+				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
 				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
 					<i class="os-icon icon-os-poll-client"></i>
 					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">

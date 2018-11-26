@@ -8,5 +8,6 @@ require( plugin_dir_path( __FILE__ ).'opinionstage-content-login-callback.php' )
 require( plugin_dir_path( __FILE__ ).'menu-page.php' );
 require( plugin_dir_path( __FILE__ ).'deactivate-feedback.php' );
 require( plugin_dir_path( __FILE__ ).'admin-page-loader.php' );
+require( plugin_dir_path( __FILE__ ).'menu-target.php' );
 	
 ?>
