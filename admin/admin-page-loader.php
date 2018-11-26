@@ -26,7 +26,7 @@ class OpinionStageAdminPageLoader {
 			add_action( 'admin_head', array( $this, 'OSAPL_LoadHeader' ) );
 			add_action('admin_footer',array( $this, 'OSAPL_LoadFooter' ));
 		}else{
-			$this->OSAPL_Debug('OSAPL: Not OpinionStage Page. Loading Cotent Popup File.');
+			$this->OSAPL_Debug('OSAPL: Not OpinionStage Page. Loading Content Popup File.');
 	    	// Load content popup javascript
 			include_once( plugin_dir_path( __FILE__ ).'content-popup.php' );
 		}
