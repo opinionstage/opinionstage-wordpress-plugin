@@ -89,7 +89,10 @@ if (opinionstage_check_plugin_available('opinionstage_popup')) {
 			require( plugin_dir_path( __FILE__ ).'public/init.php' );
 		}
 	}
-
+	//Check For Gutenberg
+	if( function_exists( 'is_gutenberg_page' ) ) {        
+		require( plugin_dir_path( __FILE__ ).'gutenberg/init.php' );
+	}
 	add_action('widgets_init', 'opinionstage_init_widget');
 	add_action('plugins_loaded', 'opinionstage_init');
 }
