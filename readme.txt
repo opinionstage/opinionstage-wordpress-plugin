@@ -19,7 +19,7 @@ Check out:
 <a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey Example</a>
 <a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form Example</a>
 
-###  Why use Opinion Stage Poll, Survey, Form & Quiz WordPress Plugin?
+=  Why use Opinion Stage Poll, Survey, Form & Quiz Maker WordPress Plugin? =
 
  * Manage all your interactive content (polls, surveys, quizzes, forms, slideshow & article stories) from one dashboard
  * Opinion Stage makes it easy and fast to create content. It literally takes minutes to get up & going with a poll, quiz, survey or form
@@ -33,7 +33,7 @@ Check out:
  * Supports setting the color theme, fonts & sizes & title ortientation of the different content formats
  * White label your poll, survey, quiz or form and add your own logo to make it seem as if it was built by your brand/site
 
-### Main Poll Maker Features
+= Main Poll WordPress Plugin Features: =
 
  * Create polls with 4 different graphic layouts - standard poll layout, image poll layout, thumbnails poll layout & head-to-head poll layout
  * Easily add images & videos into the polls either from your computer or by using an integrated search poll image function
@@ -57,7 +57,7 @@ Check out:
  * View a detailed result table of all poll votes (e.g. vote side, vote timestamp, etc)
  * Export the poll results to an xls or csv file
 
-### Main Quiz Features
+ = Main Quiz WordPress Plugin Features: =
 
  * Create a personality quiz, trivia quiz, score quiz, true/false quiz, assessment quiz, multiple-choice quiz or outcome quiz
  * Integrate images & videos in the quiz from your computer, from a link or using online search capabilities
@@ -78,7 +78,7 @@ Check out:
  * Support for call-to-action buttons at the end of the quiz
  * Support sending to different landing pages based on the quiz outcome
 
-### Main Survey Features
+ = Main Survey WordPress Plugin Features: =
 
  * Integrate images & videos to make the survey appealing & engaging. You can either upload images from your computer or use online search to locate free-to-use images
  * Support both single selection and multiple selection questions and supports allowing users to add their own answer
@@ -97,7 +97,7 @@ Check out:
  * Graphic display (pie chart & bar chart) of answers to each one of the questions
  * Drop off report to help optimize the survey for maximum completion rates
 
- ### Main Form Features
+ = Main Form WordPress Plugin Features: =
 
  * Supports Short & long text fields
  * Supports Email fields including 2 approval checkboxes
@@ -109,21 +109,17 @@ Check out:
  * View statistics on # of views vs. # of submissions
  * View all submissions including the all field entries and meta data such as timestamp of submission
 
-### Placements
+ = Placements: =
 
  * Sidebar placement - you can add a poll, quiz, survey or form to the site sidebar using a dedicated Opinion Stage sidebar widget
  * Popup placement - you can configure to popup content (e.g. a poll, quiz, survey, etc) when users enter or exit your site using a highly configurable popup component
  * Articles placement - you can display the a poll, quiz, survey or form at the end of all your posts/pages by enabling the articles placement
 
-### Gutenberg support
-
-Opinion Stage supports both the classic editor and the new Gutenberg blocks. Quickly add polls, quizzes, surveys or forms with the Opinion Stage blocks for Gutenberg.
-
-### Language support 
+ = Language support =
 
 Opinion Stage supports over 42 languages, missing a language? Let us know!
 
-### About Opinion Stage
+ = About Opinion Stage: =
 
 Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, survey, forms, etc) creation service. Opinion Stage's highly engaging content formats are used to boost engagement, gather leads, generate revenue and to extract actionable insights. Opinion Stage works with world-leading publishers, brands & agencies as well as small sites & blogs, offering their audiences content engagement experiences that convert to measurable business values. For more details, visit <a href="https://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
 
@@ -145,10 +141,6 @@ With Opinion Stage you can create the following content formats: Poll, Poll Sets
 = What is the difference between a Poll and a Survey =
 
 Polls include one question and are used for getting a quick answer on a question. Polls are often used for gathering opinions, getting feedback, running contents & competitions and generating engagement. Surveys include multiple questions of different types. Surveys are often used to gather feedback and insights. If you are still unsure whether to use a poll or a survey, contact our support team and we'll be happy to help.
-
-= Does Opinion Stage support Gutenberg blocks =
-
-Yes, Opinion Stage supports both Gutenberg blocks and the Classic editors
 
 == Other Notes ==
 
