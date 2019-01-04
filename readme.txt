@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
 Tested up to: 5.0
-Stable tag: 19.6.10
+Stable tag: 19.6.11
 
 Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Minutes.
 
@@ -170,6 +170,9 @@ Yes, Opinion Stage supports both Gutenberg blocks and the Classic editors
 N/A
 
 == Changelog ==
+  = 19.6.11 =
+  * readme update
+  * analytics setup
   = 19.6.10 =
   * navigation links update
   = 19.6.9 =
