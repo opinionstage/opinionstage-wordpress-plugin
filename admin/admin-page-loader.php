@@ -18,7 +18,7 @@ class OpinionStageAdminPageLoader {
 
 		// Apply page loader actions if it is OpinionStage plugin page
 		if($this->slug != false){
-
+			include_once( plugin_dir_path( __FILE__ ).'content-popup.php' );
 			$this->OSAPL_Debug('OSAPL: Load Page Loader for Slug - '.$this->slug);
 
 			$this->OSAPL_LoadFile();
@@ -29,6 +29,11 @@ class OpinionStageAdminPageLoader {
 			$this->OSAPL_Debug('OSAPL: Not OpinionStage Page. Loading Content Popup File.');
 	    	// Load content popup javascript
 			include_once( plugin_dir_path( __FILE__ ).'content-popup.php' );
+			// Load Hotjar script for user data tracking
+			$oswpHotjarNewPost = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
+			if($oswpHotjarNewPost == 'post-new.php' || $oswpHotjarNewPost == 'post.php'){
+				include_once( plugin_dir_path( __FILE__ ).'opinionstage-usage-tracking-code.php' );
+			}
 		}
 	}
 
@@ -102,7 +107,7 @@ class OpinionStageAdminPageLoader {
 			call_user_func($function_name_header_common);
 		}else{
 			$this->OSAPL_Debug('OSAPL: Header common function does not exist: '.$function_name_header_common);
-		}
+		} 
 	}
 
 	public function OSAPL_LoadFooter(){

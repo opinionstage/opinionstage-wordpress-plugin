@@ -24,7 +24,7 @@ $usage_enabled = get_option('oswp_tracking_user_site_data');
 					<label>					
 						<input type="checkbox" name="opinionstage_allow_tracking" value="yes" <?php echo ($usage_enabled=='yes') ? 'checked="checked"' : ''; ?> >
 						Opt-in to our anonymous plugin data collection and to updates. We guarantee no sensitive data is collected. 
-						<a href="https://help.opinionstage.com/wordpress-plugin/wordpress-plugin-usage-data-tracking" target="_blank">Learn more.</a>		
+						<a href="https://help.opinionstage.com/wordpress-plugin/usage-data-tracking" target="_blank">Learn more.</a>		
 					</label>
 				</td>
 			</tr>
