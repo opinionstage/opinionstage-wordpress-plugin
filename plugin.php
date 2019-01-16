@@ -89,8 +89,9 @@ if (opinionstage_check_plugin_available('opinionstage_popup')) {
 			require( plugin_dir_path( __FILE__ ).'public/init.php' );
 		}
 	}
-	//Check For Gutenberg
-	if( function_exists( 'is_gutenberg_page' ) ) {        
+	// Block editor since 5.0.
+    $block_editor_oswp = version_compare( $GLOBALS['wp_version'], '5.0-beta', '>' );
+	if( function_exists( 'is_gutenberg_page' ) || $block_editor_oswp) {
 		require( plugin_dir_path( __FILE__ ).'gutenberg/init.php' );
 	}
 	add_action('widgets_init', 'opinionstage_init_widget');
