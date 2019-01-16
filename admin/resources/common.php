@@ -15,9 +15,9 @@ function opinionstage_common_load_resources(){
 	opinionstage_enqueue_js_asset('menu-page'); ?>
 	<style type="text/css">
 	.content__list {
-    height: calc(92vh - 190px) !important;
-}
-</style>
+	    height: calc(92vh - 190px) !important;
+	}
+	</style>
 
 <?php }
 
@@ -41,15 +41,14 @@ function opinionstage_common_load_footer(){ ?>
 		$(document).ready(function () {					
 			$('li a span#oswpLauncherContentPopup').live('click', function(e) {    
 		        e.preventDefault();
-		        $('div#view-item').trigger('click');
+		        $('div#view-items').trigger('click');
 		    });
 		    $('li a span#oswpLauncherContentPopupExamples').live('click', function(e) {
-		        		        
-			var a = $('li a span#oswpLauncherContentPopupExamples').attr('data-os-view');	
-			if(a == 'examples'){
-				setTimeout(function(){$('div#show-templates').trigger('click');},500); 
-			}
-			e.preventDefault(); 			
+		     	e.preventDefault();   		        
+				var a = $('li a span#oswpLauncherContentPopupExamples').attr('data-os-view');	
+				if(a == 'examples'){
+					setTimeout(function(){$('div#show-templates').trigger('click');},500); 
+				}			 			
 		    });
 		});
 	</script>

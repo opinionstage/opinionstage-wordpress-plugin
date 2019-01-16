@@ -95,7 +95,7 @@ button#dropbtn:before {
     position: absolute;
     top: 0;
     font-size: 7px;
-    font-family: os-icon-font!important;
+    font-family: os-icon-plugin-font!important;
     right: -25px;
     z-index: 3;
     color: #fff;

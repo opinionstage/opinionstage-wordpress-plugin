@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) or die();
 			<div class="opinionstage-status-content">
 				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
 				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-					<i class="os-icon icon-os-poll-client"></i>
+					<i class="os-icon-plugin icon-os-poll-client"></i>
 					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
 					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
 					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) or die();
 		<?php } else { ?>
 			<div class="opinionstage-status-content-connected">
 				<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
-				<i class="os-icon icon-os-form-success"></i>
+				<i class="os-icon-plugin icon-os-form-success"></i>
 				<label class="checked" for="user-email"></label>
 				<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
 				<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">

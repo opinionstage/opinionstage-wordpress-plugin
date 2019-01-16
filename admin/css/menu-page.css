@@ -48,7 +48,7 @@
   font-weight: lighter;
   line-height: 25px;
 }
-#opinionstage-content .opinionstage-status-content .os-icon {
+#opinionstage-content .opinionstage-status-content .os-icon-plugin {
   font-size: 19px;
   margin-right: 7px;
 }
@@ -504,7 +504,7 @@ button#dropbtn:before {
     position: absolute;
     top: 0;
     font-size: 7px;
-    font-family: os-icon-font!important;
+    font-family: os-icon-plugin-plugin-font !important;
     right: -25px;
     z-index: 3;
     color: #fff;
