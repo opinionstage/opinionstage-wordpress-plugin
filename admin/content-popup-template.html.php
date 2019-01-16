@@ -234,7 +234,7 @@ function opinionstage_create_new_href() {
 	</div>
 </template>
 <script>
-		$(document).ready(function () {	
+		jQuery(document).ready(function ($) {	
 		   	$('.filter__itm').live('click', function(e) {
 			   	var text = $(this).text();
 		   		$("button#dropbtn span").text(text);
@@ -246,15 +246,5 @@ function opinionstage_create_new_href() {
 			        console.log('error');
 			    }
 			});
-			// $('div#show-templates').live('click', function(e) {
-			// 	var inputs = $(".filter__itm");
-   //             	for(var i = 0; i < inputs.length; i++){
-   //                 	if($(inputs[i]).text() == 'story'){
-   //                 	console.log($(inputs[i]).text());
-   //                  	$(inputs[i]).hide();
-   //                  	break; 
-   //                  }
-   //              }
-			// });
 		});
 	</script>
