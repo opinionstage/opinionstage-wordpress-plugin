@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) or die();
 					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
 					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
 					<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
-					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
+					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input required>
 					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 				</form>
 			</div>
