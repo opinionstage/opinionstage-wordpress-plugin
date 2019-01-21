@@ -127,6 +127,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 				</div>
 			</div>
+			<p style="font-weight: 600; font-size: 15px;"><a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-site-using-placements" target="_blank">Need help with Placements?</a></p>
 		</div>
 	</div>
 </div>
