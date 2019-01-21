@@ -73,7 +73,7 @@
   opacity: 0.9;
 }
 #opinionstage-content .opinionstage-create-btn {
-  width: 95px;
+  width: 100px;
 }
 #opinionstage-content a.opinionstage-blue-bordered-btn {
   text-align: center;
@@ -126,7 +126,7 @@
 }
 #opinionstage-content .opinionstage-dashboard-left , #opinionstage-content .opinionstage-dashboard-right {
     float: left;
-    width: 510px;
+    width: 750px;
 }
 #opinionstage-content .opinionstage-dashboard-left {
   margin-right: 40px;
@@ -208,21 +208,22 @@
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-content .opinionstage-section-raw  .opinionstage-section-cell {
   display: table-cell;
   vertical-align: middle;
+  padding: 15px 0px;
 }
 #opinionstage-section-create .opinionstage-section-content, #opinionstage-section-placements .opinionstage-section-content {
   height: 435px;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-icon-cell {
-  width: 17%;
+  width: 10%;
   text-align: center;
   color: #3499c2;
   font-size: 35px;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-description-cell {
-  width: 52%;
+  width: 45%;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-btn-cell {
-  width: 31%;
+  width: 35%;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-description-cell .title, #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-description-cell .title {
   font-size: 21px;
@@ -437,4 +438,8 @@ h1.gettingStartedHeading_logo {
 .text-section-getting-stared-os p{
   text-align: left;
 }
+}
+#opinionstage-content .opinionstage-create-btn.template {
+    padding: 11px 25px !important;
+    width: auto !important;
 }

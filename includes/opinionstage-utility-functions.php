@@ -16,6 +16,11 @@ function opinionstage_link($caption, $path, $css_class = '', $query_data = array
 
 	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
+function opinionstage_template_link($caption, $path, $css_class = '') {	
+	$link = OPINIONSTAGE_SERVER_BASE.'/'.$path;
+	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
+}
+
 
 function opinionstage_register_javascript_asset( $name, $relative_path, $deps=array(), $in_footer=true ) {
 	$registered = wp_register_script(
@@ -89,20 +94,52 @@ function opinionstage_sidebar_placement_edit_url($tab) {
 	return OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?selected_tab='.$tab;
 }
 
-function opinionstage_create_poll_link($css_class, $title='CREATE') {
+function opinionstage_create_poll_link($css_class, $title='CREATE NEW') {
 	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => 'poll'));
 
 }
 
-function opinionstage_create_poll_set_link($css_class, $title='CREATE') {
+function opinionstage_template_poll_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=poll', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_survey_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=survey', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_trivia_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=trivia_quiz', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_personality_quiz_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=personality_quiz', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_slideshow_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=slideshow', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_form_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=form', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_list_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=list', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_template_story_link($css_class, $title='USE A TEMPLATE') {
+	return opinionstage_template_link($title, 'dashboard/content/templates?types%5B%5D=story', $css_class);	// %5B%5D --> []
+}
+
+function opinionstage_create_poll_set_link($css_class, $title='CREATE NEW') {
 	return opinionstage_link($title, 'sets/new', $css_class);
 }
 
-function opinionstage_create_widget_link($w_type, $css_class, $title='CREATE') {
+function opinionstage_create_widget_link($w_type, $css_class, $title='CREATE NEW') {
 	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => $w_type));
 }
 
-function opinionstage_create_slideshow_link( $css_class, $title='CREATE' ) {
+function opinionstage_create_slideshow_link( $css_class, $title='CREATE NEW' ) {
 	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => 'slideshow'));
 }
 /**

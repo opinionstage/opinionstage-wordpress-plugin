@@ -1,6 +1,8 @@
 <?php
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
+if ( function_exists('curl_init') ) {
+
 add_action( 'admin_init', 'opinionstage_message_handler' );
 function opinionstage_message_handler(){
 	$last_api_call_time = get_option('oswp_message_last_call_time'); // last api call time
@@ -67,3 +69,4 @@ jQuery(document).ready(function($){
 		
 </script>
 <?php }
+}
