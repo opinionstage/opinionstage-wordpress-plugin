@@ -38,10 +38,6 @@ function opinionstage_content_popup_html() {
           $('span#oswpLauncherContentPopup').parent().on('click',function(e){    
             e.preventDefault();
             $('div#view-items').trigger('click');
-          });  
-          $('button.content__links-itm').live('click', function(e){
-            e.preventDefault();
-            $('#insert_error_editor').show(500);
           });
       });
   </script>
