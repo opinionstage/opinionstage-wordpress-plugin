@@ -38,7 +38,7 @@ function opinionstage_common_load_header(){
 }
 function opinionstage_common_load_footer(){ ?>
 	<script>
-		$(document).ready(function () {					
+		jQuery(document).ready(function ($) {					
 			$('li a span#oswpLauncherContentPopup').live('click', function(e) {    
 		        e.preventDefault();
 		        $('div#view-items').trigger('click');
