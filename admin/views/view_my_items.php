@@ -37,14 +37,14 @@ defined( 'ABSPATH' ) or die(1); ?>
 	</div>
 	<div id="container" style="background: #fff;overflow: hidden;">
 		<div class="opinionstage-section-header">
-			<div class="opinionstage-section-title">View My Items</div>
+			<div class="opinionstage-section-title">My Items</div>
 			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" class="">Need help adding items to your site?</a>			
 		</div>
 		<table id="check" style="background: #fff;margin-left: 20px;margin-top: 20px;margin-bottom: 20px;"></table>
 		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;">CLICK FOR MORE</div>
 		<div id="showLess" style="display: none;">Show less</div>
 	</div>
-	</div>
+	</div>	
 <script type="text/javascript">
 // This is our actual script
 	jQuery(document).ready(function($){		
@@ -61,7 +61,8 @@ defined( 'ABSPATH' ) or die(1); ?>
 			success: function(data){
 				dropdownOptions = data;
 				if(dropdownOptions.data.length == 0){
-					var viewtext = '<tbody><tr><td><p><span style="font-weight: 600; font-size: 15px; color:#3499c2;">No content found, </span><a href="https://dipika.embien.co.uk/wp-admin/admin.php?page=opinionstage-settings" style="font-weight: 600; font-size: 15px; color:#3499c2;">Create your first one.</a></p></td></tr></tbody>';
+					var adminUrlCreateLink = "<?php echo admin_url( 'admin.php?page=opinionstage-settings'); ?>";
+					var viewtext = '<tbody><tr><td><p><span style="font-weight: 600; font-size: 15px; color:#3499c2;">No items found, </span><a href="'+adminUrlCreateLink+'" style="font-weight: 600; font-size: 15px; color:#3499c2;">Create your first one.</a></p></td></tr></tbody>';
 					$(viewtext).appendTo('#container table#check');
 				}else{
 					for (var i = 0; i < dropdownOptions.data.length; i++) {
@@ -76,7 +77,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			            var previewBlockOsView = dropdownOptions.data[i].attributes['landing-page-url'];
 			            var previewBlockOsEdit = dropdownOptions.data[i].attributes['edit-url'];
 			            var previewBlockOsStatistics = dropdownOptions.data[i].attributes['stats-url'];
-			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </a></td></tr></tbody>';
+			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </a></td></tr></tbody>';
 							$(viewtext).appendTo('#container table#check');
 		        	}		        		        	
 				}				
@@ -86,6 +87,11 @@ defined( 'ABSPATH' ) or die(1); ?>
 				if(dropdownOptions.data.length == size_li){
             			setTimeout(function(){$('#showLess').trigger('click');},500);            			
           			}
+          			// Show the div in 5s
+				    var countItemOS = 10;
+				    if(dropdownOptions.data.length > countItemOS){
+				    	$("#loadMore").delay(2000).fadeIn(500);
+				    }
 					x=10;
 				    $('table#check ttbody#count:lt('+x+')').show();
 				    $('#loadMore').click(function () {
@@ -105,9 +111,5 @@ defined( 'ABSPATH' ) or die(1); ?>
 			}
 		});
 
-	});
-	jQuery(document).ready(function($){
-    // Show the div in 5s
-    $("#loadMore").delay(2000).fadeIn(500);
 	});
 </script>

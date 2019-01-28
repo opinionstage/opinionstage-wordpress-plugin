@@ -507,6 +507,12 @@ td.long a {
     text-decoration: none;
     font-size: 17px;
     font-weight: normal;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.6em;
 }
 .content-item-image.quiz {
     position: relative;
