@@ -39,9 +39,6 @@ defined( 'ABSPATH' ) or die();
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Create</div>
-					<?php if ( $os_client_logged_in ) {?>
-						<a href="#" class="opinionstage-section-action opinionstage-blue-bordered-btn" data-opinionstage-content-launch data-os-view="content">VIEW MY ITEMS</a>
-					<?php } ?>		
 				</div>
 				<div class="opinionstage-section-content">
 					<div class="opinionstage-section-raw">
@@ -54,18 +51,20 @@ defined( 'ABSPATH' ) or die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_poll_link('opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_poll_link('opinionstage-blue-btn opinionstage-create-btn template'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin icon-os-reports-set"></div>
+							<div class="os-icon-plugin icon-os-reports-personality"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Survey</div>
-							<div class="example">Gather feedback from your users</div>
+							<div class="title">Personality Quiz</div>
+							<div class="example">Create a personality test or a product/service selector</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_personality_quiz_link('opinionstage-blue-btn opinionstage-create-btn template') ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -78,18 +77,20 @@ defined( 'ABSPATH' ) or die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_trivia_link('opinionstage-blue-btn opinionstage-create-btn template'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin icon-os-reports-personality"></div>
+							<div class="os-icon-plugin icon-os-reports-set"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Personality Quiz</div>
-							<div class="example">Create a personality or service selector</div>
+							<div class="title">Survey</div>
+							<div class="example">Gather feedback from your users</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_survey_link('opinionstage-blue-btn opinionstage-create-btn template'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -102,18 +103,7 @@ defined( 'ABSPATH' ) or die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn opinionstage-create-btn' ); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin icon-os-widget-form"></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Form</div>
-							<div class="example">Gather information from your users</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_slideshow_link('opinionstage-blue-btn opinionstage-create-btn template') ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -126,6 +116,20 @@ defined( 'ABSPATH' ) or die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_list_link('opinionstage-blue-btn opinionstage-create-btn template'); ?>
+						</div>
+					</div>
+					<div class="opinionstage-section-raw">
+						<div class="opinionstage-section-cell opinionstage-icon-cell">
+							<div class="os-icon-plugin icon-os-widget-form"></div>
+						</div>
+						<div class="opinionstage-section-cell opinionstage-description-cell">
+							<div class="title">Form</div>
+							<div class="example">Gather information from your users</div>
+						</div>
+						<div class="opinionstage-section-cell opinionstage-btn-cell">
+							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
+							<?php echo opinionstage_template_form_link('opinionstage-blue-btn opinionstage-create-btn template'); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -134,7 +138,7 @@ defined( 'ABSPATH' ) or die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Story Article</div>
-							<div class="example">Create an article using interactive elements</div>
+							<div class="example">Create an article using visual & interactive elements</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_widget_link('story', 'opinionstage-blue-btn opinionstage-create-btn'); ?>
