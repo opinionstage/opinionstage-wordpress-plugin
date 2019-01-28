@@ -50,10 +50,7 @@ defined( 'ABSPATH' ) or die();
 				<p><b>Need more information?</b></p>
 				<ul>
 					<li>
-						<?php echo opinionstage_link('Getting started tutorial', 'blog/how-to-add-interactive-content-on-wordpress'); ?>
-					</li>
-					<li>
-						<?php echo opinionstage_link('View Templates', 'templates'); ?>
+						<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin" target="_blank">Getting started tutorial</a>
 					</li>
 					<li>
 						<a href="https://help.opinionstage.com/?utm_campaign=WPMainPI&amp;utm_medium=linkhelpcenter&amp;utm_source=wordpress&amp;o=wp35e8" target="_blank">Opinion Stage help center</a>

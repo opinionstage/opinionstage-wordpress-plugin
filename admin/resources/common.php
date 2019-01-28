@@ -12,9 +12,14 @@ function opinionstage_common_load_resources(){
 	// Load common assets
 	opinionstage_enqueue_css_asset('menu-page');
 	opinionstage_enqueue_css_asset('icon-font');
-	opinionstage_enqueue_js_asset('menu-page');
-
+	opinionstage_enqueue_js_asset('menu-page'); ?>
+	<style type="text/css">
+	.content__list {
+    height: calc(92vh - 190px) !important;
 }
+</style>
+
+<?php }
 
 function opinionstage_common_load_header(){
 	if(get_option('oswp_tracking_user_site_data') == 'yes'){ ?>
@@ -31,7 +36,22 @@ function opinionstage_common_load_header(){
 		</script>
 	<?php }
 }
-function opinionstage_common_load_footer(){
-
-}						
+function opinionstage_common_load_footer(){ ?>
+	<script>
+		$(document).ready(function () {					
+			$('li a span#oswpLauncherContentPopup').live('click', function(e) {    
+		        e.preventDefault();
+		        $('div#view-item').trigger('click');
+		    });
+		    $('li a span#oswpLauncherContentPopupExamples').live('click', function(e) {
+		        		        
+			var a = $('li a span#oswpLauncherContentPopupExamples').attr('data-os-view');	
+			if(a == 'examples'){
+				setTimeout(function(){$('div#show-templates').trigger('click');},500); 
+			}
+			e.preventDefault(); 			
+		    });
+		});
+	</script>
+<?php }						
 ?>

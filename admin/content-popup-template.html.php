@@ -12,7 +12,6 @@ function opinionstage_create_new_href() {
 
 // Note: all html put here (not moved to js build system) in order to preserve ability to use Wordpress translate APIs
 ?>
-
 <template data-opinionstage-content-popup-template>
 	<div class='opinionstage-content-popup-contents' data-opinionstage-content-popup data-opinionstage-client-logged-in="<?php echo $opinionstage_user_logged_in ?>">
 		<header class='header'>
@@ -23,11 +22,11 @@ function opinionstage_create_new_href() {
 					</a>
 				</div>
 				<div class='header__nav'>
-					<div class='std-btn'
+					<div id="view-items" class='std-btn'
 							@click="showClientWidgets"
 							:class="{ active: showClientContent }"
 					>My content</div>
-					<div class='std-btn'
+					<div id="show-templates" class='std-btn'
 							@click="showTemplatesWidgets"
 							:class="{ active: !showClientContent }"
 					>Examples</div>
@@ -74,47 +73,52 @@ function opinionstage_create_new_href() {
 <div class='page-content'>
 	<div class='content-actions'>
 		<div class='filter'>
-			<div class='filter__itm'
-					@click="selectWidgetType('all')"
-					:class="{ active: selectedWidgetType === 'all' }"
-			>all</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('poll')"
-					:class="{ active: selectedWidgetType === 'poll' }"
-			>poll</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('set')"
-					:class="{ active: selectedWidgetType === 'set' }"
-			>set</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('survey')"
-					:class="{ active: selectedWidgetType === 'survey' }"
-			>survey</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('slideshow')"
-					:class="{ active: selectedWidgetType === 'slideshow' }"
-			>slideshow</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('trivia')"
-					:class="{ active: selectedWidgetType === 'trivia' }"
-			>trivia</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('outcome')"
-					:class="{ active: selectedWidgetType === 'outcome' }"
-			>personality</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('list')"
-					:class="{ active: selectedWidgetType === 'list' }"
-			>list</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('form')"
-					:class="{ active: selectedWidgetType === 'form' }"
-			>form</div>
-			<div class='filter__itm'
-					@click="selectWidgetType('story')"
-					:class="{ active: selectedWidgetType === 'story' }"
-			>story</div>
-		</div>
+			<div class="dropdown">
+				<button class="dropbtn" id="dropbtn"><span>All</span>&nbsp; <i class="fa fa-angle-down" style="color:rgb(152, 154, 153)"></i></button>
+				<div class="dropdown-content">
+					<div class='filter__itm'
+							@click="selectWidgetType('all')"
+							:class="{ active: selectedWidgetType === 'all' }"
+					>all</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('poll')"
+							:class="{ active: selectedWidgetType === 'poll' }"
+					>poll</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('set')"
+							:class="{ active: selectedWidgetType === 'set' }"
+					>set</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('survey')"
+							:class="{ active: selectedWidgetType === 'survey' }"
+					>survey</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('slideshow')"
+							:class="{ active: selectedWidgetType === 'slideshow' }"
+					>slideshow</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('trivia')"
+							:class="{ active: selectedWidgetType === 'trivia' }"
+					>trivia</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('outcome')"
+							:class="{ active: selectedWidgetType === 'outcome' }"
+					>personality</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('list')"
+							:class="{ active: selectedWidgetType === 'list' }"
+					>list</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('form')"
+							:class="{ active: selectedWidgetType === 'form' }"
+					>form</div>
+					<div class='filter__itm'
+							@click="selectWidgetType('story')"
+							:class="{ active: selectedWidgetType === 'story' }"
+					>story</div>
+				</div>
+			</div>
+	</div>
 		<div class='search'>
 			<img
 				class='search-icon'
@@ -229,3 +233,12 @@ function opinionstage_create_new_href() {
 		</div>
 	</div>
 </template>
+<script>
+		$(document).ready(function () {	
+		   $('.filter__itm').live('click', function(e) {
+			   var text = $(this).text();
+		   	$("button#dropbtn span").text(text);
+			});
+		});
+
+	</script>

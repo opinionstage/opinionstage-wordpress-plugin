@@ -38,10 +38,10 @@ defined( 'ABSPATH' ) or die();
 		<div class="opinionstage-dashboard-left">
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
-					<div class="opinionstage-section-title">Create Content</div>
+					<div class="opinionstage-section-title">Create</div>
 					<?php if ( $os_client_logged_in ) {?>
-						<?php echo opinionstage_link('VIEW MY CONTENT', 'dashboard/content', 'opinionstage-section-action opinionstage-blue-bordered-btn'); ?>
-					<?php } ?>
+						<a href="#" class="opinionstage-section-action opinionstage-blue-bordered-btn" data-opinionstage-content-launch data-os-view="content">VIEW MY ITEMS</a>
+					<?php } ?>		
 				</div>
 				<div class="opinionstage-section-content">
 					<div class="opinionstage-section-raw">
@@ -142,6 +142,8 @@ defined( 'ABSPATH' ) or die();
 					</div>
 				</div>
 			</div>
+			<p style="font-weight: 600;"><a href="https://help.opinionstage.com/getting-started/content-creation-tutorials" target="_blank">Need help creating items?</a></p>
+			<p style="font-weight: 600;"><a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank">Need help adding items you created to your site?</a></p>
 		</div>
 	</div>
 </div>
