@@ -1,7 +1,9 @@
 <?php
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
+add_action( 'admin_head', 'add_tracking_hotjar_oswp');
 
+function add_tracking_hotjar_oswp(){
 if(get_option('oswp_tracking_user_site_data') == 'yes'){ ?>
 <!-- Hotjar Tracking Code for https://wordpress.org/plugins/social-polls-by-opinionstage/ -->
 <script>
@@ -15,3 +17,4 @@ if(get_option('oswp_tracking_user_site_data') == 'yes'){ ?>
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 <?php }
+}
