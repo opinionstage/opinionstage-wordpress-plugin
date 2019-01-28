@@ -1,7 +1,6 @@
 <?php 
 // block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die(1);
-?>
+defined( 'ABSPATH' ) or die(1); ?>
 <style type="text/css">
 	td.long {
     min-width: 300px;
@@ -51,14 +50,44 @@ td.action{
 }
 </style>
 <div class="wrap">
-	<h1 class="wp-heading-inline">View Items</h1>
-			<div id="container"><table id="check" style="background: #fff;"></table>
-</div>
-							
+	<h1 class="wp-heading-inline">View My Items</h1>
+	<div id="opinionstage-content">
+		<div class="opinionstage-header-wrapper">
+			<div class="opinionstage-logo-wrapper">
+				<div class="opinionstage-logo"></div>
+			</div>		
+				<?php if ( !$os_client_logged_in ) {?>
+				<div class="opinionstage-status-content">
+					<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
+					<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
+						<i class="os-icon-plugin icon-os-poll-client"></i>
+						<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
+						<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
+						<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
+						<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
+						<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
+						<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
+						<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
+					</form>
+				</div>
+				<?php } else { ?>
+				<div class="opinionstage-status-content-connected">
+					<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
+					<i class="os-icon-plugin icon-os-form-success"></i>
+					<label class="checked" for="user-email"></label>
+					<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
+					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
+						<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
+					</form>
+				</div>
+				<?php } ?>		
+		</div>
+	</div>
+	<div id="container" style="background: #fff;overflow: hidden;"><table id="check" style="background: #fff;margin-left: 20px;margin-top: 20px;margin-bottom: 20px;"></table></div>
 </div>
 <script type="text/javascript">
 // This is our actual script
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
     	$.ajax({
 			url: 'https://www.opinionstage.com/api/wp/v1/my/widgets?type=all&page=1&per_page=99',
@@ -92,4 +121,10 @@ $(document).ready(function(){
 			}
 		});
 });
+
+	jQuery(document).ready(function ($) {	
+		 $(window).on('load',function(){
+	        $('#oswpLauncherContentPopup').trigger('click');
+	    });
+	});
 </script>

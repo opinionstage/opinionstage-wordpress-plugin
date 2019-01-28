@@ -25,7 +25,7 @@ function opinionstage_create_new_href() {
 					<div id="view-items" class='std-btn'
 							@click="showClientWidgets"
 							:class="{ active: showClientContent }"
-					>My content</div>
+					>My items</div>
 					<div id="show-templates" class='std-btn'
 							@click="showTemplatesWidgets"
 							:class="{ active: !showClientContent }"
@@ -52,6 +52,7 @@ function opinionstage_create_new_href() {
 				</div>
 			</div>
 		</header>
+		<span id="insert_error_editor" style="display: none;">Please insert the item from the Classic Editor or from the Gutenberg Editor. For more information, <a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank">Click Here</a></span>
 		<section>
 			<popup-content
 				:show-client-content="showClientContent"
@@ -74,12 +75,12 @@ function opinionstage_create_new_href() {
 	<div class='content-actions'>
 		<div class='filter'>
 			<div class="dropdown">
-				<button class="dropbtn" id="dropbtn"><span>All</span></button>
+				<button class="dropbtn" id="dropbtn"><span>All ITEMS</span></button>
 				<div class="dropdown-content">
 					<div class='filter__itm'
 							@click="selectWidgetType('all')"
 							:class="{ active: selectedWidgetType === 'all' }"
-					>all</div>
+					>all Items</div>
 					<div class='filter__itm'
 							@click="selectWidgetType('poll')"
 							:class="{ active: selectedWidgetType === 'poll' }"
@@ -87,7 +88,7 @@ function opinionstage_create_new_href() {
 					<div class='filter__itm'
 							@click="selectWidgetType('set')"
 							:class="{ active: selectedWidgetType === 'set' }"
-					>set</div>
+					>multi poll set</div>
 					<div class='filter__itm'
 							@click="selectWidgetType('survey')"
 							:class="{ active: selectedWidgetType === 'survey' }"
@@ -99,11 +100,11 @@ function opinionstage_create_new_href() {
 					<div class='filter__itm'
 							@click="selectWidgetType('trivia')"
 							:class="{ active: selectedWidgetType === 'trivia' }"
-					>trivia</div>
+					>trivia quiz</div>
 					<div class='filter__itm'
 							@click="selectWidgetType('outcome')"
 							:class="{ active: selectedWidgetType === 'outcome' }"
-					>personality</div>
+					>personality quiz</div>
 					<div class='filter__itm'
 							@click="selectWidgetType('list')"
 							:class="{ active: selectedWidgetType === 'list' }"
@@ -115,10 +116,10 @@ function opinionstage_create_new_href() {
 					<div class='filter__itm'
 							@click="selectWidgetType('story')"
 							:class="{ active: selectedWidgetType === 'story' }"
-					>story</div>
+					>story article</div>
 				</div>
 			</div>
-	</div>
+		</div>
 		<div class='search'>
 			<img
 				class='search-icon'
@@ -240,11 +241,13 @@ function opinionstage_create_new_href() {
 		   		$("button#dropbtn span").text(text);
 			});
 			$('div#show-templates').live('click', function(e) {
-				if ($('div#show-templates').hasClass('active')){
-					console.log('done');
-			    } else {
-			        console.log('error');
-			    }
+				var inputs = $(".filter__itm");
+               	for(var i = 0; i < inputs.length; i++){
+                   	if($(inputs[i]).text() == 'story article'){
+                    	$(inputs[i]).hide();
+                    	break; 
+                    }
+                }
 			});
 		});
 	</script>
