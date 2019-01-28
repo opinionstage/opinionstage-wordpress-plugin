@@ -86,7 +86,6 @@ function opinionstage_create_new_href() {
 						        <a class="alisting">story</a>
 						        <ul class="submenu">
 						            <li><?php echo opinionstage_create_widget_link('story', 'create-menu__itm'); ?></li>
-						            <!-- <li><?php echo opinionstage_template_story_link('create-menu__itm'); ?></li>						             -->
 						        </ul>						            
 						    </li>
 						</div>
@@ -96,7 +95,6 @@ function opinionstage_create_new_href() {
 				</div>
 			</div>
 		</header>
-		<span id="insert_error_editor" style="display: none;">Please insert the item from the Classic Editor or from the Gutenberg Editor. For more information, <a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank">Click Here</a></span>
 		<section>
 			<popup-content
 				:show-client-content="showClientContent"
