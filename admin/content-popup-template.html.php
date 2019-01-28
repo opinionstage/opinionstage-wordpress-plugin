@@ -74,7 +74,7 @@ function opinionstage_create_new_href() {
 	<div class='content-actions'>
 		<div class='filter'>
 			<div class="dropdown">
-				<button class="dropbtn" id="dropbtn"><span>All</span>&nbsp; <i class="fa fa-angle-down" style="color:rgb(152, 154, 153)"></i></button>
+				<button class="dropbtn" id="dropbtn"><span>All</span></button>
 				<div class="dropdown-content">
 					<div class='filter__itm'
 							@click="selectWidgetType('all')"
@@ -235,10 +235,26 @@ function opinionstage_create_new_href() {
 </template>
 <script>
 		$(document).ready(function () {	
-		   $('.filter__itm').live('click', function(e) {
-			   var text = $(this).text();
-		   	$("button#dropbtn span").text(text);
+		   	$('.filter__itm').live('click', function(e) {
+			   	var text = $(this).text();
+		   		$("button#dropbtn span").text(text);
 			});
+			$('div#show-templates').live('click', function(e) {
+				if ($('div#show-templates').hasClass('active')){
+					console.log('done');
+			    } else {
+			        console.log('error');
+			    }
+			});
+			// $('div#show-templates').live('click', function(e) {
+			// 	var inputs = $(".filter__itm");
+   //             	for(var i = 0; i < inputs.length; i++){
+   //                 	if($(inputs[i]).text() == 'story'){
+   //                 	console.log($(inputs[i]).text());
+   //                  	$(inputs[i]).hide();
+   //                  	break; 
+   //                  }
+   //              }
+			// });
 		});
-
 	</script>

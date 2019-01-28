@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) or die();
 			<div class="opinionstage-status-content">
 				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
 				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-					<i class="os-icon icon-os-poll-client"></i>
+					<i class="os-icon-plugin icon-os-poll-client"></i>
 					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
 					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
 					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or die();
 			<?php } else { ?>
 			<div class="opinionstage-status-content-connected">
 				<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
-				<i class="os-icon icon-os-form-success"></i>
+				<i class="os-icon-plugin icon-os-form-success"></i>
 				<label class="checked" for="user-email"></label>
 				<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
 				<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) or die();
 				<div class="opinionstage-section-content">
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-polls"></div>
+							<div class="os-icon-plugin icon-os-reports-polls"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Poll</div>
@@ -58,7 +58,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-set"></div>
+							<div class="os-icon-plugin icon-os-reports-set"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Survey</div>
@@ -70,7 +70,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-trivia"></div>
+							<div class="os-icon-plugin icon-os-reports-trivia"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Trivia Quiz</div>
@@ -82,7 +82,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-personality"></div>
+							<div class="os-icon-plugin icon-os-reports-personality"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Personality Quiz</div>
@@ -94,7 +94,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-widget-slideshow"></div>
+							<div class="os-icon-plugin icon-os-widget-slideshow"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Slideshow</div>
@@ -106,7 +106,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-widget-form"></div>
+							<div class="os-icon-plugin icon-os-widget-form"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Form</div>
@@ -118,7 +118,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-reports-list"></div>
+							<div class="os-icon-plugin icon-os-reports-list"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">List</div>
@@ -130,7 +130,7 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon icon-os-icon-story"></div>
+							<div class="os-icon-plugin icon-os-icon-plugin-story"></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title">Story Article</div>

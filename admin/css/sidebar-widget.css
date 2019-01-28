@@ -63,13 +63,13 @@
 .wp-admin .opinionstage-sidebar-widget input[type=checkbox] {
   margin: 10px 5px 10px 0;
 }
-.opinionstage-sidebar-widget .os-icon {
+.opinionstage-sidebar-widget .os-icon-plugin {
   float: left;
   font-size: 16px;
   margin-right: 7px;
   margin-left: 5px;
 }
-.opinionstage-sidebar-widget .os-icon.icon-os-poll-client {
+.opinionstage-sidebar-widget .os-icon-plugin.icon-os-poll-client {
   margin-top: 4px;
 }
 .opinionstage-sidebar-widget .os-button {
