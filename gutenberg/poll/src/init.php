@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function opinionStage_poll_oswp_block_assets_set() {
-	wp_enqueue_style('Bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+	//wp_enqueue_style('Bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 	wp_enqueue_style(
 		'opinionStage_poll_oswp_style_css_set',
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), 
