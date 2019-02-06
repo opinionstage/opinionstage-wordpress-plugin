@@ -17,11 +17,12 @@
     height: 30px;
     line-height: 25px;
     padding: 0 12px 2px;
+    width: 100%;
+    max-width: 50%;
+    display: block;
 }
 
 .os-poll-wrapper .is-block {
-    display: block;
-    width: 100%;
     margin-top: 10px;
 }
 .components-base-control.components-select-control__input {
@@ -48,6 +49,10 @@
 .components-preview__rightBlockContent {
     width: 100%;
     float: left;
+}
+components-placeholder__fieldset{
+  visibility: hidden;
+  opacity :0;
 }
 .components-preview__rightBlockContent .components-placeholder__label {
     font-size: 18px;
@@ -125,9 +130,9 @@ ul.components-edit-view-stats__Block li a {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transpoll: translate(-50%, -50%);
+  -ms-transpoll: translate(-50%, -50%);
+  transpoll: translate(-50%, -50%);
   text-align: center;
 }
 .components-preview__leftBlockImage .text a{
@@ -142,7 +147,7 @@ ul.components-edit-view-stats__Block li a {
     padding: 10px 8px;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transpoll: uppercase;
     width: 140px;
     }
     .components-preview__leftBlockImage .text a:hover, .components-preview__block input.left-align:hover {
@@ -151,7 +156,7 @@ ul.components-edit-view-stats__Block li a {
 }
 .components-preview__block .left-align {
     color: #fff;
-    text-transform: uppercase;
+    text-transpoll: uppercase;
     border: 1px solid #FFF;
     box-shadow: 0px 0px;
     text-align: center;
@@ -176,4 +181,13 @@ p.components-heading {
 }
 .os-poll-wrapper.components-placeholder {
     transition: 1s;
+}
+.os-poll-wrapper .wp-block-opinion-stage-block-os-poll .components-placeholder__fieldset {
+    visibility: hidden;
+    opacity: 0;
+}
+.os-poll-wrapper .components-placeholder__fieldset {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
 }
