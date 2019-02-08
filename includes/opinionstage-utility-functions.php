@@ -192,4 +192,10 @@ function opinionstage_parse_client_data($raw_data) {
 		update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	} 
 }
+function opinionstage_custom_content_popup_callback_url(){
+	$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+	$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
+	$adminUrlForOs = admin_url( 'admin.php?page=opinionstage-content-login-callback-page&return_path=', $protocol );
+	return $adminUrlForOs.urlencode($url);
+}
 ?>

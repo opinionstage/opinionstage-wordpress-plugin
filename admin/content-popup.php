@@ -24,7 +24,11 @@ function opinionstage_content_popup_js() {
 }
 
 function opinionstage_content_popup_html() {
-	require( plugin_dir_path( __FILE__ ).'content-popup-template.html.php' ); ?>
+	if(opinionstage_is_guten_enabled() == true){
+       require( plugin_dir_path( __FILE__ ).'content-popup-gutenberg-template.html.php');
+    }else{
+       require( plugin_dir_path( __FILE__ ).'content-popup-template.html.php');
+    } ?>
   <script>
     jQuery(document).ready(function ($) {       
         $('span#oswpLauncherContentPopupExamples').parent().attr({'data-opinionstage-content-launch':"", 'data-os-view':"examples"});
@@ -141,8 +145,8 @@ button#dropbtn:after {
     position: absolute;
     top: 0;
     width: 40px;
-    right: -41px;
-    height: 100%;
+    right: -40px;
+    height: 45px;
     border: 1px solid #e4e4e4;
     top: -1px;
     border-left: 0px !important;

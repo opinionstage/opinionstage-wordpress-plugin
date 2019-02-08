@@ -17,11 +17,12 @@
     height: 30px;
     line-height: 25px;
     padding: 0 12px 2px;
+    width: 100%;
+    max-width: 50%;
+    display: block;
 }
 
 .os-personality-wrapper .is-block {
-    display: block;
-    width: 100%;
     margin-top: 10px;
 }
 .components-base-control.components-select-control__input {
@@ -48,6 +49,10 @@
 .components-preview__rightBlockContent {
     width: 100%;
     float: left;
+}
+components-placeholder__fieldset{
+  visibility: hidden;
+  opacity :0;
 }
 .components-preview__rightBlockContent .components-placeholder__label {
     font-size: 18px;
@@ -176,4 +181,13 @@ p.components-heading {
 }
 .os-personality-wrapper.components-placeholder {
     transition: 1s;
+}
+.os-personality-wrapper .wp-block-opinion-stage-block-os-personality .components-placeholder__fieldset {
+    visibility: hidden;
+    opacity: 0;
+}
+.os-personality-wrapper .components-placeholder__fieldset {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
 }

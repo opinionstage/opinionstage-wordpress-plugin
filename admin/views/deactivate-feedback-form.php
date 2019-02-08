@@ -1,11 +1,22 @@
 <?php
+global $wp_version;
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_client_logged_in = opinionstage_user_logged_in();		
+	$os_client_logged_in = opinionstage_user_logged_in();
+	
 	if(!$os_client_logged_in){
+		$connectedEmail = '';
 		$connectionOpinionStagePlugin = 'Not Connected';
 	}else{
+		$connectedEmail = $os_options['email'];
 		$connectionOpinionStagePlugin = 'Connected';
 	}
+
+	$item_count = $os_options['item_count'];
+	$active_plugins=get_option('active_plugins');
+	foreach($active_plugins as $key => $value) {
+        $plugin = explode('/',$value); // Folder name will be displayed
+        $plugin_list[] = $plugin[0];
+    }
  ?>
 <style type="text/css">
 	.os-feedback-modal-wrapper {
@@ -80,7 +91,7 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 <script type="text/javascript">
 	// OS Modal JS here
 	jQuery(document).ready(function($){
-		
+console.log('<?php echo $os_client_logged_in; ?>');
 		// elements
 		var elemModal 	= $('.os-feedback-modal-wrapper');
 		var elemOpen 	= $('.plugins [data-slug="social-polls-by-opinionstage"] .deactivate');
@@ -101,22 +112,52 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 		
 		$(elemSend).click(function(){
 
-			if( jQuery('input[name=reason]:checked', $(elemModal)).length > 0 ){
-				elemModal.fadeOut();
-
+			if( jQuery('input[name=reason]:checked', $(elemModal)).length > 0 ){				
 				var reason = jQuery('input[name=reason]:checked', $(elemModal)).val();
+				var validReason = false;
+
+				if(reason == 'I found a better plugin.' || reason == 'Other:' ){
 				if(reason == 'I found a better plugin.'){
-					reason = 'Found better plugin: ' + $('.os-other-plugin').val();
+					if ($('.os-other-plugin').val()){
+						validReason = true;
+						reason = 'Found better plugin: ' + $('.os-other-plugin').val();
+					}
+					else {
+						$('span.alert-error').html('Please share the plugin name.');
+					}
 				}else if(reason == 'Other:'){
-					reason = 'Other: ' + $('.os-other-reason').val();
+					if ($('.os-other-reason').val()){
+						validReason = true;
+						reason = 'Other: ' + $('.os-other-reason').val();
+					}
+					else {
+						$('span.alert-error').html('Please share your Reason.');
+					}
 				}
-				$opswConnected = '<?php echo $connectionOpinionStagePlugin; ?>';
-				mixpanel.track("WordPress Opinion Stage Disconnect",
-				    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected, },
-				    function(){
-				    	window.location = elemOpen.find('a').attr('href');
-				    }
-				);
+				}
+				else
+				{
+					validReason = true;
+				}
+
+				if (validReason == true) {
+					elemModal.fadeOut();
+					$opswConnected = '<?php echo $connectionOpinionStagePlugin; ?>';
+					$ospVersion = '<?php echo $wp_version; ?>';
+					$ospTheme = '<?php echo wp_get_theme(); ?>';
+					$ospPluginList = '<?php echo json_encode($plugin_list); ?>';
+					$ospEmail = '<?php echo $connectedEmail; ?>';
+					$ospItemCount = '<?php echo $item_count; ?>';
+					$pluginVersion="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>";
+					console.log($ospItemCount);
+
+					mixpanel.track("WordPress Opinion Stage Disconnect",
+					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, },
+					    function(){
+					    	window.location = elemOpen.find('a').attr('href');
+					    }
+					);
+				}
 			}else{
 				// show error.
 				$('span.alert-error').html('Please select one of the options.');

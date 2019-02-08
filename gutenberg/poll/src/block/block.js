@@ -20,13 +20,18 @@ var options;
         category: 'opinion-stage',        
         keywords: [
             __( 'Opinion Stage Poll' ),
-            __( 'Opinion Stage Poll Insert' ),
+            __( 'Opinion Stage Poll' ),
         ],        
         attributes: {
             embedUrl: {
                 source: 'attribute',
-                attribute: 'data-embed-url',
-                selector: 'div[data-embed-url]'
+                attribute: 'data-test-url',
+                selector: 'div[data-test-url]'
+            },
+            oswpUrlShortcode: {
+                source: 'attribute',
+                attribute: 'data-test-url',
+                selector: 'div[data-test-url]'
             },
             lockEmbed: {
                 source: 'attribute',
@@ -37,10 +42,10 @@ var options;
                 source: 'attribute',
                 attribute: 'data-button-text',
                 selector: 'div[data-button-text]'
-            },            
+            },        
         },
         edit: function( props ) {
-            let {attributes: {embedUrl, lockEmbed, buttonText}, setAttributes} = props;
+            let {attributes: {embedUrl, oswpUrlShortcode, lockEmbed, buttonText}, setAttributes} = props;
             const onDropdownChange = val => {
                 if(val == ''){
                     props.setAttributes({ embedUrl: '' });
@@ -59,7 +64,7 @@ var options;
                             previewBlockOsImageUrl = dropdownOptions[i].attributes['image-url'];
                             previewBlockOsView = dropdownOptions[i].attributes['landing-page-url'];
                             previewBlockOsEdit = dropdownOptions[i].attributes['edit-url'];
-                            previewBlockOsStatistics = dropdownOptions[i].attributes['stats-url'];
+                            previewBlockOsStatistics = dropdownOptions[i].attributes['stats-url'];                            
                             break;
                         }
                     }                    
@@ -72,12 +77,24 @@ var options;
                         props.setAttributes({ lockEmbed: false, buttonText: "Embed" });
                     }else{
                         props.setAttributes({ lockEmbed: true, buttonText: "Change" }); 
-                        contentDropdown = (<SelectControl options={options}  value={embedUrl} onChange={onDropdownChange} className="components-select-control__input" />);
+                        contentDropdown = (<SelectControl id="selectID" options={options}  value={embedUrl} onChange={onDropdownChange} className="components-select-control__input" />);
                     }
                 }else{
                     props.setAttributes({ lockEmbed: false, buttonText: "Embed" });
                 }                
             };
+
+            window.verifyOSInsert = function(widget){
+                props.setAttributes({ oswpUrlShortcode: widget });
+                var myOpts = document.getElementById('selectID').options;
+                for(var i = 0; i < myOpts.length; i++){                    
+                    if(myOpts[i].value == widget){
+                        myOpts[i].defaultSelected = true;
+                        props.setAttributes({ lockEmbed: true, buttonText: "Change", embedUrl: widget });
+                        break;
+                    }
+                } 
+            }
 
             var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=poll&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
             const onCreateButtonClick = value => {
@@ -117,7 +134,7 @@ var options;
                     props.setAttributes({ buttonText: buttonText});
                     if(buttonText == 'Change' && embedUrl !='Select'){
                         props.setAttributes({ embedUrl: embedUrl });
-                    }else{
+                    }else{ 
                         props.setAttributes({ embedUrl: 'Select' });
                     }                    
                 })
@@ -126,20 +143,19 @@ var options;
                 });
             }
             // Checking for Opinion Stage connection
-            if(osGutenData.isOsConnected == ''){                
+            if(osGutenData.isOsConnected == ''){
+                $(document).ready(function () {
+                    $('span#oswpLauncherContentPopuppoll , #owspLaunchInputCreate').live('click', function(e) {
+                        e.preventDefault();
+                        setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
+                    });               
+                });                
                 return (
                     <div className={ props.className }>
                         <div className="os-poll-wrapper components-placeholder">
-                        <div className="components-placeholder__label">Connect WordPress with Opinion Stage to get started</div>
-                        <form method="get" action={formActionUrlOS} className="components-placeholder__fieldset">
-                            <input type="hidden" name="utm_source" value="wordpress"/>
-                            <input type="hidden" name="utm_campaign" value="WPMainPI"/>
-                            <input type="hidden" name="utm_medium" value="link"/>
-                            <input type="hidden" name="o" value="wp35e8"/>
-                            <input type="hidden" name="callback" id="myvalue" value={callback_url} />
-                            <input id="os-email" type="email" name="email" placeholder="Enter Your Email" className="components-placeholder__input" data-os-email-input=""/>
-                            <button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" className="components-button is-button is-default is-block is-primary" id="os-start-login" data-os-login="">CONNECT</button>
-                        </form>
+                            <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
+                            <span id="oswpLauncherContentPopuppoll" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll">Select a Poll</span>
+                            <input id="owspLaunchInputCreate" type="button" data-opinionstage-content-launch value="Create a New Poll" className="components-button is-button is-default is-block is-primary" />
                         </div>          
                     </div>
                 );
@@ -167,26 +183,59 @@ var options;
                             previewBlockOsView = dropdownOptions[i].attributes['landing-page-url'];
                             previewBlockOsEdit = dropdownOptions[i].attributes['edit-url'];
                             previewBlockOsStatistics = dropdownOptions[i].attributes['stats-url'];
+                            var previewBlockOsWidgetID = dropdownOptions[i].id;
+
                         }                          
                     }                   
                 }              
-                if(embedUrl == 'refresh'){                                            
+                if(embedUrl == 'refresh'){                                       
                     OsPolulateList();   
                 }            
-                var contentDropdown = (<SelectControl options={options} value={embedUrl}  onChange={onDropdownChange} className="components-select-control__input" />);
-                
+                var contentDropdown = (<SelectControl id="selectID" options={options} value={embedUrl}  onChange={onDropdownChange} className="components-select-control__input" />);
+                $(document).ready(function () {
+                    $('span#oswpLauncherContentPopuppoll').live('click', function(e) {
+                        e.preventDefault();
+                        setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
+                        var text = $(this).attr('data-os-block');
+                        $("button#dropbtn span").text(text);   
+                        var inputs = $(".filter__itm");                                                                  
+                        for(var i = 0; i < inputs.length; i++){
+                            if($(inputs[i]).text() == text){
+                                setTimeout(function(){$(inputs[i]).trigger('click');},2000);
+                                $('button.content__links-itm').live('click', function(e) {
+                                    $('.tingle-modal.opinionstage-content-popup').hide();
+                                    $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
+                                }); 
+                                break;  
+                            }
+                        }
+                    });               
+                });
+
                 var contentViewEditStatOs = ( 
                         <div className="os-poll-wrapper components-placeholder">
-                            <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <div className="components-placeholder__label">Select an existing poll or create a new one</div>
+                        <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>                        
+                        <span id="oswpLauncherContentPopuppoll" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll">Select a Poll</span>
+                        <input type="button" value="Create a New Poll" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
                             <div className="components-placeholder__fieldset">
                                 {contentDropdown}
-                                <input type="button" value={buttonText} className="components-button is-button is-default is-large" onClick={onEmbedButtonClick} />  
-                                <input type="button" value="Create New Poll" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
+                                <input type="button" value={buttonText} className="components-button is-button is-default is-large" id="clickMe" onClick={onEmbedButtonClick} />  
                             </div>
                         </div>       
                     ); 
-                   
+                           
+            var dataOpinionStageEmbedUrl = 'https://www.opinionstage.com/api/v1/widgets/'+embedUrl+'/code.json?comments=true&amp;sharing=true&amp;recommendations=false&amp;width=';
+                var OpinionStageDataIframe = 'https://www.opinionstage.com/'+embedUrl+'?wid=0&amp;em=1&amp;comments=null&amp;referring_widget='+embedUrl+'&amp;autoswitch=1&amp;of=&amp;os_utm_source=null';
+                (function(d, s, id){
+                  var js,
+                      fjs = d.getElementsByTagName(s)[0],
+                      r = Math.floor(new Date().getTime() / 1000000);
+                  if (d.getElementById(id)) {return;}
+                  js = d.createElement(s); js.id = id; js.async=1;
+                  js.src = "https://www.opinionstage.com/assets/loader.js?" + r;
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'os-widget-jssdk'));
+                previewBlockOsWidgetID = 'os-widget-'+previewBlockOsWidgetID;
                   
                 if(embedUrl != '' && embedUrl  != 'Select' && embedUrl){
                     if(buttonText == 'Embed'){ 
@@ -200,9 +249,9 @@ var options;
                                     <img src={previewBlockOsImageUrl} alt={previewBlockOsTitle} className="image" />
                                     <div className="overlay">
                                        <div className="text">
-                                          <a href={previewBlockOsView} classname="components-button is-button is-default is-large" target="_blank"> View </a>
-                                          <a href={previewBlockOsEdit} classname="components-button is-button is-default is-large" target="_blank"> Edit </a>
-                                          <a href={previewBlockOsStatistics} classname="components-button is-button is-default is-large" target="_blank"> Statistics </a>
+                                          <a href={previewBlockOsView} target="_blank"> View </a>
+                                          <a href={previewBlockOsEdit} target="_blank"> Edit </a>
+                                          <a href={previewBlockOsStatistics} target="_blank"> Statistics </a>
                                           <input type="button" value={buttonText} className="components-button is-button is-default is-large left-align" onClick={onEmbedButtonClick} />
                                        </div>                                            
                                     </div>
@@ -213,7 +262,7 @@ var options;
                               </div>
                            </div>
                         );                            
-                    contentDropdown = (<SelectControl options={options} value={embedUrl} disabled onChange={onDropdownChange} className="components-select-control__input" />);
+                    contentDropdown = (<SelectControl id="selectID" options={options} value={embedUrl} disabled onChange={onDropdownChange} className="components-select-control__input" />);
                     }
                 }else if(embedUrl == 'Select' || embedUrl == '' || embedUrl == 'refresh'){
                     contentViewEditStatOs
@@ -221,17 +270,19 @@ var options;
                     props.setAttributes({ buttonText: 'Embed'});
                         contentViewEditStatOs 
                 }
+                
+
                 return (         
-                   <div className={ props.className }>                    
-                        {contentViewEditStatOs}        
+                    <div className={ props.className }>                                                             
+                        {contentViewEditStatOs}  
                     </div>
                 );
             }
         },
-        save: function( {attributes: {embedUrl, lockEmbed, buttonText}} ) {
+        save: function( {attributes: {embedUrl, oswpUrlShortcode, lockEmbed, buttonText}} ) {
             return (
-                <div class="os-poll-wrapper" data-type="Poll" data-embed-url={embedUrl} data-lock-embed={lockEmbed} data-button-text={buttonText}>
-                    [os-widget path="{embedUrl}"]
+                <div class="os-poll-wrapper" data-type="poll" data-test-url={oswpUrlShortcode} data-lock-embed={lockEmbed} data-button-text={buttonText}>
+                    [os-widget path="{oswpUrlShortcode}"]
                 </div>
             );
         },

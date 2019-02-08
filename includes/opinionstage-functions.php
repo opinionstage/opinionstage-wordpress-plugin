@@ -72,5 +72,22 @@ function opinionstage_add_flyout() {
 		<?php
 	}
 }
-
+function opinionstage_is_guten_enabled(){
+	$block_editor_oswp = version_compare( $GLOBALS['wp_version'], '5.0-beta', '>' );
+	if($block_editor_oswp == false){
+		if( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		global $current_screen;
+  		$current_screen = get_current_screen();
+		if( method_exists($current_screen, 'is_block_editor') && $current_screen->is_block_editor() ){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
 ?>
