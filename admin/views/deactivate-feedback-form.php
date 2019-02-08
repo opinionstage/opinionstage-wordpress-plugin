@@ -91,7 +91,6 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 <script type="text/javascript">
 	// OS Modal JS here
 	jQuery(document).ready(function($){
-console.log('<?php echo $os_client_logged_in; ?>');
 		// elements
 		var elemModal 	= $('.os-feedback-modal-wrapper');
 		var elemOpen 	= $('.plugins [data-slug="social-polls-by-opinionstage"] .deactivate');
@@ -149,7 +148,6 @@ console.log('<?php echo $os_client_logged_in; ?>');
 					$ospEmail = '<?php echo $connectedEmail; ?>';
 					$ospItemCount = '<?php echo $item_count; ?>';
 					$pluginVersion="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>";
-					console.log($ospItemCount);
 
 					mixpanel.track("WordPress Opinion Stage Disconnect",
 					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, },
