@@ -50,7 +50,7 @@ function oswp_gutenberg_enqueue_scripts() {
 		$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
 
 		// get admin url for opinionstage plugin
-		$adminUrlForOs = admin_url( 'admin.php?page=opinionstage-content-login-callback-page&return_path=', $protocol );
+		$adminUrlForOs = opinionstage_callback_url_gutenberg_connect();
 
 		// opinionstage plugin version
 		$OswpPluginVersion = OPINIONSTAGE_WIDGET_VERSION;
@@ -68,7 +68,7 @@ function oswp_gutenberg_enqueue_scripts() {
 	    $dataToPass = array(
 	        'isOsConnected'         => (isset($os_options['uid']) && $os_options['uid'] != '') ? true : false,
 	        'onCreateButtonClickOs' => 'https://www.opinionstage.com/api/wp/redirects/widgets/new',
-	        'callbackUrlOs'         => $adminUrlForOs.urlencode($url),
+	        'callbackUrlOs'         => $adminUrlForOs,
 	        'OswpPluginVersion'     => $OswpPluginVersion,
 	        'OswpClientToken'       => opinionstage_user_access_token(),
 	        'OswpFetchDataUrl'      => $FetchUrlOS,

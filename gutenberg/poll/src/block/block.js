@@ -110,7 +110,10 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
-
+            const onConnectOSWPButtonClick = value => {
+                // Open Connect to opinionstage
+                window.location.replace(callback_url);
+            };
             // Populate list ajax function
             function OsPolulateList() {          
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
@@ -154,17 +157,17 @@ var options;
                     <div className={ props.className }>
                         <div className="os-poll-wrapper components-placeholder">
                             <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <span id="oswpLauncherContentPopuppoll" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll">Select a Poll</span>
-                            <input id="owspLaunchInputCreate" type="button" data-opinionstage-content-launch value="Create a New Poll" className="components-button is-button is-default is-block is-primary" />
+                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding polls</p>
+                            <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
                 );
             }else{                
                 if(dropdownOptions == false){   
-                    options = [{value:'Select',label:'Select a Poll'},{value:'refresh',label:'Refresh'}];               
+                    options = [{value:'Select',label:'Select a poll'},{value:'refresh',label:'Refresh'}];               
                     OsPolulateList();
                    }else{
-                    options = [{value:'Select',label:'Select a Poll'},{value:'refresh',label:'Refresh'},{value:'',label:'-----------------'}];
+                    options = [{value:'Select',label:'Select a poll'},{value:'refresh',label:'Refresh'},{value:'',label:'-----------------'}];
                     for (var i = 0; i < dropdownOptions.length; i++) {
                         options[options.length] = {
                             value: dropdownOptions[i].attributes['landing-page-url'].replace('https://www.opinionstage.com',''),

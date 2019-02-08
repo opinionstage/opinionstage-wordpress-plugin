@@ -149,6 +149,12 @@ function opinionstage_callback_url() {
 	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_LOGIN_CALLBACK_SLUG;
 }
 /**
+ * Generates a to the callback page used to connect the plugin to the Opinion Stage account via gutenberg editor
+ */
+function opinionstage_callback_url_gutenberg_connect() {
+	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_GETTING_STARTED_SLUG;
+}
+/**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account on content page
  */
 function opinionstage_content_login_callback_url() {

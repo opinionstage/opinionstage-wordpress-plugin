@@ -110,7 +110,11 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
-
+            console.log(callback_url);
+            const onConnectOSWPButtonClick = value => {
+                // Open Connect to opinionstage
+                window.location.replace(callback_url);
+            };
             // Populate list ajax function
             function OsPolulateList() {          
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
@@ -154,8 +158,8 @@ var options;
                     <div className={ props.className }>
                         <div className="os-slideshow-wrapper components-placeholder">
                             <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <span id="oswpLauncherContentPopupslideshow" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="slideshow">Select a Slideshow</span>
-                            <input id="owspLaunchInputCreate" type="button" data-opinionstage-content-launch value="Create a New Slideshow" className="components-button is-button is-default is-block is-primary" />
+                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding slideshows</p>
+                            <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
                 );

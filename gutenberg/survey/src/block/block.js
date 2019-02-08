@@ -98,7 +98,7 @@ var options;
 
             var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=survey&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
             const onCreateButtonClick = value => {
-                // Open Create new Survey link in new page
+                // Open Create new survey link in new page
                 window.open(getOsCreateButtonClickUrl, '_blank').focus();
             };
 
@@ -110,7 +110,10 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
-
+            const onConnectOSWPButtonClick = value => {
+                // Open Connect to opinionstage
+                window.location.replace(callback_url);
+            };
             // Populate list ajax function
             function OsPolulateList() {          
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
@@ -154,8 +157,8 @@ var options;
                     <div className={ props.className }>
                         <div className="os-survey-wrapper components-placeholder">
                             <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <span id="oswpLauncherContentPopupsurvey" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="survey">Select a Survey</span>
-                            <input id="owspLaunchInputCreate" type="button" data-opinionstage-content-launch value="Create a New Survey" className="components-button is-button is-default is-block is-primary" />
+                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding surveys</p>
+                            <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
                 );
