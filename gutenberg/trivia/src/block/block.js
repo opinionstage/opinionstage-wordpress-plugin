@@ -110,7 +110,10 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
-
+            const onConnectOSWPButtonClick = value => {
+                // Open Connect to opinionstage
+                window.location.replace(callback_url);
+            };
             // Populate list ajax function
             function OsPolulateList() {          
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
@@ -154,8 +157,8 @@ var options;
                     <div className={ props.className }>
                         <div className="os-trivia-wrapper components-placeholder">
                             <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <span id="oswpLauncherContentPopuptrivia" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="trivia quiz">Select a Trivia Quiz</span>
-                            <input id="owspLaunchInputCreate" type="button" data-opinionstage-content-launch value="Create a New Trivia Quiz" className="components-button is-button is-default is-block is-primary" />
+                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding trivia quizzes</p>
+                            <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
                 );
@@ -201,7 +204,7 @@ var options;
                         var inputs = $(".filter__itm");                                                                  
                         for(var i = 0; i < inputs.length; i++){
                             if($(inputs[i]).text() == text){
-                                setTimeout(function(){$(inputs[i]).trigger('click');},1000);
+                                setTimeout(function(){$(inputs[i]).trigger('click');},2000);
                                 $('button.content__links-itm').live('click', function(e) {
                                     $('.tingle-modal.opinionstage-content-popup').hide();
                                     $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();

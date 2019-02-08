@@ -20,7 +20,7 @@ var options;
         category: 'opinion-stage',        
         keywords: [
             __( 'Opinion Stage Personality Quiz' ),
-            __( 'Opinion Stage Personality Quiz Insert' ),
+            __( 'Opinion Stage Personality' ),
         ],        
         attributes: {
             embedUrl: {
@@ -96,7 +96,7 @@ var options;
                 } 
             }
 
-            var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=quiz&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
+            var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=outcome&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
             const onCreateButtonClick = value => {
                 // Open Create new personality link in new page
                 window.open(getOsCreateButtonClickUrl, '_blank').focus();
@@ -110,7 +110,10 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
-
+            const onConnectOSWPButtonClick = value => {
+                // Open Connect to opinionstage
+                window.location.replace(callback_url);
+            };
             // Populate list ajax function
             function OsPolulateList() {          
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
@@ -145,7 +148,7 @@ var options;
             // Checking for Opinion Stage connection
             if(osGutenData.isOsConnected == ''){
                 $(document).ready(function () {
-                    $('span#oswpLauncherContentPopuppersonality').live('click', function(e) {
+                    $('span#oswpLauncherContentPopuppersonality , #owspLaunchInputCreate').live('click', function(e) {
                         e.preventDefault();
                         setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
                     });               
@@ -153,18 +156,18 @@ var options;
                 return (
                     <div className={ props.className }>
                         <div className="os-personality-wrapper components-placeholder">
-                        <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                        <span id="oswpLauncherContentPopuppersonality" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="personality quiz">Create or Add New Personality Quiz</span>
-                        <form></form>
+                            <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
+                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding personality quizzes</p>
+                            <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
                 );
             }else{                
                 if(dropdownOptions == false){   
-                    options = [{value:'Select',label:'Select a Personality'},{value:'refresh',label:'Refresh'}];               
+                    options = [{value:'Select',label:'Select a personality'},{value:'refresh',label:'Refresh'}];               
                     OsPolulateList();
                    }else{
-                    options = [{value:'Select',label:'Select a Personality'},{value:'refresh',label:'Refresh'},{value:'',label:'-----------------'}];
+                    options = [{value:'Select',label:'Select a personality'},{value:'refresh',label:'Refresh'},{value:'',label:'-----------------'}];
                     for (var i = 0; i < dropdownOptions.length; i++) {
                         options[options.length] = {
                             value: dropdownOptions[i].attributes['landing-page-url'].replace('https://www.opinionstage.com',''),
@@ -201,7 +204,7 @@ var options;
                         var inputs = $(".filter__itm");                                                                  
                         for(var i = 0; i < inputs.length; i++){
                             if($(inputs[i]).text() == text){
-                                setTimeout(function(){$(inputs[i]).trigger('click');},1000);
+                                setTimeout(function(){$(inputs[i]).trigger('click');},2000);
                                 $('button.content__links-itm').live('click', function(e) {
                                     $('.tingle-modal.opinionstage-content-popup').hide();
                                     $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
@@ -214,12 +217,12 @@ var options;
 
                 var contentViewEditStatOs = ( 
                         <div className="os-personality-wrapper components-placeholder">
-                        <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                        <span id="oswpLauncherContentPopuppersonality" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="personality quiz">Create or Add New Personality Quiz</span>
+                        <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>                        
+                        <span id="oswpLauncherContentPopuppersonality" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="personality quiz">Select a Personality Quiz</span>
+                        <input type="button" value="Create a New Personality Quiz" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
                             <div className="components-placeholder__fieldset">
                                 {contentDropdown}
                                 <input type="button" value={buttonText} className="components-button is-button is-default is-large" id="clickMe" onClick={onEmbedButtonClick} />  
-                                <input type="button" value="Create New personality" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
                             </div>
                         </div>       
                     ); 
@@ -257,7 +260,7 @@ var options;
                                     </div>
                                  </div>
                                  <div className="components-preview__rightBlockContent">
-                                    <div className="components-placeholder__label">Personality Quiz: {previewBlockOsTitle}</div>      
+                                    <div className="components-placeholder__label">Personality: {previewBlockOsTitle}</div>      
                                  </div>
                               </div>
                            </div>
