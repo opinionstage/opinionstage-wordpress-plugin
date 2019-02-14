@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
 Tested up to: 5.0
-Stable tag: 19.6.15
+Stable tag: 19.6.16
 
 Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Minutes.
 
@@ -14,46 +14,35 @@ Looking for a Top-Notch Poll, Survey, Form & Quiz Wordpress Plugin?
 
 Check out:
 
-<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/pollstage/why-do-you-use-opinion-stage2?o=wp35e8" target="_blank">Poll Example</a>
-<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/rsacks/how-healthy-are-you?o=wp35e8" target="_blank">Quiz Example</a>
-<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/opinionstage/help-us-improve-opinion-stage1?o=wp35e8" target="_blank">Survey Example</a>
-<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/jamiescott935/inquiry-form?o=wp35e8" target="_blank">Form Example</a>
+<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=poll?o=wp35e8" target="_blank">Poll Examples</a>
+<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=personality_quiz?o=wp35e8" target="_blank">Quiz Examples</a>
+<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=survey?o=wp35e8" target="_blank">Survey Examples</a>
+<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=form?o=wp35e8" target="_blank">Form Examples</a>
 
-=  Why use Opinion Stage Poll, Survey, Form & Quiz Maker WordPress Plugin? =
+=  Why use Opinion Stage? =
 
- * Manage all your interactive content (polls, surveys, quizzes, forms, slideshow & article stories) from one dashboard
- * Opinion Stage makes it easy and fast to create content. It literally takes minutes to get up & going with a poll, quiz, survey or form
- * Create from scratch or use pre-made poll, quiz, survey and form templates to further speed the creation process
- * Boost engagement - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views
- * Drive new traffic from social shares - Using an effective quiz or poll is one of the  best ways to increase social sharing and viral distribution
- * Generate revenue by integrating ads in your polls & quizzes - take advantage of the high engagement rates to increase revenue from your ads
- * Gather more leads by integrating a lead form inside the poll, quiz or survey. This will not only produce more leads, but will also produce qualified leads, as the leads will be associated with the answers of the users.
- * Works seamlessly on all environments - Opinion Stage uses responsive design techniques to fully support all platforms & screen sizes, including desktops, tablets and mobile devices. Reach your target audience wherever they are
- * Embed in any location - in the sidebar, inside a post/page, in a section on your site or in a popup
- * Supports setting the color theme, fonts & sizes & title ortientation of the different content formats
- * White label your poll, survey, quiz or form and add your own logo to make it seem as if it was built by your brand/site
+ * Boost engagement & traffic - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views. Increase social sharing and viral distribution
+ * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey. This will not only produce more leads, but will also produce qualified leads, as the leads will be associated with the answers of the users.
+ * Generate revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the interactive content.
+ * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with a intuitive analytics dashboard.
 
 = Main Poll WordPress Plugin Features: =
 
- * Create polls with 4 different graphic layouts - standard poll layout, image poll layout, thumbnails poll layout & head-to-head poll layout
+ * Create polls with 4 different layouts (standard, image, thumbnails & head-to-head)
  * Easily add images & videos into the polls either from your computer or by using an integrated search poll image function
  * Configure if user can select one or more options when voting on the poll
  * Allow users to add their own answers to the poll
  * Block repeat voting in the poll using different mechanisms (e.g. Cookie, IP, etc)
  * Permit user to vote on the poll once every configured time frame (e.g. every hour, day, etc)
- * Display a customized message to the user after he votes on thge poll
- * Configure to close the poll at a specified time. You can also always manually open or close the poll
- * Redirect users to different landing pages based no what they voted for on the poll
- * Configure the order of the poll displayed options (e.g. most votes on top, random)
+ * Display a customized message to the user after he votes on the poll
+ * Configure to close the poll at a specified time
+ * Redirect users to different landing pages based on their poll vote
+ * Configure the display order of the poll options (e.g. most votes on top, random)
  * Configure if the poll results are displayed before voting, after voting or only to the poll creator
  * Configure how results are displayed to the poll voters (only percentage, number of votes, both, etc)
- * Configure if users are allowed to change their vote after they voted on the poll
- * Configure to request users to follow your facebook handle before viewing the poll results
- * Configure to offer users to follow your twitter handle when they share the poll in twitter
+ * Integrate ads inside the polls to increase ad-revenue from your site
  * Configure webhooks for sending the information gathered from your poll to any 3rd party application
- * Configure to integrate ads inside the poll to increase ad-revenue from your site
- * Get reports of number of views and leads gathered with your polls
- * View graphic presentations of the poll results including pie & chart bars that show the break down of votes in the different sides
+ * Graphic presentations of the poll results including pie & chart bars
  * View a detailed result table of all poll votes (e.g. vote side, vote timestamp, etc)
  * Export the poll results to an xls or csv file
 
@@ -111,9 +100,9 @@ Check out:
 
  = Placements: =
 
- * Sidebar placement - you can add a poll, quiz, survey or form to the site sidebar using a dedicated Opinion Stage sidebar widget
- * Popup placement - you can configure to popup content (e.g. a poll, quiz, survey, etc) when users enter or exit your site using a highly configurable popup component
- * Articles placement - you can display the a poll, quiz, survey or form at the end of all your posts/pages by enabling the articles placement
+ * Sidebar placement - add to the site sidebar using a dedicated Opinion Stage sidebar widget
+ * Popup placement - popup when users enter or exit your site using a highly configurable popup component
+ * Articles placement - display at the end of all your posts/pages
 
  = Language support =
 
@@ -121,7 +110,7 @@ Opinion Stage supports over 42 languages, missing a language? Let us know!
 
  = About Opinion Stage: =
 
-Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, survey, forms, etc) creation service. Opinion Stage's highly engaging content formats are used to boost engagement, gather leads, generate revenue and to extract actionable insights. Opinion Stage works with world-leading publishers, brands & agencies as well as small sites & blogs, offering their audiences content engagement experiences that convert to measurable business values. For more details, visit <a href="https://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
+Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, survey, forms, etc) creation service. Opinion Stages' highly engaging content formats are used to boost engagement, gather leads, generate revenue and to extract actionable insights. Opinion Stage works with 100,000+ publishers, brands & agenencies, including world-leading publishers, brands & agencies. For more details, visit <a href="https://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
 
 == Installation ==
 
@@ -134,13 +123,18 @@ Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, 
 
 Yes, all content (e.g. poll, quiz, survey, form, etc) created with Opinion Stage is fully responsive, and designed to optimaly display on mobile, tablet and desktop
 
-= What content formats does Opinion Stage support? =
+= What interactive content formats does Opinion Stage support? =
 
 With Opinion Stage you can create the following content formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Slideshow, Form, Story Article, List. We are constantly adding additional interactive content formats so stay tuned!
 
 = What is the difference between a Poll and a Survey =
 
 Polls include one question and are used for getting a quick answer on a question. Polls are often used for gathering opinions, getting feedback, running contents & competitions and generating engagement. Surveys include multiple questions of different types. Surveys are often used to gather feedback and insights. If you are still unsure whether to use a poll or a survey, contact our support team and we'll be happy to help.
+
+= What customization options do you offer? =
+
+Opinion Stage offers many built-in customization options such as selecting the color theme, font and sizes. You can also use a CSS override feature to fully match the items to your brand. You can also white label the items and add your own logo.
+
 
 == Other Notes ==
 
@@ -162,6 +156,8 @@ Polls include one question and are used for getting a quick answer on a question
 N/A
 
 == Changelog ==
+  = 19.6.16 =
+  * Readme updates
   = 19.6.15 =
   * Gutenberg fixes and improvements
   = 19.6.14 =
