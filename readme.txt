@@ -3,7 +3,7 @@ Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
-Tested up to: 5.0
+Tested up to: 5.1
 Stable tag: 19.6.16
 
 Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Minutes.
@@ -14,10 +14,10 @@ Looking for a Top-Notch Poll, Survey, Form & Quiz Wordpress Plugin?
 
 Check out:
 
-<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=poll?o=wp35e8" target="_blank">Poll Examples</a>
-<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=personality_quiz?o=wp35e8" target="_blank">Quiz Examples</a>
-<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=survey?o=wp35e8" target="_blank">Survey Examples</a>
-<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/dashboard/content/templates?utf8=%E2%9C%93&types%5B%5D=form?o=wp35e8" target="_blank">Form Examples</a>
+<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=✓&types%5B%5D=poll&o=wp35e8" target="_blank">Poll Examples</a>
+<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=personality_quiz&o=wp35e8" target="_blank">Quiz Examples</a>
+<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=survey&o=wp35e8" target="_blank">Survey Examples</a>
+<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=form&o=wp35e8" target="_blank">Form Examples</a>
 
 =  Why use Opinion Stage? =
 
@@ -157,7 +157,7 @@ N/A
 
 == Changelog ==
   = 19.6.16 =
-  * Readme updates
+  * Support 5.1 and Readme updates
   = 19.6.15 =
   * Gutenberg fixes and improvements
   = 19.6.14 =
