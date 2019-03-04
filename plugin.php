@@ -41,6 +41,7 @@ define('OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8');
 define('OPINIONSTAGE_UTM_SOURCE', 'wordpress');
 define('OPINIONSTAGE_UTM_CAMPAIGN', 'WPMainPI');
 define('OPINIONSTAGE_UTM_MEDIUM', 'link');
+define('OPINIONSTAGE_UTM_CONNECT_MEDIUM', 'connect');
 
 define('OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget');
 
@@ -51,6 +52,7 @@ define('OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement');
 define('OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings');
 define('OPINIONSTAGE_PLACEMENT_SLUG', 'opinionstage-my-placements');
 define('OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started');
+define('OPINIONSTAGE_VIEW_ITEM_SLUG', 'opinionstage-view-my-items');
 
 define('OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback');
 

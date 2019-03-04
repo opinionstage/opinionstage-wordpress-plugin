@@ -156,8 +156,8 @@ var options;
                 return (
                     <div className={ props.className }>
                         <div className="os-trivia-wrapper components-placeholder">
-                            <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>
-                            <p className="components-heading">Please connect Opinion Stage to WordPress to start adding trivia quizzes</p>
+                            <p className="components-heading"> <img src={getlogoImageLinkOs} alt=""/> </p>
+                            <p className="components-heading">Please connect Wordpress to Opinion Stage to start adding trivia</p>
                             <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
                         </div>          
                     </div>
@@ -204,12 +204,21 @@ var options;
                         var inputs = $(".filter__itm");                                                                  
                         for(var i = 0; i < inputs.length; i++){
                             if($(inputs[i]).text() == text){
-                                setTimeout(function(){$(inputs[i]).trigger('click');},2000);
+                                setTimeout(function(){$(inputs[i]).trigger('click');},1000);
+                                setTimeout(function(){
+                                        $('.progress_message').css('display', 'none');
+                                        $('.content__list').css('display', 'block');
+                                },2500);
                                 $('button.content__links-itm').live('click', function(e) {
                                     $('.tingle-modal.opinionstage-content-popup').hide();
                                     $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
                                 }); 
                                 break;  
+                            }
+                            else {
+                                $('.progress_message').css('display', 'block');
+                                $('.content__list').css('display', 'none');
+                                console.log('test');
                             }
                         }
                     });               
@@ -217,7 +226,7 @@ var options;
 
                 var contentViewEditStatOs = ( 
                         <div className="os-trivia-wrapper components-placeholder">
-                        <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>                        
+                        <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>                        
                         <span id="oswpLauncherContentPopuptrivia" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="trivia quiz">Select a Trivia Quiz</span>
                         <input type="button" value="Create a New Trivia Quiz" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
                             <div className="components-placeholder__fieldset">
@@ -246,7 +255,7 @@ var options;
                     }else if(buttonText == 'Change'){   
                         contentViewEditStatOs = (
                            <div className="os-trivia-wrapper components-placeholder"> 
-                              <p className="components-heading"><span><img src={getlogoImageLinkOs} alt=""/></span> Opinion Stage</p>                       
+                              <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>                       
                               <div className="components-preview__block" >                            
                                  <div className="components-preview__leftBlockImage">
                                     <img src={previewBlockOsImageUrl} alt={previewBlockOsTitle} className="image" />

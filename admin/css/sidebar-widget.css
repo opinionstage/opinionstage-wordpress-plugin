@@ -5,21 +5,34 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
   display: block;
-  color: #3499c2;
-  border: 1px solid #3499c2;
-  padding: 10px 5px;
+  color: #32adbc;
+  border: 1px solid #32adbc;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
   float: left;
+  margin-bottom: 20px;
   margin-right: 5px;
+  line-height: normal;
+}
+.opinionstage-sidebar-widget a.opinionstage-edit-content {
+  padding: 9px 17px;
+}
+.opinionstage-sidebar-widget a.opinionstage-edit-settings {
+    padding: 7px;
+}
+.opinionstage-sidebar-widget .opinionstage-edit-settings .icon-os-common-settings:before {
+  font-size: 24px;
 }
 .opinionstage-sidebar-widget a.opinionstage-blue-bordered-btn:hover {
   color: white;
-  background-color: #3499c2;
+  background-color: #32adbc;
   cursor: pointer;
 }
 
 .opinionstage-sidebar-widget {
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding-top: 15px;
 }
 .opinionstage-sidebar-widget .opinionstage-sidebar-connected {
@@ -38,10 +51,11 @@
 .opinionstage-sidebar-widget .opinionstage-sidebar-enabled {
   float: left;
 }
-.opinionstage-sidebar-widget .opinionstage-sidebar-config {
+/*.opinionstage-sidebar-widget .opinionstage-sidebar-config {
   float: right;
-}
+}*/
 .opinionstage-sidebar-widget input[type="text"] {
+  padding: 10px;
   width: 100%;
 }
 .opinionstage-sidebar-widget input#os-email {
@@ -104,4 +118,25 @@
   background-image: linear-gradient(top, #40aacd, #40aacd);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#40aacd, endColorstr=#40aacd);
   color: #ffffff !important;
+}
+.opinionstage-sidebar-widget .connection_message {
+    line-height: normal;
+    font-family: Open Sans,Helvetica,sans-serif;
+}
+.opinionstage-sidebar-widget .opinionstage-blue-btn {
+    background: #32adbc;
+    border-color: #32adbc;
+    font-family: Open Sans,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.opinionstage-sidebar-widget .opinionstage-blue-btn:hover {
+    background: #32adbc;
+    opacity: 0.9;
+}
+.opinionstage-sidebar-widget img {
+    width: 86px;
 }

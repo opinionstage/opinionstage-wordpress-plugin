@@ -2,51 +2,59 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die(1); ?>
 
-<div class="wrap">
+<!-- <div class="wrap"> -->
 	<div id="opinionstage-content">
-		<div class="opinionstage-header-wrapper">
-			<div class="opinionstage-logo-wrapper">
+		<div class="opinionstage-header-wrapper">	
+				<?php if ( $os_client_logged_in ) { ?>
+				<div class="opinionstage-logo-wrapper">
 				<div class="opinionstage-logo"></div>
-			</div>		
-				<?php if ( !$os_client_logged_in ) {?>
-				<div class="opinionstage-status-content">
-					<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
-					<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-						<i class="os-icon-plugin icon-os-poll-client"></i>
-						<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
-						<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
-						<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
-						<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
-						<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
-						<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input>
-						<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
-					</form>
-				</div>
-				<?php } else { ?>
-				<div class="opinionstage-status-content-connected">
-					<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
-					<i class="os-icon-plugin icon-os-form-success"></i>
-					<label class="checked" for="user-email"></label>
-					<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
+				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
 					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
-						<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
+						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
 					</form>
 				</div>
-				<?php } ?>		
+				</div>	
+				<?php } ?>
 		</div>
-	</div>
-	<div id="container" style="background: #fff;overflow: hidden;">
+	<div id="container" class="opinionstage-dashboard">
+		<div class="opinionstage-item-view-dashboard">
+		<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 		<div class="opinionstage-section-header">
 			<div class="opinionstage-section-title">My Items</div>
-			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" class="">Need help adding items to your site?</a>			
+			<div class="opinionstage-header-inner-container">
+			<div class="opinionstage-header-inner-section">
+			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" class="">Need help adding items to your site?</a>	
+			<div style="padding: 0px 9px; width: 150px; display: inline-block;">
+				<select id="itemList">
+					<option value="all">ALL ITEMS</option>
+					<option value="poll">POLL</option>
+					<option value="multiple">MULTIPLE POLL SET</option>
+					<option value="survey">SURVEY</option>
+					<option value="slideshow">SLIDESHOW</option>
+					<option value="trivia">TRIVIA QUIZ</option>
+					<option value="personality">PERSONALITY QUIZ</option>
+					<option value="list">LIST</option>
+					<option value="form">FORM</option>
+					<option value="story">STORY ARTICLE</option>
+				</select>
+			</div>
+			<div class="search search-container">
+				<input id="searchItem" class="std-input" name="search" placeholder="Search" type="text">
+			</div>	
+			</div>	
+			<a href="<?php echo admin_url( 'admin.php?page=opinionstage-settings' ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create" style="margin-left: 20px; font-weight: 600; padding-left: 0; padding-right: 0;">CREATE</a>
+			</div>
+		</div>	
 		</div>
-		<table id="check" style="background: #fff;margin-left: 20px;margin-top: 20px;margin-bottom: 20px;"></table>
-		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;">CLICK FOR MORE</div>
+		<p class="result_progress" style="display: block; font-size: 16px; text-align: center;">Loading...</p>
+		<table id="check"></table>
+		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;">Click for more</div>
 		<div id="showLess" style="display: none;">Show less</div>
+		</div>
 	</div>
-	</div>	
+	</div>
+	<!-- </div>	 -->
 <script type="text/javascript">
-// This is our actual script
 	jQuery(document).ready(function($){		
     	$.ajax({
 			url: 'https://www.opinionstage.com/api/wp/v1/my/widgets?type=all&page=1&per_page=99',
@@ -62,7 +70,8 @@ defined( 'ABSPATH' ) or die(1); ?>
 				dropdownOptions = data;
 				if(dropdownOptions.data.length == 0){
 					var adminUrlCreateLink = "<?php echo admin_url( 'admin.php?page=opinionstage-settings'); ?>";
-					var viewtext = '<tbody><tr><td><p><span style="font-weight: 600; font-size: 15px; color:#3499c2;">No items found, </span><a href="'+adminUrlCreateLink+'" style="font-weight: 600; font-size: 15px; color:#3499c2;">Create your first one.</a></p></td></tr></tbody>';
+					var viewtext = '<tbody><tr><td><p><span style="font-weight: 600; font-size: 15px; color:#212120;">No items yet..., </span><a href="'+adminUrlCreateLink+'" style="font-weight: 600; font-size: 15px; color:#3499c2;">Add your first item</a></p></td></tr></tbody>';
+					$('.result_progress').css('display', 'none');
 					$(viewtext).appendTo('#container table#check');
 				}else{
 					for (var i = 0; i < dropdownOptions.data.length; i++) {
@@ -77,7 +86,8 @@ defined( 'ABSPATH' ) or die(1); ?>
 			            var previewBlockOsView = dropdownOptions.data[i].attributes['landing-page-url'];
 			            var previewBlockOsEdit = dropdownOptions.data[i].attributes['edit-url'];
 			            var previewBlockOsStatistics = dropdownOptions.data[i].attributes['stats-url'];
-			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </a></td></tr></tbody>';
+			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </div></a></td></tr></tbody>';
+			            	$('.result_progress').css('display', 'none');
 							$(viewtext).appendTo('#container table#check');
 		        	}		        		        	
 				}				
@@ -104,7 +114,66 @@ defined( 'ABSPATH' ) or die(1); ?>
 				    $('#showLess').live( 'click', function () {
 				        x=(x-0<0) ? 10 : x-0;
 				        $('table#check tbody#count').not(':lt('+x+')').hide();
-				    });				    
+				    });	
+
+				     var data = {
+						'action': 'opinionstage_ajax_item_count',
+						'oswp_item_count' : dropdownOptions.data.length
+					};	
+
+					jQuery.post(ajaxurl, data, function(response) {
+						if(response){
+							// console.log(response);
+						}
+					});	
+
+				    jQuery('#itemList').on('change', function() {
+					var selectedValue = this.value;
+					var contentLabel = jQuery(".content-item-label");
+
+					  	contentLabel.each(function() {
+							if(selectedValue != 'all' && selectedValue != jQuery( this ).text().toLowerCase()){
+							  	jQuery( this ).parent().parent().parent().parent().css('display', 'none');
+							}
+							else {
+								jQuery("#searchItem").val('');
+								jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+							}
+						});
+					});
+
+					$("#searchItem").on("keyup",function search(e) {
+					    if(e.keyCode == 13) {
+					        var searchItem = $(this).val();
+					        var listTitle = jQuery('td.long a');
+					        var dropdownValue = jQuery('#itemList').val();
+					        var contentList = jQuery(".content-item-label");
+
+							    listTitle.each(function() {
+						        	var title = jQuery( this ).text().toLowerCase();
+						        	if ( dropdownValue == 'all' ) {
+							        	if(!title.includes(searchItem)) {
+							        		jQuery( this ).parent().parent().parent().parent().css('display', 'none');
+							        	}
+							        	else {
+										  	jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+										}
+									}
+									else {
+										contentList.each(function() {
+											if(dropdownValue == jQuery( this ).text().toLowerCase()){
+												if(!title.includes(searchItem)) {
+													jQuery( this ).parent().parent().parent().parent().css('display', 'none');
+												}
+												else {
+												  	jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+												}
+											}
+										});
+									}
+						        });
+					    }
+					});		    
 			},
 			error: function(){
 			    console.log(data.statusText);
