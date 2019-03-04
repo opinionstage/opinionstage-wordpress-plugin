@@ -17,7 +17,12 @@ function opinionstage_link($caption, $path, $css_class = '', $query_data = array
 	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
 function opinionstage_template_link($caption, $path, $css_class = '') {	
-	$link = OPINIONSTAGE_SERVER_BASE.'/'.$path;
+	$query_data['utm_source'] = OPINIONSTAGE_UTM_SOURCE;
+	$query_data['utm_campaign'] = OPINIONSTAGE_UTM_CAMPAIGN;
+	$query_data['utm_medium'] = OPINIONSTAGE_UTM_MEDIUM;
+	$query_data['o'] = OPINIONSTAGE_WIDGET_API_KEY;
+
+	$link = OPINIONSTAGE_SERVER_BASE.'/'.$path.'&'.http_build_query($query_data);
 	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
 

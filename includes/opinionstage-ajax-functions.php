@@ -8,6 +8,7 @@ add_action( 'wp_ajax_opinionstage_ajax_toggle_article_placement', 'opinionstage_
 add_action( 'wp_ajax_opinionstage_ajax_toggle_sidebar_placement', 'opinionstage_ajax_toggle_sidebar_placement' );
 add_action( 'wp_ajax_opinionstage_ajax_tracking_user_data', 'opinionstage_ajax_tracking_user_data' );
 add_action( 'wp_ajax_osa_message_delete', 'opinionstage_message_delete' );
+add_action( 'wp_ajax_opinionstage_ajax_item_count', 'opinionstage_ajax_item_count' );
 
 
 // Toggle the flyout placement activation flag
@@ -52,6 +53,14 @@ function opinionstage_ajax_tracking_user_data() {
 	}else{
 
 	}
+	wp_die('1');
+}
+
+function opinionstage_ajax_item_count() {
+	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	$os_options['item_count'] = intval($_POST['oswp_item_count']);
+
+	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	wp_die('1');
 }
 

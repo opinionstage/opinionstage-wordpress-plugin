@@ -18,79 +18,10 @@ function opinionstage_create_new_href() {
 			<div class='header__container'>
 				<div class='header__logo'>
 					<a href='<?php echo OPINIONSTAGE_SERVER_BASE ?>' target='_blank'>
-						<img src='<?php echo plugins_url('admin/images/logo.svg', plugin_dir_path( __FILE__ )) ?>'>
+						<img src='<?php echo plugins_url('admin/images/os-logo-header.png', plugin_dir_path( __FILE__ )) ?>'>
 					</a>
 				</div>
 				<div class='header__action'>
-					<?php if ( $opinionstage_user_logged_in ) { ?>
-					<div class="create-new-menu-box">
-						<a href="javascript:void(0)" class="btn-create">CREATE NEW</a>
-						<div class="create-new-menu">
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">poll</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_poll_link('create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_poll_link('create-menu__itm'); ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">multi poll set</a>
-						        <ul class="submenu">
-						           	<li><?php echo opinionstage_create_poll_set_link('create-menu__itm', __('Create New')) ?></li>
-						            <!-- <li><?php echo opinionstage_template_survey_link('create-menu__itm', __('survey')) ?></li>	 -->					            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">survey</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('survey', 'create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_survey_link('create-menu__itm'); ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">slideshow</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_slideshow_link( 'create-menu__itm' ); ?></li>
-						            <li><?php echo opinionstage_template_slideshow_link('create-menu__itm') ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">trivia quiz</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('quiz', 'create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_trivia_link('create-menu__itm'); ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">personality quiz</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('outcome', 'create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_personality_quiz_link('create-menu__itm') ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">list</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('list', 'create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_list_link('create-menu__itm'); ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">form</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('contact_form', 'create-menu__itm'); ?></li>
-						            <li><?php echo opinionstage_template_form_link('create-menu__itm'); ?></li>						            
-						        </ul>						            
-						    </li>
-						    <li class="create-menu__itm companymenuli">
-						        <a class="alisting">story</a>
-						        <ul class="submenu">
-						            <li><?php echo opinionstage_create_widget_link('story', 'create-menu__itm'); ?></li>
-						        </ul>						            
-						    </li>
-						</div>
-					</div>
-					<?php } ?>
 					<div class='btn-close' @click="closePopup">X</div>
 				</div>
 			</div>
@@ -115,6 +46,9 @@ function opinionstage_create_new_href() {
 <template id="opinionstage-widget-list">
 <div class='page-content'>
 	<div class='content-actions'>
+		<div class="popup-header-title">My Items</div>
+		<div class="header-right-container">
+		<div class="header-right-inner-container">
 		<div class='filter'>
 			<div class="dropdown">
 				<button class="dropbtn" id="dropbtn"><span>All ITEMS</span></button>
@@ -171,6 +105,9 @@ function opinionstage_create_new_href() {
 				:class='{ hidden: !showSearch }'
 			>
 		</div>
+		</div>
+		<a href="<?php echo admin_url( 'admin.php?page=opinionstage-settings' ); ?>" target='_blank' class="popup-header-item-create-btn">CREATE</a>
+	</div>
 	</div>
 	<div class='content__list'>
 		<div v-if='hasData'>
@@ -181,10 +118,18 @@ function opinionstage_create_new_href() {
 				</div>
 				<p class='content__info'>{{ widget.title }}</p>
 				<div class='content__links'>
-					<button class='content__links-itm' @click="insertShortcode(widget)">insert</button>
+					<button class='popup-content-btn content__links-itm' @click="insertShortcode(widget)">insert</button>
+					<div class="dropdown">
+					<div class="popup-action popup-content-btn"></div>
+					<div class="content-item-menu">
+					<div class="top-arrow-box"><div class="top-arrow"></div></div>
+					<div class="popup-action-dropdown dropdown-content">
 					<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'>view</a>
 					<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template">edit</a>
 					<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">statistics</a>
+					</div>
+					</div>
+					</div>
 				</div>
 			</div>
 			<div class='content__loading' v-if='dataLoading'>
@@ -199,7 +144,7 @@ function opinionstage_create_new_href() {
 			</div>
 		</div>
 		<div v-else>
-			No content found
+			No items found
 		</div>
 	</div>
 </div>
@@ -226,23 +171,10 @@ function opinionstage_create_new_href() {
 			>
 		</div>
 		<div class='page-content' v-else>
-			<div class="bordered-container">
 				<h1 class='main-title'>
-					<b>Connect WordPress</b>
-					<span>with</span>
-					<b>Opinion Stage</b>
-					<span>to get started</span>
+					<b>Connect WordPress with Opinion Stage to get started</b>
 				</h1>
-				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
-					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
-					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
-					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
-					<input type="hidden" name="callback" value="<?php echo opinionstage_content_login_callback_url() ?>">
-					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input class="opinionstage-conect-input">
-					<button class="opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
-				</form>
-			</div>
+				<a id="os-start-login" data-os-login="" href="<?php echo admin_url( 'admin.php?page=opinionstage-getting-started' ); ?>" class="opinionstage-blue-btn">CONNECT</a>
 		</div>
 	</div>
 	<div v-else>
