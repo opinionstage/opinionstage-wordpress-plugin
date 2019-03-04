@@ -4,40 +4,39 @@ defined( 'ABSPATH' ) or die();
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
-		<div class="opinionstage-logo-wrapper">
-			<div class="opinionstage-logo"></div>
-		</div>		
 			<?php if ( !$os_client_logged_in ) {?>
-			<div class="opinionstage-status-content">	
-				<div class='opinionstage-status-title'><b>Connect WordPress with Opinion Stage to Get Started</b></div>
+			<div class="opinionstage-logo-wrapper">
+				<div class="opinionstage-logo"></div>
+			</div>	
+			<div class="opinionstage-status-content">
+				<div class='opinionstage-status-title'><b class="opinionstage-title">Connect WordPress with Opinion Stage to get started</b></div>
 				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-					<i class="os-icon-plugin icon-os-poll-client"></i>
 					<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
 					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
-					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_MEDIUM ?>">
+					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_CONNECT_MEDIUM ?>">
 					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
 					<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
-					<input id="os-email" type="email" name="email" placeholder="Enter Your Email" data-os-email-input required>
+					<input id="os-email" type="email" name="email" placeholder="Your email" data-os-email-input required>
 					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 				</form>
 			</div>
 			<?php } else { ?>
-			<div class="opinionstage-status-content-connected">	
-				<div class='opinionstage-status-title'>You are connected to Opinion Stage with the following email</div>
-				<i class="os-icon-plugin icon-os-form-success"></i>
-				<label class="checked" for="user-email"></label>
-				<input id="os-email" type="email" disabled value="<?php echo($os_options["email"]) ?>">
-				<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
-					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-disconnect">DISCONNECT</button>
-				</form>
-			</div>
-			<?php } ?>		
+			<div class="opinionstage-logo-wrapper">
+				<div class="opinionstage-logo"></div>
+				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
+					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
+						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
+					</form>
+				</div>
+			</div>	
+			<?php } ?>	
 	</div>
 	<div class="opinionstage-dashboard">
-		<div class="opinionstage-dashboard-right">
+		<div class="opinionstage-placement-dashboard">
 			<div id="opinionstage-section-placements" class="opinionstage-dashboard-section <?php echo( $os_client_logged_in ? '' : 'opinionstage-disabled-section' ) ?>">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Placements</div>
+					<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-site-using-placements" style="float: right;" target="_blank">Need help working with Placements?</a>
 				</div>
 				<div class="opinionstage-section-content-wrapper">
 					<div class="opinionstage-section-content">
@@ -127,7 +126,9 @@ defined( 'ABSPATH' ) or die();
 					</div>
 				</div>
 			</div>
-			<p style="font-weight: 600; font-size: 15px;"><a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-site-using-placements" target="_blank">Need help with Placements?</a></p>
 		</div>
+		<?php if ( !$os_client_logged_in ) {
+			echo '<div id="overlay"></div>';
+		} ?>
 	</div>
 </div>

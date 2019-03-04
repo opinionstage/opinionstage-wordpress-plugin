@@ -31,7 +31,7 @@ class OpinionStageAdminPageLoader {
 			include_once( plugin_dir_path( __FILE__ ).'content-popup.php' );
 			// Load Hotjar script for user data tracking
 			$oswpHotjarNewPost = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
-			if($oswpHotjarNewPost == 'post-new.php' || $oswpHotjarNewPost == 'post.php'){
+			if($oswpHotjarNewPost == 'post-new.php' || $oswpHotjarNewPost == 'post.php' || $oswpHotjarNewPost == 'plugins.php'){
 				include_once( plugin_dir_path( __FILE__ ).'opinionstage-usage-tracking-code.php' );
 			}
 		}

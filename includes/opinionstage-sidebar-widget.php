@@ -95,35 +95,38 @@ require_once( plugin_dir_path( __FILE__ ).'opinionstage-client-session.php' );
 
 				<div class="opinionstage-sidebar-widget">
 					<?php if ( $os_client_logged_in ) {?>
-						<div class="opinionstage-sidebar-connected">
+						<!-- <div class="opinionstage-sidebar-connected">
 							<div class="os-icon icon-os-form-success"></div>
 							<div class="opinionstage-connected-info">
 								<div class="opinionstage-connected-title"><b>You are connected</b> to Opinion Stage with:</div>
 								<input id="os-email" type="email" disabled="disabled" value="<?php echo($os_options["email"]) ?>">
 								<a href="javascript:void(0)" class="switch-email" id="os-switch-email" >Switch Account</a>
 							</div>
-						</div>
+						</div> -->
+						<img src="<?php echo plugins_url( 'admin/images/os-logo.png', dirname(__FILE__) ); ?>" >
 						<p>
 							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_TEXT_DOMAIN); ?></label>
 							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" placeholder="Enter the title here" value="<?php echo $title; ?>" >
 						</p>
 						<div class="opinionstage-sidebar-actions">
-							<div class="opinionstage-sidebar-enabled">
+							<!-- <div class="opinionstage-sidebar-enabled">
 								<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
 								<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
-							</div>
+							</div> -->
 							<div class="opinionstage-sidebar-config">
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn'>EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn opinionstage-edit-content'>EDIT CONTENT</a>
 								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
 							</div>
 						</div>
 					<?php } else { ?>
-						<p>Connect WordPress with Opinion Stage to enable the widget</p>
-						<div class="os-icon icon-os-poll-client"></div>
-						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email">
-						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>
+						<img src="<?php echo plugins_url( 'admin/images/os-logo.png', dirname(__FILE__) ); ?>" >
+						<p class="connection_message">Connect WordPress with Opinion Stage to enable the widget</p>
+						<!-- <div class="os-icon icon-os-poll-client"></div>
+						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email"> 
+						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>-->
+						<a href="<?php echo admin_url( 'admin.php?page=opinionstage-getting-started' ); ?>" class="os-button start-login opinionstage-blue-btn" id="os-start-login">Connect</a>
 					<?php } ?>
 				</div>
 			<?php

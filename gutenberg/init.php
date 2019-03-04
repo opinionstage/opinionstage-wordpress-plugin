@@ -62,7 +62,7 @@ function oswp_gutenberg_enqueue_scripts() {
 		$getUrlFormAction = 'https://www.opinionstage.com/integrations/wordpress/new';
 
 		// Opninionstge logo image link
-		$logoImagelinkOs = plugin_dir_url( __FILE__ ) . 'image/gutenberg-os.png';
+		$logoImagelinkOs = plugin_dir_url( __FILE__ ) . 'image/os-logo.png';
 
 		// Data to pass to gutenberg editor
 	    $dataToPass = array(
