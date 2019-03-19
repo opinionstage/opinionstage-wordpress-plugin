@@ -50,7 +50,7 @@ function opinionstage_create_new_href() {
 		<div class="header-right-container">
 		<div class="header-right-inner-container">
 		<div class='filter'>
-			<div class="dropdown">
+			<div class="dropdown dropdown_items">
 				<button class="dropbtn" id="dropbtn"><span>All ITEMS</span></button>
 				<div class="dropdown-content">
 					<div class='filter__itm'
@@ -112,14 +112,16 @@ function opinionstage_create_new_href() {
 	<div class='content__list'>
 		<div v-if='hasData'>
 			<div class='content__itm' v-for="widget in widgets">
+				<a target="_blank" :href='widget.landingPageUrl'>
 				<div class='content__image'>
 					<img :src='widget.imageUrl'>
 					<div class='content__label'>{{ widget.type }}</div>
 				</div>
-				<p class='content__info'>{{ widget.title }}</p>
+				</a>
+				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
 				<div class='content__links'>
 					<button class='popup-content-btn content__links-itm' @click="insertShortcode(widget)">insert</button>
-					<div class="dropdown">
+					<div class="dropdown dropdown-popup-action">
 					<div class="popup-action popup-content-btn"></div>
 					<div class="content-item-menu">
 					<div class="top-arrow-box"><div class="top-arrow"></div></div>
@@ -201,11 +203,24 @@ function opinionstage_create_new_href() {
 	</div>
 </template>
 	<script>
-		jQuery(document).ready(function ($) {	
+		jQuery(document).ready(function ($) {				
 		   	$('.filter__itm').live('click', function(e) {
 			   	var text = $(this).text();
 		   		$("button#dropbtn span").text(text);
+		   		
+		   		$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
 			});
+			
+		   	setTimeout(function(){
+		   	$(".dropdown_items #dropbtn").hover(function() {
+				  $('.dropdown_items .dropdown-content').css("display","block");
+				});
+		   	},3000);
+
+			jQuery(document).live('click', function(e) {
+				$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
+			});
+			
 			$('div#show-templates').live('click', function(e) {
 				var inputs = $(".filter__itm");
                	for(var i = 0; i < inputs.length; i++){

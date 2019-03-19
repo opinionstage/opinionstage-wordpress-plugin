@@ -96,7 +96,7 @@ var options;
                 } 
             }
 
-            var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=form&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
+            var getOsCreateButtonClickUrl = osGutenData.onCreateButtonClickOs+'?w_type=contact_form&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8';
             const onCreateButtonClick = value => {
                 // Open Create new form link in new page
                 window.open(getOsCreateButtonClickUrl, '_blank').focus();
@@ -110,12 +110,16 @@ var options;
             var callback_url = getCallBackUrlOs;
             var formActionUrlOS = osGutenData.getActionUrlOS;
             var getlogoImageLinkOs = osGutenData.getLogoImageLink;
+            var os_options = osGutenData.getOsOption;
+            var itemCount = os_options.item_count;
             const onConnectOSWPButtonClick = value => {
                 // Open Connect to opinionstage
                 window.location.replace(callback_url);
             };
+
+
             // Populate list ajax function
-            function OsPolulateList() {          
+            function OsPolulateList() { 
                 var opinionStageWidgetVersion = osGutenData.OswpPluginVersion;
                 var opinionStageClientToken = osGutenData.OswpClientToken;
                 var opinionstageFetchDataUrl = osGutenData.OswpFetchDataUrl+'?type=form&page=1&per_page=99';
@@ -159,8 +163,9 @@ var options;
                             <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
                             <p className="components-heading">Please connect WordPress to Opinion Stage to start adding forms</p>
                             <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
-                        </div>          
-                    </div>
+                        </div> 
+                         <span></span>         
+                    </div>                   
                 );
             }else{                
                 if(dropdownOptions == false){   
@@ -192,18 +197,23 @@ var options;
                     }                   
                 }              
                 if(embedUrl == 'refresh'){                                       
-                    OsPolulateList();   
+                    OsPolulateList();  
                 }            
                 var contentDropdown = (<SelectControl id="selectID" options={options} value={embedUrl}  onChange={onDropdownChange} className="components-select-control__input" />);
+
                 $(document).ready(function () {
-                    $('.progress_message').css('display', 'block');
-                    $('.content__list').css('display', 'none');
+                    $('button.btn-blue').live('click', function(e) {
+                        e.preventDefault();
+                        OsPolulateList();
+                    });
                     $('span#oswpLauncherContentPopupform').live('click', function(e) {
                         e.preventDefault();
-                        setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
+                        
+                        setTimeout(function(){$('.editor-post-save-draft').trigger('click'); props.setAttributes({ embedUrl: 'refresh' }); OsPolulateList(); },500);
                         var text = $(this).attr('data-os-block');
                         $("button#dropbtn span").text(text);   
-                        var inputs = $(".filter__itm");                                                                  
+                        var inputs = $(".filter__itm");  
+
                         for(var i = 0; i < inputs.length; i++){
                             if($(inputs[i]).text() == text){
                                 setTimeout(function(){$(inputs[i]).trigger('click');},1000);
@@ -211,6 +221,7 @@ var options;
                                         $('.progress_message').css('display', 'none');
                                         $('.content__list').css('display', 'block');
                                 },2500);
+
                                 $('button.content__links-itm').live('click', function(e) {
                                     $('.tingle-modal.opinionstage-content-popup').hide();
                                     $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
@@ -220,12 +231,10 @@ var options;
                             else {
                                 $('.progress_message').css('display', 'block');
                                 $('.content__list').css('display', 'none');
-                                console.log('test');
                             }
                         }
                     });               
                 });
-
                 var contentViewEditStatOs = ( 
                         <div className="os-form-wrapper components-placeholder">
                         <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>                        

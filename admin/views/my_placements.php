@@ -59,7 +59,7 @@ defined( 'ABSPATH' ) or die();
 								<div class="example">Add a content popup to your site</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_flyout_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_flyout_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">SELECT ITEM</a>
 								<a href="<?php echo opinionstage_flyout_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon-plugin icon-os-common-settings"></div>
 								</a>
@@ -84,7 +84,7 @@ defined( 'ABSPATH' ) or die();
 								<div class="example">Add a content section to all posts</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_article_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">SELECT ITEM</a>
 								<a href="<?php echo opinionstage_article_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon-plugin icon-os-common-settings"></div>
 								</a>
@@ -117,7 +117,7 @@ defined( 'ABSPATH' ) or die();
 								</div>
 							</div>
 							<div class="opinionstage-section-cell opinionstage-btns-cell">
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">EDIT CONTENT</a>
+								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-content <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">SELECT ITEM</a>
 								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon-plugin icon-os-common-settings"></div>
 								</a>

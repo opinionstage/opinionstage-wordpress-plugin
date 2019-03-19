@@ -160,7 +160,8 @@ var options;
                             <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
                             <p className="components-heading">Please connect WordPress to Opinion Stage to start adding slideshows</p>
                             <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
-                        </div>          
+                        </div>     
+                        <div></div>     
                     </div>
                 );
             }else{                
@@ -197,9 +198,13 @@ var options;
                 }            
                 var contentDropdown = (<SelectControl id="selectID" options={options} value={embedUrl}  onChange={onDropdownChange} className="components-select-control__input" />);
                 $(document).ready(function () {
+                    $('button.btn-blue').live('click', function(e) {
+                        e.preventDefault();
+                        OsPolulateList();
+                    });
                     $('span#oswpLauncherContentPopupslideshow').live('click', function(e) {
                         e.preventDefault();
-                        setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
+                        setTimeout(function(){$('.editor-post-save-draft').trigger('click'); props.setAttributes({ embedUrl: 'refresh' }); OsPolulateList(); },500);
                         var text = $(this).attr('data-os-block');
                         $("button#dropbtn span").text(text);   
                         var inputs = $(".filter__itm");                                                                  
@@ -219,7 +224,6 @@ var options;
                             else {
                                 $('.progress_message').css('display', 'block');
                                 $('.content__list').css('display', 'none');
-                                console.log('test');
                             }
                         }
                     });               

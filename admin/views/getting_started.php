@@ -43,5 +43,38 @@ defined( 'ABSPATH' ) or die();
 				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank"><div class="gettingTemplateTutorial">GETTING STARTED <br/>TUTORIALS</div></a>
 			</div>
 		</div>
+
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script type="text/javascript">
+			var aElems = document.getElementsByTagName('a');
+
+			for (var i = 0, len = aElems.length; i < len; i++) {
+			    aElems[i].onclick = function(e) {
+			    	e.preventDefault();
+			    	var href = jQuery(this).attr('href');
+			    	var target = jQuery(this).attr('target');
+
+					swal({
+			            title: "Leave without connecting?",
+			            text: "To use this plugin you need to first connect WordPress with Opinion Stage.",
+			            icon: "warning",
+			            buttons: ["Cancel", "Leave"],
+			        })
+			        .then((willDelete) => {
+				        if (willDelete) {
+				        	if(target !== undefined) {
+				        		window.open(href, target);
+				        	}
+				        	else {
+					        	window.location.href = href;
+					        }
+				        }
+				        else {
+				        	jQuery('#os-email').focus();
+				        }
+			        });
+			    };
+			}
+		</script>
 	<?php } ?>
 </div>
