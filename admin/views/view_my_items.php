@@ -2,7 +2,6 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die(1); ?>
 
-<!-- <div class="wrap"> -->
 	<div id="opinionstage-content">
 		<div class="opinionstage-header-wrapper">	
 				<?php if ( $os_client_logged_in ) { ?>
@@ -48,12 +47,12 @@ defined( 'ABSPATH' ) or die(1); ?>
 		</div>
 		<p class="result_progress" style="display: block; font-size: 16px; text-align: center;">Loading...</p>
 		<table id="check"></table>
+		<p class="no_item" style="display: none; font-size: 15px; text-align: center;">No items found</p>
 		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;">Click for more</div>
 		<div id="showLess" style="display: none;">Show less</div>
 		</div>
 	</div>
 	</div>
-	<!-- </div>	 -->
 <script type="text/javascript">
 	jQuery(document).ready(function($){		
     	$.ajax({
@@ -86,7 +85,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			            var previewBlockOsView = dropdownOptions.data[i].attributes['landing-page-url'];
 			            var previewBlockOsEdit = dropdownOptions.data[i].attributes['edit-url'];
 			            var previewBlockOsStatistics = dropdownOptions.data[i].attributes['stats-url'];
-			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </div></a></td></tr></tbody>';
+			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><a href="'+previewBlockOsView+'" target="_blank"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></a></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </div></a></td></tr></tbody>';
 			            	$('.result_progress').css('display', 'none');
 							$(viewtext).appendTo('#container table#check');
 		        	}		        		        	
@@ -94,28 +93,10 @@ defined( 'ABSPATH' ) or die(1); ?>
 			},
 			complete: function(data) {
 				size_li = $("table#check tbody#count").size();
-				if(dropdownOptions.data.length == size_li){
-            			setTimeout(function(){$('#showLess').trigger('click');},500);            			
-          			}
-          			// Show the div in 5s
-				    var countItemOS = 10;
-				    if(dropdownOptions.data.length > countItemOS){
-				    	$("#loadMore").delay(2000).fadeIn(500);
-				    }
-					x=10;
-				    $('table#check ttbody#count:lt('+x+')').show();
-				    $('#loadMore').click(function () {
-				        x= (x+10 <= size_li) ? x+10 : size_li;
-				        $('table#check tbody#count:lt('+x+')').show(500);
-				        if(size_li == x){
-				    		$("#loadMore").hide(500);
-				    	}
-				    });
-				    $('#showLess').live( 'click', function () {
-				        x=(x-0<0) ? 10 : x-0;
-				        $('table#check tbody#count').not(':lt('+x+')').hide();
-				    });	
+				dropdownDataLength = dropdownOptions.data.length;
 
+				console.log(size_li + '' + dropdownDataLength);
+				loadMore(size_li, dropdownDataLength, "all");
 				     var data = {
 						'action': 'opinionstage_ajax_item_count',
 						'oswp_item_count' : dropdownOptions.data.length
@@ -123,23 +104,37 @@ defined( 'ABSPATH' ) or die(1); ?>
 
 					jQuery.post(ajaxurl, data, function(response) {
 						if(response){
-							// console.log(response);
+
 						}
 					});	
 
 				    jQuery('#itemList').on('change', function() {
 					var selectedValue = this.value;
 					var contentLabel = jQuery(".content-item-label");
+					var item_count = 0;
 
+						jQuery('.no_item').css('display', 'none');
 					  	contentLabel.each(function() {
+					  		getContainer = jQuery( this ).parent().parent().parent().parent();
 							if(selectedValue != 'all' && selectedValue != jQuery( this ).text().toLowerCase()){
-							  	jQuery( this ).parent().parent().parent().parent().css('display', 'none');
+							  	getContainer.parent().css('display', 'none');
+							  	getContainer.parent().removeClass('countItem');
 							}
 							else {
 								jQuery("#searchItem").val('');
-								jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+								getContainer.parent().css('display', 'table-row-group');
+								getContainer.parent().addClass('countItem');
+								item_count = item_count + 1;
 							}
 						});
+
+					  	if (item_count == 0) {
+					  		jQuery('.no_item').css('display', 'block');
+					  	}
+
+					  	size = $("table#check tbody.countItem").size();
+					  	$("#loadMore").fadeOut(500);
+					  	loadMore(size, item_count, "filter");
 					});
 
 					$("#searchItem").on("keyup",function search(e) {
@@ -151,22 +146,26 @@ defined( 'ABSPATH' ) or die(1); ?>
 
 							    listTitle.each(function() {
 						        	var title = jQuery( this ).text().toLowerCase();
+						        	outerContainer = jQuery( this ).parent().parent().parent().parent();
+
 						        	if ( dropdownValue == 'all' ) {
 							        	if(!title.includes(searchItem)) {
-							        		jQuery( this ).parent().parent().parent().parent().css('display', 'none');
+							        		outerContainer.css('display', 'none');
 							        	}
 							        	else {
-										  	jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+										  	outerContainer.css('display', 'table-row-group');
 										}
 									}
 									else {
 										contentList.each(function() {
 											if(dropdownValue == jQuery( this ).text().toLowerCase()){
-												if(!title.includes(searchItem)) {
-													jQuery( this ).parent().parent().parent().parent().css('display', 'none');
-												}
-												else {
-												  	jQuery( this ).parent().parent().parent().parent().css('display', 'table-row-group');
+												if (outerContainer.hasClass('countItem')) {
+													if(!title.includes(searchItem)) {
+														outerContainer.css('display', 'none');
+													}
+													else {
+													  	outerContainer.css('display', 'table-row-group');
+													}
 												}
 											}
 										});
@@ -180,5 +179,45 @@ defined( 'ABSPATH' ) or die(1); ?>
 			}
 		});
 
+
+	function loadMore(size, dataLength, item) {
+		if(dataLength == size && dataLength > 10){
+        	setTimeout(function(){$('#showLess').trigger('click');},500);            			
+        }
+        // Show the div in 5s
+        console.log(dataLength + ' ' + size + ' ' + item);
+		var countItemOS = 10;
+		if(dataLength > countItemOS){
+			$("#loadMore").delay(2000).fadeIn(500);
+		}
+
+		x=10;
+		$('table#check ttbody#count:lt('+x+')').show();
+		$('#loadMore').click(function () {
+		    x= (x+10 <= size) ? x+10 : size;
+
+		    if (item == 'all') {
+			    $('table#check tbody#count:lt('+x+')').show(500);
+			}
+			else {
+				$('table#check tbody#countItem:lt('+x+')').show(500);
+			}
+
+		    if(size == x){
+				$("#loadMore").hide(500);
+			}
+		});
+		$('#showLess').live( 'click', function () {
+			console.log(x);
+		    x=(x-0<0) ? 10 : x-0;
+		    console.log(x);
+		    if (item == 'all') {
+		    	$('table#check tbody#count').not(':lt('+x+')').hide();
+		    }
+			else {
+				$('table#check tbody#countItem').not(':lt('+x+')').hide();
+			}
+		});	
+	}
 	});
 </script>

@@ -2,7 +2,7 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die(1);
 
-if(isset($_POST['submit_tracking']) && $_POST['submit_tracking'] == 'Save Changes'){
+if(isset($_POST['submit_tracking']) && $_POST['submit_tracking'] == 'SAVE CHANGES'){
 	if(isset($_POST['opinionstage_allow_tracking']) && $_POST['opinionstage_allow_tracking'] == 'yes'){
 		update_option('oswp_tracking_user_site_data', 'yes');
 	}else{

@@ -115,6 +115,10 @@ span#insert_error_editor a {
   position: relative;
 }
 
+.dropdown-popup-action {
+  height: 45px;
+}
+
 .dropdown-content {
   background-color: #f9f9f9;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -138,6 +142,9 @@ span#insert_error_editor a {
 
 .dropdown-content div:hover {background-color: #3487fa; color: #fff !important;}
 
+.dropdown_items .dropdown-content {
+  width: 180px;
+}
 .dropdown:hover .dropdown-content {
   display: block !important;
   width: 180px;
@@ -311,7 +318,6 @@ li.create-menu__itm.companymenuli a.alisting {
   padding: 30px;
 }
 .opinionstage-content-popup-contents .filter {
-   /* margin-right: 50px !important;*/
     width: auto;
 }
 .opinionstage-content-popup-contents .filter .dropdown .dropbtn {
@@ -392,10 +398,6 @@ li.create-menu__itm.companymenuli a.alisting {
   height: 90px;
   width: 15%;
 }
-/*.opinionstage-content-popup-contents .content__image img {
-  height: 90px;
-  width: 120px;
-}*/
 .opinionstage-content-popup-contents .content__info {
     background: transparent;
     display: inline-block;
@@ -406,6 +408,10 @@ li.create-menu__itm.companymenuli a.alisting {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.opinionstage-content-popup-contents .content__info a, .opinionstage-content-popup-contents .content__info a:hover {
+  color: inherit;
+  text-decoration: none;
 }
 .opinionstage-content-popup-contents .content__itm:hover .content__links {
     display: inline-block;
@@ -438,9 +444,6 @@ li.create-menu__itm.companymenuli a.alisting {
     padding: 12px 25px;
     position: relative;
 }
-/*.popup-action {
-  position: relative;
-}*/
 .popup-action:before {
     color: #32adbc;
     content: "";
@@ -478,7 +481,7 @@ li.create-menu__itm.companymenuli a.alisting {
 .popup-action-dropdown.dropdown-content {
 	left: auto;
 	right: 0;
-	top: 18px;
+	top: 20px;
   	z-index: 10;
 }
 .dropdown:hover .popup-action-dropdown.dropdown-content {
@@ -515,7 +518,6 @@ input.components-button.is-button.is-default.is-block.is-primary {
 }
 .top-arrow-box {
     position: relative;
-    /*padding-top: 7px;*/
 }
 .top-arrow-box .top-arrow {
     background: #ffffff;
@@ -541,7 +543,7 @@ input.components-button.is-button.is-default.is-block.is-primary {
     line-height: normal;
     margin-left: -4px;
     position: absolute;
-    top: 8px;
+    top: 10px;
     transform: rotate(180deg);
     z-index: 99;
 }

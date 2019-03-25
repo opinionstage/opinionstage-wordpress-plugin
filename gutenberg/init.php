@@ -64,6 +64,10 @@ function oswp_gutenberg_enqueue_scripts() {
 		// Opninionstge logo image link
 		$logoImagelinkOs = plugin_dir_url( __FILE__ ) . 'image/os-logo.png';
 
+		// Opinionstage view item count
+		$OsOptions = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+
+
 		// Data to pass to gutenberg editor
 	    $dataToPass = array(
 	        'isOsConnected'         => (isset($os_options['uid']) && $os_options['uid'] != '') ? true : false,
@@ -74,6 +78,7 @@ function oswp_gutenberg_enqueue_scripts() {
 	        'OswpFetchDataUrl'      => $FetchUrlOS,
 	        'getActionUrlOS'        => $getUrlFormAction,
 	        'getLogoImageLink'		=> $logoImagelinkOs,
+	        'getOsOption'			=> $OsOptions,
 	    );
     	wp_localize_script( 'opinionStage_poll_oswp_block_js_set', 'osGutenData', $dataToPass );
 }
