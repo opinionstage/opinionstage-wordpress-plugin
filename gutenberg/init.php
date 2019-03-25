@@ -56,10 +56,10 @@ function oswp_gutenberg_enqueue_scripts() {
 		$OswpPluginVersion = OPINIONSTAGE_WIDGET_VERSION;
 
 		// Fetch Url For Ajax Call Opinion Stage
-		$FetchUrlOS = 'https://www.opinionstage.com/api/wp/v1/my/widgets';
+		$FetchUrlOS = OPINIONSTAGE_SERVER_BASE.'/api/wp/v1/my/widgets';
 
 		// Url For Creating New Content OR Template On Opinion Stage
-		$getUrlFormAction = 'https://www.opinionstage.com/integrations/wordpress/new';
+		$getUrlFormAction = OPINIONSTAGE_SERVER_BASE.'/integrations/wordpress/new';
 
 		// Opninionstge logo image link
 		$logoImagelinkOs = plugin_dir_url( __FILE__ ) . 'image/os-logo.png';
@@ -71,7 +71,7 @@ function oswp_gutenberg_enqueue_scripts() {
 		// Data to pass to gutenberg editor
 	    $dataToPass = array(
 	        'isOsConnected'         => (isset($os_options['uid']) && $os_options['uid'] != '') ? true : false,
-	        'onCreateButtonClickOs' => 'https://www.opinionstage.com/api/wp/redirects/widgets/new',
+	        'onCreateButtonClickOs' => OPINIONSTAGE_SERVER_BASE.'/api/wp/redirects/widgets/new',
 	        'callbackUrlOs'         => $adminUrlForOs,
 	        'OswpPluginVersion'     => $OswpPluginVersion,
 	        'OswpClientToken'       => opinionstage_user_access_token(),
