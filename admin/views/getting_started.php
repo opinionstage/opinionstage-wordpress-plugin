@@ -16,9 +16,9 @@ defined( 'ABSPATH' ) or die();
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
-				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery'); ?>
-				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution') ?>
-				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank"><div class="gettingTemplateTutorial">GETTING STARTED <br/>TUTORIALS</div></a>
+				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>
+				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution help-link') ?>
+				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial">GETTING STARTED <br/>TUTORIALS</div></a>
 			</div>
 		</div>
 	<?php }else{ ?>
@@ -38,9 +38,9 @@ defined( 'ABSPATH' ) or die();
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
-				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery'); ?>
-				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution') ?>
-				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank"><div class="gettingTemplateTutorial">GETTING STARTED <br/>TUTORIALS</div></a>
+				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>
+				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution help-link') ?>
+				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial help-link">GETTING STARTED <br/>TUTORIALS</div></a>
 			</div>
 		</div>
 
@@ -54,25 +54,35 @@ defined( 'ABSPATH' ) or die();
 			    	var href = jQuery(this).attr('href');
 			    	var target = jQuery(this).attr('target');
 
-					swal({
-			            title: "Leave without connecting?",
-			            text: "To use this plugin you need to first connect WordPress with Opinion Stage.",
-			            icon: "warning",
-			            buttons: ["Cancel", "Leave"],
-			        })
-			        .then((willDelete) => {
-				        if (willDelete) {
-				        	if(target !== undefined) {
-				        		window.open(href, target);
-				        	}
-				        	else {
-					        	window.location.href = href;
+			    	console.log(e.target.classList);
+			    	if(e.target.classList.contains('help-link')){
+			    		if(target !== undefined) {
+					        window.open(href, target);
+					    }
+					    else {
+						    window.location.href = href;
+						}
+			    	}else{
+			    		swal({
+				            title: "Leave without connecting?",
+				            text: "To use this plugin you need to first connect WordPress with Opinion Stage.",
+				            icon: "warning",
+				            buttons: ["Cancel", "Leave"],
+				        })
+				        .then((willDelete) => {
+					        if (willDelete) {
+					        	if(target !== undefined) {
+					        		window.open(href, target);
+					        	}
+					        	else {
+						        	window.location.href = href;
+						        }
 					        }
-				        }
-				        else {
-				        	jQuery('#os-email').focus();
-				        }
-			        });
+					        else {
+					        	jQuery('#os-email').focus();
+					        }
+				        });
+			    	}
 			    };
 			}
 		</script>
