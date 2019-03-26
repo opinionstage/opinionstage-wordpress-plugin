@@ -2,6 +2,8 @@
 /dev.ini
 # Windows artefacts:
 /Thumbs.db
+# OSX artefacts
+.DS_Store
 # plugin builds:
 /*.zip
 
