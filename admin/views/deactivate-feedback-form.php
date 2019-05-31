@@ -34,6 +34,8 @@ global $wp_version;
 			$editor = 'Gutenberg';
 		}
 	}
+	// PHP Version
+	$currentPhpVersion = phpversion();
  ?>
 <style type="text/css">
 	.os-feedback-modal-wrapper {
@@ -166,9 +168,10 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 					$ospItemCount = '<?php echo $item_count; ?>';
 					$pluginVersion="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>";
 					$oseditor = '<?php echo $editor; ?>';
+					$osPhpVersion = '<?php echo $currentPhpVersion; ?>';
 
 					mixpanel.track("WordPress Opinion Stage Disconnect",
-					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, 'editor': $oseditor, },
+					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected,"PhpVersion":$osPhpVersion, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, 'editor': $oseditor, },
 					    function(){
 					    	window.location = elemOpen.find('a').attr('href');
 					    }
