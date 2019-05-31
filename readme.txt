@@ -3,7 +3,7 @@ Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form, interactive content
 Requires at least: 2.8
-Tested up to: 5.1
+Tested up to: 5.2.1
 Stable tag: 19.6.20
 
 Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Minutes.

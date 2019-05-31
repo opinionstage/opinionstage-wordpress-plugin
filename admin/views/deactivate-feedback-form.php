@@ -38,9 +38,7 @@ global $wp_version;
 	$currentPhpVersion = phpversion();
 
 	// Current Plugin Name
-	$plugin_name =	get_plugins( '/' . explode( '/', plugin_basename( __FILE__ ) )[0] );
-	$plugin_name = json_encode($plugin_name['plugin.php']);
-// $plugin_name = $plugin_name['plugin.php']['Name']);
+	$plugin_name =	"Poll, Survey, Form & Quiz Maker by OpinionStage";
  ?>
 <style type="text/css">
 	.os-feedback-modal-wrapper {
@@ -135,8 +133,7 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 		
 		$(elemSend).click(function(){
 			var plugin_name = '<?php echo $plugin_name; ?>';
-			plugin_name = JSON.parse(plugin_name);
-			var current_plugin_name = plugin_name.Name;
+			var current_plugin_name = plugin_name;
 
 			if( jQuery('input[name=reason]:checked', $(elemModal)).length > 0 ){				
 				var reason = jQuery('input[name=reason]:checked', $(elemModal)).val();
@@ -203,7 +200,6 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 			$('input[type=text]', $(elemModal)).hide();
 			$(this).parent().find('input[type=text]').show();
 		});
-
 	});
 </script>
 
