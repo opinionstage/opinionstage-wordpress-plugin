@@ -36,6 +36,11 @@ global $wp_version;
 	}
 	// PHP Version
 	$currentPhpVersion = phpversion();
+
+	// Current Plugin Name
+	$plugin_name =	get_plugins( '/' . explode( '/', plugin_basename( __FILE__ ) )[0] );
+	$plugin_name = json_encode($plugin_name['plugin.php']);
+// $plugin_name = $plugin_name['plugin.php']['Name']);
  ?>
 <style type="text/css">
 	.os-feedback-modal-wrapper {
@@ -129,6 +134,9 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 		});
 		
 		$(elemSend).click(function(){
+			var plugin_name = '<?php echo $plugin_name; ?>';
+			plugin_name = JSON.parse(plugin_name);
+			var current_plugin_name = plugin_name.Name;
 
 			if( jQuery('input[name=reason]:checked', $(elemModal)).length > 0 ){				
 				var reason = jQuery('input[name=reason]:checked', $(elemModal)).val();
@@ -169,9 +177,10 @@ mixpanel.init("73bec82504e0f14a7dba16aebd26b97d",{
 					$pluginVersion="<?php echo OPINIONSTAGE_WIDGET_VERSION ?>";
 					$oseditor = '<?php echo $editor; ?>';
 					$osPhpVersion = '<?php echo $currentPhpVersion; ?>';
+					$currentPluginName = current_plugin_name;
 
 					mixpanel.track("WordPress Opinion Stage Disconnect",
-					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected,"PhpVersion":$osPhpVersion, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, 'editor': $oseditor, },
+					    {"reason": reason, "details": reason ,"url": window.location.href,"opinionStagePluginConnect": $opswConnected,"PhpVersion":$osPhpVersion,"CurrentPluginName":$currentPluginName, "wpVersion": $ospVersion, "osVersion": $pluginVersion, "theme": $ospTheme, "pluginList": $ospPluginList, "email": $ospEmail, 'totalItem': $ospItemCount, 'editor': $oseditor, },
 					    function(){
 					    	window.location = elemOpen.find('a').attr('href');
 					    }
