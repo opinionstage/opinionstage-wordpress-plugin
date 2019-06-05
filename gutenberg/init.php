@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
  // Adding a block opinion-stage for below elements 
-add_filter( 'block_categories', 'blockCategories', 10, 2 );	
-function blockCategories( $categories, $post ) {
+add_filter( 'block_categories', 'osplugin_guten_blockCategories', 10, 2 );	
+function osplugin_guten_blockCategories( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
