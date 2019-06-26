@@ -1,18 +1,19 @@
 ﻿=== Poll, Survey, Form & Quiz Maker by OpinionStage ===
 Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
-Tags: poll, quiz, survey, form, interactive content
+Tags: poll, quiz, survey, form
 Requires at least: 2.8
 Tested up to: 5.2.1
 Stable tag: 19.6.21
+Requires PHP: 5.2
 
-Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Minutes.
+Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Seconds.
 
 == Description ==
 
-Looking for a Top-Notch Poll, Survey, Form & Quiz Wordpress Plugin?
+Looking for a Professional Poll, Survey, Form & Quiz Wordpress Plugin?
 
-Check out:
+Check out the following examples:
 
 <a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=✓&types%5B%5D=poll&o=wp35e8" target="_blank">Poll Examples</a>
 <a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=personality_quiz&o=wp35e8" target="_blank">Quiz Examples</a>
@@ -26,84 +27,24 @@ Check out:
  * Generate revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the interactive content.
  * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with a intuitive analytics dashboard.
 
-= Main Poll WordPress Plugin Features: =
+= Main Poll, Survey, Form & Quiz WordPress Plugin Features: =
 
- * Create polls with 4 different layouts (standard, image, thumbnails & head-to-head)
- * Easily add images & videos into the polls either from your computer or by using an integrated search poll image function
- * Configure if user can select one or more options when voting on the poll
- * Allow users to add their own answers to the poll
- * Block repeat voting in the poll using different mechanisms (e.g. Cookie, IP, etc)
- * Permit user to vote on the poll once every configured time frame (e.g. every hour, day, etc)
- * Display a customized message to the user after he votes on the poll
- * Configure to close the poll at a specified time
- * Redirect users to different landing pages based on their poll vote
- * Configure the display order of the poll options (e.g. most votes on top, random)
- * Configure if the poll results are displayed before voting, after voting or only to the poll creator
- * Configure how results are displayed to the poll voters (only percentage, number of votes, both, etc)
- * Integrate ads inside the polls to increase ad-revenue from your site
- * Configure webhooks for sending the information gathered from your poll to any 3rd party application
- * Graphic presentations of the poll results including pie & chart bars
- * View a detailed result table of all poll votes (e.g. vote side, vote timestamp, etc)
- * Export the poll results to an xls or csv file
-
- = Main Quiz WordPress Plugin Features: =
-
- * Create a personality quiz, trivia quiz, score quiz, true/false quiz, assessment quiz, multiple-choice quiz or outcome quiz
- * Integrate images & videos in the quiz from your computer, from a link or using online search capabilities
- * Set the main image that is shared when users share the quiz on social networks
- * Configure to request users to like your facebook page before they view the quiz results
- * Configure the facebook & twitter sharing message that is displayed when users share the quiz
- * Configure webhooks for sending all the information gathered in the quiz to any 3rd party application
- * Integrate ads in the quiz interface to increase your sites ad-revenue potential
- * Add pixel tracking to the quiz to optimize your ad campaigns
- * View high level statistics of your quiz including quiz impressions, quiz starts, quiz completions, average time spend on quiz, # of engagements on the quiz & # of leads generated while users participated in the quiz
- * View the detailed results of each quiz question
- * View a drop-off report that shows the percentage of users that voted in each quiz question
- * View a detailed response report that includes all the details of each quiz submission (e.g. detailed answers, timestamp, etc)
- * Export the quiz results to a xls or csv file
- * Detailed logic of personality quizzes, including a scoring system for sides and formula for calculating the quiz outcome
- * Detailed logic for trivia quizzes, including setting the correct answers, displaying explanations after selecting answers, calculating the results and various quiz result display options
- * Support for randomizing answers in each quiz question to improve validity of results
- * Support for call-to-action buttons at the end of the quiz
- * Support sending to different landing pages based on the quiz outcome
-
- = Main Survey WordPress Plugin Features: =
-
- * Integrate images & videos to make the survey appealing & engaging. You can either upload images from your computer or use online search to locate free-to-use images
- * Support both single selection and multiple selection questions and supports allowing users to add their own answer
- * Support open ended questions of different types
- * Supports informative cards that can be displayed inside the survey
- * Supports a call-to-action action at the end of the survey
- * Supports branch logic that lets you determine which question is asked next based on the answer to the last question
- * Supports setting variables that can be set based on answers of users (for example saving their name to use in following questions)
- * Supports social integrations, such as adding a social sharing bar, integrations with facebook like box and facebook comments and twitter message customization
- * Supports sending submissions via email to the survey creator
- * Supports webhooks for sending all the gathered information to a 3rd party tool
- * Naive integrations with mailchimp & hubspot
- * Integration with pixels to optimize ad-campaigns focused on getting relevant audience to the survey
- * Overview statistics that include number of views, starts, completions, # of engagement, average time on survey and # of leads gathered
- * Detailed response table, each response with all the answers and meta data such as timestamp of submission
- * Graphic display (pie chart & bar chart) of answers to each one of the questions
- * Drop off report to help optimize the survey for maximum completion rates
-
- = Main Form WordPress Plugin Features: =
-
- * Supports Short & long text fields
- * Supports Email fields including 2 approval checkboxes
- * Support phone number field
- * Supports drop-down field
- * Configure to send an email to form creator on each submission
- * Support sending all the gathered information to a 3rd party application using webhooks
- * Supports native integrations with mailchimp and hubspot
- * View statistics on # of views vs. # of submissions
- * View all submissions including the all field entries and meta data such as timestamp of submission
-
- = Placements: =
-
- * Sidebar placement - add to the site sidebar using a dedicated Opinion Stage sidebar widget
- * Popup placement - popup when users enter or exit your site using a highly configurable popup component
- * Articles placement - display at the end of all your posts/pages
-
+ * Easy and fast to create either from scratch or using one of the hundreds of templates
+ * Integrate images & videos into the polls, quizzes, surveys and forms
+ * Customize the look & feel by selecting the color theme, fonts and size. CSS override feature to fully match design to your site and brand.
+ * White label the widgets and add your own logo
+ * Display resluts in real-time
+ * Advanced analyics dashboard with both results and performance tables and graphs
+ * Export all the details to a csv/xls file
+ * Integrates with social networks (e.g. facebook, twitter, etc) to promote sharing and viral distrubution of polls & quizzes
+ * Notify with email on form & survey submissions
+ * Add call to actions at the end of quizzes & surveys
+ * Branch logic that lets you determine which question is asked next based on the answer to the last question
+ * Integrate with your marketing automation using native integrations (e.g. mailchip, hubspot, etc), zapier.com or webhooks
+ * Embed in a single post/page or display in a sidebar or section placement
+ * Popup the poll, survey, quiz or form automatically when user enters/exits the page
+ * Responsive design that optimizes display of widgets in desktops, tablets and mobile devices
+ 
  = Language support =
 
 Opinion Stage supports over 42 languages, missing a language? Let us know!
