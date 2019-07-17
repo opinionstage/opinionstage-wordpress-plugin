@@ -16,9 +16,8 @@ defined( 'ABSPATH' ) or die();
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
-				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>
-				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution help-link') ?>
-				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial">GETTING STARTED <br/>TUTORIALS</div></a>
+				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial">GETTING STARTED <br/>VIDEO TUTORIAL</div></a>
+				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>				
 			</div>
 		</div>
 	<?php }else{ ?>
@@ -38,9 +37,8 @@ defined( 'ABSPATH' ) or die();
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
-				<?php echo opinionstage_link('TEMPLATE <br/> GALLERY', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>
-				<?php echo opinionstage_link('SOLUTIONS & <br/>USE CASES', 'solutions', 'gettingTemplateSolution help-link') ?>
-				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial help-link">GETTING STARTED <br/>TUTORIALS</div></a>
+				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial help-link">GETTING STARTED <br/>VIDEO TUTORIAL</div></a>
+				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>	
 			</div>
 		</div>
 

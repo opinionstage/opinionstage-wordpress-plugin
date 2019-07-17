@@ -18,7 +18,7 @@ function opinionStage_poll_oswp_block_assets_set() {
 	wp_enqueue_style(
 		'opinionStage_poll_oswp_style_css_set',
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), 
-		array( 'wp-blocks' ) 
+		array() 
 	);
 } 
 
