@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		wp_enqueue_style(
 			'opinionStage_personality_oswp_style_css_set',
 			plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), 
-			array( 'wp-blocks' ) 
+			array() 
 		);
 	} 
 	add_action( 'enqueue_block_assets', 'opinionStage_personality_oswp_block_assets_set' );

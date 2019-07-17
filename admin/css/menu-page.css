@@ -798,17 +798,17 @@ div#loadMore {
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;
-    padding: 30px 0;
+    padding: 20px 0;
     text-align: center;
     text-decoration: none;
-    width: 32%;
+    width: 100%;
+    max-width: 370px;
 }
-.gettingTemplateGallery, .gettingTemplateSolution {
+.gettingTemplateGallery, .gettingTemplateSolution,.gettingTemplateTutorial  {
     float: left;
-    margin-right: 9px; 
 }
 .gettingTemplateTutorial {
-    float: right;
+    margin-right: 10px;
 }
 .gettingTemplateGallery:hover, .gettingTemplateSolution:hover, .gettingTemplateTutorial:hover {
   background-color: rgba(49, 174, 190, 0.1);
