@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form
 Requires at least: 2.8
 Tested up to: 5.2.1
-Stable tag: 19.6.21
+Stable tag: 19.6.22
 Requires PHP: 5.2
 
 Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Seconds.
@@ -97,6 +97,8 @@ Opinion Stage offers many built-in customization options such as selecting the c
 N/A
 
 == Changelog ==
+  = 19.6.22 =
+  * bugfixes
   = 19.6.21 =
   * Added support WordPress 5.2.x
   * Removed support for PHP versions lower than 5.2
