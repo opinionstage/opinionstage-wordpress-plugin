@@ -3,55 +3,59 @@ Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form
 Requires at least: 2.8
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 Stable tag: 19.6.22
 Requires PHP: 5.2
 
-Add a beautiful & top performing Poll, Survey, Quiz or Form to your site. Create from scratch or use templates. Set it up in Seconds.
+Add Polls, Surveys or Quizzes to your Wordpress site. Create from scratch or based on templates. Get started in seconds.
 
 == Description ==
 
-Looking for a Professional Poll, Survey, Form & Quiz Wordpress Plugin?
+Opinion Stage is a poll, survey, form and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
+You can create the items from scratch or using hundreds of optimized templates. 
 
-Check out the following examples:
+<a href="https://www.opinionstage.com/templates?o=wp35e8" target="_blank">Check out our Quiz, Poll, Survey and Form Examples</a>
 
-<a href="https://www.opinionstage.com/poll?o=wp35e8" target="_blank">Poll Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=✓&types%5B%5D=poll&o=wp35e8" target="_blank">Poll Examples</a>
-<a href="https://www.opinionstage.com/quiz?o=wp35e8" target="_blank">Quiz Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=personality_quiz&o=wp35e8" target="_blank">Quiz Examples</a>
-<a href="https://www.opinionstage.com/survey?o=wp35e8" target="_blank">Survey Maker</a> | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=survey&o=wp35e8" target="_blank">Survey Examples</a>
-<a href="https://www.opinionstage.com/form?o=wp35e8" target="_blank">Form Maker</a>  | <a href="https://www.opinionstage.com/templates?utf8=%E2%9C%93&types%5B%5D=form&o=wp35e8" target="_blank">Form Examples</a>
+==  Why use Opinion Stage? ==
 
-=  Why use Opinion Stage? =
+ * Boost engagement & traffic - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views. Increase social sharing and viral distribution.
+ * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey. This will not only produce more leads than static forms, but will also produce qualified leads, as the leads will be associated with the answers of the users.
+ * Generate revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the polls and quizzes.
+ * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with an intuitive analytics dashboard.
 
- * Boost engagement & traffic - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views. Increase social sharing and viral distribution
- * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey. This will not only produce more leads, but will also produce qualified leads, as the leads will be associated with the answers of the users.
- * Generate revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the interactive content.
- * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with a intuitive analytics dashboard.
+== Main Poll, Survey, Form & Quiz WordPress Plugin Features: ==
 
-= Main Poll, Survey, Form & Quiz WordPress Plugin Features: =
-
- * Easy and fast to create either from scratch or using one of the hundreds of templates
- * Integrate images & videos into the polls, quizzes, surveys and forms
- * Customize the look & feel by selecting the color theme, fonts and size. CSS override feature to fully match design to your site and brand.
- * White label the widgets and add your own logo
- * Display resluts in real-time
- * Advanced analyics dashboard with both results and performance tables and graphs
- * Export all the details to a csv/xls file
- * Integrates with social networks (e.g. facebook, twitter, etc) to promote sharing and viral distrubution of polls & quizzes
- * Notify with email on form & survey submissions
- * Add call to actions at the end of quizzes & surveys
- * Branch logic that lets you determine which question is asked next based on the answer to the last question
- * Integrate with your marketing automation using native integrations (e.g. mailchip, hubspot, etc), zapier.com or webhooks
- * Embed in a single post/page or display in a sidebar or section placement
- * Popup the poll, survey, quiz or form automatically when user enters/exits the page
- * Responsive design that optimizes display of widgets in desktops, tablets and mobile devices
+ * Easy and fast to create polls, surveys and quizzes either from scratch or using one of the hundreds of free templates.
+ * Integrate images & videos into the polls, quizzes and surveys.
+ * Customize the look & feel by selecting the color theme, fonts and size. Use the CSS override feature to fully match design to your site and brand.
+ * White label the widgets and add your own logo.
+ * Display poll & survey results in real-time.
+ * Advanced analtyics dashboard for quizzes and surveys with both results and performance tables and graphs.
+ * Export all the details to a csv/xls file.
+ * Integrates with social networks (e.g. facebook, twitter, etc) to promote sharing and viral distribution of polls & quizzes.
+ * Notify with email on quiz & survey submissions.
+ * Add call to actions at the end of quizzes & surveys.
+ * Use Survey and quiz branch logic that lets you determine which question is asked next based on the answer to the previous question.
+ * Integrate with your marketing automation using native integrations (e.g. mailchip, hubspot, etc), zapier.com or webhooks.
+ * Embed in a single post/page or display in a sidebar or section placement.
+ * Popup the poll, survey or quiz automatically when users enters/exits the page.
+ * Responsive design that optimizes display of polls, quizzes and surveys in desktops, tablets and mobile devices.
  
- = Language support =
+ == Templates & Examples ==
+
+Opinion Stage offers hundreds of templates that let you get up and going in seconds with optimized poll, quiz, survey and form items. 
+
+ == Integrations ==
+
+Opinion Stage offers hundreds of integrations with all the top email and marketing services. Opinion Stage native integrations (e.g. hubspot, mailchimp, etc), zapier integration, webhook integration and an API.
+
+ == Language support ==
 
 Opinion Stage supports over 42 languages, missing a language? Let us know!
 
- = About Opinion Stage: =
+ == About Opinion Stage: ==
 
-Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, survey, forms, etc) creation service. Opinion Stages' highly engaging content formats are used to boost engagement, gather leads, generate revenue and to extract actionable insights. Opinion Stage works with 100,000+ publishers, brands & agenencies, including world-leading publishers, brands & agencies. For more details, visit <a href="https://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
+Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, survey, forms, etc) creation service. Opinion Stages' highly engaging content formats are used to boost engagement, gather leads, generate revenue and to extract actionable insights. Opinion Stage works with 100,000+ creators, including world-leading publishers, brands & agencies. For more details, visit <a href="https://www.opinionstage.com?o=wp35e8" target="_blank">the Opinion Stage site.</a>
 
 == Installation ==
 
@@ -60,45 +64,46 @@ Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, 
 
 == Frequently Asked Questions ==
 
-= Is Opinion Stage content responsive? =
+= Are Opinion Stage items responsive? =
 
-Yes, all content (e.g. poll, quiz, survey, form, etc) created with Opinion Stage is fully responsive, and designed to optimaly display on mobile, tablet and desktop
+Yes, all item formats (e.g. poll, quiz, survey, form, etc) created with Opinion Stage are fully responsive, and designed to optimally display on mobile, tablet and desktop
 
-= What interactive content formats does Opinion Stage support? =
+= What interactive item formats does Opinion Stage support? =
 
-With Opinion Stage you can create the following content formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Slideshow, Form, Story Article, List. We are constantly adding additional interactive content formats so stay tuned!
+With Opinion Stage you can create the following item formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Slideshow, Form, Story Article, List. We are constantly adding additional interactive formats so stay tuned!
 
 = What is the difference between a Poll and a Survey =
 
 Polls include one question and are used for getting a quick answer on a question. Polls are often used for gathering opinions, getting feedback, running contents & competitions and generating engagement. Surveys include multiple questions of different types. Surveys are often used to gather feedback and insights. If you are still unsure whether to use a poll or a survey, contact our support team and we'll be happy to help.
 
-= What customization options do you offer? =
+= What customization options do you offer for the polls, surveys and quizzes? =
 
-Opinion Stage offers many built-in customization options such as selecting the color theme, font and sizes. You can also use a CSS override feature to fully match the items to your brand. You can also white label the items and add your own logo.
+Opinion Stage offers many built-in customization options such as selecting the color theme, font and sizes. Use the CSS override feature to fully match the items to your brand. You can also white label the items and add your own logo.
 
+= Is Opinion Stage GDPR Ready? = 
+
+Opinion Stage makes it easy for you to comply with the GDPR regulation. For more info on that, read our GDPR and privacy policy documentation on the site
 
 == Other Notes ==
 
 == Screenshots ==
 
-1. **Poll image layout** - example of integrating images in the poll answers to make it more appealing, which results with improved engagement rates.
-2. **Poll standard layout** - the poll include a lot of features including, selecting if users can select one side or more in the poll, allowing users to add their own answer to the poll, different methods of organizing the poll side order, setting the poll color, setting the poll font, preventing repeat voting in the poll, voting with a social profile in the poll, setting the poll result display, setting an expiry date for the poll, alignment of the poll title, setting the poll width, setting poll sharing bar, and much more
-3. **poll head to head layout** - example of a head-to-head layout poll
-4. **Trivia quiz** - example of a Trivia quiz result. Set the correct answer in each of the quiz questions, and following users answers to the quiz, give them a quiz result with the number of correct quiz answers. Trivia quizzes are one of the most engaging type of content.
-5. **Personality quiz** - example of a personality quiz. Using a personality quiz, you can ask you users different quiz questions, and based on their answers to the quiz questions, offer them different quiz results. Personality quizzes tend to be viral as they produce a lot of social shares.
-6. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, survey, form) creation dashboard
+1. **Poll image layout** - example of integrating images in the poll answers.
+2. **Poll standard layout** - example of a poll standard layout 
+3. **Poll head to head layout** - example of a head-to-head layout poll
+4. **Trivia quiz** - example of trivia quiz results
+5. **Personality quiz** - example of a personality quiz.
+6. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, survey) creation dashboard
 7. **Lead form** - example of gathering quality leads while users participate in the polls, quizzes & surveys
 8. **Report** - example of a poll report screen that includes advanced analysis of results
-9. **Templates** - dashboard that includes highly effective examples that can be duplicated to your account
-10. **Popup placement** - display your content in an exit/enter, center/side screen popup
+9. **Templates** - screenshot of the templates dashboard that includes hundreds of optimized templates you can freely use
+10. **Popup placement** - display your poll, quiz or survey in an exit/enter, center/side screen popup
 
 == Upgrade Notice ==
 
 N/A
 
 == Changelog ==
-  = 19.6.22 =
-  * bugfixes
   = 19.6.21 =
   * Added support WordPress 5.2.x
   * Removed support for PHP versions lower than 5.2
@@ -552,7 +557,7 @@ N/A
  = 4.6.0 =
   * Add polls to Facebook pages in 2-clicks feature added
   * Enhanced poll reporting that includes poll result filters
-  * Brightcove video Contact Form Builderat now supported in the polls
+  * Brightcove video now supported in the polls
  = 4.5.5 =
   * Added support for Google+ poll login
   * Fixed a presentation issue with polls and https sites
@@ -589,13 +594,13 @@ N/A
   * Added support for anonymous poll voting
  = 2.8.0 =
   * Improved editing process of polls by adding a preview to the poll editing screen
-  * Additional layout customizations for polls - hide top bars, add bottom padding
+  * Additional layout customisations for polls - hide top bars, add bottom padding
   * Polls can now be reset
  = 2.7.0 =
   * Additional poll languages support (German, Italian, Serbian)
-  * Additional poll customizations for the vote sharing process
+  * Additional poll customisations for the vote sharing process
  = 2.6.0 =
-  * Additional customizations options to the poll: Define which poll filters to show, poll social sharing bar removal
+  * Additional customisations options to the poll: Define which poll filters to show, poll social sharing bar removal
   * Hiding vote option can be enabled / disabled by poll creator
  = 2.5.0 =
   * Added support for multiple selection polls
