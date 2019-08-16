@@ -16,13 +16,6 @@ You can create the items from scratch or using hundreds of optimized templates.
 
 <a href="https://www.opinionstage.com/templates?o=wp35e8" target="_blank">Check out our Quiz, Poll, Survey and Form Examples</a>
 
-==  Why use Opinion Stage? ==
-
- * Boost engagement & traffic - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views. Increase social sharing and viral distribution.
- * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey. This will not only produce more leads than static forms, but will also produce qualified leads, as the leads will be associated with the answers of the users.
- * Generate revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the polls and quizzes.
- * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with an intuitive analytics dashboard.
-
 == Main Poll, Survey, Form & Quiz WordPress Plugin Features: ==
 
  * Easy and fast to create polls, surveys and quizzes either from scratch or using one of the hundreds of free templates.
@@ -38,16 +31,35 @@ You can create the items from scratch or using hundreds of optimized templates.
  * Use Survey and quiz branch logic that lets you determine which question is asked next based on the answer to the previous question.
  * Integrate with your marketing automation using native integrations (e.g. mailchip, hubspot, etc), zapier.com or webhooks.
  * Embed in a single post/page or display in a sidebar or section placement.
- * Popup the poll, survey or quiz automatically when users enters/exits the page.
+ * Popup the items automatically when users enters/exits the page.
  * Responsive design that optimizes display of polls, quizzes and surveys in desktops, tablets and mobile devices.
  
  == Templates & Examples ==
 
-Opinion Stage offers hundreds of templates that let you get up and going in seconds with optimized poll, quiz, survey and form items. 
+Start form scratch or use one of the hundreds of templates to get up and going super fast with an optimized item. 
 
  == Integrations ==
 
-Opinion Stage offers hundreds of integrations with all the top email and marketing services. Opinion Stage native integrations (e.g. hubspot, mailchimp, etc), zapier integration, webhook integration and an API.
+Opinion Stage offers dozens of integrations with all the top email and marketing services. Opinion Stage native integrations (e.g. hubspot, mailchimp, etc), zapier integration, webhook integration and an API.
+
+ == Polls Your Visitors ==
+
+Create polls in seconds to engage your users and learn what they think on any topic. The polls are full of features that let you customize every aspect of the poll functionality. Use the report dashboard to get detailed real-time analytics on the votes.
+
+ == Quizzes for Engagement & Gathering leads ==
+
+Create Buzzfeed-style and Facebook-stlye quizzes that engage your users and get viral on social networks. Integrate a lead form in your quiz to gather qualified leads. The quiz questions will be associated with the contact information you gather to help you qualify which leads bring value to your business. 
+
+ == Surveys for generating leads ==
+
+Survey your users to get feedback and to conduct research that will help you improve your site or produce/service offering. Opinion Stage supports many different question types and many different features that will help you create unbiased surveys that produce quality data.
+
+ == Why use Opinion Stage? ==
+
+ * Boost engagement & traffic - add a poll, survey or quiz to your posts/pages to increases participation, time-on-site & page views. Increase social sharing and viral distribution.
+ * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey.
+ * Drive sales/revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the polls and quizzes.
+ * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with an intuitive analytics dashboard.
 
  == Language support ==
 
@@ -59,7 +71,7 @@ Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, 
 
 == Installation ==
 
-1. Upload the "Poll, Survey, Form & Quiz Maker" plugin to your blog (or search for it) and then install the plugin on your plugins page
+1. Upload the plugin to your blog (or search for it) and then install the plugin on your plugins page
 2. Active it and start creating polls, quizzes, surveys and forms
 
 == Frequently Asked Questions ==
@@ -72,7 +84,7 @@ Yes, all item formats (e.g. poll, quiz, survey, form, etc) created with Opinion 
 
 With Opinion Stage you can create the following item formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Slideshow, Form, Story Article, List. We are constantly adding additional interactive formats so stay tuned!
 
-= What is the difference between a Poll and a Survey =
+= What is the difference between a poll and a survey =
 
 Polls include one question and are used for getting a quick answer on a question. Polls are often used for gathering opinions, getting feedback, running contents & competitions and generating engagement. Surveys include multiple questions of different types. Surveys are often used to gather feedback and insights. If you are still unsure whether to use a poll or a survey, contact our support team and we'll be happy to help.
 
