@@ -164,7 +164,7 @@ function opinionstage_callback_url_gutenberg_connect() {
  */
 function opinionstage_content_login_callback_url() {
 	$current_url = '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	return get_admin_url(null, 'admin.php?page=opinionstage-content-login-callback-page'). '&return_path=' . urlencode(opinionstage_add_modal_opening_to_url_params($current_url));
+	return get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG ). '&return_path=' . urlencode(opinionstage_add_modal_opening_to_url_params($current_url));
 }
 /**
  * Adds special param for modal opening on page load
@@ -206,7 +206,7 @@ function opinionstage_parse_client_data($raw_data) {
 function opinionstage_custom_content_popup_callback_url(){
 	$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
-	$adminUrlForOs = admin_url( 'admin.php?page=opinionstage-content-login-callback-page&return_path=', $protocol );
+	$adminUrlForOs = admin_url( 'admin.php?page="'.OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG.'"&return_path=', $protocol );
 	return $adminUrlForOs.urlencode($url);
 }
 ?>

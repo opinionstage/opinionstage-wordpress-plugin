@@ -55,6 +55,7 @@ define('OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started');
 define('OPINIONSTAGE_VIEW_ITEM_SLUG', 'opinionstage-view-my-items');
 
 define('OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback');
+define('OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG', 'opinionstage-content-login-callback-page');
 
 if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 	add_action( 'admin_notices', 'opinionstage_fail_php_version' );

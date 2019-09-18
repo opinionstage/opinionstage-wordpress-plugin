@@ -21,34 +21,39 @@ function opinionstage_register_login_callback_page() {
 
 // performs redirect to plugin settings page, after user logged in
 function opinionstage_login_callback() {
-	if ( OPINIONSTAGE_LOGIN_CALLBACK_SLUG == filter_input( INPUT_GET, 'page' ) ) {
-		$success = $_GET['success'];
-		$uid = $_GET['uid'];
-		$token = $_GET['token'];
-		$email = $_GET['email'];
-		$fly_id = $_GET['fly_id'];
-		$article_placement_id = $_GET['article_placement_id'];
-		$sidebar_placement_id = $_GET['sidebar_placement_id'];
 
-		opinionstage_uninstall();
-		opinionstage_parse_client_data(
-			compact(
-				'success',
-				'uid',
-				'token',
-				'email',
-				'fly_id',
-				'article_placement_id',
-				'sidebar_placement_id'
-			)
-		);
+	// Make sure user is logged in and have edit posts cap
+  	if (is_user_logged_in() && current_user_can('edit_posts')) {
+
+		if ( OPINIONSTAGE_LOGIN_CALLBACK_SLUG == filter_input( INPUT_GET, 'page' ) ) {
+			$success = sanitize_text_field($_GET['success']);
+			$uid = intval($_GET['uid']);
+			$token = sanitize_text_field($_GET['token']);
+			$email = sanitize_email($_GET['email']);
+			$fly_id = intval($_GET['fly_id']);
+			$article_placement_id = intval($_GET['article_placement_id']);
+			$sidebar_placement_id = intval($_GET['sidebar_placement_id']);
+
+			opinionstage_uninstall();
+			opinionstage_parse_client_data(
+				compact(
+					'success',
+					'uid',
+					'token',
+					'email',
+					'fly_id',
+					'article_placement_id',
+					'sidebar_placement_id'
+				)
+			);
 
 
-		$redirect_url = get_admin_url(null, '', 'admin').'admin.php?page='.OPINIONSTAGE_MENU_SLUG;
+			$redirect_url = get_admin_url(null, '', 'admin').'admin.php?page='.OPINIONSTAGE_MENU_SLUG;
 
-		error_log('[opinionstage plugin] user logged in, redirect to '.$redirect_url);
-		if ( wp_redirect( $redirect_url, 302 ) ) {
-			exit;
+			error_log('[opinionstage plugin] user logged in, redirect to '.$redirect_url);
+			if ( wp_redirect( $redirect_url, 302 ) ) {
+				exit;
+			}
 		}
 	}
 }

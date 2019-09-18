@@ -14,7 +14,7 @@ add_action( 'wp_ajax_opinionstage_ajax_item_count', 'opinionstage_ajax_item_coun
 // Toggle the flyout placement activation flag
 function opinionstage_ajax_toggle_flyout() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['fly_out_active'] = $_POST['activate'];
+	$os_options['fly_out_active'] = sanitize_text_field($_POST['activate']);
 
 	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	wp_die('1');
@@ -22,7 +22,7 @@ function opinionstage_ajax_toggle_flyout() {
 // Toggle the article placement activation flag
 function opinionstage_ajax_toggle_article_placement() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['article_placement_active'] = $_POST['activate'];
+	$os_options['article_placement_active'] = sanitize_text_field($_POST['activate']);
 
 	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	wp_die('1');
@@ -30,7 +30,7 @@ function opinionstage_ajax_toggle_article_placement() {
 // Toggle the sidebar placement activation flag
 function opinionstage_ajax_toggle_sidebar_placement() {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	$os_options['sidebar_placement_active'] = $_POST['activate'];
+	$os_options['sidebar_placement_active'] = sanitize_text_field($_POST['activate']);
 
 	update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	wp_die('1');
