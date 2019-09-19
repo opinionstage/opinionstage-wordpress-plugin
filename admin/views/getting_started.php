@@ -41,8 +41,6 @@ defined( 'ABSPATH' ) or die();
 				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>	
 			</div>
 		</div>
-
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script type="text/javascript">
 			var aElems = document.getElementsByTagName('a');
 

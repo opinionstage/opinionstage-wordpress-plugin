@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 	function opinionStage_slideshow_oswp_block_assets_set() {
-		//wp_enqueue_style('Bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 		wp_enqueue_style(
 			'opinionStage_slideshow_oswp_style_css_set',
 			plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), 
@@ -32,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		);
 
 		// Styles.
-		wp_enqueue_style('Bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+		wp_enqueue_style('Bootstrap',plugins_url( '/css/bootstrap.min.css', dirname( __FILE__  )));
 		wp_enqueue_style(
 			'opinionStage_slideshow_oswp_block_editor_css_set', // Handle.
 			plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
