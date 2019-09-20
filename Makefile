@@ -35,6 +35,8 @@ svn-update-files: _check-svn-path
 	  --exclude=Makefile                      \
 	  --exclude=*.mk                          \
 	  --exclude=node_modules/                 \
+	  --exclude=composer.json                 \
+	  --exclude=composer.lock                 \
 	  --exclude=vendor/                       \
 	  --filter='protect .git*'                \
 	  --filter='protect Makefile'             \
@@ -66,6 +68,29 @@ git-commit-tag:
 show-version:
 	@echo current version is $(VERSION)
 .PHONY: show-version
+
+# Performs lint checks for all files or specific file
+# Usage:
+# lint all files:
+#   make lint
+# lint specific file:
+#   make lint file=path/to/file.php
+lint:
+	@./vendor/bin/phpcs \
+	  --standard=WordPress \
+	  --ignore=assets/*,vendor/*,*.css,*.js \
+	  $$([ "$(file)" != "" ] && echo "$(file)" || echo .)
+.PHONY: lint
+
+# Autocorrects all found lint issues for specific file
+# Usage:
+#   make lint-autocorrect file=path/to/file.php
+lint-autocorrect:
+	@./vendor/bin/phpcbf \
+	  --standard=WordPress \
+	  --ignore=assets/*,vendor/*,*.css,*.js \
+	  $(file)
+.PHONY: lint-autocorrect
 
 clean:
 	-$(RM) -r assets/*/node_modules
