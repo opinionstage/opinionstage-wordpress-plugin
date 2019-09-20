@@ -29,9 +29,8 @@ function opinionstage_message_handler(){
 
 function opinionstage_message_api_call($last_activity_time){
 	$api_url = OPINIONSTAGE_MESSAGE_API."?api_call_time=".$last_activity_time;
-	$client = curl_init($api_url);
-	curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
-	$response = curl_exec($client);
+	$response = wp_remote_get($api_url);
+	$response = wp_remote_retrieve_body($response);
 	$result = json_decode($response);
 	update_option('oswp_message_last_call_time', time());
 	// save if message is available
@@ -48,9 +47,9 @@ function opinionstage_display_wp_message(){
 	echo '<div class="notice notice-success" id="oswp_hide_div" style="overflow: hidden; position: relative;padding-top: 10px; padding-bottom: 20px;"><img style="margin-top:8px;float: left;width:70px;margin-right: 20px;" src="https://dipika.embien.co.uk/wp-content/plugins/opinionstage-wordpress-plugin-menu-changes/admin/images/opinionstage-tracking-notice.png"><h3 style="margin-bottom:0px;margin-top: 10px;margin-left: 10px;float: none;">'.$message_title_display.'</h3><p> '.$message_content_display.'</p><div style="clear:both;"></div><button id="read_message" type="submit" class="button button-primary button-large" style="margin-left: 90px;margin-top: 10px;">Mark as Read</button><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>';
 }
 
-add_action( 'admin_footer', 'my_action_javascript' ); 
+add_action( 'admin_footer', 'opinionstage_message_handler_javascript' ); 
 
-function my_action_javascript() { ?>
+function opinionstage_message_handler_javascript() { ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 	$('button#read_message , button.notice-dismiss').on('click', function(event) {
