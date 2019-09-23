@@ -34,7 +34,7 @@ function opinionstage_message_api_call($last_activity_time){
 	$result = json_decode($response);
 	update_option('oswp_message_last_call_time', time());
 	// save if message is available
-	if(isset($result->message) && count($result->message) > 0){
+	if( isset($result->message) && isset($result->message->title) && isset($result->message->content) ){
 		update_option('oswp_message_title', $result->message->title);
 		update_option('oswp_message_content', $result->message->content);	
 	}
