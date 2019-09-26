@@ -16,7 +16,7 @@ function opinionstage_link($caption, $path, $css_class = '', $query_data = array
 
 	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
-function opinionstage_template_link($caption, $path, $css_class = '') {	
+function opinionstage_template_link($caption, $path, $css_class = '') {
 	$query_data['utm_source'] = OPINIONSTAGE_UTM_SOURCE;
 	$query_data['utm_campaign'] = OPINIONSTAGE_UTM_CAMPAIGN;
 	$query_data['utm_medium'] = OPINIONSTAGE_UTM_MEDIUM;
@@ -71,9 +71,6 @@ function opinionstage_asset_path() {
  */
 function opinionstage_flyout_edit_url($tab) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {	
-		return OPINIONSTAGE_SERVER_BASE.'/registrations/new';
-	}	
 	return OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['fly_id'].'/edit?selected_tab='.$tab;
 }
 
@@ -83,9 +80,6 @@ function opinionstage_flyout_edit_url($tab) {
  */
 function opinionstage_article_placement_edit_url($tab) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {	
-		return OPINIONSTAGE_SERVER_BASE.'/registrations/new';
-	}	
 	return OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['article_placement_id'].'/edit?selected_tab='.$tab;
 }
 /**
@@ -93,9 +87,6 @@ function opinionstage_article_placement_edit_url($tab) {
  */
 function opinionstage_sidebar_placement_edit_url($tab) {
 	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	if (empty($os_options["uid"])) {	
-		return OPINIONSTAGE_SERVER_BASE.'/registrations/new';
-	}
 	return OPINIONSTAGE_SERVER_BASE.'/containers/'.$os_options['sidebar_placement_id'].'/edit?selected_tab='.$tab;
 }
 
@@ -177,18 +168,12 @@ function opinionstage_add_modal_opening_to_url_params($url) {
 	}
 }
 /**
- * Generates a link to Opinion Stage that requires registration
- */
-function opinionstage_logged_in_link($text, $link) {
-	return opinionstage_link($text, 'registrations/new', '', array('return_to' => $link));
-}
-/**
  * Take the received data and parse it
- * 
+ *
  * Returns the newly updated widgets parameters.
 */
 function opinionstage_parse_client_data($raw_data) {
-	$os_options = array('uid' => $raw_data['uid'], 
+	$os_options = array('uid' => $raw_data['uid'],
 						   'email' => $raw_data['email'],
 						   'fly_id' => $raw_data['fly_id'],
 						   'article_placement_id' => $raw_data['article_placement_id'],
@@ -201,11 +186,11 @@ function opinionstage_parse_client_data($raw_data) {
 	$valid_ids = preg_match("/^[0-9]+$/", $raw_data['fly_id']) && preg_match("/^[0-9]+$/", $raw_data['article_placement_id']) &&  preg_match("/^[0-9]+$/", $raw_data['sidebar_placement_id']);
 	if ($valid_ids) {
 		update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
-	} 
+	}
 }
 function opinionstage_custom_content_popup_callback_url(){
 	$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-	$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
+	$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 	$adminUrlForOs = admin_url( 'admin.php?page="'.OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG.'"&return_path=', $protocol );
 	return $adminUrlForOs.urlencode($url);
 }
