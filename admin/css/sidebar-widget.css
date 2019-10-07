@@ -11,7 +11,7 @@
   font-weight: 600;
   padding: 10px;
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-right: 5px;
   line-height: normal;
 }
@@ -50,6 +50,7 @@
 }
 .opinionstage-sidebar-widget .opinionstage-sidebar-enabled {
   float: left;
+  margin-top: 10px;
 }
 /*.opinionstage-sidebar-widget .opinionstage-sidebar-config {
   float: right;
@@ -75,7 +76,18 @@
   overflow: hidden;
 }
 .wp-admin .opinionstage-sidebar-widget input[type=checkbox] {
-  margin: 10px 5px 10px 0;
+  margin: 0 5px 0 0;
+}
+
+.wp-admin .opinionstage-sidebar-widget input[type=checkbox], input[type=radio] {
+    border: 1px solid #0085ba;
+    height: 20px;   
+    width: 20px;
+    box-shadow: none; 
+    border-radius: 2px;
+}
+.wp-admin .opinionstage-sidebar-widget input[type=checkbox]:checked:before {
+    margin: -1px 0 0 -2px !important;
 }
 .opinionstage-sidebar-widget .os-icon-plugin {
   float: left;
@@ -139,4 +151,11 @@
 }
 .opinionstage-sidebar-widget img {
     width: 86px;
+}
+h3.sidebar-widget-heading-label {
+    color: #86939f;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 10px;
 }

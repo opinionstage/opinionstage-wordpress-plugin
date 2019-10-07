@@ -108,16 +108,17 @@ require_once( plugin_dir_path( __FILE__ ).'opinionstage-client-session.php' );
 							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_TEXT_DOMAIN); ?></label>
 							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" placeholder="Enter the title here" value="<?php echo $title; ?>" >
 						</p>
-						<div class="opinionstage-sidebar-actions">
-							<!-- <div class="opinionstage-sidebar-enabled">
-								<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
-								<label for="<?php echo $this->get_field_id('enabled'); ?>">Enabled</label>
-							</div> -->
+						<div class="opinionstage-sidebar-actions">							
 							<div class="opinionstage-sidebar-config">
 								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn opinionstage-edit-content'>SELECT ITEM</a>
 								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
 									<div class="os-icon icon-os-common-settings"></div>
 								</a>
+							</div>
+							<div style="clear: both;"></div>
+							<div class="opinionstage-sidebar-enabled">
+								<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
+								<label for="<?php echo $this->get_field_id('enabled'); ?>">Enable sidebar widget</label>
 							</div>
 						</div>
 					<?php } else { ?>
