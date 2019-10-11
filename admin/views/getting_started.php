@@ -4,9 +4,20 @@ defined( 'ABSPATH' ) or die();
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
-		<div class="opinionstage-logo-wrapper">
-			<div class="opinionstage-logo"></div>
-		</div>
+			<?php if ( !$os_client_logged_in ) {?>
+			<div class="opinionstage-logo-wrapper">
+				<div class="opinionstage-logo"></div>
+			</div>
+			<?php } else { ?>
+			<div class="opinionstage-logo-wrapper">
+				<div class="opinionstage-logo"></div>
+				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
+					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_DISCONNECT_PAGE)?>" class="opinionstage-connect-form">
+						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
+					</form>
+				</div>
+			</div>
+			<?php } ?>
 	</div>
 	<?php if( $os_client_logged_in ){  ?>
 		<div class="gettingStartedSection">

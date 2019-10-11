@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or die();
 			<div class="opinionstage-logo-wrapper">
 				<div class="opinionstage-logo"></div>
 				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
-					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page=opinionstage-disconnect-page')?>" class="opinionstage-connect-form">
+					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_DISCONNECT_PAGE)?>" class="opinionstage-connect-form">
 						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
 					</form>
 				</div>
