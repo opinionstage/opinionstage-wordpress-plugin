@@ -27,7 +27,7 @@ function opinionstage_login_callback() {
 
 		if ( OPINIONSTAGE_LOGIN_CALLBACK_SLUG == filter_input( INPUT_GET, 'page' ) ) {
 			$success = sanitize_text_field($_GET['success']);
-			$uid = intval($_GET['uid']);
+			$uid = sanitize_text_field($_GET['uid']);
 			$token = sanitize_text_field($_GET['token']);
 			$email = sanitize_email($_GET['email']);
 			$fly_id = intval($_GET['fly_id']);
