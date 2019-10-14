@@ -1,5 +1,6 @@
-# development config file:
+# development config file(s):
 /dev.ini
+/config.cmake
 # Windows artefacts:
 /Thumbs.db
 # OSX artefacts
