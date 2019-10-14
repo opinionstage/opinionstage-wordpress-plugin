@@ -35,6 +35,10 @@ svn-commit-tag: _check-svn-path
 	svn commit --message="$(VERSION) release" $(SVN_REPO_PATH)
 .PHONY: svn-commit-tag
 
+git-commit-tag:
+	git tag v$(VERSION)
+.PHONY: git-commit-tag
+
 _check-svn-path:
 	@if [[ ! -d "$(SVN_REPO_PATH)" ]]; then \
 	  echo "path to svn repo \"$(SVN_REPO_PATH)\" does not exist, create config.cmake file and set path there: SVN_REPO_PATH = path/to/svn (NOTE: no trailing /)"; \
