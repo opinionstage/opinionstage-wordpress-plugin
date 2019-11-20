@@ -1,6 +1,6 @@
 # development config file(s):
 /dev.ini
-/config.cmake
+/config.mk
 # Windows artefacts:
 /Thumbs.db
 # OSX artefacts
