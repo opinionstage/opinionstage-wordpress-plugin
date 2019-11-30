@@ -21,7 +21,7 @@ function opinionStage_poll_oswp_block_assets_set() {
 	);
 } 
 
-add_action( 'enqueue_block_assets', 'opinionStage_poll_oswp_block_assets_set' );
+// add_action( 'enqueue_block_assets', 'opinionStage_poll_oswp_block_assets_set' );
 
 
 function opinionStage_poll_oswp_editor_assets_set() {

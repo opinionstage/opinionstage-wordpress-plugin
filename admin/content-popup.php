@@ -172,14 +172,16 @@ button#dropbtn span {
 }
 button#dropbtn:before {
     color: #000;
-    content: "";
+    content: "^";
     display: block;
     font-family: os-icon-font !important;
-    font-size: 12px;
+    font-size: 22px;
     position: absolute;
     right: -25px;
     top: 0;
     z-index: 3;
+    transform: rotate(180deg);
+    font-weight: bold;
 }
 button#dropbtn:after {
     border: 1px solid #e4e4e4;
@@ -446,16 +448,17 @@ li.create-menu__itm.companymenuli a.alisting {
 }
 .popup-action:before {
     color: #32adbc;
-    content: "";
-    display: block;
-    font-family: os-icon-font;
-    font-size: 12px;
-    font-weight: 600;
     padding: 0;
     position: absolute;
     right: 18px;
-    top: 12px;
+    content: "^";
+    display: block;
+    font-family: os-icon-font !important;
+    font-size: 22px;
+    top: 2px;
     z-index: 3;
+    transform: rotate(180deg);
+    font-weight: bold;
 }
 .popup-action-dropdown {
     background: #fff;
@@ -534,18 +537,17 @@ input.components-button.is-button.is-default.is-block.is-primary {
     z-index: 100;
 }
 .top-arrow-box .top-arrow:before {
-    background-color: #fff;
     color: #32adbc;
-    content: "";
     display: block;
     font-family: os-icon-font;
-    font-size: 12px;
+    font-size: 22px;
     line-height: normal;
     margin-left: -4px;
     position: absolute;
-    top: 10px;
+    top: 7px;
     transform: rotate(180deg);
     z-index: 99;
+    content: "^";
 }
 
 .opinionstage-content-popup-contents .content__links-itm:hover .top-arrow-box .top-arrow:before{

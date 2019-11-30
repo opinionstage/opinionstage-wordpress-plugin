@@ -16,6 +16,11 @@ function opinionstage_create_new_href() {
 		.progress_message{
 			display: none;
 		}
+		.content__image {
+		    background-image: url(<?php echo plugins_url('', dirname(__FILE__) ) . '/admin/images/form-not-found.png' ?>);
+		    background-repeat: no-repeat;
+    		background-size: cover;
+		}
 </style>	
 <template data-opinionstage-content-popup-template>
 	<div class='opinionstage-content-popup-contents' data-opinionstage-content-popup data-opinionstage-client-logged-in="<?php echo $opinionstage_user_logged_in ?>">

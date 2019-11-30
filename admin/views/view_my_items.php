@@ -1,7 +1,13 @@
 <?php 
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die(1); ?>
-
+<style type="text/css">
+	.content-item-image.quiz{
+			background-image: url(<?php echo plugins_url('', dirname(__FILE__) ) . '/images/form-not-found.png' ?>);
+		    background-repeat: no-repeat;
+    		background-size: cover;
+		}
+</style>
 	<div id="opinionstage-content">
 		<div class="opinionstage-header-wrapper">	
 				<?php if ( $os_client_logged_in ) { ?>

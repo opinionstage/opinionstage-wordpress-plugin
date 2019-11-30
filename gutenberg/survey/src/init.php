@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array() 
 		);
 	} 
-	add_action( 'enqueue_block_assets', 'opinionStage_survey_oswp_block_assets_set' );
+	// add_action( 'enqueue_block_assets', 'opinionStage_survey_oswp_block_assets_set' );
 
 	function opinionStage_survey_oswp_editor_assets_set() {
 		// Scripts.
