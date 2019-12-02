@@ -21,6 +21,8 @@ $(TARGET): $(PLUGIN_FILES)
 #   make svn-create-tag
 # 4. publish tag to svn:
 #   make svn-commit-tag
+# 5. publish git tag to github
+#   make git-commit-tag && git push --tags
 
 svn-update-files: _check-svn-path
 	rsync --progress --archive --no-times --delete-after \
