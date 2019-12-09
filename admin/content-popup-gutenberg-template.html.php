@@ -140,7 +140,7 @@ function opinionstage_create_new_href() {
 							<div class="popup-action-dropdown dropdown-content">
 								<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'>view</a>
 								<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template">edit</a>
-								<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">statistics</a>
+								<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">Results</a>
 							</div>
 						</div>
 					</div>

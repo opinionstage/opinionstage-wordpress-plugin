@@ -91,7 +91,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			            var previewBlockOsView = dropdownOptions.data[i].attributes['landing-page-url'];
 			            var previewBlockOsEdit = dropdownOptions.data[i].attributes['edit-url'];
 			            var previewBlockOsStatistics = dropdownOptions.data[i].attributes['stats-url'];
-			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><a href="'+previewBlockOsView+'" target="_blank"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></a></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Statistics </div></a></td></tr></tbody>';
+			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><a href="'+previewBlockOsView+'" target="_blank"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></a></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Results </div></a></td></tr></tbody>';
 			            	$('.result_progress').css('display', 'none');
 							$(viewtext).appendTo('#container table#check');
 		        	}		        		        	
@@ -101,7 +101,6 @@ defined( 'ABSPATH' ) or die(1); ?>
 				size_li = $("table#check tbody#count").size();
 				dropdownDataLength = dropdownOptions.data.length;
 
-				console.log(size_li + '' + dropdownDataLength);
 				loadMore(size_li, dropdownDataLength, "all");
 				     var data = {
 						'action': 'opinionstage_ajax_item_count',
@@ -191,7 +190,6 @@ defined( 'ABSPATH' ) or die(1); ?>
         	setTimeout(function(){$('#showLess').trigger('click');},500);            			
         }
         // Show the div in 5s
-        console.log(dataLength + ' ' + size + ' ' + item);
 		var countItemOS = 10;
 		if(dataLength > countItemOS){
 			$("#loadMore").delay(2000).fadeIn(500);
@@ -214,9 +212,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			}
 		});
 		$('#showLess').live( 'click', function () {
-			console.log(x);
 		    x=(x-0<0) ? 10 : x-0;
-		    console.log(x);
 		    if (item == 'all') {
 		    	$('table#check tbody#count').not(':lt('+x+')').hide();
 		    }
