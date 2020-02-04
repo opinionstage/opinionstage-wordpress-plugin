@@ -721,7 +721,7 @@ td.image {
 .opinionstage-section-header #searchItem {
     color: #797979;
     height: auto;
-    padding: 5px 10px;
+    padding: 8.5px 10px;
     width: 100%;
 }
 #opinionstage-content .opinionstage-item-view-dashboard .opinionstage-dashboard-section {
@@ -853,8 +853,23 @@ div#loadMore {
 #opinionstage-content .opinionstage-item-view-dashboard .opinionstage-dashboard-section{
   margin-bottom: 5px; 
 }
-
-
+.help-center-os{
+    border: 2px solid #32adbc;
+    color: #32adbc;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 370px;
+    float: left;
+}
+.help-center-os:hover {
+    background-color: rgba(49, 174, 190, 0.1);
+    color: #32adbc;
+}
 @media only screen and (max-width: 1230px) {
 #opinionstage-content .opinionstage-dashboard-left, #opinionstage-content .opinionstage-dashboard-right {
   float: none;
