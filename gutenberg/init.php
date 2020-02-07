@@ -16,8 +16,18 @@ function osplugin_guten_blockCategories( $categories, $post ) {
 		)
 	);
 }
-
-
+add_action('admin_footer','rtlLanguageSetupOSWP');
+function rtlLanguageSetupOSWP(){ ?>
+	<style type="text/css">
+		.rtl {
+		    direction: rtl !important;
+		    text-align: right !important;
+		}	
+		.rtl ul#adminmenu {
+		    text-align: right !important;
+		}
+	</style>
+<?php }
 /**
  * BLOCK: Poll.
  */
