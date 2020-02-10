@@ -38,10 +38,11 @@
 #opinionstage-content .opinionstage-connect-form{
   display: inline-block;
 }
-#opinionstage-content .opinionstage-connect-btn{
-  padding-bottom: 10px !important;
-  padding-top: 10px !important;
-  position: relative;
+#opinionstage-content .opinionstage-connect-btn {
+    padding-bottom: 14.2px !important;
+    padding-top: 14.2px !important;
+    position: relative;
+    cursor: pointer;
 }
 #opinionstage-content .opinionstage-status-title {
   font-size: 24px;
