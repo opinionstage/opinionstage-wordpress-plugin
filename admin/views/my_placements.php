@@ -148,9 +148,6 @@ defined( 'ABSPATH' ) or die();
 					</div>
 				</div>
 			</div>
-		</div>
-		<?php if ( !$os_client_logged_in ) { ?>
-			<div id="overlay"></div>
-		<?php } ?>
+		</div>		
 	</div>
 </div>

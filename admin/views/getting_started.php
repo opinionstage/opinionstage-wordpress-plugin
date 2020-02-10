@@ -51,6 +51,10 @@ defined( 'ABSPATH' ) or die();
 				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial help-link">GETTING STARTED <br/>VIDEO TUTORIAL</div></a>
 				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>	
 			</div>
+			<div class="gettingBlockContainer">
+				<a href="https://help.opinionstage.com?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial" style="padding: 29px 0;">HELP CENTER</div></a>
+				<a href="https://www.opinionstage.com/live-chat/?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="help-center-os">LIVE CHAT HELP</div></a>			
+			</div>
 		</div>
 		<script type="text/javascript">
 			var aElems = document.getElementsByTagName('a');

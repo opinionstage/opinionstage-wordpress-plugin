@@ -51,7 +51,6 @@ function opinionstage_register_menu_page() {
 			add_submenu_page(OPINIONSTAGE_GETTING_STARTED_SLUG, 'Getting Started', 'Getting Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG,'opinionstage_load_template' );
 			add_submenu_page(OPINIONSTAGE_GETTING_STARTED_SLUG, 'Create...', 'Create...', 'edit_posts', OPINIONSTAGE_MENU_SLUG, 'opinionstage_load_template');
 			add_submenu_page(OPINIONSTAGE_GETTING_STARTED_SLUG, 'Placements', 'Placements', 'edit_posts', OPINIONSTAGE_PLACEMENT_SLUG , 'opinionstage_load_template' );
-			add_submenu_page(OPINIONSTAGE_GETTING_STARTED_SLUG, 'Help Center', 'Help Center', 'edit_posts', 'https://help.opinionstage.com/wordpress-plugin?utm_campaign=WPMainPI&utm_medium=linkhelpcenter&utm_source=wordpress&o=wp35e8' );
 		}
 	}
 }

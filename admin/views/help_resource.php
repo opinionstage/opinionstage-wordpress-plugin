@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) or die();
 				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>				
 			</div>
 			<div class="gettingBlockContainer">
-				<a href="https://help.opinionstage.com?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial">HELP CENTER</div></a>
+				<a href="https://help.opinionstage.com?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial" style="padding: 29px 0;">HELP CENTER</div></a>
 				<a href="https://www.opinionstage.com/live-chat/?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="help-center-os">LIVE CHAT HELP</div></a>			
 			</div>
 		</div>
