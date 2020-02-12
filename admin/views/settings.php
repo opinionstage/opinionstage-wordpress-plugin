@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) or die();
 					<div class="opinionstage-section-title">Create</div>
 					<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" style="float: right;" target="_blank">Need help adding items to your site?</a>
 				</div>
-				<div class="opinionstage-section-content" <?php  if ( !$os_client_logged_in ) { echo 'style="position: relative;"'; } ?>>
+				<div class="opinionstage-section-content" style="position: relative;">
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
 							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/poll.png', dirname(__FILE__) ); ?>" ></div>
