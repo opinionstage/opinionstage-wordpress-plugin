@@ -15,13 +15,16 @@ $(TARGET): $(PLUGIN_FILES)
 #
 # 1. sync files into svn trunk folder:
 #   make svn-update-files
-# 2. commit those files (will publish files as well):
+# 2. add/remove all new/removed files in svn
+#   svn add --force .
+#   svn rm ..
+# 3. commit those files (will publish files as well):
 #   make svn-commit-version
-# 3. create tag in svn (locally), by copying trunk/ files into appropriate tags/ folder
+# 4. create tag in svn (locally), by copying trunk/ files into appropriate tags/ folder
 #   make svn-create-tag
-# 4. publish tag to svn:
+# 5. publish tag to svn:
 #   make svn-commit-tag
-# 5. publish git tag to github
+# 6. publish git tag to github
 #   make git-commit-tag && git push --tags
 
 svn-update-files: _check-svn-path
