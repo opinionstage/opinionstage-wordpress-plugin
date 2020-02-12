@@ -21,12 +21,12 @@ defined( 'ABSPATH' ) or die();
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
-				<a href="https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial">GETTING STARTED <br/>VIDEO TUTORIAL</div></a>
+				<?php echo opinionstage_help_links('GETTING STARTED <br/>VIDEO TUTORIAL', 'https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin', 'gettingTemplateTutorial help-link'); ?>	
 				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>				
 			</div>
 			<div class="gettingBlockContainer">
-				<a href="https://help.opinionstage.com?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="gettingTemplateTutorial" style="padding: 29px 0;">HELP CENTER</div></a>
-				<a href="https://www.opinionstage.com/live-chat/?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank" class="help-link"><div class="help-center-os">LIVE CHAT HELP</div></a>			
+				<?php echo opinionstage_help_links('HELP CENTER', 'https://help.opinionstage.com', 'gettingTemplateTutorial help-link','padding: 29px 0;'); ?>
+				<?php echo opinionstage_link('LIVE CHAT HELP', 'live-chat/', 'help-center-os help-link'); ?>		
 			</div>
 		</div>
 	<?php } ?>

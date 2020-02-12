@@ -25,8 +25,16 @@ function opinionstage_template_link($caption, $path, $css_class = '') {
 	$link = OPINIONSTAGE_SERVER_BASE.'/'.$path.'&'.http_build_query($query_data);
 	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
 }
+function opinionstage_help_links($caption, $path, $css_class = '', $style = '', $query_data = array()) {
+	$query_data['utm_source'] = OPINIONSTAGE_UTM_SOURCE;
+	$query_data['utm_campaign'] = OPINIONSTAGE_UTM_CAMPAIGN;
+	$query_data['utm_medium'] = OPINIONSTAGE_UTM_MEDIUM;
+	$query_data['o'] = OPINIONSTAGE_WIDGET_API_KEY;
 
+	$link = $path.'?'.http_build_query($query_data);
 
+	return "<a href='{$link}' target='_blank' class='{$css_class}' style='{$style}'>{$caption}</a>";
+}
 function opinionstage_register_javascript_asset( $name, $relative_path, $deps=array(), $in_footer=true ) {
 	$registered = wp_register_script(
 		opinionstage_asset_name($name),

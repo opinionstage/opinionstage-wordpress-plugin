@@ -871,6 +871,11 @@ div#loadMore {
     background-color: rgba(49, 174, 190, 0.1);
     color: #32adbc;
 }
+a.help-center-os.help-link:focus {
+    background-color: rgba(49, 174, 190, 0.1);
+    box-shadow: none;
+    color: #32adbc;
+}
 @media only screen and (max-width: 1230px) {
 #opinionstage-content .opinionstage-dashboard-left, #opinionstage-content .opinionstage-dashboard-right {
   float: none;
