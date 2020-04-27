@@ -62,7 +62,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 <script type="text/javascript">
 	jQuery(document).ready(function($){		
     	$.ajax({
-			url: 'https://www.opinionstage.com/api/wp/v1/my/widgets?type=all&page=1&per_page=99',
+			url: '<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API; ?>?type=all&page=1&per_page=99',
 			headers: {
 			'Accept':'application/vnd.api+json',
 			'Content-Type':'application/vnd.api+json',
