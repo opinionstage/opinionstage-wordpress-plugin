@@ -3,7 +3,7 @@ Contributors: OpinionStage.com
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, form
 Requires at least: 2.8
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: 19.6.35
 Requires PHP: 5.2
 
