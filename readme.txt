@@ -1,13 +1,13 @@
 ﻿=== Poll, Survey, Form & Quiz Maker by OpinionStage ===
-Contributors: OpinionStage.com
+Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
-Tags: poll, quiz, survey, form
+Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 19.6.36
 Requires PHP: 5.2
 
-Add Polls, Surveys or Quizzes to your Wordpress site. Create from scratch or based on templates. Get started in seconds.
+Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or survey from scratch or based on templates.
 
 == Description ==
 
@@ -33,6 +33,8 @@ You can create the items from scratch or using hundreds of optimized templates.
  * Embed in a single post/page or display in a sidebar or section placement.
  * Popup the items automatically when users enters/exits the page.
  * Responsive design that optimizes display of polls, quizzes and surveys in desktops, tablets and mobile devices.
+
+https://www.youtube.com/watch?v=EDtpm6zVKvk
  
  == Templates & Examples ==
 
@@ -50,7 +52,7 @@ Create polls in seconds to engage your users and learn what they think on any to
 
 Create Buzzfeed-style and Facebook-stlye quizzes that engage your users and get viral on social networks. Integrate a lead form in your quiz to gather qualified leads. The quiz questions will be associated with the contact information you gather to help you qualify which leads bring value to your business. 
 
- == Surveys for generating leads ==
+ == Surveys for getting insights and feedback ==
 
 Survey your users to get feedback and to conduct research that will help you improve your site or produce/service offering. Opinion Stage supports many different question types and many different features that will help you create unbiased surveys that produce quality data.
 
@@ -60,6 +62,26 @@ Survey your users to get feedback and to conduct research that will help you imp
  * Gather more qualified leads - integrate a lead form inside the poll, quiz or survey.
  * Drive sales/revenue - take advantage of the high engagement rates to increase revenue from ads inside and outside of the polls and quizzes.
  * Extract insights - get more insights using interactive polls & surveys designed to maximize participation. Extract actionable insights with an intuitive analytics dashboard.
+
+ == Best Practices for creating an effective quiz ==
+
+ * Start by setting the objective – before starting to plan the quiz, determine what you want to achieve. Are you looking to generate engagement, to gather leads, to drive social sharing, or do you have a different motivation? For example, if you are looking to generate leads, it is usually better to keep it shorter. If you are looking to generate engagement you will prefer to make it longer. If you are looking to get social shares, your focus should be on designing an outcome that will get shared.
+
+ * Select a topic based on your audience – in the planning phase, keep your audience in mind. What topic will they find interesting or appealing? A quiz that works great for one audience, might not perform as well for another audience.
+Select a great title – the title is the single most important part of a quiz. Select a title that appeals to your audience, makes them interested or curious to discover something about themselves or about others. Try to keep the title clear and short as possible. Add humor when relevant.
+
+ * Keep it short, but not too short – If the quiz is too short, users tend to regard it as not serious enough or as content that will not bring much value. However, if it is too long, users will get tired and drop-off. At some point, adding another question will get you fewer responses. We recommend including 5-15 questions depending on the context.
+
+ * Make it visual – Opinion Stage lets you add images and videos in the quiz. You can add an image to the cover, and an intro image to each question. You can also add an image to each answer. Visuals will both get you more responses and will also improve the context of the questions and answers.
+
+ * Get shared in social networks – start by creating outcomes that are shareable. Examples can include sharing your results in a trivia quiz or sharing the personality you got in a personality test. It is recommended to keep the outcome 
+text as positive as possible regardless of the results.
+Place in a prominent location – to verify your item is noticed, place it in a central place in your site. A few options we recommend – above the fold in posts/pages, in the sidebar, enter/exit popup, or in a quiz section in your site. 
+
+ * Brand and customize – Opinion Stage lets you change every aspect of the visual. Customize the quiz so it matches your site and brand. You can set the font, sizes, and colors of the quiz. If you have some CSS knowledge you can customize almost every aspect of the quiz using the CSS override feature.
+
+ * Track and optimize – Opinion Stage lets you track every aspect of the performance, including how many users viewed, started, and completed the quiz. Track these parameters and use the drop-off report to optimize the length and to find questions that need to be replaced or improved. For more advanced usage scenarios you can also a/b test.
+
 
  == Language support ==
 
