@@ -180,7 +180,7 @@ function opinionstage_add_modal_opening_to_url_params($url) {
  *
  * Returns the newly updated widgets parameters.
 */
-function opinionstage_parse_client_data($raw_data) {
+function opinionstage_parse_client_data($raw_data) {	
 	$os_options = array('uid' => $raw_data['uid'],
 						   'email' => $raw_data['email'],
 						   'fly_id' => $raw_data['fly_id'],
@@ -192,8 +192,11 @@ function opinionstage_parse_client_data($raw_data) {
 						   'sidebar_placement_active' => 'false',
 						   'token' => $raw_data['token']);
 	$valid_ids = preg_match("/^[0-9]+$/", $raw_data['fly_id']) && preg_match("/^[0-9]+$/", $raw_data['article_placement_id']) &&  preg_match("/^[0-9]+$/", $raw_data['sidebar_placement_id']);
+
 	if ($valid_ids) {
 		update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+	}else{
+		header('location : ?page=opinionstage-getting-started&invalid=true');
 	}
 }
 function opinionstage_custom_content_popup_callback_url(){
