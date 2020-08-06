@@ -2,7 +2,7 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 ?>
-<div id="opinionstage-content">
+<div id="opinionstage-content">	
 	<div class="opinionstage-header-wrapper">
 			<?php if ( !$os_client_logged_in ) {?>
 			<div class="opinionstage-logo-wrapper">
@@ -45,6 +45,17 @@ defined( 'ABSPATH' ) or die();
 					<input id="os-email" type="email" name="email" placeholder="Your email" data-os-email-input required>
 					<button class="opinionstage-connect-btn opinionstage-getting-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 				</form>
+				<div style="clear:both;height: 15px;"></div>
+				<?php 
+					if($GLOBALS['connectionErrorOS'] != ''){
+						$errorConnOS = $GLOBALS['connectionErrorOS'];
+					?>
+						<div class="alert-os alert-danger-os">
+							<?php echo $errorConnOS; ?>
+						</div>
+				<?php 
+					} 
+				?>
 			</div>
 			</div>
 			<div class="gettingBlockContainer">
