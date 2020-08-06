@@ -47,14 +47,15 @@ defined( 'ABSPATH' ) or die();
 				</form>
 				<div style="clear:both;height: 15px;"></div>
 				<?php 
-					if($GLOBALS['connectionErrorOS'] != ''){
+					//
+					if(isset($GLOBALS['connectionErrorOS']) && $GLOBALS['connectionErrorOS'] != '') :
 						$errorConnOS = $GLOBALS['connectionErrorOS'];
-					?>
-						<div class="alert-os alert-danger-os">
-							<?php echo $errorConnOS; ?>
-						</div>
-				<?php 
-					} 
+						?>
+							<div class="alert-os alert-danger-os">
+								<?php echo $errorConnOS; ?>
+							</div>
+						<?php 
+					endif;
 				?>
 			</div>
 			</div>

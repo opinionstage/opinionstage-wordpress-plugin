@@ -23,9 +23,10 @@ function opinionstage_register_login_callback_page() {
 function opinionstage_login_callback() {
 
 	// Make sure user is logged in and have edit posts cap
-	$page_name = $_GET['page'];
-	$search = 'opinionstage';
-	if(isset($_GET['page']) && preg_match("/{$search}/i", $page_name ) ){
+	$page_search = 'opinionstage';
+
+	// Run only if we're on opinionstage page
+	if(isset($_GET['page']) && preg_match("/{$page_search}/i", $_GET['page'] ) ){
 		if (is_user_logged_in() && current_user_can('edit_posts')) {
 			// On Load Error
 			if(isset($_GET['invalid']) && $_GET['invalid'] == 'true'){
@@ -67,12 +68,6 @@ function opinionstage_login_callback() {
 				$ConnErrorOs = 'Failed to connect, Sidebar Placement ID variable not found, Error ID: 109';
 				$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
 			}
-			// ----> article_placement_id Variable empty
-			// if(isset($_GET['capabilities_post']) && $_GET['capabilities_post'] == 'false'){
-			// 	$ConnErrorOs = 'Failed to connect, Your Are Not Logged In / Your edit post capabilities are disabled, Error ID: 101.1 / Error ID: 101.2';
-			// 	$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
-			// }
-			// on load error -- ends
 
 
 			if ( OPINIONSTAGE_LOGIN_CALLBACK_SLUG == filter_input( INPUT_GET, 'page' ) ) {
@@ -80,49 +75,49 @@ function opinionstage_login_callback() {
 				if(isset($_GET['success']) && $_GET['success'] != ''){
 					$success = sanitize_text_field($_GET['success']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&success=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&success=false');
 					exit;
 				}
 				//  ---> UID Variable
 				if(isset($_GET['uid']) && $_GET['uid'] != ''){
 					$uid = sanitize_text_field($_GET['uid']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&uid=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&uid=false');
 					exit;
 				}
 				//  ---> Token Variable
 				if(isset($_GET['token']) && $_GET['token'] != ''){
 					$token = sanitize_text_field($_GET['token']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&token=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&token=false');
 					exit;
 				}
 				//  ---> Email Variable
 				if(isset($_GET['email']) && $_GET['email'] != ''){
 					$email = sanitize_email($_GET['email']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&email=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&email=false');
 					exit;
 				}
 				//  ---> Fly Id Variable
 				if(isset($_GET['fly_id']) && $_GET['fly_id'] != ''){
 					$fly_id = intval($_GET['fly_id']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&fly_id=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&fly_id=false');
 					exit;
 				}
 				//  ---> Article Placement ID Variable
 				if(isset($_GET['article_placement_id']) && $_GET['article_placement_id'] != ''){
 					$article_placement_id = intval($_GET['article_placement_id']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&article_placement_id=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&article_placement_id=false');
 					exit;
 				}
 				//  ---> Sidebar Placement ID Variable
 				if(isset($_GET['sidebar_placement_id']) && $_GET['sidebar_placement_id'] != ''){
 					$sidebar_placement_id = intval($_GET['sidebar_placement_id']);
 				}else{
-					header('location : ?page=opinionstage-getting-started&sidebar_placement_id=false');
+					header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&sidebar_placement_id=false');
 					exit;
 				}
 				
@@ -145,18 +140,14 @@ function opinionstage_login_callback() {
 
 				error_log('[opinionstage plugin] user logged in, redirect to '.$redirect_url);
 				if ( wp_redirect( $redirect_url, 302 ) ) {
-					exit; ?>
-					<script type="text/javascript">
-						alert('Failed to connect, UnKnown error! See Your Log Files, Error ID: 110');
-					</script>
-				<?php }else{ ?>
-				<script type="text/javascript">
-					alert('Failed to connect, Unable To Redirect To URL, Error ID: 102');
-				</script>
-			<?php }
+					exit;
+				}else{
+					$ConnErrorOs = 'Failed to connect, Redirection Error, Error ID: 119';
+					$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
+				}
 			}
 		}else{
-			$ConnErrorOs = 'Failed to connect, Your Are Not Logged In / Your edit post capabilities are disabled, Error ID: 101.1 / Error ID: 101.2';
+			$ConnErrorOs = 'Failed to connect, WP Capability Error, Error ID: 101.1-101.2';
 			$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
 		}	
 	}

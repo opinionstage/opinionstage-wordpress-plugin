@@ -19,14 +19,14 @@ defined( 'ABSPATH' ) or die();
 					<input id="os-email" type="email" name="email" placeholder="Your email" data-os-email-input required>
 					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
 					<?php 
-						if($GLOBALS['connectionErrorOS'] != ''){
+						if(isset($GLOBALS['connectionErrorOS']) && $GLOBALS['connectionErrorOS'] != '') :
 							$errorConnOS = $GLOBALS['connectionErrorOS'];
 						?>
 							<div class="alert-os alert-danger-os" style="padding:12px 24px;">
 								<?php echo $errorConnOS; ?>
 							</div>
-					<?php 
-						} 
+						<?php 
+						endif; 
 					?>
 				</form>
 			</div>
