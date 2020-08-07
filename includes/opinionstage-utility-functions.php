@@ -196,7 +196,7 @@ function opinionstage_parse_client_data($raw_data) {
 	if ($valid_ids) {
 		update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
 	}else{
-		header('location : ?page=opinionstage-getting-started&invalid=true');
+		header('location : ?page='.OPINIONSTAGE_GETTING_STARTED_SLUG.'&invalid=true');
 	}
 }
 function opinionstage_custom_content_popup_callback_url(){
