@@ -93,32 +93,6 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/slideshow.png', dirname(__FILE__) ); ?>" ></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Slideshow</div>
-							<div class="example">Group items in an interactive display</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
-							<?php echo opinionstage_template_slideshow_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template') ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/list.png', dirname(__FILE__) ); ?>" ></div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">List</div>
-							<div class="example">Create a listacle of anything</div>
-						</div>
-						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('list', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
-							<?php echo opinionstage_template_list_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template'); ?>
-						</div>
-					</div>
-					<div class="opinionstage-section-raw">
-						<div class="opinionstage-section-cell opinionstage-icon-cell">
 							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/form.png', dirname(__FILE__) ); ?>" ></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
@@ -132,14 +106,15 @@ defined( 'ABSPATH' ) or die();
 					</div>
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
-							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/article.png', dirname(__FILE__) ); ?>" ></div>
+							<div class="os-icon-plugin"><img src="<?php echo plugins_url( 'images/slideshow.png', dirname(__FILE__) ); ?>" ></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title">Story Article</div>
-							<div class="example">Create an article using visual & interactive elements</div>
+							<div class="title">Slideshow</div>
+							<div class="example">Group items in an interactive display</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('story', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
+							<?php echo opinionstage_create_slideshow_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_slideshow_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template') ?>
 						</div>
 					</div>
 					<?php 
