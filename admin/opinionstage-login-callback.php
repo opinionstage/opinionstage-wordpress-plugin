@@ -59,7 +59,7 @@ function opinionstage_login_callback() {
 				$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
 			}
 			// ----> article_placement_id Variable empty
-			if(isset($_GET['article_placement_id']) && $_GET['article_placement_id'] != 'false'){
+			if(isset($_GET['article_placement_id']) && $_GET['article_placement_id'] == 'false'){
 				$ConnErrorOs = 'Failed to connect, Article Placement ID variable not found, Error ID: 108';
 				$GLOBALS['connectionErrorOS'] = $ConnErrorOs;
 			}
