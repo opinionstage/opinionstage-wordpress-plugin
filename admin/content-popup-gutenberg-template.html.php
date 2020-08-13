@@ -229,7 +229,7 @@ function opinionstage_create_new_href() {
 </template>
 	<script>
 		jQuery(document).ready(function ($) {	
-		   	$('.filter__itm').live('click', function(e) {
+		   	$('.filter__itm').on('click', null, function(e) {
 			   	var text = $(this).text();
 		   		$("button#dropbtn span").text(text);
 
@@ -239,11 +239,11 @@ function opinionstage_create_new_href() {
 				});
 			});
 			
-			jQuery(document).live('click', function(e) {
+			jQuery(document).on('click', null, function(e) {
 				$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
 			});
 
-			$('div#show-templates').live('click', function(e) {
+			$('div#show-templates').on('click', null, function(e) {
 				var inputs = $(".filter__itm");
                	for(var i = 0; i < inputs.length; i++){
                    	if($(inputs[i]).text() == 'story article'){

@@ -211,7 +211,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 				$("#loadMore").hide(500);
 			}
 		});
-		$('#showLess').live( 'click', function () {
+		$('#showLess').on('click', null, function () {
 		    x=(x-0<0) ? 10 : x-0;
 		    if (item == 'all') {
 		    	$('table#check tbody#count').not(':lt('+x+')').hide();
