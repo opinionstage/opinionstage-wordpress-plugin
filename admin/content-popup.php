@@ -503,6 +503,7 @@ li.create-menu__itm.companymenuli a.alisting {
     padding: 10px 0;
     text-shadow: none;
     text-transform: uppercase;
+    text-align: center;
 }
 input.components-button.is-button.is-default.is-block.is-primary {
     margin-bottom: 9px;
@@ -515,7 +516,8 @@ input.components-button.is-button.is-default.is-block.is-primary {
     width: 400px;
 }
 .components-placeholder {
-    padding: 35px;
+    padding: 35px !important;
+    align-items: center !important;
 }
 .components-preview__block {
   margin-top: 10px;
