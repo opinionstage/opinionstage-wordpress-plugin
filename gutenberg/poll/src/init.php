@@ -34,8 +34,6 @@ function opinionStage_poll_oswp_editor_assets_set() {
 		);
 
 	// Styles.
-	wp_enqueue_style('Bootstrap',plugins_url( '/css/bootstrap.min.css', dirname( __FILE__  )));
-
 	wp_enqueue_style(
 			'opinionStage_poll_oswp_block_editor_css_set', // Handle.
 			plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
@@ -44,18 +42,3 @@ function opinionStage_poll_oswp_editor_assets_set() {
 } 
 
 add_action( 'enqueue_block_editor_assets', 'opinionStage_poll_oswp_editor_assets_set' );
-
-// Adding in  tool bar 
-add_action( 'admin_footer', 'print_admin_js_template' );
-function print_admin_js_template() {
-	?>
-	<script id="opinion-stage-gutenberg-button-switch-mode-check" type="text/html">
-		<div id="opinion-stage-switch-mode-check">
-			<button id="opinion-stage-mode-button" type="button" class="button button-primary button-large">
-				<span class="opinion-stage-switch-mode-connected">Connect To Opinion Stage</span>
-			</button>
-		</div>
-	</script>
-	<?php
-}
-?>

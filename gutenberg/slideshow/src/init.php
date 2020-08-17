@@ -31,7 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		);
 
 		// Styles.
-		wp_enqueue_style('Bootstrap',plugins_url( '/css/bootstrap.min.css', dirname( __FILE__  )));
 		wp_enqueue_style(
 			'opinionStage_slideshow_oswp_block_editor_css_set', // Handle.
 			plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
