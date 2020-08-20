@@ -145,34 +145,37 @@ var insertItemOsStatistics = false;
                 );
             }else{
             // Connected to opinionstage
-                $(document).ready(function () {
+                jQuery(document).ready(function ($) {
                     // Content Popup Launch Working
-                    $('span#oswpLauncherContentPopuppersonality').live('click', function(e) {
-                        e.preventDefault();
-                        setTimeout(function(){$('.editor-post-save-draft').trigger('click');},500);
-                        var text = $(this).attr('data-os-block');
-                        $("button#dropbtn span").text(text);   
-                        var inputs = $(".filter__itm");   
-                        for(var i = 0; i < inputs.length; i++){
-                            if($(inputs[i]).text() == text){ 
-                                setTimeout(function(){
-                                    $(inputs[i]).trigger('click');
-                                },1000);  
-                                setTimeout(function(){
-                                    $('.progress_message').css('display', 'none');
-                                    $('.content__list').css('display', 'block'); 
-                                },2500);                                                           
-                                $('button.content__links-itm').live('click', function(e) {
-                                    $('.tingle-modal.opinionstage-content-popup').hide();
-                                    $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
-                                }); 
-                                break;  
+                    jQuery('body').on('click', '[data-opinionstage-content-launch]', function (event) {
+                        event.preventDefault();
+                        setTimeout(function(){
+                            $('.progress_message').css('display', 'block');
+                            $('.content__list').css('display', 'none');
+                            var text = $('#oswpLauncherContentPopuppersonality').attr('data-os-block');
+                            $("button#dropbtn span").text(text); 
+                            var inputs = $(".filter__itm");
+                            for(var i = 0; i < inputs.length; i++){
+                                if($(inputs[i]).text() == text){ 
+                                    setTimeout(function(){
+                                        $(inputs[i]).trigger('click');
+                                        $('.progress_message').css('display', 'none');
+                                        $('.content__list').css('display', 'block'); 
+
+                                        $('button.content__links-itm').on('click',null, function(e) {
+                                        $('.tingle-modal.opinionstage-content-popup').hide();
+                                        $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide();
+                                    }); 
+                                    },2500);                                                                                         
+                                    
+                                    break;  
+                                }
+                                else {
+                                    $('.progress_message').css('display', 'block');
+                                    $('.content__list').css('display', 'none');
+                                }
                             }
-                            else {
-                                $('.progress_message').css('display', 'block');
-                                $('.content__list').css('display', 'none');
-                            }
-                        }
+                        },1000);
                     });               
                 });
 

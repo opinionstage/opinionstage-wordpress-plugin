@@ -331,7 +331,7 @@ li.create-menu__itm.companymenuli a.alisting {
     height: 38px;
 }
 .opinionstage-content-popup-contents .filter .gutenberg_dropdown:after {
-    height: 40px !important;
+    height: 38px !important;
 }
 .opinionstage-content-popup-contents .btn-close {
     border: none;
@@ -491,6 +491,7 @@ li.create-menu__itm.companymenuli a.alisting {
 .dropdown:hover .popup-action-dropdown.dropdown-content {
     width: 130px;
 }
+
 .components-button.is-default.is-block.is-primary {
     background: #32adbc;
     border-color: #32adbc;
@@ -504,6 +505,9 @@ li.create-menu__itm.companymenuli a.alisting {
     text-shadow: none;
     text-transform: uppercase;
     text-align: center;
+}
+.components-button.is-default.is-block.is-primary:hover{
+  opacity: 0.9;
 }
 input.components-button.is-button.is-default.is-block.is-primary {
     margin-bottom: 9px;
