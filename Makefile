@@ -34,6 +34,7 @@ svn-update-files: _check-svn-path
 	  --exclude=.circleci/                    \
 	  --exclude=Makefile                      \
 	  --exclude=*.mk                          \
+	  --exclude=.nvmrc                        \
 	  --exclude=node_modules/                 \
 	  --exclude=composer.json                 \
 	  --exclude=composer.lock                 \

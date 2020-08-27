@@ -7,7 +7,6 @@
 .DS_Store
 # plugin builds:
 /*.zip
-
 # assets managements artefacts (yarn, webpack etc.):
 /assets/*/node_modules
 /assets/*/yarn-error.log
