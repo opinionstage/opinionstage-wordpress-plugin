@@ -72,8 +72,9 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 	}
 	function opinionstage_plugin_activate() {
 		// all good. delete old file
-		if( file_exists(plugin_dir_path( __FILE__ ) . '/opinionstage-polls.php') ){
-			unlink(plugin_dir_path( __FILE__ ) . '/opinionstage-polls.php');
+		$deprecated_file = plugin_dir_path(__FILE__) . 'opinionstage-polls.php';
+		if ( file_exists($deprecated_file) && is_writable($deprecated_file) ) {
+			unlink($deprecated_file);
 		}
 	}
 	register_activation_hook( __FILE__, 'opinionstage_plugin_activate' );
