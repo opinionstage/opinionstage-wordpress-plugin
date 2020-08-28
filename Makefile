@@ -83,6 +83,7 @@ lint:
 	@./vendor/bin/phpcs \
 	  --standard=WordPress \
 	  --ignore=assets/*,vendor/*,*.css,*.js \
+	  -s \
 	  $$([ "$(file)" != "" ] && echo "$(file)" || echo .)
 .PHONY: lint
 
@@ -93,6 +94,7 @@ lint-autocorrect:
 	@./vendor/bin/phpcbf \
 	  --standard=WordPress \
 	  --ignore=assets/*,vendor/*,*.css,*.js \
+	  -s \
 	  $(file)
 .PHONY: lint-autocorrect
 
