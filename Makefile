@@ -14,19 +14,21 @@ $(TARGET): $(PLUGIN_FILES)
 # release steps:
 #
 # 1. sync files into svn trunk folder:
-#   make svn-update-files
+#      make svn-update-files
+#    if some unexpected files was copied, rollback svn to clean state: svn cleanup . --remove-unversioned
+#    if some files need revert: svn revert . --recursive
+#    add files to --exclide list and repeat
 # 2. add/remove all new/removed files in svn
-#   svn add --force .
-#   svn rm ..
+#      svn add --force .
+#      svn rm ..
 # 3. commit those files (will publish files as well):
-#   make svn-commit-version
+#      make svn-commit-version
 # 4. create tag in svn (locally), by copying trunk/ files into appropriate tags/ folder
-#   make svn-create-tag
+#      make svn-create-tag
 # 5. publish tag to svn:
-#   make svn-commit-tag
+#      make svn-commit-tag
 # 6. publish git tag to github
-#   make git-commit-tag && git push --tags
-
+#      make git-commit-tag && git push --tags
 svn-update-files: _check-svn-path
 	rsync --progress --archive --no-times --delete-after \
 	  --exclude=*.zip                         \
