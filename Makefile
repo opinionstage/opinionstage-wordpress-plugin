@@ -32,6 +32,7 @@ svn-update-files: _check-svn-path
 	  --exclude=*.zip                         \
 	  --exclude=.git*                         \
 	  --exclude=.circleci/                    \
+	  --exclude=.editorconfig                 \
 	  --exclude=Makefile                      \
 	  --exclude=*.mk                          \
 	  --exclude=.nvmrc                        \
