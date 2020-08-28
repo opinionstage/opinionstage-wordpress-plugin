@@ -2,6 +2,8 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
+
 class OpinionStageAdminPageLoader {
 	protected static $instance = false;
 	protected $slug = false;
@@ -33,9 +35,7 @@ class OpinionStageAdminPageLoader {
 	}
 
 	public function OSAPL_Debug($string){
-		if( (defined('WP_DEBUG') && WP_DEBUG == true) || (defined('WP_DEBUG_LOG') && WP_DEBUG_LOG == true) ){
-			error_log($string."\r\n");
-		}
+		opinionstage_error_log( $string );
 	}
 
 	public function OSAPL_PrepareSlug(){
@@ -155,4 +155,3 @@ class OpinionStageAdminPageLoader {
 }
 
 OpinionStageAdminPageLoader::getInstance();
-?>

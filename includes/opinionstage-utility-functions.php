@@ -3,6 +3,8 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
+
 function opinionstage_utm_query( $query = array() ) {
 	$utm_query = array(
 		'utm_source'   => OPINIONSTAGE_UTM_SOURCE,
@@ -43,7 +45,7 @@ function opinionstage_register_javascript_asset( $name, $relative_path, $deps = 
 	);
 
 	if ( ! $registered ) {
-		error_log( "[opinionstage plugin] ERROR registering javascript asset '$name'" );
+		opinionstage_error_log( "javascript asset '$name' registration failed" );
 	}
 }
 
@@ -192,6 +194,7 @@ function opinionstage_parse_client_data( $raw_data ) {
 		update_option( OPINIONSTAGE_OPTIONS_KEY, $os_options );
 	}
 }
+
 function opinionstage_custom_content_popup_callback_url() {
 	$protocol      = ( ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ) || $_SERVER['SERVER_PORT'] === 443 ) ? 'https://' : 'http://';
 	$url           = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];

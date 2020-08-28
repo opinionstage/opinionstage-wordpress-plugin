@@ -2,6 +2,8 @@
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die();
 
+require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
+
 add_action( 'admin_menu', 'opinionstage_disconnect_account_menu' );
 add_action( 'admin_init', 'opinionstage_disconnect_account_action' );
 
@@ -26,7 +28,7 @@ function opinionstage_disconnect_account_action() {
 
 		$redirect_url = get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_GETTING_STARTED_SLUG);
 
-		error_log('[opinionstage plugin] user logged out, redirect to '.$redirect_url);
+		opinionstage_error_log( 'user logged out, redirect to ' . $redirect_url );
 		if ( wp_redirect( $redirect_url, 302 ) ) {
 			exit;
 		}

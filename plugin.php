@@ -16,6 +16,10 @@
 
 defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
 
+define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
+require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
+
 $opinionstage_settings = array();
 
 // don't even try to load any configuration settings,
@@ -24,9 +28,7 @@ $opinionstage_settings = array();
 if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 	$opinionstage_dev_cfg_path = plugin_dir_path( __FILE__ ) . 'dev.ini';
 	if ( file_exists( $opinionstage_dev_cfg_path ) ) {
-		// phpcs:disable WordPress.PHP.DevelopmentFunctions
-		error_log( "[opinionstage plugin] loading configuration from file $opinionstage_dev_cfg_path" );
-		// phpcs:enable
+		opinionstage_error_log( "loading configuration from file $opinionstage_dev_cfg_path" );
 		$opinionstage_settings = parse_ini_file( $opinionstage_dev_cfg_path );
 	}
 }
