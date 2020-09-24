@@ -39,6 +39,11 @@ export default Vue.component('widget-list', {
       this.$emit('insert-shortcode', widget.shortcode)
     },
 
+    insertIntoGutenberg (widget) {
+      var widgetPath = widget.landingPageUrl.replace(/^https?:\/\/[^/]+\//,'/')
+      window.verifyOSInsert(widgetPath)
+    },
+
     selectWidgetType (type) {
       this.selectedWidgetType = type
       this.widgetTitleSearch = ''

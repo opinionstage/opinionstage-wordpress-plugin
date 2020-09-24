@@ -132,7 +132,7 @@ function opinionstage_create_new_href() {
 				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
 				<div class='content__links'>
 					<button class='popup-content-btn content__links-itm'
-					@click="var shortcode = widget.landingPageUrl.replace('https://www.opinionstage.com',''); window.verifyOSInsert(shortcode)">insert</button>
+					@click="insertIntoGutenberg(widget)">insert</button>
 					<div class="dropdown dropdown-popup-action">
 						<div class="popup-action popup-content-btn"></div>
 						<div class="content-item-menu">
