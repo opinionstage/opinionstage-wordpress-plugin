@@ -100,7 +100,6 @@ function opinionstage_sidebar_placement_edit_url($tab) {
 
 function opinionstage_create_poll_link($css_class, $title='CREATE NEW') {
 	return opinionstage_link($title, 'api/wp/redirects/widgets/new', $css_class, array('w_type' => 'poll'));
-
 }
 
 function opinionstage_template_poll_link($css_class, $title='USE A TEMPLATE') {
@@ -158,23 +157,7 @@ function opinionstage_callback_url() {
 function opinionstage_callback_url_gutenberg_connect() {
 	return get_admin_url('', '', 'admin') . 'admin.php?page='.OPINIONSTAGE_GETTING_STARTED_SLUG;
 }
-/**
- * Generates a to the callback page used to connect the plugin to the Opinion Stage account on content page
- */
-function opinionstage_content_login_callback_url() {
-	$current_url = '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	return get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG ). '&return_path=' . urlencode(opinionstage_add_modal_opening_to_url_params($current_url));
-}
-/**
- * Adds special param for modal opening on page load
- */
-function opinionstage_add_modal_opening_to_url_params($url) {
-	if (strpos($url, '?') !== false) {
-		return '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '&modal_is_open=true';
-	} else {
-		return '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '?modal_is_open=true';
-	}
-}
+
 /**
  * Take the received data and parse it
  *
