@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) or die();
 							<div class="example">Create a personality test or a product/service selector</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('outcome', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
+							<?php echo opinionstage_create_personality_link('opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
 							<?php echo opinionstage_template_personality_quiz_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template') ?>
 						</div>
 					</div>
@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) or die();
 							<div class="example">Create a knowledge test or assessment</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('quiz', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
+							<?php echo opinionstage_create_trivia_link('opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
 							<?php echo opinionstage_template_trivia_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template'); ?>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ defined( 'ABSPATH' ) or die();
 							<div class="example">Gather feedback from your users</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('survey', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
+							<?php echo opinionstage_create_survey_link('opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
 							<?php echo opinionstage_template_survey_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template'); ?>
 						</div>
 					</div>
@@ -100,7 +100,7 @@ defined( 'ABSPATH' ) or die();
 							<div class="example">Gather information from your users</div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link('contact_form', 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
+							<?php echo opinionstage_create_form_link('opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template'); ?>
 							<?php echo opinionstage_template_form_link('opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template'); ?>
 						</div>
 					</div>
