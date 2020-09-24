@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) or die();
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title">Create</div>
-					<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" style="float: right;" target="_blank">Need help adding items to your site?</a>
+					<?php echo opinionstage_help_links('Need help adding items to your site?', 'https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site', 'opinionstage-need-help-link'); ?>
 				</div>
 				<div class="opinionstage-section-content" style="position: relative;">
 					<div class="opinionstage-section-raw">

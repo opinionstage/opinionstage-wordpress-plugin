@@ -593,6 +593,9 @@ div#container .opinionstage-section-header {
     font-size: 30px;
     padding: 10px 0;
 }
+.opinionstage-need-help-link {
+  float: right !important;
+}
 .opinionstage-section-header a {
     color: #32adbc;
     float: right;
