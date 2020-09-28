@@ -51,6 +51,9 @@ function opinionstage_register_gutenberg_assets() {
 		false
 	);
 
+	/* phpcs:disable Squiz.PHP.CommentedOutCode.Found
+	// @kucaahbe: we don't need non-editor style, but if we do,
+	// here is how it should be like:
 	$style_css = 'assets/gutenberg/build/style-index.css';
 	wp_register_style(
 		'opinionstage-gutenberg-block',
@@ -59,13 +62,13 @@ function opinionstage_register_gutenberg_assets() {
 		filemtime( OPINIONSTAGE_PLUGIN_DIR . $style_css ),
 		false
 	);
+	phpcs:enable */
 
 	register_block_type(
 		'opinion-stage/block-os-poll',
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
@@ -74,7 +77,6 @@ function opinionstage_register_gutenberg_assets() {
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
@@ -83,7 +85,6 @@ function opinionstage_register_gutenberg_assets() {
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
@@ -92,7 +93,6 @@ function opinionstage_register_gutenberg_assets() {
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
@@ -101,7 +101,6 @@ function opinionstage_register_gutenberg_assets() {
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
@@ -110,7 +109,6 @@ function opinionstage_register_gutenberg_assets() {
 		array(
 			'editor_script' => 'opinionstage-gutenberg-block-editor',
 			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-			'style'         => 'opinionstage-gutenberg-block',
 		)
 	);
 
