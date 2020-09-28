@@ -5,10 +5,17 @@ import './editor.scss'
 const $ = jQuery
 let dropdownOptions = false
 
-export default function Edit ( props ) {
-
-  // Setting Attributes
-  let {attributes: {embedUrl, lockEmbed, buttonText, insertItemImage,insertItemOsTitle,insertItemOsView,insertItemOsEdit,insertItemOsStatistics}, setAttributes} = props
+export default function Edit ({ className, attributes, setAttributes }) {
+  let {
+    embedUrl,
+    lockEmbed,
+    buttonText,
+    insertItemImage,
+    insertItemOsTitle,
+    insertItemOsView,
+    insertItemOsEdit,
+    insertItemOsStatistics,
+  } = attributes
 
   // Fetching Localized variables
   let getCallBackUrlOs = OPINIONSTAGE_GUTENBERG_DATA.callbackUrlOs
@@ -19,7 +26,7 @@ export default function Edit ( props ) {
   // Select Button Click functionality
   const onSelectButtonClick = value => {
     window.verifyOSInsert = function(widget){
-      props.setAttributes({ embedUrl: widget, buttonText:'Change' })
+      setAttributes({ embedUrl: widget, buttonText:'Change' })
 
       let opinionStageWidgetVersion = OPINIONSTAGE_GUTENBERG_DATA.OswpPluginVersion
       let opinionStageClientToken = OPINIONSTAGE_GUTENBERG_DATA.OswpClientToken
@@ -38,7 +45,7 @@ export default function Edit ( props ) {
           data = data.data
           dropdownOptions = data
           // force reprinting instead!!
-          props.setAttributes({ buttonText: buttonText})
+          setAttributes({ buttonText: buttonText})
 
         })
         .catch(function(err) {
@@ -49,7 +56,7 @@ export default function Edit ( props ) {
 
   // Change Button Click functionality
   const onChangeButtonClick = value => {
-    props.setAttributes({
+    setAttributes({
       embedUrl: '',
       buttonText:'Embed',
       lockEmbed: false,
@@ -77,7 +84,7 @@ export default function Edit ( props ) {
   if(OPINIONSTAGE_GUTENBERG_DATA.isOsConnected == ''){
     // Not Connected to opinionstage
     return (
-      <div className={ props.className }>
+      <div className={ className }>
         <div className="os-poll-wrapper components-placeholder">
           <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
           <p className="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
@@ -133,12 +140,12 @@ export default function Edit ( props ) {
         let locationUrlOS = getLandingPageUrlOs(dropdownOptions[i].attributes['landing-page-url'])
         let matchValue = locationUrlOS.pathname
         if(embedUrl == matchValue){
-          props.setAttributes({lockEmbed: true, buttonText: "Change" })
-          props.setAttributes({ insertItemImage         : dropdownOptions[i].attributes['image-url'] })
-          props.setAttributes({ insertItemOsTitle       : dropdownOptions[i].attributes['title'] })
-          props.setAttributes({ insertItemOsView        : dropdownOptions[i].attributes['landing-page-url'] })
-          props.setAttributes({ insertItemOsEdit        : dropdownOptions[i].attributes['edit-url'] })
-          props.setAttributes({ insertItemOsStatistics  : dropdownOptions[i].attributes['stats-url'] })
+          setAttributes({lockEmbed: true, buttonText: "Change" })
+          setAttributes({ insertItemImage         : dropdownOptions[i].attributes['image-url'] })
+          setAttributes({ insertItemOsTitle       : dropdownOptions[i].attributes['title'] })
+          setAttributes({ insertItemOsView        : dropdownOptions[i].attributes['landing-page-url'] })
+          setAttributes({ insertItemOsEdit        : dropdownOptions[i].attributes['edit-url'] })
+          setAttributes({ insertItemOsStatistics  : dropdownOptions[i].attributes['stats-url'] })
           break
         }
       }
@@ -184,11 +191,12 @@ export default function Edit ( props ) {
     }else if(embedUrl == '' || jQuery.type(embedUrl) === "undefined"){
       contentViewEditStatOs
     }else{
-      props.setAttributes({ buttonText: 'Embed'})
+      setAttributes({ buttonText: 'Embed'})
       contentViewEditStatOs
     }
+
     return (
-      <div className={ props.className }>
+      <div className={ className }>
         {contentViewEditStatOs}
         <span></span>
       </div>
