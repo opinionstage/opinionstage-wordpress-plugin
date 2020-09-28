@@ -17,10 +17,6 @@ export default function Edit ({ className, attributes, setAttributes }) {
     insertItemOsStatistics,
   } = attributes
 
-  // Fetching Localized variables
-  let getCallBackUrlOs = OPINIONSTAGE_GUTENBERG_DATA.callbackUrlOs
-  let callback_url = getCallBackUrlOs
-  let formActionUrlOS = OPINIONSTAGE_GUTENBERG_DATA.getActionUrlOS
   let getlogoImageLinkOs = OPINIONSTAGE_GUTENBERG_DATA.getLogoImageLink
 
   // Select Button Click functionality
@@ -64,40 +60,29 @@ export default function Edit ({ className, attributes, setAttributes }) {
       insertItemOsTitle: false,
       insertItemOsView: false,
       insertItemOsEdit: false,
-      insertItemOsStatistics: false
+      insertItemOsStatistics: false,
     })
   }
 
-  // Connect to Opinionstage Callback Url
-  const onConnectOSWPButtonClick = value => {
-    window.location.replace(callback_url)
-  }
-
-  // Create New Item Url (Poll)
-  let getOsCreateButtonClickUrl = OPINIONSTAGE_GUTENBERG_DATA.onCreateButtonClickOs+'?w_type=poll&amp;utm_source=wordpress&amp;utm_campaign=WPMainPI&amp;utm_medium=link&amp;o=wp35e8'
-  const onCreateButtonClick = value => {
-    // Open Create new poll link in new page
-    window.open(getOsCreateButtonClickUrl, '_blank').focus()
-  }
+  let getOsCreateButtonClickUrl = OPINIONSTAGE_GUTENBERG_DATA.onCreateButtonClickOs+'&w_type=poll'
 
   // Checking for Opinion Stage connection
-  if(OPINIONSTAGE_GUTENBERG_DATA.isOsConnected == ''){
+  if ( OPINIONSTAGE_GUTENBERG_DATA.isOsConnected === '' ) {
     // Not Connected to opinionstage
     return (
       <div className={ className }>
-        <div className="os-poll-wrapper components-placeholder">
-          <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
-          <p className="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
-          <button className="components-button is-button is-default is-block is-primary" onClick={onConnectOSWPButtonClick}>Connect</button>
+        <div class="os-poll-wrapper components-placeholder">
+          <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+          <p class="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
+          <a href={OPINIONSTAGE_GUTENBERG_DATA.callbackUrlOs} class="components-button is-button is-default is-block is-primary">Connect</a>
         </div>
-        <div></div>
       </div>
     )
-  }else{
+  } else {
     // Connected to opinionstage
-    jQuery(document).ready(function ($) {
+    $(document).ready(function ($) {
       // Content Popup Launch Working
-      jQuery('body').on('click', '[data-opinionstage-content-launch]', function (event) {
+      $('body').on('click', '[data-opinionstage-content-launch]', function (event) {
         event.preventDefault()
         setTimeout(function(){
           $('.progress_message').css('display', 'block')
@@ -130,7 +115,7 @@ export default function Edit ({ className, attributes, setAttributes }) {
     })
 
     // Fetching Ajax Call Result
-    if(dropdownOptions != false){
+    if ( dropdownOptions !== false ) {
       for (let i = 0; i < dropdownOptions.length; i++) {
         let getLandingPageUrlOs = function(href) {
           let locationUrlOS = document.createElement("a")
@@ -139,13 +124,16 @@ export default function Edit ({ className, attributes, setAttributes }) {
         }
         let locationUrlOS = getLandingPageUrlOs(dropdownOptions[i].attributes['landing-page-url'])
         let matchValue = locationUrlOS.pathname
-        if(embedUrl == matchValue){
-          setAttributes({lockEmbed: true, buttonText: "Change" })
-          setAttributes({ insertItemImage         : dropdownOptions[i].attributes['image-url'] })
-          setAttributes({ insertItemOsTitle       : dropdownOptions[i].attributes['title'] })
-          setAttributes({ insertItemOsView        : dropdownOptions[i].attributes['landing-page-url'] })
-          setAttributes({ insertItemOsEdit        : dropdownOptions[i].attributes['edit-url'] })
-          setAttributes({ insertItemOsStatistics  : dropdownOptions[i].attributes['stats-url'] })
+        if ( embedUrl === matchValue ) {
+          setAttributes({
+            lockEmbed:              true,
+            buttonText:             'Change',
+            insertItemImage:        dropdownOptions[i].attributes['image-url'],
+            insertItemOsTitle:      dropdownOptions[i].attributes['title'],
+            insertItemOsView:       dropdownOptions[i].attributes['landing-page-url'],
+            insertItemOsEdit:       dropdownOptions[i].attributes['edit-url'],
+            insertItemOsStatistics: dropdownOptions[i].attributes['stats-url'],
+          })
           break
         }
       }
@@ -153,44 +141,42 @@ export default function Edit ({ className, attributes, setAttributes }) {
 
     // Content On Editor
     let contentViewEditStatOs = (
-      <div className="os-poll-wrapper components-placeholder">
-        <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
-        <span id="oswpLauncherContentPopuppoll" className="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll" onClick={onSelectButtonClick} >Select a Poll</span>
-        <input type="button" value="Create a New Poll" className="components-button is-button is-default is-block is-primary" onClick={onCreateButtonClick} />
-        <span></span>
+      <div class="os-poll-wrapper components-placeholder">
+        <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+        <span id="oswpLauncherContentPopuppoll" class="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll" onClick={onSelectButtonClick} >Select a Poll</span>
+        <a href={getOsCreateButtonClickUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a New Poll</a>
       </div>
     )
 
-    if(embedUrl != '' && embedUrl){
-      if(buttonText == 'Embed'){
+    if ( embedUrl !== '' && embedUrl ) {
+      if ( buttonText === 'Embed' ) {
         contentViewEditStatOs
-      }else if(buttonText == 'Change'){
+      } else if ( buttonText === 'Change' ) {
         contentViewEditStatOs = (
-          <div className="os-poll-wrapper components-placeholder">
-            <p className="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
-            <div className="components-preview__block" >
-              <div className="components-preview__leftBlockImage">
-                <img src={insertItemImage} alt={insertItemOsTitle} className="image" />
-                <div className="overlay">
-                  <div className="text">
+          <div class="os-poll-wrapper components-placeholder">
+            <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+            <div class="components-preview__block" >
+              <div class="components-preview__leftBlockImage">
+                <img src={insertItemImage} alt={insertItemOsTitle} class="image" />
+                <div class="overlay">
+                  <div class="text">
                     <a href={insertItemOsView} target="_blank"> View </a>
                     <a href={insertItemOsEdit} target="_blank"> Edit </a>
                     <a href={insertItemOsStatistics} target="_blank"> Statistics </a>
-                    <input type="button" value={buttonText} className="components-button is-button is-default is-large left-align" onClick={onChangeButtonClick}/>
+                    <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={onChangeButtonClick}/>
                   </div>
                 </div>
               </div>
-              <div className="components-preview__rightBlockContent">
-                <div className="components-placeholder__label">Poll: {insertItemOsTitle}</div>
+              <div class="components-preview__rightBlockContent">
+                <div class="components-placeholder__label">Poll: {insertItemOsTitle}</div>
               </div>
             </div>
-            <span></span>
           </div>
         )
       }
-    }else if(embedUrl == '' || jQuery.type(embedUrl) === "undefined"){
+    } else if ( embedUrl === '' || $.type(embedUrl) === 'undefined' ) {
       contentViewEditStatOs
-    }else{
+    } else {
       setAttributes({ buttonText: 'Embed'})
       contentViewEditStatOs
     }
@@ -198,7 +184,6 @@ export default function Edit ({ className, attributes, setAttributes }) {
     return (
       <div className={ className }>
         {contentViewEditStatOs}
-        <span></span>
       </div>
     )
   }
