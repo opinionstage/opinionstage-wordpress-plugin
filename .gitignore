@@ -11,6 +11,7 @@
 /assets/*/node_modules
 /assets/*/yarn-error.log
 *.js.map
+*.css.map
 
 # composer install directory
 /vendor

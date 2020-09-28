@@ -16,7 +16,8 @@
 
 defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
 
-define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'OPINIONSTAGE_PLUGIN_FILE', __FILE__ );
+define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( OPINIONSTAGE_PLUGIN_FILE ) );
 
 require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
 
@@ -112,12 +113,9 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 			} else {
 				require plugin_dir_path( __FILE__ ) . 'public/init.php';
 			}
+			require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
 		}
-		// Block editor since 5.0.
-		$block_editor_oswp = version_compare( $GLOBALS['wp_version'], '5.0-beta', '>' );
-		if ( function_exists( 'is_gutenberg_page' ) || $block_editor_oswp ) {
-			require plugin_dir_path( __FILE__ ) . 'gutenberg/init.php';
-		}
+
 		add_action( 'widgets_init', 'opinionstage_init_widget' );
 		add_action( 'plugins_loaded', 'opinionstage_init' );
 	}
