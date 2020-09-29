@@ -164,12 +164,6 @@ function opinionstage_create_slideshow_link( $css_class, $title = 'CREATE NEW' )
 function opinionstage_callback_url() {
 	return get_admin_url( '', '', 'admin' ) . 'admin.php?page=' . OPINIONSTAGE_LOGIN_CALLBACK_SLUG;
 }
-/**
- * Generates a to the callback page used to connect the plugin to the Opinion Stage account via gutenberg editor
- */
-function opinionstage_callback_url_gutenberg_connect() {
-	return get_admin_url( '', '', 'admin' ) . 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG;
-}
 
 /**
  * Take the received data and parse it

@@ -17,9 +17,6 @@ export default function Edit ({ className, attributes, setAttributes }) {
     insertItemOsStatistics,
   } = attributes
 
-  let getlogoImageLinkOs = OPINIONSTAGE_GUTENBERG_DATA.getLogoImageLink
-
-  // Select Button Click functionality
   const onSelectButtonClick = value => {
     window.verifyOSInsert = function(widget){
       setAttributes({ embedUrl: widget, buttonText:'Change' })
@@ -50,7 +47,6 @@ export default function Edit ({ className, attributes, setAttributes }) {
     }
   }
 
-  // Change Button Click functionality
   const onChangeButtonClick = value => {
     setAttributes({
       embedUrl: '',
@@ -64,17 +60,15 @@ export default function Edit ({ className, attributes, setAttributes }) {
     })
   }
 
-  let getOsCreateButtonClickUrl = OPINIONSTAGE_GUTENBERG_DATA.onCreateButtonClickOs+'&w_type=poll'
+  let createNewWidgetUrl = OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl+'&w_type=poll'
 
-  // Checking for Opinion Stage connection
-  if ( OPINIONSTAGE_GUTENBERG_DATA.isOsConnected === '' ) {
-    // Not Connected to opinionstage
+  if ( OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn === 'false' ) {
     return (
       <div className={ className }>
         <div class="os-poll-wrapper components-placeholder">
-          <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+          <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
           <p class="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
-          <a href={OPINIONSTAGE_GUTENBERG_DATA.callbackUrlOs} class="components-button is-button is-default is-block is-primary">Connect</a>
+          <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} class="components-button is-button is-default is-block is-primary">Connect</a>
         </div>
       </div>
     )
@@ -142,9 +136,9 @@ export default function Edit ({ className, attributes, setAttributes }) {
     // Content On Editor
     let contentViewEditStatOs = (
       <div class="os-poll-wrapper components-placeholder">
-        <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+        <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
         <span id="oswpLauncherContentPopuppoll" class="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll" onClick={onSelectButtonClick} >Select a Poll</span>
-        <a href={getOsCreateButtonClickUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a New Poll</a>
+        <a href={createNewWidgetUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a New Poll</a>
       </div>
     )
 
@@ -154,7 +148,7 @@ export default function Edit ({ className, attributes, setAttributes }) {
       } else if ( buttonText === 'Change' ) {
         contentViewEditStatOs = (
           <div class="os-poll-wrapper components-placeholder">
-            <p class="components-heading"><img src={getlogoImageLinkOs} alt=""/></p>
+            <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
             <div class="components-preview__block" >
               <div class="components-preview__leftBlockImage">
                 <img src={insertItemImage} alt={insertItemOsTitle} class="image" />

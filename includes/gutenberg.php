@@ -139,17 +139,19 @@ function opinionstage_register_gutenberg_categories( $categories, $post ) {
  * FIXME: @kucaahbe: this is weird way of passing data, should be fixed (e.g. with ajax call or so).
  */
 function opinionstage_gutenberg_inject_data() {
-		$payload = array(
-			'isOsConnected'         => opinionstage_user_logged_in(),
-			'onCreateButtonClickOs' => opinionstage_utm_url( 'api/wp/redirects/widgets/new' ),
-			'callbackUrlOs'         => opinionstage_callback_url_gutenberg_connect(),
-			'OswpPluginVersion'     => OPINIONSTAGE_WIDGET_VERSION,
-			'OswpClientToken'       => opinionstage_user_access_token(),
-			'OswpFetchDataUrl'      => OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API,
-			'getLogoImageLink'      => plugin_dir_url( OPINIONSTAGE_PLUGIN_FILE ) . 'admin/images/os-logo.png',
-		);
-
-		wp_localize_script( 'opinionstage-gutenberg-block-editor', 'OPINIONSTAGE_GUTENBERG_DATA', $payload );
+	wp_localize_script(
+		'opinionstage-gutenberg-block-editor',
+		'OPINIONSTAGE_GUTENBERG_DATA',
+		array(
+			'userLoggedIn'       => opinionstage_user_logged_in() ? 'true' : 'false',
+			'createNewWidgetUrl' => opinionstage_utm_url( 'api/wp/redirects/widgets/new' ),
+			'loginPageUrl'       => get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ),
+			'OswpPluginVersion'  => OPINIONSTAGE_WIDGET_VERSION,
+			'OswpClientToken'    => opinionstage_user_access_token(),
+			'OswpFetchDataUrl'   => OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API,
+			'brandLogoUrl'       => plugin_dir_url( OPINIONSTAGE_PLUGIN_FILE ) . 'admin/images/os-logo.png',
+		)
+	);
 }
 
 /**
