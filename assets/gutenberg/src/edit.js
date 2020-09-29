@@ -17,6 +17,18 @@ export default function Edit ({ className, attributes, setAttributes }) {
     insertItemOsStatistics,
   } = attributes
 
+  if ( OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn === 'false' ) {
+    return (
+      <div className={ className }>
+        <div class="os-poll-wrapper components-placeholder">
+          <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
+          <p class="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
+          <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} class="components-button is-button is-default is-block is-primary">Connect</a>
+        </div>
+      </div>
+    )
+  }
+
   const onSelectButtonClick = value => {
     window.verifyOSInsert = function(widget){
       setAttributes({ embedUrl: widget, buttonText:'Change' })
@@ -62,123 +74,111 @@ export default function Edit ({ className, attributes, setAttributes }) {
 
   let createNewWidgetUrl = OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl+'&w_type=poll'
 
-  if ( OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn === 'false' ) {
-    return (
-      <div className={ className }>
+  // Connected to opinionstage
+  $(document).ready(function ($) {
+    // Content Popup Launch Working
+    $('body').on('click', '[data-opinionstage-content-launch]', function (event) {
+      event.preventDefault()
+      setTimeout(function(){
+        $('.progress_message').css('display', 'block')
+        $('.content__list').css('display', 'none')
+        let text = $('#oswpLauncherContentPopuppoll').attr('data-os-block')
+        $("button#dropbtn span").text(text)
+        let inputs = $(".filter__itm")
+        for(let i = 0; i < inputs.length; i++){
+          if($(inputs[i]).text() == text){
+            setTimeout(function(){
+              $(inputs[i]).trigger('click')
+              $('.progress_message').css('display', 'none')
+              $('.content__list').css('display', 'block')
+
+              $('button.content__links-itm').on('click',null, function(e) {
+                $('.tingle-modal.opinionstage-content-popup').hide()
+                $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide()
+              })
+            },2500)
+
+            break
+          }
+          else {
+            $('.progress_message').css('display', 'block')
+            $('.content__list').css('display', 'none')
+          }
+        }
+      },1000)
+    })
+  })
+
+  // Fetching Ajax Call Result
+  if ( dropdownOptions !== false ) {
+    for (let i = 0; i < dropdownOptions.length; i++) {
+      let getLandingPageUrlOs = function(href) {
+        let locationUrlOS = document.createElement("a")
+        locationUrlOS.href = href
+        return locationUrlOS
+      }
+      let locationUrlOS = getLandingPageUrlOs(dropdownOptions[i].attributes['landing-page-url'])
+      let matchValue = locationUrlOS.pathname
+      if ( embedUrl === matchValue ) {
+        setAttributes({
+          lockEmbed:              true,
+          buttonText:             'Change',
+          insertItemImage:        dropdownOptions[i].attributes['image-url'],
+          insertItemOsTitle:      dropdownOptions[i].attributes['title'],
+          insertItemOsView:       dropdownOptions[i].attributes['landing-page-url'],
+          insertItemOsEdit:       dropdownOptions[i].attributes['edit-url'],
+          insertItemOsStatistics: dropdownOptions[i].attributes['stats-url'],
+        })
+        break
+      }
+    }
+  }
+
+  // Content On Editor
+  let contentViewEditStatOs = (
+    <div class="os-poll-wrapper components-placeholder">
+      <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
+      <span id="oswpLauncherContentPopuppoll" class="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll" onClick={onSelectButtonClick} >Select a Poll</span>
+      <a href={createNewWidgetUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a New Poll</a>
+    </div>
+  )
+
+  if ( embedUrl !== '' && embedUrl ) {
+    if ( buttonText === 'Embed' ) {
+      contentViewEditStatOs
+    } else if ( buttonText === 'Change' ) {
+      contentViewEditStatOs = (
         <div class="os-poll-wrapper components-placeholder">
           <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-          <p class="components-heading">Please connect WordPress to Opinion Stage to start adding polls</p>
-          <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} class="components-button is-button is-default is-block is-primary">Connect</a>
-        </div>
-      </div>
-    )
-  } else {
-    // Connected to opinionstage
-    $(document).ready(function ($) {
-      // Content Popup Launch Working
-      $('body').on('click', '[data-opinionstage-content-launch]', function (event) {
-        event.preventDefault()
-        setTimeout(function(){
-          $('.progress_message').css('display', 'block')
-          $('.content__list').css('display', 'none')
-          let text = $('#oswpLauncherContentPopuppoll').attr('data-os-block')
-          $("button#dropbtn span").text(text)
-          let inputs = $(".filter__itm")
-          for(let i = 0; i < inputs.length; i++){
-            if($(inputs[i]).text() == text){
-              setTimeout(function(){
-                $(inputs[i]).trigger('click')
-                $('.progress_message').css('display', 'none')
-                $('.content__list').css('display', 'block')
-
-                $('button.content__links-itm').on('click',null, function(e) {
-                  $('.tingle-modal.opinionstage-content-popup').hide()
-                  $('.tingle-modal.opinionstage-content-popup.tingle-modal--visible').hide()
-                })
-              },2500)
-
-              break
-            }
-            else {
-              $('.progress_message').css('display', 'block')
-              $('.content__list').css('display', 'none')
-            }
-          }
-        },1000)
-      })
-    })
-
-    // Fetching Ajax Call Result
-    if ( dropdownOptions !== false ) {
-      for (let i = 0; i < dropdownOptions.length; i++) {
-        let getLandingPageUrlOs = function(href) {
-          let locationUrlOS = document.createElement("a")
-          locationUrlOS.href = href
-          return locationUrlOS
-        }
-        let locationUrlOS = getLandingPageUrlOs(dropdownOptions[i].attributes['landing-page-url'])
-        let matchValue = locationUrlOS.pathname
-        if ( embedUrl === matchValue ) {
-          setAttributes({
-            lockEmbed:              true,
-            buttonText:             'Change',
-            insertItemImage:        dropdownOptions[i].attributes['image-url'],
-            insertItemOsTitle:      dropdownOptions[i].attributes['title'],
-            insertItemOsView:       dropdownOptions[i].attributes['landing-page-url'],
-            insertItemOsEdit:       dropdownOptions[i].attributes['edit-url'],
-            insertItemOsStatistics: dropdownOptions[i].attributes['stats-url'],
-          })
-          break
-        }
-      }
-    }
-
-    // Content On Editor
-    let contentViewEditStatOs = (
-      <div class="os-poll-wrapper components-placeholder">
-        <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-        <span id="oswpLauncherContentPopuppoll" class="components-button is-button is-default is-block is-primary" data-opinionstage-content-launch data-os-block="poll" onClick={onSelectButtonClick} >Select a Poll</span>
-        <a href={createNewWidgetUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a New Poll</a>
-      </div>
-    )
-
-    if ( embedUrl !== '' && embedUrl ) {
-      if ( buttonText === 'Embed' ) {
-        contentViewEditStatOs
-      } else if ( buttonText === 'Change' ) {
-        contentViewEditStatOs = (
-          <div class="os-poll-wrapper components-placeholder">
-            <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-            <div class="components-preview__block" >
-              <div class="components-preview__leftBlockImage">
-                <img src={insertItemImage} alt={insertItemOsTitle} class="image" />
-                <div class="overlay">
-                  <div class="text">
-                    <a href={insertItemOsView} target="_blank"> View </a>
-                    <a href={insertItemOsEdit} target="_blank"> Edit </a>
-                    <a href={insertItemOsStatistics} target="_blank"> Statistics </a>
-                    <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={onChangeButtonClick}/>
-                  </div>
+          <div class="components-preview__block" >
+            <div class="components-preview__leftBlockImage">
+              <img src={insertItemImage} alt={insertItemOsTitle} class="image" />
+              <div class="overlay">
+                <div class="text">
+                  <a href={insertItemOsView} target="_blank"> View </a>
+                  <a href={insertItemOsEdit} target="_blank"> Edit </a>
+                  <a href={insertItemOsStatistics} target="_blank"> Statistics </a>
+                  <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={onChangeButtonClick}/>
                 </div>
               </div>
-              <div class="components-preview__rightBlockContent">
-                <div class="components-placeholder__label">Poll: {insertItemOsTitle}</div>
-              </div>
+            </div>
+            <div class="components-preview__rightBlockContent">
+              <div class="components-placeholder__label">Poll: {insertItemOsTitle}</div>
             </div>
           </div>
-        )
-      }
-    } else if ( embedUrl === '' || $.type(embedUrl) === 'undefined' ) {
-      contentViewEditStatOs
-    } else {
-      setAttributes({ buttonText: 'Embed'})
-      contentViewEditStatOs
+        </div>
+      )
     }
-
-    return (
-      <div className={ className }>
-        {contentViewEditStatOs}
-      </div>
-    )
+  } else if ( embedUrl === '' || $.type(embedUrl) === 'undefined' ) {
+    contentViewEditStatOs
+  } else {
+    setAttributes({ buttonText: 'Embed'})
+    contentViewEditStatOs
   }
+
+  return (
+    <div className={ className }>
+      {contentViewEditStatOs}
+    </div>
+  )
 }
