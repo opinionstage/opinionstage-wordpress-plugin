@@ -143,10 +143,8 @@ export default function Edit ({ className, attributes, setAttributes }) {
     </div>
   )
 
-  if ( embedUrl !== '' && embedUrl ) {
-    if ( buttonText === 'Embed' ) {
-      contentViewEditStatOs
-    } else if ( buttonText === 'Change' ) {
+  if ( embedUrl && embedUrl !== '' ) {
+    if ( buttonText === 'Change' ) {
       contentViewEditStatOs = (
         <div class="os-poll-wrapper components-placeholder">
           <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
@@ -169,11 +167,8 @@ export default function Edit ({ className, attributes, setAttributes }) {
         </div>
       )
     }
-  } else if ( embedUrl === '' || $.type(embedUrl) === 'undefined' ) {
-    contentViewEditStatOs
   } else {
     setAttributes({ buttonText: 'Embed'})
-    contentViewEditStatOs
   }
 
   return (
