@@ -43,7 +43,6 @@ module.exports = function(env={}) {
     resolve: {
       alias: {
         'vue$': 'vue/dist/vue.esm.js',
-        'lodash$': 'lodash-es',
       }
     },
 

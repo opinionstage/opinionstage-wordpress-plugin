@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import _ from 'lodash'
+import debounce from 'lodash.debounce'
 
 export default Vue.component('widget-list', {
   props: [
@@ -25,7 +25,7 @@ export default Vue.component('widget-list', {
   },
 
   watch: {
-    widgetTitleSearch: _.debounce(function () {
+    widgetTitleSearch: debounce(function () {
       widgetsSearchUpdate.call(this)
     }, 500),
 
@@ -35,8 +35,8 @@ export default Vue.component('widget-list', {
   },
 
   methods: {
-    insertShortcode (widget) {
-      this.$emit('insert-shortcode', widget.shortcode)
+    select (widget) {
+      this.$emit('widget-selected', widget)
     },
 
     insertIntoGutenberg (widget) {

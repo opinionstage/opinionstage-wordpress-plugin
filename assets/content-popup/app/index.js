@@ -9,6 +9,7 @@ export default function (modal) {
     el: '[data-opinionstage-content-popup]',
 
     data: {
+      widgetSelectCb: function (widget) { console.log('dumb widget insert callback, widget:', widget) },
       showClientContent: true,
       isClientLoggedIn: null,
       isModalOpened: true,
@@ -24,10 +25,10 @@ export default function (modal) {
         this.isModalOpened = false
       },
 
-      insertShortcode (shortcode) {
-        wp.media.editor.insert(shortcode)
+      selectWidgetAndExit (widget) {
+        this.widgetSelectCb(widget)
+
         this.closePopup()
-        this.isModalOpened = false
       },
 
       showClientWidgets () {

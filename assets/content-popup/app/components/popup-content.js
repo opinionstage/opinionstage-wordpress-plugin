@@ -1,8 +1,9 @@
 import Vue from 'vue'
-import store from '../store.js'
 import RSVP from 'rsvp'
+import isEmpty from 'lodash.isempty'
+import join from 'lodash.join'
 
-import _ from 'lodash'
+import store from '../store.js'
 import JsonApi from '../../lib/jsonapi.js'
 
 export default Vue.component('popup-content', {
@@ -63,8 +64,8 @@ export default Vue.component('popup-content', {
       })
     },
 
-    insertShortcode (shortcode) {
-      this.$emit('insert-shortcode', shortcode)
+    widgetSelected (widget) {
+      this.$emit('widget-selected', widget)
     },
 
     checkWidgetUpdates ({ widgetType }) {
@@ -145,10 +146,10 @@ function withParams(url, type, time) {
     urlParams.push( `updated_at=${time}` )
   }
 
-  if ( _.isEmpty(urlParams) ) {
+  if ( isEmpty(urlParams) ) {
     return url
   } else {
-    return url + '?' + _.join( urlParams, '&')
+    return url + '?' + join(urlParams, '&')
   }
 }
 

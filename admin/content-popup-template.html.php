@@ -38,7 +38,7 @@ function opinionstage_create_new_href() {
 				:show-client-content="showClientContent"
 				:client-is-logged-in="isClientLoggedIn"
 				:modal-is-opened="isModalOpened"
-				@insert-shortcode="insertShortcode"
+				@widget-selected="selectWidgetAndExit"
 				client-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ?>"
 				shared-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API ?>"
 				client-widgets-has-new-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE ?>"
@@ -127,7 +127,7 @@ function opinionstage_create_new_href() {
 				</a>
 				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
 				<div class='content__links'>
-					<button class='popup-content-btn content__links-itm' @click="insertShortcode(widget)">insert</button>
+					<button class='popup-content-btn content__links-itm' @click="select(widget)">insert</button>
 					<div class="dropdown dropdown-popup-action">
 					<div class="popup-action popup-content-btn"></div>
 					<div class="content-item-menu">
@@ -174,7 +174,7 @@ function opinionstage_create_new_href() {
 				:data-loading='dataLoading'
 				:show-search='true'
 				:no-more-data='noMoreData'
-				@insert-shortcode="insertShortcode"
+				@widget-selected="widgetSelected"
 				@widgets-search-update='reloadData'
 				@load-more-widgets='appendData'
 			>
@@ -192,7 +192,7 @@ function opinionstage_create_new_href() {
 			:data-loading='dataLoading'
 			:show-search='false'
 			:no-more-data='noMoreData'
-			@insert-shortcode='insertShortcode'
+			@widget-selected="widgetSelected"
 			@widgets-search-update='reloadData'
 			@load-more-widgets='appendData'
 		>
@@ -209,33 +209,36 @@ function opinionstage_create_new_href() {
 		</div>
 	</div>
 </template>
-	<script>
-		jQuery(document).ready(function ($) {				
-		   	$('.filter__itm').on('click', null, function(e) {
-			   	var text = $(this).text();
-		   		$("button#dropbtn span").text(text);
-		   		
-		   		$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
-			});
-			
-		   	setTimeout(function(){
-		   	$(".dropdown_items #dropbtn").hover(function() {
-				  $('.dropdown_items .dropdown-content').css("display","block");
-				});
-		   	},3000);
 
-			jQuery(document).on('click', null, function(e) {
+<script>
+  // FIXME: this is crap
+	jQuery(function ($) {
+		$('.filter__itm').on('click', null, function(e) {
+				var text = $(this).text();
+				$("button#dropbtn span").text(text);
+
 				$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
-			});
-			
-			$('div#show-templates').on('click', null, function(e) {
-				var inputs = $(".filter__itm");
-               	for(var i = 0; i < inputs.length; i++){
-                   	if($(inputs[i]).text() == 'story article'){
-                    	$(inputs[i]).hide();
-                    	break; 
-                    }
-                }
-			});
 		});
-	</script>
+
+		setTimeout(function () {
+			$(".dropdown_items #dropbtn").hover(function() {
+				$('.dropdown_items .dropdown-content').css("display","block");
+			});
+		}, 3000);
+
+		jQuery(document).on('click', null, function(e) {
+			$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
+		});
+
+		$('div#show-templates').on('click', null, function (e) {
+			var inputs = $(".filter__itm");
+
+			for(var i = 0; i < inputs.length; i++){
+					if ( $(inputs[i]).text() === 'story article' ) {
+						$(inputs[i]).hide();
+						break;
+					}
+			}
+		});
+	});
+</script>

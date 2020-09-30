@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import _ from 'lodash'
+import trim from 'lodash.trim'
+import isEmpty from 'lodash.isempty'
+import join from 'lodash.join'
+
 import JsonApi from '../lib/jsonapi.js'
 
 Vue.use(Vuex)
@@ -25,33 +28,32 @@ function dispatchNextPage (apiJsonData) {
   return apiJsonData.meta.nextPage
 }
 
-function withFiltering(url, filteringParams) {
+function withFiltering(url, { type, title, page, perPage }) {
   const urlParams = []
-  if ( !_.isEmpty(filteringParams) ) {
-    if ( filteringParams.type ) {
-      urlParams.push( `type=${filteringParams.type}` )
-    }
 
-    if ( !_.isEmpty(filteringParams.title) ) {
-      const trimmed = _.trim(filteringParams.title)
-      if ( !_.isEmpty(trimmed) ) {
-        urlParams.push( `title_like=${trimmed}` )
-      }
-    }
+  if ( type ) {
+    urlParams.push( `type=${type}` )
+  }
 
-    if ( filteringParams.page ) {
-      urlParams.push( `page=${filteringParams.page}` )
-    }
-
-    if ( filteringParams.perPage ) {
-      urlParams.push( `per_page=${filteringParams.perPage}` )
+  if ( !isEmpty(title) ) {
+    const trimmed = trim(title)
+    if ( !isEmpty(trimmed) ) {
+      urlParams.push( `title_like=${trimmed}` )
     }
   }
 
-  if ( _.isEmpty(urlParams) ) {
+  if ( page ) {
+    urlParams.push( `page=${page}` )
+  }
+
+  if ( perPage ) {
+    urlParams.push( `per_page=${perPage}` )
+  }
+
+  if ( isEmpty(urlParams) ) {
     return url
   } else {
-    return url + '?' + _.join( urlParams, '&')
+    return url + '?' + join(urlParams, '&')
   }
 }
 
