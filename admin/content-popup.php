@@ -30,28 +30,8 @@ function opinionstage_content_popup_js() {
 }
 
 function opinionstage_content_popup_html() {
-	if(opinionstage_is_guten_enabled() == true){
-       require( plugin_dir_path( __FILE__ ).'content-popup-gutenberg-template.html.php');
-    }else{
-       require( plugin_dir_path( __FILE__ ).'content-popup-template.html.php');
-    } ?>
-  <script>
-    jQuery(document).ready(function ($) {       
-        $('span#oswpLauncherContentPopupExamples').parent().attr({'data-opinionstage-content-launch':"", 'data-os-view':"examples"});
-        $('span#oswpLauncherContentPopup').parent().attr({'data-opinionstage-content-launch':"", 'data-os-view':"content"});
-        $('span#oswpLauncherContentPopupExamples').parent().on('click',function(e){
-          var dataView = $(this).attr('data-os-view');           
-              if(dataView == 'examples'){
-                setTimeout(function(){$('div#show-templates').trigger('click');},2000); 
-              }  
-        });
-          $('span#oswpLauncherContentPopup').parent().on('click',function(e){    
-            e.preventDefault();
-            $('div#view-items').trigger('click');
-          });
-      });
-  </script>
-<?php }
+	require_once OPINIONSTAGE_PLUGIN_DIR . 'admin/content-popup-template.html.php';
+}
 
 function opinionstage_content_popup_css_without_login(){ ?>
 <style type="text/css">
@@ -574,4 +554,3 @@ a.content__links-itm:hover {
 
 	</style>
 <?php }
-?>

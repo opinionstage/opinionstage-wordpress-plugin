@@ -32,12 +32,15 @@ function opinionstage_register_gutenberg_assets() {
 		);
 	}
 
-	$index_js     = 'assets/gutenberg/build/index.js';
 	$script_asset = require $script_asset_path;
+
+	$index_js = 'assets/gutenberg/build/index.js';
+	$index_js_dependencies = $script_asset['dependencies'];
+	$index_js_dependencies[] = opinionstage_asset_name( 'content-popup' );
 	wp_register_script(
 		'opinionstage-gutenberg-block-editor',
 		opinionstage_gutenberg_asset_url( $index_js ),
-		$script_asset['dependencies'],
+		$index_js_dependencies,
 		$script_asset['version'],
 		false
 	);
