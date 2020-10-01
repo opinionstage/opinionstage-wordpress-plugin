@@ -1,4 +1,12 @@
+// https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/
 export const attributes = {
+  widgetType: {
+    type:      'string',
+    source:    'attribute',
+    attribute: 'data-type',
+    selector:  'div[data-type]',
+  },
+
   embedUrl: {
     source:    'attribute',
     attribute: 'data-test-url',
@@ -54,3 +62,11 @@ export const supports = {
   // Removes support for an HTML mode.
   html: false,
 }
+
+// block widget types (values of widgetType attribute):
+export const WIDGET_POLL             = 'poll'
+export const WIDGET_PERSONALITY_QUIZ = 'personality'
+export const WIDGET_TRIVIA_QUIZ      = 'trivia'
+export const WIDGET_SURVEY           = 'survey'
+export const WIDGET_SLIDESHOW        = 'slideshow'
+export const WIDGET_FORM             = 'form'

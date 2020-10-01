@@ -8,7 +8,7 @@ import { attributes, category, supports } from './configuration'
 registerBlockType('opinion-stage/block-os-poll', {
   title: __( 'Poll', 'social-polls-by-opinionstage' ),
   icon: 'chart-bar',
-  description: __('Embed an Opinion Stage poll', 'social-polls-by-opinionstage'),
+  description: __('Embed an Opinion Stage Poll', 'social-polls-by-opinionstage'),
   category,
   keywords: [
     __('poll', 'social-polls-by-opinionstage'),
@@ -22,14 +22,14 @@ registerBlockType('opinion-stage/block-os-poll', {
   save,
 })
 
-registerBlockType('opinion-stage/survey', {
-  title: __( '!Survey', 'survey' ),
-  icon: 'smiley',
-  description: __(
-    'monkey ololo',
-    'survey-description'
-  ),
+registerBlockType('opinion-stage/block-os-survey', {
+  title: __( 'Survey' ),
+  icon: 'list-view',
+  description: __('Embed an Opinion Stage Survey', 'social-polls-by-opinionstage'),
   category,
+  keywords: [
+    __('survey', 'social-polls-by-opinionstage'),
+  ],
 
   supports,
   attributes,
@@ -39,13 +39,14 @@ registerBlockType('opinion-stage/survey', {
 })
 
 registerBlockType('opinion-stage/block-os-trivia', {
-  title: __( '!Trivia Quiz' ),
+  title: __( 'Trivia Quiz' ),
   icon: 'yes',
-  description: __(
-    'this is poll',
-    'poll-description'
-  ),
+  description: __('Embed an Opinion Stage Trivia Quiz', 'social-polls-by-opinionstage'),
   category,
+  keywords: [
+    __('quiz', 'social-polls-by-opinionstage'),
+    __('trivia', 'social-polls-by-opinionstage'),
+  ],
 
   supports,
   attributes,
@@ -55,13 +56,15 @@ registerBlockType('opinion-stage/block-os-trivia', {
 })
 
 registerBlockType('opinion-stage/block-os-personality', {
-  title: __( '!Personality Quiz' ),
+  title: __( 'Personality Quiz' ),
   icon: 'smiley',
-  description: __(
-    'this is poll',
-    'poll-description'
-  ),
+  description: __('Embed an Opinion Stage Personality Quiz', 'social-polls-by-opinionstage'),
   category,
+  keywords: [
+    __('personality', 'social-polls-by-opinionstage'),
+    __('quiz', 'social-polls-by-opinionstage'),
+    __('outcome', 'social-polls-by-opinionstage'),
+  ],
 
   supports,
   attributes,
@@ -70,14 +73,15 @@ registerBlockType('opinion-stage/block-os-personality', {
   save,
 })
 
-registerBlockType('opinion-stage/form', {
-  title: __( '!Form' ),
+registerBlockType('opinion-stage/block-os-form', {
+  title: __( 'Form' ),
   icon: 'editor-justify',
-  description: __(
-    'this is poll',
-    'poll-description'
-  ),
+  description: __('Embed an Opinion Stage Form', 'social-polls-by-opinionstage'),
   category,
+  keywords: [
+    __('form', 'social-polls-by-opinionstage'),
+    __('contact form', 'social-polls-by-opinionstage'),
+  ],
 
   supports,
   attributes,
@@ -86,14 +90,14 @@ registerBlockType('opinion-stage/form', {
   save,
 })
 
-registerBlockType('opinion-stage/slideshow', {
+registerBlockType('opinion-stage/block-os-slideshow', {
   title: __( 'Slideshow' ),
   icon: 'playlist-video',
-  description: __(
-    'this is poll',
-    'poll-description'
-  ),
+  description: __('Embed an Opinion Stage Slideshow', 'social-polls-by-opinionstage'),
   category,
+  keywords: [
+    __('slideshow', 'social-polls-by-opinionstage'),
+  ],
 
   supports,
   attributes,

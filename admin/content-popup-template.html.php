@@ -209,36 +209,3 @@ function opinionstage_create_new_href() {
 		</div>
 	</div>
 </template>
-
-<script>
-  // FIXME: this is crap
-	jQuery(function ($) {
-		$('.filter__itm').on('click', null, function(e) {
-				var text = $(this).text();
-				$("button#dropbtn span").text(text);
-
-				$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
-		});
-
-		setTimeout(function () {
-			$(".dropdown_items #dropbtn").hover(function() {
-				$('.dropdown_items .dropdown-content').css("display","block");
-			});
-		}, 3000);
-
-		jQuery(document).on('click', null, function(e) {
-			$('.dropdown_items .dropdown-content').attr('style', 'display: none !important');
-		});
-
-		$('div#show-templates').on('click', null, function (e) {
-			var inputs = $(".filter__itm");
-
-			for(var i = 0; i < inputs.length; i++){
-					if ( $(inputs[i]).text() === 'story article' ) {
-						$(inputs[i]).hide();
-						break;
-					}
-			}
-		});
-	});
-</script>

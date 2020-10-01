@@ -4,15 +4,7 @@ $gray: #dedede;
 $green: #bada55;
 $red: orangered;
 
-.wp-block-cgb-block-sampleblock  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
-}
-.os-poll-wrapper .is-large, .os-poll-wrapper .is-block {
+.os-widget-wrapper  .is-large, .os-widget-wrapper .is-block {
     height: 30px;
     line-height: 25px;
     padding: 0 12px 2px;
@@ -21,7 +13,7 @@ $red: orangered;
     display: block;
 }
 
-.os-poll-wrapper .is-block {
+.os-widget-wrapper .is-block {
     margin-top: 10px;
 }
 .components-base-control.components-select-control__input {
@@ -30,7 +22,7 @@ $red: orangered;
     max-width: 80%;
     margin-right: 10px;
 }
-.os-poll-wrapper .components-preview__block {
+.os-widget-wrapper .components-preview__block {
     width: 100%;
     max-width: 100%;
     padding: 10px;
@@ -178,14 +170,14 @@ p.components-heading {
     font-weight: 600;
     text-align: center;
 }
-.os-poll-wrapper.components-placeholder {
+.os-widget-wrapper.components-placeholder {
     transition: 1s;
 }
-.os-poll-wrapper .wp-block-opinion-stage-block-os-poll .components-placeholder__fieldset {
+.os-widget-wrapper .wp-block-opinion-stage-block-os-poll .components-placeholder__fieldset {
     visibility: hidden;
     opacity: 0;
 }
-.os-poll-wrapper .components-placeholder__fieldset {
+.os-widget-wrapper .components-placeholder__fieldset {
     visibility: hidden;
     opacity: 0;
     height: 0;
