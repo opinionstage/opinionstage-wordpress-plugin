@@ -182,3 +182,40 @@ p.components-heading {
     opacity: 0;
     height: 0;
 }
+
+.components-button.is-default.is-block.is-primary {
+    background: #32adbc;
+    border-color: #32adbc;
+    box-shadow: none;
+    font-size: 14px;
+    font-weight: 600;
+    height: auto;
+    line-height: normal;
+    max-width: 276px;
+    padding: 10px 0;
+    text-shadow: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.components-button.is-default.is-block.is-primary:hover{
+  opacity: 0.9;
+}
+
+input.components-button.is-button.is-default.is-block.is-primary {
+    margin-bottom: 9px;
+}
+.components-placeholder .components-heading {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.11;
+    margin-bottom: 20px;
+    width: 400px;
+}
+.components-placeholder {
+    padding: 35px !important;
+    align-items: center !important;
+}
+.components-preview__block {
+  margin-top: 10px;
+}
