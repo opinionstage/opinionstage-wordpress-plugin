@@ -6,10 +6,6 @@ require_once( plugin_dir_path( __FILE__ ).'../includes/opinionstage-client-sessi
 
 $opinionstage_user_logged_in = opinionstage_user_logged_in();
 
-function opinionstage_create_new_href() {
-	return OPINIONSTAGE_SERVER_BASE.'/dashboard/content';
-}
-
 // Note: all html put here (not moved to js build system) in order to preserve ability to use Wordpress translate APIs
 ?>
 <style type="text/css">
