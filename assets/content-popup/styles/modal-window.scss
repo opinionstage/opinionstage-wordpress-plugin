@@ -41,6 +41,11 @@
     cursor: auto;
     transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
     transform: scale(.8);
+    @media only screen and (max-width: 875px) {
+      min-width: 100%;
+      overflow: hidden;
+      width: 100%;
+    }
   }
 
   .tingle-modal-box__content {

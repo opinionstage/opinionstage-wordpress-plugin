@@ -25,7 +25,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 					</a>
 				</div>
 				<div class='header__action'>
-					<div class='btn-close' @click="closePopup">X</div>
+					<div class='btn-close' @click="closePopup">&#x2715;</div>
 				</div>
 			</div>
 		</header>
@@ -49,68 +49,69 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 <template id="opinionstage-widget-list">
 <div class='page-content'>
 	<div class='content-actions'>
-		<div class="popup-header-title">My Items</div>
-		<div class="header-right-container">
-		<div class="header-right-inner-container">
-		<div class='filter'>
-			<div class="dropdown dropdown_items">
-				<button class="dropbtn" id="dropbtn"><span>All ITEMS</span></button>
-				<div class="dropdown-content">
-					<div class='filter__itm'
-							@click="selectWidgetType('all')"
-							:class="{ active: selectedWidgetType === 'all' }"
-					>all Items</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('poll')"
-							:class="{ active: selectedWidgetType === 'poll' }"
-					>poll</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('set')"
-							:class="{ active: selectedWidgetType === 'set' }"
-					>multi poll set</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('survey')"
-							:class="{ active: selectedWidgetType === 'survey' }"
-					>survey</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('slideshow')"
-							:class="{ active: selectedWidgetType === 'slideshow' }"
-					>slideshow</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('trivia')"
-							:class="{ active: selectedWidgetType === 'trivia' }"
-					>trivia quiz</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('outcome')"
-							:class="{ active: selectedWidgetType === 'outcome' }"
-					>personality quiz</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('list')"
-							:class="{ active: selectedWidgetType === 'list' }"
-					>list</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('form')"
-							:class="{ active: selectedWidgetType === 'form' }"
-					>form</div>
-					<div class='filter__itm'
-							@click="selectWidgetType('story')"
-							:class="{ active: selectedWidgetType === 'story' }"
-					>story article</div>
+		<div class='content-actions__left'>
+			<h1 class="main-title">My Items</h1>
+		</div>
+		<div class="content-actions__right">
+			<div class='filter'>
+				<div class="dropdown dropdown_items">
+					<button class="dropbtn"><span>All ITEMS</span></button>
+					<div class="dropdown-content">
+						<div class='filter__itm'
+								@click="selectWidgetType('all')"
+								:class="{ active: selectedWidgetType === 'all' }"
+						>all Items</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('poll')"
+								:class="{ active: selectedWidgetType === 'poll' }"
+						>poll</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('set')"
+								:class="{ active: selectedWidgetType === 'set' }"
+						>multi poll set</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('survey')"
+								:class="{ active: selectedWidgetType === 'survey' }"
+						>survey</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('slideshow')"
+								:class="{ active: selectedWidgetType === 'slideshow' }"
+						>slideshow</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('trivia')"
+								:class="{ active: selectedWidgetType === 'trivia' }"
+						>trivia quiz</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('outcome')"
+								:class="{ active: selectedWidgetType === 'outcome' }"
+						>personality quiz</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('list')"
+								:class="{ active: selectedWidgetType === 'list' }"
+						>list</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('form')"
+								:class="{ active: selectedWidgetType === 'form' }"
+						>form</div>
+						<div class='filter__itm'
+								@click="selectWidgetType('story')"
+								:class="{ active: selectedWidgetType === 'story' }"
+						>story article</div>
+					</div>
 				</div>
 			</div>
+			<div class="os-search" :class='{ hidden: !showSearch }'>
+				<input
+					class='os-search__input'
+					placeholder='Search...'
+					type='search'
+					v-model='widgetTitleSearch'
+				>
+				<span class="os-search__icon icon-os-common-tip"></span>
+			</div>
+			<div class="content-actions__sep"></div>
+			<a href="<?php echo admin_url( 'admin.php?page=' . OPINIONSTAGE_MENU_SLUG ); ?>" target='_blank' class="btn-create">CREATE</a>
 		</div>
-		<div class='search' style="width: 180px;">
-			<input
-				class='std-search'
-				placeholder='Search...'
-				type='text'
-				v-model='widgetTitleSearch'
-				:class='{ hidden: !showSearch }'
-			>
-		</div>
-		</div>
-		<a href="<?php echo admin_url( 'admin.php?page=opinionstage-settings' ); ?>" target='_blank' class="popup-header-item-create-btn">CREATE</a>
-	</div>
 	</div>
 	<div class='content__list'>
 		<div v-if='hasData'>
@@ -125,15 +126,12 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				<div class='content__links'>
 					<button class='popup-content-btn content__links-itm' @click="select(widget)">insert</button>
 					<div class="dropdown dropdown-popup-action">
-					<div class="popup-action popup-content-btn"></div>
-					<div class="content-item-menu">
-					<div class="top-arrow-box"><div class="top-arrow"></div></div>
-					<div class="popup-action-dropdown dropdown-content">
-					<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'>view</a>
-					<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template">edit</a>
-					<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">Results</a>
-					</div>
-					</div>
+						<div class="popup-action popup-content-btn"></div>
+						<div class="popup-action-dropdown dropdown-content">
+							<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'>view</a>
+							<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template">edit</a>
+							<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">Results</a>
+						</div>
 					</div>
 				</div>
 			</div>
