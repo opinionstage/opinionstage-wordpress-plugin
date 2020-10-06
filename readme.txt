@@ -3,7 +3,7 @@ Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 19.6.39
 Requires PHP: 5.2
 
