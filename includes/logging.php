@@ -20,12 +20,7 @@ function opinionstage_error_log( $message ) {
 		return;
 	}
 
-	global $wp;
-	// phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-	$uri = is_object( $wp ) ? home_url( $wp->request ) : isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'unknown';
-	// phpcs:enable
-
 	// phpcs:disable WordPress.PHP.DevelopmentFunctions
-	error_log( '[opinionstage plugin] ' . $message . " ($uri)" );
+	error_log( '[opinionstage plugin] ' . $message );
 	// phpcs:enable
 }
