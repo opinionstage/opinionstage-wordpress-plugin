@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
 Tested up to: 5.5
-Stable tag: 19.6.39
+Stable tag: 19.6.40
 Requires PHP: 5.2
 
 Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or survey from scratch or based on templates.
@@ -138,6 +138,9 @@ Opinion Stage makes it easy for you to comply with the GDPR regulation. For more
 N/A
 
 == Changelog ==
+  = 19.6.40 =
+  * Gutenberg integration rework
+  * various internal code improvements
   = 19.6.39 =
   * fix WordPress 5.5 compatibility issues
   = 19.6.38 =
