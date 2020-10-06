@@ -41,8 +41,9 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
   const currentWidgetTitle = widgetTitleFromType(currentWidgetType)
 
   const placeWidget = function (widget) {
+    const selectedWidgetType = backendWidgetTypeToBlockWidgetType(widget.type)
     const newAttributes = {
-      widgetType:             currentWidgetType,
+      widgetType:             selectedWidgetType,
       lockEmbed:              true,
       buttonText:             'Change',
       embedUrl:               widget.landingPageUrl.replace(/^https?:\/\/[^/]+\//,'/'),
@@ -53,13 +54,13 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
       insertItemOsStatistics: widget.statsUrl,
     }
 
-    if ( backendWidgetTypeToBlockWidgetType(widget.type) === currentWidgetType ) {
+    if ( selectedWidgetType === currentWidgetType ) {
       setAttributes(newAttributes)
     } else {
       // on widget type change we also want to change block,
       // in order to accommodate widget type for better UX.
       // https://wordpress.stackexchange.com/questions/305932/gutenberg-remove-add-blocks-with-custom-script
-      const replacementBlock = createBlock(blockName(currentWidgetType))
+      const replacementBlock = createBlock(blockName(selectedWidgetType))
       replacementBlock.attributes = newAttributes
 
       wp.data.dispatch('core/block-editor').replaceBlock(
