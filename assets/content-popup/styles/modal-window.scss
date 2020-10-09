@@ -18,8 +18,7 @@
     visibility: hidden;
     flex-direction: column;
     align-items: center;
-    padding: 4vh;
-    overflow: hidden;
+    overflow: auto;
     background: rgba(0, 0, 0, .8);
     opacity: 0;
     cursor: pointer;
@@ -35,7 +34,6 @@
     max-width: 945px;
     min-width: 875px;
     width: 70%;
-    height: 92vh;
     background: #fff;
     opacity: 1;
     cursor: auto;
