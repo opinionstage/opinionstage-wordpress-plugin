@@ -12,7 +12,7 @@ export default function (modal) {
       widgetSelectCb: function (widget) { console.log('dumb widget insert callback, widget:', widget) },
       showClientContent: true,
       isClientLoggedIn: null,
-      isModalOpened: true,
+      isModalOpened: false,
     },
 
     beforeMount () {
@@ -22,21 +22,12 @@ export default function (modal) {
     methods: {
       closePopup (/*event*/) {
         modal.close()
-        this.isModalOpened = false
       },
 
       selectWidgetAndExit (widget) {
         this.widgetSelectCb(widget)
 
         this.closePopup()
-      },
-
-      showClientWidgets () {
-        this.showClientContent = true
-      },
-
-      showTemplatesWidgets () {
-        this.showClientContent = false
       },
     },
   })

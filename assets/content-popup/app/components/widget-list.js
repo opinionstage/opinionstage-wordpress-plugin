@@ -20,10 +20,6 @@ export default Vue.component('widget-list', {
     }
   },
 
-  mounted () {
-    widgetsSearchUpdate.call(this)
-  },
-
   watch: {
     widgetTitleSearch: debounce(function () {
       widgetsSearchUpdate.call(this)

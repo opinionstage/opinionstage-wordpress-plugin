@@ -157,11 +157,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 	<div v-if="showClientContent">
 		<div v-if="clientIsLoggedIn">
 			<div v-if="newWidgetsAvailable" class="notification-container">
-				<notification
-					:widget-type='searchCriteria.type'
-					@reload='reloadData'
-					@hide='startWidgetUpdatesChecker'
-				>
+				<notification v-on:update-btn-click='reloadAndRestartCheckingForUpdates'>
 			</div>
 			<widget-list
 				:widgets='widgets'
@@ -199,7 +195,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 			Your content has been updated, please click the button to update your view
 		</p>
 		<div class="opinionstage-section-notification__controls">
-			<button class='btn-blue' @click="reload">Update view</button>
+			<button class='btn-blue' @click="initiateUpdate">Update view</button>
 		</div>
 	</div>
 </template>

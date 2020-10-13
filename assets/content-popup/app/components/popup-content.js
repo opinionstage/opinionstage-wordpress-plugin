@@ -10,12 +10,14 @@ export default Vue.component('popup-content', {
   template: '#opinionstage-popup-content',
 
   props: [
-    'modalIsOpened',
+    // dynamic properties:
     'showClientContent',
     'clientIsLoggedIn',
+    'modalIsOpened',
+    // static properties:
     'clientWidgetsUrl',
-    'clientWidgetsHasNewUrl',
     'sharedWidgetsUrl',
+    'clientWidgetsHasNewUrl',
     'accessKey',
     'pluginVersion',
   ],
@@ -25,7 +27,7 @@ export default Vue.component('popup-content', {
       dataLoading: false,
       widgets: [],
       searchCriteria: {},
-      noMoreData: false,
+      noMoreData: true,
       newWidgetsAvailable: false,
       lastUpdateTime: null,
       isCheckingWidgetUpdates: false,
@@ -33,33 +35,39 @@ export default Vue.component('popup-content', {
     }
   },
 
-  mounted () {
-    startWidgetUpdatesChecking.call(this)
-  },
-
   store,
 
   methods: {
-    reloadData ({ widgetType, widgetTitle }) {
+    reloadData (search) {
+      if ( !search ) { search = {} }
+      const widgetType = search.widgetType || this.searchCriteria.type || 'all'
+      const widgetTitle = search.widgetTitle || ''
+
+      this.newWidgetsAvailable = false
+      stopWidgetUpdatesChecking.call(this)
       this.searchCriteria = { page: 1, perPage: 9, type: widgetType, title: widgetTitle }
       this.$store.commit('clearWidgets')
 
-      loadData.call(this, this.searchCriteria).then( () => {
+      loadData.call(this).then( () => {
         this.widgets = this.$store.state.widgets[0]
-        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
 
         if ( !this.searchCriteria.title ) {
           setLastUpdateTimeFromWidget.call(this)
         }
+
+        startWidgetUpdatesChecking.call(this)
       })
+    },
+
+    reloadAndRestartCheckingForUpdates () {
+      this.reloadData({ widgetType: this.searchCriteria.type, widgetTitle: '' })
     },
 
     appendData () {
       this.searchCriteria.page += 1
 
-      loadData.call(this, this.searchCriteria).then( () => {
+      loadData.call(this).then( () => {
         const newWidgets = this.$store.state.widgets[this.searchCriteria.page-1]
-        this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
         this.widgets = this.widgets.concat( newWidgets )
       })
     },
@@ -67,34 +75,20 @@ export default Vue.component('popup-content', {
     widgetSelected (widget) {
       this.$emit('widget-selected', widget)
     },
-
-    checkWidgetUpdates ({ widgetType }) {
-      pullWidgetsUpdateInformation.call(this, widgetType, this.lastUpdateTime).then( () => {
-        if ( this.newWidgetsAvailable ) {
-          stopWidgetUpdatesChecking.call(this)
-        }
-      })
-    },
-
-    startWidgetUpdatesChecker() {
-      this.newWidgetsAvailable = false
-      startWidgetUpdatesChecking.call(this)
-    },
   },
 
   watch: {
-    modalIsOpened: function(newState){
-      if ( newState && this.showClientContent && this.clientIsLoggedIn ) {
-        refreshContent.call(this)
-        startWidgetUpdatesChecking.call(this)
+    modalIsOpened (isOpened) {
+      if ( isOpened && this.showClientContent && this.clientIsLoggedIn ) {
+        this.reloadData()
       } else {
         this.newWidgetsAvailable = false
         stopWidgetUpdatesChecking.call(this)
       }
     },
 
-    showClientContent: function(newState){
-      if ( newState && this.modalIsOpened && this.clientIsLoggedIn ) {
+    showClientContent (shouldShowClientContent) {
+      if ( shouldShowClientContent && this.modalIsOpened && this.clientIsLoggedIn ) {
         startWidgetUpdatesChecking.call(this)
       } else {
         stopWidgetUpdatesChecking.call(this)
@@ -103,12 +97,13 @@ export default Vue.component('popup-content', {
   },
 })
 
-function loadData (searchCriteria) {
+function loadData () {
   this.dataLoading = true
 
   const load = this.showClientContent ? loadClientWidgets : loadTemplateWidgets
 
-  return load.call(this, searchCriteria).then( () => {
+  return load.call(this, this.searchCriteria).then( () => {
+    this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
     this.dataLoading = false
   })
 }
@@ -157,26 +152,30 @@ function pullWidgetsUpdateInformation(type, updatedAt){
   const url = withParams(this.clientWidgetsHasNewUrl, type, updatedAt)
 
   return JsonApi.get(url, this.pluginVersion, this.accessKey)
-        .then( (payload) => {
-          this.newWidgetsAvailable = payload.data['has-new-widgets']
-        })
-        .catch( (error) => {
-          console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
-        })
+    .then( (payload) => {
+      this.newWidgetsAvailable = payload.data['has-new-widgets']
+    })
+    .catch( (error) => {
+      console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
+    })
 }
 
 function hasNextPage(nextPageNumber) {
   return nextPageNumber > 1
 }
 
+function checkWidgetUpdates () {
+  pullWidgetsUpdateInformation.call(this, this.searchCriteria.type, this.lastUpdateTime).then( () => {
+    if ( this.newWidgetsAvailable ) {
+      stopWidgetUpdatesChecking.call(this)
+    }
+  })
+}
+
 function startWidgetUpdatesChecking() {
   if ( this.clientIsLoggedIn ) {
     this.isCheckingWidgetUpdates = true
-    this.widgetUpdatesChecker = setInterval(() => {
-                           this.checkWidgetUpdates({
-                             widgetType: this.searchCriteria.type,
-                           })
-                         }, 3000)
+    this.widgetUpdatesChecker = setInterval( checkWidgetUpdates.bind(this), 3000 )
   }
 }
 
@@ -190,25 +189,5 @@ function setLastUpdateTimeFromWidget() {
     this.lastUpdateTime = this.widgets[0].updatedAt
   } else {
     this.lastUpdateTime = null
-  }
-}
-
-function refreshContent() {
-  if ( this.searchCriteria.type && this.searchCriteria.title ) {
-    this.reloadData.call(this, {
-      widgetType: this.searchCriteria.type,
-      widgetTitle: this.searchCriteria.title
-    })
-
-  } else if ( this.searchCriteria.type ) {
-    this.reloadData.call(this, {
-      widgetType: this.searchCriteria.type,
-      widgetTitle: ''
-    })
-  } else {
-    this.reloadData.call({
-      widgetType: 'all',
-      widgetTitle: ''
-    })
   }
 }
