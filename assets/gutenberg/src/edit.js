@@ -74,23 +74,6 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
     OpinionStage.contentPopup.open({ onWidgetSelect: placeWidget })
   }
 
-  const changeWidget = _event => {
-    OpinionStage.contentPopup.open({ onWidgetSelect: widget => {
-      setAttributes({
-        widgetType: '',
-        embedUrl: '',
-        buttonText:'Embed',
-        lockEmbed: false,
-        insertItemImage: false,
-        insertItemOsTitle: false,
-        insertItemOsView: false,
-        insertItemOsEdit: false,
-        insertItemOsStatistics: false,
-      })
-      placeWidget(widget)
-    }})
-  }
-
   let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
 
   let contentViewEditStatOs = (
@@ -114,7 +97,7 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
                   <a href={insertItemOsView} target="_blank"> View </a>
                   <a href={insertItemOsEdit} target="_blank"> Edit </a>
                   <a href={insertItemOsStatistics} target="_blank"> Statistics </a>
-                  <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={changeWidget}/>
+                  <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
                 </div>
               </div>
             </div>
