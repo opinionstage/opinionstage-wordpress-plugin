@@ -5,6 +5,18 @@ import join from 'lodash.join'
 
 import store from '../store.js'
 import JsonApi from '../../lib/jsonapi.js'
+import {
+  WIDGET_ALL,
+  WIDGET_POLL,
+  WIDGET_SET,
+  WIDGET_SURVEY,
+  WIDGET_SLIDESHOW,
+  WIDGET_TRIVIA_QUIZ,
+  WIDGET_PERSONALITY_QUIZ,
+  WIDGET_LIST,
+  WIDGET_FORM,
+  WIDGET_STORY,
+} from '../widget-types.js'
 
 export default Vue.component('popup-content', {
   template: '#opinionstage-popup-content',
@@ -14,6 +26,7 @@ export default Vue.component('popup-content', {
     'showClientContent',
     'clientIsLoggedIn',
     'modalIsOpened',
+    'widgetType',
     // static properties:
     'clientWidgetsUrl',
     'sharedWidgetsUrl',
@@ -40,7 +53,7 @@ export default Vue.component('popup-content', {
   methods: {
     reloadData (search) {
       if ( !search ) { search = {} }
-      const widgetType = search.widgetType || this.searchCriteria.type || 'all'
+      const widgetType = search.widgetType || this.widgetType || this.searchCriteria.type || WIDGET_ALL
       const widgetTitle = search.widgetTitle || ''
 
       this.newWidgetsAvailable = false

@@ -34,6 +34,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				:show-client-content="showClientContent"
 				:client-is-logged-in="isClientLoggedIn"
 				:modal-is-opened="isModalOpened"
+				:widget-type="widgetType"
 				@widget-selected="selectWidgetAndExit"
 				client-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ?>"
 				shared-widgets-url="<?php echo OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API ?>"
@@ -161,6 +162,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 			</div>
 			<widget-list
 				:widgets='widgets'
+				:pre-selected-widget-type='searchCriteria.type'
 				:data-loading='dataLoading'
 				:show-search='true'
 				:no-more-data='noMoreData'
@@ -179,6 +181,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 	<div v-else>
 		<widget-list
 			:widgets='widgets'
+			:pre-selected-widget-type='searchCriteria.type'
 			:data-loading='dataLoading'
 			:show-search='false'
 			:no-more-data='noMoreData'

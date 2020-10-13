@@ -71,7 +71,7 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
   }
 
   const selectWidget = _event => {
-    OpinionStage.contentPopup.open({ onWidgetSelect: placeWidget })
+    OpinionStage.contentPopup.open({ preselectWidgetType: contentPopupWidgetType(currentWidgetType), onWidgetSelect: placeWidget })
   }
 
   let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
@@ -224,6 +224,23 @@ function backendWidgetTypeToBlockWidgetType (backendType) {
     break
   case 'slideshow':
     return WIDGET_SLIDESHOW
+    break
+  }
+}
+
+function contentPopupWidgetType (widgetType) {
+  switch ( widgetType ) {
+  case WIDGET_POLL: return OpinionStage.contentPopup.WIDGET_POLL
+    break
+  case WIDGET_SURVEY: return OpinionStage.contentPopup.WIDGET_SURVEY
+    break
+  case WIDGET_TRIVIA_QUIZ: return OpinionStage.contentPopup.WIDGET_TRIVIA_QUIZ
+    break
+  case WIDGET_PERSONALITY_QUIZ: return OpinionStage.contentPopup.WIDGET_PERSONALITY_QUIZ
+    break
+  case WIDGET_FORM: return OpinionStage.contentPopup.WIDGET_FORM
+    break
+  case WIDGET_SLIDESHOW: return OpinionStage.contentPopup.WIDGET_SLIDESHOW
     break
   }
 }

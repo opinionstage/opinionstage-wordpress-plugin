@@ -1,5 +1,17 @@
 import Modal from './lib/modal.js'
 import ContentPopupContent from './app/index.js'
+import {
+  WIDGET_ALL,
+  WIDGET_POLL,
+  WIDGET_SET,
+  WIDGET_SURVEY,
+  WIDGET_SLIDESHOW,
+  WIDGET_TRIVIA_QUIZ,
+  WIDGET_PERSONALITY_QUIZ,
+  WIDGET_LIST,
+  WIDGET_FORM,
+  WIDGET_STORY,
+} from './app/widget-types.js'
 
 if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) {
   console.warn('[OpinionStage] content-popup APIs was already included')
@@ -24,7 +36,7 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
       this.modal = undefined
     }
 
-    open ({ onWidgetSelect }) {
+    open ({ preselectWidgetType, onWidgetSelect }) {
       if ( typeof(onWidgetSelect) !== 'function' ) {
         throw new Error('onWidgetSelect must be a function')
       }
@@ -32,6 +44,8 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
       $(() => {
         if ( !this.app ) { createModal.call(this) }
 
+        this.app.widgetType = preselectWidgetType || WIDGET_ALL
+        console.log('111: selected widget type:', this.app.widgetType)
         this.app.widgetSelectCb = onWidgetSelect
         this.modal.open()
       })
@@ -39,6 +53,7 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
   }
 
   function createModal () {
+    console.log('createModal')
     const self = this
 
     self.modal = new Modal({
@@ -59,6 +74,17 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
   }
 
   OS.contentPopup = new ContentPopup()
+
+  OS.contentPopup.WIDGET_ALL = WIDGET_ALL
+  OS.contentPopup.WIDGET_POLL = WIDGET_POLL
+  OS.contentPopup.WIDGET_SET = WIDGET_SET
+  OS.contentPopup.WIDGET_SURVEY = WIDGET_SURVEY
+  OS.contentPopup.WIDGET_SLIDESHOW = WIDGET_SLIDESHOW
+  OS.contentPopup.WIDGET_TRIVIA_QUIZ = WIDGET_TRIVIA_QUIZ
+  OS.contentPopup.WIDGET_PERSONALITY_QUIZ = WIDGET_PERSONALITY_QUIZ
+  OS.contentPopup.WIDGET_LIST = WIDGET_LIST
+  OS.contentPopup.WIDGET_FORM = WIDGET_FORM
+  OS.contentPopup.WIDGET_STORY = WIDGET_STORY
 })(window.OpinionStage = window.OpinionStage || {}, jQuery)
 
 // this is part is specific only to classic WordPress editor

@@ -1,32 +1,45 @@
 import Vue from 'vue'
 import debounce from 'lodash.debounce'
 
-const selectedWidgetTitles = {
-  'all': 'All ITEMS',
-  'poll': 'poll',
-  'set': 'multi poll set',
-  'survey': 'survey',
-  'slideshow': 'slideshow',
-  'trivia': 'trivia quiz',
-  'outcome': 'personality quiz',
-  'list': 'list',
-  'form': 'form',
-  'story': 'story article',
-}
+import {
+  WIDGET_ALL,
+  WIDGET_POLL,
+  WIDGET_SET,
+  WIDGET_SURVEY,
+  WIDGET_SLIDESHOW,
+  WIDGET_TRIVIA_QUIZ,
+  WIDGET_PERSONALITY_QUIZ,
+  WIDGET_LIST,
+  WIDGET_FORM,
+  WIDGET_STORY,
+} from '../widget-types.js'
+
+const selectedWidgetTitles = {}
+selectedWidgetTitles[WIDGET_ALL] = 'All ITEMS'
+selectedWidgetTitles[WIDGET_POLL] = 'poll'
+selectedWidgetTitles[WIDGET_SET] = 'multi poll set'
+selectedWidgetTitles[WIDGET_SURVEY] = 'survey'
+selectedWidgetTitles[WIDGET_SLIDESHOW] = 'slideshow'
+selectedWidgetTitles[WIDGET_TRIVIA_QUIZ] = 'trivia quiz'
+selectedWidgetTitles[WIDGET_PERSONALITY_QUIZ] = 'personality quiz'
+selectedWidgetTitles[WIDGET_LIST] = 'list'
+selectedWidgetTitles[WIDGET_FORM] = 'form'
+selectedWidgetTitles[WIDGET_STORY] = 'story article'
 
 export default Vue.component('widget-list', {
+  template: '#opinionstage-widget-list',
+
   props: [
     'widgets',
+    'preSelectedWidgetType',
     'dataLoading',
     'noMoreData',
     'showSearch',
   ],
 
-  template: '#opinionstage-widget-list',
-
   data () {
     return {
-      selectedWidgetType: 'all',
+      selectedWidgetType: null,
       widgetTitleSearch: '',
       showMoreBtn: true,
       hasData: true,
@@ -35,7 +48,7 @@ export default Vue.component('widget-list', {
 
   computed: {
     selectedWidgetTitle () {
-      return selectedWidgetTitles[this.selectedWidgetType]
+      return selectedWidgetTitles[this.selectedWidgetType || this.preSelectedWidgetType]
     },
   },
 
