@@ -1,6 +1,19 @@
 import Vue from 'vue'
 import debounce from 'lodash.debounce'
 
+const selectedWidgetTitles = {
+  'all': 'All ITEMS',
+  'poll': 'poll',
+  'set': 'multi poll set',
+  'survey': 'survey',
+  'slideshow': 'slideshow',
+  'trivia': 'trivia quiz',
+  'outcome': 'personality quiz',
+  'list': 'list',
+  'form': 'form',
+  'story': 'story article',
+}
+
 export default Vue.component('widget-list', {
   props: [
     'widgets',
@@ -18,6 +31,12 @@ export default Vue.component('widget-list', {
       showMoreBtn: true,
       hasData: true,
     }
+  },
+
+  computed: {
+    selectedWidgetTitle () {
+      return selectedWidgetTitles[this.selectedWidgetType]
+    },
   },
 
   watch: {
@@ -41,7 +60,6 @@ export default Vue.component('widget-list', {
 
       widgetsSearchUpdate.call(this)
     },
-
 
     showMore () {
       this.$emit('load-more-widgets')
