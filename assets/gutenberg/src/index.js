@@ -89,19 +89,3 @@ registerBlockType('opinion-stage/block-os-form', {
   edit: Edit,
   save,
 })
-
-registerBlockType('opinion-stage/block-os-slideshow', {
-  title: __( 'Slideshow' ),
-  icon: 'playlist-video',
-  description: __('Embed an Opinion Stage Slideshow', 'social-polls-by-opinionstage'),
-  category,
-  keywords: [
-    __('slideshow', 'social-polls-by-opinionstage'),
-  ],
-
-  supports,
-  attributes,
-
-  edit: Edit,
-  save,
-})

@@ -107,14 +107,6 @@ function opinionstage_register_gutenberg_assets() {
 		)
 	);
 
-	register_block_type(
-		'opinion-stage/block-os-slideshow',
-		array(
-			'editor_script' => 'opinionstage-gutenberg-block-editor',
-			'editor_style'  => 'opinionstage-gutenberg-block-editor',
-		)
-	);
-
 	opinionstage_gutenberg_inject_data();
 }
 

@@ -4,7 +4,6 @@ import {
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
   WIDGET_SURVEY,
-  WIDGET_SLIDESHOW,
   WIDGET_FORM,
 } from './configuration.js'
 
@@ -59,9 +58,6 @@ function unusedWrapperClassFromWidgetType (widgetType) {
     break
   case WIDGET_FORM:
     return 'os-form-wrapper'
-    break
-  case WIDGET_SLIDESHOW:
-    return 'os-slideshow-wrapper'
     break
   default:
     console.warn('unknown widget type:', widgetType)

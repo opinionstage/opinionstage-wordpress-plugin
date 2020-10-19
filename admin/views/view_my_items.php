@@ -33,14 +33,10 @@ defined( 'ABSPATH' ) or die(1); ?>
 				<select id="itemList">
 					<option value="all">ALL ITEMS</option>
 					<option value="poll">POLL</option>
-					<option value="multiple">MULTIPLE POLL SET</option>
 					<option value="survey">SURVEY</option>
-					<option value="slideshow">SLIDESHOW</option>
 					<option value="trivia">TRIVIA QUIZ</option>
 					<option value="personality">PERSONALITY QUIZ</option>
-					<option value="list">LIST</option>
 					<option value="form">FORM</option>
-					<option value="story">STORY ARTICLE</option>
 				</select>
 			</div>
 			<div class="search search-container">

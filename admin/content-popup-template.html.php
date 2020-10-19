@@ -67,17 +67,9 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 								:class="{ active: selectedWidgetType === 'poll' }"
 						>poll</div>
 						<div class='filter__itm'
-								@click="selectWidgetType('set')"
-								:class="{ active: selectedWidgetType === 'set' }"
-						>multi poll set</div>
-						<div class='filter__itm'
 								@click="selectWidgetType('survey')"
 								:class="{ active: selectedWidgetType === 'survey' }"
 						>survey</div>
-						<div class='filter__itm'
-								@click="selectWidgetType('slideshow')"
-								:class="{ active: selectedWidgetType === 'slideshow' }"
-						>slideshow</div>
 						<div class='filter__itm'
 								@click="selectWidgetType('trivia')"
 								:class="{ active: selectedWidgetType === 'trivia' }"
@@ -87,17 +79,9 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 								:class="{ active: selectedWidgetType === 'outcome' }"
 						>personality quiz</div>
 						<div class='filter__itm'
-								@click="selectWidgetType('list')"
-								:class="{ active: selectedWidgetType === 'list' }"
-						>list</div>
-						<div class='filter__itm'
 								@click="selectWidgetType('form')"
 								:class="{ active: selectedWidgetType === 'form' }"
 						>form</div>
-						<div class='filter__itm'
-								@click="selectWidgetType('story')"
-								:class="{ active: selectedWidgetType === 'story' }"
-						>story article</div>
 					</div>
 				</div>
 			</div>

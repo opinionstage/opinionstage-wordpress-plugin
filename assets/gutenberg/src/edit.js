@@ -8,7 +8,6 @@ import {
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
   WIDGET_SURVEY,
-  WIDGET_SLIDESHOW,
   WIDGET_FORM,
 } from './configuration.js'
 
@@ -131,8 +130,6 @@ function widgetTypeFromBlockName (blockName) {
     break
   case 'opinion-stage/block-os-form':        return WIDGET_FORM
     break
-  case 'opinion-stage/block-os-slideshow':   return WIDGET_SLIDESHOW
-    break
   default:
     console.warn('unknown block name:', blockName)
   }
@@ -150,8 +147,6 @@ function blockName (widgetType) {
   case WIDGET_PERSONALITY_QUIZ: return 'opinion-stage/block-os-personality'
     break
   case WIDGET_FORM:             return 'opinion-stage/block-os-form'
-    break
-  case WIDGET_SLIDESHOW:        return 'opinion-stage/block-os-slideshow'
     break
   default:
     console.warn('unknown block widget type:', widgetType)
@@ -175,9 +170,6 @@ function widgetTitleFromType (widgetType) {
   case WIDGET_FORM:
     return __('Form')
     break
-  case WIDGET_SLIDESHOW:
-    return __('Slideshow')
-    break
   }
 }
 
@@ -197,9 +189,6 @@ function backendWidgetTypeForNewWidget (widgetType) {
     break
   case WIDGET_FORM:
     return 'contact_form'
-    break
-  case WIDGET_SLIDESHOW:
-    return 'slideshow'
     break
   }
 }
@@ -222,9 +211,6 @@ function backendWidgetTypeToBlockWidgetType (backendType) {
   case 'form':
     return WIDGET_FORM
     break
-  case 'slideshow':
-    return WIDGET_SLIDESHOW
-    break
   }
 }
 
@@ -239,8 +225,6 @@ function contentPopupWidgetType (widgetType) {
   case WIDGET_PERSONALITY_QUIZ: return OpinionStage.contentPopup.WIDGET_PERSONALITY_QUIZ
     break
   case WIDGET_FORM: return OpinionStage.contentPopup.WIDGET_FORM
-    break
-  case WIDGET_SLIDESHOW: return OpinionStage.contentPopup.WIDGET_SLIDESHOW
     break
   }
 }
