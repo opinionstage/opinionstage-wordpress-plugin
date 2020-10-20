@@ -99,35 +99,23 @@ function opinionstage_sidebar_placement_edit_url( $tab ) {
 }
 
 function opinionstage_template_poll_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=poll', $css_class );   // %5B%5D --> []
+	return opinionstage_link( $title, 'dashboard/content/templates', $css_class, array('types[]' => 1) );
 }
 
 function opinionstage_template_survey_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=survey', $css_class ); // %5B%5D --> []
+	return opinionstage_link( $title, 'dashboard/content/templates', $css_class, array('types[]' => 7) );
 }
 
 function opinionstage_template_trivia_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=trivia_quiz', $css_class );    // %5B%5D --> []
+	return opinionstage_link( $title, 'dashboard/content/templates', $css_class, array('types[]' => 4) );
 }
 
 function opinionstage_template_personality_quiz_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=personality_quiz', $css_class );   // %5B%5D --> []
-}
-
-function opinionstage_template_slideshow_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=slideshow', $css_class );  // %5B%5D --> []
+	return opinionstage_link( $title, 'dashboard/content/templates', $css_class, array('types[]' => 5) );
 }
 
 function opinionstage_template_form_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=form', $css_class );   // %5B%5D --> []
-}
-
-function opinionstage_template_list_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=list', $css_class );   // %5B%5D --> []
-}
-
-function opinionstage_template_story_link( $css_class, $title = 'USE A TEMPLATE' ) {
-	return opinionstage_link( $title, 'dashboard/content/templates?types%5B%5D=story', $css_class );  // %5B%5D --> []
+	return opinionstage_link( $title, 'dashboard/content/templates', $css_class, array('types[]' => 8) );
 }
 
 function opinionstage_create_widget_link( $w_type, $css_class, $title = 'CREATE NEW' ) {
