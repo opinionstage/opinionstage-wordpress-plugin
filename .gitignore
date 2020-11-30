@@ -15,3 +15,5 @@
 
 # composer install directory
 /vendor
+# phpstorm
+/.idea
