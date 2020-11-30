@@ -4,7 +4,7 @@ Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
 Tested up to: 5.5
-Stable tag: 19.7.1
+Stable tag: 19.7.2
 Requires PHP: 5.2
 
 Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or survey from scratch or based on templates.
@@ -12,7 +12,7 @@ Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or surv
 == Description ==
 
 Opinion Stage is a poll, survey, form and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
-You can create the items from scratch or using hundreds of optimized templates. 
+You can create the items from scratch or using hundreds of optimized templates.
 
 <a href="https://www.opinionstage.com/templates?o=wp35e8" target="_blank">Check out our Quiz, Poll, Survey and Form Examples</a>
 
@@ -35,10 +35,10 @@ You can create the items from scratch or using hundreds of optimized templates.
  * Responsive design that optimizes display of polls, quizzes and surveys in desktops, tablets and mobile devices.
 
 https://www.youtube.com/watch?v=EDtpm6zVKvk
- 
+
  == Templates & Examples ==
 
-Start form scratch or use one of the hundreds of templates to get up and going super fast with an optimized item. 
+Start form scratch or use one of the hundreds of templates to get up and going super fast with an optimized item.
 
  == Integrations ==
 
@@ -50,7 +50,7 @@ Create polls in seconds to engage your users and learn what they think on any to
 
  == Quizzes for Engagement & Gathering leads ==
 
-Create Buzzfeed-style and Facebook-stlye quizzes that engage your users and get viral on social networks. Integrate a lead form in your quiz to gather qualified leads. The quiz questions will be associated with the contact information you gather to help you qualify which leads bring value to your business. 
+Create Buzzfeed-style and Facebook-stlye quizzes that engage your users and get viral on social networks. Integrate a lead form in your quiz to gather qualified leads. The quiz questions will be associated with the contact information you gather to help you qualify which leads bring value to your business.
 
  == Surveys for getting insights and feedback ==
 
@@ -74,9 +74,9 @@ Select a great title – the title is the single most important part of a quiz. 
 
  * Make it visual – Opinion Stage lets you add images and videos in the quiz. You can add an image to the cover, and an intro image to each question. You can also add an image to each answer. Visuals will both get you more responses and will also improve the context of the questions and answers.
 
- * Get shared in social networks – start by creating outcomes that are shareable. Examples can include sharing your results in a trivia quiz or sharing the personality you got in a personality test. It is recommended to keep the outcome 
+ * Get shared in social networks – start by creating outcomes that are shareable. Examples can include sharing your results in a trivia quiz or sharing the personality you got in a personality test. It is recommended to keep the outcome
 text as positive as possible regardless of the results.
-Place in a prominent location – to verify your item is noticed, place it in a central place in your site. A few options we recommend – above the fold in posts/pages, in the sidebar, enter/exit popup, or in a quiz section in your site. 
+Place in a prominent location – to verify your item is noticed, place it in a central place in your site. A few options we recommend – above the fold in posts/pages, in the sidebar, enter/exit popup, or in a quiz section in your site.
 
  * Brand and customize – Opinion Stage lets you change every aspect of the visual. Customize the quiz so it matches your site and brand. You can set the font, sizes, and colors of the quiz. If you have some CSS knowledge you can customize almost every aspect of the quiz using the CSS override feature.
 
@@ -114,7 +114,7 @@ Polls include one question and are used for getting a quick answer on a question
 
 Opinion Stage offers many built-in customization options such as selecting the color theme, font and sizes. Use the CSS override feature to fully match the items to your brand. You can also white label the items and add your own logo.
 
-= Is Opinion Stage GDPR Ready? = 
+= Is Opinion Stage GDPR Ready? =
 
 Opinion Stage makes it easy for you to comply with the GDPR regulation. For more info on that, read our GDPR and privacy policy documentation on the site
 
@@ -123,7 +123,7 @@ Opinion Stage makes it easy for you to comply with the GDPR regulation. For more
 == Screenshots ==
 
 1. **Poll image layout** - example of integrating images in the poll answers.
-2. **Poll standard layout** - example of a poll standard layout 
+2. **Poll standard layout** - example of a poll standard layout
 3. **Poll head to head layout** - example of a head-to-head layout poll
 4. **Trivia quiz** - example of trivia quiz results
 5. **Personality quiz** - example of a personality quiz.
@@ -138,6 +138,8 @@ Opinion Stage makes it easy for you to comply with the GDPR regulation. For more
 N/A
 
 == Changelog ==
+  = 19.7.2 =
+  * signup callback - higher priority added
   = 19.7.1 =
   * fix templates links
   = 19.7.0 =
@@ -231,9 +233,9 @@ N/A
   * Readme update
   = 19.6.4 =
   * Permission fix on sub pages
-  = 19.6.3 = 
+  = 19.6.3 =
   * Icon set fix
-  = 19.6.2 = 
+  = 19.6.2 =
   * Double page bug fix
   * Plugin renamed
   = 19.6.1 =
