@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die();
 require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
 
 add_action( 'admin_menu', 'opinionstage_register_login_callback_page' );
-add_action( 'admin_init', 'opinionstage_login_callback' );
+add_action( 'admin_init', 'opinionstage_login_callback', 1 );
 
 // adds page for post-login redirect and setup in form of invisible menu page,
 // and url: http://wp-host.com/wp-admin/admin.php?page=OPINIONSTAGE_LOGIN_CALLBACK_SLUG
@@ -59,4 +59,3 @@ function opinionstage_login_callback() {
 		}
 	}
 }
-?>
