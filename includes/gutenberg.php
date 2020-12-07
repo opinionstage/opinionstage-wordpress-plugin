@@ -54,18 +54,6 @@ function opinionstage_register_gutenberg_assets() {
 		false
 	);
 
-	/* phpcs:disable Squiz.PHP.CommentedOutCode.Found
-	// @kucaahbe: we don't need non-editor style, but if we do,
-	// here is how it should be like:
-	$style_css = 'assets/gutenberg/build/style-index.css';
-	wp_register_style(
-		'opinionstage-gutenberg-block',
-		opinionstage_gutenberg_asset_url( $style_css ),
-		array(),
-		filemtime( OPINIONSTAGE_PLUGIN_DIR . $style_css ),
-		false
-	);
-	phpcs:enable */
 
 	register_block_type(
 		'opinion-stage/block-os-poll',
@@ -123,7 +111,7 @@ function opinionstage_register_gutenberg_categories( $categories, $post ) {
 		array(
 			array(
 				'slug'  => 'opinion-stage',
-				'title' => __( 'Interactive Content by OpinionStage', 'opinion-stage' ),
+				'title' => __( 'Poll, Survey, Quiz & Form By Opinion Stage', 'opinion-stage' ),
 			),
 		)
 	);
