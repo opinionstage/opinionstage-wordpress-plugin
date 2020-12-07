@@ -154,25 +154,32 @@ function opinionstage_callback_url() {
 }
 
 /**
- * Take the received data and parse it
+ * @param $raw
  *
- * Returns the newly updated widgets parameters.
+ * Takes the received data and parses it
+ *
+ * Returns the newly updated widgets parameters. *
  */
-function opinionstage_parse_client_data( $raw_data ) {
+function opinionstage_validate_and_save_client_data( $raw ) {
 	$os_options = array(
-		'uid'                      => $raw_data['uid'],
-		'email'                    => $raw_data['email'],
-		'fly_id'                   => $raw_data['fly_id'],
-		'article_placement_id'     => $raw_data['article_placement_id'],
-		'sidebar_placement_id'     => $raw_data['sidebar_placement_id'],
+		'uid'                      => $raw['uid'],
+		'email'                    => $raw['email'],
+		'fly_id'                   => $raw['fly_id'],
+		'article_placement_id'     => $raw['article_placement_id'],
+		'sidebar_placement_id'     => $raw['sidebar_placement_id'],
 		'version'                  => OPINIONSTAGE_WIDGET_VERSION,
 		'fly_out_active'           => 'false',
 		'article_placement_active' => 'false',
 		'sidebar_placement_active' => 'false',
-		'token'                    => $raw_data['token'],
+		'token'                    => $raw['token'],
 	);
-	$valid_ids  = preg_match( '/^[0-9]+$/', $raw_data['fly_id'] ) && preg_match( '/^[0-9]+$/', $raw_data['article_placement_id'] ) && preg_match( '/^[0-9]+$/', $raw_data['sidebar_placement_id'] );
-	if ( $valid_ids ) {
+
+
+	$valid  = preg_match( '/^[0-9]+$/', $raw['fly_id'] )
+		&& preg_match( '/^[0-9]+$/', $raw['article_placement_id'] )
+		&& preg_match( '/^[0-9]+$/', $raw['sidebar_placement_id'] );
+
+	if ( $valid ) {
 		update_option( OPINIONSTAGE_OPTIONS_KEY, $os_options );
 	}
 }
