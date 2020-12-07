@@ -150,7 +150,7 @@ function opinionstage_create_slideshow_link( $css_class, $title = 'CREATE NEW' )
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
  */
 function opinionstage_callback_url() {
-	return get_admin_url( '', '', 'admin' ) . 'admin.php?page=' . OPINIONSTAGE_LOGIN_CALLBACK_SLUG;
+	return menu_page_url(OPINIONSTAGE_LOGIN_CALLBACK_SLUG, false);
 }
 
 /**
