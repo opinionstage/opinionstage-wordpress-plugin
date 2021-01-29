@@ -78,9 +78,9 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 	function opinionstage_plugin_activated( $plugin ) {
 		// Check if active plugin file is plugin.php on plugin activate hook.
 		if ( plugin_basename( __FILE__ ) === $plugin ) {
-			// phpcs:disable WordPress.Security.EscapeOutput
-			exit( wp_safe_redirect( 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ) );
-			// phpcs:enable
+			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_VIEW_ITEM_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
+			wp_safe_redirect('admin.php?page=' . $redirect_to );
+			exit();
 		}
 	}
 	// phpcs:disable Squiz.Commenting.FunctionComment
