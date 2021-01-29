@@ -103,6 +103,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-utility-functions.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-article-placement-functions.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-sidebar-widget.php';
+        require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-feedback.php';
 
 		if ( ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) || ( defined( 'DOING_AJAX' ) ) ) {
 			require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-ajax-functions.php';
