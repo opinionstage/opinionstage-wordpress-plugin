@@ -38,6 +38,18 @@
     box-shadow: 0 0 8px rgba(0,0,0,.1);
     text-align: left;
 }
+.opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-header .opinionstage-modal-header {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-form-caption {
+	font-size: 15px;
+	font-weight: bold;
+}
+.opinionstage-dialog-box-content .opinionstage-choices-wrapper {
+	padding-top: 20px;
+}
 .opinionstage-dialog-box-content .opinionstage-dialog-message {
     padding: 30px 30px 0;
     text-align: left;
@@ -55,7 +67,12 @@
 .opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-submit {
 	cursor: pointer;
 }
+.opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-skip:focus,
+.opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-submit:focus {
+	outline: none;
+}
 .opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-submit {
+	position: relative;
     background-color: #32adbc;
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -65,6 +82,33 @@
     font-size: 13px;
     width: 180px;
     height: 38px;
+	transition: all 1s ease;
+}
+.opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-submit.opinionstage-loading {
+	padding-left: 35px;
+	opacity: .9;
+}
+.opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-submit.opinionstage-loading .opinionstage-loading-ring {
+	opacity: 1;
+}
+.opinionstage-loading-ring {
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	left: 5px;
+	top: 7px;
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+.opinionstage-loading-ring:after {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: opinionstage-loading-ring 1.2s linear infinite;
 }
 .opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-skip {
     font-size: 13px;
@@ -73,9 +117,6 @@
     background: none;
     float: right;
     width: auto;
-}
-.opinionstage-dialog-box-content .opinionstage-dialog-buttons .opinionstage-dialog-skip:focus {
-	outline: none;
 }
 
 .opinionstage-dialog-box-content .opinionstage-feedback-text {
@@ -91,7 +132,44 @@
 .opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-input:not(:checked)~.opinionstage-feedback-text {
     display: none;
 }
+.opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-input {
+	margin-top: 2px;
+}
 .opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-form-caption,
 .opinionstage-dialog-box-content .opinionstage-deactivate-feedback-dialog-input-wrapper {
     margin-bottom: 10px;
+}
+
+
+.opinionstage-close {
+	position: absolute;
+	right: 32px;
+	top: 22px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.opinionstage-close:before,
+.opinionstage-close:after {
+	position: absolute;
+	left: 15px;
+	content: ' ';
+	height: 17px;
+	width: 2px;
+	background-color: #333;
+}
+.opinionstage-close:before {
+	transform: rotate(45deg);
+}
+.opinionstage-close:after {
+	transform: rotate(-45deg);
+}
+
+@keyframes opinionstage-loading-ring {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

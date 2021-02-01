@@ -73,7 +73,8 @@ class OpinionstageFeedback {
             <div class="opinionstage-dialog-box-content">
                 <div class="opinionstage-deactivate-feedback-dialog-header">
                     <img src="<?php echo plugins_url('admin/images/os-icon.png', plugin_dir_path( __FILE__ )) ?>" class="opinionstage-modal-logo" >
-                    <?php _e( 'Quick Feedback', 'social-polls-by-opinionstage' ) ?>
+                    <span class="opinionstage-modal-header"><?php _e( 'Quick Feedback', 'social-polls-by-opinionstage' ) ?></span>
+					<span id="opinionstage-dialog-close" class="opinionstage-close"></span>
                 </div>
                 <div class="opinionstage-dialog-message">
                     <form id="opinionstage-deactivate-feedback-dialog-form" method="post">
@@ -83,7 +84,7 @@ class OpinionstageFeedback {
                         <input type="hidden" name="action" value="opinionstage_deactivate_feedback" />
 
                         <div class="opinionstage-deactivate-feedback-dialog-form-caption"><?php echo __( 'If you have a moment, please share why you are deactivating alopinionstage:', 'social-polls-by-opinionstage' ); ?></div>
-                        <div>
+                        <div class="opinionstage-choices-wrapper">
                             <?php foreach ( $deactivate_reasons as $reason_key => $reason ) : ?>
                                 <div class="opinionstage-deactivate-feedback-dialog-input-wrapper">
                                     <input id="alopinionstage-deactivate-feedback-<?php echo esc_attr( $reason_key ); ?>" class="opinionstage-deactivate-feedback-dialog-input" type="radio" name="reason_key" value="<?php echo esc_attr( $reason_key ); ?>" />
@@ -100,9 +101,9 @@ class OpinionstageFeedback {
                     </form>
                 </div>
                 <div class="opinionstage-dialog-buttons">
-                    <button id="opinionstage-dialog-submit" class="opinionstage-dialog-submit"><?php _e('Submit & Deactivate', 'social-polls-by-opinionstage') ?></button>
+                    <button id="opinionstage-dialog-submit" class="opinionstage-dialog-submit"><div class="opinionstage-loading-ring"></div><?php _e('Submit & Deactivate', 'social-polls-by-opinionstage') ?></button>
                     <button id="opinionstage-dialog-skip" class="opinionstage-dialog-skip"><?php _e('Skip & Deactivate', 'social-polls-by-opinionstage') ?></button>
-                </div>
+				</div>
             </div>
         </div>
         <?php
@@ -131,7 +132,8 @@ class OpinionstageFeedback {
 			$data = [
 				'reason' => $reason,
 				'plugin_version' => OPINIONSTAGE_WIDGET_VERSION,
-				'site_lang' => get_bloginfo( 'language' )
+				'wp_version' => get_bloginfo( 'version' ),
+				'site_lang' => get_bloginfo( 'language' ),
 			];
 
 			if( $reason_text !== '' ) {

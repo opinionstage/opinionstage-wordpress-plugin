@@ -5,6 +5,7 @@
 				$deactivateLink: $('#the-list').find('[data-slug="social-polls-by-opinionstage"] span.deactivate a'),
 				$modal: $('#opinionistage-deactivate-feedback-modal'),
 				$skipButton: $('#opinionstage-dialog-skip'),
+				$closeButton: $('#opinionstage-dialog-close'),
 				$submitButton: $('#opinionstage-dialog-submit'),
 				$dialogForm: $('#opinionstage-deactivate-feedback-dialog-form')
 			}
@@ -24,18 +25,23 @@
 					self.cache.$modal.fadeOut();
 				}
 			});
+			self.cache.$closeButton.on('click', function (e) {
+				self.cache.$modal.fadeOut();
+			})
+
 			self.cache.$skipButton.on('click', function (e) {
 				self.deactivate();
 			})
 			self.cache.$submitButton.on('click', function (e) {
 				e.preventDefault();
 				self.sendFeedback();
+				$(this).addClass('opinionstage-loading');
 			})
 		},
 		sendFeedback: function sendFeedback(){
 			var self = this,
 				formData = self.cache.$dialogForm.serialize();
-			$.post(ajaxurl, formData); //, this.deactivate.bind(this)
+			$.post(ajaxurl, formData, this.deactivate.bind(this));
 		},
 		init: function init() {
 			this.cacheElements();
