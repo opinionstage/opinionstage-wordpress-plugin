@@ -1,11 +1,11 @@
 <?php
 /**
- * Poll, Survey, Form & Quiz Maker by OpinionStage
+ * Poll, Survey & Quiz by OpinionStage
  *
  * @package   OpinionStageWordPressPlugin
  *
  * @wordpress-plugin
- * Plugin Name: Poll, Survey, Form & Quiz Maker by OpinionStage
+ * Plugin Name: Poll, Survey & Quiz by OpinionStage
  * Plugin URI:  https://www.opinionstage.com
  * Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
  * Version:     19.7.3
@@ -132,7 +132,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
  */
 function opinionstage_fail_php_version() {
 	/* translators: %s: PHP version */
-	$message      = sprintf( esc_html__( 'Poll, Survey, Form & Quiz Maker by OpinionStage requires PHP version %s+, plugin is currently NOT RUNNING.', 'opinionstage' ), '5.2' );
+	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires PHP version %s+, plugin is currently NOT RUNNING.', 'opinionstage' ), '5.2' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
@@ -148,7 +148,7 @@ function opinionstage_fail_php_version() {
  */
 function opinionstage_fail_wp_version() {
 	/* translators: %s: WordPress version */
-	$message      = sprintf( esc_html__( 'Poll, Survey, Form & Quiz Maker by OpinionStage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'opinionstage' ), '4.7' );
+	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'opinionstage' ), '4.7' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }

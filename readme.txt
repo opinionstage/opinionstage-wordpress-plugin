@@ -1,4 +1,4 @@
-﻿=== Poll, Survey, Form & Quiz Maker by OpinionStage ===
+﻿=== Poll, Survey & Quiz by OpinionStage ===
 Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
