@@ -51,7 +51,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 <div class='page-content'>
 	<div class='content-actions'>
 		<div class='content-actions__left'>
-			<h1 class="main-title">My Items</h1>
+			<h1 class="main-title"><?php _e('My Items', 'social-polls-by-opinionstage'); ?></h1>
 		</div>
 		<div class="content-actions__right">
 			<div class='filter'>
@@ -61,27 +61,27 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 						<div class='filter__itm'
 								@click="selectWidgetType('all')"
 								:class="{ active: selectedWidgetType === 'all' }"
-						>all Items</div>
+						><?php _e('all items', 'social-polls-by-opinionstage'); ?></div>
 						<div class='filter__itm'
 								@click="selectWidgetType('poll')"
 								:class="{ active: selectedWidgetType === 'poll' }"
-						>poll</div>
+						><?php _e('poll', 'social-polls-by-opinionstage'); ?></div>
 						<div class='filter__itm'
 								@click="selectWidgetType('survey')"
 								:class="{ active: selectedWidgetType === 'survey' }"
-						>survey</div>
+						><?php _e('survey', 'social-polls-by-opinionstage'); ?></div>
 						<div class='filter__itm'
 								@click="selectWidgetType('trivia')"
 								:class="{ active: selectedWidgetType === 'trivia' }"
-						>trivia quiz</div>
+						><?php _e('trivia quiz', 'social-polls-by-opinionstage'); ?></div>
 						<div class='filter__itm'
 								@click="selectWidgetType('outcome')"
 								:class="{ active: selectedWidgetType === 'outcome' }"
-						>personality quiz</div>
+						><?php _e('personality quiz', 'social-polls-by-opinionstage'); ?></div>
 						<div class='filter__itm'
 								@click="selectWidgetType('form')"
 								:class="{ active: selectedWidgetType === 'form' }"
-						>form</div>
+						><?php _e('classic form', 'social-polls-by-opinionstage'); ?></div>
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				<span class="os-search__icon icon-os-common-tip"></span>
 			</div>
 			<div class="content-actions__sep"></div>
-			<a href="<?php echo admin_url( 'admin.php?page=' . OPINIONSTAGE_MENU_SLUG ); ?>" target='_blank' class="btn-create">CREATE</a>
+			<a href="<?php echo admin_url( 'admin.php?page=' . OPINIONSTAGE_MENU_SLUG ); ?>" target='_blank' class="btn-create"><?php _e('CREATE', 'social-polls-by-opinionstage'); ?></a>
 		</div>
 	</div>
 	<div class='content__list'>
@@ -109,30 +109,30 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				</a>
 				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
 				<div class='content__links'>
-					<button class='popup-content-btn content__links-itm' @click="select(widget)">insert</button>
+					<button class='popup-content-btn content__links-itm' @click="select(widget)"><?php _e('insert', 'social-polls-by-opinionstage'); ?></button>
 					<div class="dropdown dropdown-popup-action">
 						<div class="popup-action popup-content-btn"></div>
 						<div class="popup-action-dropdown dropdown-content">
-							<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'>view</a>
-							<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template">edit</a>
-							<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template">Results</a>
+							<a class='content__links-itm' target="_blank" :href='widget.landingPageUrl'><?php _e('view', 'social-polls-by-opinionstage'); ?></a>
+							<a class='content__links-itm' target="_blank" :href='widget.editUrl' v-show="!widget.template"><?php _e('edit', 'social-polls-by-opinionstage'); ?></a>
+							<a class='content__links-itm' target="_blank" :href='widget.statsUrl' v-show="!widget.template"><?php _e('Results', 'social-polls-by-opinionstage'); ?></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class='content__loading' v-if='dataLoading'>
-				loading...
+				<?php _e('loading...', 'social-polls-by-opinionstage'); ?>
 			</div>
 			<div v-else>
 				<button
 					class='btn-show-more'
 					v-if='!noMoreData'
 					@click='showMore'
-				>Click for more</button>
+				><?php _e('Click for more', 'social-polls-by-opinionstage'); ?></button>
 			</div>
 		</div>
 		<div v-else>
-			No items found
+			<?php _e('No items found', 'social-polls-by-opinionstage'); ?>
 		</div>
 	</div>
 </div>
@@ -157,9 +157,9 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 		</div>
 		<div class='page-content' v-else>
 				<h1 class='main-title'>
-					<b>Connect WordPress with Opinion Stage to get started</b>
+					<b><?php _e('all items', 'social-polls-by-opinionstage'); ?></b>
 				</h1>
-				<a id="os-start-login" data-os-login="" href="<?php echo admin_url( 'admin.php?page=opinionstage-getting-started' ); ?>" class="opinionstage-blue-btn">CONNECT</a>
+				<a id="os-start-login" data-os-login="" href="<?php echo admin_url( 'admin.php?page=opinionstage-getting-started' ); ?>" class="opinionstage-blue-btn"><?php _e('CONNECT', 'social-polls-by-opinionstage'); ?></a>
 		</div>
 	</div>
 	<div v-else>
@@ -179,10 +179,10 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 <template id="opinionstage-notification">
 	<div class="opinionstage-section-notification">
 		<p class="opinionstage-section-notification__title">
-			Your content has been updated, please click the button to update your view
+			<?php _e('Your content has been updated, please click the button to update your view', 'social-polls-by-opinionstage'); ?>
 		</p>
 		<div class="opinionstage-section-notification__controls">
-			<button class='btn-blue' @click="initiateUpdate">Update view</button>
+			<button class='btn-blue' @click="initiateUpdate"><?php _e('Update view', 'social-polls-by-opinionstage'); ?></button>
 		</div>
 	</div>
 </template>
