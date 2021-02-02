@@ -83,12 +83,12 @@ class OpinionstageFeedback {
                         ?>
                         <input type="hidden" name="action" value="opinionstage_deactivate_feedback" />
 
-                        <div class="opinionstage-deactivate-feedback-dialog-form-caption"><?php echo __( 'If you have a moment, please share why you are deactivating alopinionstage:', 'social-polls-by-opinionstage' ); ?></div>
+                        <div class="opinionstage-deactivate-feedback-dialog-form-caption"><?php echo __( 'Please share why you are disabling Opinion Stage:', 'social-polls-by-opinionstage' ); ?></div>
                         <div class="opinionstage-choices-wrapper">
                             <?php foreach ( $deactivate_reasons as $reason_key => $reason ) : ?>
                                 <div class="opinionstage-deactivate-feedback-dialog-input-wrapper">
-                                    <input id="alopinionstage-deactivate-feedback-<?php echo esc_attr( $reason_key ); ?>" class="opinionstage-deactivate-feedback-dialog-input" type="radio" name="reason_key" value="<?php echo esc_attr( $reason_key ); ?>" />
-                                    <label for="alopinionstage-deactivate-feedback-<?php echo esc_attr( $reason_key ); ?>" ><?php echo esc_html( $reason['title'] ); ?></label>
+                                    <input id="opinionstage-deactivate-feedback-<?php echo esc_attr( $reason_key ); ?>" class="opinionstage-deactivate-feedback-dialog-input" type="radio" name="reason_key" value="<?php echo esc_attr( $reason_key ); ?>" />
+                                    <label for="opinionstage-deactivate-feedback-<?php echo esc_attr( $reason_key ); ?>" ><?php echo esc_html( $reason['title'] ); ?></label>
                                     <?php if ( ! empty( $reason['input_placeholder'] ) ) : ?>
                                         <input class="opinionstage-feedback-text" type="text" name="reason_<?php echo esc_attr( $reason_key ); ?>" placeholder="<?php echo esc_attr( $reason['input_placeholder'] ); ?>" />
                                     <?php endif; ?>
@@ -152,6 +152,4 @@ class OpinionstageFeedback {
     }
 }
 
-
 $OpinionstageFeedback = new OpinionstageFeedback;
-
