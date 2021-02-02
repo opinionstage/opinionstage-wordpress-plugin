@@ -168,7 +168,7 @@ function widgetTitleFromType (widgetType) {
     return __('Personality Quiz')
     break
   case WIDGET_FORM:
-    return __('Form')
+    return __('Classic Form')
     break
   }
 }

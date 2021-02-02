@@ -1,4 +1,4 @@
-<?php 
+<?php
 // block direct access to plugin PHP files:
 defined( 'ABSPATH' ) or die(1); ?>
 <style type="text/css">
@@ -9,54 +9,54 @@ defined( 'ABSPATH' ) or die(1); ?>
 		}
 </style>
 	<div id="opinionstage-content">
-		<div class="opinionstage-header-wrapper">	
+		<div class="opinionstage-header-wrapper">
 				<?php if ( $os_client_logged_in ) { ?>
 				<div class="opinionstage-logo-wrapper">
 				<div class="opinionstage-logo"></div>
 				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
 					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_DISCONNECT_PAGE)?>" class="opinionstage-connect-form">
-						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
+						<button class="opinionstage-disconnect" type="submit"><?php _e('Disconnect', 'social-polls-by-opinionstage'); ?></button>
 					</form>
 				</div>
-				</div>	
+				</div>
 				<?php } ?>
 		</div>
 	<div id="container" class="opinionstage-dashboard">
 		<div class="opinionstage-item-view-dashboard">
 		<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 		<div class="opinionstage-section-header">
-			<div class="opinionstage-section-title">My Items</div>
+			<div class="opinionstage-section-title"><?php _e('My Items', 'social-polls-by-opinionstage'); ?></div>
 			<div class="opinionstage-header-inner-container">
 			<div class="opinionstage-header-inner-section">
-			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" class="">Need help adding items to your site?</a>	
-			<div style="padding: 0px 9px; width: 150px; display: inline-block;">
+			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" ><?php _e('Need help adding items to your site?', 'social-polls-by-opinionstage'); ?></a>
+			<div style="padding: 0 9px; width: 150px; display: inline-block;">
 				<select id="itemList">
-					<option value="all">ALL ITEMS</option>
-					<option value="poll">POLL</option>
-					<option value="survey">SURVEY</option>
-					<option value="trivia">TRIVIA QUIZ</option>
-					<option value="personality">PERSONALITY QUIZ</option>
-					<option value="form">FORM</option>
+					<option value="all"><?php _e('ALL ITEMS', 'social-polls-by-opinionstage'); ?></option>
+					<option value="poll"><?php _e('POLL', 'social-polls-by-opinionstage'); ?></option>
+					<option value="survey"><?php _e('SURVEY', 'social-polls-by-opinionstage'); ?></option>
+					<option value="trivia"><?php _e('TRIVIA QUIZ', 'social-polls-by-opinionstage'); ?></option>
+					<option value="personality"><?php _e('PERSONALITY QUIZ', 'social-polls-by-opinionstage'); ?></option>
+					<option value="form"><?php _e('CLASSIC FORM', 'social-polls-by-opinionstage'); ?></option>
 				</select>
 			</div>
 			<div class="search search-container">
 				<input id="searchItem" class="std-input" name="search" placeholder="Search" type="text">
-			</div>	
-			</div>	
-			<a href="<?php echo admin_url( 'admin.php?page=opinionstage-settings' ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create" style="margin-left: 20px; font-weight: 600; padding-left: 0; padding-right: 0;">CREATE</a>
 			</div>
-		</div>	
+			</div>
+			<a href="<?php echo admin_url( 'admin.php?page=opinionstage-settings' ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create" style="margin-left: 20px; font-weight: 600; padding-left: 0; padding-right: 0;"><?php _e('CREATE', 'social-polls-by-opinionstage'); ?></a>
+			</div>
 		</div>
-		<p class="result_progress" style="display: block; font-size: 16px; text-align: center;">Loading...</p>
+		</div>
+		<p class="result_progress" style="display: block; font-size: 16px; text-align: center;"><?php _e('Loading...', 'social-polls-by-opinionstage'); ?></p>
 		<table id="check"></table>
-		<p class="no_item" style="display: none; font-size: 15px; text-align: center;">No items found</p>
-		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;">Click for more</div>
-		<div id="showLess" style="display: none;">Show less</div>
+		<p class="no_item" style="display: none; font-size: 15px; text-align: center;"><?php _e('No items found', 'social-polls-by-opinionstage'); ?></p>
+		<div id="loadMore" class="btn btn_aqua btn_full-width" style="display: none;"><?php _e('Click for more', 'social-polls-by-opinionstage'); ?></div>
+		<div id="showLess" style="display: none;"><?php _e('Show less', 'social-polls-by-opinionstage'); ?></div>
 		</div>
 	</div>
 	</div>
 <script type="text/javascript">
-	jQuery(document).ready(function($){		
+	jQuery(document).ready(function($){
     	$.ajax({
 			url: '<?php echo OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API; ?>?type=all&page=1&per_page=99',
 			headers: {
@@ -65,7 +65,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			'OSWP-Plugin-Version':'<?php echo OPINIONSTAGE_WIDGET_VERSION ?>',
 			'OSWP-Client-Token': '<?php echo opinionstage_user_access_token() ?>'
 			    },
-			method: 'GET', 
+			method: 'GET',
 			dataType: 'json',
 			success: function(data){
 				dropdownOptions = data;
@@ -90,8 +90,8 @@ defined( 'ABSPATH' ) or die(1); ?>
 			            var viewtext = '<tbody id="count"><tr class="settingBorderOs"><td class="image"><a href="'+previewBlockOsView+'" target="_blank"><div class="content-item-image quiz"><img height="90" src="'+previewBlockOsImageUrl+'" width="120"><div class="content-item-label">'+previewBlockOsType+'</div></div></a></td><td class="long"><div style="position: relative;height: 85px;"><a href="'+previewBlockOsEdit+'" class="opinionstage-item-title" target="_blank">'+previewBlockOsTitle+'</a><table><tbody><tr><td><span class="os-icon-plugin icon-os-common-date"></span><div class="label">'+previewBlockOsDate+'</div></td></tr></tbody></table></div></td><td class="action"><div class="opinionstage-item-action-container"><a href="'+previewBlockOsView+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> View </a><a href="'+previewBlockOsEdit+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Edit </a><a href="'+previewBlockOsStatistics+'" class="opinionstage-blue-bordered-btn opinionstage-edit-content " target="_blank"> Results </div></a></td></tr></tbody>';
 			            	$('.result_progress').css('display', 'none');
 							$(viewtext).appendTo('#container table#check');
-		        	}		        		        	
-				}				
+		        	}
+				}
 			},
 			complete: function(data) {
 				size_li = $("table#check tbody#count").size();
@@ -101,13 +101,13 @@ defined( 'ABSPATH' ) or die(1); ?>
 				     var data = {
 						'action': 'opinionstage_ajax_item_count',
 						'oswp_item_count' : dropdownOptions.data.length
-					};	
+					};
 
 					jQuery.post(ajaxurl, data, function(response) {
 						if(response){
 
 						}
-					});	
+					});
 
 				    jQuery('#itemList').on('change', function() {
 					var selectedValue = this.value;
@@ -173,7 +173,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 									}
 						        });
 					    }
-					});		    
+					});
 			},
 			error: function(){
 			    console.log(data.statusText);
@@ -183,7 +183,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 
 	function loadMore(size, dataLength, item) {
 		if(dataLength == size && dataLength > 10){
-        	setTimeout(function(){$('#showLess').trigger('click');},500);            			
+        	setTimeout(function(){$('#showLess').trigger('click');},500);
         }
         // Show the div in 5s
 		var countItemOS = 10;
@@ -215,7 +215,7 @@ defined( 'ABSPATH' ) or die(1); ?>
 			else {
 				$('table#check tbody#countItem').not(':lt('+x+')').hide();
 			}
-		});	
+		});
 	}
 	});
 </script>
