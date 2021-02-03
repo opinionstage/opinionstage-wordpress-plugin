@@ -1,4 +1,4 @@
-(function ($) {
+;(function ($) {
 	var OpinionStageDialogApp = {
 		cacheElements: function cacheElements() {
 			this.cache = {
