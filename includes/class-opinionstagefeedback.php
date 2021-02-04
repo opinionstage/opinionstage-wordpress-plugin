@@ -3,10 +3,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/**
+ * Opinionstage feedback.
+ *
+ * Opinionstage feedback handler class is responsible for feedback modal on
+ * disabling plugin.
+ *
+ * @since 19.7.4
+ */
 class OpinionstageFeedback {
 
+	/**
+	 * Project token.
+	 *
+	 * @since 19.7.4
+	 * @var string
+	 */
 	private $project_token = '1aef78541d1dc41570207ecaf9ec235a';
 
+	/**
+	 * OpinionstageFeedback constructor.
+	 *
+	 * @since 19.7.4
+	 */
 	public function __construct() {
 		add_action(
 			'current_screen',
@@ -22,6 +41,11 @@ class OpinionstageFeedback {
 		add_action( 'wp_ajax_opinionstage_deactivate_feedback', array( $this, 'ajax_opinionstage_deactivate_feedback' ) );
 	}
 
+	/**
+	 * Enqueue feedback dialog scripts.
+	 *
+	 * @since 19.7.4
+	 */
 	public function enqueue_feedback_dialog_scripts() {
 		add_action( 'admin_footer', array( $this, 'print_deactivate_feedback_dialog' ) );
 
@@ -44,39 +68,50 @@ class OpinionstageFeedback {
 		wp_enqueue_style( 'opinionstage-admin-feedback' );
 	}
 
+	/**
+	 * Return answers for deactivate feedback poll.
+	 *
+	 * @since 19.7.4
+	 * @return array[]
+	 */
 	private function get_deactivate_feedback_reasons() {
 		return array(
 			'no_longer_needed'               => array(
-				'title'             => __( 'I no longer need the plugin', 'social-polls-by-opinionstage' ),
+				'title'             => esc_html__( 'I no longer need the plugin', 'social-polls-by-opinionstage' ),
 				'input_placeholder' => '',
 			),
 			'found_a_better_plugin'          => array(
-				'title'             => __( 'I found a better plugin', 'social-polls-by-opinionstage' ),
-				'input_placeholder' => __( 'Please share which plugin', 'social-polls-by-opinionstage' ),
+				'title'             => esc_html__( 'I found a better plugin', 'social-polls-by-opinionstage' ),
+				'input_placeholder' => esc_html__( 'Please share which plugin', 'social-polls-by-opinionstage' ),
 			),
 			'couldnt_get_the_plugin_to_work' => array(
-				'title'             => __( 'I couldn\'t get the plugin to work', 'social-polls-by-opinionstage' ),
-				'input_placeholder' => __( 'What was the problem', 'social-polls-by-opinionstage' ),
+				'title'             => esc_html__( 'I couldn\'t get the plugin to work', 'social-polls-by-opinionstage' ),
+				'input_placeholder' => esc_html__( 'What was the problem', 'social-polls-by-opinionstage' ),
 			),
 			'temporary_deactivation'         => array(
-				'title'             => __( 'It\'s a temporary deactivation', 'social-polls-by-opinionstage' ),
+				'title'             => esc_html__( 'It\'s a temporary deactivation', 'social-polls-by-opinionstage' ),
 				'input_placeholder' => '',
 			),
 			'other'                          => array(
-				'title'             => __( 'Other', 'social-polls-by-opinionstage' ),
-				'input_placeholder' => __( 'Please share the reason', 'social-polls-by-opinionstage' ),
+				'title'             => esc_html__( 'Other', 'social-polls-by-opinionstage' ),
+				'input_placeholder' => esc_html__( 'Please share the reason', 'social-polls-by-opinionstage' ),
 			),
 		);
 	}
 
+	/**
+	 * Print deactivate feedback modal.
+	 *
+	 * @since 19.7.4
+	 */
 	public function print_deactivate_feedback_dialog() {
 		$deactivate_reasons = $this->get_deactivate_feedback_reasons();
 		?>
 		<div class="opinionstage-dialog-box-wrapper" id="opinionistage-deactivate-feedback-modal" >
 			<div class="opinionstage-dialog-box-content">
 				<div class="opinionstage-deactivate-feedback-dialog-header">
-					<img src="<?php echo plugins_url( 'admin/images/os-icon.png', plugin_dir_path( __FILE__ ) ); ?>" class="opinionstage-modal-logo" >
-					<span class="opinionstage-modal-header"><?php _e( 'Quick Feedback', 'social-polls-by-opinionstage' ); ?></span>
+					<img src="<?php echo esc_url( plugins_url( 'admin/images/os-icon.png', plugin_dir_path( __FILE__ ) ) ); ?>" class="opinionstage-modal-logo" >
+					<span class="opinionstage-modal-header"><?php esc_html_e( 'Quick Feedback', 'social-polls-by-opinionstage' ); ?></span>
 					<span id="opinionstage-dialog-close" class="opinionstage-close"></span>
 				</div>
 				<div class="opinionstage-dialog-message">
@@ -86,7 +121,7 @@ class OpinionstageFeedback {
 						?>
 						<input type="hidden" name="action" value="opinionstage_deactivate_feedback" />
 
-						<div class="opinionstage-deactivate-feedback-dialog-form-caption"><?php echo __( 'Please share why you are disabling Opinion Stage:', 'social-polls-by-opinionstage' ); ?></div>
+						<div class="opinionstage-deactivate-feedback-dialog-form-caption"><?php esc_html_e( 'Please share why you are disabling Opinion Stage:', 'social-polls-by-opinionstage' ); ?></div>
 						<div class="opinionstage-choices-wrapper">
 							<?php foreach ( $deactivate_reasons as $reason_key => $reason ) : ?>
 								<div class="opinionstage-deactivate-feedback-dialog-input-wrapper">
@@ -104,32 +139,38 @@ class OpinionstageFeedback {
 					</form>
 				</div>
 				<div class="opinionstage-dialog-buttons">
-					<button id="opinionstage-dialog-submit" class="opinionstage-dialog-submit"><div class="opinionstage-loading-ring"></div><?php _e( 'Submit & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
-					<button id="opinionstage-dialog-skip" class="opinionstage-dialog-skip"><?php _e( 'Skip & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
+					<button id="opinionstage-dialog-submit" class="opinionstage-dialog-submit"><div class="opinionstage-loading-ring"></div><?php esc_html_e( 'Submit & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
+					<button id="opinionstage-dialog-skip" class="opinionstage-dialog-skip"><?php esc_html_e( 'Skip & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
 				</div>
 			</div>
 		</div>
 		<?php
 	}
 
+	/**
+	 * Ajax opinionstage deactivate feedback.
+	 *
+	 * @since 19.7.4
+	 */
 	public function ajax_opinionstage_deactivate_feedback() {
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], '_opinionstage_deactivate_feedback_nonce' ) ) {
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), '_opinionstage_deactivate_feedback_nonce' ) ) {
 			wp_send_json_error();
 		}
 
 		$reason = '';
 
 		if ( ! empty( $_POST['reason_key'] ) ) {
-			$reason = $_POST['reason_key'];
+			$reason = sanitize_text_field( wp_unslash( $_POST['reason_key'] ) );
 		}
 
 		$possible_reasons = $this->get_deactivate_feedback_reasons();
 
 		if ( key_exists( $reason, $possible_reasons ) ) {
-			$reason_text_key = $reason_text = '';
-			if ( isset( $_POST[ 'reason_' . $reason ] ) && trim( $_POST[ 'reason_' . $reason ] ) != '' && ! empty( $possible_reasons[ $reason ]['input_placeholder'] ) ) {
+			$reason_text_key = '';
+			$reason_text     = '';
+			if ( isset( $_POST[ 'reason_' . $reason ] ) && trim( sanitize_text_field( wp_unslash( $_POST[ 'reason_' . $reason ] ) ) ) !== '' && ! empty( $possible_reasons[ $reason ]['input_placeholder'] ) ) {
 				$reason_text_key = 'reason_' . $reason;
-				$reason_text     = $_POST[ 'reason_' . $reason ];
+				$reason_text     = sanitize_text_field( wp_unslash( $_POST[ 'reason_' . $reason ] ) );
 			}
 
 			$data = array(
@@ -139,7 +180,7 @@ class OpinionstageFeedback {
 				'site_lang'      => get_bloginfo( 'language' ),
 			);
 
-			if ( $reason_text !== '' ) {
+			if ( '' !== $reason_text ) {
 				$data[ $reason_text_key ] = $reason_text;
 			}
 			require_once plugin_dir_path( __FILE__ ) . 'mixpanel-php/lib/Mixpanel.php';
@@ -150,9 +191,15 @@ class OpinionstageFeedback {
 		wp_send_json_success();
 	}
 
+	/**
+	 * Determine if current page is plugins page
+	 *
+	 * @since 19.7.4
+	 * @return bool
+	 */
 	private function is_plugins_screen() {
-		return in_array( get_current_screen()->id, array( 'plugins', 'plugins-network' ) );
+		return in_array( get_current_screen()->id, array( 'plugins', 'plugins-network' ), true );
 	}
 }
 
-$OpinionstageFeedback = new OpinionstageFeedback();
+$opinionstage_feedback = new OpinionstageFeedback();

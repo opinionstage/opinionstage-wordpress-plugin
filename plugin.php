@@ -79,7 +79,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 		// Check if active plugin file is plugin.php on plugin activate hook.
 		if ( plugin_basename( __FILE__ ) === $plugin ) {
 			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_VIEW_ITEM_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
-			wp_safe_redirect('admin.php?page=' . $redirect_to );
+			wp_safe_redirect( 'admin.php?page=' . $redirect_to );
 			exit();
 		}
 	}
@@ -103,7 +103,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-utility-functions.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-article-placement-functions.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-sidebar-widget.php';
-        require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-feedback.php';
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-opinionstagefeedback.php';
 
 		if ( ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) || ( defined( 'DOING_AJAX' ) ) ) {
 			require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-ajax-functions.php';
