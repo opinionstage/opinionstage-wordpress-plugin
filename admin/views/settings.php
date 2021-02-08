@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) || die();
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></div>
-					<?php echo esc_html( opinionstage_help_links( __( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ), 'https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site', 'opinionstage-need-help-link' ) ); ?>
+					<?php echo opinionstage_help_links( __( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ), 'https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site', 'opinionstage-need-help-link' ); ?>
 				</div>
 				<div class="opinionstage-section-content" style="position: relative;">
 					<div class="opinionstage-section-raw">
@@ -50,8 +50,8 @@ defined( 'ABSPATH' ) || die();
 							<div class="example"><?php esc_html_e( 'Get opinions, run contests & competitions', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo esc_html( opinionstage_create_poll_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ) ); ?>
-							<?php echo esc_html( opinionstage_template_poll_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ) ); ?>
+							<?php echo opinionstage_create_poll_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_poll_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -63,8 +63,8 @@ defined( 'ABSPATH' ) || die();
 							<div class="example"><?php esc_html_e( 'Create a personality test or a product/service selector', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo esc_html( opinionstage_create_personality_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ) ); ?>
-							<?php echo esc_html( opinionstage_template_personality_quiz_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ) ); ?>
+							<?php echo opinionstage_create_personality_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_personality_quiz_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -76,8 +76,8 @@ defined( 'ABSPATH' ) || die();
 							<div class="example"><?php esc_html_e( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo esc_html( opinionstage_create_trivia_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ) ); ?>
-							<?php echo esc_html( opinionstage_template_trivia_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ) ); ?>
+							<?php echo opinionstage_create_trivia_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_trivia_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -89,8 +89,8 @@ defined( 'ABSPATH' ) || die();
 							<div class="example"><?php esc_html_e( 'Gather feedback from your users', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo esc_html( opinionstage_create_survey_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ) ); ?>
-							<?php echo esc_html( opinionstage_template_survey_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ) ); ?>
+							<?php echo opinionstage_create_survey_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_survey_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ); ?>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -102,8 +102,8 @@ defined( 'ABSPATH' ) || die();
 							<div class="example"><?php esc_html_e( 'Gather information from your users', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo esc_html( opinionstage_create_form_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ) ); ?>
-							<?php echo esc_html( opinionstage_template_form_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ) ); ?>
+							<?php echo opinionstage_create_form_link( 'opinionstage-blue-btn opinionstage-create-btn os_create_new_btn template' ); ?>
+							<?php echo opinionstage_template_form_link( 'opinionstage-blue-bordered-btn opinionstage-create-btn os_use_template_btn template' ); ?>
 						</div>
 					</div>
 				</div>
