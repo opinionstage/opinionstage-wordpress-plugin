@@ -34,6 +34,7 @@ svn-update-files: _check-svn-path
 	rsync --progress --archive --no-times --delete-after \
 	  --exclude=*.zip                         \
 	  --exclude=.git*                         \
+	  --exclude=.idea/                        \
 	  --exclude=.circleci/                    \
 	  --exclude=.editorconfig                 \
 	  --exclude=Makefile                      \
