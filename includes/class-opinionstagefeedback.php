@@ -33,6 +33,12 @@ class OpinionstageFeedback {
 				if ( ! $this->is_plugins_screen() ) {
 					return;
 				}
+				if ( class_exists( 'Mixpanel' )
+						&& ! method_exists( 'Mixpanel', 'getInstance' )
+						&& ! method_exists( 'Mixpanel', 'track' )
+				) {
+					return;
+				}
 
 				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_feedback_dialog_scripts' ) );
 			}
@@ -183,12 +189,22 @@ class OpinionstageFeedback {
 			if ( '' !== $reason_text ) {
 				$data[ $reason_text_key ] = $reason_text;
 			}
-			require_once plugin_dir_path( __FILE__ ) . 'mixpanel-php/lib/Mixpanel.php';
-			$mp = Mixpanel::getInstance( $this->project_token );
-			$mp->track( 'plugin_disabled', $data );
-		}
 
-		wp_send_json_success();
+			if ( ! class_exists( 'Mixpanel' ) ) {
+				require_once plugin_dir_path( __FILE__ ) . 'mixpanel-php/lib/Mixpanel.php';
+			} else if ( ! method_exists( 'Mixpanel', 'getInstance' ) || ! method_exists( 'Mixpanel', 'track' ) ) {
+				wp_send_json_error();
+			}
+			try {
+				$mp = Mixpanel::getInstance( $this->project_token );
+				$mp->track( 'plugin_disabled', $data );
+			} catch ( Exception $e ) {
+				wp_send_json_error();
+			}
+
+			wp_send_json_success();
+		}
+		wp_send_json_error();
 	}
 
 	/**
