@@ -1,5 +1,12 @@
 <?php
-defined( 'ABSPATH' ) || die(); ?>
+/**
+ * My Items Settings page
+ *
+ * @package OpinionStageWordPressPlugin
+ */
+
+defined( 'ABSPATH' ) || die();
+?>
 <style type="text/css">
 	.content-item-image.quiz{
 			background-image: url(<?php echo esc_url( plugins_url( '', dirname( __FILE__ ) ) . '/images/form-not-found.png' ); ?>);
@@ -23,28 +30,38 @@ defined( 'ABSPATH' ) || die(); ?>
 	<div id="container" class="opinionstage-dashboard">
 		<div class="opinionstage-item-view-dashboard">
 		<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
-		<div class="opinionstage-section-header">
-			<div class="opinionstage-section-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></div>
-			<div class="opinionstage-header-inner-container">
-			<div class="opinionstage-header-inner-section">
-			<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank" ><?php esc_html_e( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ); ?></a>
-			<div style="padding: 0 9px; width: 150px; display: inline-block;">
-				<select id="itemList">
-					<option value="all"><?php esc_html_e( 'ALL ITEMS', 'social-polls-by-opinionstage' ); ?></option>
-					<option value="poll"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></option>
-					<option value="survey"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></option>
-					<option value="trivia"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></option>
-					<option value="personality"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></option>
-					<option value="form"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></option>
-				</select>
+			<div class="opinionstage-section-header" style="overflow: visible">
+				<div class="opinionstage-section-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></div>
+				<div class="opinionstage-header-inner-container">
+					<div class="opinionstage-header-inner-section">
+						<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank"><?php esc_html_e( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ); ?></a>
+						<div style="padding: 0 9px; width: 150px; display: inline-block;">
+							<select id="itemList">
+								<option value="all"><?php esc_html_e( 'ALL ITEMS', 'social-polls-by-opinionstage' ); ?></option>
+								<option value="poll"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></option>
+								<option value="survey"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></option>
+								<option value="trivia"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></option>
+								<option value="personality"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></option>
+								<option value="form"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></option>
+							</select>
+						</div>
+						<div class="search search-container">
+							<input id="searchItem" class="std-input" name="search" placeholder="Search" type="text">
+						</div>
+					</div>
+
+					<div style="padding: 0 9px; width: 150px; display: inline-block;position: relative;">
+						<button class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create opinoinstage-show-anchor-list"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></button>
+						<ul class="opinionstage-anchors-list">
+							<li><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/poll' ) ); ?>" target="_blank"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></a></li>
+							<li><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/survey' ) ); ?>" target="_blank"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></a></li>
+							<li><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/trivia' ) ); ?>" target="_blank"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></a></li>
+							<li><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/personality' ) ); ?>" target="_blank"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></a></li>
+							<li><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/classic-form' ) ); ?>" target="_blank"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div class="search search-container">
-				<input id="searchItem" class="std-input" name="search" placeholder="Search" type="text">
-			</div>
-			</div>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-settings' ) ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create" style="margin-left: 20px; font-weight: 600; padding-left: 0; padding-right: 0;"><?php esc_html_e( 'CREATE', 'social-polls-by-opinionstage' ); ?></a>
-			</div>
-		</div>
 		</div>
 		<p class="result_progress" style="display: block; font-size: 16px; text-align: center;"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
 		<table id="check"></table>
@@ -214,6 +231,26 @@ defined( 'ABSPATH' ) || die(); ?>
 				$('table#check tbody#countItem').not(':lt('+x+')').hide();
 			}
 		});
+	}
+
+	window.opinoinstageHandleSelectLinks = function(elm){
+		var url = $(elm).children("option:selected").data('href');
+		if( url ) {
+			window.location = url;
+		}
+	}
+
+	if( $('.opinoinstage-show-anchor-list').length > 0 ) {
+		$(document).click(function(e){
+			if( $(e.target).is('.opinoinstage-show-anchor-list') ) {
+				$('.opinionstage-anchors-list').toggleClass('opened');
+				return;
+			}
+
+			if( $('.opinionstage-anchors-list').hasClass('opened') ) {
+				$('.opinionstage-anchors-list').removeClass('opened');
+			}
+		})
 	}
 	});
 </script>

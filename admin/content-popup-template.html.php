@@ -1,5 +1,10 @@
 <?php
-// block direct access to plugin PHP files:
+/**
+ * Content Popup Template
+ *
+ * @package OpinionStageWordPressPlugin
+ */
+
 defined( 'ABSPATH' ) || die();
 
 require_once plugin_dir_path( __FILE__ ) . '../includes/opinionstage-client-session.php';
@@ -95,7 +100,17 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				<span class="os-search__icon icon-os-common-tip"></span>
 			</div>
 			<div class="content-actions__sep"></div>
-			<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . OPINIONSTAGE_MENU_SLUG ) ); ?>" target='_blank' class="btn-create"><?php esc_html_e( 'CREATE', 'social-polls-by-opinionstage' ); ?></a>
+
+			<div class="dropdown dropdown_items">
+				<button class="dropbtn"><span><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></span></button>
+				<div class="dropdown-content opinionstage-anchors-list">
+					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/poll' ) ); ?>" target="_blank"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></a></div>
+					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/survey' ) ); ?>" target="_blank"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></a></div>
+					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/trivia' ) ); ?>" target="_blank"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></a></div>
+					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/personality' ) ); ?>" target="_blank"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></a></div>
+					<div class='filter__itm'><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/classic-form' ) ); ?>" target="_blank"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></a></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class='content__list'>
@@ -157,7 +172,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 		</div>
 		<div class='page-content' v-else>
 				<h1 class='main-title'>
-					<b><?php esc_html_e( 'all items', 'social-polls-by-opinionstage' ); ?></b>
+					<b><?php esc_html_e( 'Connect WordPress with Opinion Stage to get started', 'social-polls-by-opinionstage' ); ?></b>
 				</h1>
 				<a id="os-start-login" data-os-login="" href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="opinionstage-blue-btn"><?php esc_html_e( 'CONNECT', 'social-polls-by-opinionstage' ); ?></a>
 		</div>

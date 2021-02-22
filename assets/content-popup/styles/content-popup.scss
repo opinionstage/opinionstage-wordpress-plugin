@@ -6,6 +6,27 @@ $brand-blue: #3aaebd;
 $inputs-border-color: #cccccc;
 
 .opinionstage-content-popup-contents {
+  max-width: 945px;
+  min-width: 875px;
+
+  &[data-opinionstage-client-logged-in=''] {
+	max-width: 680px;
+	min-width: 680px;
+
+	.main-title {
+	  font-size: 20px;
+	}
+
+	.page-content {
+	  margin: 0 auto;
+	  padding: 40px 30px 40px 30px;
+	  #os-start-login {
+		margin-top: 30px;
+	  }
+	}
+  }
+
+
   * {
     margin: 0;
     padding: 0;
@@ -330,14 +351,12 @@ $inputs-border-color: #cccccc;
   }
 
   .btn-close {
-    border: 1px solid #ffffff;
     border-radius: 5px;
     color: white;
     cursor: pointer;
     display: inline-block;
-    font: 16px/38px "Open Sans",Helvetica,sans-serif;
+    font: 27px/48px Open Sans,Helvetica,sans-serif;
     margin-left: 20px;
-    opacity: 0.5;
     text-align: center;
     width: 42px;
     &:hover {
@@ -347,7 +366,7 @@ $inputs-border-color: #cccccc;
 
   .btn-blue {
     display: inline-block;
-    background-color: #3499c2;
+    background-color: #38aebd;
     border: medium none;
     border-radius: 5px;
     color: #ffffff;
@@ -421,7 +440,7 @@ $inputs-border-color: #cccccc;
     display: inline-block;
     padding: 11px 10px;
     font-weight: normal;
-    background-color: #3499c2;
+    background-color: #38aebd;
     border-radius: 3px;
     border-style: hidden;
     width: 95px;
@@ -640,4 +659,21 @@ $inputs-border-color: #cccccc;
       z-index: 10;
     }
   }
+  .opinionstage-anchors-list {
+	.filter__itm {
+	  padding: 0;
+	  &:hover {
+		a {
+		  color: #fff;
+		}
+	  }
+	}
+	a {
+	  padding: 5px 10px 5px 20px;
+	  display: block;
+	  text-decoration: none;
+	  width: 100%;
+	}
+  }
+
 }

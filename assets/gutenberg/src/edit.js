@@ -73,7 +73,7 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
     OpinionStage.contentPopup.open({ preselectWidgetType: contentPopupWidgetType(currentWidgetType), onWidgetSelect: placeWidget })
   }
 
-  let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
+	let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}${backendWidgetTypeForNewWidget(currentWidgetType)}?${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrlRequiredArgs}`
 
   let contentViewEditStatOs = (
     <div class="os-widget-wrapper components-placeholder">
@@ -182,13 +182,13 @@ function backendWidgetTypeForNewWidget (widgetType) {
     return 'survey'
     break
   case WIDGET_TRIVIA_QUIZ:
-    return 'quiz'
+    return 'trivia'
     break
   case WIDGET_PERSONALITY_QUIZ:
-    return 'outcome'
+    return 'personality'
     break
   case WIDGET_FORM:
-    return 'contact_form'
+    return 'classic-form'
     break
   }
 }
