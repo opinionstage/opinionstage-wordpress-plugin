@@ -45,7 +45,6 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
         if ( !this.app ) { createModal.call(this) }
 
         this.app.widgetType = preselectWidgetType || WIDGET_ALL
-        console.log('111: selected widget type:', this.app.widgetType)
         this.app.widgetSelectCb = onWidgetSelect
         this.modal.open()
       })
@@ -53,7 +52,6 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
   }
 
   function createModal () {
-    console.log('createModal')
     const self = this
 
     self.modal = new Modal({
