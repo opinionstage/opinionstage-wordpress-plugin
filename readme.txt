@@ -11,12 +11,14 @@ Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or surv
 
 == Description ==
 
-Opinion Stage is a poll, survey, form and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
+ * <a href="https://www.opinionstage.com/templates/c/surveys?o=wp35e8" target="_blank">Survey Templates & Examples</a>
+ * <a href="https://www.opinionstage.com/templates/c/quizzes?o=wp35e8" target="_blank">Quiz Templates & Examples</a>
+ * <a href="https://www.opinionstage.com/templates/c/polls?o=wp35e8" target="_blank">Poll Templates & Examples</a>
+
+Opinion Stage is a poll, survey and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
 You can create the items from scratch or using hundreds of optimized templates.
 
-<a href="https://www.opinionstage.com/templates?o=wp35e8" target="_blank">Check out our Quiz, Poll, Survey and Form Examples</a>
-
-== Main Poll, Survey, Form & Quiz WordPress Plugin Features: ==
+== Main Poll, Survey & Quiz WordPress Plugin Features: ==
 
  * Easy and fast to create polls, surveys and quizzes either from scratch or using one of the hundreds of free templates.
  * Integrate images & videos into the polls, quizzes and surveys.
@@ -38,7 +40,7 @@ https://www.youtube.com/watch?v=EDtpm6zVKvk
 
  == Templates & Examples ==
 
-Start form scratch or use one of the hundreds of templates to get up and going super fast with an optimized item.
+Start from scratch or use one of the hundreds of templates to get up and going super fast with an optimized item.
 
  == Integrations ==
 
@@ -100,11 +102,11 @@ Opinion Stage is a powerful & easy-to-use interactive content (e.g. poll, quiz, 
 
 = Are Opinion Stage items responsive? =
 
-Yes, all item formats (e.g. poll, quiz, survey, form, etc) created with Opinion Stage are fully responsive, and designed to optimally display on mobile, tablet and desktop
+Yes, all item formats (poll, quiz, survey & form) created with Opinion Stage are fully responsive, and designed to optimally display on mobile, tablet and desktop
 
 = What interactive item formats does Opinion Stage support? =
 
-With Opinion Stage you can create the following item formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Slideshow, Form, Story Article, List. We are constantly adding additional interactive formats so stay tuned!
+With Opinion Stage you can create the following item formats: Poll, Poll Sets, Personality Quiz, Trivia Quiz, Survey, Form & Story.
 
 = What is the difference between a poll and a survey =
 
