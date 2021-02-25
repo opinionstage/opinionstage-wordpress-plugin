@@ -6,8 +6,7 @@ $brand-blue: #3aaebd;
 $inputs-border-color: #cccccc;
 
 .opinionstage-content-popup-contents {
-  max-width: 945px;
-  min-width: 875px;
+  min-width: 960px;
 
   &[data-opinionstage-client-logged-in=''] {
 	max-width: 680px;

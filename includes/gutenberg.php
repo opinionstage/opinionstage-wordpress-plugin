@@ -125,14 +125,13 @@ function opinionstage_gutenberg_inject_data() {
 		'opinionstage-gutenberg-block-editor',
 		'OPINIONSTAGE_GUTENBERG_DATA',
 		array(
-			'userLoggedIn'                   => opinionstage_user_logged_in() ? 'true' : 'false',
-			'createNewWidgetUrl'             => OPINIONSTAGE_SERVER_BASE . '/create/',
-			'createNewWidgetUrlRequiredArgs' => opinionstage_utm_query(),
-			'loginPageUrl'                   => get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ),
-			'OswpPluginVersion'              => OPINIONSTAGE_WIDGET_VERSION,
-			'OswpClientToken'                => opinionstage_user_access_token(),
-			'OswpFetchDataUrl'               => OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API,
-			'brandLogoUrl'                   => plugin_dir_url( OPINIONSTAGE_PLUGIN_FILE ) . 'admin/images/os-logo.png',
+			'userLoggedIn'       => opinionstage_user_logged_in() ? 'true' : 'false',
+			'createNewWidgetUrl' => opinionstage_utm_url( 'api/wp/redirects/widgets/new' ),
+			'loginPageUrl'       => get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ),
+			'OswpPluginVersion'  => OPINIONSTAGE_WIDGET_VERSION,
+			'OswpClientToken'    => opinionstage_user_access_token(),
+			'OswpFetchDataUrl'   => OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API,
+			'brandLogoUrl'       => plugin_dir_url( OPINIONSTAGE_PLUGIN_FILE ) . 'admin/images/os-logo.png',
 		)
 	);
 }

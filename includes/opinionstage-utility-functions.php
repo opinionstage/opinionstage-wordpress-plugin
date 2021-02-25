@@ -177,6 +177,73 @@ function opinionstage_sidebar_placement_edit_url( $tab ) {
 }
 
 /**
+ * Returns create widget url
+ *
+ * @param string $w_type widget type.
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_widget_link( $w_type, $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_link( $title, 'api/wp/redirects/widgets/new', $css_class, array( 'w_type' => $w_type ) );
+}
+
+/**
+ * Returns create poll anchor
+ *
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_poll_link( $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_create_widget_link( 'poll', $css_class, $title );
+}
+
+/**
+ * Returns create personality quiz anchor
+ *
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_personality_link( $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_create_widget_link( 'outcome', $css_class, $title );
+}
+
+/**
+ * Returns create trivia anchor
+ *
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_trivia_link( $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_create_widget_link( 'quiz', $css_class, $title );
+}
+
+/**
+ * Returns create survey anchor
+ *
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_survey_link( $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_create_widget_link( 'survey', $css_class, $title );
+}
+
+/**
+ * Returns create classic form anchor
+ *
+ * @param string $css_class class.
+ * @param string $title anchors caption.
+ * @return string
+ */
+function opinionstage_create_form_link( $css_class, $title = 'CREATE NEW' ) {
+	return opinionstage_create_widget_link( 'contact_form', $css_class, $title );
+}
+
+/**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
  */
 function opinionstage_callback_url() {

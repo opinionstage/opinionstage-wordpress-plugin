@@ -104,11 +104,11 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 			<div class="dropdown dropdown_items">
 				<button class="dropbtn"><span><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></span></button>
 				<div class="dropdown-content opinionstage-anchors-list">
-					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/poll' ) ); ?>" target="_blank"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></a></div>
-					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/survey' ) ); ?>" target="_blank"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></a></div>
-					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/trivia' ) ); ?>" target="_blank"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></a></div>
-					<div class='filter__itm' ><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/personality' ) ); ?>" target="_blank"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></a></div>
-					<div class='filter__itm'><a href="<?php echo esc_attr( opinionstage_utm_url( 'create/classic-form' ) ); ?>" target="_blank"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></a></div>
+					<div class='filter__itm'><?php echo opinionstage_create_poll_link('', __('POLL', 'social-polls-by-opinionstage')); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_survey_link('', __('SURVEY', 'social-polls-by-opinionstage')); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_trivia_link('', __('TRIVIA QUIZ', 'social-polls-by-opinionstage')); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_personality_link('', __('PERSONALITY QUIZ', 'social-polls-by-opinionstage')); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_form_link('', __('CLASSIC FORM', 'social-polls-by-opinionstage')); ?></div>
 				</div>
 			</div>
 		</div>
