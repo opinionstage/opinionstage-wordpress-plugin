@@ -104,11 +104,11 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 			<div class="dropdown dropdown_items">
 				<button class="dropbtn"><span><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></span></button>
 				<div class="dropdown-content opinionstage-anchors-list">
-					<div class='filter__itm'><?php echo opinionstage_create_poll_link('', __('POLL', 'social-polls-by-opinionstage')); ?></div>
-					<div class='filter__itm'><?php echo opinionstage_create_survey_link('', __('SURVEY', 'social-polls-by-opinionstage')); ?></div>
-					<div class='filter__itm'><?php echo opinionstage_create_trivia_link('', __('TRIVIA QUIZ', 'social-polls-by-opinionstage')); ?></div>
-					<div class='filter__itm'><?php echo opinionstage_create_personality_link('', __('PERSONALITY QUIZ', 'social-polls-by-opinionstage')); ?></div>
-					<div class='filter__itm'><?php echo opinionstage_create_form_link('', __('CLASSIC FORM', 'social-polls-by-opinionstage')); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_poll_link( '', __( 'POLL', 'social-polls-by-opinionstage' ) ); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_survey_link( '', __( 'SURVEY', 'social-polls-by-opinionstage' ) ); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_trivia_link( '', __( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ) ); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_personality_link( '', __( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ) ); ?></div>
+					<div class='filter__itm'><?php echo opinionstage_create_form_link( '', __( 'CLASSIC FORM', 'social-polls-by-opinionstage' ) ); ?></div>
 				</div>
 			</div>
 		</div>

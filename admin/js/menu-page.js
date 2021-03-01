@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
 			dropdownOptions = data;
 			if (dropdownOptions.data.length == 0) {
 				var adminUrlCreateLink = OPINIONSTAGE.adminUrlCreateLink;
-				var viewtext = '<tbody><tr><td><p><span style="font-weight: 600; font-size: 15px; color:#212120;">No items yet..., </span><a href="' + adminUrlCreateLink + '" style="font-weight: 600; font-size: 15px; color:#3499c2;">Add your first item</a></p></td></tr></tbody>';
+				var viewtext = '<tbody><tr><td><p><span class="opinionstage-no-items">No items yet..., </span><a href="' + adminUrlCreateLink + '" class="opinionstage-add-our-first-item">Add your first item</a></p></td></tr></tbody>';
 				$('.result_progress').css('display', 'none');
 				$(viewtext).appendTo('#container table#check');
 			} else {
@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 				}
 			}
 		},
-		complete: function (data) {
+		complete: function () {
 			size_li = $("table#check tbody#count").size();
 			dropdownDataLength = dropdownOptions.data.length;
 
@@ -62,12 +62,8 @@ jQuery(document).ready(function ($) {
 				'action': 'opinionstage_ajax_item_count',
 				'oswp_item_count': dropdownOptions.data.length
 			};
-
-			jQuery.post(ajaxurl, data, function (response) {
-				if (response) {
-
-				}
-			});
+			// todo - move it to main ajax call
+			jQuery.post(ajaxurl, data);
 
 			jQuery('#itemList').on('change', function () {
 				var selectedValue = this.value;
@@ -93,7 +89,7 @@ jQuery(document).ready(function ($) {
 				}
 
 				size = $("table#check tbody.countItem").size();
-				$("#loadMore").fadeOut(500);
+				$("#opinionstage-load-more").fadeOut(500);
 				loadMore(size, item_count, "filter");
 			});
 
@@ -138,20 +134,27 @@ jQuery(document).ready(function ($) {
 
 
 	function loadMore(size, dataLength, item) {
+
 		if (dataLength == size && dataLength > 10) {
 			setTimeout(function () {
-				$('#showLess').trigger('click');
+
+				x = (x - 0 < 0) ? 10 : x - 0;
+				if (item == 'all') {
+					$('table#check tbody#count').not(':lt(' + x + ')').hide();
+				} else {
+					$('table#check tbody#countItem').not(':lt(' + x + ')').hide();
+				}
 			}, 500);
 		}
 		// Show the div in 5s
 		var countItemOS = 10;
 		if (dataLength > countItemOS) {
-			$("#loadMore").delay(2000).fadeIn(500);
+			$("#opinionstage-load-more").delay(2000).fadeIn(500);
 		}
 
 		x = 10;
 		$('table#check ttbody#count:lt(' + x + ')').show();
-		$('#loadMore').click(function () {
+		$('#opinionstage-load-more').click(function () {
 			x = (x + 10 <= size) ? x + 10 : size;
 
 			if (item == 'all') {
@@ -161,27 +164,20 @@ jQuery(document).ready(function ($) {
 			}
 
 			if (size == x) {
-				$("#loadMore").hide(500);
-			}
-		});
-		$('#showLess').on('click', null, function () {
-			x = (x - 0 < 0) ? 10 : x - 0;
-			if (item == 'all') {
-				$('table#check tbody#count').not(':lt(' + x + ')').hide();
-			} else {
-				$('table#check tbody#countItem').not(':lt(' + x + ')').hide();
+				$("#opinionstage-load-more").hide(500);
 			}
 		});
 	}
 
-	if ($('.opinoinstage-show-anchor-list').length > 0) {
-		$(document).click(function (e) {
-			if ($(e.target).is('.opinoinstage-show-anchor-list')) {
-				$('.opinionstage-anchors-list').toggleClass('opened');
-				return;
-			}
+	if ($('.opinionstage-show-anchor-list').length > 0) {
 
-			if ($('.opinionstage-anchors-list').hasClass('opened')) {
+		$('.opinionstage-show-anchor-list').click(function (e){
+		    e.preventDefault();
+			$('.opinionstage-anchors-list').toggleClass('opened');
+		})
+
+		$(document).click(function (e) {
+			if ( ! $(e.target).is('.opinionstage-show-anchor-list') && $('.opinionstage-anchors-list').hasClass('opened') ) {
 				$('.opinionstage-anchors-list').removeClass('opened');
 			}
 		})

@@ -629,7 +629,7 @@ div#container .opinionstage-section-header {
 }
 
 /* Load More */
-div#loadMore {
+div#opinionstage-load-more {
   cursor:pointer;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -665,7 +665,7 @@ div#loadMore {
     margin-bottom: 20px;
     margin-left: 20px;
 }
-div#loadMore:hover {
+div#opinionstage-load-more:hover {
     text-decoration: none;
     opacity: 0.8;
 }
@@ -765,7 +765,7 @@ td.image {
     font-weight: bold;
     padding: 13px 17px !important;
 }
-div#loadMore {
+div#opinionstage-load-more {
     background-color: #f1f1f1;
     border-color: #f1f1f1;
     color: #444;
@@ -954,6 +954,18 @@ a.help-center-os.help-link:focus {
 }
 }
 
+
+.opinionstage-no-items {
+	font-weight: 600;
+	font-size: 15px;
+	color: #212120;
+}
+
+a.opinionstage-add-our-first-item {
+	font-weight: 600;
+	font-size: 15px;
+	color: #3499c2;
+}
 @media only screen and (max-width: 768px) {
 .gettingStartedSection {
   width: auto;
