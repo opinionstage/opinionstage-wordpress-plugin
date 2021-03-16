@@ -482,9 +482,11 @@ td.long {
     padding-left: 10px;
     width: 55%;
 }
-td.long div{
-  width: 90%;
-  }
+td.long > div {
+	position: relative;
+	width: 90%;
+	height: 85px;
+}
 td.action a.opinionstage-blue-bordered-btn{
     font-size: 15px;
     margin-right: 9px;
@@ -743,7 +745,7 @@ td.image {
     padding: 10px;
     width: 100%;
 }
-.opinionstage-section-header #searchItem {
+.opinionstage-section-header #opinionstage-my-items-search-field {
     color: #797979;
     height: auto;
     padding: 8.5px 10px;
@@ -752,10 +754,10 @@ td.image {
 #opinionstage-content .opinionstage-item-view-dashboard .opinionstage-dashboard-section {
     margin: 0;
 }
-.opinionstage-item-view-dashboard #check tbody:last-child tr.settingBorderOs {
+.opinionstage-item-view-dashboard #opinionstage-items-table tbody:last-child tr.settingBorderOs {
     border-bottom: 1px #e5e5e5 solid;
 }
-.opinionstage-item-view-dashboard #check tbody .action .opinionstage-edit-content:last-child {
+.opinionstage-item-view-dashboard #opinionstage-items-table tbody .action .opinionstage-edit-content:last-child {
     margin-right: 0;
 }
 .opinionstage-item-action-container {
@@ -861,7 +863,7 @@ div#opinionstage-load-more {
   float: none;
   display: inline !important;
 }
-.opinionstage-item-view-dashboard #check {
+.opinionstage-item-view-dashboard #opinionstage-items-table {
   width: 100%;
 }
 .opinionstage-item-create:before {
@@ -924,7 +926,7 @@ a.help-center-os.help-link:focus {
 .opinionstage-item-action-container {
     float: none;
 }
-#check .action .opinionstage-item-action-container a {
+#opinionstage-items-table .action .opinionstage-item-action-container a {
   display: block;
   float: none;
   margin-bottom: 10px;

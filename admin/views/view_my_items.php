@@ -41,12 +41,12 @@ defined( 'ABSPATH' ) || die();
 									<option value="poll"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></option>
 									<option value="survey"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></option>
 									<option value="trivia"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></option>
-									<option value="personality"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></option>
+									<option value="outcome"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></option>
 									<option value="form"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></option>
 								</select>
 							</div>
 							<div class="search search-container">
-								<input id="searchItem" class="std-input" name="search" placeholder="Search" type="text">
+								<input id="opinionstage-my-items-search-field" class="std-input" name="search" placeholder="Search" type="text">
 							</div>
 						</div>
 
@@ -63,9 +63,12 @@ defined( 'ABSPATH' ) || die();
 					</div>
 				</div>
 			</div>
-			<p class="result_progress" style="display: block; font-size: 16px; text-align: center;"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
-			<table id="check"></table>
+			<p id="opinionstage-my-items-loading-message" class="opinionstage-my-items-message" style="display: block; font-size: 16px; text-align: center;"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
+			<p id="opinionstage-my-items-no-items" class="opinionstage-my-items-message" style="display: none; font-size: 16px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
+			<table id="opinionstage-items-table"></table>
 			<p class="no_item" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
+			<p id="opinionstage-failed-load-items-request" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
+				<a href="https://www.opinionstage.com/live-chat/?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank"><?php esc_html_e('Please contact our chat support for help', 'social-polls-by-opinionstage'); ?></a></p>
 			<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width" style="display: none;"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
 		</div>
 	</div>

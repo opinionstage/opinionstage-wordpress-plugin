@@ -19,10 +19,8 @@ function opinionstage_common_load_resources() {
 		opinionstage_asset_name( 'menu-page' ),
 		'OPINIONSTAGE',
 		array(
-			'WidgetApiUrl'       => esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API . '?type=all&page=1&per_page=99' ),
-			'OswpPluginVersion'  => OPINIONSTAGE_WIDGET_VERSION,
-			'OswpClientToken'    => opinionstage_user_access_token(),
-			'adminUrlCreateLink' => esc_url( admin_url( 'admin.php?page=opinionstage-settings' ) ),
+			'myPlacementsNonce' => wp_create_nonce( 'opinionstage-my-placements' ),
+			'myItemsNonce'      => wp_create_nonce( 'opinionstage-load-my-items' ),
 		)
 	);
 

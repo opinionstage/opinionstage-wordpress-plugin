@@ -1,6 +1,6 @@
 ;(function ($) {
 	var OpinionStageDialogApp = {
-		cacheElements: function cacheElements() {
+		cacheElements: function() {
 			this.cache = {
 				$deactivateLink: $('#the-list').find('[data-slug="social-polls-by-opinionstage"] span.deactivate a'),
 				$modal: $('#opinionistage-deactivate-feedback-modal'),
@@ -10,47 +10,47 @@
 				$dialogForm: $('#opinionstage-deactivate-feedback-dialog-form')
 			}
 		},
-		deactivate: function deactivate(e) {
-			location.href = this.cache.$deactivateLink.attr('href');
+		deactivate: function() {
+			location.href = this.cache.$deactivateLink.attr('href')
 		},
-		bindEvents: function bindEvents() {
-			var self = this;
+		bindEvents: function() {
+			var self = this
 			self.cache.$deactivateLink.on('click', function (e) {
-				e.preventDefault();
-				self.cache.$modal.fadeIn();
-			});
+				e.preventDefault()
+				self.cache.$modal.fadeIn()
+			})
 
 			self.cache.$modal.on('click', function (e) {
 				if ($(e.target).is(self.cache.$modal)) {
-					self.cache.$modal.fadeOut();
+					self.cache.$modal.fadeOut()
 				}
-			});
+			})
 			self.cache.$closeButton.on('click', function (e) {
-				self.cache.$modal.fadeOut();
+				self.cache.$modal.fadeOut()
 			})
 
 			self.cache.$skipButton.on('click', function (e) {
-				self.deactivate();
+				self.deactivate()
 			})
 			self.cache.$submitButton.on('click', function (e) {
-				e.preventDefault();
-				self.sendFeedback();
-				$(this).addClass('opinionstage-loading');
+				e.preventDefault()
+				self.sendFeedback()
+				$(this).addClass('opinionstage-loading')
 			})
 		},
-		sendFeedback: function sendFeedback(){
-			var self = this,
-				formData = self.cache.$dialogForm.serialize();
-			$.post(ajaxurl, formData, this.deactivate.bind(this));
+		sendFeedback: function(){
+			var self = this
+			var	formData = self.cache.$dialogForm.serialize()
+			$.post(ajaxurl, formData, this.deactivate.bind(this))
 		},
-		init: function init() {
-			this.cacheElements();
-			this.bindEvents();
+		init: function() {
+			this.cacheElements()
+			this.bindEvents()
 		}
 	}
 
 	$(function () {
-		OpinionStageDialogApp.init();
-	});
+		OpinionStageDialogApp.init()
+	})
 
-}(jQuery));
+}(jQuery))
