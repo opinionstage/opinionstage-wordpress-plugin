@@ -12,7 +12,9 @@ Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or surv
 == Description ==
 
  * <a href="https://www.opinionstage.com/templates/c/surveys?o=wp35e8" target="_blank">Survey Templates & Examples</a>
+
  * <a href="https://www.opinionstage.com/templates/c/quizzes?o=wp35e8" target="_blank">Quiz Templates & Examples</a>
+
  * <a href="https://www.opinionstage.com/templates/c/polls?o=wp35e8" target="_blank">Poll Templates & Examples</a>
 
 Opinion Stage is a poll, survey and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
