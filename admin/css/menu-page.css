@@ -149,6 +149,7 @@
     float: left;
     font-size: 30px;
     padding: 0;
+	line-height: 1;
 }
 #opinionstage-content .opinionstage-dashboard-section  .opinionstage-section-header a {
     float: left;
@@ -237,16 +238,21 @@
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
+  color: #3c434a;
+  text-decoration: none;
 }
-#opinionstage-section-placements.opinionstage-disabled-section  .opinionstage-section-cell.opinionstage-description-cell .title {
-  color: #a4a4a5;
+#opinionstage-section-placements.opinionstage-disabled-section  .opinionstage-section-cell.opinionstage-description-cell a.title.opinionstage-disabled-link {
+	cursor: inherit;
+}
+#opinionstage-section-placements.opinionstage-disabled-section  .opinionstage-section-cell.opinionstage-description-cell a.title:focus {
+	box-shadow: none;
 }
 #opinionstage-section-create  .opinionstage-section-cell.opinionstage-description-cell .example, #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-description-cell .example {
   color: #b1b1b1;
   font-size: 14px;
   line-height: normal;
 }
-.opinionstage-placement-dashboard .opinionstage-section-content .opinionstage-description-cell .os-long-text a, .opinionstage-placement-dashboard .opinionstage-section-content .opinionstage-description-cell .os-long-text a:hover {
+.opinionstage-placement-dashboard .opinionstage-section-content .opinionstage-description-cell .os-long-text a, #opinionstage-section-placements .opinionstage-section-cell.opinionstage-description-cell a.title, .opinionstage-placement-dashboard .opinionstage-section-content .opinionstage-description-cell .os-long-text a:hover {
   color: #3aaebd;
 }
 #opinionstage-section-placements .opinionstage-section-raw {
@@ -269,6 +275,7 @@
 }
 #opinionstage-section-placements .opinionstage-btns-cell .icon-os-common-settings:before {
   font-size: 26px;
+  content: "\E928";
 }
 #opinionstage-section-placements  .opinionstage-section-cell.opinionstage-btns-cell .opinionstage-edit-content {
   margin-right: 10px;

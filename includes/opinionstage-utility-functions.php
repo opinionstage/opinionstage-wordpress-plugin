@@ -155,17 +155,6 @@ function opinionstage_flyout_edit_url( $tab ) {
 }
 
 /**
- * Generates a link for editing the article placement on Opinion Stage site
- *
- * @param string $tab tab.
- * @return string
- */
-function opinionstage_article_placement_edit_url( $tab ) {
-	$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-	return OPINIONSTAGE_SERVER_BASE . '/containers/' . $os_options['article_placement_id'] . '/edit?selected_tab=' . $tab;
-}
-
-/**
  * Generates a link for editing the sidebar placement on Opinion Stage site
  *
  * @param string $tab tab.

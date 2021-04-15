@@ -8,15 +8,6 @@ jQuery(document).ready(function ($) {
 		toggleSettingsAjax($(this), "opinionstage_ajax_toggle_flyout")
 	})
 
-	$('#article-placement-switch').change(function () {
-		toggleSettingsAjax($(this), "opinionstage_ajax_toggle_article_placement")
-	})
-
-	$('#sidebar-placement-switch').change(function () {
-		toggleSettingsAjax($(this), "opinionstage_ajax_toggle_sidebar_placement")
-	})
-
-
 	var OpinionstageMyItems = {
 		cacheElements: function() {
 			this.cache = {
@@ -56,7 +47,6 @@ jQuery(document).ready(function ($) {
 				},
 				success: function( response ) {
 					self.cache.$messageLoading.hide()
-					console.log(response.success)
 					if( response.success ) {
 						if( response.html.length > 0 ) {
 							self.renderResults( response.html, override )
@@ -115,6 +105,9 @@ jQuery(document).ready(function ($) {
 		}
 	}
 	OpinionstageMyItems.init()
+	$('a.opinionstage-disabled-link').click(function(e){
+	    e.preventDefault();
+	})
 
 	if ($('.opinionstage-show-anchor-list').length > 0) {
 
