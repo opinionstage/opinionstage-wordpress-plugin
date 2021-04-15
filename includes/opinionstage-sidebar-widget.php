@@ -1,143 +1,153 @@
 <?php
+/**
+ * Sidebar widget functional.
+ *
+ * @package   OpinionStageWordPressPlugin
+ */
 
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
-require_once( plugin_dir_path( __FILE__ ).'opinionstage-client-session.php' );
+require_once plugin_dir_path( __FILE__ ) . 'opinionstage-client-session.php';
 
-	// Sidebar widget class for embeding the Opinion Stage sidebar placement
-	class OpinionStageWidget extends WP_Widget {
-		function __construct() {
-			// register new widget
-			$widget_ops = array(
-				'classname' => 'opinionstage_widget',
-				'description' => __('Adds a highly engaging polls to your widget section.', OPINIONSTAGE_TEXT_DOMAIN)
-			);
-			parent::__construct(
-				'opinionstage_widget',
-				__( 'Opinion Stage Sidebar Widget', OPINIONSTAGE_TEXT_DOMAIN ),
-				$widget_ops
-			);
-		}
+/**
+ * Class OpinionStageWidget
+ */
+class OpinionStageWidget extends WP_Widget {
 
-		/*
-		 * Returns the widget content - including the title and the sidebar placement content (once enabled)
-		 */
-		function widget($args, $instance) {
-			extract($args);
-			echo $before_widget;
-			$title = @$instance['title'];
-			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+	/**
+	 * OpinionStageWidget constructor.
+	 */
+	public function __construct() {
 
-			// Show the title once widget is enabled
-			if (!empty($title) && $os_options['sidebar_placement_active'] == 'true') echo $before_title . apply_filters('widget_title', $title) . $after_title;
+		$widget_ops = array(
+			'classname'   => 'opinionstage_widget',
+			'description' => __( 'Add a quiz, poll, survey or form', 'social-polls-by-opinionstage' ),
+		);
+		parent::__construct(
+			'opinionstage_widget',
+			__( 'Opinion Stage Widget', 'social-polls-by-opinionstage' ),
+			$widget_ops
+		);
+	}
 
-			// Add the placement shortcode once widget is enabled
-			if (!empty($os_options["sidebar_placement_id"]) && $os_options['sidebar_placement_active'] == 'true') {
-				echo opinionstage_widget_placement( opinionstage_placement_embed_code_url($os_options["sidebar_placement_id"]) );
+	/**
+	 * Returns the widget content
+	 *
+	 * @param array $args args.
+	 * @param array $instance instance.
+	 */
+	public function widget( $args, $instance ) {
+
+		if ( isset( $instance['opinionstage-widget-data'] ) && json_decode( $instance['opinionstage-widget-data'] ) ) {
+
+			$os_widget_obj = json_decode( $instance['opinionstage-widget-data'] );
+
+			if ( ! isset( $instance['enabled'] ) || intval( $instance['enabled'] ) !== 1 ) {
+				return;
 			}
 
+			$before_widget = isset( $args['before_widget'] ) ? $args['before_widget'] : '';
+			$after_widget  = isset( $args['after_widget'] ) ? $args['after_widget'] : '';
+
+			$title = isset( $instance['title'] ) ? $instance['title'] : '';
+			//phpcs:disable
+			echo $before_widget;
+			if ( '' !== $title ) {
+				echo $args['before_title'];
+				echo $instance['title'];
+				echo $args['after_title'];
+			}
+
+			echo do_shortcode( $os_widget_obj->shortcode );
 			echo $after_widget;
+			//phpcs:enable
+			return;
 		}
 
-		/*
-		 * Updates the widget settings (title and enabled flag)
-		 */
-		function update($new_instance, $old_instance) {
-			$instance = $old_instance;
-			$instance['title'] = strip_tags($new_instance['title']);
-			$instance['enabled'] = strip_tags($new_instance['enabled']);
-			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-			$os_options['sidebar_placement_active'] = ('1' == $instance['enabled']);
-			update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
-			return $instance;
+		// deprecated code - loads placement --start
+		extract( $args );
+		echo $before_widget;
+		$title      = @$instance['title'];
+		$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+		if ( ! empty( $title ) && $os_options['sidebar_placement_active'] == 'true' ) {
+			echo $before_title . apply_filters( 'widget_title', $title ) . $after_title;
 		}
-
-		/*
-		 * Generates the admin form for the widget.
-		 */
-		function form($instance) {
-			opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
-			opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
-
-			opinionstage_enqueue_css_asset('icon-font');
-			opinionstage_enqueue_css_asset('sidebar-widget');
-
-			$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-			$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
-			$enabled = $os_options['sidebar_placement_active'] == 'true' ? '1' : '';
-			$os_client_logged_in = opinionstage_user_logged_in();
-
-			?>
-				<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						var callbackURL = '<?php echo opinionstage_callback_url() ?>';
-
-						$('.opinionstage-sidebar-widget').on('click', '.start-login', function(){
-							var emailInput = $('#os-email');
-							var email = $(emailInput).val();
-							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL) + "&email=" + email;
-							window.location = new_location;
-						});
-
-						$('.opinionstage-sidebar-widget').on('click', '.switch-email', function(){
-							var new_location = "<?php echo OPINIONSTAGE_LOGIN_PATH.'?callback=' ?>" + encodeURIComponent(callbackURL);
-							window.location = new_location;
-						});
-
-						$('#os-email').keypress(function(e){
-							if (e.keyCode == 13) {
-								$('#os-start-login').click();
-							}
-						});
-					});
-				</script>
-
-				<div class="opinionstage-sidebar-widget">
-					<?php if ( $os_client_logged_in ) {?>
-						<!-- <div class="opinionstage-sidebar-connected">
-							<div class="os-icon icon-os-form-success"></div>
-							<div class="opinionstage-connected-info">
-								<div class="opinionstage-connected-title"><b>You are connected</b> to Opinion Stage with:</div>
-								<input id="os-email" type="email" disabled="disabled" value="<?php echo($os_options["email"]) ?>">
-								<a href="javascript:void(0)" class="switch-email" id="os-switch-email" >Switch Account</a>
-							</div>
-						</div> -->
-						<img src="<?php echo plugins_url( 'admin/images/os-logo.png', dirname(__FILE__) ); ?>" >
-						<p>
-							<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', OPINIONSTAGE_TEXT_DOMAIN); ?></label>
-							<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" placeholder="Enter the title here" value="<?php echo $title; ?>" >
-						</p>
-						<div class="opinionstage-sidebar-actions">							
-							<div class="opinionstage-sidebar-config">
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('content'); ?>" target="_blank" class='opinionstage-blue-bordered-btn opinionstage-edit-content'>SELECT ITEM</a>
-								<a href="<?php echo opinionstage_sidebar_placement_edit_url('settings'); ?>" class='opinionstage-blue-bordered-btn opinionstage-edit-settings <?php echo( $os_client_logged_in ? '' : 'disabled' ) ?>' target="_blank">
-									<div class="os-icon icon-os-common-settings"></div>
-								</a>
-							</div>
-							<div style="clear: both;"></div>
-							<div class="opinionstage-sidebar-enabled">
-								<input type="checkbox" id="<?php echo $this->get_field_id('enabled'); ?>" name="<?php echo $this->get_field_name('enabled'); ?>" value="1" <?php echo($enabled == '1' ? "checked" : "") ?> />
-								<label for="<?php echo $this->get_field_id('enabled'); ?>">Enable sidebar widget</label>
-							</div>
-						</div>
-					<?php } else { ?>
-						<img src="<?php echo plugins_url( 'admin/images/os-logo.png', dirname(__FILE__) ); ?>" >
-						<p class="connection_message">Connect WordPress with Opinion Stage to enable the widget</p>
-						<!-- <div class="os-icon icon-os-poll-client"></div>
-						<input id="os-email" type="email" class="os-email" placeholder="Enter Your Email"> 
-						<a href="javascript:void(0)" class="os-button start-login" id="os-start-login">Connect</a>-->
-						<a href="<?php echo admin_url( 'admin.php?page=opinionstage-getting-started' ); ?>" class="os-button start-login opinionstage-blue-btn" id="os-start-login">Connect</a>
-					<?php } ?>
-				</div>
-			<?php
+		if ( ! empty( $os_options['sidebar_placement_id'] ) && $os_options['sidebar_placement_active'] == 'true' ) {
+			echo opinionstage_widget_placement( opinionstage_placement_embed_code_url( $os_options['sidebar_placement_id'] ) );
 		}
+		echo $after_widget;
+		// deprecated code - loads placement --end
 	}
 
-	/*
-	 * Register Sidebar Placement Widget
+	/**
+	 * Updates the widget settings (title and enabled flag)
+	 *
+	 * @param array $new_instance new_instance.
+	 * @param array $old_instance old_instance.
+	 * @return mixed
 	 */
-	function opinionstage_init_widget() {
-		register_widget('OpinionStageWidget');
+	public function update( $new_instance, $old_instance ) {
+		$instance            = $old_instance;
+		$instance['title']   = wp_strip_all_tags( $new_instance['title'] );
+		$instance['enabled'] = wp_strip_all_tags( $new_instance['enabled'] );
+
+		$instance['opinionstage-widget-data'] = $new_instance['opinionstage-widget-data'];
+
+		return $instance;
 	}
-?>
+
+	/**
+	 * Generates the admin form for the widget.
+	 *
+	 * @param array $instance instance.
+	 */
+	public function form( $instance ) {
+		opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
+		opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
+
+		opinionstage_enqueue_css_asset( 'icon-font' );
+		opinionstage_enqueue_css_asset( 'sidebar-widget' );
+
+		$title   = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$enabled = isset( $instance['enabled'] ) ? intval( $instance['enabled'] ) : '';
+
+		$os_widget_json = isset( $instance['opinionstage-widget-data'] ) ? $instance['opinionstage-widget-data'] : '';
+		$os_widget_obj  = json_decode( $os_widget_json );
+
+		$os_widget_id        = '';
+		$os_widget_title     = '';
+		$os_widget_img_url   = '';
+		$os_widget_edit_url  = '';
+		$os_widget_view_url  = '';
+		$os_widget_stats_url = '';
+		//phpcs:disable
+		if ( is_object( $os_widget_obj ) ) {
+			$os_widget_id        = $os_widget_obj->id;
+			$os_widget_title     = $os_widget_obj->title;
+			$os_widget_img_url   = $os_widget_obj->imageUrl;
+			$os_widget_edit_url  = $os_widget_obj->editUrl;
+			$os_widget_view_url  = $os_widget_obj->landingPageUrl;
+			$os_widget_stats_url = $os_widget_obj->statsUrl;
+		}
+		//phpcs:enable
+
+		$popup_button_title           = __( 'Select Item', 'social-polls-by-opinionstage' );
+		$header_above_selected_widget = '';
+		if ( '' !== $os_widget_id ) {
+			$popup_button_title           = __( 'Change Item', 'social-polls-by-opinionstage' );
+			$header_above_selected_widget = __( 'Selected Item:', 'social-polls-by-opinionstage' );
+		}
+
+		$os_client_logged_in = opinionstage_user_logged_in();
+		$logo_url = plugins_url( 'admin/images/os-logo.png', dirname( __FILE__ ) );
+        include plugin_dir_path( dirname( __FILE__ ) ) . 'admin/template-parts/widget-form.php';
+	}
+}
+
+/**
+ * Register Sidebar Placement Widget.
+ */
+function opinionstage_init_widget() {
+	register_widget( 'OpinionStageWidget' );
+}
+

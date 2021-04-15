@@ -45,7 +45,7 @@ export default Vue.component('popup-content', {
       lastUpdateTime: null,
       isCheckingWidgetUpdates: false,
       widgetUpdatesChecker: null,
-    }
+	}
   },
 
   store,

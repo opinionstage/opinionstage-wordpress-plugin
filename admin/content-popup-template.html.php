@@ -124,7 +124,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				</a>
 				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
 				<div class='content__links'>
-					<button class='popup-content-btn content__links-itm' @click="select(widget)"><?php esc_html_e( 'insert', 'social-polls-by-opinionstage' ); ?></button>
+					<button class='popup-content-btn content__links-itm' @click="select(widget)" ><?php esc_html_e( 'insert', 'social-polls-by-opinionstage' ); ?></button>
 					<div class="dropdown dropdown-popup-action">
 						<div class="popup-action popup-content-btn"></div>
 						<div class="popup-action-dropdown dropdown-content">

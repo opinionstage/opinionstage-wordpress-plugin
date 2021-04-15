@@ -95,15 +95,14 @@ jQuery(function($) {
     modal.open()
   }
 
-  $('body').on('click', '[data-opinionstage-content-launch]', function (event) {
-    event.preventDefault()
+  $('body').on('click', '[data-opinionstage-content-launch]', function (e) {
+    e.preventDefault()
 
+    function onWidgetSelect (widget) {
+      wp.media.editor.insert(widget.shortcode)
+    }
     OpinionStage.contentPopup.open({
       onWidgetSelect
     })
   })
-
-  function onWidgetSelect (widget) {
-    wp.media.editor.insert(widget.shortcode)
-  }
 })

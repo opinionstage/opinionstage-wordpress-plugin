@@ -3,6 +3,7 @@ defined( 'ABSPATH' ) || die();
 
 add_action( 'media_buttons', 'opinionstage_content_popup_add_editor_button' );
 add_action( 'admin_enqueue_scripts', 'opinionstage_content_popup_js' );
+add_action( 'admin_enqueue_scripts', 'opinionstage_enqueue_widgets_page_js' );
 add_action( 'admin_footer', 'opinionstage_content_popup_html' );
 
 /**
@@ -15,7 +16,11 @@ function opinionstage_content_popup_add_editor_button() {
 /**
  * Include content popup JS
  */
-function opinionstage_content_popup_js() {
+function opinionstage_content_popup_js( $hook_suffix ) {
+
+	if( ! in_array( $hook_suffix, array( 'post.php', 'widgets.php' ) )) {
+		return;
+	}
 
 	// asset loader hotfix TODO: improve this loader machanism.
 		opinionstage_register_javascript_asset(
@@ -25,6 +30,20 @@ function opinionstage_content_popup_js() {
 		);
 
 		opinionstage_enqueue_js_asset( 'content-popup' );
+}
+
+function opinionstage_enqueue_widgets_page_js( $hook_suffix ){
+    if( 'widgets.php' !== $hook_suffix ) {
+        return;
+    }
+    
+    opinionstage_register_javascript_asset(
+        'widgets-page',
+        'widgets-page.js',
+        array( 'jquery', opinionstage_asset_name('content-popup') )
+    );
+
+    opinionstage_enqueue_js_asset( 'widgets-page' );
 }
 
 /**

@@ -16,6 +16,7 @@
   line-height: normal;
 }
 .opinionstage-sidebar-widget a.opinionstage-edit-content {
+  text-transform: uppercase;
   padding: 9px 17px;
 }
 .opinionstage-sidebar-widget a.opinionstage-edit-settings {
@@ -52,9 +53,7 @@
   float: left;
   margin-top: 10px;
 }
-/*.opinionstage-sidebar-widget .opinionstage-sidebar-config {
-  float: right;
-}*/
+
 .opinionstage-sidebar-widget input[type="text"] {
   padding: 10px;
   width: 100%;
@@ -81,9 +80,9 @@
 
 .wp-admin .opinionstage-sidebar-widget input[type=checkbox], input[type=radio] {
     border: 1px solid #0085ba;
-    height: 20px;   
+    height: 20px;
     width: 20px;
-    box-shadow: none; 
+    box-shadow: none;
     border-radius: 2px;
 }
 .wp-admin .opinionstage-sidebar-widget input[type=checkbox]:checked:before {
@@ -158,4 +157,84 @@ h3.sidebar-widget-heading-label {
     font-weight: normal;
     margin-bottom: 0;
     margin-top: 10px;
+}
+
+.opinionstage-sidebar-enabled label {
+	font-weight: bold;
+}
+.opinionstage-selected-widget {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #40aacd;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.opinionstage-clearfix {
+    clear: both;
+}
+.opinionstage-widget-data {
+    display: none;
+}
+.opinionstage-selected-widget .opinionstage-widget-img-url-wrapper {
+	position: relative;
+}
+.opinionstage-selected-widget .opinionstage-widget-img-url-wrapper img {
+	width: 100%;
+}
+
+.opinionstage-widget-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #222120;
+}
+
+.opinionstage-widget-overlay .opinionstage-inner {
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.opinionstage-widget-overlay .opinionstage-inner a {
+	border-radius: 5px;
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+	cursor: pointer;
+	display: block;
+	line-height: 1;
+	margin: 10px auto;
+	padding: 10px 8px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 140px;
+}
+
+.opinionstage-widget-overlay .opinionstage-inner a:hover {
+	color: #000 !important;
+	background: #fff !important;
+}
+
+
+.opinionstage-selected-widget .opinionstage-widget-img-url-wrapper:hover .opinionstage-widget-overlay {
+	opacity: 0.8;
+}
+
+.opinionstage-selected-widget .opinionstage-widget-title {
+	font-size: 15px;
+	padding-top: 10px;
 }
