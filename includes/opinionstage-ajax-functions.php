@@ -7,25 +7,8 @@
 
 defined( 'ABSPATH' ) || die();
 
-add_action( 'wp_ajax_opinionstage_ajax_toggle_flyout', 'opinionstage_ajax_toggle_flyout' );
 add_action( 'wp_ajax_osa_message_delete', 'opinionstage_message_delete' );
 add_action( 'wp_ajax_opinionstage_ajax_load_my_items', 'opinionstage_load_my_items' );
-
-
-/**
- * Toggle the flyout placement activation flag.
- */
-function opinionstage_ajax_toggle_flyout() {
-	check_ajax_referer( 'opinionstage-my-placements', 'security' );
-
-	if ( isset( $_POST['activate'] ) ) {
-		$os_options                   = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-		$os_options['fly_out_active'] = sanitize_text_field( wp_unslash( $_POST['activate'] ) );
-
-		update_option( OPINIONSTAGE_OPTIONS_KEY, $os_options );
-	}
-	wp_die( '1' );
-}
 
 
 /**

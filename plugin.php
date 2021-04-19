@@ -60,7 +60,6 @@ define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
 define( 'OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement' );
 
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
-define( 'OPINIONSTAGE_PLACEMENT_SLUG', 'opinionstage-my-placements' );
 define( 'OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started' );
 define( 'OPINIONSTAGE_HELP_RESOURCE_SLUG', 'opinionstage-help-resource' );
 

@@ -1,13 +1,4 @@
 jQuery(document).ready(function ($) {
-	var toggleSettingsAjax = function (currObject, action) {
-		$.post(ajaxurl, {action: action, activate: currObject.is(':checked'), security: OPINIONSTAGE.myPlacementsNonce}, function (response) {
-		})
-	}
-
-	$('#fly-out-switch').change(function () {
-		toggleSettingsAjax($(this), "opinionstage_ajax_toggle_flyout")
-	})
-
 	var OpinionstageMyItems = {
 		cacheElements: function() {
 			this.cache = {

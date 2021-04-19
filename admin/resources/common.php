@@ -19,7 +19,6 @@ function opinionstage_common_load_resources() {
 		opinionstage_asset_name( 'menu-page' ),
 		'OPINIONSTAGE',
 		array(
-			'myPlacementsNonce' => wp_create_nonce( 'opinionstage-my-placements' ),
 			'myItemsNonce'      => wp_create_nonce( 'opinionstage-load-my-items' ),
 		)
 	);

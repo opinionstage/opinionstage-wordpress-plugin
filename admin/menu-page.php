@@ -26,7 +26,6 @@ function opinionstage_register_menu_page() {
 				'25.234323221'
 			);
 			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'View My Items', 'My Items', 'edit_posts', OPINIONSTAGE_MENU_SLUG );
-			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'Placements', 'Placements', 'edit_posts', OPINIONSTAGE_PLACEMENT_SLUG, 'opinionstage_load_template' );
 			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'Help Resources', 'Help Resources', 'edit_posts', OPINIONSTAGE_HELP_RESOURCE_SLUG, 'opinionstage_load_template' );
 		} else {
 			add_menu_page(
@@ -40,7 +39,6 @@ function opinionstage_register_menu_page() {
 			);
 			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Getting Started', 'Getting Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG, 'opinionstage_load_template' );
 			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Create...', 'Create...', 'edit_posts', OPINIONSTAGE_MENU_SLUG, 'opinionstage_load_template' );
-			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Placements', 'Placements', 'edit_posts', OPINIONSTAGE_PLACEMENT_SLUG, 'opinionstage_load_template' );
 		}
 	}
 }
