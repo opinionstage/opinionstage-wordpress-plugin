@@ -62,7 +62,6 @@ define( 'OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement' );
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
 define( 'OPINIONSTAGE_PLACEMENT_SLUG', 'opinionstage-my-placements' );
 define( 'OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started' );
-define( 'OPINIONSTAGE_VIEW_ITEM_SLUG', 'opinionstage-view-my-items' );
 define( 'OPINIONSTAGE_HELP_RESOURCE_SLUG', 'opinionstage-help-resource' );
 
 define( 'OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback' );
@@ -78,7 +77,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 	function opinionstage_plugin_activated( $plugin ) {
 		// Check if active plugin file is plugin.php on plugin activate hook.
 		if ( plugin_basename( __FILE__ ) === $plugin ) {
-			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_VIEW_ITEM_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
+			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_MENU_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
 			wp_safe_redirect( 'admin.php?page=' . $redirect_to );
 			exit();
 		}

@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
 				$widgetType: $('#itemList').val() ? $('#itemList').val() : 'all'
 			}
 		},
-		loadItems: function(override = true){
+		loadItems: function(override = true, firstLoad = false ){
 			var self = this
 			if( override ) {
 				self.cache.$table.html('')
@@ -57,6 +57,10 @@ jQuery(document).ready(function ($) {
 								self.cache.$buttonLoadMore.hide()
 							}
 						} else {
+							if( firstLoad ) {
+								$('.opinionstage-item-view-dashboard').hide()
+								$('.opinionstage-dashboard-left').show()
+							}
 							self.cache.$messageNoItemsFound.show()
 						}
 					} else {
@@ -100,11 +104,15 @@ jQuery(document).ready(function ($) {
 
 		init: function() {
 			this.cacheElements()
-			this.loadItems()
+			this.loadItems( true, true )
 			this.bindEvents()
 		}
 	}
-	OpinionstageMyItems.init()
+
+	if( $('.opinionstage-item-view-dashboard').length > 0 ) {
+		OpinionstageMyItems.init();
+	}
+
 	$('a.opinionstage-disabled-link').click(function(e){
 	    e.preventDefault();
 	})
