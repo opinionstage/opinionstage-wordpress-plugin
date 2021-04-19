@@ -3,7 +3,7 @@ Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: 19.7.7
 Requires PHP: 5.2
 
@@ -11,11 +11,8 @@ Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or surv
 
 == Description ==
 
- * <a href="https://www.opinionstage.com/templates/c/surveys?o=wp35e8" target="_blank">Survey Templates & Examples</a>
+[Quiz Templates](https://www.opinionstage.com/templates/c/quizzes?o=wp35e8) | [Poll Templates](https://www.opinionstage.com/templates/c/polls?o=wp35e8) | [Survey Templates](https://www.opinionstage.com/templates/c/surveys?o=wp35e8)
 
- * <a href="https://www.opinionstage.com/templates/c/quizzes?o=wp35e8" target="_blank">Quiz Templates & Examples</a>
-
- * <a href="https://www.opinionstage.com/templates/c/polls?o=wp35e8" target="_blank">Poll Templates & Examples</a>
 
 Opinion Stage is a poll, survey and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
 You can create the items from scratch or using hundreds of optimized templates.
