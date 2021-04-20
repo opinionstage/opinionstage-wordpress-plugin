@@ -33,16 +33,17 @@
 		</div>
 	</td>
 	<td class="action">
-		<div class="opinionstage-item-action-container"><a
-				href="<?php echo esc_url( $item['attributes']['landing-page-url'] ); ?>"
+		<div class="opinionstage-item-action-container">
+			<a href="#"
+				class="opinionstage-blue-bordered-btn opinionstage-edit-content opinionstage-open-modal"
+				data-shortcode='<?php echo esc_attr( htmlspecialchars( $item['attributes']['shortcode'], ENT_QUOTES ) ); ?>'> <?php esc_html_e( 'Add To Site', 'social-polls-by-opinionstage' ); ?> </a>
+			<a href="<?php echo esc_url( $item['attributes']['edit-url'] ); ?>"
 				class="opinionstage-blue-bordered-btn opinionstage-edit-content "
-				target="_blank"> <?php esc_html_e( 'View', 'social-polls-by-opinionstage' ); ?> </a><a
-				href="<?php echo esc_url( $item['attributes']['edit-url'] ); ?>"
+				target="_blank"> <?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?> </a>
+			<a href="<?php echo esc_url( $item['attributes']['stats-url'] ); ?>"
 				class="opinionstage-blue-bordered-btn opinionstage-edit-content "
-				target="_blank"> <?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?> </a><a
-				href="<?php echo esc_url( $item['attributes']['stats-url'] ); ?>"
-				class="opinionstage-blue-bordered-btn opinionstage-edit-content "
-				target="_blank"> <?php esc_html_e( 'Results', 'social-polls-by-opinionstage' ); ?> </a></div>
+				target="_blank"> <?php esc_html_e( 'Results', 'social-polls-by-opinionstage' ); ?> </a>
+		</div>
 	</td>
 </tr>
 </tbody>

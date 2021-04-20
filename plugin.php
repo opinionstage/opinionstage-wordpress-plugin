@@ -66,6 +66,18 @@ define( 'OPINIONSTAGE_HELP_RESOURCE_SLUG', 'opinionstage-help-resource' );
 define( 'OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback' );
 define( 'OPINIONSTAGE_DISCONNECT_PAGE', 'opinionstage-disconnect-page' );
 define( 'OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG', 'opinionstage-content-login-callback-page' );
+define(
+    'OPINIONSTAGE_LIVE_CHAT_URL',
+    add_query_arg(
+        array(
+            'utm_source'   => OPINIONSTAGE_UTM_SOURCE,
+            'utm_campaign' => OPINIONSTAGE_UTM_CAMPAIGN,
+            'utm_medium'   => OPINIONSTAGE_UTM_MEDIUM,
+            'o'            => OPINIONSTAGE_WIDGET_API_KEY,
+        ),
+        OPINIONSTAGE_SERVER_BASE . '/live-chat/'
+    )
+);
 
 if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 	add_action( 'admin_notices', 'opinionstage_fail_php_version' );
@@ -130,7 +142,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
  */
 function opinionstage_fail_php_version() {
 	/* translators: %s: PHP version */
-	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires PHP version %s+, plugin is currently NOT RUNNING.', 'opinionstage' ), '5.2' );
+	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires PHP version %s+, plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), '5.2' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
@@ -146,7 +158,7 @@ function opinionstage_fail_php_version() {
  */
 function opinionstage_fail_wp_version() {
 	/* translators: %s: WordPress version */
-	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'opinionstage' ), '4.7' );
+	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz by OpinionStage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), '4.7' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }

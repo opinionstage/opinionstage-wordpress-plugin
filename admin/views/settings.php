@@ -11,8 +11,6 @@ defined( 'ABSPATH' ) || die();
 <style type="text/css">
 	.content-item-image.quiz{
 		background-image: url(<?php echo esc_url( plugins_url( '', dirname( __FILE__ ) ) . '/images/form-not-found.png' ); ?>);
-		background-repeat: no-repeat;
-		background-size: cover;
 	}
 </style>
 <div id="opinionstage-content">
@@ -45,7 +43,6 @@ defined( 'ABSPATH' ) || die();
 		<?php } ?>
 	</div>
 
-
 	<div id="container" class="opinionstage-dashboard">
 		<?php if ( $os_client_logged_in ) { ?>
 			<div class="opinionstage-item-view-dashboard">
@@ -54,7 +51,6 @@ defined( 'ABSPATH' ) || die();
 						<div class="opinionstage-section-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></div>
 						<div class="opinionstage-header-inner-container">
 							<div class="opinionstage-header-inner-section">
-								<a href="https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site" target="_blank"><?php esc_html_e( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ); ?></a>
 								<div style="padding: 0 9px; width: 150px; display: inline-block;">
 									<select id="itemList">
 										<option value="all"><?php esc_html_e( 'ALL ITEMS', 'social-polls-by-opinionstage' ); ?></option>
@@ -86,18 +82,44 @@ defined( 'ABSPATH' ) || die();
 				<p id="opinionstage-my-items-loading-message" class="opinionstage-my-items-message" style="display: block; font-size: 16px; text-align: center;"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
 				<p id="opinionstage-my-items-no-items" class="opinionstage-my-items-message" style="display: none; font-size: 16px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
 				<table id="opinionstage-items-table"></table>
+
+				<div id="opinionistage-my-items-page-modal-wrapper">
+					<div class="opinionistage-my-items-page-modal">
+						<div class="inner">
+							<span id="opinionstage-dialog-close" class="opinionstage-close"></span>
+							<p><?php esc_html_e( 'You can add item in the following ways:', 'social-polls-by-opinionstage' ); ?></p>
+							<ol>
+								<li><a href="https://help.opinionstage.com/en/articles/5161692-how-to-add-items-to-a-post-page" target="_blank"><?php esc_html_e( 'Add to post/page', 'social-polls-by-opinionstage' ); ?></a></li>
+								<li><a href="https://help.opinionstage.com/en/articles/5161716-how-to-add-an-item-to-a-sidebar-widget" target="_blank"><?php esc_html_e( 'Add to a sidebar Widget', 'social-polls-by-opinionstage' ); ?></a></li>
+								<li><a href="https://help.opinionstage.com/en/articles/5161746-how-to-add-an-item-as-a-popup-on-wordpress" target="_blank"><?php esc_html_e( 'Add as a popup', 'social-polls-by-opinionstage' ); ?></a></li>
+								<li><a href="https://help.opinionstage.com/en/articles/5161782-how-to-add-an-item-using-the-wordpress-shortcode" target="_blank"><?php esc_html_e( 'Add with the WordPress shortcode', 'social-polls-by-opinionstage' ); ?></a></li>
+							</ol>
+							<div class="opinionstage-textarea-wrapper">
+								<textarea name="opinionstage-widget-shortcode" id="opinionstage-widget-shortcode" data-wp-embed-code rows="1" readonly="readonly"></textarea> <a data-copy-text-from="data-wp-embed-code" href="#" class="no-text-decoration">Copy</a>
+							</div>
+							<p>
+								<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
+								<?php if ( defined( 'OPINIONSTAGE_LIVE_CHAT_URL' ) ) { ?>
+									<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
+								<?php } ?>
+							</p>
+						</div>
+					</div>
+				</div>
+
 				<p class="no_item" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
 				<p id="opinionstage-failed-load-items-request" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
-					<a href="https://www.opinionstage.com/live-chat/?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8" target="_blank"><?php esc_html_e('Please contact our chat support for help', 'social-polls-by-opinionstage'); ?></a></p>
+					<?php if ( defined( 'OPINIONSTAGE_LIVE_CHAT_URL' ) ) { ?>
+						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
+					<?php } ?>
 				<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width" style="display: none;"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
 			</div>
 		<?php } ?>
 
-		<div class="opinionstage-dashboard-left" <?php if( $os_client_logged_in ) { ?> style="display: none;" <?php } ?>>
+		<div class="opinionstage-dashboard-left" <?php if ( $os_client_logged_in ) { ?>style="display: none;" <?php } ?>>
 			<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></div>
-					<?php echo opinionstage_help_links( __( 'Need help adding items to your site?', 'social-polls-by-opinionstage' ), 'https://help.opinionstage.com/wordpress-plugin/how-to-add-items-to-your-wordpress-site', 'opinionstage-need-help-link' ); ?>
 				</div>
 				<div class="opinionstage-section-content" style="position: relative;">
 					<div class="opinionstage-section-raw">

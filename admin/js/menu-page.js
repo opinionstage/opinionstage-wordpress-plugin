@@ -11,19 +11,30 @@ jQuery(document).ready(function ($) {
 				$searchField: $('#opinionstage-my-items-search-field'),
 				$failedLoadItemsMessage: $('#opinionstage-failed-load-items-request'),
 				$searchTerm: '',
+				$modal: $('#opinionistage-my-items-page-modal-wrapper'),
+				$modalShortcodeTextarea: $('#opinionstage-widget-shortcode'),
+				$openModalButton: '.opinionstage-open-modal',
+				$closeModalButton: $('#opinionstage-dialog-close'),
+				$copyButtonSelector: '[data-copy-text-from]',
 
 				$widgetType: $('#itemList').val() ? $('#itemList').val() : 'all'
 			}
 		},
-		loadItems: function(override = true, firstLoad = false ){
+		loadItems: function(override, firstLoad ){
+      if (override === undefined) {
+        override = true
+      }
+      if (firstLoad === undefined) {
+        firstLoad = false
+      }
 			var self = this
-			if( override ) {
+			if (override) {
 				self.cache.$table.html('')
 				self.cache.$messageLoading.show()
 				self.cache.$messageNoItemsFound.hide()
 			}
 			self.cache.$buttonLoadMore.hide()
-			self.cache.$failedLoadItemsMessage.hide();
+			self.cache.$failedLoadItemsMessage.hide()
 
 			$.ajax({
 				url: ajaxurl,
@@ -55,7 +66,7 @@ jQuery(document).ready(function ($) {
 							self.cache.$messageNoItemsFound.show()
 						}
 					} else {
-						self.cache.$failedLoadItemsMessage.show();
+						self.cache.$failedLoadItemsMessage.show()
 					}
 				}
 			})
@@ -84,7 +95,35 @@ jQuery(document).ready(function ($) {
 					self.loadItems()
 				}
 			})
-		},
+
+      $('body').on('click', self.cache.$openModalButton, function (e) {
+        e.preventDefault()
+        var shortcode = $(this).data('shortcode')
+
+        $(self.cache.$modalShortcodeTextarea).val(shortcode)
+        self.cache.$modal.fadeIn()
+      })
+
+      self.cache.$modal.on('click', function (e) {
+        if ($(e.target).is(self.cache.$modal)) {
+           self.cache.$modal.fadeOut(function () {
+             $(self.cache.$modalShortcodeTextarea).val('')
+           })
+        }
+      })
+      self.cache.$closeModalButton.on('click', function (e) {
+        self.cache.$modal.fadeOut(function () {
+          $(self.cache.$modalShortcodeTextarea).val('')
+        })
+      })
+
+      $("body").on("click", self.cache.$copyButtonSelector, function (e) {
+        e.preventDefault()
+        var t = $(this).data().copyTextFrom
+        $("[" + t + "]")[0].select()
+        document.execCommand("copy")
+      })
+    },
 
 		renderResults: function( html_ajax, override ){
 			var self = this
@@ -100,13 +139,13 @@ jQuery(document).ready(function ($) {
 		}
 	}
 
-	if( $('.opinionstage-item-view-dashboard').length > 0 ) {
-		OpinionstageMyItems.init();
-	}
+  if ($('.opinionstage-item-view-dashboard').length > 0) {
+    OpinionstageMyItems.init()
+  }
 
-	$('a.opinionstage-disabled-link').click(function(e){
-	    e.preventDefault();
-	})
+  $('a.opinionstage-disabled-link').click(function(e){
+    e.preventDefault()
+  })
 
 	if ($('.opinionstage-show-anchor-list').length > 0) {
 
