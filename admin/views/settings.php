@@ -47,11 +47,11 @@ defined( 'ABSPATH' ) || die();
 		<?php if ( $os_client_logged_in ) { ?>
 			<div class="opinionstage-item-view-dashboard">
 				<div id="opinionstage-section-create" class="opinionstage-dashboard-section">
-					<div class="opinionstage-section-header" style="overflow: visible">
+					<div class="opinionstage-section-header opinionstage-overflow-visible">
 						<div class="opinionstage-section-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></div>
 						<div class="opinionstage-header-inner-container">
 							<div class="opinionstage-header-inner-section">
-								<div style="padding: 0 9px; width: 150px; display: inline-block;">
+								<div class="select-wrapper">
 									<select id="itemList">
 										<option value="all"><?php esc_html_e( 'ALL ITEMS', 'social-polls-by-opinionstage' ); ?></option>
 										<option value="poll"><?php esc_html_e( 'POLL', 'social-polls-by-opinionstage' ); ?></option>
@@ -66,7 +66,7 @@ defined( 'ABSPATH' ) || die();
 								</div>
 							</div>
 
-							<div style="padding: 0 9px; width: 150px; display: inline-block;position: relative;">
+							<div class="select-wrapper">
 								<button class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create opinionstage-show-anchor-list"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></button>
 								<ul class="opinionstage-anchors-list">
 									<li><?php echo opinionstage_create_poll_link( '', __( 'POLL', 'social-polls-by-opinionstage' ) ); ?></li>
@@ -79,8 +79,8 @@ defined( 'ABSPATH' ) || die();
 						</div>
 					</div>
 				</div>
-				<p id="opinionstage-my-items-loading-message" class="opinionstage-my-items-message" style="display: block; font-size: 16px; text-align: center;"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
-				<p id="opinionstage-my-items-no-items" class="opinionstage-my-items-message" style="display: none; font-size: 16px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
+				<p id="opinionstage-my-items-loading-message" class="opinionstage-my-items-message"><?php esc_html_e( 'Loading...', 'social-polls-by-opinionstage' ); ?></p>
+				<p id="opinionstage-my-items-no-items" class="opinionstage-my-items-message"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
 				<table id="opinionstage-items-table"></table>
 
 				<div id="opinionistage-my-items-page-modal-wrapper">
@@ -106,13 +106,11 @@ defined( 'ABSPATH' ) || die();
 						</div>
 					</div>
 				</div>
-
-				<p class="no_item" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?></p>
-				<p id="opinionstage-failed-load-items-request" style="display: none; font-size: 15px; text-align: center;"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
+                <p id="opinionstage-failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
 					<?php if ( defined( 'OPINIONSTAGE_LIVE_CHAT_URL' ) ) { ?>
 						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
 					<?php } ?>
-				<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width" style="display: none;"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
+				<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
 			</div>
 		<?php } ?>
 
@@ -121,7 +119,7 @@ defined( 'ABSPATH' ) || die();
 				<div class="opinionstage-section-header">
 					<div class="opinionstage-section-title"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></div>
 				</div>
-				<div class="opinionstage-section-content" style="position: relative;">
+				<div class="opinionstage-section-content">
 					<div class="opinionstage-section-raw">
 						<div class="opinionstage-section-cell opinionstage-icon-cell">
 							<div class="os-icon-plugin"><img src="<?php echo esc_url( plugins_url( 'images/poll.png', dirname( __FILE__ ) ) ); ?>" ></div>
