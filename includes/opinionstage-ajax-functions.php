@@ -63,10 +63,9 @@ function opinionstage_ajax_toggle_sidebar_placement() {
  * Delete message
  */
 function opinionstage_message_delete() {
-
-	if ( isset( $_POST['delete_options_oswp'] ) && $_POST['delete_options_oswp'] == true ) {
-		$message_title   = delete_option( 'oswp_message_title' );
-		$message_content = delete_option( 'oswp_message_content' );
+	if ( isset( $_POST['delete_options_oswp'] ) && true === $_POST['delete_options_oswp'] ) {
+		delete_option( 'oswp_message_title' );
+		delete_option( 'oswp_message_content' );
 		update_option( 'oswp_message_activity_time', time() );
 	}
 	wp_die( '1' );
