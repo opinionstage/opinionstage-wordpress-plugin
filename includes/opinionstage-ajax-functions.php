@@ -93,6 +93,8 @@ function opinionstage_load_my_items() {
 		$url,
 		array(
 			'headers' => array(
+				'Accept'              => 'application/vnd.api+json',
+				'Content-Type'        => 'application/vnd.api+json',
 				'OSWP-Plugin-Version' => OPINIONSTAGE_WIDGET_VERSION,
 				'OSWP-Client-Token'   => $access_token,
 			),
@@ -120,5 +122,6 @@ function opinionstage_load_my_items() {
 		);
 	}
 
+	opinionstage_error_log( "API response error($url): " . wp_remote_retrieve_response_code( $response ) );
 	wp_send_json_error();
 }
