@@ -26,7 +26,7 @@ function opinionstage_register_menu_page() {
 				'25.234323221'
 			);
 			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'View My Items', 'My Items', 'edit_posts', OPINIONSTAGE_MENU_SLUG );
-			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'Help Resources', 'Help Resources', 'edit_posts', OPINIONSTAGE_HELP_RESOURCE_SLUG, 'opinionstage_load_template' );
+			add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'Get Help', 'Get Help', 'edit_posts', OPINIONSTAGE_HELP_RESOURCE_SLUG, 'opinionstage_load_template' );
 		} else {
 			add_menu_page(
 				__( 'Opinion Stage', 'social-polls-by-opinionstage' ),
