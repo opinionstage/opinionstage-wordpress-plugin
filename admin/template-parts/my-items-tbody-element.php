@@ -25,7 +25,7 @@
 				<tbody>
 				<tr>
 					<td><span class="os-icon-plugin icon-os-common-date"></span>
-						<div class="label"><?php echo esc_html( $item['attributes']['updated-at'] ); ?></div>
+						<div class="label"><?php echo esc_html( gmdate( 'j F Y', strtotime( $item['attributes']['updated-at'] ) ) ); ?></div>
 					</td>
 				</tr>
 				</tbody>
