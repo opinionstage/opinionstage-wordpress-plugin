@@ -36,13 +36,11 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 		</header>
 		<section>
 			<popup-content
-				:show-client-content="showClientContent"
 				:client-is-logged-in="isClientLoggedIn"
 				:modal-is-opened="isModalOpened"
 				:widget-type="widgetType"
 				@widget-selected="selectWidgetAndExit"
 				client-widgets-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ); ?>"
-				shared-widgets-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_SHARED_WIDGETS_API ); ?>"
 				client-widgets-has-new-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE ); ?>"
 				access-key="<?php echo esc_js( opinionstage_user_access_token() ); ?>"
 				plugin-version="<?php echo esc_js( OPINIONSTAGE_WIDGET_VERSION ); ?>"
@@ -154,40 +152,26 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 </template>
 
 <template id="opinionstage-popup-content">
-	<div v-if="showClientContent">
-		<div v-if="clientIsLoggedIn">
-			<div v-if="newWidgetsAvailable" class="notification-container">
-				<notification v-on:update-btn-click='reloadAndRestartCheckingForUpdates'>
-			</div>
-			<widget-list
-				:widgets='widgets'
-				:pre-selected-widget-type='searchCriteria.type'
-				:data-loading='dataLoading'
-				:show-search='true'
-				:no-more-data='noMoreData'
-				@widget-selected="widgetSelected"
-				@widgets-search-update='reloadData'
-				@load-more-widgets='appendData'
-			>
+	<div v-if="clientIsLoggedIn">
+		<div v-if="newWidgetsAvailable" class="notification-container">
+			<notification v-on:update-btn-click='reloadAndRestartCheckingForUpdates'>
 		</div>
-		<div class='page-content' v-else>
-				<h1 class='main-title'>
-					<b><?php esc_html_e( 'Connect WordPress with Opinion Stage to get started', 'social-polls-by-opinionstage' ); ?></b>
-				</h1>
-				<a id="os-start-login" data-os-login="" href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="opinionstage-blue-btn"><?php esc_html_e( 'CONNECT', 'social-polls-by-opinionstage' ); ?></a>
-		</div>
-	</div>
-	<div v-else>
 		<widget-list
 			:widgets='widgets'
 			:pre-selected-widget-type='searchCriteria.type'
 			:data-loading='dataLoading'
-			:show-search='false'
+			:show-search='true'
 			:no-more-data='noMoreData'
 			@widget-selected="widgetSelected"
 			@widgets-search-update='reloadData'
 			@load-more-widgets='appendData'
 		>
+	</div>
+	<div class='page-content' v-else>
+			<h1 class='main-title'>
+				<b><?php esc_html_e( 'Connect WordPress with Opinion Stage to get started', 'social-polls-by-opinionstage' ); ?></b>
+			</h1>
+			<a id="os-start-login" data-os-login="" href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="opinionstage-blue-btn"><?php esc_html_e( 'CONNECT', 'social-polls-by-opinionstage' ); ?></a>
 	</div>
 </template>
 

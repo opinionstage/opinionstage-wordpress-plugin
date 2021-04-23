@@ -23,13 +23,11 @@ export default Vue.component('popup-content', {
 
   props: [
     // dynamic properties:
-    'showClientContent',
     'clientIsLoggedIn',
     'modalIsOpened',
     'widgetType',
     // static properties:
     'clientWidgetsUrl',
-    'sharedWidgetsUrl',
     'clientWidgetsHasNewUrl',
     'accessKey',
     'pluginVersion',
@@ -92,18 +90,10 @@ export default Vue.component('popup-content', {
 
   watch: {
     modalIsOpened (isOpened) {
-      if ( isOpened && this.showClientContent && this.clientIsLoggedIn ) {
+      if ( isOpened && this.clientIsLoggedIn ) {
         this.reloadData()
       } else {
         this.newWidgetsAvailable = false
-        stopWidgetUpdatesChecking.call(this)
-      }
-    },
-
-    showClientContent (shouldShowClientContent) {
-      if ( shouldShowClientContent && this.modalIsOpened && this.clientIsLoggedIn ) {
-        startWidgetUpdatesChecking.call(this)
-      } else {
         stopWidgetUpdatesChecking.call(this)
       }
     },
@@ -113,9 +103,7 @@ export default Vue.component('popup-content', {
 function loadData () {
   this.dataLoading = true
 
-  const load = this.showClientContent ? loadClientWidgets : loadTemplateWidgets
-
-  return load.call(this, this.searchCriteria).then( () => {
+  return loadClientWidgets.call(this, this.searchCriteria).then( () => {
     this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
     this.dataLoading = false
   })
@@ -133,15 +121,6 @@ function loadClientWidgets (filtering) {
   } else {
     return RSVP.resolve()
   }
-}
-
-function loadTemplateWidgets (filtering) {
-  return this.$store.dispatch({
-    type: 'loadTemplateWidgets',
-    widgetsUrl:    this.sharedWidgetsUrl,
-    pluginVersion: this.pluginVersion,
-    filtering,
-  })
 }
 
 function withParams(url, type, time) {

@@ -69,14 +69,6 @@ export default new Vuex.Store({
       state.nextPageNumber = dispatchNextPage(widgetsData)
     },
 
-    loadTemplateWidgets (state, {widgetsData}) {
-      state.widgets.push( dispatchWidgetData(widgetsData).map( widget => {
-        widget.template = true
-        return widget
-      }) )
-      state.nextPageNumber = dispatchNextPage(widgetsData)
-    },
-
     clearWidgets (state) {
       state.widgets = []
       state.nextPageNumber = null
@@ -90,15 +82,6 @@ export default new Vuex.Store({
         widgetsUrl,
         pluginVersion,
         accessToken,
-        filtering,
-      })
-    },
-
-    loadTemplateWidgets ({ dispatch }, { widgetsUrl, pluginVersion, filtering }) {
-      return dispatch('load', {
-        commitType: 'loadTemplateWidgets',
-        widgetsUrl,
-        pluginVersion,
         filtering,
       })
     },

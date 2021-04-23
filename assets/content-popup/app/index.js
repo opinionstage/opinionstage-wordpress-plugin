@@ -24,7 +24,6 @@ export default function (modal) {
     data: {
       widgetType: WIDGET_ALL,
       widgetSelectCb: function (widget) { console.log('dumb widget insert callback, widget:', widget) },
-      showClientContent: true,
       isClientLoggedIn: null,
       isModalOpened: false,
     },
