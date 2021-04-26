@@ -59,7 +59,7 @@
             </div>
         </div>
     <?php } else { ?>
-        <img src="<?php echo esc_url( plugins_url( 'admin/images/os-logo.png', dirname( __FILE__ ) ) ); ?>">
+        <img src="<?php echo esc_url( $logo_url ); ?>">
         <p class="connection_message"><?php esc_html_e('Connect WordPress with Opinion Stage to enable the widget') ?></p>
         <a href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="os-button start-login opinionstage-blue-btn"><?php esc_html_e( 'Connect', 'social-polls-by-opinionstage' ); ?></a>
     <?php } ?>
