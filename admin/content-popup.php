@@ -18,7 +18,7 @@ function opinionstage_content_popup_add_editor_button() {
  */
 function opinionstage_content_popup_js( $hook_suffix ) {
 
-	if( ! in_array( $hook_suffix, array( 'post.php', 'widgets.php' ) )) {
+	if( ! in_array( $hook_suffix, array( 'post.php', 'widgets.php', 'post-new.php' ) )) {
 		return;
 	}
 
