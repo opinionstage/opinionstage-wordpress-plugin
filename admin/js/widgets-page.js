@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
     e.preventDefault()
     var wpWidgetId = $(this).data('open-popup-for-widget')
     OpinionStage.contentPopup.open({
-      onWidgetSelect : function (opinionstageWidget) {
+      onWidgetSelect: function (opinionstageWidget) {
         var osWidgeteFieldsWrapper = $('[data-os-widget-id="' + wpWidgetId + '"]')
         if (osWidgeteFieldsWrapper.length > 0) {
           osWidgeteFieldsWrapper.find('.opinionstage-widget-data').val(JSON.stringify(opinionstageWidget)).trigger('change')
