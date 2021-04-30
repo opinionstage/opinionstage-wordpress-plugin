@@ -239,3 +239,13 @@ function opinionstage_callback_url() {
 	return menu_page_url( OPINIONSTAGE_LOGIN_CALLBACK_SLUG, false );
 }
 
+
+/**
+ * Returns widget templates link
+ *
+ * @param string $type type.
+ * @return mixed
+ */
+function opinionstage_get_templates_url_for_type( $type ) {
+	return add_query_arg( 'page', $type, OPINIONSTAGE_REDIRECT_TEMPLATES_API );
+}

@@ -146,18 +146,4 @@ jQuery(document).ready(function ($) {
   $('a.opinionstage-disabled-link').click(function (e) {
     e.preventDefault()
   })
-
-  if ($('.opinionstage-show-anchor-list').length > 0) {
-
-    $('.opinionstage-show-anchor-list').click(function (e) {
-      e.preventDefault()
-      $('.opinionstage-anchors-list').toggleClass('opened')
-    })
-
-    $(document).click(function (e) {
-      if (!$(e.target).is('.opinionstage-show-anchor-list') && $('.opinionstage-anchors-list').hasClass('opened')) {
-        $('.opinionstage-anchors-list').removeClass('opened')
-      }
-    })
-  }
 })
