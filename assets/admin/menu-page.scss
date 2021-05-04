@@ -1,4 +1,8 @@
+@import "../content-popup/styles/icon-font";
 $blue: #32adbc;
+$blue2: #31aebe;
+$light_red: #f46368;
+
 
 #opinionstage-content {
   height: auto;
@@ -97,7 +101,7 @@ $blue: #32adbc;
       color: $blue;
       border: 1px solid $blue;
       &:hover {
-        background-color: rgba(49,174,190,0.1);
+        background-color: rgba(49,174,190,0.1); 
       }
     }
   }
@@ -174,9 +178,6 @@ $blue: #32adbc;
 
   .opinionstage-dashboard-section {
     margin-bottom: 30px;
-    .opinionstage-section-header.opinionstage-overflow-visible {
-      overflow: visible;
-    }
   }
 
   .opinionstage-dashboard-section {
@@ -186,7 +187,6 @@ $blue: #32adbc;
       overflow: hidden;
 
       a {
-        float: left;
         margin: 0;
         padding: 10px;
 
@@ -244,9 +244,7 @@ $blue: #32adbc;
 #opinionstage-content,
 .opinionstage-sidebar-widget {
   a.opinionstage-blue-bordered-btn:hover {
-    background-color: $blue;
-    color: white;
-    cursor: pointer;
+    background-color: rgba(49,174,190,0.1);
   }
 }
 .opinionstage-my-items-message {
@@ -481,6 +479,7 @@ a.opinionstage-blue-bordered-btn {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition: .2s ease;
 }
 
 
@@ -512,10 +511,48 @@ a.opinionstage-blue-bordered-btn {
   top: 0;
 }
 
-tr.settingBorderOs {
+tr.item-wrapper {
   border-top: 1px #e5e5e5 solid;
   display: table-cell;
   padding: 10px 0;
+  transition: .2s ease;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .opinionstage-item-title {
+    font-weight: 600;
+  }
+  
+  .icon-os-status-closed,
+  .icon-os-status-open {
+    margin-right: 5px;
+  }
+  .icon-os-status-closed {
+    color: $light_red;
+  }
+  .icon-os-status-open {
+    color: $blue2;
+  }
+  .opinionstage-draft {
+    color: $light_red;
+    text-transform: capitalize;
+    font-size: 80%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    > td {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.opinionstage-with-separator:before {
+  content: "";
+  margin: 0 10px;
+  height: 100%;
+  border-left: 1px solid #b1b1b1;
 }
 
 .opinionstage-section-header {
@@ -666,19 +703,17 @@ td.image {
 
 .opinionstage-header-inner-container {
   float: right;
-  position: relative;
-
   .select-wrapper {
     padding: 0 9px;
-    width: 150px;
     display: inline-block;
-    position: relative;
+    &:last-child {
+      padding-right: 0;
+    }
   }
   .opinionstage-header-inner-section {
     border-right: 1px solid #f3f3f3;
     float: left;
-    padding-right: 20px;
-    position: relative;
+    padding-right: 4px;
   }
 }
 
@@ -715,7 +750,7 @@ td.image {
     margin: 0;
   }
   #opinionstage-items-table tbody {
-    &:last-child tr.settingBorderOs {
+    &:last-child tr.item-wrapper {
       border-bottom: 1px #e5e5e5 solid;
     }
     .action .opinionstage-edit-content:last-child {
@@ -727,7 +762,6 @@ td.image {
 .opinionstage-item-action-container {
   float: right;
   .opinionstage-edit-content {
-    font-weight: bold;
     padding: 13px 17px !important;
   }
 }
@@ -759,8 +793,10 @@ div#opinionstage-load-more {
 .gettingTemplateTutorial {
   margin-right: 10px;
 }
+
 .gettingTemplateGallery,
-.gettingTemplateTutorial {
+.gettingTemplateTutorial,
+a.help-center-os {
   border: 2px solid $blue;
   color: $blue;
   font-size: 15px;
@@ -770,20 +806,26 @@ div#opinionstage-load-more {
   text-align: center;
   text-decoration: none;
   width: 100%;
-  max-width: 370px;
   float: left;
-}
-.gettingTemplateGallery,
-.gettingTemplateTutorial {
+
   &:hover {
     background-color: rgba(49, 174, 190, 0.1);
     color: $blue;
   }
+
   &:focus {
     background-color: rgba(49, 174, 190, 0.1);
     box-shadow: none;
     color: $blue;
   }
+
+  @media (min-width: 769px) {
+    max-width: 370px;
+  }
+}
+
+a.help-center-os {
+  padding: 29px 0;
 }
 
 
@@ -812,29 +854,6 @@ div#opinionstage-load-more {
 
 #opinionstage-content .opinionstage-item-view-dashboard .opinionstage-dashboard-section {
   margin-bottom: 5px;
-}
-
-a.help-center-os {
-  border: 2px solid $blue;
-  color: $blue;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 10px;
-  padding: 29px 0;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  max-width: 370px;
-  float: left;
-  &:hover {
-    background-color: rgba(49, 174, 190, 0.1);
-    color: $blue;
-  }
-  &.help-link:focus {
-    background-color: rgba(49, 174, 190, 0.1);
-    box-shadow: none;
-    color: $blue;
-  }
 }
 
 
@@ -995,10 +1014,6 @@ a.help-center-os {
     width: 80%;
   }
 
-  tr.settingBorderOs > td {
-    display: block;
-    width: 100%;
-  }
   .opinionstage-item-view-dashboard {
     width: auto;
   }

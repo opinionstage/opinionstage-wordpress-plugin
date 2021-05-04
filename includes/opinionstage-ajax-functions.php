@@ -59,7 +59,8 @@ function opinionstage_load_my_items() {
 		$html = '';
 		if ( isset( $res_arr['data'] ) && ! empty( $res_arr['data'] ) ) {
 			ob_start();
-			foreach ( $res_arr['data'] as $item ) {
+			foreach ( $res_arr['data'] as $datum ) {
+				$item = opinionstage_generate_widget_item_object_for_rendering( $datum );
 				include plugin_dir_path( dirname( __FILE__ ) ) . 'admin/template-parts/my-items-tbody-element.php';
 			}
 			$html = ob_get_clean();
@@ -76,4 +77,42 @@ function opinionstage_load_my_items() {
 
 	opinionstage_error_log( "API response error($url): " . wp_remote_retrieve_response_code( $response ) );
 	wp_send_json_error();
+}
+
+/**
+ * Generates widget object from api response for rendering on My Items page.
+ *
+ * @param array $datum widget data.
+ * @return stdClass
+ */
+function opinionstage_generate_widget_item_object_for_rendering( $datum ) {
+	$attributes = isset( $datum['attributes'] ) ? $datum['attributes'] : array();
+
+	$item                   = new stdClass();
+	$item->is_draft         = 0;
+	$item->is_closed        = 0;
+	$item->is_open          = 0;
+	$item->title            = isset( $attributes['title'] ) ? $attributes['title'] : '';
+	$item->landing_page_url = isset( $attributes['landing-page-url'] ) ? $attributes['landing-page-url'] : '';
+	$item->image_url        = isset( $attributes['image-url'] ) ? $attributes['image-url'] : '';
+	$item->type             = isset( $attributes['type'] ) ? $attributes['type'] : '';
+	$item->edit_url         = isset( $attributes['edit-url'] ) ? $attributes['edit-url'] : '';
+	$item->stats_url        = isset( $attributes['stats-url'] ) ? $attributes['stats-url'] : '';
+	$item->updated_at       = isset( $attributes['updated-at'] ) ? $attributes['updated-at'] : '';
+	$item->shortcode        = isset( $attributes['shortcode'] ) ? $attributes['shortcode'] : '';
+
+	if ( isset( $attributes['status'] ) ) {
+		switch ( $attributes['status'] ) {
+			case 'draft':
+				$item->is_draft = 1;
+				break;
+			case 'closed':
+				$item->is_closed = 1;
+				break;
+			default:
+				$item->is_open = 1;
+				break;
+		}
+	}
+	return $item;
 }

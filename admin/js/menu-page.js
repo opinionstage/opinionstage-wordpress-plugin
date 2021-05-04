@@ -7,16 +7,12 @@ jQuery(document).ready(function ($) {
         $buttonLoadMore: $('#opinionstage-load-more'),
         $table: $('#opinionstage-items-table'),
         $loadtPage: 1,
-        $selectorWidgetType: $('#itemList'),
         $searchField: $('#opinionstage-my-items-search-field'),
         $failedLoadItemsMessage: $('#opinionstage-failed-load-items-request'),
-        $searchTerm: '',
+        searchTerm: '',
         $modal: $('#opinionistage-my-items-page-modal-wrapper'),
         $modalShortcodeTextarea: $('#opinionstage-widget-shortcode'),
-        $openModalButton: '.opinionstage-open-modal',
         $closeModalButton: $('#opinionstage-dialog-close'),
-        $copyButtonSelector: '[data-copy-text-from]',
-
         $widgetType: $('#itemList').val() ? $('#itemList').val() : 'all'
       }
     },
@@ -44,7 +40,7 @@ jQuery(document).ready(function ($) {
           type: self.cache.$widgetType,
           per_page: 10,
           page: self.cache.$loadtPage,
-          title_like: self.cache.$searchTerm,
+          title_like: self.cache.searchTerm,
           security: OPINIONSTAGE.myItemsNonce
         },
         success: function (response) {
@@ -79,28 +75,42 @@ jQuery(document).ready(function ($) {
         self.loadItems(false)
       })
 
-      self.cache.$selectorWidgetType.on('change', function (e) {
+      $('#itemList').on('change', function (e) {
         e.preventDefault()
         self.cache.$loadtPage = 1
         self.cache.$searchField.val('')
-        self.cache.$searchTerm = ''
+        self.cache.searchTerm = ''
         self.cache.$widgetType = $(this).val()
         self.loadItems()
       })
 
       self.cache.$searchField.on("keyup", function (e) {
         if (e.key === 'Enter') {
-          self.cache.$searchTerm = $(this).val()
+          self.cache.searchTerm = $(this).val()
           self.cache.$loadtPage = 1
           self.loadItems()
         }
       })
 
-      $('body').on('click', self.cache.$openModalButton, function (e) {
+      $('body').on('click', '.opinionstage-open-modal', function (e) {
         e.preventDefault()
-        var shortcode = $(this).data('shortcode')
+        
+        var $modalPublishedDetails = $('#published-item-details')
+        var $modalEditLink = $('#opinionstage-modal-edit-link')
+        var $modalDraftDetails = $('#draft-item-details')
+        var $this = $(this)
+        if ($this.data('is-draft')) {
+          $modalPublishedDetails.hide()
+          $modalEditLink.attr('href', $this.data('edit-url'))
+          $modalDraftDetails.show()
+        } else {
+          $modalDraftDetails.hide()
+          $modalEditLink.attr('href', '#')
+          $modalPublishedDetails.show()
+          $(self.cache.$modalShortcodeTextarea).val($this.data('shortcode'))
+        }
 
-        $(self.cache.$modalShortcodeTextarea).val(shortcode)
+        
         self.cache.$modal.fadeIn()
       })
 
@@ -117,7 +127,7 @@ jQuery(document).ready(function ($) {
         })
       })
 
-      $("body").on("click", self.cache.$copyButtonSelector, function (e) {
+      $("body").on("click", '[data-copy-text-from]', function (e) {
         e.preventDefault()
         var t = $(this).data().copyTextFrom
         $("[" + t + "]")[0].select()
