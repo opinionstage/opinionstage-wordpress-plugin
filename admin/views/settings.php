@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || die();
 								<p>
 								<?php
 								printf(
-									'%s <a href="" id="opinionstage-modal-edit-link">%s</a> %s',
+									'%s <a href="" id="opinionstage-modal-edit-link" target="_blank">%s</a> %s',
 									esc_html__( 'Widget is not published yet. Please', 'social-polls-by-opinionstage' ),
 									esc_html__( 'edit', 'social-polls-by-opinionstage' ),
 									esc_html__( 'the widget to publish it', 'social-polls-by-opinionstage' )

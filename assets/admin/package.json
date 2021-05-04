@@ -5,7 +5,7 @@
   "main": "yes",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass *.scss -o ../../admin/css/ --output-style compressed "
+    "build": "node-sass ./src/ --output ../../admin/css/ --output-style compressed"
   },
   "author": "",
   "license": "ISC",

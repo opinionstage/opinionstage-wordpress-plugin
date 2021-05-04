@@ -21,7 +21,7 @@ $light_red: #f46368;
   }
 
   .opinionstage-logo-wrapper {
-    padding: 10px 30px;
+    padding: 10px 30px; 
   }
 
   .opinionstage-logo {
@@ -89,8 +89,6 @@ $light_red: #f46368;
     padding: 9px 10px;
     text-decoration: none;
     text-align: center;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
     transition: 0.2s ease;
     &:hover {
       background-color: #2f9fad;
@@ -118,8 +116,6 @@ $light_red: #f46368;
     padding: 10px 5px;
     text-align: center;
     text-decoration: none;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
   }
 
   .opinionstage-dashboard-right a.opinionstage-blue-bordered-btn {
@@ -240,11 +236,15 @@ $light_red: #f46368;
   padding: 12px 10px !important;
 }
 
-// #opinionstage-content
 #opinionstage-content,
 .opinionstage-sidebar-widget {
-  a.opinionstage-blue-bordered-btn:hover {
-    background-color: rgba(49,174,190,0.1);
+  a.opinionstage-blue-bordered-btn {
+    :hover {
+      background-color: rgba(49,174,190,0.1);
+    }
+    &:focus {
+      box-shadow: none;
+    }
   }
 }
 .opinionstage-my-items-message {
