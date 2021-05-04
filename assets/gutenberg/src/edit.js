@@ -27,10 +27,10 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
   if ( OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn === 'false' ) {
     return (
       <div className={ className }>
-        <div class="os-widget-wrapper components-placeholder">
-          <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-          <p class="components-heading">Please connect WordPress to Opinion Stage to start adding widgets</p>
-          <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} class="components-button is-button is-default is-block is-primary">Connect</a>
+        <div className="os-widget-wrapper components-placeholder">
+          <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
+          <p className="components-heading">Please connect WordPress to Opinion Stage to start adding widgets</p>
+          <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} className="components-button is-button is-default is-block is-primary">Connect</a>
         </div>
       </div>
     )
@@ -74,34 +74,36 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
   }
 
   let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
+  let viewTemplateUrl = `${OPINIONSTAGE_GUTENBERG_DATA.viewTemplateUrl}?page=${backendWidgetTypeForViewTemplates(currentWidgetType)}`
 
   let contentViewEditStatOs = (
-    <div class="os-widget-wrapper components-placeholder">
-      <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-      <button class="components-button is-button is-default is-block is-primary" onClick={selectWidget} >Select a {currentWidgetTitle}</button>
-      <a href={createNewWidgetUrl} target="_blank" class="components-button is-button is-default is-block is-primary">Create a new {currentWidgetTitle}</a>
+    <div className="os-widget-wrapper components-placeholder">
+      <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
+      <button className="components-button is-button is-default is-block is-primary" onClick={selectWidget} >Select a {currentWidgetTitle}</button>
+      <a href={createNewWidgetUrl} target="_blank" className="components-button is-button is-default is-block is-primary">Create a new {currentWidgetTitle}</a>
+      <a href={viewTemplateUrl} target="_blank" className="components-button is-button is-default is-block is-primary">View Templates</a>
     </div>
   )
 
   if ( embedUrl && embedUrl !== '' ) {
     if ( buttonText === 'Change' ) {
       contentViewEditStatOs = (
-        <div class="os-widget-wrapper components-placeholder">
-          <p class="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-          <div class="components-preview__block" >
-            <div class="components-preview__leftBlockImage">
-              <img src={insertItemImage} alt={insertItemOsTitle} class="image" />
-              <div class="overlay">
-                <div class="text">
+        <div className="os-widget-wrapper components-placeholder">
+          <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
+          <div className="components-preview__block" >
+            <div className="components-preview__leftBlockImage">
+              <img src={insertItemImage} alt={insertItemOsTitle} className="image" />
+              <div className="overlay">
+                <div className="text">
                   <a href={insertItemOsView} target="_blank"> View </a>
                   <a href={insertItemOsEdit} target="_blank"> Edit </a>
                   <a href={insertItemOsStatistics} target="_blank"> Statistics </a>
-                  <input type="button" value={buttonText} class="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
+                  <input type="button" value={buttonText} className="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
                 </div>
               </div>
             </div>
-            <div class="components-preview__rightBlockContent">
-              <div class="components-placeholder__label">{currentWidgetTitle}: {insertItemOsTitle}</div>
+            <div className="components-preview__rightBlockContent">
+              <div className="components-placeholder__label">{currentWidgetTitle}: {insertItemOsTitle}</div>
             </div>
           </div>
         </div>
@@ -189,6 +191,25 @@ function backendWidgetTypeForNewWidget (widgetType) {
     break
   case WIDGET_FORM:
     return 'contact_form'
+    break
+  }
+}
+function backendWidgetTypeForViewTemplates (widgetType) {
+  switch ( widgetType ) {
+  case WIDGET_POLL:
+    return 'polls'
+    break
+  case WIDGET_SURVEY:
+    return 'surveys'
+    break
+  case WIDGET_TRIVIA_QUIZ:
+    return 'trivia_quizzes'
+    break
+  case WIDGET_PERSONALITY_QUIZ:
+    return 'personality_quizzes'
+    break
+  case WIDGET_FORM:
+    return 'classic_forms'
     break
   }
 }

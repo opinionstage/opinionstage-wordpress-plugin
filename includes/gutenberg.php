@@ -127,6 +127,7 @@ function opinionstage_gutenberg_inject_data() {
 		array(
 			'userLoggedIn'       => opinionstage_user_logged_in() ? 'true' : 'false',
 			'createNewWidgetUrl' => opinionstage_utm_url( 'api/wp/redirects/widgets/new' ),
+			'viewTemplateUrl'    => OPINIONSTAGE_REDIRECT_TEMPLATES_API,
 			'loginPageUrl'       => get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ),
 			'OswpPluginVersion'  => OPINIONSTAGE_WIDGET_VERSION,
 			'OswpClientToken'    => opinionstage_user_access_token(),
