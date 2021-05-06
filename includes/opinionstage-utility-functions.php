@@ -17,14 +17,7 @@ require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
  * @return string
  */
 function opinionstage_utm_query( $query = array() ) {
-	$utm_query = array(
-		'utm_source'   => OPINIONSTAGE_UTM_SOURCE,
-		'utm_campaign' => OPINIONSTAGE_UTM_CAMPAIGN,
-		'utm_medium'   => OPINIONSTAGE_UTM_MEDIUM,
-		'o'            => OPINIONSTAGE_WIDGET_API_KEY,
-	);
-
-	return http_build_query( array_merge( $query, $utm_query ) );
+	return http_build_query( array_merge( $query, OPINIONSTAGE_UTM_PARAMETERS ) );
 }
 
 /**
@@ -174,7 +167,8 @@ function opinionstage_sidebar_placement_edit_url( $tab ) {
  * @return string
  */
 function opinionstage_create_widget_link( $w_type, $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_link( $title, 'api/wp/redirects/widgets/new', $css_class, array( 'w_type' => $w_type ) );
+	$url = add_query_arg( 'w_type', $w_type, OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM );
+	return sprintf( "<a href='%s' target='_blank' class='%s'>%s</a>", $url, $css_class, $title );
 }
 
 /**
@@ -243,9 +237,9 @@ function opinionstage_callback_url() {
 /**
  * Returns widget templates link
  *
- * @param string $type type.
- * @return mixed
+ * @param string $type widget type.
+ * @return string
  */
 function opinionstage_get_templates_url_for_type( $type ) {
-	return add_query_arg( 'page', $type, OPINIONSTAGE_REDIRECT_TEMPLATES_API );
+	return add_query_arg( 'page', $type, OPINIONSTAGE_REDIRECT_TEMPLATES_API_UTM );
 }

@@ -37,7 +37,20 @@ if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 define( 'OPINIONSTAGE_WIDGET_VERSION', '19.7.9' );
 
 define( 'OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage' );
-
+define( 'OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8' );
+define( 'OPINIONSTAGE_UTM_SOURCE', 'wordpress' );
+define( 'OPINIONSTAGE_UTM_CAMPAIGN', 'WPMainPI' );
+define( 'OPINIONSTAGE_UTM_MEDIUM', 'link' );
+define( 'OPINIONSTAGE_UTM_CONNECT_MEDIUM', 'connect' );
+define(
+	'OPINIONSTAGE_UTM_PARAMETERS',
+	array(
+		'utm_source'   => OPINIONSTAGE_UTM_SOURCE,
+		'utm_campaign' => OPINIONSTAGE_UTM_CAMPAIGN,
+		'utm_medium'   => OPINIONSTAGE_UTM_MEDIUM,
+		'o'            => OPINIONSTAGE_WIDGET_API_KEY,
+	)
+);
 define( 'OPINIONSTAGE_SERVER_BASE', isset( $opinionstage_settings['server_base'] ) ? $opinionstage_settings['server_base'] : 'https://www.opinionstage.com' );
 define( 'OPINIONSTAGE_API_PATH', OPINIONSTAGE_SERVER_BASE . '/api/v1' );
 define( 'OPINIONSTAGE_LOGIN_PATH', OPINIONSTAGE_SERVER_BASE . '/api/wp/v1/auth/new' );
@@ -45,14 +58,21 @@ define( 'OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API', OPINIONSTAGE_SERVER_BAS
 define( 'OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE', OPINIONSTAGE_SERVER_BASE . '/api/wp/v1/my/widgets/recent-update' );
 define( 'OPINIONSTAGE_DEACTIVATE_FEEDBACK_API', OPINIONSTAGE_SERVER_BASE . '/api/wp/v1/events' );
 define( 'OPINIONSTAGE_MESSAGE_API', 'https://www.opinionstage.com/wp/msg-app/api/index.php' );
-define('OPINIONSTAGE_REDIRECT_TEMPLATES_API', OPINIONSTAGE_SERVER_BASE . '/api/wp/redirects/templates');
-define('OPINIONSTAGE_CREATE_PAGE_URL', OPINIONSTAGE_SERVER_BASE . '/create');
 
-define( 'OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8' );
-define( 'OPINIONSTAGE_UTM_SOURCE', 'wordpress' );
-define( 'OPINIONSTAGE_UTM_CAMPAIGN', 'WPMainPI' );
-define( 'OPINIONSTAGE_UTM_MEDIUM', 'link' );
-define( 'OPINIONSTAGE_UTM_CONNECT_MEDIUM', 'connect' );
+define(
+    'OPINIONSTAGE_REDIRECT_TEMPLATES_API_UTM',
+    add_query_arg(
+        OPINIONSTAGE_UTM_PARAMETERS,
+        OPINIONSTAGE_SERVER_BASE . '/api/wp/redirects/templates'
+    )
+);
+define(
+	'OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM',
+	add_query_arg(
+		OPINIONSTAGE_UTM_PARAMETERS,
+		OPINIONSTAGE_SERVER_BASE . '/api/wp/redirects/widgets/new'
+	)
+);
 
 define( 'OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget' );
 
@@ -68,16 +88,11 @@ define( 'OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback' );
 define( 'OPINIONSTAGE_DISCONNECT_PAGE', 'opinionstage-disconnect-page' );
 define( 'OPINIONSTAGE_CONTENT_LOGIN_CALLBACK_SLUG', 'opinionstage-content-login-callback-page' );
 define(
-    'OPINIONSTAGE_LIVE_CHAT_URL',
-    add_query_arg(
-        array(
-            'utm_source'   => OPINIONSTAGE_UTM_SOURCE,
-            'utm_campaign' => OPINIONSTAGE_UTM_CAMPAIGN,
-            'utm_medium'   => OPINIONSTAGE_UTM_MEDIUM,
-            'o'            => OPINIONSTAGE_WIDGET_API_KEY,
-        ),
-        OPINIONSTAGE_SERVER_BASE . '/live-chat/'
-    )
+	'OPINIONSTAGE_LIVE_CHAT_URL_UTM',
+	add_query_arg(
+		OPINIONSTAGE_UTM_PARAMETERS,
+		OPINIONSTAGE_SERVER_BASE . '/live-chat/'
+	)
 );
 
 if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {

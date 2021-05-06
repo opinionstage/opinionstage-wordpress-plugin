@@ -67,7 +67,7 @@ defined( 'ABSPATH' ) || die();
 							</div>
 
 							<div class="select-wrapper">
-								<a href="<?php echo esc_url( OPINIONSTAGE_CREATE_PAGE_URL ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn opinionstage-item-create" target="_blank"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
+								<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-connect-btn opinionstage-blue-btn" target="_blank"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
 							</div>
 						</div>
 					</div>
@@ -106,17 +106,13 @@ defined( 'ABSPATH' ) || die();
 							</div>
 							<p>
 								<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
-								<?php if ( defined( 'OPINIONSTAGE_LIVE_CHAT_URL' ) ) { ?>
-									<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
-								<?php } ?>
+                                <a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
 							</p>
 						</div>
 					</div>
 				</div>
 				<p id="opinionstage-failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
-					<?php if ( defined( 'OPINIONSTAGE_LIVE_CHAT_URL' ) ) { ?>
-						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
-					<?php } ?>
+                    <a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
 				<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
 			</div>
 		<?php } ?>
