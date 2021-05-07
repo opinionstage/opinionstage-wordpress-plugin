@@ -74,14 +74,14 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
   }
 
   let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
-  let viewTemplateUrl = `${OPINIONSTAGE_GUTENBERG_DATA.viewTemplateUrl}?page=${backendWidgetTypeForViewTemplates(currentWidgetType)}`
+  let viewTemplateUrl = `${OPINIONSTAGE_GUTENBERG_DATA.viewTemplateUrl}&page=${backendWidgetTypeForViewTemplates(currentWidgetType)}`
 
   let contentViewEditStatOs = (
     <div className="os-widget-wrapper components-placeholder">
       <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
       <button className="components-button is-button is-default is-block is-primary" onClick={selectWidget} >Select a {currentWidgetTitle}</button>
       <a href={createNewWidgetUrl} target="_blank" className="components-button is-button is-default is-block is-primary">Create a new {currentWidgetTitle}</a>
-      <a href={viewTemplateUrl} target="_blank" className="components-button is-button is-default is-block is-primary">View Templates</a>
+      <a href={viewTemplateUrl} target="_blank" className="components-button is-button is-default is-block is-primary is-bordered">View Templates</a>
     </div>
   )
 
