@@ -58,7 +58,7 @@ defined( 'ABSPATH' ) || die();
 										<option value="survey"><?php esc_html_e( 'SURVEY', 'social-polls-by-opinionstage' ); ?></option>
 										<option value="trivia"><?php esc_html_e( 'TRIVIA QUIZ', 'social-polls-by-opinionstage' ); ?></option>
 										<option value="outcome"><?php esc_html_e( 'PERSONALITY QUIZ', 'social-polls-by-opinionstage' ); ?></option>
-										<option value="form"><?php esc_html_e( 'CLASSIC FORM', 'social-polls-by-opinionstage' ); ?></option>
+										<option value="form"><?php esc_html_e( 'STANDARD FORM', 'social-polls-by-opinionstage' ); ?></option>
 									</select>
 								</div>
 								<div class="search search-container">
@@ -184,7 +184,7 @@ defined( 'ABSPATH' ) || die();
 							<div class="os-icon-plugin"><img src="<?php echo esc_url( plugins_url( 'images/form.png', dirname( __FILE__ ) ) ); ?>" ></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
-							<div class="title"><?php esc_html_e( 'Classic Form', 'social-polls-by-opinionstage' ); ?></div>
+							<div class="title"><?php esc_html_e( 'Standard Form', 'social-polls-by-opinionstage' ); ?></div>
 							<div class="example"><?php esc_html_e( 'Display all fields on one page (use surveys for interactive forms)', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">

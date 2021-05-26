@@ -84,7 +84,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 						<div class='filter__itm'
 								@click="selectWidgetType('form')"
 								:class="{ active: selectedWidgetType === 'form' }"
-						><?php esc_html_e( 'classic form', 'social-polls-by-opinionstage' ); ?></div>
+						><?php esc_html_e( 'standard form', 'social-polls-by-opinionstage' ); ?></div>
 					</div>
 				</div>
 			</div>

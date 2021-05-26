@@ -74,7 +74,7 @@ registerBlockType('opinion-stage/block-os-personality', {
 })
 
 registerBlockType('opinion-stage/block-os-form', {
-  title: 'Classic Form',
+  title: 'Standard Form',
   icon: 'editor-justify',
   description: __('Embed an Opinion Stage Form', 'social-polls-by-opinionstage'),
   category,

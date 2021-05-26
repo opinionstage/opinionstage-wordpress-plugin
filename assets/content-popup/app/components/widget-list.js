@@ -23,7 +23,7 @@ selectedWidgetTitles[WIDGET_SLIDESHOW] = 'slideshow'
 selectedWidgetTitles[WIDGET_TRIVIA_QUIZ] = 'trivia quiz'
 selectedWidgetTitles[WIDGET_PERSONALITY_QUIZ] = 'personality quiz'
 selectedWidgetTitles[WIDGET_LIST] = 'list'
-selectedWidgetTitles[WIDGET_FORM] = 'form'
+selectedWidgetTitles[WIDGET_FORM] = 'standard form'
 selectedWidgetTitles[WIDGET_STORY] = 'story article'
 
 export default Vue.component('widget-list', {

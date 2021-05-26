@@ -216,7 +216,7 @@ function opinionstage_create_survey_link( $css_class, $title = 'CREATE NEW' ) {
 }
 
 /**
- * Returns create classic form anchor
+ * Returns create standard form anchor
  *
  * @param string $css_class class.
  * @param string $title anchors caption.
