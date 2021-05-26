@@ -133,7 +133,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title"><?php esc_html_e( 'Poll', 'social-polls-by-opinionstage' ); ?></div>
-							<div class="example"><?php esc_html_e( 'Let users vote to influence & discover what others voted', 'social-polls-by-opinionstage' ); ?></div>
+							<div class="example"><?php esc_html_e( 'Ask one question and define several answer choices', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_poll_link( 'opinionstage-blue-btn', __( 'CREATE', 'social-polls-by-opinionstage' ) ); ?>
@@ -146,7 +146,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title"><?php esc_html_e( 'Survey', 'social-polls-by-opinionstage' ); ?></div>
-							<div class="example"><?php esc_html_e( 'Ask your audience multiple open-ended & close-ended questions', 'social-polls-by-opinionstage' ); ?></div>
+							<div class="example"><?php esc_html_e( 'Ask multiple questions from a range of question types', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_survey_link( 'opinionstage-blue-btn', __( 'CREATE', 'social-polls-by-opinionstage' ) ); ?>
@@ -185,7 +185,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-description-cell">
 							<div class="title"><?php esc_html_e( 'Classic Form', 'social-polls-by-opinionstage' ); ?></div>
-							<div class="example"><?php esc_html_e( 'Gather information from your users', 'social-polls-by-opinionstage' ); ?></div>
+							<div class="example"><?php esc_html_e( 'Display all fields on one page (use surveys for interactive forms)', 'social-polls-by-opinionstage' ); ?></div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_form_link( 'opinionstage-blue-btn', __( 'CREATE', 'social-polls-by-opinionstage' ) ); ?>
