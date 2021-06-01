@@ -1,8 +1,8 @@
 @use autoprefixer;
 
-@import 'icon-font';
-
 $brand-blue: #3aaebd;
+$brand-pink: #f46368;
+$brand-light-grey: #b1b1b1;
 $inputs-border-color: #cccccc;
 
 .opinionstage-content-popup-contents {
@@ -151,7 +151,6 @@ $inputs-border-color: #cccccc;
   }
 
   .content__itm {
-    display: block;
     margin: 0;
     padding-bottom: 6px;
     padding-top: 10px;
@@ -184,6 +183,7 @@ $inputs-border-color: #cccccc;
   }
   .content__info {
     display: inline-block;
+    position: relative;
     background: transparent;
     font-size: 16px;
     height: 85px;
@@ -197,6 +197,37 @@ $inputs-border-color: #cccccc;
     a {
       color: inherit;
       text-decoration: none;
+    }
+    .title {
+      font-weight: 600;
+    }
+    .opinionstage-draft {
+      color: $brand-pink;
+      text-transform: capitalize;
+      font-size: 80%;
+    }
+    .icon-os-status-open {
+      color: $brand-blue;
+    }
+    .icon-os-status-closed {
+      color: $brand-pink;
+    }
+  }
+  
+  .opinionstage-with-separator:before {
+    content: "";
+    margin: 0 10px;
+    height: 100%;
+    border-left: 1px solid #b1b1b1;
+  }
+
+  .content__info-details {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    color: $brand-light-grey;
+    span {
+      color: $brand-light-grey;
     }
   }
 
@@ -282,37 +313,6 @@ $inputs-border-color: #cccccc;
     }
   }
 
-  .btn-create {
-    background-color: #32adbc;
-    border-radius: 3px;
-    border-style: hidden;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: normal;
-    padding: 10px 11px;
-    text-decoration: none;
-    outline: none;
-    &:hover {
-      color: #fff;
-      opacity: 0.9;
-      text-decoration: none;
-    }
-    &:before {
-      bottom: 0;
-      content: "+";
-      font-family: os-icon-font;
-      font-size: 17px;
-      font-weight: bold;
-      height: 18px;
-      margin-right: 8px;
-      pointer-events: none;
-      top: 0;
-    }
-  }
-
   .create-new-menu-box {
     display: inline-block;
     position: relative;
@@ -325,7 +325,6 @@ $inputs-border-color: #cccccc;
   .create-new-menu {
     display: none;
     position: absolute;
-    width: 100%;
     width: 100%;
     top: 39px;
     left: 0;
@@ -524,9 +523,10 @@ $inputs-border-color: #cccccc;
     }
     &:before {
       color: #000;
-      content: "";
+      content: "\e958";
+      transform: rotate(-90deg);
       display: block;
-      font-family: os-icon-font !important;
+      font-family: os-icon-plugin-plugin-font;
       font-size: 9px;
       position: absolute;
       right: -25px;
@@ -538,7 +538,6 @@ $inputs-border-color: #cccccc;
       border: 1px solid #e4e4e4;
       border-left: 0 !important;
       content: "";
-      height: 45px;
       position: absolute;
       right: -40px;
       top: -1px;
@@ -610,9 +609,10 @@ $inputs-border-color: #cccccc;
       padding: 0;
       position: absolute;
       right: 18px;
-      content: "";
+      content: "\e958";
+      transform: rotate(-90deg);
       display: block;
-      font-family: os-icon-font !important;
+      font-family: os-icon-plugin-plugin-font;
       font-size: 9px;
       top: 15px;
       z-index: 3;
@@ -676,4 +676,58 @@ $inputs-border-color: #cccccc;
 	}
   }
 
+  .selected-draft__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9999;
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 25px 35px;
+    }
+  }
+  .selected-draft__message {
+    background-color: #f5f5f5;
+    width: 650px;
+    padding: 25px 35px;
+    margin-top: 20px;
+    p {
+      font-size: 16px;
+    }
+    a {
+      color: #32adbc;
+    }
+  }
+  .opinionstage-close {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    &:before,
+    &:after {
+      position: absolute;
+      left: 15px;
+      content: ' ';
+      height: 17px;
+      width: 2px;
+      background-color: #b1b1b1;
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+  }
 }

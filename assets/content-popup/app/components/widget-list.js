@@ -43,6 +43,7 @@ export default Vue.component('widget-list', {
       widgetTitleSearch: '',
       showMoreBtn: true,
       hasData: true,
+      selectedDraftWidget: {}
     }
   },
 
@@ -64,7 +65,11 @@ export default Vue.component('widget-list', {
 
   methods: {
     select (widget) {
-      this.$emit('widget-selected', widget)
+      if( widget.isDraft ) {
+        this.selectedDraftWidget = widget
+      } else {
+        this.$emit('widget-selected', widget)
+      }
     },
 
     selectWidgetType (type) {

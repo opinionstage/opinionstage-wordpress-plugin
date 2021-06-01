@@ -95,11 +95,11 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 					type='search'
 					v-model='widgetTitleSearch'
 				>
-				<span class="os-search__icon icon-os-common-tip"></span>
+				<span class="os-search__icon icon-os-plugin-common-search"></span> 
 			</div>
 			<div class="content-actions__sep"></div>
 
-            <a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-blue-btn" target="_blank"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
+			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-blue-btn" target="_blank"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
 	<div class='content__list'>
@@ -111,7 +111,28 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 					<div class='content__label'>{{ widget.type }}</div>
 				</div>
 				</a>
-				<p class='content__info'><a target="_blank" :href='widget.editUrl'>{{ widget.title }}</a></p>
+				<div class='content__info'>
+					<span v-if="widget.isDraft" class="opinionstage-draft"><?php esc_html_e( 'draft', 'social-polls-by-opinionstage' ); ?></span>
+					<a target="_blank" :href='widget.editUrl'>
+						<span class="title">{{ widget.title }}</span>
+						<div class="content__info-details">
+							<span class="os-icon-plugin icon-os-common-date"></span>
+							{{ widget.updatedAt | moment('DD MMMM YYYY') }}
+						<span v-if="widget.isClosed">
+							<span class="opinionstage-with-separator">
+								<span class="icon-os-status-closed"></span>
+								<?php esc_html_e( 'closed', 'social-polls-by-opinionstage' ); ?>
+							</span>
+						</span>
+						<span v-if="widget.isOpen">
+							<span class="opinionstage-with-separator">
+								<span class="icon-os-status-open"></span>
+								<?php esc_html_e( 'open', 'social-polls-by-opinionstage' ); ?>
+							</span>
+						</span>
+					</div>
+					</a>
+				</div>
 				<div class='content__links'>
 					<button class='popup-content-btn content__links-itm' @click="select(widget)" ><?php esc_html_e( 'insert', 'social-polls-by-opinionstage' ); ?></button>
 					<div class="dropdown dropdown-popup-action">
@@ -137,6 +158,28 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 		</div>
 		<div v-else>
 			<?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?>
+		</div>
+	</div>
+	<div class="selected-draft" v-if="selectedDraftWidget.editUrl">
+		<div class="selected-draft__container">
+			<div>
+				<span id="opinionstage-dialog-close" class="opinionstage-close" @click="selectedDraftWidget = !selectedDraftWidget"></span>
+				<div class="selected-draft__message">
+					<p>
+						<?php
+						printf(
+							'%s <a :href="selectedDraftWidget.editUrl" target="_ blank">%s</a> %s',
+							esc_html__( 'Widget is not published yet. Please', 'social-polls-by-opinionstage' ),
+							esc_html__( 'edit', 'social-polls-by-opinionstage' ),
+							esc_html__( 'the widget to publish it', 'social-polls-by-opinionstage' )
+						);
+						?>
+					</p>
+					<p>
+						<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
+						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -176,3 +219,4 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 		</div>
 	</div>
 </template>
+

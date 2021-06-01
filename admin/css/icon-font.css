@@ -9,6 +9,7 @@
   font-style: normal;
 }
 
+.opinionstage-content-popup-contents [class^="icon-"], .opinionstage-content-popup-contents [class*=" icon-"],
 #wpwrap [class^="icon-"], #wpwrap [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'os-icon-plugin-plugin-font' !important;
@@ -24,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-os-common-date:before {
+  content: "\E91A";
+}
+.icon-os-status-closed:before {
+  content: "\e95f";
+}
+.icon-os-status-open:before {
+  content: "\e961";
+}
 .icon-os-plugin-form-address:before {
   content: "\e900";
 }

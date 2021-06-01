@@ -10,7 +10,7 @@ Vue.use(Vuex)
 
 function dispatchWidgetData (apiJsonData) {
   return apiJsonData.data.map( (rawWidget) => {
-    return {
+    const item = {
       id: rawWidget.id,
       type: rawWidget.attributes['type'],
       title: rawWidget.attributes['title'],
@@ -20,7 +20,24 @@ function dispatchWidgetData (apiJsonData) {
       editUrl: rawWidget.attributes['edit-url'],
       statsUrl: rawWidget.attributes['stats-url'],
       shortcode: rawWidget.attributes['shortcode'],
+      isDraft: false,
+      isClosed: false,
+      isOpen: false,
     }
+
+    switch (rawWidget.attributes.status) {
+      case 'draft':
+        item.isDraft = true
+        break
+      case 'closed':
+        item.isClosed = true
+        break
+      default:
+        item.isOpen = true
+        break
+    }
+
+    return item
   })
 }
 
