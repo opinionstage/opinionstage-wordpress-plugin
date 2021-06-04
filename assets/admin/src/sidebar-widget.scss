@@ -135,6 +135,15 @@
     padding: 10px;
     text-transform: uppercase;
 
+
+    &.pink {
+      border-color: #F46368;
+      background-color: #F46368;
+      &:hover {
+        background-color: #F46368;
+      }
+    }
+    
     &:hover {
       background: #32adbc;
       opacity: 0.9;

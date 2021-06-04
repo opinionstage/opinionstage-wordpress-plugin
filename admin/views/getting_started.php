@@ -1,100 +1,127 @@
 <?php
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+/**
+ * Opinionstage Getting Started Admin page
+ *
+ * @package OpinionStageWordPressPlugin */
+
+defined( 'ABSPATH' ) || die();
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-header-wrapper">
-			<?php if ( !$os_client_logged_in ) {?>
+			<?php if ( ! $os_client_logged_in ) { ?>
 			<div class="opinionstage-logo-wrapper">
 				<div class="opinionstage-logo"></div>
 			</div>
 			<?php } else { ?>
 			<div class="opinionstage-logo-wrapper">
 				<div class="opinionstage-logo"></div>
-				<div class="opinionstage-connectivity-status"><?php echo($os_options["email"]); ?>
-					<form method="POST" action="<?php echo get_admin_url(null, 'admin.php?page='.OPINIONSTAGE_DISCONNECT_PAGE)?>" class="opinionstage-connect-form">
-						<button class="opinionstage-disconnect" type="submit">Disconnect</button>
+				<div class="opinionstage-connectivity-status"><?php echo esc_html( $os_options['email'] ); ?>
+					<form method="POST" action="<?php echo esc_url( get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_DISCONNECT_PAGE ) ); ?>" class="opinionstage-connect-form">
+						<button class="opinionstage-disconnect" type="submit"><?php esc_html_e( 'Disconnect', 'social-polls-by-opinionstage' ); ?></button>
 					</form>
 				</div>
 			</div>
 			<?php } ?>
 	</div>
-	<?php if( $os_client_logged_in ){  ?>
-		<div class="gettingStartedSection">
-			<div class="gettingStartedContainer">
-			<div class="opinionstage-status-content-connected">
-				<div class='opinionstage-status-title opinionstage-resources-title'>Getting Started Resources</div>
+	<div class="opinionstage-grey-bg">
+		<div class="opinionstage-getting-started opinionstage-getting-started-section">
+			<div class="opinionstage-getting-started__half">
+				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Welcome to Opinion Stage!', 'social-polls-by-opinionstage' ); ?></h1>
+				<p class="opinionstage-getting-started__text"><?php esc_html_e( 'Connect to Opinion Stage to start creating beautiful & top-performing polls, quizzes, surveys and forms. Start from scratch or from one of our templates.', 'social-polls-by-opinionstage' ); ?></p>
+
+				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
+				<div>
+					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" class="ignore-swal-js opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
+				</div>
 			</div>
-			</div>
-			<div class="gettingBlockContainer">
-				<?php echo opinionstage_help_links('GETTING STARTED <br/>VIDEO TUTORIAL', 'https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin', 'gettingTemplateTutorial help-link'); ?>
-				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>				
+			<div class="opinionstage-getting-started__half">
+				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinioinstage.png', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinoin Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
-	<?php }else{ ?>
-		<div class="gettingStartedSection">
-			<div class="gettingStartedContainer" style="height: 240px;">
-			<div class="opinionstage-status-content-connected">
-				<div class='opinionstage-status-title opinionstage-connect-title'>Connect Wordpress with<br/>Opinion Stage to get started</div>
-				<form action="<?php echo OPINIONSTAGE_LOGIN_PATH ?>" method="get" class="opinionstage-connect-form">
-				<input type="hidden" name="utm_source" value="<?php echo OPINIONSTAGE_UTM_SOURCE ?>">
-					<input type="hidden" name="utm_campaign" value="<?php echo OPINIONSTAGE_UTM_CAMPAIGN ?>">
-					<input type="hidden" name="utm_medium" value="<?php echo OPINIONSTAGE_UTM_CONNECT_MEDIUM ?>">
-					<input type="hidden" name="o" value="<?php echo OPINIONSTAGE_WIDGET_API_KEY ?>">
-					<input type="hidden" name="callback" value="<?php echo opinionstage_callback_url()?>">
-					<input id="os-email" type="email" name="email" placeholder="Your email" data-os-email-input required>
-					<button class="opinionstage-connect-btn opinionstage-getting-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login>CONNECT</button>
-				</form>
+
+		<div class="opinionstage-getting-started-templates opinionstage-getting-started-section">
+			<h2 class="opinionstage-getting-started-templates__title"><?php esc_html_e( 'Templates & Examples', 'social-polls-by-opinionstage' ); ?></h2>
+			<?php
+			$templates_items_date = array(
+                array(
+                    'title'               => __( 'Quiz', 'social-polls-by-opinionstage' ),
+                    'image_name'          => 'trivia.png',
+                    'text'                => __( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ),
+                    'view_templates_type' => 'quizzes',
+                ),
+				array(
+					'title'               => __( 'Poll', 'social-polls-by-opinionstage' ),
+					'image_name'          => 'poll.png',
+					'text'                => __( 'Ask one question and define several answer choices', 'social-polls-by-opinionstage' ),
+					'view_templates_type' => 'polls',
+				),
+				array(
+					'title'               => __( 'Survey', 'social-polls-by-opinionstage' ),
+					'image_name'          => 'survey.png',
+					'text'                => __( 'Ask multiple questions from a range of question types', 'social-polls-by-opinionstage' ),
+					'view_templates_type' => 'surveys',
+				),
+				array(
+					'title'               => __( 'Standard Form', 'social-polls-by-opinionstage' ),
+					'image_name'          => 'form.png',
+					'text'                => __( 'Display all fields on one page', 'social-polls-by-opinionstage' ),
+					'view_templates_type' => 'classic_forms',
+				),
+			);
+			?>
+			<div class="opinionstage-getting-started-templates__row">
+				<?php
+				foreach ( $templates_items_date as $item ) {
+					?>
+					<div class="opinionstage-template-item">
+						<img src="<?php echo esc_url( plugins_url( 'images/' . $item['image_name'], dirname( __FILE__ ) ) ); ?>" class="opinionstage-template-item__icon" alt="<?php echo esc_attr( $item['title'] ); ?>">
+						<h3 class="opinionstage-template-item__title"><?php echo esc_html( $item['title'] ); ?></h3>
+						<p class="opinionstage-template-item__text"><?php echo esc_html( $item['text'] ); ?></p>
+
+						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" class="ignore-swal-js opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'Veiw Templates', 'social-polls-by-opinionstage' ); ?></a>
+					</div>
+					<?php
+				}
+				?>
 			</div>
-			</div>
-			<div class="gettingBlockContainer">
-				<?php echo opinionstage_help_links('GETTING STARTED <br/>VIDEO TUTORIAL', 'https://help.opinionstage.com/wordpress-plugin/how-to-use-the-wordpress-plugin', 'gettingTemplateTutorial help-link'); ?>	
-				<?php echo opinionstage_link('TEMPLATES & <br/> EXAMPLES', 'dashboard/content/templates', 'gettingTemplateGallery help-link'); ?>				
-			</div>
-			<div class="gettingBlockContainer">
-				<?php echo opinionstage_help_links('HELP CENTER', 'https://help.opinionstage.com', 'gettingTemplateTutorial help-link','padding: 29px 0;'); ?>
-				<?php echo opinionstage_link('LIVE CHAT HELP', 'live-chat/', 'help-center-os help-link'); ?>		
-			</div>
+			<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/collections/1401239-wordpress-plugin' ) ); ?>" class="opinionstage-grey-link ignore-swal-js" target="_blank"><?php esc_html_e( 'Need help?', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
-		<script type="text/javascript">
-			var aElems = document.getElementsByTagName('a');
+	</div>
 
-			for (var i = 0, len = aElems.length; i < len; i++) {
-			    aElems[i].onclick = function(e) {
-			    	e.preventDefault();
-			    	var href = jQuery(this).attr('href');
-			    	var target = jQuery(this).attr('target');
+	<script type="text/javascript">
+		var aElems = document.getElementsByTagName('a')
 
-			    	if(e.target.classList.contains('help-link')){
-			    		if(target !== undefined) {
-					        window.open(href, target);
-					    }
-					    else {
-						    window.location.href = href;
+		for (var i = 0, len = aElems.length; i < len; i++) {
+			aElems[i].onclick = function(e) {
+				e.preventDefault()
+				var href = jQuery(this).attr('href')
+				var target = jQuery(this).attr('target')
+
+				if(e.target.classList.contains('ignore-swal-js')){
+					if(target !== undefined) {
+						window.open(href, target)
+					}
+					else {
+						window.location.href = href
+					}
+				}else{
+					swal({
+						title: "<?php esc_html_e( 'Leave without connecting?', 'social-polls-by-opinionstage' ); ?>",
+						text: "<?php esc_html_e( 'To use this plugin you need to first connect WordPress with Opinion Stage.', 'social-polls-by-opinionstage' ); ?>",
+						icon: "warning",
+						buttons: ["<?php esc_html_e( 'Cancel', 'social-polls-by-opinionstage' ); ?>", "<?php esc_html_e( 'Leave', 'social-polls-by-opinionstage' ); ?>"],
+					})
+					.then((willDelete) => {
+						if (willDelete) {
+							if(target !== undefined) {
+								window.open(href, target)
+							} else {
+								window.location.href = href
+							}
 						}
-			    	}else{
-			    		swal({
-				            title: "Leave without connecting?",
-				            text: "To use this plugin you need to first connect WordPress with Opinion Stage.",
-				            icon: "warning",
-				            buttons: ["Cancel", "Leave"],
-				        })
-				        .then((willDelete) => {
-					        if (willDelete) {
-					        	if(target !== undefined) {
-					        		window.open(href, target);
-					        	}
-					        	else {
-						        	window.location.href = href;
-						        }
-					        }
-					        else {
-					        	jQuery('#os-email').focus();
-					        }
-				        });
-			    	}
-			    };
+					})
+				}
 			}
-		</script>
-	<?php } ?>
+		}
+	</script>
 </div>

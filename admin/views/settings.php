@@ -21,15 +21,7 @@ defined( 'ABSPATH' ) || die();
 			</div>
 			<div class="opinionstage-status-content">
 				<div class='opinionstage-status-title'><b class="opinionstage-title"><?php esc_html_e( 'Connect WordPress with Opinion Stage to get started', 'social-polls-by-opinionstage' ); ?></b></div>
-				<form action="<?php echo esc_url( OPINIONSTAGE_LOGIN_PATH ); ?>" method="get" class="opinionstage-connect-form">
-					<input type="hidden" name="utm_source" value="<?php echo esc_attr( OPINIONSTAGE_UTM_SOURCE ); ?>">
-					<input type="hidden" name="utm_campaign" value="<?php echo esc_attr( OPINIONSTAGE_UTM_CAMPAIGN ); ?>">
-					<input type="hidden" name="utm_medium" value="<?php echo esc_attr( OPINIONSTAGE_UTM_CONNECT_MEDIUM ); ?>">
-					<input type="hidden" name="o" value="<?php echo esc_attr( OPINIONSTAGE_WIDGET_API_KEY ); ?>">
-					<input type="hidden" name="callback" value="<?php echo esc_url( opinionstage_callback_url() ); ?>">
-					<input id="os-email" type="email" name="email" placeholder="<?php esc_attr_e( 'Your email', 'social-polls-by-opinionstage' ); ?>" data-os-email-input required>
-					<button class="opinionstage-connect-btn opinionstage-blue-btn" type="submit" id="os-start-login" data-os-login><?php esc_html_e( 'CONNECT', 'social-polls-by-opinionstage' ); ?></button>
-				</form>
+				<?php include_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
 			</div>
 		<?php } else { ?>
 			<div class="opinionstage-logo-wrapper">
@@ -106,13 +98,13 @@ defined( 'ABSPATH' ) || die();
 							</div>
 							<p>
 								<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
-                                <a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
+								<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
 							</p>
 						</div>
 					</div>
 				</div>
 				<p id="opinionstage-failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
-                    <a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
+					<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
 				<div id="opinionstage-load-more" class="btn btn_aqua btn_full-width"><?php esc_html_e( 'Click for more', 'social-polls-by-opinionstage' ); ?></div>
 			</div>
 		<?php } ?>
@@ -190,7 +182,6 @@ defined( 'ABSPATH' ) || die();
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_form_link( 'opinionstage-blue-btn', __( 'CREATE', 'social-polls-by-opinionstage' ) ); ?>
 							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'classic_forms' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'View Templates' ); ?></a>
-
 						</div>
 					</div>
 				</div>
