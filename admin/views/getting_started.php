@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || die();
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
 				<div>
-					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" class="ignore-swal-js opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
+					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" data-ignore-swal-js class="opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
 				</div>
 			</div>
 			<div class="opinionstage-getting-started__half">
@@ -43,12 +43,12 @@ defined( 'ABSPATH' ) || die();
 			<h2 class="opinionstage-getting-started-templates__title"><?php esc_html_e( 'Templates & Examples', 'social-polls-by-opinionstage' ); ?></h2>
 			<?php
 			$templates_items_date = array(
-                array(
-                    'title'               => __( 'Quiz', 'social-polls-by-opinionstage' ),
-                    'image_name'          => 'trivia.png',
-                    'text'                => __( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ),
-                    'view_templates_type' => 'quizzes',
-                ),
+				array(
+					'title'               => __( 'Quiz', 'social-polls-by-opinionstage' ),
+					'image_name'          => 'trivia.png',
+					'text'                => __( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ),
+					'view_templates_type' => 'quizzes',
+				),
 				array(
 					'title'               => __( 'Poll', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'poll.png',
@@ -78,50 +78,13 @@ defined( 'ABSPATH' ) || die();
 						<h3 class="opinionstage-template-item__title"><?php echo esc_html( $item['title'] ); ?></h3>
 						<p class="opinionstage-template-item__text"><?php echo esc_html( $item['text'] ); ?></p>
 
-						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" class="ignore-swal-js opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'Veiw Templates', 'social-polls-by-opinionstage' ); ?></a>
+						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" data-ignore-swal-js class="opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'View Templates', 'social-polls-by-opinionstage' ); ?></a>
 					</div>
 					<?php
 				}
 				?>
 			</div>
-			<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/collections/1401239-wordpress-plugin' ) ); ?>" class="opinionstage-grey-link ignore-swal-js" target="_blank"><?php esc_html_e( 'Need help?', 'social-polls-by-opinionstage' ); ?></a>
+			<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/collections/1401239-wordpress-plugin' ) ); ?>" data-ignore-swal-js class="opinionstage-grey-link" target="_blank"><?php esc_html_e( 'Need help?', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
-
-	<script type="text/javascript">
-		var aElems = document.getElementsByTagName('a')
-
-		for (var i = 0, len = aElems.length; i < len; i++) {
-			aElems[i].onclick = function(e) {
-				e.preventDefault()
-				var href = jQuery(this).attr('href')
-				var target = jQuery(this).attr('target')
-
-				if(e.target.classList.contains('ignore-swal-js')){
-					if(target !== undefined) {
-						window.open(href, target)
-					}
-					else {
-						window.location.href = href
-					}
-				}else{
-					swal({
-						title: "<?php esc_html_e( 'Leave without connecting?', 'social-polls-by-opinionstage' ); ?>",
-						text: "<?php esc_html_e( 'To use this plugin you need to first connect WordPress with Opinion Stage.', 'social-polls-by-opinionstage' ); ?>",
-						icon: "warning",
-						buttons: ["<?php esc_html_e( 'Cancel', 'social-polls-by-opinionstage' ); ?>", "<?php esc_html_e( 'Leave', 'social-polls-by-opinionstage' ); ?>"],
-					})
-					.then((willDelete) => {
-						if (willDelete) {
-							if(target !== undefined) {
-								window.open(href, target)
-							} else {
-								window.location.href = href
-							}
-						}
-					})
-				}
-			}
-		}
-	</script>
 </div>
