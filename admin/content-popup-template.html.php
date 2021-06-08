@@ -114,7 +114,7 @@ $opinionstage_user_logged_in = opinionstage_user_logged_in();
 				<div class='content__info'>
 					<span v-if="widget.isDraft" class="opinionstage-draft"><?php esc_html_e( 'draft', 'social-polls-by-opinionstage' ); ?></span>
 					<a target="_blank" :href='widget.editUrl'>
-						<span class="title">{{ widget.title }}</span>
+						<span class="content__info-title">{{ widget.title }}</span>
 						<div class="content__info-details">
 							<span class="os-icon-plugin icon-os-common-date"></span>
 							{{ widget.updatedAt | moment('DD MMMM YYYY') }}

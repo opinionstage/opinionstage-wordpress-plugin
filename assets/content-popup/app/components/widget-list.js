@@ -14,6 +14,8 @@ import {
   WIDGET_STORY,
 } from '../widget-types.js'
 
+Vue.use(require('vue-moment'))
+
 const selectedWidgetTitles = {}
 selectedWidgetTitles[WIDGET_ALL] = 'All ITEMS'
 selectedWidgetTitles[WIDGET_POLL] = 'poll'

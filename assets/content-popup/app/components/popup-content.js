@@ -18,8 +18,6 @@ import {
   WIDGET_STORY,
 } from '../widget-types.js'
 
-Vue.use(require('vue-moment'))
-
 export default Vue.component('popup-content', {
   template: '#opinionstage-popup-content',
 
