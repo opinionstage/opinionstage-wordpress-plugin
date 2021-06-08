@@ -59,8 +59,8 @@
 			</div>
 		</div>
 	<?php } else { ?>
-		<img src="<?php echo esc_url( $logo_url ); ?>">
+		<img src="<?php echo esc_url( $logo_url ); ?>" alt="opinionstage">
 		<p class="connection_message"><?php esc_html_e( 'Connect WordPress with Opinion Stage to enable the widget' ); ?></p>
-		<a href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="os-button start-login opinionstage-blue-btn pink"><?php esc_html_e( 'Connect', 'social-polls-by-opinionstage' ); ?></a>
+		<a href="<?php echo esc_url( admin_url( 'admin.php?page=opinionstage-getting-started' ) ); ?>" class="opinionstage-button opinionstage-button__pink opinionstage-button__uppercase"><?php esc_html_e( 'Connect', 'social-polls-by-opinionstage' ); ?></a>
 	<?php } ?>
 </div>

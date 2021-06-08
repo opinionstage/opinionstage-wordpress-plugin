@@ -1,4 +1,6 @@
 @import "../../admin/css/icon-font";
+@import "parts/button";
+
 $blue: #32adbc;
 $blue2: #31aebe;
 $light_red: #f46368;
@@ -408,8 +410,7 @@ $light_red: #f46368;
   }
 }
 .opinionstage-connect-form {
-  button[type=submit].pink {
-    background-color: #F46368 !important;
+  .opinionstage-button {
     min-height: 50px;
   }
 
