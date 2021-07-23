@@ -47,6 +47,6 @@ function opinionstage_register_menu_page() {
  * Loads admin pages
  */
 function opinionstage_load_template() {
-	$OSAPL = OpinionStageAdminPageLoader::getInstance();
-	$OSAPL->OSAPL_LoadTemplateFile();
+	$OSAPL = OpinionStageAdminPageLoader::get_instance();
+	$OSAPL->maybe_load_template_file();
 }
