@@ -41,6 +41,7 @@ $inputs-border-color: #cccccc;
   }
   .header__container {
     color: #ffffff;
+    width: 100%;
     margin: auto;
     padding: 0 10px;
   }
@@ -236,7 +237,6 @@ $inputs-border-color: #cccccc;
     display: inline-block;
     float: right;
     text-align: right;
-    height: 100%;
     padding: 20px 10px;
     left: 0;
     position: relative;

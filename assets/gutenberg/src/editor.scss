@@ -96,7 +96,7 @@ $blue: #32adbc;
         a {
             border-radius: 5px;
             border: 1px solid #fff;
-            color: #fff;
+            color: #fff !important;
             background: transparent;
             cursor: pointer;
             display: block;
@@ -162,14 +162,13 @@ p.components-heading {
         opacity: 0;
         height: 0;
     }
-
 }
-
 
 .components-button {
     &.is-default.is-block.is-primary {
         background: $blue;
         border-color: $blue;
+        color: #fff;
         box-shadow: none;
         font-size: 14px;
         font-weight: 600;
@@ -196,7 +195,6 @@ p.components-heading {
             }
         }
     }
-
 }
 
 input.components-button.is-button.is-default.is-block.is-primary {
