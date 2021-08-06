@@ -26,8 +26,19 @@ defined( 'ABSPATH' ) || die();
 	<div class="opinionstage-grey-bg">
 		<div class="opinionstage-getting-started opinionstage-getting-started-section">
 			<div class="opinionstage-getting-started__half">
-				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Welcome to Opinion Stage!', 'social-polls-by-opinionstage' ); ?></h1>
-				<p class="opinionstage-getting-started__text"><?php esc_html_e( 'Connect to Opinion Stage to start creating beautiful & top-performing polls, quizzes, surveys and forms. Start from scratch or from one of our templates.', 'social-polls-by-opinionstage' ); ?></p>
+				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Engaging Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
+
+				<p class="opinionstage-getting-started__text">
+					<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful & top-performing', 'social-polls-by-opinionstage' ); ?>
+					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'polls' ) ); ?>" target="_blank"><?php esc_html_e( 'polls', 'social-polls-by-opinionstage' ); ?></a>,
+					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'quizzes' ) ); ?>" target="_blank"><?php esc_html_e( 'quizzes', 'social-polls-by-opinionstage' ); ?></a>,
+					<?php esc_html_e( 'and', 'social-polls-by-opinionstage' ); ?>
+					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'surveys' ) ); ?>" target="_blank"><?php esc_html_e( 'surveys', 'social-polls-by-opinionstage' ); ?></a>
+					<?php esc_html_e( 'in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
+					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'home' ) ); ?>" target="_blank"><?php esc_html_e( 'templates', 'social-polls-by-opinionstage' ); ?></a>.
+				</p>
+
+				<p class="opinionstage-getting-started__text"><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & educators such as NBC, Warner Brothers, Pepsico & Harvard.', 'social-polls-by-opinionstage' ); ?></p>
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
 				<div>
@@ -84,7 +95,6 @@ defined( 'ABSPATH' ) || die();
 				}
 				?>
 			</div>
-			<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/collections/1401239-wordpress-plugin' ) ); ?>" data-ignore-swal-js class="opinionstage-grey-link" target="_blank"><?php esc_html_e( 'Need help?', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
 </div>
