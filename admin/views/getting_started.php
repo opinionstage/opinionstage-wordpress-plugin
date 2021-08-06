@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || die();
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
 				<div>
-					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" data-ignore-swal-js class="opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
+					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" class="opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
 				</div>
 			</div>
 			<div class="opinionstage-getting-started__half">
@@ -89,7 +89,7 @@ defined( 'ABSPATH' ) || die();
 						<h3 class="opinionstage-template-item__title"><?php echo esc_html( $item['title'] ); ?></h3>
 						<p class="opinionstage-template-item__text"><?php echo esc_html( $item['text'] ); ?></p>
 
-						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" data-ignore-swal-js class="opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'View Templates', 'social-polls-by-opinionstage' ); ?></a>
+						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" class="opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'View Templates', 'social-polls-by-opinionstage' ); ?></a>
 					</div>
 					<?php
 				}
