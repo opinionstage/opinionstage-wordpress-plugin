@@ -180,10 +180,12 @@ class OpinionstageFeedback {
 			}
 
 			$data = array(
-				'reason'         => $reason,
-				'plugin_version' => OPINIONSTAGE_WIDGET_VERSION,
-				'wp_version'     => get_bloginfo( 'version' ),
-				'site_lang'      => get_bloginfo( 'language' ),
+				'reason'            => $reason,
+				'plugin_version'    => OPINIONSTAGE_WIDGET_VERSION,
+				'wp_version'        => get_bloginfo( 'version' ),
+				'site_lang'         => get_bloginfo( 'language' ),
+				'plugin_was_active' => $this->plugin_active_time_pretty_string(),
+				'is_connected'      => $this->is_connected_pretty_string(),
 			);
 
 			if ( '' !== $reason_text ) {
@@ -205,6 +207,51 @@ class OpinionstageFeedback {
 			wp_send_json_success();
 		}
 		wp_send_json_error();
+	}
+
+	/**
+	 * Returns plugin active time pretty string
+	 *
+	 * @since 19.8.6
+	 */
+	private function plugin_active_time_pretty_string() {
+		$activated_time = get_option( 'oswp_installation_date' );
+		if ( intval( $activated_time ) === 0 ) {
+			return 'no-activation-time';
+		}
+
+		$time_diff = time() - $activated_time;
+
+		$seconds_in_hour  = 3600;
+		$seconds_in_day   = $seconds_in_hour * 24;
+		$seconds_in_week  = $seconds_in_day * 7;
+		$seconds_in_month = $seconds_in_day * 30;
+		$seconds_in_year  = $seconds_in_day * 365;
+
+		if ( $time_diff < $seconds_in_hour ) {
+			$out = 'less than hour';
+		} elseif ( $time_diff < $seconds_in_day ) {
+			$out = 'less than day';
+		} elseif ( $time_diff < $seconds_in_week ) {
+			$out = 'less than week';
+		} elseif ( $time_diff < $seconds_in_month ) {
+			$out = 'less than month';
+		} elseif ( $time_diff < $seconds_in_year ) {
+			$out = 'less than year';
+		} else {
+			$out = 'more than year';
+		}
+
+		return $out;
+	}
+
+	/**
+	 * Returns pretty string if opinionstage user connected
+	 *
+	 * @since 19.8.6
+	 */
+	private function is_connected_pretty_string() {
+		return opinionstage_user_logged_in() ? 'yes' : 'no';
 	}
 
 	/**
