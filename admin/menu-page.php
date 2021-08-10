@@ -37,7 +37,7 @@ function opinionstage_register_menu_page() {
 				plugins_url( 'admin/images/os-icon.png', plugin_dir_path( __FILE__ ) ),
 				'25.234323221'
 			);
-			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Getting Started', 'Getting Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG, 'opinionstage_load_template' );
+			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Get Started', 'Get Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG, 'opinionstage_load_template' );
 			add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Create...', 'Create...', 'edit_posts', OPINIONSTAGE_MENU_SLUG, 'opinionstage_load_template' );
 		}
 	}

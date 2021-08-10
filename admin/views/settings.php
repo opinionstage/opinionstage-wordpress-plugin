@@ -121,7 +121,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_poll_link( 'opinionstage-blue-btn', __( 'From scratch', 'social-polls-by-opinionstage' ) ); ?>
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'polls' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Templates' ); ?></a>
+							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'polls' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Template' ); ?></a>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -134,7 +134,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_survey_link( 'opinionstage-blue-btn', __( 'From scratch', 'social-polls-by-opinionstage' ) ); ?>
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'surveys' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Templates' ); ?></a>
+							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'surveys' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Template' ); ?></a>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -147,7 +147,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_trivia_link( 'opinionstage-blue-btn', __( 'From scratch', 'social-polls-by-opinionstage' ) ); ?>
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'trivia_quizzes' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Templates' ); ?></a>
+							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'trivia_quizzes' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Template' ); ?></a>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -160,7 +160,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_personality_link( 'opinionstage-blue-btn', __( 'From scratch', 'social-polls-by-opinionstage' ) ); ?>
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'personality_quizzes' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Templates' ); ?></a>
+							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'personality_quizzes' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Template' ); ?></a>
 						</div>
 					</div>
 					<div class="opinionstage-section-raw">
@@ -173,7 +173,7 @@ defined( 'ABSPATH' ) || die();
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
 							<?php echo opinionstage_create_form_link( 'opinionstage-blue-btn', __( 'From scratch', 'social-polls-by-opinionstage' ) ); ?>
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'classic_forms' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Templates' ); ?></a>
+							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'classic_forms' ) ); ?>" class="opinionstage-blue-btn border" target="_blank"><?php esc_html_e( 'From Template' ); ?></a>
 						</div>
 					</div>
 				</div>

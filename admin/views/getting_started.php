@@ -25,28 +25,32 @@ defined( 'ABSPATH' ) || die();
 	</div>
 	<div class="opinionstage-grey-bg">
 		<div class="opinionstage-getting-started opinionstage-getting-started-section">
-			<div class="opinionstage-getting-started__half">
+			<div class="opinionstage-getting-started__text">
 				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Engaging Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
-
-				<p class="opinionstage-getting-started__text">
-					<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful & top-performing', 'social-polls-by-opinionstage' ); ?>
-					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'polls' ) ); ?>" target="_blank"><?php esc_html_e( 'polls', 'social-polls-by-opinionstage' ); ?></a>,
-					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'quizzes' ) ); ?>" target="_blank"><?php esc_html_e( 'quizzes', 'social-polls-by-opinionstage' ); ?></a>,
-					<?php esc_html_e( 'and', 'social-polls-by-opinionstage' ); ?>
-					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'surveys' ) ); ?>" target="_blank"><?php esc_html_e( 'surveys', 'social-polls-by-opinionstage' ); ?></a>
-					<?php esc_html_e( 'in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
-					<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'home' ) ); ?>" target="_blank"><?php esc_html_e( 'templates', 'social-polls-by-opinionstage' ); ?></a>.
-				</p>
-
-				<p class="opinionstage-getting-started__text"><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & educators such as NBC, Warner Brothers, Pepsico & Harvard.', 'social-polls-by-opinionstage' ); ?></p>
+				<div>
+					<p>
+						<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful & top-performing', 'social-polls-by-opinionstage' ); ?>
+						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/poll' ) ); ?>"
+						   target="_blank"><?php esc_html_e( 'polls', 'social-polls-by-opinionstage' ); ?></a>,
+						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/quiz' ) ); ?>"
+						   target="_blank"><?php esc_html_e( 'quizzes', 'social-polls-by-opinionstage' ); ?></a>,
+						<?php esc_html_e( 'and', 'social-polls-by-opinionstage' ); ?>
+						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/survey' ) ); ?>"
+						   target="_blank"><?php esc_html_e( 'surveys', 'social-polls-by-opinionstage' ); ?></a>
+						<?php esc_html_e( 'in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
+						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'home' ) ); ?>"
+						   target="_blank"><?php esc_html_e( 'templates', 'social-polls-by-opinionstage' ); ?></a>.
+					</p>
+					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & educators such as NBC, Warner Brothers, Pepsico & Harvard.', 'social-polls-by-opinionstage' ); ?></p>
+				</div>
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
 				<div>
-					<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://help.opinionstage.com/en/articles/2718244-why-do-i-need-to-create-an-account-on-opinion-stage-to-use-the-plugin' ) ); ?>" target="_blank" class="opinionstage-grey-link"><?php esc_html_e( 'Why connect?', 'social-polls-by-opinionstage' ); ?></a>
 				</div>
 			</div>
-			<div class="opinionstage-getting-started__half">
-				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinioinstage.png', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinoin Stage', 'social-polls-by-opinionstage' ); ?>">
+			<div class="opinionstage-getting-started__img">
+				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.png', dirname( __FILE__ ) ) ); ?>"
+					 alt="<?php esc_html_e( 'Welcome to Opinoin Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
 
@@ -57,25 +61,25 @@ defined( 'ABSPATH' ) || die();
 				array(
 					'title'               => __( 'Quiz', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'trivia.png',
-					'text'                => __( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ),
+					'text'                => __( 'Create a challenging knowledge quiz or a fun personality quiz', 'social-polls-by-opinionstage' ),
 					'view_templates_type' => 'quizzes',
 				),
 				array(
 					'title'               => __( 'Poll', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'poll.png',
-					'text'                => __( 'Ask one question and define several answer choices', 'social-polls-by-opinionstage' ),
+					'text'                => __( 'Engage your audience and gather opinions with one question that matters', 'social-polls-by-opinionstage' ),
 					'view_templates_type' => 'polls',
 				),
 				array(
 					'title'               => __( 'Survey', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'survey.png',
-					'text'                => __( 'Ask multiple questions from a range of question types', 'social-polls-by-opinionstage' ),
+					'text'                => __( 'Learn from your audience by asking multiple questions of different types', 'social-polls-by-opinionstage' ),
 					'view_templates_type' => 'surveys',
 				),
 				array(
 					'title'               => __( 'Standard Form', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'form.png',
-					'text'                => __( 'Display all fields on one page', 'social-polls-by-opinionstage' ),
+					'text'                => __( 'Gather data simply and effectively with a multi-field form', 'social-polls-by-opinionstage' ),
 					'view_templates_type' => 'classic_forms',
 				),
 			);
