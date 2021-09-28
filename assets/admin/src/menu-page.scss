@@ -177,33 +177,11 @@ $light_red: #f46368;
       }
     }
 
-    .opinionstage-section-content {
-      display: table;
-      border-collapse: collapse;
-      width: 100%;
-      position: relative;
-    }
   }
 
   a.opinionstage-help-link {
     font-size: 18px;
     text-decoration: none;
-  }
-
-  #opinionstage-section-help {
-    .opinionstage-section-content {
-      border: 1px solid #c8c8c9;
-    }
-
-    .opinionstage-section-content {
-      height: 307px;
-    }
-
-    .opinionstage-section-cell a {
-      font-size: 18px;
-      margin-bottom: 5px;
-      text-decoration: none;
-    }
   }
 
   .opinionstage-help-row {
@@ -244,73 +222,6 @@ $light_red: #f46368;
   text-align: center;
 }
 
-
-#opinionstage-section-create {
-  .opinionstage-section-content {
-    height: 435px;
-  }
-
-  .opinionstage-section-raw {
-    border: 1px solid #c8c8c9;
-    display: table-row;
-    border-left: none;
-    border-right: none;
-  }
-
-  .opinionstage-section-cell {
-    display: table-cell;
-    padding: 20px 0;
-    vertical-align: middle;
-
-    &.opinionstage-icon-cell {
-      color: #3499c2;
-      font-size: 35px;
-      text-align: center;
-      width: 7%;
-    }
-
-    &.opinionstage-btn-cell {
-      text-align: right;
-      width: 36%;
-    }
-
-    &.opinionstage-description-cell {
-      width: 57%;
-
-      .title {
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 5px;
-        color: #3c434a;
-        text-decoration: none;
-      }
-
-      .example {
-        color: #b1b1b1;
-        font-size: 14px;
-        line-height: normal;
-      }
-    }
-  }
-  
-  .opinionstage-blue-btn {
-    padding: 12px 10px;
-    text-transform: capitalize;
-    min-width: 150px;
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-    
-    @media (max-width: 1230px ) {
-      display: block;
-      width: auto;
-      &:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 10px;
-      } 
-    }
-  }
-}
 .opinion-stage_page_opinionstage-settings,
 .toplevel_page_opinionstage-getting-started {
   background-color: #f9f7fd;
