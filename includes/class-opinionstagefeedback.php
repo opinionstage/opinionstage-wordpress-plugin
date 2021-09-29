@@ -94,6 +94,14 @@ class OpinionstageFeedback {
 				'title'             => esc_html__( 'I couldn\'t get the plugin to work', 'social-polls-by-opinionstage' ),
 				'input_placeholder' => esc_html__( 'What was the problem', 'social-polls-by-opinionstage' ),
 			),
+			'price_of_paid_plan'         => array(
+				'title'             => esc_html__( 'Price of paid plan', 'social-polls-by-opinionstage' ),
+				'input_placeholder' => '',
+			),
+			'hosted_on_external_site'         => array(
+				'title'             => esc_html__( 'Hosted on external site', 'social-polls-by-opinionstage' ),
+				'input_placeholder' => '',
+			),
 			'temporary_deactivation'         => array(
 				'title'             => esc_html__( 'It\'s a temporary deactivation', 'social-polls-by-opinionstage' ),
 				'input_placeholder' => '',
