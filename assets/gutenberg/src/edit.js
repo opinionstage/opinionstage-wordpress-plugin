@@ -29,7 +29,7 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
       <div className={ className }>
         <div className="os-widget-wrapper components-placeholder">
           <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
-          <p className="components-heading">Please connect WordPress to Opinion Stage to start adding widgets</p>
+          <p className="components-heading">Please connect WordPress to Opinion Stage to start adding polls, quizzes, surveys & forms</p>
           <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl} className="components-button is-button is-default is-block is-primary">Connect</a>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function Edit ({ name, className, attributes, setAttributes, /*is
     <div className="os-widget-wrapper components-placeholder">
       <p className="components-heading"><img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/></p>
       <button className="components-button is-button is-default is-block is-primary" onClick={selectWidget} >Select a {currentWidgetTitle}</button>
-      <a href={createNewWidgetUrl} target="_blank" className="components-button is-button is-default is-block is-primary">Create a new {currentWidgetTitle}</a>
+      <a href={createNewWidgetUrl} target="_blank" className="components-button is-button is-default is-block is-primary">Create a {currentWidgetTitle}</a>
       <a href={viewTemplateUrl} target="_blank" className="components-button is-button is-default is-block is-primary is-bordered">View Templates</a>
     </div>
   )
