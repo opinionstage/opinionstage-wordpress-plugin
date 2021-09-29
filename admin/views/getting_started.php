@@ -29,19 +29,11 @@ defined( 'ABSPATH' ) || die();
 				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Engaging Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
 				<div>
 					<p>
-						<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful & top-performing', 'social-polls-by-opinionstage' ); ?>
-						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/poll' ) ); ?>"
-						   target="_blank"><?php esc_html_e( 'polls', 'social-polls-by-opinionstage' ); ?></a>,
-						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/quiz' ) ); ?>"
-						   target="_blank"><?php esc_html_e( 'quizzes', 'social-polls-by-opinionstage' ); ?></a>,
-						<?php esc_html_e( 'and', 'social-polls-by-opinionstage' ); ?>
-						<a href="<?php echo esc_url( add_query_arg( OPINIONSTAGE_UTM_PARAMETERS, 'https://www.opinionstage.com/survey' ) ); ?>"
-						   target="_blank"><?php esc_html_e( 'surveys', 'social-polls-by-opinionstage' ); ?></a>
-						<?php esc_html_e( 'in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
+						<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful top-performing polls, quizzes and surveys in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
 						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'home' ) ); ?>"
 						   target="_blank"><?php esc_html_e( 'templates', 'social-polls-by-opinionstage' ); ?></a>.
 					</p>
-					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & educators such as NBC, Warner Brothers, Pepsico & Harvard.', 'social-polls-by-opinionstage' ); ?></p>
+					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands and businesses such as NBC, Warner Brothers, Pepsico and Uber.', 'social-polls-by-opinionstage' ); ?></p>
 				</div>
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
@@ -77,7 +69,7 @@ defined( 'ABSPATH' ) || die();
 					'view_templates_type' => 'surveys',
 				),
 				array(
-					'title'               => __( 'Standard Form', 'social-polls-by-opinionstage' ),
+					'title'               => __( 'Form', 'social-polls-by-opinionstage' ),
 					'image_name'          => 'form.png',
 					'text'                => __( 'Gather data simply and effectively with a multi-field form', 'social-polls-by-opinionstage' ),
 					'view_templates_type' => 'classic_forms',
