@@ -3,16 +3,27 @@ Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 5.8
+Tested up to: 5.8.1
 Stable tag: 19.8.7
 Requires PHP: 7.0
 
-Add a Poll, Survey, or Quiz to your Wordpress site. Create a poll, quiz, or survey from scratch or based on templates.
+Add a Poll, Survey, or Quiz Plugin to your WordPress site. Create a poll, quiz, or survey from scratch or based on templates.
 
 == Description ==
 
-[Quiz Templates](https://www.opinionstage.com/templates/c/quizzes?o=wp35e8) | [Poll Templates](https://www.opinionstage.com/templates/c/polls?o=wp35e8) | [Survey Templates](https://www.opinionstage.com/templates/c/surveys?o=wp35e8)
-
+= Live Demos: =
+* [Personality Quiz](https://www.opinionstage.com/templates/t/personality-quiz-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Trivia Quiz](https://www.opinionstage.com/templates/t/trivia-quiz-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Lead Quiz](https://www.opinionstage.com/templates/t/lead-quiz-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Competition Quiz](https://www.opinionstage.com/templates/t/quiz-competition-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [List poll](https://www.opinionstage.com/templates/t/list-poll-single-answer?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Image poll](https://www.opinionstage.com/templates/t/image-poll?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Thumbnail poll](https://www.opinionstage.com/templates/t/thumbnail-poll?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Head to head poll](https://www.opinionstage.com/templates/t/head-to-head-poll?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Feedback survey](https://www.opinionstage.com/templates/t/customer-feedback-survey?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Satisfaction survey](https://www.opinionstage.com/templates/t/how-do-you-feel-about-working-from-home-?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [User experience survey](https://www.opinionstage.com/templates/t/user-experience-questionnaire?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+* [Website design survey](https://www.opinionstage.com/templates/t/website-design-questionnaire?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
 
 Opinion Stage is a poll, survey and quiz maker plugin for WordPress. It's the easiest way to create anything from opinion polls, feedback surveys, buzzfeed-syle quizzes to contact forms.
 You can create the items from scratch or using hundreds of optimized templates.
