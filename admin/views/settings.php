@@ -65,7 +65,7 @@ defined( 'ABSPATH' ) || die();
 						<div class="inner">
 							<span id="opinionstage-dialog-close" class="opinionstage-close"></span>
 							<div id="published-item-details">
-								<p><?php esc_html_e( 'You can add item in the following ways:', 'social-polls-by-opinionstage' ); ?></p>
+								<p><?php esc_html_e( 'You can add the item in the following ways:', 'social-polls-by-opinionstage' ); ?></p>
 								<ul>
 									<li><a href="https://help.opinionstage.com/en/articles/5161692-how-to-add-items-to-a-post-page" target="_blank"><?php esc_html_e( 'Add to a post/page', 'social-polls-by-opinionstage' ); ?></a></li>
 									<li><a href="https://help.opinionstage.com/en/articles/5161716-how-to-add-an-item-to-a-sidebar-widget" target="_blank"><?php esc_html_e( 'Add to a sidebar Widget', 'social-polls-by-opinionstage' ); ?></a></li>
