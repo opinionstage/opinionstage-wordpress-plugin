@@ -5,35 +5,108 @@
  * @package OpinionStageWordPressPlugin */
 
 defined( 'ABSPATH' ) || die();
+
+$footer_col_items = array(
+	array(
+		'title' => __( 'Quiz Templates', 'social-polls-by-opinionstage' ),
+		'items' => array(
+			array(
+				'path'  => 't/personality-quiz-template',
+				'title' => __( 'Personality Quiz', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/trivia-quiz-template',
+				'title' => __( 'Trivia Quiz', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/lead-quiz-template',
+				'title' => __( 'Lead Quiz', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/quiz-competition-template',
+				'title' => __( 'Competition Quiz', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 'c/quizzes/types',
+				'title' => __( 'All Quiz Types', 'social-polls-by-opinionstage' ),
+			),
+		),
+	),
+	array(
+		'title' => __( 'Poll Templates', 'social-polls-by-opinionstage' ),
+		'items' => array(
+			array(
+				'path'  => 't/list-poll-single-answer',
+				'title' => __( 'Standard poll', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/image-poll',
+				'title' => __( 'Image poll', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/thumbnail-poll',
+				'title' => __( 'Thumbnail poll', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/head-to-head-poll',
+				'title' => __( 'Head to Head poll', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 'c/polls/layouts',
+				'title' => __( 'All Poll Layouts', 'social-polls-by-opinionstage' ),
+			),
+		),
+	),
+	array(
+		'title' => __( 'Survey Templates', 'social-polls-by-opinionstage' ),
+		'items' => array(
+			array(
+				'path'  => 't/customer-feedback-survey',
+				'title' => __( 'Feedback survey', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/how-do-you-feel-about-working-from-home-',
+				'title' => __( 'Satisfaction survey', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/user-experience-questionnaire',
+				'title' => __( 'User experience survey', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 't/website-design-questionnaire',
+				'title' => __( 'Website design survey ', 'social-polls-by-opinionstage' ),
+			),
+			array(
+				'path'  => 'c/surveys',
+				'title' => __( 'All Survey Templates', 'social-polls-by-opinionstage' ),
+			),
+		),
+	),
+);
+
+/**
+ * Generates template preview url.
+ *
+ * @param string $path part or url.
+ * @return mixed
+ */
+function opinionstage_generate_template_url( $path ) {
+	return add_query_arg(
+		OPINIONSTAGE_UTM_PARAMETERS,
+		OPINIONSTAGE_SERVER_BASE . '/templates/' . $path
+	);
+}
 ?>
 <div id="opinionstage-content">
-	<div class="opinionstage-header-wrapper">
-			<?php if ( ! $os_client_logged_in ) { ?>
-			<div class="opinionstage-logo-wrapper">
-				<div class="opinionstage-logo"></div>
-			</div>
-			<?php } else { ?>
-			<div class="opinionstage-logo-wrapper">
-				<div class="opinionstage-logo"></div>
-				<div class="opinionstage-connectivity-status"><?php echo esc_html( $os_options['email'] ); ?>
-					<form method="POST" action="<?php echo esc_url( get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_DISCONNECT_PAGE ) ); ?>" class="opinionstage-connect-form">
-						<button class="opinionstage-disconnect" type="submit"><?php esc_html_e( 'Disconnect', 'social-polls-by-opinionstage' ); ?></button>
-					</form>
-				</div>
-			</div>
-			<?php } ?>
-	</div>
-	<div class="opinionstage-grey-bg">
-		<div class="opinionstage-getting-started opinionstage-getting-started-section">
+	<div class="opinionstage-bg-white">
+		<div class="opinionstage-getting-started-section opinionstage-logo-wrapper">
+			<div class="opinionstage-logo opinionstage-logo__dark"></div>
+		</div>
+		<div class="opinionstage-getting-started-section opinionstage-getting-started">
 			<div class="opinionstage-getting-started__text">
-				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Engaging Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
+				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Website in Seconds', 'social-polls-by-opinionstage' ); ?></h1>
 				<div>
-					<p>
-						<?php esc_html_e( 'Welcome to Opinion Stage! Create beautiful top-performing polls, quizzes and surveys in seconds. Start from scratch or from one of our', 'social-polls-by-opinionstage' ); ?>
-						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( 'home' ) ); ?>"
-						   target="_blank"><?php esc_html_e( 'templates', 'social-polls-by-opinionstage' ); ?></a>.
-					</p>
-					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands and businesses such as NBC, Warner Brothers, Pepsico and Uber.', 'social-polls-by-opinionstage' ); ?></p>
+					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & businesses such as NBC, Warner Brothers, Uber & Pepsico.', 'social-polls-by-opinionstage' ); ?></p>
 				</div>
 
 				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
@@ -41,51 +114,31 @@ defined( 'ABSPATH' ) || die();
 				</div>
 			</div>
 			<div class="opinionstage-getting-started__img">
-				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.png', dirname( __FILE__ ) ) ); ?>"
-					 alt="<?php esc_html_e( 'Welcome to Opinoin Stage', 'social-polls-by-opinionstage' ); ?>">
+				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.jpg', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinion Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
+	</div>
 
-		<div class="opinionstage-getting-started-templates opinionstage-getting-started-section">
-			<h2 class="opinionstage-getting-started-templates__title"><?php esc_html_e( 'Templates & Examples', 'social-polls-by-opinionstage' ); ?></h2>
-			<?php
-			$templates_items_date = array(
-				array(
-					'title'               => __( 'Quiz', 'social-polls-by-opinionstage' ),
-					'image_name'          => 'trivia.png',
-					'text'                => __( 'Create a challenging knowledge quiz or a fun personality quiz', 'social-polls-by-opinionstage' ),
-					'view_templates_type' => 'quizzes',
-				),
-				array(
-					'title'               => __( 'Poll', 'social-polls-by-opinionstage' ),
-					'image_name'          => 'poll.png',
-					'text'                => __( 'Engage your audience and gather opinions with one question that matters', 'social-polls-by-opinionstage' ),
-					'view_templates_type' => 'polls',
-				),
-				array(
-					'title'               => __( 'Survey', 'social-polls-by-opinionstage' ),
-					'image_name'          => 'survey.png',
-					'text'                => __( 'Learn from your audience by asking multiple questions of different types', 'social-polls-by-opinionstage' ),
-					'view_templates_type' => 'surveys',
-				),
-				array(
-					'title'               => __( 'Form', 'social-polls-by-opinionstage' ),
-					'image_name'          => 'form.png',
-					'text'                => __( 'Gather data simply and effectively with a multi-field form', 'social-polls-by-opinionstage' ),
-					'view_templates_type' => 'classic_forms',
-				),
-			);
-			?>
-			<div class="opinionstage-getting-started-templates__row">
+	<div class="opinionstage-getting-started-section">
+		<div class="opinionstage-getting-started-footer">
+			<h2 class="opinionstage-getting-started-footer__title"><?php esc_html_e( 'Check out these examples:', 'social-polls-by-opinionstage' ); ?></h2>
+			<div class="opinionstage-getting-started-footer__items">
 				<?php
-				foreach ( $templates_items_date as $item ) {
+				foreach ( $footer_col_items as $col ) {
 					?>
-					<div class="opinionstage-template-item">
-						<img src="<?php echo esc_url( plugins_url( 'images/' . $item['image_name'], dirname( __FILE__ ) ) ); ?>" class="opinionstage-template-item__icon" alt="<?php echo esc_attr( $item['title'] ); ?>">
-						<h3 class="opinionstage-template-item__title"><?php echo esc_html( $item['title'] ); ?></h3>
-						<p class="opinionstage-template-item__text"><?php echo esc_html( $item['text'] ); ?></p>
-
-						<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['view_templates_type'] ) ); ?>" class="opinionstage-template-item__button" target="_blank"><?php esc_html_e( 'View Templates', 'social-polls-by-opinionstage' ); ?></a>
+					<div class="opinionstage-getting-started-footer__item">
+						<h3 class="opinionstage-getting-started-footer__item__title"><?php echo esc_html( $col['title'] ); ?></h3>
+						<ul class="opinionstage-getting-started-footer__list">
+							<?php
+							foreach ( $col['items'] as $anchor ) {
+								?>
+								<li>
+									<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" target="_blank"><?php echo esc_html( $anchor['title'] ); ?></a>
+								</li>
+								<?php
+							}
+							?>
+						</ul>
 					</div>
 					<?php
 				}

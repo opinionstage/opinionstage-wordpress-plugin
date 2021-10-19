@@ -102,26 +102,6 @@
     }
   }
 
-
-  .os-button {
-    float: left;
-    text-decoration: none;
-    border: 1px solid #CFCCC8;
-    border-radius: 3px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #289ec4;
-    background-image: linear-gradient(top, #289ec4, #278fb5);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#289ec4, endColorstr=#278fb5);
-    padding: 5px 10px;
-
-    &:hover {
-      background-color: #40aacd;
-      background-image: linear-gradient(top, #40aacd, #40aacd);
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#40aacd, endColorstr=#40aacd);
-    }
-  }
-
   .connection_message {
     line-height: normal;
     font-family: Open Sans, Helvetica, sans-serif;
