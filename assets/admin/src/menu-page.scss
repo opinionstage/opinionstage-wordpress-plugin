@@ -300,9 +300,6 @@ $light_red: #f46368;
   text-align: center;
 }
 
-.opinion-stage_page_opinionstage-settings {
-  background-color: #f9f7fd;
-}
 .toplevel_page_opinionstage-getting-started {
   background: #F5F7FA;
   #wpcontent {
@@ -331,15 +328,26 @@ $light_red: #f46368;
     margin-left: 0;
   }
 
-  &.opinionstage-logo-wrapper {
-    padding: 30px 0 0 30px !important;
+  &__no-padding {
+    padding: 0 !important;
   }
 
   .opinionstage-connect-form .opinionstage-button {
     font-weight: 400;
   }
+  
+  .opinionstage-logo {
+    margin-left: 25px;
+    margin-top: 25px;
+  }
+
+  .opinionstage-button {
+    border-radius: 0;
+    margin-right: .5em;
+    min-width: 165px;
+  }
 }
-.opinionstage-getting-started {
+.opinionstage-two-columns {
   color: #6E6E6E;
   display: flex;
   flex-wrap: wrap;
@@ -380,7 +388,6 @@ $light_red: #f46368;
     }
   }
 }
-
 
 .opinionstage-bg-white {
   background: #fff;

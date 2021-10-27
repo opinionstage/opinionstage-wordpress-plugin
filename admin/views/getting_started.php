@@ -99,12 +99,12 @@ function opinionstage_generate_template_url( $path ) {
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-bg-white">
-		<div class="opinionstage-getting-started-section opinionstage-logo-wrapper">
+		<div class="opinionstage-getting-started-section opinionstage-getting-started-section__no-padding">
 			<div class="opinionstage-logo opinionstage-logo__dark"></div>
 		</div>
-		<div class="opinionstage-getting-started-section opinionstage-getting-started">
-			<div class="opinionstage-getting-started__text">
-				<h1 class="opinionstage-getting-started__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Website in Seconds', 'social-polls-by-opinionstage' ); ?></h1>
+		<div class="opinionstage-getting-started-section opinionstage-two-columns">
+			<div class="opinionstage-two-columns__text">
+				<h1 class="opinionstage-two-columns__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Website in Seconds', 'social-polls-by-opinionstage' ); ?></h1>
 				<div>
 					<p><?php esc_html_e( 'Join 100,000+ sites, from small blogs to top publishers, brands & businesses such as NBC, Warner Brothers, Uber & Pepsico.', 'social-polls-by-opinionstage' ); ?></p>
 				</div>
@@ -113,7 +113,7 @@ function opinionstage_generate_template_url( $path ) {
 				<div>
 				</div>
 			</div>
-			<div class="opinionstage-getting-started__img">
+			<div class="opinionstage-two-columns__img">
 				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.jpg', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinion Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
