@@ -23,6 +23,7 @@ $light_red: #f46368;
 
   .opinionstage-logo-wrapper {
     padding: 10px 30px; 
+    max-width: 780px;
   }
 
   .opinionstage-logo {
@@ -55,13 +56,6 @@ $light_red: #f46368;
     display: inline-block;
   }
 
-  .opinionstage-connect-btn {
-    padding-bottom: 14.2px !important;
-    padding-top: 14.2px !important;
-    position: relative;
-    cursor: pointer;
-  }
-
   .opinionstage-status-title {
     font-size: 24px;
     font-weight: bold;
@@ -77,11 +71,6 @@ $light_red: #f46368;
     margin-right: 7px;
   }
 
-  #os-switch-email {
-    font-size: 14px;
-    padding: 11px 0;
-  }
-
   .opinionstage-blue-btn {
     background-color: $blue;
     border-radius: 3px;
@@ -91,7 +80,7 @@ $light_red: #f46368;
     font-size: 15px;
     font-weight: 600;
     min-width: 100px;
-    padding: 9px 10px;
+    padding: 11px 10px;
     text-decoration: none;
     text-align: center;
     transition: 0.2s ease;
@@ -107,10 +96,6 @@ $light_red: #f46368;
         background-color: rgba(49,174,190,0.1); 
       }
     }
-  }
-
-  .opinionstage-create-btn {
-    width: 100px;
   }
 
   a.opinionstage-blue-bordered-btn {
@@ -146,11 +131,6 @@ $light_red: #f46368;
     overflow: hidden;
   }
 
-  .opinionstage-dashboard-left,
-  .opinionstage-dashboard-right {
-    width: 1000px;
-  }
-
   .opinionstage-dashboard-left {
     margin: 30px;
     .opinionstage-section-header .opinionstage-section-title {
@@ -159,40 +139,6 @@ $light_red: #f46368;
       padding: 0;
       line-height: 1;
     }
-  }
-
-  .opinionstage-dashboard-section {
-    margin-bottom: 30px;
-  }
-
-  .opinionstage-dashboard-section {
-    .opinionstage-section-header {
-      height: 58px;
-      margin-top: 10px;
-      overflow: hidden;
-
-      a {
-        margin: 0;
-        padding: 10px;
-
-        &:focus {
-          box-shadow: none;
-        }
-      }
-    }
-
-  }
-
-  .opinionstage-section-content {
-    display: table;
-    border-collapse: collapse;
-    width: 100%;
-    position: relative;
-  }
-
-  a.opinionstage-help-link {
-    font-size: 18px;
-    text-decoration: none;
   }
 
   #opinionstage-section-create {
@@ -266,15 +212,11 @@ $light_red: #f46368;
     border-bottom: 1px solid #c8c8c9;
     margin: 0 10px;
     padding: 25px 0 25px 10px;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
-  .opinionstage-help-row:last-child {
-    border-bottom: none;
-  }
-}
-
-.opinionstage-dashboard-left .opinionstage-create-btn {
-  padding: 12px 10px !important;
 }
 
 #opinionstage-content,
@@ -288,16 +230,13 @@ $light_red: #f46368;
     }
   }
 }
-.opinionstage-my-items-message {
-  display: none;
-  font-size: 16px;
-  text-align: center;
-}
 
-#opinionstage-failed-load-items-request {
-  display: none;
-  font-size: 15px;
+
+p.failed-load-items-request {
   text-align: center;
+  font-size: 16px;
+  padding: 15px 0;
+  max-width: 1000px;
 }
 
 .toplevel_page_opinionstage-getting-started {
@@ -306,15 +245,6 @@ $light_red: #f46368;
     padding-left: 0;
   }
 }
-.opinionstage-grey-link {
-  display: inline-block;
-  color: #6E6E6E;
-  font-size: 14px;
-  &:hover {
-    color: #6E6E6E;
-  }
-}
-
 .opinionstage-getting-started-section {
   padding: 25px;
   max-width: 950px;
@@ -586,24 +516,6 @@ a.opinionstage-blue-bordered-btn {
   transition: .2s ease;
 }
 
-
-.content-item-image.quiz {
-  height: 90px;
-  position: relative;
-  width: 120px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  img {
-    bottom: 0;
-    display: block;
-    height: 90px;
-    opacity: 0.8;
-    position: absolute;
-    right: 0;
-    width: 120px;
-  }
-}
-
 .content-item-label {
   background-color: #222120;
   color: white;
@@ -613,43 +525,6 @@ a.opinionstage-blue-bordered-btn {
   position: absolute;
   text-transform: uppercase;
   top: 0;
-}
-
-tr.item-wrapper {
-  border-top: 1px #e5e5e5 solid;
-  display: table-cell;
-  padding: 10px 0;
-  transition: .2s ease;
-  &:hover {
-    background-color: #f7f7f7;
-  }
-  
-  .opinionstage-item-title {
-    font-weight: 600;
-  }
-  
-  .icon-os-status-closed,
-  .icon-os-status-open {
-    margin-right: 5px;
-  }
-  .icon-os-status-closed {
-    color: $light_red;
-  }
-  .icon-os-status-open {
-    color: $blue2;
-  }
-  .opinionstage-draft {
-    color: $light_red;
-    text-transform: capitalize;
-    font-size: 80%;
-  }
-
-  @media only screen and (max-width: 768px) {
-    > td {
-      display: block;
-      width: 100%;
-    }
-  }
 }
 
 .opinionstage-with-separator:before {
@@ -712,45 +587,8 @@ div#container .opinionstage-section-header {
   text-decoration: none;
 }
 
-/* Load More */
-div#opinionstage-load-more {
-  display: none;
-  cursor: pointer;
-  box-sizing: border-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 38px;
-  border: 1px solid #dededd;
-  border-radius: 3px;
-  padding: 0 10px;
-  text-decoration: none;
-  outline: none;
-  transition: 0.2s ease;
-  user-select: none;
-  vertical-align: baseline;
-  color: #38aebd;
-  background-color: transparent;
-  border-color: #38aebd;
-  width: 100%;
-  max-width: 1000px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  &:hover {
-    text-decoration: none;
-    opacity: 0.8;
-  }
-}
-
-td.image {
-  width: 12%;
-}
-
 .opinionstage-connectivity-status {
-  color: #fff;
+  color: #fff !important;
   float: right;
   font-size: 15px;
   margin: 5px 0;
@@ -759,7 +597,7 @@ td.image {
 .opinionstage-disconnect {
   background-color: transparent;
   border: none;
-  color: $blue;
+  color: $blue !important;
   cursor: pointer;
   &:focus {
     border: none;
@@ -831,21 +669,6 @@ td.image {
     height: auto;
     padding: 8.5px 10px;
     width: 100%;
-  }
-}
-
-
-.opinionstage-item-view-dashboard {
-  .opinionstage-dashboard-section {
-    margin: 0;
-  }
-  #opinionstage-items-table tbody {
-    &:last-child tr.item-wrapper {
-      border-bottom: 1px #e5e5e5 solid;
-    }
-    .action .opinionstage-edit-content:last-child {
-      margin-right: 0;
-    }
   }
 }
 
@@ -1022,6 +845,9 @@ a.help-center-os {
   }
 }
 
+.toplevel_page_opinionstage-settings .selected-draft__container {
+  position: fixed !important;
+}
 /* my items page - modal form --end */
 
 

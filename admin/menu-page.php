@@ -49,3 +49,18 @@ function opinionstage_load_template() {
 	$OSAPL = OpinionStageAdminPageLoader::get_instance();
 	$OSAPL->maybe_load_template_file();
 }
+
+
+/**
+ * Helper function
+ *
+ * @return bool
+ */
+function opinionstage_is_my_items_admin_page() {
+	$out = false;
+	if ( function_exists( 'get_current_screen' ) ) {
+		$current_screen = get_current_screen();
+		$out            = 'toplevel_page_opinionstage-settings' === $current_screen->id;
+	}
+	return $out;
+}

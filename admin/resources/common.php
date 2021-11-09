@@ -11,21 +11,21 @@ defined( 'ABSPATH' ) || die();
  * Registers common assets
  */
 function opinionstage_common_load_resources() {
-	opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
-	opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
-	opinionstage_register_javascript_asset( 'menu-page', 'menu-page.js', array( 'jquery' ) );
+	$current_screen = get_current_screen();
+	if (
+		'toplevel_page_opinionstage-settings' === $current_screen->id
+		|| 'opinion-stage_page_opinionstage-help-resource' === $current_screen->id
+		|| 'toplevel_page_opinionstage-getting-started' === $current_screen->id
+	) {
+		opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
 
-	wp_localize_script(
-		opinionstage_asset_name( 'menu-page' ),
-		'OPINIONSTAGE',
-		array(
-			'myItemsNonce'      => wp_create_nonce( 'opinionstage-load-my-items' ),
-		)
-	);
+		opinionstage_enqueue_css_asset( 'menu-page' );
+	}
 
-	opinionstage_enqueue_css_asset( 'menu-page' );
-	opinionstage_enqueue_css_asset( 'icon-font' );
-	opinionstage_enqueue_js_asset( 'menu-page' );
+	if ( opinionstage_is_my_items_admin_page() ) {
+		opinionstage_register_javascript_asset( 'menu-page', 'menu-page.js', array( 'jquery' ) );
+		opinionstage_enqueue_js_asset( 'menu-page' );
+	}
 }
 
 function opinionstage_common_load_header() {

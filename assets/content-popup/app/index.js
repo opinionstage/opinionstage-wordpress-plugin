@@ -26,6 +26,7 @@ export default function (modal) {
       widgetSelectCb: function (widget) { console.log('dumb widget insert callback, widget:', widget) },
       isClientLoggedIn: null,
       isModalOpened: false,
+      isMyItemsPage: false,
     },
 
     beforeMount () {
@@ -34,7 +35,9 @@ export default function (modal) {
 
     methods: {
       closePopup (/*event*/) {
-        modal.close()
+        if( modal ) {
+          modal.close()
+        }
       },
 
       selectWidgetAndExit (widget) {

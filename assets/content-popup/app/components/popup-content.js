@@ -26,6 +26,7 @@ export default Vue.component('popup-content', {
     'clientIsLoggedIn',
     'modalIsOpened',
     'widgetType',
+    'isMyItemsPage',
     // static properties:
     'clientWidgetsUrl',
     'clientWidgetsHasNewUrl',
@@ -61,7 +62,6 @@ export default Vue.component('popup-content', {
 
       loadData.call(this).then( () => {
         this.widgets = this.$store.state.widgets[0]
-
         if ( !this.searchCriteria.title ) {
           setLastUpdateTimeFromWidget.call(this)
         }

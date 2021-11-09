@@ -3,7 +3,7 @@
 $brand-blue: #3aaebd;
 $brand-pink: #f46368;
 $brand-light-grey: #b1b1b1;
-$inputs-border-color: #cccccc;
+$inputs-border-color: #ccc;
 
 .opinionstage-content-popup-contents {
   min-width: 960px;
@@ -29,7 +29,6 @@ $inputs-border-color: #cccccc;
   * {
     margin: 0;
     padding: 0;
-    color: #222120;
     box-sizing: border-box;
     font-family: "Open Sans", Helvetica, sans-serif;
   }
@@ -38,40 +37,47 @@ $inputs-border-color: #cccccc;
   .header {
     background-color: #222120;
     width: 100%;
-  }
-  .header__container {
-    color: #ffffff;
-    width: 100%;
-    margin: auto;
-    padding: 0 10px;
-  }
-
-  .header__logo {
-    display: inline-block;
-    a {
-      &:active, &:focus, &:hover, &:visited {
-        border: none;
-        background: none;
-        box-shadow: none;
+    &__container {
+      color: #fff;
+      width: 100%;
+      margin: auto;
+      padding: 0 10px;
+      &.mw-1000 {
+        margin-left: 0;
+        max-width: 1000px;
       }
     }
-    img {
-      margin: 15px 10px;
-      width: 150px;
+    
+    &__logo {
+      display: inline-block;
+      a {
+        &:active, &:focus, &:hover, &:visited {
+          border: none;
+          background: none;
+          box-shadow: none;
+        }
+      }
+      img {
+        margin: 15px 10px;
+        width: 150px;
+      }
+    }
+
+    &__nav {
+      display: inline-block;
+      font-size: 0;
+      vertical-align: bottom;
+    }
+
+    &__action {
+      display: block;
+      float: right;
+      font-size: 0;
+      margin-top: 10px;
     }
   }
-  .header__nav {
-    display: inline-block;
-    font-size: 0;
-    vertical-align: bottom;
-  }
 
-  .header__action {
-    display: block;
-    float: right;
-    font-size: 0;
-    margin-top: 10px;
-  }
+    
   //content
   .page-content {
     margin: 0 auto;
@@ -145,6 +151,10 @@ $inputs-border-color: #cccccc;
   .content__list {
     height: calc(92vh - 160px);
     overflow-y: scroll;
+    
+    .opinionstage-item-action-container {
+      padding: 25px 0;
+    }
   }
 
   .content__loading {
@@ -485,7 +495,7 @@ $inputs-border-color: #cccccc;
   }
 
   .opinionstage-connect-form {
-    margin-top: 20px;
+    margin-top: 12px;
     display: flex;
     justify-content: center;
     .opinionstage-conect-input {
@@ -729,5 +739,16 @@ $inputs-border-color: #cccccc;
     &:before {
       transform: rotate(45deg);
     }
+  }
+}
+
+.opinionstage-my-items-view {
+  section {
+    background: #fff;
+  }
+  .opinionstage-section-notification,
+  .page-content {
+    width: 1000px;
+    margin-left: 0;
   }
 }

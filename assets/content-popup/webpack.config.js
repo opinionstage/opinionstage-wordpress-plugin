@@ -2,7 +2,7 @@ var path = require('path')
 
 module.exports = function(env={}) {
   return {
-    entry: './index.js',
+    entry: ['./index.js', './widget-list.js'],
 
     output: {
       filename: 'content-popup.js',

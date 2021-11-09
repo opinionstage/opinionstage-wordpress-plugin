@@ -71,7 +71,34 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
     })
   }
 
+
+  class WidgetList {
+    constructor () {
+      // vuejs vm instance
+      this.app = undefined
+    }
+
+    show(onWidgetSelect) {
+      if ( typeof(onWidgetSelect) !== 'function' ) {
+        onWidgetSelect = function(){}
+      }
+
+      const content = $('[data-opinionstage-content-popup-template]').html()
+      $('[opinionstage-my-items-view]').html(content)
+
+      if (!this.app) {
+        this.app = new ContentPopupContent()
+      }
+
+      this.app.widgetType = WIDGET_ALL
+      this.app.isModalOpened = true
+      this.app.isMyItemsPage = true
+      this.app.widgetSelectCb = onWidgetSelect
+    }
+  }
+
   OS.contentPopup = new ContentPopup()
+  OS.widgetList = new WidgetList()
 
   OS.contentPopup.WIDGET_ALL = WIDGET_ALL
   OS.contentPopup.WIDGET_POLL = WIDGET_POLL
