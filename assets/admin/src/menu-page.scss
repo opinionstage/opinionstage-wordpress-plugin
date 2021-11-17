@@ -79,11 +79,12 @@ $light_red: #f46368;
     display: inline-block;
     font-size: 15px;
     font-weight: 600;
-    min-width: 100px;
+    min-width: 130px;
     padding: 11px 10px;
     text-decoration: none;
     text-align: center;
     transition: 0.2s ease;
+    margin-right: 0;
     &:hover {
       background-color: #2f9fad;
     }
@@ -144,6 +145,10 @@ $light_red: #f46368;
   #opinionstage-section-create {
     .opinionstage-section-content {
       height: 435px;
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 960px;
     }
 
     .opinionstage-section-raw {
@@ -168,6 +173,9 @@ $light_red: #f46368;
       &.opinionstage-btn-cell {
         text-align: right;
         width: 36%;
+        a:last-child {
+          margin-right: 0;
+        }
       }
 
       &.opinionstage-description-cell {
@@ -215,6 +223,13 @@ $light_red: #f46368;
     &:last-child {
       border-bottom: none;
     }
+  }
+
+  .content__list {
+    overflow-y: visible;
+    height: auto;
+    min-height: calc(92vh - 160px);
+    
   }
 
 }
