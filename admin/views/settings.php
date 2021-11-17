@@ -32,18 +32,6 @@ defined( 'ABSPATH' ) || die();
 						<textarea name="opinionstage-widget-shortcode" id="opinionstage-widget-shortcode" data-wp-embed-code rows="2" readonly="readonly"></textarea> <a data-copy-text-from="data-wp-embed-code" href="#" class="no-text-decoration">Copy</a>
 					</div>
 				</div>
-				<div id="draft-item-details">
-					<p>
-						<?php
-						printf(
-							'%s <a href="" id="opinionstage-modal-edit-link" target="_blank">%s</a> %s',
-							esc_html__( 'Widget is not published yet. Please', 'social-polls-by-opinionstage' ),
-							esc_html__( 'edit', 'social-polls-by-opinionstage' ),
-							esc_html__( 'the widget to publish it', 'social-polls-by-opinionstage' )
-						);
-						?>
-					</p>
-				</div>
 				<p>
 					<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
 					<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank"><?php esc_html_e( 'Contact Us' ); ?></a></p>
