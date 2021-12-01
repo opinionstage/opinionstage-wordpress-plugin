@@ -95,7 +95,9 @@ define(
 	)
 );
 
-if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
+define('OPINIONSTAGE_REQUIRED_PHP_VERSION', '5.2' );
+
+if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) ) {
 	add_action( 'admin_notices', 'opinionstage_fail_php_version' );
 } elseif ( ! version_compare( get_bloginfo( 'version' ), '4.7', '>=' ) ) {
 	add_action( 'admin_notices', 'opinionstage_fail_wp_version' );
@@ -134,17 +136,12 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-sidebar-widget.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/class-opinionstagefeedback.php';
 
-		if ( ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) || ( defined( 'DOING_AJAX' ) ) ) {
-			require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-ajax-functions.php';
-			require plugin_dir_path( __FILE__ ) . 'public/init.php';
-		} else {
-			if ( is_admin() ) {
-				require plugin_dir_path( __FILE__ ) . 'admin/init.php';
-			} else {
-				require plugin_dir_path( __FILE__ ) . 'public/init.php';
-			}
-			require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
-		}
+        if ( is_admin() ) {
+            require plugin_dir_path( __FILE__ ) . 'admin/init.php';
+        } else {
+            require plugin_dir_path( __FILE__ ) . 'public/init.php';
+        }
+        require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
 
 		add_action( 'widgets_init', 'opinionstage_init_widget' );
 		add_action( 'plugins_loaded', 'opinionstage_init' );
@@ -174,7 +171,7 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
  */
 function opinionstage_fail_php_version() {
 	/* translators: %s: PHP version */
-	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz Maker Plugin by Opinion Stage requires PHP version %s+, plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), '5.2' );
+	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz Maker Plugin by Opinion Stage requires PHP version %s+, plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), OPINIONSTAGE_REQUIRED_PHP_VERSION );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }

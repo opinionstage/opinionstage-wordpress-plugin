@@ -11,4 +11,3 @@ add_shortcode(OPINIONSTAGE_WIDGET_SHORTCODE, 'opinionstage_widget_shortcode');
 add_shortcode(OPINIONSTAGE_PLACEMENT_SHORTCODE, 'opinionstage_placement_shortcode');
 
 add_action('wp_head', 'opinionstage_add_flyout');
-?>
