@@ -231,6 +231,16 @@ $light_red: #f46368;
     min-height: calc(92vh - 160px);
     
   }
+  
+  .opinionstage-trusted {
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    color: #85858A;
+    span {
+      color: #000;
+    }
+  }
 
 }
 
@@ -278,7 +288,8 @@ p.failed-load-items-request {
   }
 
   .opinionstage-connect-form .opinionstage-button {
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 18px;
   }
   
   .opinionstage-logo {
@@ -291,7 +302,19 @@ p.failed-load-items-request {
     margin-right: .5em;
     min-width: 165px;
   }
+  .opinionstage-clients {
+    display: flex;
+    justify-content: space-between;
+    li {
+      display: flex;
+    }
+    img {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
 }
+
 .opinionstage-two-columns {
   color: #6E6E6E;
   display: flex;
@@ -337,12 +360,17 @@ p.failed-load-items-request {
 .opinionstage-bg-white {
   background: #fff;
 }
-.opinionstage-getting-started-footer {
+.opinionstage-bg-blue {
   background-color: #F5F7FA;
+}
+.opinionstage-getting-started-examples {
+  margin-bottom: 80px;
   &__title {
     text-align: center;
-    font-size: 18px;
     font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+    margin-top: 85px;
     @media (max-width: 500px) {
       text-align: left;
     }
@@ -362,13 +390,37 @@ p.failed-load-items-request {
     line-height: 20px;
   }
   &__list {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 30px;
     a {
       color: #25282B;
     }
   }
 }
+
+.opinionstage-getting-started-video {
+  display: flex;
+  flex-direction: column;
+  
+  .opinionstage-getting-started-examples__title {
+    margin-top: 75px;
+  } 
+  
+  &__description {
+    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  
+  iframe {
+    margin-left: auto;
+    margin-right: auto;
+    border: 20px solid #fff;
+    margin-top: 30px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.04);
+  }
+}
+
 .opinionstage-connect-form {
   .opinionstage-button {
     min-height: 50px;
