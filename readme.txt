@@ -46,7 +46,7 @@ You can create the items from scratch or using hundreds of optimized templates.
  * Popup the items automatically when users enters/exits the page.
  * Responsive design that optimizes display of polls, quizzes and surveys in desktops, tablets and mobile devices.
 
-https://www.youtube.com/watch?v=EDtpm6zVKvk
+https://www.youtube.com/watch?v=DMcosYCBFDs
 
  == Templates & Examples ==
 
