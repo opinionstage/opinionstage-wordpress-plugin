@@ -3,7 +3,10 @@
 
 $blue: #32adbc;
 $blue2: #31aebe;
+$blue_bg: #F5F7FA;
 $light_red: #f46368;
+
+$black: #25282B;
 
 
 #opinionstage-content {
@@ -38,37 +41,8 @@ $light_red: #f46368;
     }
   }
 
-  .opinionstage-status-content {
-    background-color: #fff;
-    border-bottom: 3px solid $blue;
-    color: #000;
-    height: 109px;
-    padding: 20px 35px 0;
-  }
-
-  .opinionstage-status-content-connected {
-    color: #fff;
-    height: 115px;
-    padding: 30px 30px 0;
-  }
-
   .opinionstage-connect-form {
     display: inline-block;
-  }
-
-  .opinionstage-status-title {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 25px;
-    margin-bottom: 14px;
-    .opinionstage-title {
-      font-size: 20px;
-    }
-  }
-
-  .opinionstage-status-content .os-icon-plugin {
-    font-size: 19px;
-    margin-right: 7px;
   }
 
   .opinionstage-blue-btn {
@@ -265,7 +239,7 @@ p.failed-load-items-request {
 }
 
 .toplevel_page_opinionstage-getting-started {
-  background: #F5F7FA;
+  background: $blue_bg;
   #wpcontent {
     padding-left: 0;
   }
@@ -338,7 +312,7 @@ p.failed-load-items-request {
     }
     
     p {
-      color: #25282B;
+      color: $black;
       font-size: 18px;
       margin-bottom: 42px;
     }
@@ -361,7 +335,7 @@ p.failed-load-items-request {
   background: #fff;
 }
 .opinionstage-bg-blue {
-  background-color: #F5F7FA;
+  background-color: $blue_bg;
 }
 .opinionstage-getting-started-examples {
   margin-bottom: 80px;
@@ -393,7 +367,7 @@ p.failed-load-items-request {
     font-size: 15px;
     line-height: 30px;
     a {
-      color: #25282B;
+      color: $black;
     }
   }
 }
@@ -434,21 +408,6 @@ p.failed-load-items-request {
   }
 }
 
-/* Getting started */
-.gettingStartedSection {
-  background: #fff;
-  margin-right: 20px;
-  min-height: 500px;
-  overflow: hidden;
-  padding: 30px;
-
-  p {
-    font-size: 20px;
-    margin: 0;
-    margin-bottom: 20px;
-  }
-}
-
 h1.gettingStartedHeading {
   font-size: 30px;
   letter-spacing: 1px;
@@ -473,20 +432,6 @@ h1.gettingStartedHeading {
 }
 
 @media only screen and (max-width: 375px) {
-  .gettingStartedSection {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 20px !important;
-  }
-  #opinionstage-content .opinionstage-status-content {
-    height: 160px !important;
-  }
-  #opinionstage-content .opinionstage-status-content-connected {
-    height: 162px !important;
-  }
-  .gettingStartedSection p {
-    text-align: center;
-  }
   #opinionstage-content .opinionstage-blue-btn {
     margin-left: 30px;
     margin-top: 15px;
@@ -753,61 +698,6 @@ div#opinionstage-load-more {
   margin: 0;
 }
 
-.gettingStartedContainer {
-  background: url(../images/bitmap_top.png) no-repeat 0 0;
-  background-color: $blue;
-  background-position: right;
-  height: 170px;
-  width: 760px;
-}
-
-.opinionstage-resources-title {
-  padding: 40px 0;
-}
-
-.gettingBlockContainer {
-  width: 760px;
-}
-
-
-.gettingTemplateTutorial {
-  margin-right: 10px;
-}
-
-.gettingTemplateGallery,
-.gettingTemplateTutorial,
-a.help-center-os {
-  border: 2px solid $blue;
-  color: $blue;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 10px;
-  padding: 20px 0;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  float: left;
-
-  &:hover {
-    background-color: rgba(49, 174, 190, 0.1);
-    color: $blue;
-  }
-
-  &:focus {
-    background-color: rgba(49, 174, 190, 0.1);
-    box-shadow: none;
-    color: $blue;
-  }
-
-  @media (min-width: 769px) {
-    max-width: 370px;
-  }
-}
-
-a.help-center-os {
-  padding: 29px 0;
-}
-
 .opinionstage-item-view-dashboard #opinionstage-items-table {
   width: 100%;
   div.label {
@@ -917,7 +807,6 @@ a.help-center-os {
 }
 /* my items page - modal form --end */
 
-
 @media only screen and (max-width: 1230px) {
   #opinionstage-content {
     .opinionstage-dashboard-left,
@@ -945,8 +834,6 @@ a.help-center-os {
     }
     
   } // #opinionstage-content
-  
-  
   
   .opinionstage-create-btn {
     margin-bottom: 10px;
@@ -982,19 +869,103 @@ a.opinionstage-add-our-first-item {
   color: #3499c2;
 }
 
-@media only screen and (max-width: 768px) {
-  .gettingStartedSection {
-    width: auto;
-  }
 
-  .gettingStartedContainer, .gettingBlockContainer {
-    width: 100%;
-  }
+// Tutorials & Help --start
 
-  .gettingBlockContainer .gettingTemplateGallery,
-  .gettingBlockContainer .gettingTemplateTutorial {
-    display: block;
-    float: none;
-    width: 100%;
+$breakdown_help_page: 720px;
+#opinionstage-content {
+  .opinionstage-tutorials-and-help {
+    &__hero {
+      padding: 60px 0 100px 0;
+
+      @media(max-width: 720px) {
+        padding-bottom: 0;
+        background-color: #fff;
+      }
+
+      &__header {
+        font-size: 40px;
+        line-height: 54px;
+        color: $black;
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    &__buttons {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    &__button {
+      font-size: 14px;
+      font-weight: 300;
+      padding: 16px 30px 16px 50px;
+      border-radius: 0;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+
+      &:nth-child(2n) {
+        margin: 0 20px;
+      }
+      
+      @media(max-width: $breakdown_help_page) {
+        width: 100%;
+        margin: 10px 0 0 0 !important;
+        text-align: left;
+        padding-left: 60px;
+      }
+      
+      svg {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__container {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      @media(max-width: $breakdown_help_page) {
+        padding-right: 20px;
+      }
+    }
+
+    &__videos {
+      margin-top: 20px;
+    }
+    &__video {
+      text-align: center;
+      
+      &__title {
+        font-size: 26px;
+        line-height: 35px;
+        text-align: center;
+        margin-top: 80px;
+        font-weight: 400;
+        
+        &__link {
+          text-decoration-color: $black;
+        }
+
+        @media(max-width: $breakdown_help_page) {
+          margin-top: 40px;
+          margin-bottom: 30px;
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
   }
 }
+body.opinion-stage_page_opinionstage-help-resource {
+  background-color: #fff;
+  
+  .opinionstage-logo-wrapper {
+    max-width: none !important;
+  }
+}
+// Tutorials & Help --end

@@ -85,47 +85,47 @@ $links_columns_items = array(
 );
 
 $plugin_logos_path_url = plugin_dir_url( OPINIONSTAGE_PLUGIN_FILE ) . 'admin/images/logos/';
-$client_logos = array(
-    array(
-        'url' => $plugin_logos_path_url . 'nbc.png',
-        'alt' => __( 'NBC', 'social-polls-by-opinionstage' ),
-        'width' => 73.5
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'wb.png',
-        'alt' => __( 'WP', 'social-polls-by-opinionstage' ),
-        'width' => 28.5
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'uber.png',
-        'alt' => __( 'Uber', 'social-polls-by-opinionstage' ),
-        'width' => 54.5
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'ipg.png',
-        'alt' => __( 'IPG', 'social-polls-by-opinionstage' ),
-        'width' => 38.5
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'bbdo.png',
-        'alt' => __( 'BBDO', 'social-polls-by-opinionstage' ),
-        'width' => 57
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'harvard.png',
-        'alt' => __( 'Harvard Law School Wordmark', 'social-polls-by-opinionstage' ),
-        'width' => 103
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'virgin.png',
-        'alt' => __( 'Virgin Group', 'social-polls-by-opinionstage' ),
-        'width' => 49
-    ),
-    array(
-        'url' => $plugin_logos_path_url . 'pepsico.png',
-        'alt' => __( 'Pepsico', 'social-polls-by-opinionstage' ),
-        'width' => 129
-    ),
+$client_logos          = array(
+	array(
+		'url'   => $plugin_logos_path_url . 'nbc.png',
+		'alt'   => __( 'NBC', 'social-polls-by-opinionstage' ),
+		'width' => 73.5,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'wb.png',
+		'alt'   => __( 'WP', 'social-polls-by-opinionstage' ),
+		'width' => 28.5,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'uber.png',
+		'alt'   => __( 'Uber', 'social-polls-by-opinionstage' ),
+		'width' => 54.5,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'ipg.png',
+		'alt'   => __( 'IPG', 'social-polls-by-opinionstage' ),
+		'width' => 38.5,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'bbdo.png',
+		'alt'   => __( 'BBDO', 'social-polls-by-opinionstage' ),
+		'width' => 57,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'harvard.png',
+		'alt'   => __( 'Harvard Law School Wordmark', 'social-polls-by-opinionstage' ),
+		'width' => 103,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'virgin.png',
+		'alt'   => __( 'Virgin Group', 'social-polls-by-opinionstage' ),
+		'width' => 49,
+	),
+	array(
+		'url'   => $plugin_logos_path_url . 'pepsico.png',
+		'alt'   => __( 'Pepsico', 'social-polls-by-opinionstage' ),
+		'width' => 129,
+	),
 );
 
 
@@ -163,64 +163,62 @@ function opinionstage_generate_template_url( $path ) {
 				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.jpg', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinion Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
-        
-        <div class="opinionstage-getting-started-section">
-            <h2 class="opinionstage-trusted"><?php _e('Trusted by', 'social-polls-by-opinionstage') ?> <span class="optinoinstage-black">150,000+</span> <?php _e('Customers across 190 countries', 'social-polls-by-opinionstage') ?></h2>
-            
-            <ul class="opinionstage-clients">
-                <?php foreach ($client_logos as $client_logo) {
-                    ?>
-                    <li><img src="<?php echo esc_url($client_logo['url']) ?>" alt="<?php echo esc_attr($client_logo['url']) ?>" width="<?php echo esc_attr($client_logo['width']) ?>"></li>
-                    <?php
-                } ?>
-            </ul>
-        </div>
+
+		<div class="opinionstage-getting-started-section">
+			<h2 class="opinionstage-trusted"><?php esc_html_e( 'Trusted by', 'social-polls-by-opinionstage' ); ?> <span class="optinoinstage-black">150,000+</span> <?php esc_html_e( 'Customers across 190 countries', 'social-polls-by-opinionstage' ); ?></h2>
+			<ul class="opinionstage-clients">
+				<?php
+				foreach ( $client_logos as $client_logo ) {
+					?>
+					<li><img src="<?php echo esc_url( $client_logo['url'] ); ?>" alt="<?php echo esc_attr( $client_logo['url'] ); ?>" width="<?php echo esc_attr( $client_logo['width'] ); ?>"></li>
+					<?php
+				}
+				?>
+			</ul>
+		</div>
 	</div>
 
-    <div class="opinionstage-bg-white">
-        <div class="opinionstage-getting-started-section">
-            <div class="opinionstage-getting-started-examples">
-                <h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e('Check out these examples:', 'social-polls-by-opinionstage'); ?></h2>
-                <div class="opinionstage-getting-started-examples__items">
-                    <?php
-                    foreach ($links_columns_items as $col) {
-                        ?>
-                        <div class="opinionstage-getting-started-examples__item">
-                            <h3 class="opinionstage-getting-started-examples__item__title"><?php echo esc_html($col['title']); ?></h3>
-                            <ul class="opinionstage-getting-started-examples__list">
-                                <?php
-                                foreach ($col['items'] as $anchor) {
-                                    ?>
-                                    <li>
-                                        <a href="<?php echo esc_url(opinionstage_generate_template_url($anchor['path'])); ?>"
-                                           target="_blank"><?php echo esc_html($anchor['title']); ?></a>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="opinionstage-bg-blue">
-        <div class="opinionstage-getting-started-section opinionstage-getting-started-video">
-            <h2 class="opinionstage-getting-started-examples__title"><?php _e('How to use the Plugin', 'social-polls-by-opinionstage'); ?></h2>
-            
-            <p class="opinionstage-getting-started-video__description"><?php _e('Follow these steps to create a poll, survey or quiz and add it to your site in minutes', 'social-polls-by-opinionstage'); ?></p>
+	<div class="opinionstage-bg-white">
+		<div class="opinionstage-getting-started-section">
+			<div class="opinionstage-getting-started-examples">
+				<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'Check out these examples:', 'social-polls-by-opinionstage' ); ?></h2>
+				<div class="opinionstage-getting-started-examples__items">
+					<?php
+					foreach ( $links_columns_items as $col ) {
+						?>
+						<div class="opinionstage-getting-started-examples__item">
+							<h3 class="opinionstage-getting-started-examples__item__title"><?php echo esc_html( $col['title'] ); ?></h3>
+							<ul class="opinionstage-getting-started-examples__list">
+								<?php
+								foreach ( $col['items'] as $anchor ) {
+									?>
+									<li>
+										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" target="_blank"><?php echo esc_html( $anchor['title'] ); ?></a>
+									</li>
+									<?php
+								}
+								?>
+							</ul>
+						</div>
+						<?php
+					}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="opinionstage-bg-blue">
+		<div class="opinionstage-getting-started-section opinionstage-getting-started-video">
+			<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'How to use the Plugin', 'social-polls-by-opinionstage' ); ?></h2>
 
-            <iframe width="600" height="337" src="https://www.youtube.com/embed/DMcosYCBFDs?controls=0&showinfo=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+			<p class="opinionstage-getting-started-video__description"><?php esc_html_e( 'Follow these steps to create a poll, survey or quiz and add it to your site in minutes', 'social-polls-by-opinionstage' ); ?></p>
 
-            
-        </div>
-    </div>
-    
+			<iframe width="600" height="337" 
+					src="https://www.youtube.com/embed/DMcosYCBFDs?controls=0&showinfo=0"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+
+		</div>
+	</div>
 </div>
