@@ -6,7 +6,7 @@ import save from './save'
 import { attributes, category, supports } from './configuration'
 
 registerBlockType('opinion-stage/block-os-poll', {
-  title: 'Opinionstage Poll',
+  title: '[Opinion Stage] Poll',
   icon: 'chart-bar',
   description: __('Embed an Opinion Stage Poll', 'social-polls-by-opinionstage'),
   category,
@@ -23,7 +23,7 @@ registerBlockType('opinion-stage/block-os-poll', {
 })
 
 registerBlockType('opinion-stage/block-os-survey', {
-  title: 'Opinionstage Survey',
+  title: '[Opinion Stage] Survey',
   icon: 'list-view',
   description: __('Embed an Opinion Stage Survey', 'social-polls-by-opinionstage'),
   category,
@@ -39,7 +39,7 @@ registerBlockType('opinion-stage/block-os-survey', {
 })
 
 registerBlockType('opinion-stage/block-os-trivia', {
-  title: 'Opinionstage Trivia Quiz',
+  title: '[Opinion Stage] Trivia Quiz',
   icon: 'yes',
   description: __('Embed an Opinion Stage Trivia Quiz', 'social-polls-by-opinionstage'),
   category,
@@ -56,7 +56,7 @@ registerBlockType('opinion-stage/block-os-trivia', {
 })
 
 registerBlockType('opinion-stage/block-os-personality', {
-  title: 'Opinionstage Personality Quiz',
+  title: '[Opinion Stage] Personality Quiz',
   icon: 'smiley',
   description: __('Embed an Opinion Stage Personality Quiz', 'social-polls-by-opinionstage'),
   category,
@@ -74,7 +74,7 @@ registerBlockType('opinion-stage/block-os-personality', {
 })
 
 registerBlockType('opinion-stage/block-os-form', {
-  title: 'Opinionstage Standard Form',
+  title: '[Opinion Stage] Standard Form',
   icon: 'editor-justify',
   description: __('Embed an Opinion Stage Form', 'social-polls-by-opinionstage'),
   category,
