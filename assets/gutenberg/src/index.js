@@ -1,9 +1,9 @@
-import { registerBlockType } from '@wordpress/blocks'
-import { __ } from '@wordpress/i18n'
+import {registerBlockType} from '@wordpress/blocks'
+import {__} from '@wordpress/i18n'
 
 import Edit from './edit'
 import save from './save'
-import { attributes, category, supports } from './configuration'
+import {attributes, category, supports} from './configuration'
 
 registerBlockType('opinion-stage/block-os-poll', {
   title: '[Opinion Stage] Poll',

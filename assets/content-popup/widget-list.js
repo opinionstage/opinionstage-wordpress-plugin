@@ -3,20 +3,21 @@ import {
   WIDGET_ALL,
 } from './app/widget-types.js'
 
-if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) {
+if (window.OpinionStage && typeof (OpinionStage.contentPopup) !== 'undefined') {
   console.warn('[OpinionStage] content-popup APIs was already included')
 }
 
 ;(function (OS, $) {
   class WidgetList {
-    constructor () {
+    constructor() {
       // vuejs vm instance
       this.app = undefined
     }
 
     show(onWidgetSelect) {
-      if ( typeof(onWidgetSelect) !== 'function' ) {
-        onWidgetSelect = function(){}
+      if (typeof (onWidgetSelect) !== 'function') {
+        onWidgetSelect = function () {
+        }
       }
 
       const content = $('[data-opinionstage-content-popup-template]').html()
@@ -25,7 +26,7 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
       if (!this.app) {
         this.app = new ContentPopupContent()
       }
-      
+
 
       this.app.widgetType = WIDGET_ALL
       this.app.isModalOpened = true

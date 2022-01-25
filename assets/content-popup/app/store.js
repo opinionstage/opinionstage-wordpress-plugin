@@ -8,8 +8,8 @@ import JsonApi from '../lib/jsonapi.js'
 
 Vue.use(Vuex)
 
-function dispatchWidgetData (apiJsonData) {
-  return apiJsonData.data.map( (rawWidget) => {
+function dispatchWidgetData(apiJsonData) {
+  return apiJsonData.data.map((rawWidget) => {
     const item = {
       id: rawWidget.id,
       type: rawWidget.attributes['type'],
@@ -41,33 +41,33 @@ function dispatchWidgetData (apiJsonData) {
   })
 }
 
-function dispatchNextPage (apiJsonData) {
+function dispatchNextPage(apiJsonData) {
   return apiJsonData.meta.nextPage
 }
 
-function withFiltering(url, { type, title, page, perPage }) {
+function withFiltering(url, {type, title, page, perPage}) {
   const urlParams = []
 
-  if ( type ) {
-    urlParams.push( `type=${type}` )
+  if (type) {
+    urlParams.push(`type=${type}`)
   }
 
-  if ( !isEmpty(title) ) {
+  if (!isEmpty(title)) {
     const trimmed = trim(title)
-    if ( !isEmpty(trimmed) ) {
-      urlParams.push( `title_like=${trimmed}` )
+    if (!isEmpty(trimmed)) {
+      urlParams.push(`title_like=${trimmed}`)
     }
   }
 
-  if ( page ) {
-    urlParams.push( `page=${page}` )
+  if (page) {
+    urlParams.push(`page=${page}`)
   }
 
-  if ( perPage ) {
-    urlParams.push( `per_page=${perPage}` )
+  if (perPage) {
+    urlParams.push(`per_page=${perPage}`)
   }
 
-  if ( isEmpty(urlParams) ) {
+  if (isEmpty(urlParams)) {
     return url
   } else {
     return url + '?' + join(urlParams, '&')
@@ -81,19 +81,19 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    loadWidgets (state, {widgetsData}) {
-      state.widgets.push( dispatchWidgetData(widgetsData) )
+    loadWidgets(state, {widgetsData}) {
+      state.widgets.push(dispatchWidgetData(widgetsData))
       state.nextPageNumber = dispatchNextPage(widgetsData)
     },
 
-    clearWidgets (state) {
+    clearWidgets(state) {
       state.widgets = []
       state.nextPageNumber = null
     },
   },
 
   actions: {
-    loadClientWidgets ({ dispatch }, { widgetsUrl, pluginVersion, accessToken, filtering }) {
+    loadClientWidgets({dispatch}, {widgetsUrl, pluginVersion, accessToken, filtering}) {
       return dispatch('load', {
         commitType: 'loadWidgets',
         widgetsUrl,
@@ -103,18 +103,18 @@ export default new Vuex.Store({
       })
     },
 
-    load ({ commit }, { commitType, widgetsUrl, filtering, pluginVersion, accessToken }) {
+    load({commit}, {commitType, widgetsUrl, filtering, pluginVersion, accessToken}) {
       const url = withFiltering(widgetsUrl, filtering)
 
       return JsonApi.get(url, pluginVersion, accessToken)
-        .then( (apiJson) => {
+        .then((apiJson) => {
           commit({
             type: commitType,
             widgetsData: apiJson,
           })
         })
-        .catch( (error) => {
-          console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
+        .catch((error) => {
+          console.error("[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText)
         })
     },
   },

@@ -39,7 +39,7 @@ export default Vue.component('widget-list', {
     'showSearch',
   ],
 
-  data () {
+  data() {
     return {
       selectedWidgetType: null,
       widgetTitleSearch: '',
@@ -50,7 +50,7 @@ export default Vue.component('widget-list', {
   },
 
   computed: {
-    selectedWidgetTitle () {
+    selectedWidgetTitle() {
       return selectedWidgetTitles[this.selectedWidgetType || this.preSelectedWidgetType]
     },
   },
@@ -60,34 +60,34 @@ export default Vue.component('widget-list', {
       widgetsSearchUpdate.call(this)
     }, 500),
 
-    widgets () {
+    widgets() {
       this.hasData = this.dataLoading || this.widgets.length > 0
     },
   },
 
   methods: {
-    select (widget) {
-      if( widget.isDraft ) {
+    select(widget) {
+      if (widget.isDraft) {
         this.selectedDraftWidget = widget
       } else {
         this.$emit('widget-selected', widget)
       }
     },
 
-    selectWidgetType (type) {
+    selectWidgetType(type) {
       this.selectedWidgetType = type
       this.widgetTitleSearch = ''
 
       widgetsSearchUpdate.call(this)
     },
 
-    showMore () {
+    showMore() {
       this.$emit('load-more-widgets')
     },
   },
 })
 
-function widgetsSearchUpdate () {
+function widgetsSearchUpdate() {
   this.$emit('widgets-search-update', {
     widgetType: this.selectedWidgetType,
     widgetTitle: this.widgetTitleSearch

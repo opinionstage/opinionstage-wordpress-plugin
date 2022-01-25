@@ -1,6 +1,6 @@
 var path = require('path')
 
-module.exports = function(env={}) {
+module.exports = function (env = {}) {
   return {
     entry: ['./index.js', './widget-list.js'],
 
@@ -20,17 +20,20 @@ module.exports = function(env={}) {
           test: /\.scss$/,
           use: [
             'style-loader',
-            { loader: 'css-loader',
+            {
+              loader: 'css-loader',
               options: {
                 sourceMap: !env.production
               }
             },
-            { loader: 'sass-loader',
+            {
+              loader: 'sass-loader',
               options: {
                 sourceMap: !env.production
               }
             },
-            { loader: 'postcss-loader',
+            {
+              loader: 'postcss-loader',
               options: {
                 sourceMap: !env.production
               }

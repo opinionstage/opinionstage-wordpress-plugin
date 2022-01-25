@@ -34,7 +34,7 @@ export default Vue.component('popup-content', {
     'pluginVersion',
   ],
 
-  data () {
+  data() {
     return {
       dataLoading: false,
       widgets: [],
@@ -50,19 +50,21 @@ export default Vue.component('popup-content', {
   store,
 
   methods: {
-    reloadData (search) {
-      if ( !search ) { search = {} }
+    reloadData(search) {
+      if (!search) {
+        search = {}
+      }
       const widgetType = search.widgetType || this.widgetType || this.searchCriteria.type || WIDGET_ALL
       const widgetTitle = search.widgetTitle || ''
 
       this.newWidgetsAvailable = false
       stopWidgetUpdatesChecking.call(this)
-      this.searchCriteria = { page: 1, perPage: 9, type: widgetType, title: widgetTitle }
+      this.searchCriteria = {page: 1, perPage: 9, type: widgetType, title: widgetTitle}
       this.$store.commit('clearWidgets')
 
-      loadData.call(this).then( () => {
+      loadData.call(this).then(() => {
         this.widgets = this.$store.state.widgets[0]
-        if ( !this.searchCriteria.title ) {
+        if (!this.searchCriteria.title) {
           setLastUpdateTimeFromWidget.call(this)
         }
 
@@ -70,27 +72,27 @@ export default Vue.component('popup-content', {
       })
     },
 
-    reloadAndRestartCheckingForUpdates () {
-      this.reloadData({ widgetType: this.searchCriteria.type, widgetTitle: '' })
+    reloadAndRestartCheckingForUpdates() {
+      this.reloadData({widgetType: this.searchCriteria.type, widgetTitle: ''})
     },
 
-    appendData () {
+    appendData() {
       this.searchCriteria.page += 1
 
-      loadData.call(this).then( () => {
-        const newWidgets = this.$store.state.widgets[this.searchCriteria.page-1]
-        this.widgets = this.widgets.concat( newWidgets )
+      loadData.call(this).then(() => {
+        const newWidgets = this.$store.state.widgets[this.searchCriteria.page - 1]
+        this.widgets = this.widgets.concat(newWidgets)
       })
     },
 
-    widgetSelected (widget) {
+    widgetSelected(widget) {
       this.$emit('widget-selected', widget)
     },
   },
 
   watch: {
-    modalIsOpened (isOpened) {
-      if ( isOpened && this.clientIsLoggedIn ) {
+    modalIsOpened(isOpened) {
+      if (isOpened && this.clientIsLoggedIn) {
         this.reloadData()
       } else {
         this.newWidgetsAvailable = false
@@ -100,22 +102,22 @@ export default Vue.component('popup-content', {
   },
 })
 
-function loadData () {
+function loadData() {
   this.dataLoading = true
 
-  return loadClientWidgets.call(this, this.searchCriteria).then( () => {
+  return loadClientWidgets.call(this, this.searchCriteria).then(() => {
     this.noMoreData = !hasNextPage(this.$store.state.nextPageNumber)
     this.dataLoading = false
   })
 }
 
-function loadClientWidgets (filtering) {
-  if ( this.clientIsLoggedIn ) {
+function loadClientWidgets(filtering) {
+  if (this.clientIsLoggedIn) {
     return this.$store.dispatch({
       type: 'loadClientWidgets',
-      widgetsUrl:    this.clientWidgetsUrl,
+      widgetsUrl: this.clientWidgetsUrl,
       pluginVersion: this.pluginVersion,
-      accessToken:   this.accessKey,
+      accessToken: this.accessKey,
       filtering,
     })
   } else {
@@ -125,30 +127,30 @@ function loadClientWidgets (filtering) {
 
 function withParams(url, type, time) {
   const urlParams = []
-  if ( type ) {
-    urlParams.push( `type=${type}` )
+  if (type) {
+    urlParams.push(`type=${type}`)
   }
 
-  if ( time ) {
-    urlParams.push( `updated_at=${time}` )
+  if (time) {
+    urlParams.push(`updated_at=${time}`)
   }
 
-  if ( isEmpty(urlParams) ) {
+  if (isEmpty(urlParams)) {
     return url
   } else {
     return url + '?' + join(urlParams, '&')
   }
 }
 
-function pullWidgetsUpdateInformation(type, updatedAt){
+function pullWidgetsUpdateInformation(type, updatedAt) {
   const url = withParams(this.clientWidgetsHasNewUrl, type, updatedAt)
 
   return JsonApi.get(url, this.pluginVersion, this.accessKey)
-    .then( (payload) => {
+    .then((payload) => {
       this.newWidgetsAvailable = payload.data['has-new-widgets']
     })
-    .catch( (error) => {
-      console.error( "[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText )
+    .catch((error) => {
+      console.error("[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText)
     })
 }
 
@@ -156,18 +158,18 @@ function hasNextPage(nextPageNumber) {
   return nextPageNumber > 1
 }
 
-function checkWidgetUpdates () {
-  pullWidgetsUpdateInformation.call(this, this.searchCriteria.type, this.lastUpdateTime).then( () => {
-    if ( this.newWidgetsAvailable ) {
+function checkWidgetUpdates() {
+  pullWidgetsUpdateInformation.call(this, this.searchCriteria.type, this.lastUpdateTime).then(() => {
+    if (this.newWidgetsAvailable) {
       stopWidgetUpdatesChecking.call(this)
     }
   })
 }
 
 function startWidgetUpdatesChecking() {
-  if ( this.clientIsLoggedIn ) {
+  if (this.clientIsLoggedIn) {
     this.isCheckingWidgetUpdates = true
-    this.widgetUpdatesChecker = setInterval( checkWidgetUpdates.bind(this), 3000 )
+    this.widgetUpdatesChecker = setInterval(checkWidgetUpdates.bind(this), 3000)
   }
 }
 

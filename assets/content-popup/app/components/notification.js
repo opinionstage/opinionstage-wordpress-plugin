@@ -4,7 +4,7 @@ export default Vue.component('notification', {
   template: '#opinionstage-notification',
 
   methods: {
-    initiateUpdate () {
+    initiateUpdate() {
       this.$emit('update-btn-click')
     },
   }

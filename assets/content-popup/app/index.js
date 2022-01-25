@@ -23,24 +23,26 @@ export default function (modal) {
 
     data: {
       widgetType: WIDGET_ALL,
-      widgetSelectCb: function (widget) { console.log('dumb widget insert callback, widget:', widget) },
+      widgetSelectCb: function (widget) {
+        console.log('dumb widget insert callback, widget:', widget)
+      },
       isClientLoggedIn: null,
       isModalOpened: false,
       isMyItemsPage: false,
     },
 
-    beforeMount () {
+    beforeMount() {
       this.isClientLoggedIn = this.$el.dataset.opinionstageClientLoggedIn === '1'
     },
 
     methods: {
-      closePopup (/*event*/) {
-        if( modal ) {
+      closePopup(/*event*/) {
+        if (modal) {
           modal.close()
         }
       },
 
-      selectWidgetAndExit (widget) {
+      selectWidgetAndExit(widget) {
         this.widgetSelectCb(widget)
 
         this.closePopup()

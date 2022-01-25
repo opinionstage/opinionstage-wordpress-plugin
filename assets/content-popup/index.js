@@ -13,7 +13,7 @@ import {
   WIDGET_STORY,
 } from './app/widget-types.js'
 
-if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) {
+if (window.OpinionStage && typeof (OpinionStage.contentPopup) !== 'undefined') {
   console.warn('[OpinionStage] content-popup APIs was already included')
 }
 
@@ -28,7 +28,7 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
  */
 ;(function (OS, $) {
   class ContentPopup {
-    constructor () {
+    constructor() {
       // vuejs vm instance
       this.app = undefined
 
@@ -36,13 +36,15 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
       this.modal = undefined
     }
 
-    open ({ preselectWidgetType, onWidgetSelect }) {
-      if ( typeof(onWidgetSelect) !== 'function' ) {
+    open({preselectWidgetType, onWidgetSelect}) {
+      if (typeof (onWidgetSelect) !== 'function') {
         throw new Error('onWidgetSelect must be a function')
       }
 
       $(() => {
-        if ( !this.app ) { createModal.call(this) }
+        if (!this.app) {
+          createModal.call(this)
+        }
 
         this.app.widgetType = preselectWidgetType || WIDGET_ALL
         this.app.widgetSelectCb = onWidgetSelect
@@ -51,21 +53,21 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
     }
   }
 
-  function createModal () {
+  function createModal() {
     const self = this
 
     self.modal = new Modal({
       content: $('[data-opinionstage-content-popup-template]').html(),
 
-      onCreate (modal) {
+      onCreate(modal) {
         self.app = new ContentPopupContent(modal)
       },
 
-      onClose (modal) {
+      onClose(modal) {
         self.app.isModalOpened = false
       },
 
-      onOpen (modal) {
+      onOpen(modal) {
         self.app.isModalOpened = true
       },
     })
@@ -73,14 +75,15 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
 
 
   class WidgetList {
-    constructor () {
+    constructor() {
       // vuejs vm instance
       this.app = undefined
     }
 
     show(onWidgetSelect) {
-      if ( typeof(onWidgetSelect) !== 'function' ) {
-        onWidgetSelect = function(){}
+      if (typeof (onWidgetSelect) !== 'function') {
+        onWidgetSelect = function () {
+        }
       }
 
       const content = $('[data-opinionstage-content-popup-template]').html()
@@ -113,8 +116,8 @@ if ( window.OpinionStage && typeof(OpinionStage.contentPopup) !== 'undefined' ) 
 })(window.OpinionStage = window.OpinionStage || {}, jQuery)
 
 // this is part is specific only to classic WordPress editor
-jQuery(function($) {
-  if ( window.location.href.indexOf('modal_is_open') > -1 ) {
+jQuery(function ($) {
+  if (window.location.href.indexOf('modal_is_open') > -1) {
     OpinionStage.contentPopup.open({
       onWidgetSelect
     })
@@ -125,9 +128,10 @@ jQuery(function($) {
   $('body').on('click', '[data-opinionstage-content-launch]', function (e) {
     e.preventDefault()
 
-    function onWidgetSelect (widget) {
+    function onWidgetSelect(widget) {
       wp.media.editor.insert(widget.shortcode)
     }
+
     OpinionStage.contentPopup.open({
       onWidgetSelect
     })
