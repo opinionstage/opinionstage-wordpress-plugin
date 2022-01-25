@@ -19,21 +19,20 @@ $black: #25282B;
 
   .opinionstage-header-wrapper {
     background: #232121;
-    margin-right: 20px;
     overflow: hidden;
     position: relative;
   }
 
   .opinionstage-logo-wrapper {
-    padding: 10px 30px; 
+    padding: 15.5px 30px; 
     max-width: 780px;
   }
 
   .opinionstage-logo {
     background: url("../images/os-logo-header.png") no-repeat 0 0;
-    background-size: contain;
+    background-size: 100%;
     display: inline-block;
-    height: 30px;
+    height: 26.7px;
     width: 150px;
     &__dark {
       background: url("../images/logo-dark-font.svg") no-repeat 0 0;
@@ -248,7 +247,8 @@ p.failed-load-items-request {
   padding: 25px;
   max-width: 950px;
   color: #6E6E6E;
-  margin-left: 170px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 1024px) {
     margin-left: 30px;
@@ -965,7 +965,11 @@ body.opinion-stage_page_opinionstage-help-resource {
   background-color: #fff;
   
   .opinionstage-logo-wrapper {
-    max-width: none !important;
+    max-width: 1000px !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }
 // Tutorials & Help --end

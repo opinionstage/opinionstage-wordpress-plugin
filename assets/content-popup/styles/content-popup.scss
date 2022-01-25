@@ -43,8 +43,9 @@ $inputs-border-color: #ccc;
       margin: auto;
       padding: 0 15px;
       &.mw-1000 {
-        margin-left: 0;
+        margin-left: auto;
         max-width: 1000px;
+        padding: 0;
       }
     }
     
@@ -749,6 +750,7 @@ $inputs-border-color: #ccc;
   .opinionstage-section-notification,
   .page-content {
     width: 1000px;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
