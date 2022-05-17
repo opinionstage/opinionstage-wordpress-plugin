@@ -3,7 +3,7 @@ Contributors: opinionstage, yoffegil, kucaahbe
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 5.8.1
+Tested up to: 5.9.3
 Stable tag: 19.8.12
 Requires PHP: 7.0
 
@@ -134,16 +134,16 @@ Opinion Stage makes it easy for you to comply with the GDPR regulation. For more
 
 == Screenshots ==
 
-1. **Poll image layout** - example of integrating images in the poll answers.
-2. **Poll standard layout** - example of a poll standard layout
-3. **Poll head to head layout** - example of a head-to-head layout poll
-4. **Trivia quiz** - example of trivia quiz results
-5. **Personality quiz** - example of a personality quiz.
-6. **Content creation dashboard** - example of the Opinion Stage interactive content (e.g. poll, quiz, survey) creation dashboard
-7. **Lead form** - example of gathering quality leads while users participate in the polls, quizzes & surveys
-8. **Report** - example of a poll report screen that includes advanced analysis of results
-9. **Templates** - screenshot of the templates dashboard that includes hundreds of optimized templates you can freely use
-10. **Popup placement** - display your poll, quiz or survey in an exit/enter, center/side screen popup
+1. Poll example
+2. Survey example
+3. Trivia quiz example
+4. Personality quiz example
+5. Gather leads with polls and quizzes example
+6. Quiz layouts
+7. Templates example
+8. Quiz analytics example
+9. Poll for boosting engagement example
+10. Quiz cover example
 
 == Upgrade Notice ==
 
