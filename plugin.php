@@ -14,7 +14,7 @@
  * Text Domain: social-polls-by-opinionstage
  */
 
-defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
+defined( 'ABSPATH' ) || die();
 
 define( 'OPINIONSTAGE_PLUGIN_FILE', __FILE__ );
 define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( OPINIONSTAGE_PLUGIN_FILE ) );

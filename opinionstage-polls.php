@@ -9,8 +9,7 @@ Author URI: https://www.opinionstage.com
 Text Domain: social-polls-by-opinionstage
 */
 
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 // Check if active plugin file is plugin.php on plugin activate hook
 function opinionstage_plugin_activate() {

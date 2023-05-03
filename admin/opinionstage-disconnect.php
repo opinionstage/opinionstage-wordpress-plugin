@@ -1,6 +1,5 @@
 <?php
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
 

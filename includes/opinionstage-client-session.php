@@ -5,7 +5,7 @@
  * @package   OpinionStageWordPressPlugin
  */
 
-defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
+defined( 'ABSPATH' ) || die();
 
 /**
  * Function, which answers to question "is user logged in?".

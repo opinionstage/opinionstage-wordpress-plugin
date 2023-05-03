@@ -1,6 +1,5 @@
 <?php
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 require( plugin_dir_path( __FILE__ ).'shortcodes.php' );
 

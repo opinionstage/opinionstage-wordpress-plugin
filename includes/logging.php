@@ -5,7 +5,7 @@
  * @package   OpinionStageWordPressPlugin
  */
 
-defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
+defined( 'ABSPATH' ) || die();
 
 /**
  * Logging function, should be used with care, users dislike debug/error messages

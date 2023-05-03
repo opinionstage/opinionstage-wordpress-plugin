@@ -1,6 +1,5 @@
 <?php
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 function opinionstage_settings_load_resources(){
 	// load assets here

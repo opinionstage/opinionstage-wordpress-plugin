@@ -1,6 +1,5 @@
 <?php
-// block direct access to plugin PHP files:
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 ?>
 
 <button data-opinionstage-content-launch class="button" type="button">

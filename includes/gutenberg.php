@@ -5,7 +5,7 @@
  * @package   OpinionStageWordPressPlugin
  */
 
-defined( 'ABSPATH' ) || die(); // block direct access to plugin PHP files.
+defined( 'ABSPATH' ) || die();
 
 if ( ! function_exists( 'register_block_type' ) ) {
 	return;
