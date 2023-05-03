@@ -13,9 +13,7 @@ import {
 
 export default function Edit({name, className, attributes, setAttributes, /*isSelected,*/ clientId}) {
   let {
-    widgetType,
     embedUrl,
-    lockEmbed,
     buttonText,
     insertItemImage,
     insertItemOsTitle,
@@ -24,7 +22,7 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
     insertItemOsStatistics,
   } = attributes
 
-  if (OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn === 'false') {
+  if ( ! OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn ) {
     return (
       <div className={className}>
         <div className="os-widget-wrapper components-placeholder">
@@ -100,33 +98,35 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
     </div>
   )
 
-  if (embedUrl && embedUrl !== '') {
-    if (buttonText === 'Change') {
-      contentViewEditStatOs = (
-        <div className="os-widget-wrapper components-placeholder">
-          <p className="components-heading">
-            <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/>
-          </p>
-          <div className="components-preview__block">
-            <div className="components-preview__leftBlockImage">
-              <img src={insertItemImage} alt={insertItemOsTitle} className="image"/>
-              <div className="overlay">
-                <div className="text">
-                  <a href={insertItemOsView} target="_blank">View</a>
-                  <a href={insertItemOsEdit} target="_blank">Edit</a>
-                  <a href={insertItemOsStatistics} target="_blank">Statistics</a>
-                  <input type="button" value={buttonText}
-                         className="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
-                </div>
+  if (
+    embedUrl 
+    && embedUrl !== ''
+    && buttonText === 'Change'
+  ) {
+    contentViewEditStatOs = (
+      <div className="os-widget-wrapper components-placeholder">
+        <p className="components-heading">
+          <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/>
+        </p>
+        <div className="components-preview__block">
+          <div className="components-preview__leftBlockImage">
+            <img src={insertItemImage} alt={insertItemOsTitle} className="image"/>
+            <div className="overlay">
+              <div className="text">
+                <a href={insertItemOsView} target="_blank">View</a>
+                <a href={insertItemOsEdit} target="_blank">Edit</a>
+                <a href={insertItemOsStatistics} target="_blank">Statistics</a>
+                <input type="button" value={buttonText}
+                       className="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
               </div>
             </div>
-            <div className="components-preview__rightBlockContent">
-              <div className="components-placeholder__label">{currentWidgetTitle}: {insertItemOsTitle}</div>
-            </div>
+          </div>
+          <div className="components-preview__rightBlockContent">
+            <div className="components-placeholder__label">{currentWidgetTitle}: {insertItemOsTitle}</div>
           </div>
         </div>
-      )
-    }
+      </div>
+    )
   } else {
     setAttributes({buttonText: 'Embed'})
   }
