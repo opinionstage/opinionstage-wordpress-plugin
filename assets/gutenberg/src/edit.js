@@ -27,13 +27,13 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
       <div className={className}>
         <div className="os-widget-wrapper components-placeholder">
           <p className="components-heading">
-            <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/>
+            <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt="Opinionstage Logg"/>
           </p>
           <p className="components-heading">Please connect WordPress to Opinion Stage to start adding polls, quizzes,
             surveys & forms
           </p>
           <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl}
-             className="components-button is-button is-default is-block is-primary">Connect
+             className="opinionstage-button opinionstage-button__blue">Connect
           </a>
         </div>
       </div>
@@ -73,7 +73,8 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
     }
   }
 
-  const selectWidget = _event => {
+  const selectWidget = e => {
+    e.preventDefault()
     OpinionStage.contentPopup.open({
       preselectWidgetType: contentPopupWidgetType(currentWidgetType),
       onWidgetSelect: placeWidget
@@ -86,38 +87,35 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
   let contentViewEditStatOs = (
     <div className="os-widget-wrapper components-placeholder">
       <p className="components-heading">
-        <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/>
+        <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt="Opinionstage Logg"/>
       </p>
-      <button className="components-button is-button is-default is-block is-primary" onClick={selectWidget}>Select
-        a {currentWidgetTitle}</button>
+      <a className="opinionstage-button opinionstage-button__blue" href='#' onClick={selectWidget}>Select
+        Item</a>
       <a href={createNewWidgetUrl} target="_blank"
-         className="components-button is-button is-default is-block is-primary">Create a {currentWidgetTitle}</a>
+         className="opinionstage-button opinionstage-button__blue">Create a {currentWidgetTitle}</a>
       <a href={viewTemplateUrl} target="_blank"
-         className="components-button is-button is-default is-block is-primary is-bordered">View Templates
-      </a>
+         className="opinionstage-button opinionstage-button__gret">View Templates </a>
     </div>
   )
-
   if (
     embedUrl 
     && embedUrl !== ''
-    && buttonText === 'Change'
+    && buttonText === 'Change' 
   ) {
     contentViewEditStatOs = (
       <div className="os-widget-wrapper components-placeholder">
         <p className="components-heading">
-          <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt=""/>
-        </p>
+          <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt="Opinionstage Logg"/>
+        </p> 
         <div className="components-preview__block">
           <div className="components-preview__leftBlockImage">
             <img src={insertItemImage} alt={insertItemOsTitle} className="image"/>
             <div className="overlay">
               <div className="text">
-                <a href={insertItemOsView} target="_blank">View</a>
-                <a href={insertItemOsEdit} target="_blank">Edit</a>
-                <a href={insertItemOsStatistics} target="_blank">Statistics</a>
-                <input type="button" value={buttonText}
-                       className="components-button is-button is-default is-large left-align" onClick={selectWidget}/>
+                <a href={insertItemOsView} className='opinionstage-button opinionstage-button__blue' target="_blank">View</a>
+                <a href={insertItemOsEdit} className='opinionstage-button opinionstage-button__blue' target="_blank">Edit</a>
+                <a href={insertItemOsStatistics} className='opinionstage-button opinionstage-button__blue' target="_blank">Statistics</a>
+                <a href='#' className='opinionstage-button opinionstage-button__blue' onClick={selectWidget}>{buttonText}</a>
               </div>
             </div>
           </div>

@@ -32,37 +32,6 @@ function opinionstage_utm_url( $path, $query = array() ) {
 }
 
 /**
- * Utility function to create a link with the correct host and all the required information.
- *
- * @param string $caption anchors caption.
- * @param string $path path.
- * @param string $css_class class.
- * @param array  $query list of parameters.
- * @return string
- */
-function opinionstage_link( $caption, $path, $css_class = '', $query = array() ) {
-	$link = opinionstage_utm_url( $path, $query );
-
-	return "<a href='{$link}' target='_blank' class='{$css_class}'>{$caption}</a>";
-}
-
-/**
- * Returns Help links anchors
- *
- * @param string $caption anchors caption.
- * @param string $path path.
- * @param string $css_class class.
- * @param string $style inline styles.
- * @param array  $query_data list of parameters.
- * @return string
- */
-function opinionstage_help_links( $caption, $path, $css_class = '', $style = '', $query_data = array() ) {
-	$link = $path . '?' . opinionstage_utm_query( $query_data );
-
-	return "<a href='{$link}' target='_blank' class='{$css_class}' style='{$style}'>{$caption}</a>";
-}
-
-/**
  * Registers JS on admin pages
  *
  * @param string $name asset name.
@@ -137,28 +106,6 @@ function opinionstage_asset_path() {
 }
 
 /**
- * Generates a link for editing the flyout placement on Opinion Stage site
- *
- * @param string $tab tab.
- * @return string
- */
-function opinionstage_flyout_edit_url( $tab ) {
-	$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-	return OPINIONSTAGE_SERVER_BASE . '/containers/' . $os_options['fly_id'] . '/edit?selected_tab=' . $tab;
-}
-
-/**
- * Generates a link for editing the sidebar placement on Opinion Stage site
- *
- * @param string $tab tab.
- * @return string
- */
-function opinionstage_sidebar_placement_edit_url( $tab ) {
-	$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-	return OPINIONSTAGE_SERVER_BASE . '/containers/' . $os_options['sidebar_placement_id'] . '/edit?selected_tab=' . $tab;
-}
-
-/**
  * Returns create widget url
  *
  * @param string $w_type widget type.
@@ -169,61 +116,6 @@ function opinionstage_sidebar_placement_edit_url( $tab ) {
 function opinionstage_create_widget_link( $w_type, $css_class, $title = 'CREATE NEW' ) {
 	$url = add_query_arg( 'w_type', $w_type, OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM );
 	return sprintf( "<a href='%s' target='_blank' class='%s'>%s</a>", $url, $css_class, $title );
-}
-
-/**
- * Returns create poll anchor
- *
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_poll_link( $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_create_widget_link( 'poll', $css_class, $title );
-}
-
-/**
- * Returns create personality quiz anchor
- *
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_personality_link( $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_create_widget_link( 'outcome', $css_class, $title );
-}
-
-/**
- * Returns create trivia anchor
- *
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_trivia_link( $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_create_widget_link( 'quiz', $css_class, $title );
-}
-
-/**
- * Returns create survey anchor
- *
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_survey_link( $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_create_widget_link( 'survey', $css_class, $title );
-}
-
-/**
- * Returns create standard form anchor
- *
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_form_link( $css_class, $title = 'CREATE NEW' ) {
-	return opinionstage_create_widget_link( 'contact_form', $css_class, $title );
 }
 
 /**

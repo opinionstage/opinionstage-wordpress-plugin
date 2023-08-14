@@ -12,13 +12,8 @@ defined( 'ABSPATH' ) || die();
  */
 function opinionstage_common_load_resources() {
 	$current_screen = get_current_screen();
-	if (
-		'toplevel_page_opinionstage-settings' === $current_screen->id
-		|| 'opinion-stage_page_opinionstage-help-resource' === $current_screen->id
-		|| 'toplevel_page_opinionstage-getting-started' === $current_screen->id
-	) {
+	if ( in_array( $current_screen->id, array( 'toplevel_page_opinionstage-settings', 'opinion-stage_page_opinionstage-help-resource', 'toplevel_page_opinionstage-getting-started' ), true ) ) {
 		opinionstage_register_css_asset( 'menu-page', 'menu-page.css' );
-
 		opinionstage_enqueue_css_asset( 'menu-page' );
 	}
 
@@ -29,8 +24,6 @@ function opinionstage_common_load_resources() {
 }
 
 function opinionstage_common_load_header() {
-
 }
 function opinionstage_common_load_footer() {
-
 }

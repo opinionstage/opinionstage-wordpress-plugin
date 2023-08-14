@@ -150,6 +150,10 @@ Opinion Stage makes it easy for you to comply with the GDPR regulation. For more
 N/A
 
 == Changelog ==
+  = 19.8.17 =
+  * internal code improvements
+  * tested up to 6.3 Wordpress
+  * design update
   = 19.8.16 =
   * tested up to 6.2 Wordpress
   * fix deprecated 'block_categories' filter

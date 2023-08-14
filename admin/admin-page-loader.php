@@ -51,20 +51,16 @@ class OpinionStageAdminPageLoader {
 	 * OpinionStageAdminPageLoader constructor.
 	 */
 	protected function __construct() {
-		// Check if page is for OpinionStage plugin and prepare page slug.
-		$this->prepare_slug();
+		include_once plugin_dir_path( __FILE__ ) . 'content-popup.php';
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_fonts' ) );
 
-		// Apply page loader actions if it is OpinionStage plugin page.
+        $this->prepare_slug();
+
 		if ( false !== $this->slug ) {
-			include_once plugin_dir_path( __FILE__ ) . 'content-popup.php';
-
 			$this->load_file();
 			add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
 			add_action( 'admin_head', array( $this, 'maybe_load_header' ) );
 			add_action( 'admin_footer', array( $this, 'load_footer_function' ) );
-		} else {
-			// Load content popup javascript.
-			include_once plugin_dir_path( __FILE__ ) . 'content-popup.php';
 		}
 	}
 
@@ -72,7 +68,7 @@ class OpinionStageAdminPageLoader {
 	 * Prepare slug.
 	 */
 	public function prepare_slug() {
-		if ( isset( $_REQUEST['page'] ) ) {
+		if ( ! empty( $_REQUEST['page'] ) ) {
 			$qry_str_check_os = sanitize_text_field( $_REQUEST['page'] );
 			$qry_str_check_os = explode( '-', $qry_str_check_os );
 			if ( 'opinionstage' === $qry_str_check_os[0] ) {
@@ -104,10 +100,24 @@ class OpinionStageAdminPageLoader {
 		if ( function_exists( $function_name ) ) {
 			call_user_func( $function_name );
 		}
-		$function_name_common = 'opinionstage_common_load_resources';
-		if ( function_exists( $function_name_common ) ) {
-			call_user_func( $function_name_common );
+
+		if ( function_exists( 'opinionstage_common_load_resources' ) ) {
+			opinionstage_common_load_resources();
 		}
+	}
+
+	/**
+	 * Load required fonts
+	 *
+	 * @return void
+	 */
+	public function enqueue_fonts() {
+		wp_enqueue_style(
+			'opinionstage-fonts',
+			'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap',
+			null,
+			OPINIONSTAGE_WIDGET_VERSION
+		);
 	}
 
 	/**

@@ -145,27 +145,25 @@ function opinionstage_generate_template_url( $path ) {
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-bg-white">
-		<div class="opinionstage-getting-started-section opinionstage-getting-started-section__no-padding">
-			<div class="opinionstage-logo opinionstage-logo__dark"></div>
-		</div>
+		<?php require OPINIONSTAGE_PLUGIN_DIR . 'admin/template-parts/header-logo-line-logout-form.php'; ?>
 		<div class="opinionstage-getting-started-section opinionstage-two-columns">
 			<div class="opinionstage-two-columns__text">
-				<h1 class="opinionstage-two-columns__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Website in Seconds', 'social-polls-by-opinionstage' ); ?></h1>
+				<h1 class="opinionstage-two-columns__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
 				<div>
-					<p><?php esc_html_e( 'Drive engagement and traffic to your site, gather leads, and collect reliable data. Beautiful designs. Fully customizable. Easy to set up, manage, and track.', 'social-polls-by-opinionstage' ); ?></p>
+					<p><?php esc_html_e( 'Get more responses with visual conversational quizzes, surveys & polls. Easy and fast to set up. Engaging and fun for your audience. Customize everything.', 'social-polls-by-opinionstage' ); ?></p>
 				</div>
 
-				<?php require_once plugin_dir_path( dirname( __FILE__ ) ) . 'template-parts/signup-form.php'; ?>
+				<?php require_once plugin_dir_path( __DIR__ ) . 'template-parts/signup-form.php'; ?>
 				<div>
 				</div>
 			</div>
 			<div class="opinionstage-two-columns__img">
-				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.jpg', dirname( __FILE__ ) ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinion Stage', 'social-polls-by-opinionstage' ); ?>">
+				<img src="<?php echo esc_url( plugins_url( 'images/welcome-to-opinionstage.png', __DIR__ ) ); ?>" alt="<?php esc_html_e( 'Welcome to Opinion Stage', 'social-polls-by-opinionstage' ); ?>">
 			</div>
 		</div>
 
-		<div class="opinionstage-getting-started-section">
-			<h2 class="opinionstage-trusted"><?php esc_html_e( 'Trusted by', 'social-polls-by-opinionstage' ); ?> <span class="optinoinstage-black">150,000+</span> <?php esc_html_e( 'Customers across 190 countries', 'social-polls-by-opinionstage' ); ?></h2>
+		<div class="opinionstage-getting-started-section opinionstage-getting-started-section__trusted">
+			<h2 class="opinionstage-trusted"><?php esc_html_e( 'Trusted by', 'social-polls-by-opinionstage' ); ?> 100,000+ <?php esc_html_e( 'Customers across 190 countries', 'social-polls-by-opinionstage' ); ?></h2>
 			<ul class="opinionstage-clients">
 				<?php
 				foreach ( $client_logos as $client_logo ) {
@@ -181,7 +179,7 @@ function opinionstage_generate_template_url( $path ) {
 	<div class="opinionstage-bg-white">
 		<div class="opinionstage-getting-started-section">
 			<div class="opinionstage-getting-started-examples">
-				<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'Check out these examples:', 'social-polls-by-opinionstage' ); ?></h2>
+				<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'Check Out These Examples:', 'social-polls-by-opinionstage' ); ?></h2>
 				<div class="opinionstage-getting-started-examples__items">
 					<?php
 					foreach ( $links_columns_items as $col ) {
@@ -193,7 +191,7 @@ function opinionstage_generate_template_url( $path ) {
 								foreach ( $col['items'] as $anchor ) {
 									?>
 									<li>
-										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" target="_blank"><?php echo esc_html( $anchor['title'] ); ?></a>
+										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $anchor['title'] ); ?></a>
 									</li>
 									<?php
 								}
@@ -206,19 +204,21 @@ function opinionstage_generate_template_url( $path ) {
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="opinionstage-bg-blue">
 		<div class="opinionstage-getting-started-section opinionstage-getting-started-video">
-			<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'How to use the Plugin', 'social-polls-by-opinionstage' ); ?></h2>
-
+			<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'How to Use the Plugin', 'social-polls-by-opinionstage' ); ?></h2>
+	
 			<p class="opinionstage-getting-started-video__description"><?php esc_html_e( 'Follow these steps to create a poll, survey or quiz and add it to your site in minutes', 'social-polls-by-opinionstage' ); ?></p>
-
-			<iframe width="600" height="337" 
-					src="https://www.youtube.com/embed/DMcosYCBFDs?controls=0&showinfo=0"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-
+	
+			<div class="opinionstage-getting-started-video__iframe">
+				<div>
+					<iframe width="100%"
+						src="https://www.youtube.com/embed/DMcosYCBFDs?controls=0&showinfo=0"
+						title="YouTube video player" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+	
 		</div>
 	</div>
 </div>

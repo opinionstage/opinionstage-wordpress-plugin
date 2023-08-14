@@ -4,6 +4,8 @@ $gray: #dedede;
 $green: #bada55;
 $red: orangered;
 $blue: #32adbc;
+ 
+@import "../../global-sass/_index";
 
 .os-widget-wrapper .is-large, .os-widget-wrapper .is-block {
     height: 30px;
@@ -30,7 +32,6 @@ $blue: #32adbc;
     max-width: 100%;
     padding: 10px;
     background: #fdfdfd;
-    box-shadow: 0 1px 2px 0 #3fb2c145;
     transition: 0.2s;
 }
 
@@ -61,8 +62,13 @@ $blue: #32adbc;
 .components-preview__leftBlockImage {
     position: relative;
 
-    &:hover .overlay {
-        opacity: 0.8;
+    &:hover {
+        .overlay:before {
+            opacity: 0.8;
+        }
+        .text {
+            opacity: 1;
+        }
     }
 
     .image {
@@ -74,14 +80,21 @@ $blue: #32adbc;
     .overlay {
         position: absolute;
         top: 0;
-        bottom: 0;
         left: 0;
-        right: 0;
         height: 100%;
         width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: #222120;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #222120;
+        }
     }
 
     .text {
@@ -92,21 +105,11 @@ $blue: #32adbc;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-
+        transition: .5s ease;
+        opacity: 0;
+        
         a {
-            border-radius: 5px;
-            border: 1px solid #fff;
-            color: #fff !important;
-            background: transparent;
-            cursor: pointer;
             display: block;
-            line-height: 1;
-            margin: 10px auto;
-            padding: 10px 8px;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            width: 140px;
         }
     }
 }
@@ -142,7 +145,7 @@ $blue: #32adbc;
 }
 
 p.components-heading {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
     font-weight: 600;
     text-align: center;
 }
@@ -209,10 +212,19 @@ input.components-button.is-button.is-default.is-block.is-primary {
         font-size: 18px;
         font-weight: normal;
         line-height: 1.11;
-        margin-bottom: 20px;
+        margin-bottom: 32px;
         width: 400px;
     }
-}
+    
+    .opinionstage-button {
+        margin-bottom: 12px;
+        min-width: 263px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+} 
 
 .components-preview__block {
     margin-top: 10px;

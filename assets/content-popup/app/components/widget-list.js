@@ -17,7 +17,7 @@ import {
 Vue.use(require('vue-moment'))
 
 const selectedWidgetTitles = {}
-selectedWidgetTitles[WIDGET_ALL] = 'All ITEMS'
+selectedWidgetTitles[WIDGET_ALL] = 'All Items'
 selectedWidgetTitles[WIDGET_POLL] = 'poll'
 selectedWidgetTitles[WIDGET_SET] = 'multi poll set'
 selectedWidgetTitles[WIDGET_SURVEY] = 'survey'

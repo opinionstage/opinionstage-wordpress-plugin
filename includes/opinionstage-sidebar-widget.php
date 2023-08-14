@@ -102,10 +102,8 @@ class OpinionStageWidget extends WP_Widget {
 	 * @param array $instance instance.
 	 */
 	public function form( $instance ) {
-		opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
 		opinionstage_register_css_asset( 'sidebar-widget', 'sidebar-widget.css' );
 
-		opinionstage_enqueue_css_asset( 'icon-font' );
 		opinionstage_enqueue_css_asset( 'sidebar-widget' );
 
 		$title   = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';

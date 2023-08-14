@@ -124,7 +124,7 @@ class OpinionstageFeedback {
 		<div class="opinionstage-dialog-box-wrapper" id="opinionistage-deactivate-feedback-modal" >
 			<div class="opinionstage-dialog-box-content">
 				<div class="opinionstage-deactivate-feedback-dialog-header">
-					<img src="<?php echo esc_url( plugins_url( 'admin/images/os-icon.png', plugin_dir_path( __FILE__ ) ) ); ?>" class="opinionstage-modal-logo" >
+					<img src="<?php echo esc_url( plugins_url( 'admin/images/os-icon.svg', plugin_dir_path( __FILE__ ) ) ); ?>" class="opinionstage-modal-logo" >
 					<span class="opinionstage-modal-header"><?php esc_html_e( 'Quick Feedback', 'social-polls-by-opinionstage' ); ?></span>
 					<span id="opinionstage-dialog-close" class="opinionstage-close"></span>
 				</div>
@@ -153,8 +153,8 @@ class OpinionstageFeedback {
 					</form>
 				</div>
 				<div class="opinionstage-dialog-buttons">
-					<button id="opinionstage-dialog-submit" class="opinionstage-dialog-submit"><div class="opinionstage-loading-ring"></div><?php esc_html_e( 'Submit & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
-					<button id="opinionstage-dialog-skip" class="opinionstage-dialog-skip"><?php esc_html_e( 'Skip & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
+					<button id="opinionstage-dialog-submit" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle"><div class="opinionstage-loading-ring"></div><?php esc_html_e( 'Submit & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
+					<button id="opinionstage-dialog-skip" class="opinionstage-button opinionstage-button__middle"><div class="opinionstage-loading-ring"></div><?php esc_html_e( 'Skip & Deactivate', 'social-polls-by-opinionstage' ); ?></button>
 				</div>
 			</div>
 		</div>

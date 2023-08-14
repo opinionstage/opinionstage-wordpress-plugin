@@ -33,8 +33,6 @@ function opinionstage_content_popup_js( $hook_suffix ) {
 	);
 
 	opinionstage_enqueue_js_asset( 'content-popup' );
-	opinionstage_register_css_asset( 'icon-font', 'icon-font.css' );
-	opinionstage_enqueue_css_asset( 'icon-font' );
 
 	add_action( 'admin_footer', 'opinionstage_content_popup_html' );
 
