@@ -8,7 +8,7 @@
  * Plugin Name: Poll, Survey & Quiz Maker Plugin by Opinion Stage
  * Plugin URI:  https://www.opinionstage.com
  * Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
- * Version:     19.8.17
+ * Version:     19.8.18
  * Author:      OpinionStage.com
  * Author URI:  https://www.opinionstage.com
  * Text Domain: social-polls-by-opinionstage
@@ -34,7 +34,7 @@ if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 	}
 }
 
-define( 'OPINIONSTAGE_WIDGET_VERSION', '19.8.17' );
+define( 'OPINIONSTAGE_WIDGET_VERSION', '19.8.18' );
 
 define( 'OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage' );
 define( 'OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8' );
