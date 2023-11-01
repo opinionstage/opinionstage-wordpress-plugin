@@ -111,19 +111,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 			exit();
 		}
 	}
-	// phpcs:disable Squiz.Commenting.FunctionComment
-	function opinionstage_plugin_activate() {
-		// all good: delete old file.
-		$deprecated_file = plugin_dir_path( __FILE__ ) . 'opinionstage-polls.php';
-		if ( file_exists( $deprecated_file ) && is_writable( $deprecated_file ) ) {
-			unlink( $deprecated_file );
-		}
-		if ( ! get_option( 'oswp_installation_date' ) ) {
-			update_option( 'oswp_installation_date', time(), false );
-		}
-	}
-	register_activation_hook( __FILE__, 'opinionstage_plugin_activate' );
-	add_action( 'init', 'opinionstage_plugin_activate' );
 	add_action( 'activated_plugin', 'opinionstage_plugin_activated' );
 	require_once plugin_dir_path( __FILE__ ) . 'includes/opinionstage-functions.php';
 
