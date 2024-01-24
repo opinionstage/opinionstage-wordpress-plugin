@@ -7,8 +7,7 @@ import {
   WIDGET_POLL,
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
-  WIDGET_SURVEY,
-  WIDGET_FORM,
+  WIDGET_SURVEY
 } from './configuration.js'
 
 export default function Edit({name, className, attributes, setAttributes, /*isSelected,*/ clientId}) {
@@ -150,9 +149,6 @@ function widgetTypeFromBlockName(blockName) {
     case 'opinion-stage/block-os-personality':
       return WIDGET_PERSONALITY_QUIZ
       break
-    case 'opinion-stage/block-os-form':
-      return WIDGET_FORM
-      break
     default:
       console.warn('unknown block name:', blockName)
   }
@@ -173,9 +169,6 @@ function blockName(widgetType) {
     case WIDGET_PERSONALITY_QUIZ:
       return 'opinion-stage/block-os-personality'
       break
-    case WIDGET_FORM:
-      return 'opinion-stage/block-os-form'
-      break
     default:
       console.warn('unknown block widget type:', widgetType)
   }
@@ -187,16 +180,13 @@ function widgetTitleFromType(widgetType) {
       return __('Poll')
       break
     case WIDGET_SURVEY:
-      return __('Survey')
+      return __('Form / Survey')
       break
     case WIDGET_TRIVIA_QUIZ:
       return __('Trivia Quiz')
       break
     case WIDGET_PERSONALITY_QUIZ:
       return __('Personality Quiz')
-      break
-    case WIDGET_FORM:
-      return __('Standard Form')
       break
   }
 }
@@ -215,9 +205,6 @@ function backendWidgetTypeForNewWidget(widgetType) {
     case WIDGET_PERSONALITY_QUIZ:
       return 'outcome'
       break
-    case WIDGET_FORM:
-      return 'contact_form'
-      break
   }
 }
 
@@ -234,9 +221,6 @@ function backendWidgetTypeForViewTemplates(widgetType) {
       break
     case WIDGET_PERSONALITY_QUIZ:
       return 'personality_quizzes'
-      break
-    case WIDGET_FORM:
-      return 'classic_forms'
       break
   }
 }
@@ -256,9 +240,6 @@ function backendWidgetTypeToBlockWidgetType(backendType) {
     case 'personality':
       return WIDGET_PERSONALITY_QUIZ
       break
-    case 'form':
-      return WIDGET_FORM
-      break
   }
 }
 
@@ -275,9 +256,6 @@ function contentPopupWidgetType(widgetType) {
       break
     case WIDGET_PERSONALITY_QUIZ:
       return OpinionStage.contentPopup.WIDGET_PERSONALITY_QUIZ
-      break
-    case WIDGET_FORM:
-      return OpinionStage.contentPopup.WIDGET_FORM
       break
   }
 }

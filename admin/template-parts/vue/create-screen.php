@@ -14,7 +14,7 @@ $items = array(
 		'url_template_type' => 'polls',
 	),
 	array(
-		'title'             => __( 'Survey', 'social-polls-by-opinionstage' ),
+		'title'             => __( 'Form / Survey', 'social-polls-by-opinionstage' ),
 		'description'       => __( 'Ask multiple questions from a range of question types', 'social-polls-by-opinionstage' ),
 		'img'               => 'survey.png',
 		'url_scratch_type'  => 'survey',
@@ -33,14 +33,7 @@ $items = array(
 		'img'               => 'personality.png',
 		'url_scratch_type'  => 'outcome',
 		'url_template_type' => 'personality_quizzes',
-	),
-	array(
-		'title'             => __( 'Standard Form', 'social-polls-by-opinionstage' ),
-		'description'       => __( 'Display all fields on one page (use surveys for interactive forms)', 'social-polls-by-opinionstage' ),
-		'img'               => 'form.png',
-		'url_scratch_type'  => 'contact_form',
-		'url_template_type' => 'classic_forms',
-	),
+	)
 );
 ?>
 <div class="opinionstage-dashboard">
@@ -71,7 +64,6 @@ $items = array(
 </div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<?php echo opinionstage_create_widget_link( $item['url_scratch_type'], 'opinionstage-button opinionstage-button__grey opinionstage-button__middle', __( 'From Scratch', 'social-polls-by-opinionstage' ) ); ?>
 							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['url_template_type'] ) ); ?>"
 								class="opinionstage-button opinionstage-button__grey opinionstage-button__middle"
 								target="_blank" rel="noopener"><?php esc_html_e( 'Use Template', 'social-polls-by-opinionstage' ); ?></a>

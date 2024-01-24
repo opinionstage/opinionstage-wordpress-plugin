@@ -12,7 +12,7 @@
 			<h1 class="main-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></h1>
 		</div>
 		<div class="content-actions__right">
-			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" target="_blank" rel="noopener"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
+			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" target="_blank" rel="noopener"><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
 	<div class="content-actions content-actions__form">
@@ -44,7 +44,7 @@
 					<div class='filter__itm'
 						@click="selectWidgetType('survey')"
 						:class="{ active: selectedWidgetType === 'survey' }"
-					><?php esc_html_e( 'survey', 'social-polls-by-opinionstage' ); ?></div>
+					><?php esc_html_e( 'form / survey', 'social-polls-by-opinionstage' ); ?></div>
 					<div class='filter__itm'
 						@click="selectWidgetType('trivia')"
 						:class="{ active: selectedWidgetType === 'trivia' }"
@@ -53,10 +53,6 @@
 						@click="selectWidgetType('outcome')"
 						:class="{ active: selectedWidgetType === 'outcome' }"
 					><?php esc_html_e( 'personality quiz', 'social-polls-by-opinionstage' ); ?></div>
-					<div class='filter__itm'
-						@click="selectWidgetType('form')"
-						:class="{ active: selectedWidgetType === 'form' }"
-					><?php esc_html_e( 'standard form', 'social-polls-by-opinionstage' ); ?></div>
 				</div>
 			</div>
 		</div>

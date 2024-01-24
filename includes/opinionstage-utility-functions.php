@@ -106,19 +106,6 @@ function opinionstage_asset_path() {
 }
 
 /**
- * Returns create widget url
- *
- * @param string $w_type widget type.
- * @param string $css_class class.
- * @param string $title anchors caption.
- * @return string
- */
-function opinionstage_create_widget_link( $w_type, $css_class, $title = 'CREATE NEW' ) {
-	$url = add_query_arg( 'w_type', $w_type, OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM );
-	return sprintf( "<a href='%s' target='_blank' class='%s'>%s</a>", $url, $css_class, $title );
-}
-
-/**
  * Generates a to the callback page used to connect the plugin to the Opinion Stage account
  */
 function opinionstage_callback_url() {

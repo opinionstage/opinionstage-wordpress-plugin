@@ -3,8 +3,7 @@ import {
   WIDGET_POLL,
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
-  WIDGET_SURVEY,
-  WIDGET_FORM,
+  WIDGET_SURVEY
 } from './configuration.js'
 
 export default function save({attributes}) {
@@ -21,6 +20,7 @@ export default function save({attributes}) {
   } = attributes
 
   return (
+    // can not be updated to className as it breaks all added widgets in Gutenberg asking to 'Attempt Block Recovery'
     <div class={unusedWrapperClassFromWidgetType(widgetType)}
          data-type={widgetType}
          data-image-url={insertItemImage}
@@ -57,9 +57,6 @@ function unusedWrapperClassFromWidgetType(widgetType) {
       break
     case WIDGET_PERSONALITY_QUIZ:
       return 'os-personality-wrapper'
-      break
-    case WIDGET_FORM:
-      return 'os-form-wrapper'
       break
     default:
       console.warn('unknown widget type:', widgetType)

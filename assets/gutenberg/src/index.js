@@ -23,12 +23,13 @@ registerBlockType('opinion-stage/block-os-poll', {
 })
 
 registerBlockType('opinion-stage/block-os-survey', {
-  title: '[Opinion Stage] Survey',
+  title: '[Opinion Stage] Form / Survey',
   icon: 'list-view',
   description: __('Embed an Opinion Stage Survey', 'social-polls-by-opinionstage'),
   category,
   keywords: [
     __('survey', 'social-polls-by-opinionstage'),
+    __('form', 'social-polls-by-opinionstage'),
   ],
 
   supports,
@@ -73,19 +74,3 @@ registerBlockType('opinion-stage/block-os-personality', {
   save,
 })
 
-registerBlockType('opinion-stage/block-os-form', {
-  title: '[Opinion Stage] Standard Form',
-  icon: 'editor-justify',
-  description: __('Embed an Opinion Stage Form', 'social-polls-by-opinionstage'),
-  category,
-  keywords: [
-    __('form', 'social-polls-by-opinionstage'),
-    __('contact form', 'social-polls-by-opinionstage'),
-  ],
-
-  supports,
-  attributes,
-
-  edit: Edit,
-  save,
-})
