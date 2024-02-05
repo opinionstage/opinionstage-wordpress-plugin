@@ -53,6 +53,10 @@
 						@click="selectWidgetType('outcome')"
 						:class="{ active: selectedWidgetType === 'outcome' }"
 					><?php esc_html_e( 'personality quiz', 'social-polls-by-opinionstage' ); ?></div>
+					<div class='filter__itm'
+						@click="selectWidgetType('form')"
+						:class="{ active: selectedWidgetType === 'form' }"
+					><?php esc_html_e( 'standard form', 'social-polls-by-opinionstage' ); ?></div>
 				</div>
 			</div>
 		</div>

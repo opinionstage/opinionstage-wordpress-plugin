@@ -7,7 +7,8 @@ import {
   WIDGET_POLL,
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
-  WIDGET_SURVEY
+  WIDGET_SURVEY,
+  WIDGET_FORM,
 } from './configuration.js'
 
 export default function Edit({name, className, attributes, setAttributes, /*isSelected,*/ clientId}) {
@@ -149,6 +150,9 @@ function widgetTypeFromBlockName(blockName) {
     case 'opinion-stage/block-os-personality':
       return WIDGET_PERSONALITY_QUIZ
       break
+    case 'opinion-stage/block-os-form':
+      return WIDGET_FORM
+      break
     default:
       console.warn('unknown block name:', blockName)
   }
@@ -169,6 +173,9 @@ function blockName(widgetType) {
     case WIDGET_PERSONALITY_QUIZ:
       return 'opinion-stage/block-os-personality'
       break
+    case WIDGET_FORM:
+      return 'opinion-stage/block-os-form'
+      break
     default:
       console.warn('unknown block widget type:', widgetType)
   }
@@ -188,6 +195,9 @@ function widgetTitleFromType(widgetType) {
     case WIDGET_PERSONALITY_QUIZ:
       return __('Personality Quiz')
       break
+    case WIDGET_FORM:
+      return __('Standard Form')
+      break
   }
 }
 
@@ -204,6 +214,9 @@ function backendWidgetTypeForNewWidget(widgetType) {
       break
     case WIDGET_PERSONALITY_QUIZ:
       return 'outcome'
+      break
+    case WIDGET_FORM:
+      return 'contact_form'
       break
   }
 }
@@ -222,6 +235,9 @@ function backendWidgetTypeForViewTemplates(widgetType) {
     case WIDGET_PERSONALITY_QUIZ:
       return 'personality_quizzes'
       break
+    case WIDGET_FORM:
+      return 'classic_forms'
+      break
   }
 }
 
@@ -239,6 +255,9 @@ function backendWidgetTypeToBlockWidgetType(backendType) {
       break
     case 'personality':
       return WIDGET_PERSONALITY_QUIZ
+      break
+    case 'form':
+      return WIDGET_FORM
       break
   }
 }

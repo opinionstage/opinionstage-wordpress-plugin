@@ -74,3 +74,19 @@ registerBlockType('opinion-stage/block-os-personality', {
   save,
 })
 
+registerBlockType('opinion-stage/block-os-form', {
+  title: '[Opinion Stage] Standard Form (deprecated)',
+  icon: 'editor-justify',
+  description: __('Embed an Opinion Stage Form', 'social-polls-by-opinionstage'),
+  category,
+  keywords: [
+    __('form', 'social-polls-by-opinionstage'),
+    __('contact form', 'social-polls-by-opinionstage'),
+  ],
+
+  supports,
+  attributes,
+
+  edit: Edit,
+  save,
+})
