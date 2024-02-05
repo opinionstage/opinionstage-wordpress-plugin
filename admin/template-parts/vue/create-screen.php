@@ -64,7 +64,7 @@ $items = array(
 </div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
-							<a href="<?php echo esc_url( opinionstage_get_templates_url_for_type( $item['url_template_type'] ) ); ?>"
+                            <a href="<?php echo esc_url( add_query_arg( 'w_type', $item['url_scratch_type'], OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>"
 								class="opinionstage-button opinionstage-button__grey opinionstage-button__middle"
 								target="_blank" rel="noopener"><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
 						</div>
