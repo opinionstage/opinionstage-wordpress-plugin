@@ -76,7 +76,7 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
   const selectWidget = e => {
     e.preventDefault()
     OpinionStage.contentPopup.open({
-      preselectWidgetType: contentPopupWidgetType(currentWidgetType),
+      preselectWidgetType: contentPopupWidgetType(), 
       onWidgetSelect: placeWidget
     })
   }
