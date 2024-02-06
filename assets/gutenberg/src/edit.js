@@ -82,8 +82,6 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
   }
 
   let createNewWidgetUrl = `${OPINIONSTAGE_GUTENBERG_DATA.createNewWidgetUrl}&w_type=${backendWidgetTypeForNewWidget(currentWidgetType)}`
-  let viewTemplateUrl = `${OPINIONSTAGE_GUTENBERG_DATA.viewTemplateUrl}&page=${backendWidgetTypeForViewTemplates(currentWidgetType)}`
-
   let contentViewEditStatOs = (
     <div className="os-widget-wrapper components-placeholder">
       <p className="components-heading">
@@ -93,8 +91,6 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
         Item</a>
       <a href={createNewWidgetUrl} target="_blank"
          className="opinionstage-button opinionstage-button__blue">Create a {currentWidgetTitle}</a>
-      <a href={viewTemplateUrl} target="_blank"
-         className="opinionstage-button opinionstage-button__gret">View Templates </a>
     </div>
   )
   if (
