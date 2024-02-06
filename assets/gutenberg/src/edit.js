@@ -104,6 +104,10 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
   ) {
     contentViewEditStatOs = (
       <div className="os-widget-wrapper components-placeholder">
+        {
+          currentWidgetType === WIDGET_FORM
+          && <p style={{color:'red', textAlign: 'center'}}>This block was deprecated and will be removed in the future, please use the the "Form / Survey" block instead.</p>
+        }
         <p className="components-heading">
           <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt="Opinionstage Logg"/>
         </p> 
