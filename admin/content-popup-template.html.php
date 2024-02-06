@@ -71,8 +71,8 @@ if ( $is_my_items_admin_page ) {
 			<notification v-on:update-btn-click='reloadAndRestartCheckingForUpdates'>
 		</div>
 		<div v-if="widgets == undefined">
-			<p class="failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.', 'social-polls-by-opinionstage' ); ?>
-				<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Please contact our chat support for help', 'social-polls-by-opinionstage' ); ?></a></p>
+			<p class="failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.Try reloading the page. If the problem persists, please ', 'social-polls-by-opinionstage' ); ?>
+				<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'contact our chat support.', 'social-polls-by-opinionstage' ); ?></a></p>
 		</div>
 		<template v-else>
 			<div v-if="!dataLoading && isMyItemsPage && widgets !== undefined && widgets.length === 0 && searchCriteria.type === 'all' && searchCriteria.title === ''">
