@@ -41,11 +41,15 @@
       overflow: hidden;
       width: 100%;
     }
-  }
-
-  .tingle-modal-box__content {
-    max-width: 960px;
-    padding: 0;
+    &__content {
+      max-width: 960px;
+      padding: 0;
+      .content-actions__right {
+        .dropdown {
+          display: none !important;
+        }
+      }
+    }
   }
 
   // state
