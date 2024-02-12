@@ -33,14 +33,7 @@ $items = array(
 		'img'               => 'personality.png',
 		'url_scratch_type'  => 'outcome',
 		'url_template_type' => 'personality_quizzes',
-	),
-	array(
-		'title'             => __( 'Standard Form', 'social-polls-by-opinionstage' ),
-		'description'       => __( 'Display all fields on one page (use surveys for interactive forms)', 'social-polls-by-opinionstage' ),
-		'img'               => 'form.png',
-		'url_scratch_type'  => 'contact_form',
-		'url_template_type' => 'classic_forms',
-	),
+	)
 );
 ?>
 <div class="opinionstage-dashboard">
@@ -68,7 +61,7 @@ $items = array(
 							<?php
 							echo esc_html( $item['description'] );
 							?>
-</div>
+                        </div>
 						</div>
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
                             <a href="<?php echo esc_url( add_query_arg( 'w_type', $item['url_scratch_type'], OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>"
