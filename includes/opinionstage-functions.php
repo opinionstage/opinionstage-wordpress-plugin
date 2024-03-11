@@ -88,4 +88,7 @@ function opinionstage_is_guten_enabled(){
 		}
 	}
 }
-?>
+
+function opinionstage_get_link_target_blank_attribute(){
+    return ' target="_blank" rel="noopener" ';
+}

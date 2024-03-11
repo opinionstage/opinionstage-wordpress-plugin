@@ -36,9 +36,9 @@
 
 					<div class="opinionstage-widget-overlay">
 						<div class="opinionstage-inner">
-							<a href="<?php echo esc_url( $os_widget_view_url ); ?>" class="opininstage-view" target="_blank" rel="noopener"><?php esc_html_e( 'View', 'social-polls-by-opinionstage' ); ?></a>
-							<a href="<?php echo esc_url( $os_widget_edit_url ); ?>" class="opininstage-edit" target="_blank" rel="noopener"><?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?></a>
-							<a href="<?php echo esc_url( $os_widget_stats_url ); ?>" class="opininstage-stats" target="_blank" rel="noopener"><?php esc_html_e( 'Statistics', 'social-polls-by-opinionstage' ); ?></a>
+							<a href="<?php echo esc_url( $os_widget_view_url ); ?>" class="opininstage-view" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'View', 'social-polls-by-opinionstage' ); ?></a>
+							<a href="<?php echo esc_url( $os_widget_edit_url ); ?>" class="opininstage-edit" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?></a>
+							<a href="<?php echo esc_url( $os_widget_stats_url ); ?>" class="opininstage-stats" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Statistics', 'social-polls-by-opinionstage' ); ?></a>
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 
 			<div class="opinionstage-sidebar-actions">
 				<div class="opinionstage-sidebar-config">
-					<a data-open-popup-for-widget="<?php echo esc_attr( $this->id ); ?>" href="#" target="_blank" rel="noopener" class='opinionstage-blue-bordered-btn opinionstage-edit-content'><?php echo esc_html( $popup_button_title ); ?></a>
+					<a data-open-popup-for-widget="<?php echo esc_attr( $this->id ); ?>" href="#" <?php echo opinionstage_get_link_target_blank_attribute(); ?> class='opinionstage-blue-bordered-btn opinionstage-edit-content'><?php echo esc_html( $popup_button_title ); ?></a>
 				</div>
 				<div class="opinionstage-clearfix"></div>
 				<textarea name="<?php echo esc_attr( $this->get_field_name( 'opinionstage-widget-data' ) ); ?>" class="opinionstage-widget-data"><?php echo esc_attr( $os_widget_json ); ?></textarea>

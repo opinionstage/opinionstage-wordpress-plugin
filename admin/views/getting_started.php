@@ -191,7 +191,7 @@ function opinionstage_generate_template_url( $path ) {
 								foreach ( $col['items'] as $anchor ) {
 									?>
 									<li>
-										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $anchor['title'] ); ?></a>
+										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php echo esc_html( $anchor['title'] ); ?></a>
 									</li>
 									<?php
 								}

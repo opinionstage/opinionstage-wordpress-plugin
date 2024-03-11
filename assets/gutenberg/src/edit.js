@@ -89,7 +89,7 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
       </p>
       <a className="opinionstage-button opinionstage-button__blue" href='#' onClick={selectWidget}>Select
         Item</a>
-      <a href={createNewWidgetUrl} target="_blank"
+      <a href={createNewWidgetUrl} target="_blank"  rel="noopener"
          className="opinionstage-button opinionstage-button__blue">Create a {currentWidgetTitle}</a>
     </div>
   )
@@ -112,9 +112,9 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
             <img src={insertItemImage} alt={insertItemOsTitle} className="image"/>
             <div className="overlay">
               <div className="text">
-                <a href={insertItemOsView} className='opinionstage-button opinionstage-button__blue' target="_blank">View</a>
-                <a href={insertItemOsEdit} className='opinionstage-button opinionstage-button__blue' target="_blank">Edit</a>
-                <a href={insertItemOsStatistics} className='opinionstage-button opinionstage-button__blue' target="_blank">Statistics</a>
+                <a href={insertItemOsView} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">View</a>
+                <a href={insertItemOsEdit} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">Edit</a>
+                <a href={insertItemOsStatistics} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">Statistics</a>
                 <a href='#' className='opinionstage-button opinionstage-button__blue' onClick={selectWidget}>{buttonText}</a>
               </div>
             </div>
