@@ -1,9 +1,9 @@
 ﻿=== Poll, Survey & Quiz Maker Plugin by Opinion Stage ===
-Contributors: opinionstage, yoffegil, kucaahbe
+Contributors: opinionstage, kucaahbe, ArtemLapkin
 Donate link: https://www.opinionstage.com
-Tags: poll, quiz, survey, poll plugin, quiz plugin, survey plugin
+Tags: poll, quiz, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 6.3.2
+Tested up to: 6.4.3
 Stable tag: 19.8.19
 Requires PHP: 7.0
 
