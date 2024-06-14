@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || die();
 
-require_once plugin_dir_path( __FILE__ ) . 'opinionstage-client-session.php';
+require_once plugin_dir_path( __FILE__ ) . 'client-session.php';
 
 /**
  * Class OpinionStageWidget

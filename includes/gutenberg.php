@@ -11,7 +11,7 @@ if ( ! function_exists( 'register_block_type' ) ) {
 	return;
 }
 
-require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/opinionstage-client-session.php';
+require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/client-session.php';
 
 add_action( 'init', 'opinionstage_register_gutenberg_assets' );
 add_filter( 'block_categories_all', 'opinionstage_register_gutenberg_categories' );

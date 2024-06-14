@@ -6,7 +6,7 @@
  */
 
 defined( 'ABSPATH' ) || die();
-require_once plugin_dir_path( __FILE__ ) . '../includes/opinionstage-client-session.php';
+require_once plugin_dir_path( __FILE__ ) . '../includes/client-session.php';
 add_action( 'admin_menu', 'opinionstage_register_menu_page' );
 
 /**
