@@ -42,9 +42,6 @@ function opinionstage_widget_shortcode( $atts ) {
 		$shortcode_params = shortcode_atts(
 			array(
 				'path'            => 0,
-				'comments'        => 'true',
-				'sharing'         => 'true',
-				'recommendations' => 'false',
 				'width'           => '',
 			),
 			$atts,
@@ -52,12 +49,9 @@ function opinionstage_widget_shortcode( $atts ) {
 		);
 
 		$path            = $shortcode_params['path'];
-		$comments        = $shortcode_params['comments'];
-		$sharing         = $shortcode_params['sharing'];
-		$recommendations = $shortcode_params['recommendations'];
 		$width           = $shortcode_params['width'];
 
-		return opinionstage_widget_placement( opinionstage_widget_embed_code_url( $path, $comments, $sharing, $recommendations, $width ) );
+		return opinionstage_widget_placement( opinionstage_widget_embed_code_url( $path, $width ) );
 	}
 }
 
@@ -91,10 +85,9 @@ function opinionstage_poll_or_set_embed_code_url( $id, $type, $width ) {
 	}
 }
 
-function opinionstage_widget_embed_code_url( $path, $comments, $sharing, $recommendations, $width ) {
+function opinionstage_widget_embed_code_url( $path, $width ) {
 	if ( isset( $path ) && ! empty( $path ) ) {
-		$embed_code_url = OPINIONSTAGE_API_PATH . '/widgets' . $path . '/code.json?comments=' . $comments . '&sharing=' . $sharing . '&recommendations=' . $recommendations . '&width=' . $width;
-		return $embed_code_url;
+        return OPINIONSTAGE_API_PATH . '/widgets' . $path . '/code.json?width=' . $width;
 	}
 }
 
