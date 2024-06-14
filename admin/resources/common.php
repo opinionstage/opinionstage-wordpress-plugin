@@ -22,8 +22,3 @@ function opinionstage_common_load_resources() {
 		opinionstage_enqueue_js_asset( 'menu-page' );
 	}
 }
-
-function opinionstage_common_load_header() {
-}
-function opinionstage_common_load_footer() {
-}
