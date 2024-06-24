@@ -36,8 +36,6 @@ function opinionstage_login_and_redirect_to_settings_page() {
 		$token                = isset( $_GET['opinionstage_token'] ) ? sanitize_text_field( $_GET['opinionstage_token'] ) : '';
 		$email                = isset( $_GET['opinionstage_email'] ) ? sanitize_email( $_GET['opinionstage_email'] ) : '';
 		$fly_id               = isset( $_GET['opinionstage_fly_id'] ) ? intval( $_GET['opinionstage_fly_id'] ) : '';
-		$article_placement_id = isset( $_GET['opinionstage_article_placement_id'] ) ? intval( $_GET['opinionstage_article_placement_id'] ) : '';
-		$sidebar_placement_id = isset( $_GET['opinionstage_sidebar_placement_id'] ) ? intval( $_GET['opinionstage_sidebar_placement_id'] ) : '';
 
 		opinionstage_uninstall();
 		opinionstage_validate_and_save_client_data(
@@ -45,9 +43,7 @@ function opinionstage_login_and_redirect_to_settings_page() {
 				'uid',
 				'token',
 				'email',
-				'fly_id',
-				'article_placement_id',
-				'sidebar_placement_id'
+				'fly_id'
 			)
 		);
 
@@ -68,8 +64,6 @@ function opinionstage_validate_and_save_client_data( $raw ) {
 		'uid'                      => $raw['uid'],
 		'email'                    => $raw['email'],
 		'fly_id'                   => $raw['fly_id'],
-		'article_placement_id'     => $raw['article_placement_id'],
-		'sidebar_placement_id'     => $raw['sidebar_placement_id'],
 		'version'                  => OPINIONSTAGE_WIDGET_VERSION,
 		'fly_out_active'           => 'false',
 		'article_placement_active' => 'false',
@@ -77,11 +71,7 @@ function opinionstage_validate_and_save_client_data( $raw ) {
 		'token'                    => $raw['token'],
 	);
 
-	$valid = preg_match( '/^[0-9]+$/', $raw['fly_id'] )
-		&& preg_match( '/^[0-9]+$/', $raw['article_placement_id'] )
-		&& preg_match( '/^[0-9]+$/', $raw['sidebar_placement_id'] );
-
-	if ( $valid ) {
+	if ( preg_match( '/^[0-9]+$/', $raw['fly_id'] ) ) {
 		update_option( OPINIONSTAGE_OPTIONS_KEY, $os_options );
 	}
 }

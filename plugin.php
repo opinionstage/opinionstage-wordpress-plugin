@@ -76,7 +76,7 @@ define( 'OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget' );
 
 define( 'OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll' );
 define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
-define( 'OPINIONSTAGE_PLACEMENT_SHORTCODE', 'osplacement' );
+
 
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
 define( 'OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started' );
@@ -117,8 +117,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 		add_action( 'admin_notices', 'opinionstage_other_plugin_installed_warning' );
 	} else {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php';
-		require_once plugin_dir_path( __FILE__ ) . 'includes/article-placement-functions.php';
-		require_once plugin_dir_path( __FILE__ ) . 'includes/sidebar-widget.php';
 		require_once plugin_dir_path( __FILE__ ) . 'includes/class-opinionstagefeedback.php';
 
         if ( is_admin() ) {
@@ -128,7 +126,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
         }
         require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
 
-		add_action( 'widgets_init', 'opinionstage_init_widget' );
 		add_action( 'plugins_loaded', 'opinionstage_init' );
 	}
 

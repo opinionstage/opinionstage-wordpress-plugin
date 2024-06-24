@@ -31,7 +31,7 @@ function opinionstage_poll_or_set_shortcode( $atts ) {
 		$type  = $shortcode_params['type'];
 		$width = $shortcode_params['width'];
 
-		return opinionstage_widget_placement( opinionstage_poll_or_set_embed_code_url( $id, $type, $width ) );
+		return opinionstage_widget_embedded( opinionstage_poll_or_set_embed_code_url( $id, $type, $width ) );
 	}
 }
 
@@ -51,26 +51,13 @@ function opinionstage_widget_shortcode( $atts ) {
 		$path            = $shortcode_params['path'];
 		$width           = $shortcode_params['width'];
 
-		return opinionstage_widget_placement( opinionstage_widget_embed_code_url( $path, $width ) );
+		return opinionstage_widget_embedded( opinionstage_widget_embed_code_url( $path, $width ) );
 	}
 }
 
-function opinionstage_placement_shortcode( $atts ) {
-	if ( ! is_feed() ) {
-		$shortcode_params = shortcode_atts(
-			array( 'id' => 0 ),
-			$atts,
-			OPINIONSTAGE_PLACEMENT_SHORTCODE
-		);
-
-		$id = intval( $shortcode_params['id'] );
-
-		return opinionstage_widget_placement( opinionstage_placement_embed_code_url( $id ) );
-	}
-}
 
 function opinionstage_poll_or_set_embed_code_url( $id, $type, $width ) {
-	if ( isset( $id ) && ! empty( $id ) ) {
+	if ( ! empty( $id ) ) {
 		if ( $type == 'set' ) {
 			$embed_code_url = OPINIONSTAGE_API_PATH . '/sets/' . $id . '/code.json';
 		} else {
@@ -91,12 +78,7 @@ function opinionstage_widget_embed_code_url( $path, $width ) {
 	}
 }
 
-function opinionstage_placement_embed_code_url( $id ) {
-	if ( isset( $id ) && ! empty( $id ) ) {
-		return OPINIONSTAGE_API_PATH . '/placements/' . $id . '/code.json';
-	}
-}
 
-function opinionstage_widget_placement( $url ) {
+function opinionstage_widget_embedded( $url ) {
 	return sprintf( '<div data-opinionstage-embed-url="%s" style="display: none; visibility: hidden;"></div>', esc_url( $url ) );
 }
