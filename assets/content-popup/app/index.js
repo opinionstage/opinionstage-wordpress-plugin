@@ -6,15 +6,6 @@ import '../styles/content-popup.scss'
 
 import {
   WIDGET_ALL,
-  WIDGET_POLL,
-  WIDGET_SET,
-  WIDGET_SURVEY,
-  WIDGET_SLIDESHOW,
-  WIDGET_TRIVIA_QUIZ,
-  WIDGET_PERSONALITY_QUIZ,
-  WIDGET_LIST,
-  WIDGET_FORM,
-  WIDGET_STORY,
 } from './widget-types.js'
 
 export default function (modal) {

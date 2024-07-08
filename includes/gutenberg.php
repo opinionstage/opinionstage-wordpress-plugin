@@ -57,7 +57,6 @@ function opinionstage_register_gutenberg_assets() {
 	register_block_type( 'opinion-stage/block-os-survey', $block_type_args );
 	register_block_type( 'opinion-stage/block-os-trivia', $block_type_args );
 	register_block_type( 'opinion-stage/block-os-personality', $block_type_args );
-	register_block_type( 'opinion-stage/block-os-form', $block_type_args );
 
 	opinionstage_gutenberg_inject_data();
 }

@@ -4,7 +4,6 @@ import {
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_TRIVIA_QUIZ,
   WIDGET_SURVEY,
-  WIDGET_FORM,
 } from './configuration.js'
 
 export default function save({attributes}) {
@@ -58,9 +57,6 @@ function unusedWrapperClassFromWidgetType(widgetType) {
       break
     case WIDGET_PERSONALITY_QUIZ:
       return 'os-personality-wrapper'
-      break
-    case WIDGET_FORM:
-      return 'os-form-wrapper'
       break
     default:
       console.warn('unknown widget type:', widgetType)

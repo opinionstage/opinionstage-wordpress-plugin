@@ -9,7 +9,6 @@ import {
   WIDGET_TRIVIA_QUIZ,
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_LIST,
-  WIDGET_FORM,
   WIDGET_STORY,
 } from './app/widget-types.js'
 
@@ -111,7 +110,6 @@ if (window.OpinionStage && typeof (OpinionStage.contentPopup) !== 'undefined') {
   OS.contentPopup.WIDGET_TRIVIA_QUIZ = WIDGET_TRIVIA_QUIZ
   OS.contentPopup.WIDGET_PERSONALITY_QUIZ = WIDGET_PERSONALITY_QUIZ
   OS.contentPopup.WIDGET_LIST = WIDGET_LIST
-  OS.contentPopup.WIDGET_FORM = WIDGET_FORM
   OS.contentPopup.WIDGET_STORY = WIDGET_STORY
 })(window.OpinionStage = window.OpinionStage || {}, jQuery)
 

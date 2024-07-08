@@ -10,7 +10,6 @@ import {
   WIDGET_TRIVIA_QUIZ,
   WIDGET_PERSONALITY_QUIZ,
   WIDGET_LIST,
-  WIDGET_FORM,
   WIDGET_STORY,
 } from '../widget-types.js'
 
@@ -25,7 +24,6 @@ selectedWidgetTitles[WIDGET_SLIDESHOW] = 'slideshow'
 selectedWidgetTitles[WIDGET_TRIVIA_QUIZ] = 'trivia quiz'
 selectedWidgetTitles[WIDGET_PERSONALITY_QUIZ] = 'personality quiz'
 selectedWidgetTitles[WIDGET_LIST] = 'list'
-selectedWidgetTitles[WIDGET_FORM] = 'standard form'
 selectedWidgetTitles[WIDGET_STORY] = 'story article'
 
 export default Vue.component('widget-list', {
