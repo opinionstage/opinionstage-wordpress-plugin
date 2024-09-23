@@ -25,14 +25,15 @@ function opinionstage_content_popup_js( $hook_suffix ) {
 		return;
 	}
 
-	// asset loader hotfix TODO: improve this loader machanism.
-	opinionstage_register_javascript_asset(
-		'content-popup',
-		'content-popup.js',
-		array( 'jquery' )
-	);
-
-	opinionstage_enqueue_js_asset( 'content-popup' );
+    $index_js = 'assets/content-popup/build/index.js';
+    wp_register_script(
+        opinionstage_asset_name( 'content-popup' ),
+        opinionstage_gutenberg_asset_url( $index_js ),
+        ['jquery'],
+        OPINIONSTAGE_WIDGET_VERSION,
+        false
+    );
+    wp_enqueue_script(opinionstage_asset_name( 'content-popup' ));
 
 	add_action( 'admin_footer', 'opinionstage_content_popup_html' );
 

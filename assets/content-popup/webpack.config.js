@@ -5,8 +5,8 @@ module.exports = function (env = {}) {
     entry: ['./index.js', './widget-list.js'],
 
     output: {
-      filename: 'content-popup.js',
-      path: path.resolve(__dirname, '../../admin/js')
+      filename: 'index.js',
+      path: path.resolve(__dirname, 'build')
     },
 
     module: {
