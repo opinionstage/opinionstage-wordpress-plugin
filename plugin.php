@@ -117,7 +117,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 		add_action( 'admin_notices', 'opinionstage_other_plugin_installed_warning' );
 	} else {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php';
-		require_once plugin_dir_path( __FILE__ ) . 'includes/class-opinionstagefeedback.php';
 
         if ( is_admin() ) {
             require plugin_dir_path( __FILE__ ) . 'admin/init.php';
