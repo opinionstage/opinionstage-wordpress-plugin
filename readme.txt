@@ -3,8 +3,8 @@ Contributors: opinionstage, kucaahbe, ArtemLapkin
 Donate link: https://www.opinionstage.com
 Tags: poll, quiz, poll plugin, quiz plugin, survey plugin
 Requires at least: 2.8
-Tested up to: 6.6
-Stable tag: 19.8.21
+Tested up to: 6.7.1
+Stable tag: 19.8.22
 Requires PHP: 7.0
 
 Add a Poll, Survey, or Quiz Plugin to your WordPress site. Create a poll, quiz, or survey from scratch or based on templates.
@@ -239,6 +239,9 @@ Yes. You can export all submissions to CSV and XLS file formats.
 N/A
 
 == Changelog ==
+  = 19.8.22 =
+  * internal code improvements
+  * tested up to 6.7.1 Wordpress
   = 19.8.21 =
   * internal code improvements
   * remove placements
