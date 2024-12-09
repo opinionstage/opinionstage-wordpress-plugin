@@ -42,34 +42,6 @@ function opinionstage_other_plugin_installed_warning() {
 	echo "<div id='opinionstage-warning' class='error'><p><B>".__("Opinion Stage Plugin is already installed")."</B>".__(', please remove "<B>Popup for Interactive Content by Opinion Stage</B>" and use the available "<B>Poll & Quiz tools by Opinion Stage</B>" plugin')."</p></div>";
 }
 
-/**
- * Add the flyout embed code to the page header
- */
-function opinionstage_add_flyout() {
-	$os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
-	
-	if (!empty($os_options['fly_id']) && $os_options['fly_out_active'] == 'true' && !is_admin() ) {
-		// Will be added to the head of the page
-		?>
-		 <script type="text/javascript">//<![CDATA[
-			window.AutoEngageSettings = {
-			  id : '<?php echo $os_options['fly_id']; ?>'
-			};
-			(function(d, s, id){
-			var js,
-				fjs = d.getElementsByTagName(s)[0],
-				r = Math.floor(new Date().getTime() / 1000000);
-			if (d.getElementById(id)) {return;}
-			js = d.createElement(s); js.id = id; js.async=1;
-			js.src = '<?php echo OPINIONSTAGE_SERVER_BASE; ?>' + '/assets/autoengage.js?' + r;
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'os-jssdk'));
-			
-		//]]></script>
-		
-		<?php
-	}
-}
 function opinionstage_is_guten_enabled(){
 	$block_editor_oswp = version_compare( $GLOBALS['wp_version'], '5.0-beta', '>' );
 	if($block_editor_oswp == false){

@@ -14,6 +14,12 @@
  * Text Domain: social-polls-by-opinionstage
  */
 
+use Opinionstage\Core\Module;
+use Opinionstage\Infrastructure\InfrastructureProvider;
+use Opinionstage\Modules\ModulesProvider;
+require_once __DIR__ . '/src/vendor/autoload.php';
+
+
 defined( 'ABSPATH' ) || die();
 
 define( 'OPINIONSTAGE_PLUGIN_FILE', __FILE__ );
@@ -36,7 +42,6 @@ if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 
 define( 'OPINIONSTAGE_WIDGET_VERSION', '19.8.22' );
 
-define( 'OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage' );
 define( 'OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8' );
 define( 'OPINIONSTAGE_UTM_SOURCE', 'wordpress' );
 define( 'OPINIONSTAGE_UTM_CAMPAIGN', 'WPMainPI' );
@@ -74,8 +79,6 @@ define(
 
 define( 'OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget' );
 
-define( 'OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll' );
-define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
 
 
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
@@ -172,3 +175,37 @@ function opinionstage_fail_wp_version() {
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
+
+class Opinionstage {
+
+    use Module;
+
+    /** @var string */
+    public $plugin_path;
+
+    /** @var string */
+    public $plugin_url;
+
+
+    /**
+     * @return void
+     */
+    public function init() {
+
+        $this->plugin_path = __DIR__ . '/';
+
+        $this->plugin_url = plugin_dir_url( __FILE__ );
+
+        ModulesProvider::get_instance();
+        InfrastructureProvider::get_instance();
+
+        register_activation_hook( __FILE__, [ __CLASS__, 'on_activation' ] );
+        register_uninstall_hook( __FILE__, [ __CLASS__, 'on_uninstall' ] );
+    }
+}
+
+function opinionstage() {
+    return Opinionstage::get_instance();
+}
+
+opinionstage();
