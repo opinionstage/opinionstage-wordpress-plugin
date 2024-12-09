@@ -5,6 +5,9 @@
  * @package OpinionStageWordPressPlugin
  */
 
+use Opinionstage\Infrastructure\Helper;
+use Opinionstage\Infrastructure\HelperUTM;
+
 defined( 'ABSPATH' ) || die();
 
 $videos_data = array(
@@ -42,9 +45,9 @@ $videos_data = array(
 					<h1 class="opinionstage-tutorials-and-help__hero__header"><?php esc_html_e( 'Tutorials & Help', 'social-polls-by-opinionstage' ); ?></h1>
 					
 					<div class="opinionstage-tutorials-and-help__buttons">
-						<a href="https://help.opinionstage.com" class=" opinionstage-button opinionstage-button__blue" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Go To Help Center', 'social-polls-by-opinionstage' ); ?></a>
-                        <a href="<?php echo opinionstage_get_templates_url_for_type('home'); ?>" class="opinionstage-button opinionstage-button__blue" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Templates & Examples', 'social-polls-by-opinionstage' ); ?></a>
-						<a href="<?php echo esc_url( opinionstage_utm_url( 'live-chat/' ) ); ?>" class="opinionstage-button opinionstage-button__blue" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Live Chat Support', 'social-polls-by-opinionstage' ); ?></a>
+						<a href="https://help.opinionstage.com" class=" opinionstage-button opinionstage-button__blue" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Go To Help Center', 'social-polls-by-opinionstage' ); ?></a>
+                        <a href="<?php echo HelperUTM::get_templates_url_for_type('home'); ?>" class="opinionstage-button opinionstage-button__blue" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Templates & Examples', 'social-polls-by-opinionstage' ); ?></a>
+						<a href="<?php echo esc_url( HelperUTM::utm_url( 'live-chat/' ) ); ?>" class="opinionstage-button opinionstage-button__blue" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Live Chat Support', 'social-polls-by-opinionstage' ); ?></a>
 					</div>
 				</div>
 			</div>
@@ -56,7 +59,7 @@ $videos_data = array(
 						?>
 						<div class="opinionstage-tutorials-and-help__video">
 							<?php if ( isset( $videos_datum['title_link'] ) ) { ?>
-							<a href="<?php echo esc_url( $videos_datum['title_link'] ); ?>" <?php echo opinionstage_get_link_target_blank_attribute(); ?> class="opinionstage-tutorials-and-help__video__title__link">
+							<a href="<?php echo esc_url( $videos_datum['title_link'] ); ?>" <?php echo Helper::get_link_target_blank_attribute(); ?> class="opinionstage-tutorials-and-help__video__title__link">
 								<?php } ?>
 								<h3 class="opinionstage-tutorials-and-help__video__title"><?php echo esc_html( $videos_datum['title'] ); ?></h3>
 								<?php if ( isset( $videos_datum['title_link'] ) ) { ?>

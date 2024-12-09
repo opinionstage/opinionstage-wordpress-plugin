@@ -1,0 +1,12 @@
+{
+    "name": "opinionstage/opinionstage",
+    "description": "Opinionstage plugin core files.",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Opinionstage\\": ""
+        }
+    },
+    "require": {}
+}

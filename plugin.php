@@ -14,12 +14,16 @@
  * Text Domain: social-polls-by-opinionstage
  */
 
+use Opinionstage\Core\Module;
+use Opinionstage\Infrastructure\Helper;
+use Opinionstage\Modules\ModulesProvider;
+require_once __DIR__ . '/src/vendor/autoload.php';
+
+
 defined( 'ABSPATH' ) || die();
 
 define( 'OPINIONSTAGE_PLUGIN_FILE', __FILE__ );
 define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( OPINIONSTAGE_PLUGIN_FILE ) );
-
-require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
 
 $opinionstage_settings = array();
 
@@ -29,14 +33,13 @@ $opinionstage_settings = array();
 if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 	$opinionstage_dev_cfg_path = plugin_dir_path( __FILE__ ) . 'dev.ini';
 	if ( file_exists( $opinionstage_dev_cfg_path ) ) {
-		opinionstage_error_log( "loading configuration from file $opinionstage_dev_cfg_path" );
+        Helper::error_log( "loading configuration from file $opinionstage_dev_cfg_path" );
 		$opinionstage_settings = parse_ini_file( $opinionstage_dev_cfg_path );
 	}
 }
 
 define( 'OPINIONSTAGE_WIDGET_VERSION', '19.8.22' );
 
-define( 'OPINIONSTAGE_TEXT_DOMAIN', 'social-polls-by-opinionstage' );
 define( 'OPINIONSTAGE_WIDGET_API_KEY', 'wp35e8' );
 define( 'OPINIONSTAGE_UTM_SOURCE', 'wordpress' );
 define( 'OPINIONSTAGE_UTM_CAMPAIGN', 'WPMainPI' );
@@ -74,8 +77,6 @@ define(
 
 define( 'OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget' );
 
-define( 'OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll' );
-define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
 
 
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
@@ -104,28 +105,33 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 	function opinionstage_plugin_activated( $plugin ) {
 		// Check if active plugin file is plugin.php on plugin activate hook.
 		if ( plugin_basename( __FILE__ ) === $plugin ) {
-			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_MENU_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
+			$redirect_to = Helper::is_user_logged_in() ? OPINIONSTAGE_MENU_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
 			wp_safe_redirect( 'admin.php?page=' . $redirect_to );
 			exit();
 		}
 	}
 	add_action( 'activated_plugin', 'opinionstage_plugin_activated' );
-	require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
 
 	// Check if another OpinionStage plugin already installed and display warning message.
-	if ( opinionstage_check_plugin_available( 'opinionstage_popup' ) ) {
-		add_action( 'admin_notices', 'opinionstage_other_plugin_installed_warning' );
+	if ( Helper::check_plugin_available( 'opinionstage_popup' ) ) {
+        /**
+         * Notify about other OpinionStage plugin already available
+         */
+        add_action( 'admin_notices', function (){
+            echo "<div id='opinionstage-warning' class='error'><p><B>".__("Opinion Stage Plugin is already installed")."</B>".__(', please remove "<B>Popup for Interactive Content by Opinion Stage</B>" and use the available "<B>Poll & Quiz tools by Opinion Stage</B>" plugin')."</p></div>";
+		});
 	} else {
-		require_once plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php';
+		add_action( 'plugins_loaded', function (){
+            $os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+            $os_options['version'] = OPINIONSTAGE_WIDGET_VERSION;
 
-        if ( is_admin() ) {
-            require plugin_dir_path( __FILE__ ) . 'admin/init.php';
-        } else {
-            require plugin_dir_path( __FILE__ ) . 'public/init.php';
-        }
-        require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
+            // For backward compatibility
+            if ( !isset($os_options['sidebar_placement_active']) ) {
+                $os_options['sidebar_placement_active'] = 'false';
+            }
 
-		add_action( 'plugins_loaded', 'opinionstage_init' );
+            update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+		});
 	}
 
 	register_deactivation_hook( __FILE__, 'opinionstage_plugin_deactivate' );
@@ -172,3 +178,33 @@ function opinionstage_fail_wp_version() {
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
+
+class Opinionstage {
+
+    use Module;
+
+    /** @var string */
+    public $plugin_path;
+
+    /** @var string */
+    public $plugin_url;
+
+
+    /**
+     * @return void
+     */
+    public function init() {
+
+        $this->plugin_path = __DIR__ . '/';
+
+        $this->plugin_url = plugin_dir_url( __FILE__ );
+
+        ModulesProvider::get_instance();
+    }
+}
+
+function opinionstage() {
+    return Opinionstage::get_instance();
+}
+
+opinionstage();

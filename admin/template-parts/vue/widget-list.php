@@ -5,6 +5,8 @@
  * @package OpinionStageWordPressPlugin
  */
 
+use Opinionstage\Infrastructure\Helper;
+
 ?>
 <div class='page-content'>
 	<div class='content-actions content-actions__top'>
@@ -12,7 +14,7 @@
 			<h1 class="main-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></h1>
 		</div>
 		<div class="content-actions__right">
-			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
+			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
 	<div class="content-actions content-actions__form">
@@ -60,7 +62,7 @@
 	<div class='content__list'>
 		<div v-if='hasData'>
 			<div class='content__itm' v-for="widget in widgets">
-				<a <?php echo opinionstage_get_link_target_blank_attribute(); ?> :href='widget.landingPageUrl'>
+				<a <?php echo Helper::get_link_target_blank_attribute(); ?> :href='widget.landingPageUrl'>
 					<div class='content__image'>
 						<img :src='widget.imageUrl'>
 						<div class='content__label'>{{ widget.type }}</div>
@@ -69,7 +71,7 @@
 				<div class='content__info'>
 					<span v-if="widget.isDraft"
 							class="opinionstage-draft"><?php esc_html_e( 'draft', 'social-polls-by-opinionstage' ); ?></span>
-					<a <?php echo opinionstage_get_link_target_blank_attribute(); ?> :href='widget.editUrl'>
+					<a <?php echo Helper::get_link_target_blank_attribute(); ?> :href='widget.editUrl'>
 						<span class="content__info-title">{{ widget.title }}</span>
 						<div class="content__info-details">
 							<span class="opinionstage-widget-date">{{ widget.updatedAt | moment('DD MMMM YYYY') }}</span>
@@ -87,9 +89,9 @@
 						<a href="#" @click="select(widget)"
 							class="opinionstage-button opinionstage-button__middle"><?php esc_html_e( 'Add to Site', 'social-polls-by-opinionstage' ); ?></a>
 						<a :href='widget.editUrl' class="opinionstage-button opinionstage-button__middle"
-							<?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?></a>
+							<?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?></a>
 						<a :href='widget.statsUrl' class="opinionstage-button opinionstage-button__middle"
-							<?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Results', 'social-polls-by-opinionstage' ); ?></a>
+							<?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Results', 'social-polls-by-opinionstage' ); ?></a>
 					</div>
 				<?php } else { ?>
 					<div class='content__links'>
@@ -98,11 +100,11 @@
 						<div class="dropdown dropdown-popup-action">
 							<div class="popup-action popup-content-btn opinionstage-pseudo-chevron"></div>
 							<div class="popup-action-dropdown dropdown-content">
-								<a class='content__links-itm' <?php echo opinionstage_get_link_target_blank_attribute(); ?>
+								<a class='content__links-itm' <?php echo Helper::get_link_target_blank_attribute(); ?>
 									:href='widget.landingPageUrl'><?php esc_html_e( 'view', 'social-polls-by-opinionstage' ); ?></a>
-								<a class='content__links-itm' <?php echo opinionstage_get_link_target_blank_attribute(); ?> :href='widget.editUrl'
+								<a class='content__links-itm' <?php echo Helper::get_link_target_blank_attribute(); ?> :href='widget.editUrl'
 									v-show="!widget.template"><?php esc_html_e( 'edit', 'social-polls-by-opinionstage' ); ?></a>
-								<a class='content__links-itm' <?php echo opinionstage_get_link_target_blank_attribute(); ?> :href='widget.statsUrl'
+								<a class='content__links-itm' <?php echo Helper::get_link_target_blank_attribute(); ?> :href='widget.statsUrl'
 									v-show="!widget.template"><?php esc_html_e( 'Results', 'social-polls-by-opinionstage' ); ?></a>
 							</div>
 						</div>
@@ -142,7 +144,7 @@
 					</p>
 					<p>
 						<?php esc_html_e( 'Need Help?', 'social-polls-by-opinionstage' ); ?>
-						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Contact Us' ); ?></a></p>
+						<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Contact Us' ); ?></a></p>
 				</div>
 			</div>
 		</div>
