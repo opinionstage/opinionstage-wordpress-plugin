@@ -11,7 +11,6 @@ define( 'OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll' );
 define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
 
 class Shortcodes {
-    
     const POLL_SHORTCODE = 'socialpoll';
     const WIDGET_SHORTCODE = 'os-widget';
 
@@ -19,8 +18,7 @@ class Shortcodes {
 
     public function init() {
         add_action( 'wp_enqueue_scripts', [$this, 'enqueue_assets'] );
-        // Add the flyout embed code to the page header
-        add_action('wp_head', [$this, 'add_flyout']);
+        add_action('wp_head', [$this, 'maybe_add_flyout']);
 
         add_shortcode(self::POLL_SHORTCODE, [__CLASS__, 'poll']);
         add_shortcode(self::WIDGET_SHORTCODE, [__CLASS__, 'os_widget']);
@@ -97,7 +95,7 @@ class Shortcodes {
 
         wp_enqueue_script(
             opinionstage_asset_name( 'shortcodes' ),
-            Opinionstage::get_instance()->plugin_url . 'assets/js/lib/shortcodes.js',
+            Opinionstage::get_instance()->plugin_url . 'assets/js/shortcodes.js',
             ['jquery'],
             OPINIONSTAGE_WIDGET_VERSION,
             true
@@ -105,15 +103,14 @@ class Shortcodes {
     }
 
 
-    public function add_flyout() {
+    public function maybe_add_flyout() {
         if( is_admin() ) {
             return;
         }
-        
+
         $os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
 
         if (!empty($os_options['fly_id']) && $os_options['fly_out_active'] == 'true' ) {
-            // Will be added to the head of the page
             ?>
             <script type="text/javascript">//<![CDATA[
               window.AutoEngageSettings = {

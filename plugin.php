@@ -123,8 +123,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 
         if ( is_admin() ) {
             require plugin_dir_path( __FILE__ ) . 'admin/init.php';
-        } else {
-            require plugin_dir_path( __FILE__ ) . 'public/init.php';
         }
         require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
 
@@ -199,8 +197,8 @@ class Opinionstage {
         ModulesProvider::get_instance();
         InfrastructureProvider::get_instance();
 
-        register_activation_hook( __FILE__, [ __CLASS__, 'on_activation' ] );
-        register_uninstall_hook( __FILE__, [ __CLASS__, 'on_uninstall' ] );
+//        register_activation_hook( __FILE__, [ __CLASS__, 'on_activation' ] );
+//        register_uninstall_hook( __FILE__, [ __CLASS__, 'on_uninstall' ] );
     }
 }
 

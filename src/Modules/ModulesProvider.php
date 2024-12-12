@@ -23,6 +23,7 @@ final class ModulesProvider {
 	protected function get_modules() {
 		return [
             Shortcodes::class,
+			Admin::class,
 		];
 	}
 }
