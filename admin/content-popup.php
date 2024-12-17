@@ -28,7 +28,7 @@ function opinionstage_content_popup_js( $hook_suffix ) {
     $index_js = 'assets/content-popup/build/index.js';
     wp_register_script(
         opinionstage_asset_name( 'content-popup' ),
-        opinionstage_gutenberg_asset_url( $index_js ),
+        Opinionstage::get_instance()->plugin_url . $index_js,
         ['jquery'],
         OPINIONSTAGE_WIDGET_VERSION,
         false

@@ -1,11 +1,10 @@
 <?php
 
-
 namespace Opinionstage\Infrastructure;
 
 defined( 'ABSPATH' ) || die();
 
-use Opinionstage\Opinionstage;
+use Opinionstage;
 
 class Helper {
 
@@ -27,4 +26,23 @@ class Helper {
         return $file_name . '.php';
     }
 
+    public static function is_user_logged_in() {
+        $os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+        return isset( $os_options['uid'] ) && isset( $os_options['email'] );
+    }
+
+
+    public static function get_user_access_token() {
+        $os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+
+        if ( isset( $os_options['token'] ) ) {
+            return $os_options['token'];
+        } else {
+            return null;
+        }
+    }
+
+    public static function gutenberg_asset_url() {
+        
+    }
 }

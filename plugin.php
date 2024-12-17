@@ -124,7 +124,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
         if ( is_admin() ) {
             require plugin_dir_path( __FILE__ ) . 'admin/init.php';
         }
-        require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/gutenberg.php';
 
 		add_action( 'plugins_loaded', 'opinionstage_init' );
 	}

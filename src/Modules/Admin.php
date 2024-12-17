@@ -6,6 +6,7 @@ defined('ABSPATH') || die();
 
 use Opinionstage;
 use Opinionstage\Core\Module;
+use Opinionstage\Infrastructure\Helper;
 use OpinionStageAdminPageLoader;
 
 
@@ -124,7 +125,7 @@ class Admin {
 
 	public function register_menu_page() {
 		if ( function_exists( 'add_menu_page' ) ) {
-			$os_client_logged_in = opinionstage_user_logged_in();
+			$os_client_logged_in = Helper::is_user_logged_in();
 			if ( $os_client_logged_in ) {
 				add_menu_page(
 					__( 'Opinion Stage', 'social-polls-by-opinionstage' ),
@@ -152,7 +153,7 @@ class Admin {
 		}
 	}
 
-	private static function load_template() {
+	public static function load_template() {
 		$OSAPL = OpinionStageAdminPageLoader::get_instance();
 		$OSAPL->maybe_load_template_file();
 	}

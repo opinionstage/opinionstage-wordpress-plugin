@@ -24,6 +24,7 @@ final class ModulesProvider {
 		return [
             Shortcodes::class,
 			Admin::class,
+			Gutenberg::class,
 		];
 	}
 }
