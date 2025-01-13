@@ -15,6 +15,7 @@
  */
 
 use Opinionstage\Core\Module;
+use Opinionstage\Infrastructure\Helper;
 use Opinionstage\Infrastructure\InfrastructureProvider;
 use Opinionstage\Modules\ModulesProvider;
 require_once __DIR__ . '/src/vendor/autoload.php';
@@ -107,7 +108,7 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 	function opinionstage_plugin_activated( $plugin ) {
 		// Check if active plugin file is plugin.php on plugin activate hook.
 		if ( plugin_basename( __FILE__ ) === $plugin ) {
-			$redirect_to = opinionstage_user_logged_in() ? OPINIONSTAGE_MENU_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
+			$redirect_to = Helper::is_user_logged_in() ? OPINIONSTAGE_MENU_SLUG : OPINIONSTAGE_GETTING_STARTED_SLUG;
 			wp_safe_redirect( 'admin.php?page=' . $redirect_to );
 			exit();
 		}
@@ -120,11 +121,6 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 		add_action( 'admin_notices', 'opinionstage_other_plugin_installed_warning' );
 	} else {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php';
-
-        if ( is_admin() ) {
-            require plugin_dir_path( __FILE__ ) . 'admin/init.php';
-        }
-
 		add_action( 'plugins_loaded', 'opinionstage_init' );
 	}
 
@@ -195,9 +191,6 @@ class Opinionstage {
 
         ModulesProvider::get_instance();
         InfrastructureProvider::get_instance();
-
-//        register_activation_hook( __FILE__, [ __CLASS__, 'on_activation' ] );
-//        register_uninstall_hook( __FILE__, [ __CLASS__, 'on_uninstall' ] );
     }
 }
 

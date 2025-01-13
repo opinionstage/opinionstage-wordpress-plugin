@@ -33,7 +33,7 @@ class Helper {
 
 
     public static function get_user_access_token() {
-        $os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+        $os_options = self::get_opinionstage_option();
 
         if ( isset( $os_options['token'] ) ) {
             return $os_options['token'];
@@ -42,7 +42,17 @@ class Helper {
         }
     }
 
-    public static function gutenberg_asset_url() {
+    public static function get_opinionstage_option() {
+        return (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+    }
+
+    public static function is_my_items_admin_page() {
+        if( ! function_exists( 'get_current_screen' ) ) {
+            return false;
+        }
+
+        $current_screen = get_current_screen();
         
+        return $current_screen->id === 'toplevel_page_opinionstage-settings';
     }
 }

@@ -5,13 +5,15 @@
  * @package OpinionStageWordPressPlugin
  */
 
+use Opinionstage\Infrastructure\Helper;
+
 defined( 'ABSPATH' ) || die();
 
 require_once plugin_dir_path( __FILE__ ) . '../includes/client-session.php';
 
-$opinionstage_user_logged_in = opinionstage_user_logged_in();
+$opinionstage_user_logged_in = Helper::is_user_logged_in();
 $os_options                  = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-$is_my_items_admin_page      = opinionstage_is_my_items_admin_page();
+$is_my_items_admin_page      = Helper::is_my_items_admin_page();
 $user_email                  = '';
 if ( $is_my_items_admin_page ) {
 	$user_email = ! empty( $os_options['email'] ) ? $os_options['email'] : '';
@@ -112,4 +114,3 @@ if ( $is_my_items_admin_page ) {
 		</div>
 	</div>
 </template>
-
