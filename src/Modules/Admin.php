@@ -8,7 +8,6 @@ use Opinionstage;
 use Opinionstage\Core\Module;
 use Opinionstage\Infrastructure\Helper;
 use Opinionstage\Infrastructure\TemplatesViewer;
-use OpinionStageAdminPageLoader;
 
 
 class Admin {
@@ -23,7 +22,6 @@ class Admin {
         // disconnect callbacks
         add_action( 'admin_menu', [ $this, 'disconnect_account_menu' ] );
         add_action( 'admin_init', [ $this, 'disconnect_account_action' ] );
-
 
         // classic editor media button
         add_action( 'media_buttons', [ $this, 'print_content_popup_add_editor_button' ] );
