@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || die();
 
 <style type="text/css">
 	.content-item-image.quiz{
-		background-image: url(<?php echo esc_url( plugins_url( '', __DIR__ ) . '/images/form-not-found.png' ); ?>);
+		background-image: url(<?php echo esc_url( Opinionstage::get_instance()->plugin_url . '/admin/images/form-not-found.png' ); ?>);
 	}
 </style>
 <div id="opinionstage-content">
@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) || die();
 					<li>Edit the post/page.</li>
 					<li>Copy the short code above</li>
 					<li>Paste it where you’d like to embed the item.</li>
-				</ol>                
+				</ol>
 				<div class="opinionistage-my-items-page-modal__close-button">
 					<span id="opinionstage-dialog-close" class="opinionstage-button">Close</span>
 				</div>

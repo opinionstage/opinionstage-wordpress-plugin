@@ -98,8 +98,7 @@ class Admin {
     }
 
     public function print_content_popup_html() {
-        // todo - move to template
-        require Opinionstage::get_instance()->plugin_path . 'admin/content-popup-template.html.php';
+		TemplatesViewer::require_template('admin/template-parts/content-popup-template.html');
     }
 
     /**
@@ -120,10 +119,11 @@ class Admin {
      */
     public function login_and_redirect_to_settings_page() {
 
-        if ( is_user_logged_in()
+        if (
+			is_user_logged_in()
             && current_user_can( 'edit_posts' )
-            && OPINIONSTAGE_LOGIN_CALLBACK_SLUG === filter_input( INPUT_GET, 'page' ) ) {
-
+            && OPINIONSTAGE_LOGIN_CALLBACK_SLUG === filter_input( INPUT_GET, 'page' )
+		) {
             $uid = isset( $_GET['opinionstage_uid'] ) ? sanitize_text_field( $_GET['opinionstage_uid'] ) : '';
             $token = isset( $_GET['opinionstage_token'] ) ? sanitize_text_field( $_GET['opinionstage_token'] ) : '';
             $email = isset( $_GET['opinionstage_email'] ) ? sanitize_email( $_GET['opinionstage_email'] ) : '';
@@ -190,7 +190,6 @@ class Admin {
 
             $redirect_url = get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG );
 
-//			opinionstage_error_log('user logged out, redirect to ' . $redirect_url);
             if ( wp_redirect( $redirect_url, 302 ) ) {
                 exit;
             }

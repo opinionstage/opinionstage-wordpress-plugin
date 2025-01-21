@@ -6,10 +6,9 @@
  */
 
 use Opinionstage\Infrastructure\Helper;
+use Opinionstage\Infrastructure\TemplatesViewer;
 
 defined( 'ABSPATH' ) || die();
-
-require_once plugin_dir_path( __FILE__ ) . '../includes/client-session.php';
 
 $opinionstage_user_logged_in = Helper::is_user_logged_in();
 $os_options                  = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
@@ -22,13 +21,13 @@ if ( $is_my_items_admin_page ) {
 ?>
 <style type="text/css">
 	.content__image {
-		background-image: url(<?php echo esc_url( plugins_url( '', __DIR__ ) . '/admin/images/form-not-found.png' ); ?>);
+		background-image: url(<?php echo esc_url( Opinionstage::get_instance()->plugin_url . '/admin/images/form-not-found.png' ); ?>);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 </style>
 <template data-opinionstage-content-popup-template>
-	<div class='opinionstage-content-popup-contents 
+	<div class='opinionstage-content-popup-contents
 	<?php
 	if ( ! $is_my_items_admin_page ) {
 		echo 'opinionstage-content-popup-contents__edit-post'; }
@@ -55,7 +54,7 @@ if ( $is_my_items_admin_page ) {
 				@widget-selected="selectWidgetAndExit"
 				client-widgets-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ); ?>"
 				client-widgets-has-new-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE ); ?>"
-				access-key="<?php echo esc_js( opinionstage_user_access_token() ); ?>"
+				access-key="<?php echo esc_js( Helper::get_user_access_token()); ?>"
 				plugin-version="<?php echo esc_js( OPINIONSTAGE_WIDGET_VERSION ); ?>"
 			>
 			</popup-content>
@@ -64,7 +63,9 @@ if ( $is_my_items_admin_page ) {
 </template>
 
 <template id="opinionstage-widget-list">
-	<?php require __DIR__ . '/template-parts/vue/widget-list.php'; ?>
+	<?php
+	TemplatesViewer::require_template('admin/template-parts/vue/widget-list', compact('is_my_items_admin_page'));
+	?>
 </template>
 
 <template id="opinionstage-popup-content">
@@ -78,7 +79,9 @@ if ( $is_my_items_admin_page ) {
 		</div>
 		<template v-else>
 			<div v-if="!dataLoading && isMyItemsPage && widgets !== undefined && widgets.length === 0 && searchCriteria.type === 'all' && searchCriteria.title === ''">
-				<?php require __DIR__ . '/template-parts/vue/create-screen.php'; ?>
+				<?php
+				TemplatesViewer::require_template('admin/template-parts/vue/create-screen', compact('is_my_items_admin_page'));
+				?>
 			</div>
 			<widget-list v-else
 						:widgets='widgets'

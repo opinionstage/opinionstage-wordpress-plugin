@@ -4,6 +4,8 @@
  *
  * @package OpinionStageWordPressPlugin */
 
+use Opinionstage\Infrastructure\Helper;
+
 defined( 'ABSPATH' ) || die();
 
 $links_columns_items = array(
@@ -127,21 +129,6 @@ $client_logos          = array(
 		'width' => 129,
 	),
 );
-
-
-
-/**
- * Generates template preview url.
- *
- * @param string $path part or url.
- * @return mixed
- */
-function opinionstage_generate_template_url( $path ) {
-	return add_query_arg(
-		OPINIONSTAGE_UTM_PARAMETERS,
-		OPINIONSTAGE_SERVER_BASE . '/templates/' . $path
-	);
-}
 ?>
 <div id="opinionstage-content">
 	<div class="opinionstage-bg-white">
@@ -191,7 +178,7 @@ function opinionstage_generate_template_url( $path ) {
 								foreach ( $col['items'] as $anchor ) {
 									?>
 									<li>
-										<a href="<?php echo esc_url( opinionstage_generate_template_url( $anchor['path'] ) ); ?>" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php echo esc_html( $anchor['title'] ); ?></a>
+										<a href="<?php echo esc_url( Helper::generate_template_url( $anchor['path'] ) ); ?>" <?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php echo esc_html( $anchor['title'] ); ?></a>
 									</li>
 									<?php
 								}
@@ -206,9 +193,9 @@ function opinionstage_generate_template_url( $path ) {
 		</div>
 		<div class="opinionstage-getting-started-section opinionstage-getting-started-video">
 			<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'How to Use the Plugin', 'social-polls-by-opinionstage' ); ?></h2>
-	
+
 			<p class="opinionstage-getting-started-video__description"><?php esc_html_e( 'Follow these steps to create a poll, survey or quiz and add it to your site in minutes', 'social-polls-by-opinionstage' ); ?></p>
-	
+
 			<div class="opinionstage-getting-started-video__iframe">
 				<div>
 					<iframe width="100%"
@@ -218,7 +205,6 @@ function opinionstage_generate_template_url( $path ) {
 						allowfullscreen></iframe>
 				</div>
 			</div>
-	
 		</div>
 	</div>
 </div>

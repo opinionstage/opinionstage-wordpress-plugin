@@ -16,8 +16,4 @@ class TemplatesViewer {
         extract($args);
         require( $path );
     }
-
-//    public static function get_templates_path() {
-//        return Opinionstage::get_instance()->plugin_path . 'templates/';
-//    }
 }
