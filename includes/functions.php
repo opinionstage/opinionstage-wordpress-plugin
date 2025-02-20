@@ -42,24 +42,6 @@ function opinionstage_other_plugin_installed_warning() {
 	echo "<div id='opinionstage-warning' class='error'><p><B>".__("Opinion Stage Plugin is already installed")."</B>".__(', please remove "<B>Popup for Interactive Content by Opinion Stage</B>" and use the available "<B>Poll & Quiz tools by Opinion Stage</B>" plugin')."</p></div>";
 }
 
-function opinionstage_is_guten_enabled(){
-	$block_editor_oswp = version_compare( $GLOBALS['wp_version'], '5.0-beta', '>' );
-	if($block_editor_oswp == false){
-		if( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ){
-			return true;
-		}else{
-			return false;
-		}
-	}else{
-		global $current_screen;
-  		$current_screen = get_current_screen();
-		if( method_exists($current_screen, 'is_block_editor') && $current_screen->is_block_editor() ){
-			return true;
-		}else{
-			return false;
-		}
-	}
-}
 
 function opinionstage_get_link_target_blank_attribute(){
     return ' target="_blank" rel="noopener" ';

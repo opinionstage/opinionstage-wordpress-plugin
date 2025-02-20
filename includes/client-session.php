@@ -23,12 +23,12 @@ function opinionstage_user_logged_in() {
  *
  * @return string|null User token or null if not found.
  */
-function opinionstage_user_access_token() {
-	$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
-
-	if ( isset( $os_options['token'] ) ) {
-		return $os_options['token'];
-	} else {
-		return null;
-	}
-}
+//function opinionstage_user_access_token() {
+//	$os_options = (array) get_option( OPINIONSTAGE_OPTIONS_KEY );
+//
+//	if ( isset( $os_options['token'] ) ) {
+//		return $os_options['token'];
+//	} else {
+//		return null;
+//	}
+//}

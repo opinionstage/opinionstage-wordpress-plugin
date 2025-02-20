@@ -6,4 +6,3 @@ if (defined('WP_UNINSTALL_PLUGIN')) {
 	opinionstage_uninstall();
 
 }
-?>

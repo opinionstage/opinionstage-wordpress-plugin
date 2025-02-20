@@ -190,7 +190,6 @@ class Opinionstage {
         $this->plugin_url = plugin_dir_url( __FILE__ );
 
         ModulesProvider::get_instance();
-        InfrastructureProvider::get_instance();
     }
 }
 

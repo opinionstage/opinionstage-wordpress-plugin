@@ -11,14 +11,13 @@ use Opinionstage\Infrastructure\Helper;
 
 class Gutenberg {
     
-
     use Module;
 
     public function init() {
         add_action( 'init', [$this, 'register_gutenberg_assets'] );
         add_filter( 'block_categories_all', [$this, 'register_gutenberg_categories'] );
     }
-    
+
     public function register_gutenberg_assets() {
         $script_asset_path = OPINIONSTAGE_PLUGIN_DIR . 'assets/gutenberg/build/index.asset.php';
 

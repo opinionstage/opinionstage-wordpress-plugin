@@ -34,7 +34,7 @@ class Helper {
         return $current_screen->id === 'toplevel_page_opinionstage-settings';
     }
 
-	function generate_template_url( $path ) {
+    public static function generate_template_url( $path ) {
 		return add_query_arg(
 			OPINIONSTAGE_UTM_PARAMETERS,
 			OPINIONSTAGE_SERVER_BASE . '/templates/' . $path
