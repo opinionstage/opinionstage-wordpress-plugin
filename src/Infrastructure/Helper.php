@@ -40,4 +40,47 @@ class Helper {
 			OPINIONSTAGE_SERVER_BASE . '/templates/' . $path
 		);
 	}
+
+    public static function get_link_target_blank_attribute() {
+        return ' target="_blank" rel="noopener" ';
+    }
+
+    /**
+     * Check if the requested plugin is already available
+     */
+    public static function check_plugin_available( $plugin_key ) {
+        $other_widget = (array) get_option($plugin_key); // Check the key of the other plugin
+
+        // Check if OpinionStage plugin already installed.
+        return (isset($other_widget['uid']) ||
+            isset($other_widget['email']));
+    }
+
+    /**
+     * Logging function, should be used with care, users dislike debug/error messages
+     *
+     * If WordPress has debugging enabled, this function will output messages to
+     * WP_DEBUG_LOG ( usually wp-contents/debug.log file)
+     *
+     * @param string $message message to log.
+     */
+    public static function error_log( $message ) {
+        if ( ! defined( 'WP_DEBUG' ) || true !== WP_DEBUG ) {
+            return;
+        }
+
+        // phpcs:disable WordPress.PHP.DevelopmentFunctions
+        error_log( '[opinionstage plugin] ' . $message );
+        // phpcs:enable
+    }
+
+    /**
+     * Generates name of asset
+     *
+     * @param string $name name.
+     * @return string
+     */
+    public static function get_asset_name( $name ) {
+        return 'opinionstage-' . $name;
+    }
 }

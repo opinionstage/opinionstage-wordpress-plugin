@@ -51,7 +51,7 @@ class Admin {
             'toplevel_page_opinionstage-getting-started'
         ], true ) ) {
             wp_enqueue_style(
-                opinionstage_asset_name( 'menu-page' ),
+                Helper::get_asset_name( 'menu-page' ),
                 Opinionstage::get_instance()->plugin_url . '/admin/css/menu-page.css',
                 null,
                 OPINIONSTAGE_WIDGET_VERSION
@@ -61,7 +61,7 @@ class Admin {
         if ( $hook === 'toplevel_page_opinionstage-settings' ) {
             $menu_page_js = 'admin/js/menu-page.js';
             wp_enqueue_script(
-                opinionstage_asset_name( 'menu-page' ),
+                Helper::get_asset_name( 'menu-page' ),
                 Opinionstage::get_instance()->plugin_url . $menu_page_js,
                 [ 'jquery' ],
                 OPINIONSTAGE_WIDGET_VERSION,
@@ -77,7 +77,7 @@ class Admin {
         ] ) ) {
             $index_js = 'assets/content-popup/build/index.js';
             wp_enqueue_script(
-                opinionstage_asset_name( 'content-popup' ),
+                Helper::get_asset_name( 'content-popup' ),
                 Opinionstage::get_instance()->plugin_url . $index_js,
                 [ 'jquery' ],
                 OPINIONSTAGE_WIDGET_VERSION,
@@ -88,7 +88,7 @@ class Admin {
 
         if ( 'widgets.php' === $hook ) {
             wp_enqueue_script(
-                opinionstage_asset_name( 'widgets-page' ),
+                Helper::get_asset_name( 'widgets-page' ),
                 Opinionstage::get_instance()->plugin_url . 'admin/js/widgets-page.js',
                 [ 'jquery' ],
                 OPINIONSTAGE_WIDGET_VERSION,
@@ -129,7 +129,7 @@ class Admin {
             $email = isset( $_GET['opinionstage_email'] ) ? sanitize_email( $_GET['opinionstage_email'] ) : '';
             $fly_id = isset( $_GET['opinionstage_fly_id'] ) ? intval( $_GET['opinionstage_fly_id'] ) : '';
 
-            opinionstage_uninstall();
+            delete_option(OPINIONSTAGE_OPTIONS_KEY);
             self::opinionstage_validate_and_save_client_data(
                 compact(
                     'uid',

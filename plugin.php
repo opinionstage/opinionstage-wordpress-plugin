@@ -16,7 +16,6 @@
 
 use Opinionstage\Core\Module;
 use Opinionstage\Infrastructure\Helper;
-use Opinionstage\Infrastructure\InfrastructureProvider;
 use Opinionstage\Modules\ModulesProvider;
 require_once __DIR__ . '/src/vendor/autoload.php';
 
@@ -26,8 +25,6 @@ defined( 'ABSPATH' ) || die();
 define( 'OPINIONSTAGE_PLUGIN_FILE', __FILE__ );
 define( 'OPINIONSTAGE_PLUGIN_DIR', plugin_dir_path( OPINIONSTAGE_PLUGIN_FILE ) );
 
-require_once OPINIONSTAGE_PLUGIN_DIR . 'includes/logging.php';
-
 $opinionstage_settings = array();
 
 // don't even try to load any configuration settings,
@@ -36,7 +33,7 @@ $opinionstage_settings = array();
 if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
 	$opinionstage_dev_cfg_path = plugin_dir_path( __FILE__ ) . 'dev.ini';
 	if ( file_exists( $opinionstage_dev_cfg_path ) ) {
-		opinionstage_error_log( "loading configuration from file $opinionstage_dev_cfg_path" );
+        Helper::error_log( "loading configuration from file $opinionstage_dev_cfg_path" );
 		$opinionstage_settings = parse_ini_file( $opinionstage_dev_cfg_path );
 	}
 }
@@ -114,14 +111,27 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
 		}
 	}
 	add_action( 'activated_plugin', 'opinionstage_plugin_activated' );
-	require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
 
 	// Check if another OpinionStage plugin already installed and display warning message.
-	if ( opinionstage_check_plugin_available( 'opinionstage_popup' ) ) {
-		add_action( 'admin_notices', 'opinionstage_other_plugin_installed_warning' );
+	if ( Helper::check_plugin_available( 'opinionstage_popup' ) ) {
+        /**
+         * Notify about other OpinionStage plugin already available
+         */
+        add_action( 'admin_notices', function (){
+            echo "<div id='opinionstage-warning' class='error'><p><B>".__("Opinion Stage Plugin is already installed")."</B>".__(', please remove "<B>Popup for Interactive Content by Opinion Stage</B>" and use the available "<B>Poll & Quiz tools by Opinion Stage</B>" plugin')."</p></div>";
+		});
 	} else {
-		require_once plugin_dir_path( __FILE__ ) . 'includes/utility-functions.php';
-		add_action( 'plugins_loaded', 'opinionstage_init' );
+		add_action( 'plugins_loaded', function (){
+            $os_options = (array) get_option(OPINIONSTAGE_OPTIONS_KEY);
+            $os_options['version'] = OPINIONSTAGE_WIDGET_VERSION;
+
+            // For backward compatibility
+            if ( !isset($os_options['sidebar_placement_active']) ) {
+                $os_options['sidebar_placement_active'] = 'false';
+            }
+
+            update_option(OPINIONSTAGE_OPTIONS_KEY, $os_options);
+		});
 	}
 
 	register_deactivation_hook( __FILE__, 'opinionstage_plugin_deactivate' );

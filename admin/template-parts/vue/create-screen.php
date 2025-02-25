@@ -5,6 +5,8 @@
  * @package OpinionStageWordPressPlugin
  */
 
+use Opinionstage\Infrastructure\Helper;
+
 $items = array(
 	array(
 		'title'             => __( 'Poll', 'social-polls-by-opinionstage' ),
@@ -66,7 +68,7 @@ $items = array(
 						<div class="opinionstage-section-cell opinionstage-btn-cell">
                             <a href="<?php echo esc_url( add_query_arg( 'w_type', $item['url_scratch_type'], OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>"
 								class="opinionstage-button opinionstage-button__grey opinionstage-button__middle"
-								<?php echo opinionstage_get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
+								<?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create', 'social-polls-by-opinionstage' ); ?></a>
 						</div>
 					</div>
 					<?php

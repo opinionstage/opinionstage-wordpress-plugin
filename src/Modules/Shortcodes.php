@@ -6,6 +6,7 @@ defined( 'ABSPATH' ) || die();
 
 use Opinionstage;
 use Opinionstage\Core\Module;
+use Opinionstage\Infrastructure\Helper;
 
 define( 'OPINIONSTAGE_POLL_SHORTCODE', 'socialpoll' );
 define( 'OPINIONSTAGE_WIDGET_SHORTCODE', 'os-widget' );
@@ -94,7 +95,7 @@ class Shortcodes {
     public function enqueue_assets() {
 
         wp_enqueue_script(
-            opinionstage_asset_name( 'shortcodes' ),
+            Helper::get_asset_name( 'shortcodes' ),
             Opinionstage::get_instance()->plugin_url . 'assets/js/shortcodes.js',
             ['jquery'],
             OPINIONSTAGE_WIDGET_VERSION,

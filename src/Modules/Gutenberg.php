@@ -25,7 +25,7 @@ class Gutenberg {
 
         $index_js                = 'assets/gutenberg/build/index.js';
         $index_js_dependencies   = $script_asset['dependencies'];
-        $index_js_dependencies[] = opinionstage_asset_name( 'content-popup' );
+        $index_js_dependencies[] = Helper::get_asset_name( 'content-popup' );
         wp_register_script(
             'opinionstage-gutenberg-block-editor',
             Opinionstage::get_instance()->plugin_url . $index_js,
