@@ -13,18 +13,18 @@ use Opinionstage\Core\Provider;
  */
 final class ModulesProvider {
 
-	use Provider;
+    use Provider;
 
-	/**
-	 * Instantiate modules
-	 *
-	 * @return array
-	 */
-	protected function get_modules() {
-		return [
+    /**
+     * Instantiate modules
+     *
+     * @return array
+     */
+    protected function get_modules() {
+        return [
             Shortcodes::class,
-			Admin::class,
-			Gutenberg::class,
-		];
-	}
+            Admin::class,
+            Gutenberg::class,
+        ];
+    }
 }

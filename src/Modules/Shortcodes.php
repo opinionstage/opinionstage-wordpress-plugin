@@ -32,11 +32,11 @@ class Shortcodes {
         }
 
         $shortcode_params = shortcode_atts(
-            array(
-                'id'    => 0,
-                'type'  => 'poll',
+            [
+                'id' => 0,
+                'type' => 'poll',
                 'width' => '',
-            ),
+            ],
             $atts,
             self::POLL_SHORTCODE
         );
@@ -54,10 +54,10 @@ class Shortcodes {
         }
 
         $shortcode_params = shortcode_atts(
-            array(
-                'path'            => 0,
-                'width'           => '',
-            ),
+            [
+                'path' => 0,
+                'width' => '',
+            ],
             $atts,
             self::WIDGET_SHORTCODE
         );

@@ -120,7 +120,7 @@ class Admin {
     public function login_and_redirect_to_settings_page() {
 
         if (
-			is_user_logged_in()
+            is_user_logged_in()
             && current_user_can( 'edit_posts' )
             && OPINIONSTAGE_LOGIN_CALLBACK_SLUG === filter_input( INPUT_GET, 'page' )
 		) {
@@ -169,8 +169,8 @@ class Admin {
     }
 
 
-// adds page for post-logout redirect and setup in form of invisible menu page,
-// and url: http://wp-host.com/wp-admin/admin.php?page=disconnect-page
+    // adds page for post-logout redirect and setup in form of invisible menu page,
+    // and url: http://wp-host.com/wp-admin/admin.php?page=disconnect-page
     public function disconnect_account_menu() {
         if ( function_exists( 'add_menu_page' ) ) {
             add_submenu_page(
