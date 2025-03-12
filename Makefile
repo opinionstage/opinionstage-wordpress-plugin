@@ -5,7 +5,7 @@ SHELL = /bin/bash
 PLUGIN_FILES = $(shell git ls-files)
 
 VERSION = $(shell grep 'Stable tag' readme.txt | cut -d' ' -f 3)
-TARGET = social-polls-by-opinionstage-$(VERSION).zip
+TARGET = social-polls-by-opinionstage.zip
 
 all: $(TARGET)
 
