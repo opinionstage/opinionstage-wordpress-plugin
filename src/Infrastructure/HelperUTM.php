@@ -5,9 +5,6 @@ namespace Opinionstage\Infrastructure;
 defined( 'ABSPATH' ) || die();
 
 class HelperUTM {
-
-
-
     /**
      * Returns UTM url
      *
@@ -20,7 +17,7 @@ class HelperUTM {
     }
 
     /**
-     * Generates a to the callback page used to connect the plugin to the Opinion Stage account
+     * Generates a callback page URL, that is used to connect the plugin to the Opinion Stage account
      */
     public static function callback_url() {
         return menu_page_url( OPINIONSTAGE_LOGIN_CALLBACK_SLUG, false );
@@ -35,5 +32,4 @@ class HelperUTM {
     public static function get_templates_url_for_type( $type ) {
         return add_query_arg( 'page', $type, OPINIONSTAGE_REDIRECT_TEMPLATES_API_UTM );
     }
-
 }

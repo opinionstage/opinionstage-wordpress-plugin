@@ -7,6 +7,7 @@ defined( 'ABSPATH' ) || die();
 use Opinionstage;
 use Opinionstage\Core\Module;
 use Opinionstage\Infrastructure\Helper;
+use Opinionstage\Infrastructure\SingleUseNonce;
 use Opinionstage\Infrastructure\TemplatesViewer;
 
 
@@ -123,6 +124,7 @@ class Admin {
             is_user_logged_in()
             && current_user_can( 'edit_posts' )
             && OPINIONSTAGE_LOGIN_CALLBACK_SLUG === filter_input( INPUT_GET, 'page' )
+            && SingleUseNonce::is_valid_callback()
 		) {
             $uid = isset( $_GET['opinionstage_uid'] ) ? sanitize_text_field( $_GET['opinionstage_uid'] ) : '';
             $token = isset( $_GET['opinionstage_token'] ) ? sanitize_text_field( $_GET['opinionstage_token'] ) : '';
