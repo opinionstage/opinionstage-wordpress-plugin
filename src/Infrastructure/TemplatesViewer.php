@@ -7,13 +7,20 @@ use Opinionstage;
 class TemplatesViewer {
 
     public static function require_template($template_name, $args = []) {
-        $path = Opinionstage::get_instance()->plugin_path . $template_name . '.php';
 
-        if( ! file_exists( $path ) ) {
+        $template_path = $template_name . '.php';
+
+        // Build the full path
+        $path = Opinionstage::get_instance()->plugin_path . $template_path;
+
+        if (!file_exists($path)) {
             return;
         }
 
+        // Extract variables for template
         extract($args);
-        require( $path );
+
+        // Include the template
+        require($path);
     }
 }
