@@ -229,7 +229,6 @@ class Admin {
                     Opinionstage::get_instance()->plugin_url . 'admin/images/os-icon.svg',
                     '25.234323221'
                 );
-                add_submenu_page( OPINIONSTAGE_GETTING_STARTED_SLUG, 'Get Started', 'Get Started', 'edit_posts', OPINIONSTAGE_GETTING_STARTED_SLUG, [ $this, 'load_template' ] );
             }
         }
     }
@@ -262,7 +261,6 @@ class Admin {
         $template_name = substr($page, strlen('opinionstage-'));
 
         $template_name = str_replace('-', '_', $template_name);
-        
 
         if (!in_array($template_name, self::$allowed_templates, true)) {
             return '';
