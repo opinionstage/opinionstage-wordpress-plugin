@@ -20,7 +20,7 @@ export default Vue.component('popup-content', {
     'isMyItemsPage',
     // static properties:
     'clientWidgetsUrl',
-    'clientWidgetsHasNewUrl',
+    // 'clientWidgetsHasNewUrl',
     'accessKey',
     'pluginVersion',
   ],
@@ -32,7 +32,7 @@ export default Vue.component('popup-content', {
       searchCriteria: {},
       noMoreData: true,
       newWidgetsAvailable: false,
-      lastUpdateTime: null,
+      // lastUpdateTime: null,
       isCheckingWidgetUpdates: false,
       widgetUpdatesChecker: null,
     }
@@ -49,17 +49,17 @@ export default Vue.component('popup-content', {
       const widgetTitle = search.widgetTitle || ''
 
       this.newWidgetsAvailable = false
-      stopWidgetUpdatesChecking.call(this)
+      // stopWidgetUpdatesChecking.call(this)
       this.searchCriteria = {page: 1, perPage: 9, type: widgetType, title: widgetTitle}
       this.$store.commit('clearWidgets')
 
       loadData.call(this).then(() => {
         this.widgets = this.$store.state.widgets[0]
         if (!this.searchCriteria.title) {
-          setLastUpdateTimeFromWidget.call(this)
+          // setLastUpdateTimeFromWidget.call(this)
         }
 
-        startWidgetUpdatesChecking.call(this)
+        // startWidgetUpdatesChecking.call(this)
       })
     },
 
@@ -87,7 +87,7 @@ export default Vue.component('popup-content', {
         this.reloadData()
       } else {
         this.newWidgetsAvailable = false
-        stopWidgetUpdatesChecking.call(this)
+        // stopWidgetUpdatesChecking.call(this)
       }
     },
   },
@@ -133,46 +133,6 @@ function withParams(url, type, time) {
   }
 }
 
-function pullWidgetsUpdateInformation(type, updatedAt) {
-  const url = withParams(this.clientWidgetsHasNewUrl, type, updatedAt)
-
-  return JsonApi.get(url, this.pluginVersion, this.accessKey)
-    .then((payload) => {
-      this.newWidgetsAvailable = payload.data['has-new-widgets']
-    })
-    .catch((error) => {
-      console.error("[social-polls-by-opinionstage][content-popup] can't load widgets:", error.statusText)
-    })
-}
-
 function hasNextPage(nextPageNumber) {
   return nextPageNumber > 1
-}
-
-function checkWidgetUpdates() {
-  pullWidgetsUpdateInformation.call(this, this.searchCriteria.type, this.lastUpdateTime).then(() => {
-    if (this.newWidgetsAvailable) {
-      stopWidgetUpdatesChecking.call(this)
-    }
-  })
-}
-
-function startWidgetUpdatesChecking() {
-  if (this.clientIsLoggedIn) {
-    this.isCheckingWidgetUpdates = true
-    this.widgetUpdatesChecker = setInterval(checkWidgetUpdates.bind(this), 3000)
-  }
-}
-
-function stopWidgetUpdatesChecking() {
-  this.isCheckingWidgetUpdates = false
-  clearInterval(this.widgetUpdatesChecker)
-}
-
-function setLastUpdateTimeFromWidget() {
-  if (typeof this.widgets[0] !== 'undefined') {
-    this.lastUpdateTime = this.widgets[0].updatedAt
-  } else {
-    this.lastUpdateTime = null
-  }
 }

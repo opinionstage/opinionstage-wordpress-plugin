@@ -53,7 +53,6 @@ if ( $is_my_items_admin_page ) {
 				:widget-type="widgetType"
 				@widget-selected="selectWidgetAndExit"
 				client-widgets-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API ); ?>"
-				client-widgets-has-new-url="<?php echo esc_url( OPINIONSTAGE_CONTENT_POPUP_CLIENT_WIDGETS_API_RECENT_UPDATE ); ?>"
 				access-key="<?php echo esc_js( Helper::get_user_access_token()); ?>"
 				plugin-version="<?php echo esc_js( OPINIONSTAGE_WIDGET_VERSION ); ?>"
 			>

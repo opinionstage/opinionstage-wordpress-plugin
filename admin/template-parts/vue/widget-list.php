@@ -12,6 +12,12 @@ use Opinionstage\Infrastructure\Helper;
 	<div class='content-actions content-actions__top'>
 		<div class='content-actions__left'>
 			<h1 class="main-title"><?php esc_html_e( 'My Items', 'social-polls-by-opinionstage' ); ?></h1>
+
+            <button class="reload-btn reload-btn-icon" @click="reloadWidgets()" title="Reload">
+                <svg class="reload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                </svg>
+            </button>
 		</div>
 		<div class="content-actions__right">
 			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
