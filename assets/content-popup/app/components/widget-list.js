@@ -78,6 +78,10 @@ export default Vue.component('widget-list', {
 
       widgetsSearchUpdate.call(this)
     },
+    
+    reloadWidgets(){
+      widgetsSearchUpdate.call(this)
+    },
 
     showMore() {
       this.$emit('load-more-widgets')
