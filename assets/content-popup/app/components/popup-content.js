@@ -20,7 +20,6 @@ export default Vue.component('popup-content', {
     'isMyItemsPage',
     // static properties:
     'clientWidgetsUrl',
-    // 'clientWidgetsHasNewUrl',
     'accessKey',
     'pluginVersion',
   ],
@@ -56,10 +55,7 @@ export default Vue.component('popup-content', {
       loadData.call(this).then(() => {
         this.widgets = this.$store.state.widgets[0]
         if (!this.searchCriteria.title) {
-          // setLastUpdateTimeFromWidget.call(this)
         }
-
-        // startWidgetUpdatesChecking.call(this)
       })
     },
 
@@ -87,7 +83,6 @@ export default Vue.component('popup-content', {
         this.reloadData()
       } else {
         this.newWidgetsAvailable = false
-        // stopWidgetUpdatesChecking.call(this)
       }
     },
   },
