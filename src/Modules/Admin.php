@@ -194,6 +194,10 @@ class Admin {
 // performs redirect to plugin settings page, after user logout
     public function disconnect_account_action() {
         if ( OPINIONSTAGE_DISCONNECT_PAGE === filter_input( INPUT_GET, 'page' ) && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+            if ( ! isset( $_POST['opinionstage_nonce'] ) || ! wp_verify_nonce( $_POST['opinionstage_nonce'], 'opinionstage_disconnect_nonce' ) ) {
+                wp_die( esc_html__( 'Security check failed', 'social-polls-by-opinionstage' ) );
+            }
+
             delete_option( OPINIONSTAGE_OPTIONS_KEY );
 
             $redirect_url = get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG );
