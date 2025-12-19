@@ -23,7 +23,7 @@ $items = array(
 		'url_template_type' => 'surveys',
 	),
 	array(
-		'title'             => __( 'Trivia Quiz', 'social-polls-by-opinionstage' ),
+		'title'             => __( 'Knowledge Quiz', 'social-polls-by-opinionstage' ),
 		'description'       => __( 'Create a knowledge test or assessment', 'social-polls-by-opinionstage' ),
 		'img'               => 'trivia.png',
 		'url_scratch_type'  => 'quiz',

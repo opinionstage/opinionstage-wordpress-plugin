@@ -40,9 +40,9 @@ registerBlockType('opinion-stage/block-os-survey', {
 })
 
 registerBlockType('opinion-stage/block-os-trivia', {
-  title: '[Opinion Stage] Trivia Quiz',
+  title: '[Opinion Stage] Knowledge Quiz',
   icon: 'yes',
-  description: __('Embed an Opinion Stage Trivia Quiz', 'social-polls-by-opinionstage'),
+  description: __('Embed an Opinion Stage Knowledge Quiz', 'social-polls-by-opinionstage'),
   category,
   keywords: [
     __('quiz', 'social-polls-by-opinionstage'),

@@ -179,7 +179,7 @@ function widgetTitleFromType(widgetType) {
       return __('Form / Survey')
       break
     case WIDGET_TRIVIA_QUIZ:
-      return __('Trivia Quiz')
+      return __('Knowledge Quiz')
       break
     case WIDGET_PERSONALITY_QUIZ:
       return __('Personality Quiz')

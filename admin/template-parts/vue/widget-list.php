@@ -56,7 +56,7 @@ use Opinionstage\Infrastructure\Helper;
 					<div class='filter__itm'
 						@click="selectWidgetType('trivia')"
 						:class="{ active: selectedWidgetType === 'trivia' }"
-					><?php esc_html_e( 'trivia quiz', 'social-polls-by-opinionstage' ); ?></div>
+					><?php esc_html_e( 'knowledge quiz', 'social-polls-by-opinionstage' ); ?></div>
 					<div class='filter__itm'
 						@click="selectWidgetType('outcome')"
 						:class="{ active: selectedWidgetType === 'outcome' }"
