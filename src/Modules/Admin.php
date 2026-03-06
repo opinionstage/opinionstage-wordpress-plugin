@@ -18,7 +18,6 @@ class Admin {
     private static $allowed_templates = [
         'getting_started',
         'settings',
-        'help_resource'
     ];
 
     public function init() {
@@ -222,7 +221,6 @@ class Admin {
                     '25.234323221'
                 );
                 add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'View My Items', 'My Items', 'edit_posts', OPINIONSTAGE_MENU_SLUG );
-                add_submenu_page( OPINIONSTAGE_MENU_SLUG, 'Tutorials & Help', 'Tutorials & Help', 'edit_posts', OPINIONSTAGE_HELP_RESOURCE_SLUG, [ $this, 'load_template' ] );
             } else {
                 add_menu_page(
                     __( 'Opinion Stage', 'social-polls-by-opinionstage' ),

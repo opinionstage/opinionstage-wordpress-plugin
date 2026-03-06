@@ -87,7 +87,6 @@ define( 'OPINIONSTAGE_OPTIONS_KEY', 'opinionstage_widget' );
 
 define( 'OPINIONSTAGE_MENU_SLUG', 'opinionstage-settings' );
 define( 'OPINIONSTAGE_GETTING_STARTED_SLUG', 'opinionstage-getting-started' );
-define( 'OPINIONSTAGE_HELP_RESOURCE_SLUG', 'opinionstage-help-resource' );
 
 define( 'OPINIONSTAGE_LOGIN_CALLBACK_SLUG', 'opinionstage-login-callback' );
 define( 'OPINIONSTAGE_DISCONNECT_PAGE', 'opinionstage-disconnect-page' );
