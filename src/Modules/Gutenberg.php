@@ -74,7 +74,7 @@ class Gutenberg {
             'OPINIONSTAGE_GUTENBERG_DATA',
             [
                 'userLoggedIn'       => Helper::is_user_logged_in(),
-                'createNewWidgetUrl' => OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM,
+                'createNewWidgetUrl' => OPINIONSTAGE_REDIRECT_CREATE_API_UTM, 
                 'viewTemplateUrl'    => OPINIONSTAGE_REDIRECT_TEMPLATES_API_UTM,
                 'loginPageUrl'       => get_admin_url( null, 'admin.php?page=' . OPINIONSTAGE_GETTING_STARTED_SLUG ),
                 'OswpPluginVersion'  => OPINIONSTAGE_WIDGET_VERSION,

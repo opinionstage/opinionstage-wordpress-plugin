@@ -67,9 +67,16 @@ define(
 	)
 );
 define(
-	'OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM',
+	'OPINIONSTAGE_REDIRECT_WORKSPACE_API_UTM',
 	add_query_arg(
 		OPINIONSTAGE_UTM_PARAMETERS,
+		OPINIONSTAGE_SERVER_BASE . '/api/wp/redirects/widgets/new'
+	)
+);
+define(
+	'OPINIONSTAGE_REDIRECT_CREATE_API_UTM',
+	add_query_arg(
+		array_merge(OPINIONSTAGE_UTM_PARAMETERS, ['page_type' => 'create']),
 		OPINIONSTAGE_SERVER_BASE . '/api/wp/redirects/widgets/new'
 	)
 );

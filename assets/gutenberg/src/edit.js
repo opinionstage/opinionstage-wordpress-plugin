@@ -86,10 +86,10 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
       <p className="components-heading">
         <img src={OPINIONSTAGE_GUTENBERG_DATA.brandLogoUrl} alt="Opinionstage Logg"/>
       </p>
-      <a className="opinionstage-button opinionstage-button__blue" href='#' onClick={selectWidget}>Select
+      <a className="opinionstage-button opinionstage-button__blue" href='#' onClick={selectWidget}>Select an
         Item</a>
       <a href={createNewWidgetUrl} target="_blank"  rel="noopener"
-         className="opinionstage-button opinionstage-button__blue">Create a {currentWidgetTitle}</a>
+         className="opinionstage-button opinionstage-button__blue">Create a New Item</a>
     </div>
   )
   if (
@@ -109,7 +109,7 @@ export default function Edit({name, className, attributes, setAttributes, /*isSe
               <div className="text">
                 <a href={insertItemOsView} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">View</a>
                 <a href={insertItemOsEdit} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">Edit</a>
-                <a href={insertItemOsStatistics} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">Statistics</a>
+                <a href={insertItemOsStatistics} className='opinionstage-button opinionstage-button__blue' target="_blank"  rel="noopener">Results</a>
                 <a href='#' className='opinionstage-button opinionstage-button__blue' onClick={selectWidget}>{buttonText}</a>
               </div>
             </div>

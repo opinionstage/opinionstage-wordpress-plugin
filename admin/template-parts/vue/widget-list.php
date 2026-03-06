@@ -20,7 +20,7 @@ use Opinionstage\Infrastructure\Helper;
             </button>
 		</div>
 		<div class="content-actions__right">
-			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_WIDGET_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
+			<a href="<?php echo esc_url( add_query_arg( 'w_type', 'all', OPINIONSTAGE_REDIRECT_CREATE_API_UTM ) ); ?>" class="opinionstage-button opinionstage-button__blue opinionstage-button__middle" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Create New', 'social-polls-by-opinionstage' ); ?></a>
 		</div>
 	</div>
 	<div class="content-actions content-actions__form">

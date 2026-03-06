@@ -29,7 +29,7 @@ $links_columns_items = array(
 				'title' => __( 'Competition Quiz', 'social-polls-by-opinionstage' ),
 			),
 			array(
-				'path'  => 'c/quizzes/types',
+				'path'  => 'c/types/quizzes',
 				'title' => __( 'All Quiz Types', 'social-polls-by-opinionstage' ),
 			),
 		),
@@ -135,9 +135,9 @@ $client_logos          = array(
 		<?php require OPINIONSTAGE_PLUGIN_DIR . 'admin/template-parts/header-logo-line-logout-form.php'; ?>
 		<div class="opinionstage-getting-started-section opinionstage-two-columns">
 			<div class="opinionstage-two-columns__text">
-				<h1 class="opinionstage-two-columns__title"><?php esc_html_e( 'Add Quizzes, Polls & Surveys to Your Site', 'social-polls-by-opinionstage' ); ?></h1>
+				<h1 class="opinionstage-two-columns__title"><?php esc_html_e( 'Create a Quiz, Poll or Survey', 'social-polls-by-opinionstage' ); ?></h1>
 				<div>
-					<p><?php esc_html_e( 'Get more responses with visual conversational quizzes, surveys & polls. Easy and fast to set up. Engaging and fun for your audience. Customize everything.', 'social-polls-by-opinionstage' ); ?></p>
+					<p><?php esc_html_e( 'Generate with AI, use a template, or build from scratch -  and publish in minutes.', 'social-polls-by-opinionstage' ); ?></p>
 				</div>
 
 				<?php require_once plugin_dir_path( __DIR__ ) . 'template-parts/signup-form.php'; ?>
@@ -149,18 +149,6 @@ $client_logos          = array(
 			</div>
 		</div>
 
-		<div class="opinionstage-getting-started-section opinionstage-getting-started-section__trusted">
-			<h2 class="opinionstage-trusted"><?php esc_html_e( 'Trusted by', 'social-polls-by-opinionstage' ); ?> 100,000+ <?php esc_html_e( 'Customers across 190 countries', 'social-polls-by-opinionstage' ); ?></h2>
-			<ul class="opinionstage-clients">
-				<?php
-				foreach ( $client_logos as $client_logo ) {
-					?>
-					<li><img src="<?php echo esc_url( $client_logo['url'] ); ?>" alt="<?php echo esc_attr( $client_logo['url'] ); ?>" width="<?php echo esc_attr( $client_logo['width'] ); ?>"></li>
-					<?php
-				}
-				?>
-			</ul>
-		</div>
 	</div>
 
 	<div class="opinionstage-bg-white">
@@ -188,21 +176,6 @@ $client_logos          = array(
 						<?php
 					}
 					?>
-				</div>
-			</div>
-		</div>
-		<div class="opinionstage-getting-started-section opinionstage-getting-started-video">
-			<h2 class="opinionstage-getting-started-examples__title"><?php esc_html_e( 'How to Use the Plugin', 'social-polls-by-opinionstage' ); ?></h2>
-
-			<p class="opinionstage-getting-started-video__description"><?php esc_html_e( 'Follow these steps to create a poll, survey or quiz and add it to your site in minutes', 'social-polls-by-opinionstage' ); ?></p>
-
-			<div class="opinionstage-getting-started-video__iframe">
-				<div>
-					<iframe width="100%"
-						src="https://www.youtube.com/embed/DMcosYCBFDs?controls=0&showinfo=0"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
