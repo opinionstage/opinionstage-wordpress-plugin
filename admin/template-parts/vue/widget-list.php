@@ -41,26 +41,24 @@ use Opinionstage\Infrastructure\Helper;
 			<div class="dropdown dropdown_items">
 				<button class="dropbtn opinionstage-pseudo-chevron"><span>{{ selectedWidgetTitle }}</span></button> 
 				<div class="dropdown-content">
-					<div class='filter__itm'
-						@click="selectWidgetType('all')"
-						:class="{ active: selectedWidgetType === 'all' }"
-					><?php esc_html_e( 'all items', 'social-polls-by-opinionstage' ); ?></div>
-					<div class='filter__itm'
-						@click="selectWidgetType('poll')"
-						:class="{ active: selectedWidgetType === 'poll' }"
-					><?php esc_html_e( 'poll', 'social-polls-by-opinionstage' ); ?></div>
-					<div class='filter__itm'
-						@click="selectWidgetType('survey')"
-						:class="{ active: selectedWidgetType === 'survey' }"
-					><?php esc_html_e( 'form / survey', 'social-polls-by-opinionstage' ); ?></div>
-					<div class='filter__itm'
-						@click="selectWidgetType('trivia')"
-						:class="{ active: selectedWidgetType === 'trivia' }"
-					><?php esc_html_e( 'knowledge quiz', 'social-polls-by-opinionstage' ); ?></div>
-					<div class='filter__itm'
-						@click="selectWidgetType('outcome')"
-						:class="{ active: selectedWidgetType === 'outcome' }"
-					><?php esc_html_e( 'personality quiz', 'social-polls-by-opinionstage' ); ?></div>
+                    <?php
+                    $widget_types = [
+                            'all'       => __( 'all items', 'social-polls-by-opinionstage' ),
+                            'poll'      => __( 'poll', 'social-polls-by-opinionstage' ),
+                            'survey'    => __( 'form / survey', 'social-polls-by-opinionstage' ),
+                            'trivia'    => __( 'knowledge quiz', 'social-polls-by-opinionstage' ),
+                            'outcome'   => __( 'personality quiz', 'social-polls-by-opinionstage' ),
+                            'calculator'   => __( 'calculator', 'social-polls-by-opinionstage' ),
+                            'assessment'   => __( 'assessment', 'social-polls-by-opinionstage' ),
+                            'recommendation'   => __( 'recommendation', 'social-polls-by-opinionstage' ),
+                    ];
+                    foreach ( $widget_types as $type => $label ) :
+                        ?>
+                        <div class='filter__itm'
+                             @click="selectWidgetType('<?php echo esc_js( $type ); ?>')"
+                             :class="{ active: selectedWidgetType === '<?php echo esc_js( $type ); ?>' }"
+                        ><?php echo esc_html( $label ); ?></div>
+                    <?php endforeach; ?>
 				</div>
 			</div>
 		</div>
@@ -93,7 +91,7 @@ use Opinionstage\Infrastructure\Helper;
 				<?php if ( $is_my_items_admin_page ) { ?>
 					<div class="opinionstage-item-action-container">
 						<a href="#" @click="select(widget)"
-							class="opinionstage-button opinionstage-button__middle"><?php esc_html_e( 'Add to Site', 'social-polls-by-opinionstage' ); ?></a>
+							class="opinionstage-button opinionstage-button__middle"><?php esc_html_e( 'Embed', 'social-polls-by-opinionstage' ); ?></a>
 						<a :href='widget.editUrl' class="opinionstage-button opinionstage-button__middle"
 							<?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'Edit', 'social-polls-by-opinionstage' ); ?></a>
 						<a :href='widget.statsUrl' class="opinionstage-button opinionstage-button__middle"
