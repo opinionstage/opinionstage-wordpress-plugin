@@ -1,162 +1,232 @@
-﻿=== Poll, Survey & Quiz Maker Plugin by Opinion Stage ===
+﻿=== Quiz, Poll & Survey Maker by Opinion Stage ===
 Contributors: opinionstage, kucaahbe, ArtemLapkin
-Donate link: https://www.opinionstage.com
-Tags: poll, quiz, poll plugin, quiz plugin, survey plugin
-Requires at least: 2.8
-Tested up to: 6.8.3
+Tags: quiz, quiz maker, poll, survey, lead generation
+Requires at least: 5.6
+Tested up to: 6.9.1
 Stable tag: 19.12.2
 Requires PHP: 7.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add a Poll, Survey, or Quiz Plugin to your WordPress site. Create a poll, quiz, or survey from scratch or based on templates.
+Boost engagement and capture leads with interactive quizzes, polls, and surveys. Built for marketers, publishers, and businesses
 
 == Description ==
 
-= Check out our live demos to see how your creations will look: =
-* [Personality Quiz](https://www.opinionstage.com/templates/t/personality-quiz-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
-* [Trivia Quiz](https://www.opinionstage.com/templates/t/trivia-quiz-template?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
-* [Image poll](https://www.opinionstage.com/templates/t/image-poll?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
-* [Feedback survey](https://www.opinionstage.com/templates/t/customer-feedback-survey?utm_source=wordpress&utm_campaign=WPMainPI&utm_medium=link&o=wp35e8)
+🚀 The Quiz Maker Built for Marketers
 
-https://www.youtube.com/watch?v=X2R-FK809rA
+Opinion Stage is a powerful AI-powered Quiz Maker, Poll Maker & Survey Maker designed to help marketers, agencies, and businesses boost engagement and generate leads.
 
-Create engaging quizzes, polls, and surveys in a flash with Opinion Stage’s user-friendly WordPress quiz plugin. No coding is required!
+- Increase website engagement  
+- Capture high-quality leads  
+- Grow email subscribers  
+- Segment audiences  
+- Drive conversions with interactive content  
 
-Get a quick start with our AI quiz and survey maker, edit a pre-made template, or build your content from scratch
+Create stunning quizzes, polls, and surveys in minutes and embed them anywhere on your WordPress site.
 
-Our simple interface has no learning curve, allowing you to create optimized content from the get-go.
+= Flexible Creation Options =
 
-🎨Unleash your creativity with tons of customizable features, including:
- * Custom font, color themes, logo, & CSS
- * White label options
- * Customizable social sharing buttons
- * Smart logic
+Create quizzes, polls, and surveys your way:
 
-🔗Share your content wherever your audience is. Our quizzes are fully responsive, always load fast, and look great on any device.
+✔ Generate quizzes with AI in seconds  
+✔ Start from scratch with full customization  
+✔ Use professionally designed templates  
+✔ Import existing quizzes and surveys  
+✔ Duplicate and edit existing content  
 
-🚀Go beyond simple surveys, polls, and quizzes. Capture leads with built-in lead forms, personalize with smart logic branching, and keep your audience hooked with engaging content that speaks directly to them.
+Browse the Opinion Stage template library to explore hundreds of ready-made quiz, poll, and survey examples:
+https://www.opinionstage.com/templates
 
+Whether you want to launch a marketing quiz fast or build a fully customized interactive experience, the Opinion Stage Quiz Maker gives you complete flexibility.
 
-== Here’s What You’ll Get With Opinion Stage’s WordPress Plugin ==
+= QUIZ MAKER – Turn Engagement into Leads =
 
-📝Quiz Plugin
-Create different types of quizzes to fit your goals, for example:
- * **Personality Quiz**: Find out how your audience ticks and adjust your offerings based on their interests.
- * **Trivia Quiz**: Test knowledge, fuel friendly competition, and boost user engagement.
- * **Product Recommendation Quiz**: Guide potential customers to their ideal products, boosting conversion rates and customer satisfaction.
- * **Lead Generation Quiz**: Collect valuable contact information to nurture customer relationships.
- 
- 📊Poll Plugin
- Use different kinds of poll layouts for different situations, such as:
- * **List Poll**: Arrange the answer options in a simple list for quick feedback.
- * **Image Poll**: Showcase your offerings and encourage participants to share their opinions.
- * **Thumbnail Poll**: Add thumbnails to each answer to make it easier for participants to choose from a variety of options.
- * **Head-to-Head Poll**: Let users vote between two options.
+The Opinion Stage AI-powered Quiz Maker helps you create:
 
- 📋Survey Plugin
- Find out what your audience really thinks with targeted surveys, for example:
- * **Customer Feedback Survey**: Gather insights on customer experiences to identify successes and opportunities for improvement.
- * **User Experience Survey**: See how users navigate your service or platform, pinpointing exactly where to make their journey smoother.
- * **Thumbnail Poll**: Add thumbnails to each answer to make it easier for participants to choose from a variety of options.
- * **Product Feedback Survey**: Collect customer feedback to refine your products and spark innovation, ensuring future offerings meet their needs.
- 
- And much more…
+- Personality quizzes  
+- Trivia quizzes  
+- Scored quizzes  
+- Product recommendation quizzes  
+- Assessment quizzes  
+- Lead generation quizzes  
+- Branded marketing quizzes  
 
- == Quiz, Poll, & Survey Plugin Advantages ==
+Why use a quiz for marketing?
 
-No-code, user-friendly platform
-Our quiz maker plugin is easy to use, has no learning curve, and requires no technical expertise to get started.
+Quizzes convert visitors into leads at significantly higher rates than static forms because they are interactive and engaging.
 
-AI survey/quiz maker 
-Our AI survey/quiz maker can create professional and engaging quizzes and surveys in less than a minute. All you need is a topic to get started.
+With Opinion Stage you can:
 
-Free plan
-Try out our service for free. With the free plan, you can create unlimited items and questions, receive 25 responses/month, and have access to core features such as the AI quiz maker, templates, and skip logic. There’s no limit to how long you can use the service, and no credit card is required. 
-You will need to [upgrade](https://www.opinionstage.com/pricing) your plan to use the WordPress quiz plugin, receive more responses, and have access to other advanced features such as lead and email capture, drop-off reports, email notifications, white label options, and more.
+✔ Add lead forms before or after results  
+✔ Gate quiz results behind email signup  
+✔ Segment users based on answers  
+✔ Send quiz leads to your email marketing tools  
+✔ Personalize outcomes dynamically  
+✔ Add call-to-action buttons to results  
 
-Fully customizable
-You can fully customize your quiz to match your brand. Choose from various color themes, fonts, letter sizes, text colors, and images. Use custom CSS to change everything and white label your quiz to make it look like you made it in-house.
+Perfect for:
 
-100s of templates
-We have tons of free, optimized templates for every use case. Leave them as is, or change anything you like.
+- Agencies  
+- SaaS companies  
+- E-commerce stores  
+- Coaches & consultants  
+- Publishers  
+- Enterprise marketing teams  
 
-Automatic reports
-Every item comes with detailed performance and result reports, providing valuable insights to help you perfect your content and offerings.
-Analyze how many people viewed, started, completed, and dropped off with easy-to-understand pie charts, bar charts, and tables.
+If you're searching for a Quiz Maker for lead generation, this plugin is built for you.
 
-Responsive design
-The content you make with Opinion Stage is fully responsive, so you can reach your audience wherever they are. Your items will always work great and load fast on all devices, from small mobile phones to large desktop screens.
+= POLL MAKER – Instant Engagement in Seconds =
 
- == Full List of Features ==
- From creation to analysis, we offer everything you need to create successful and effective content.
- * No-code interface
- * Free plan
- * Unlimited items
- * Unlimited questions
- * AI quiz & survey maker
- * 100s of customizable templates
- * Create quizzes, polls, and surveys 
- * Different quiz types such as trivia and personality
- * Customize with different color themes and fonts
- * Create a custom color theme
- * Custom CSS 
- * Add images, videos, GIFs, and emojis to your content
- * Edit your item even after it goes live
- * Lead form to grow your email list
- * Different types of quiz questions including multiple choice, true/false/, yes/no, open-ended, scale, and star rating
- * Indicate wrong answer and correct answer
- * White label option and add your own logo
- * Real-time automatic visual reports, including result, drop off, & performance reports
- * Notifications for every submission sent to your email address
- * Smart logic
- * Social media integrations
- * Add call to action (CTAs) at the end of quizzes & surveys
- * Export results to CSV/XLS file
- * Native integrations with popular tools
- * Embed in a single post/page or display in a sidebar or section placement
- * Popup items automatically when users enter/exit the page
- * Display Facebook comments right under your item (if embedded on your website)
- * Responsive design that works great on all screen sizes
- * Loads fast on all network connections
- * Supports over 42 languages
- * Display an explanation after the user answers
- * GDPR compliant
- * Pixel tracking
- * Randomize answer order 
- * Redirect to your landing pages
- * Block repeat participation from the same browser/IP
- * Set automatic poll deadlines
- * Decide if and when voters see poll results
- * Automatically detect and block robot voting
- * Define a time gap between votes
- * Require social profile, contact details, or voting code to vote
- * Option to add multiple users to one account
- * Custom development
- * Team training
- * Infosec & legal support
- * Dedicated account manager
- * Help Center
- * Live chat support
- * Email support & strategy calls
+Looking for a fast way to increase interaction?
 
- == Connect With Your Tools ==
- Our WP quiz plugin integrates seamlessly with your existing tools, including:
- * Google Tag Manager
- * Facebook Pixel
- * Mailchimp
- * Brevo
- * Klaviyo
- * ActiveCampaign
- * Pipedrive
- * ConvertKit
- * MailerLite
- * HubSpot
- * Salesforce
- * Slack
- * Google Sheets
- * Excel online
- * Zapier
- * Webhooks
- * And 1000+ others
+The Opinion Stage Poll Maker lets you:
+
+- Create single or multiple question polls  
+- Run live voting  
+- Display real-time results  
+- Embed image polls  
+- Add polls to blog posts  
+- Increase time on page  
+
+Polls are perfect for:
+
+- Blog engagement  
+- News websites  
+- Communities  
+- Social campaigns  
+- Audience feedback  
+
+Use polls as a lightweight entry point — then convert engaged visitors with quizzes.
+
+= SURVEY MAKER – Collect Insights That Matter =
+
+Need deeper feedback?
+
+The Opinion Stage Survey Maker allows you to create:
+
+- Customer satisfaction surveys  
+- NPS surveys  
+- Market research surveys  
+- Product feedback surveys  
+- Employee surveys  
+- Event surveys  
+
+Features include:
+
+✔ Multiple question types  
+✔ Conditional logic  
+✔ Open-ended responses  
+✔ Anonymous or lead-based surveys  
+✔ Data export  
+✔ Detailed analytics  
+
+Turn feedback into actionable insights.
+
+= Built for Growth & Lead Capture =
+
+Unlike basic form builders, the Opinion Stage Quiz Maker focuses on:
+
+Engagement → Interaction → Lead Generation → Conversion
+
+Lead Capture Features:
+
+- Built-in lead forms  
+- Email integrations  
+- Zapier integration  
+- Webhooks  
+- CRM integrations  
+- Mailchimp, Klaviyo, ActiveCampaign, HubSpot, and more  
+- GDPR tools  
+
+= Beautiful & Fully Customizable =
+
+- Mobile responsive  
+- Custom branding  
+- Custom fonts & colors  
+- CSS control  
+- White label (premium)  
+- Embed anywhere (Gutenberg, Elementor, shortcode)  
+
+= Easy to Use =
+
+1. Install the plugin  
+2. Create a quiz, poll, or survey  
+3. Customize design & lead form  
+4. Embed using block or shortcode  
+5. Start generating leads  
+
+No coding required.
+
+= Works With Your Marketing Stack =
+
+Integrations with hundreds of services, including:
+
+- Mailchimp  
+- Klaviyo  
+- HubSpot  
+- ActiveCampaign  
+- Zapier  
+- Google Sheets  
+- Webhooks  
+- Facebook Pixel  
+- Google Analytics  
+
+Connect your quiz or survey to your automation workflows instantly.
+
+= Designed for High Conversions =
+
+- Add images & videos  
+- Add logic jumps  
+- Personalize results  
+- Add CTA buttons  
+- Redirect after completion  
+- Social sharing buttons  
+
+Increase:
+
+- Time on site  
+- Email signups  
+- Product discovery  
+- Customer insights  
+
+= Enterprise Ready =
+
+- Advanced analytics  
+- User segmentation  
+- High-volume traffic support  
+- Custom branding  
+- Dedicated support (premium)  
+
+Opinion Stage helps businesses turn interactive content into measurable marketing growth.
+
+= Use Cases =
+
+- Lead generation quiz for agencies  
+- Product recommendation quiz for eCommerce  
+- Personality quiz for viral growth  
+- Poll for blog engagement  
+- Customer feedback survey  
+- NPS survey  
+- Content marketing quiz  
+- Interactive landing pages  
+
+= Free vs Premium =
+
+The free version lets you create engaging quizzes, polls & surveys and embed them on your site.
+
+Upgrade to Premium to unlock:
+
+- Higher usage limits (more responses per month)  
+- Advanced lead capture  
+- Email & CRM integrations  
+- Conditional logic  
+- Advanced analytics  
+- White labeling  
+- Custom domains  
+- Advanced customization options  
+- Priority support  
+
+Perfect for growing businesses, agencies, and high-traffic websites that need more capacity and advanced marketing capabilities.
 
 == Screenshots ==
 
@@ -173,63 +243,36 @@ The content you make with Opinion Stage is fully responsive, so you can reach yo
 
 == Installation ==
 
-1. Upload the plugin to your blog (or search for it) and then install the plugin on your plugins page
-2. Active it and start creating polls, quizzes, surveys and forms
-
+1. Upload the plugin to your /wp-content/plugins/ directory or install through WordPress.  
+2. Activate the plugin.  
+3. Create your first quiz, poll, or survey.  
+4. Embed it anywhere on your site.
 
 == Frequently Asked Questions ==
 
-= How do I build a quiz? =
+= Is this a free Quiz Maker? =
 
-The easiest way to build online quizzes is by using our new [AI quiz maker](https://www.opinionstage.com/quiz/). Simply add your topic, and the AI will create a quiz for you in less than a minute. You can also edit a [template](https://www.opinionstage.com/templates/c/quizzes) or build a quiz from [scratch](https://www.opinionstage.com/dashboard/quizzes/new). 
+Yes. You can create quizzes, polls, and surveys for free. Premium features are available for advanced marketing and lead generation.
 
-= How can I add a quiz or a poll to my WordPress site? =
+= Does it support AI quiz generation? =
 
-To add an interactive quiz or poll to your site, follow these steps: Add the Opinion Stage WordPress block to a page, click ‘Select Item,’ and then ‘Insert’ next to the quiz or poll you want to feature. For a more in-depth look at how you can use our WordPress plugin, visit our [help center](https://help.opinionstage.com/en/articles/2557183-how-to-use-the-wordpress-plugin). Additionally, we have dedicated pages for our [poll plugin](https://www.opinionstage.com/poll/wordpress-poll-plugin/) and [quiz plugin](https://www.opinionstage.com/quiz/wordpress-quiz-plugin/) that provide detailed instructions on how to add content to your site.
+Yes. You can generate quizzes using AI or build them manually from scratch.
 
-= Can I add the same quiz on different pages? =
+= Can I import existing quizzes or surveys? =
 
-Yes, you can add the same quiz on different pages of your site. 
+Yes. You can import and edit existing quizzes and surveys.
 
-= Are Opinion Stage items responsive? =
+= Can I capture emails with quizzes? =
 
-Yes. All item formats (quiz, poll, and survey) created with Opinion Stage are fully responsive and designed to display optimally on mobile, tablet, and desktop.
+Yes. You can add lead forms and connect them to your email marketing tools.
 
-= What is the difference between a poll and a survey? =
+= Does it work with Elementor or Gutenberg? =
 
-A poll is a quick way to gather opinions or feedback, usually with a single question and a limited number of options. Surveys are more in-depth, with multiple questions, open-ended questions, and a wider range of response options. 
+Yes. You can embed using blocks or shortcodes.
 
-= What customization options do you offer for quizzes, polls, and surveys? =
+= Is it mobile responsive? =
 
-What customization options do you offer for quizzes, polls, and surveys? Opinion Stage offers many built-in customization options, such as selecting the color theme, font, and sizes. Use the CSS override feature to fully match the items to your brand. You can also add your own logo.
-
-= Is Opinion Stage GDPR compliant? =
-
-Yes, Opinion Stage is a GDPR compliant plugin. For more information, you can read our [GDPR](https://help.opinionstage.com/en/articles/1937021-opinion-stage-gdpr-compliance?_gl=1*9n5t6t*_gcl_au*MjEzMDI5MzA0NS4xNzA0NzAyMTY3) and [privacy policy](https://www.opinionstage.com/privacy) documentation.
-
-= How can I check the results? =
-
-To check your item’s results, go to your [user dashboard](https://www.opinionstage.com/dashboard/content) and click ‘View Results’ next to your quiz. 
-
-= What should I do in case of an issue? =
-
-If you have any issues, you can contact Opinion Stage [support](https://www.opinionstage.com/page/d4601795-31b1-4981-8cef-5c36dce73dc8) or go to our [help center](https://help.opinionstage.com/en/). 
-
-= Is Opinion Stage free? =
-
-Opinion Stage offers a free plan with 25 responses/month, and you can create unlimited items and questions. You’ll also get core features such as the AI quiz maker, templates, the ability to embed your items on your website, access to answer/response reports that you can download, skip logic, and pre-configured themes and fonts.
-
-= Do I need to have coding skills to use the Opinion Stage plugin? =
-
-No, you don’t need coding skills to use the Opinion Stage quiz, survey, and poll plugin. It is designed to be user-friendly.
-
-= Does the plugin work for all WordPress themes? =
-
-Yes, the Opinion Stage quiz plugin works for all WordPress themes. 
-
-= Can I export submissions? =
-
-Yes. You can export all submissions to CSV and XLS file formats.
+Yes. All quizzes, polls, and surveys are mobile optimized.
 
 == Other Notes ==
 
