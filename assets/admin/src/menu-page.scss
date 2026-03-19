@@ -1,4 +1,4 @@
-@import "../global-sass/_index";
+@use "../../global-sass/_index";
 
 $blue: #32adbc;
 $blue2: #31aebe;
@@ -27,6 +27,15 @@ $black: #25282B;
 
   .opinionstage-connect-form {
     display: inline-block;
+
+    .opinionstage-button-as-link {
+      margin-top: 10px;
+      margin-left: 10px;
+      display: inline-block;
+    }
+    .smaller {
+      font-size: 14px;
+    }
   }
 
   a.opinionstage-blue-bordered-btn {
@@ -72,75 +81,24 @@ $black: #25282B;
   }
 
   #opinionstage-section-create {
-    @media(min-width: 1300px) {
-      margin-left: 100px;
-    }
+    text-align: center;
     
-    .opinionstage-section-content {
-      height: 435px;
-      display: table;
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 780px;
+    svg {
+      color: #0a73eb;
     }
-
-    .opinionstage-section-raw {
-      border-bottom: 1px solid #c8c8c9;
-      display: table-row;
-      border-left: none;
-      border-right: none;
+    p {
+      font-weight: 600;
+      color: #000;
+      font-size: 14px;
+      margin-bottom: 25px;
+      margin-top: 8px;
     }
-
-    .opinionstage-section-cell {
-      display: table-cell;
-      padding: 12px 0;
-      vertical-align: middle;
-
-      &.opinionstage-icon-cell {
-        color: #3499c2;
-        font-size: 35px;
-        text-align: center;
-        width: 7%;
-      }
-
-      &.opinionstage-btn-cell {
-        text-align: right;
-        width: 36%;
-        a:last-child {
-          margin-right: 0;
-        }
-        
-        .opinionstage-button:nth-child(1) {
-          margin-right: 5px;
-        }
-      }
-
-      &.opinionstage-description-cell {
-        width: 57%;
-        vertical-align: top;
-
-        .title {
-          font-size: 20px;
-          font-weight: 600;
-          margin-bottom: 10px;
-          color: #000;
-          text-decoration: none;
-        }
-
-        .example {
-          color: #000;
-          opacity: .6;
-          font-size: 14px;
-          line-height: normal;
-        }
-      }
+    .bigger {
+      font-size: 18px;
+      margin-bottom: 8px;
     }
-
-    .os-icon-plugin {
-      margin-right: 12px;
-      img {
-        max-width: 116px;
-      }
+    .opinionstage-button {
+      font-size: 14px;
     }
   }
 

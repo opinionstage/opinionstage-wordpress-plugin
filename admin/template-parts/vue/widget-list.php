@@ -6,6 +6,7 @@
  */
 
 use Opinionstage\Infrastructure\Helper;
+use Opinionstage\Infrastructure\TemplatesViewer;
 
 ?>
 <div class='page-content'>
@@ -128,8 +129,13 @@ use Opinionstage\Infrastructure\Helper;
 			</div>
 		</div>
 		<div v-else>
-			<?php esc_html_e( 'No items found', 'social-polls-by-opinionstage' ); ?>
-		</div>
+            <div class="asdasdad">
+                <?php
+                TemplatesViewer::require_template('admin/template-parts/vue/create-screen', compact('is_my_items_admin_page'));
+                ?>
+            </div>
+
+        </div>
 	</div>
 	<div class="selected-draft" v-if="selectedDraftWidget.editUrl">
 		<div class="selected-draft__container">

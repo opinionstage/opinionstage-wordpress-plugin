@@ -74,15 +74,10 @@ if ( $is_my_items_admin_page ) {
 		</div>
 		<div v-if="widgets == undefined">
 			<p class="failed-load-items-request"><?php esc_html_e( 'An error occurred while loading the items.Try reloading the page. If the problem persists, please ', 'social-polls-by-opinionstage' ); ?>
-				<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'contact our chat support.', 'social-polls-by-opinionstage' ); ?></a></p>
+			<a href="<?php echo esc_url( OPINIONSTAGE_LIVE_CHAT_URL_UTM ); ?>" <?php echo Helper::get_link_target_blank_attribute(); ?>><?php esc_html_e( 'contact our chat support.', 'social-polls-by-opinionstage' ); ?></a></p>
 		</div>
 		<template v-else>
-			<div v-if="!dataLoading && isMyItemsPage && widgets !== undefined && widgets.length === 0 && searchCriteria.type === 'all' && searchCriteria.title === ''">
-				<?php
-				TemplatesViewer::require_template('admin/template-parts/vue/create-screen', compact('is_my_items_admin_page'));
-				?>
-			</div>
-			<widget-list v-else
+			<widget-list
 						:widgets='widgets'
 						:pre-selected-widget-type='searchCriteria.type'
 						:data-loading='dataLoading'
@@ -92,7 +87,7 @@ if ( $is_my_items_admin_page ) {
 						@widgets-search-update='reloadData'
 						@load-more-widgets='appendData'
 			>
-		</template>
+        </template>
 	</div>
 	<div class='page-content' v-else>
 			<h1 class='main-title'>

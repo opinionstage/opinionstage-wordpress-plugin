@@ -21,6 +21,11 @@
         opacity: .8;
     }
 
+    &:focus {
+        outline: 1px solid #4397F7;
+        outline-offset: 2px;
+    }
+
     &__small,
     &__middle {
         padding: 8px 12px;
@@ -40,6 +45,10 @@
         &:hover {
             color: #fff;
         }
+        &:focus {
+            outline: 1px solid #4397F7;
+            outline-offset: 2px;
+        }
     }
     &__white {
         background-color: #fff;
@@ -47,6 +56,10 @@
         color: #32373c;
         &:hover {
             color: #32373c;
+        }
+        &:focus {
+            outline: 1px solid #4397F7;
+            outline-offset: 2px;
         }
     }
     
@@ -61,5 +74,24 @@
 
     &__uppercase {
         text-transform: uppercase;
+    }
+}
+
+
+.opinionstage-button-as-link {
+    background: none;
+    border: none;
+    color: #4397F7;
+    display: block;
+    font-size: inherit;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+
+
+    &:focus {
+        outline: 1px solid #4397F7;
+        outline-offset: 2px;
     }
 }

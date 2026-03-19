@@ -5,7 +5,7 @@ $green: #bada55;
 $red: orangered;
 $blue: #32adbc;
  
-@import "../../global-sass/_index";
+@use "../../global-sass/_index";
 
 .os-widget-wrapper .is-large, .os-widget-wrapper .is-block {
     height: 30px;
