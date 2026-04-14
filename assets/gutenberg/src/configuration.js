@@ -63,6 +63,7 @@ export const supports = {
   html: false,
 }
 
+export const supportsLegacyWidgets = { ...supports, inserter: false }
 // block widget types (values of widgetType attribute):
 export const WIDGET_POLL = 'poll'
 export const WIDGET_PERSONALITY_QUIZ = 'personality'
