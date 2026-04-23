@@ -1,11 +1,11 @@
 <?php
 /**
- * Poll, Survey & Quiz Maker Plugin by Opinion Stage
+ * Quiz Maker, Poll Maker & Survey Maker by Opinion Stage
  *
  * @package   OpinionStageWordPressPlugin
  *
  * @wordpress-plugin
- * Plugin Name: Poll, Survey & Quiz Maker Plugin by Opinion Stage
+ * Plugin Name: Quiz Maker, Poll Maker & Survey Maker by Opinion Stage
  * Plugin URI:  https://www.opinionstage.com
  * Description: Add a highly engaging poll, survey, quiz or contact form builder to your site. You can add the poll, survey, quiz or form to any post/page or to the sidebar.
  * Version:     19.12.5
@@ -163,7 +163,7 @@ if ( ! version_compare( PHP_VERSION, OPINIONSTAGE_REQUIRED_PHP_VERSION, '>=' ) )
  */
 function opinionstage_fail_php_version() {
 	/* translators: %s: PHP version */
-	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz Maker Plugin by Opinion Stage requires PHP version %s+, plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), OPINIONSTAGE_REQUIRED_PHP_VERSION );
+	$message      = sprintf( esc_html__( 'Quiz Maker, Poll Maker & Survey Maker by Opinion Stage requires PHP version %s+, plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), OPINIONSTAGE_REQUIRED_PHP_VERSION );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
@@ -179,7 +179,7 @@ function opinionstage_fail_php_version() {
  */
 function opinionstage_fail_wp_version() {
 	/* translators: %s: WordPress version */
-	$message      = sprintf( esc_html__( 'Poll, Survey & Quiz Maker Plugin by Opinion Stage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), '4.7' );
+	$message      = sprintf( esc_html__( 'Quiz Maker, Poll Maker & Survey Maker by Opinion Stage requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'social-polls-by-opinionstage' ), '4.7' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
