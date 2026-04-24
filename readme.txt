@@ -1,4 +1,4 @@
-﻿=== Quiz, Poll & Survey Maker by Opinion Stage ===
+﻿=== Quiz Maker, Poll Maker & Survey Maker by Opinion Stage ===
 Contributors: opinionstage, kucaahbe, ArtemLapkin
 Tags: quiz, quiz maker, poll, survey, lead generation
 Requires at least: 5.6
