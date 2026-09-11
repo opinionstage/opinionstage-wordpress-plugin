@@ -3,7 +3,7 @@ Contributors: opinionstage, kucaahbe, ArtemLapkin
 Tags: quiz, quiz maker, poll, survey, lead generation
 Requires at least: 5.6
 Tested up to: 7.0
-Stable tag: 19.12.7
+Stable tag: 19.12.8
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -282,6 +282,9 @@ Yes. All quizzes, polls, and surveys are mobile optimized.
 N/A
 
 == Changelog ==
+  = 19.12.8 =
+  * Gutenberg blocks apiVersion 3
+  * tested up to 7.1 Wordpress
   = 19.12.7 =
   * plugin rename
   = 19.12.6 =
