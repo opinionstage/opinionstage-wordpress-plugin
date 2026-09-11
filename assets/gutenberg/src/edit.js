@@ -1,7 +1,10 @@
 import {__} from '@wordpress/i18n'
+import {useBlockProps} from '@wordpress/block-editor'
+import {useEffect} from '@wordpress/element'
 
 import './editor.scss'
-export default function Edit({name, className, attributes, setAttributes}) {
+
+export default function Edit({name, attributes, setAttributes}) {
   let {
     embedUrl,
     buttonText,
@@ -11,7 +14,17 @@ export default function Edit({name, className, attributes, setAttributes}) {
     insertItemOsEdit,
     insertItemOsStatistics,
   } = attributes
-  
+
+  const blockProps = useBlockProps()
+
+  const widgetIsSelected = Boolean(embedUrl) && buttonText === 'Change'
+
+  useEffect(() => {
+    if (!widgetIsSelected && buttonText !== 'Embed') {
+      setAttributes({buttonText: 'Embed'})
+    }
+  }, [widgetIsSelected, buttonText])
+
   const isDeprecated = name !== 'opinion-stage/block-os-poll';
   const deprecationNotice = isDeprecated ? (
     <div className="os-deprecation-notice" style={{
@@ -29,7 +42,7 @@ export default function Edit({name, className, attributes, setAttributes}) {
 
   if ( ! OPINIONSTAGE_GUTENBERG_DATA.userLoggedIn ) {
     return (
-      <div className={className}>
+      <div {...blockProps}>
         <div className="os-widget-wrapper components-placeholder">
           {deprecationNotice}
           <p className="components-heading">
@@ -39,6 +52,7 @@ export default function Edit({name, className, attributes, setAttributes}) {
             surveys & forms
           </p>
           <a href={OPINIONSTAGE_GUTENBERG_DATA.loginPageUrl}
+             target="_top"
              className="opinionstage-button opinionstage-button__blue">Connect
           </a>
         </div>
@@ -64,6 +78,9 @@ export default function Edit({name, className, attributes, setAttributes}) {
 
   const selectWidget = e => {
     e.preventDefault()
+    // NOTE: the content popup lives in the admin document, not in the editor
+    // iframe - the block's javascript runs in the parent frame, so the modal
+    // still opens over the whole screen under apiVersion 3.
     OpinionStage.contentPopup.open({
       onWidgetSelect: placeWidget
     })
@@ -82,11 +99,7 @@ export default function Edit({name, className, attributes, setAttributes}) {
          className="opinionstage-button opinionstage-button__blue">Create a New Item</a>
     </div>
   )
-  if (
-    embedUrl 
-    && embedUrl !== ''
-    && buttonText === 'Change' 
-  ) {
+  if (widgetIsSelected) {
     contentViewEditStatOs = (
       <div className="os-widget-wrapper components-placeholder">
         {deprecationNotice}
@@ -111,12 +124,10 @@ export default function Edit({name, className, attributes, setAttributes}) {
         </div>
       </div>
     )
-  } else {
-    setAttributes({buttonText: 'Embed'})
   }
 
   return (
-    <div className={className}>
+    <div {...blockProps}>
       {contentViewEditStatOs}
     </div>
   )

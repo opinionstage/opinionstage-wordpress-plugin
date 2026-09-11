@@ -1,3 +1,5 @@
+import {useBlockProps} from '@wordpress/block-editor'
+
 // values for widgetType attribute:
 import {
   WIDGET_POLL,
@@ -19,9 +21,12 @@ export default function save({attributes}) {
     insertItemOsStatistics,
   } = attributes
 
+  const blockProps = useBlockProps.save({
+    className: unusedWrapperClassFromWidgetType(widgetType),
+  })
+
   return (
-    // can not be updated to className as it breaks all added widgets in Gutenberg asking to 'Attempt Block Recovery'
-    <div class={unusedWrapperClassFromWidgetType(widgetType)}
+    <div {...blockProps}
          data-type={widgetType}
          data-image-url={insertItemImage}
          data-title-url={insertItemOsTitle}
@@ -48,17 +53,14 @@ function unusedWrapperClassFromWidgetType(widgetType) {
   switch (widgetType) {
     case WIDGET_POLL:
       return 'os-poll-wrapper'
-      break
     case WIDGET_SURVEY:
       return 'os-survey-wrapper'
-      break
     case WIDGET_TRIVIA_QUIZ:
       return 'os-trivia-wrapper'
-      break
     case WIDGET_PERSONALITY_QUIZ:
       return 'os-personality-wrapper'
-      break
     default:
       console.warn('unknown widget type:', widgetType)
+      return null
   }
 }
